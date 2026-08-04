@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
 import { translations, TranslationDict, SupportedLanguage } from '@/locales';
 
 const STORAGE_KEY = 'handball_iq_language';
@@ -32,6 +32,9 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
 function resolveKey(dict: TranslationDict, key: string): string | undefined {
+  const direct = dict[key];
+  if (typeof direct === 'string') return direct;
+
   const parts = key.split('.');
   let current: TranslationDict | string = dict;
   for (const part of parts) {
@@ -50,11 +53,7 @@ function interpolate(str: string, vars?: Record<string, string | number>): strin
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<SupportedLanguage>('en');
-
-  useEffect(() => {
-    setLangState(getStoredLang());
-  }, []);
+  const [lang, setLangState] = useState<SupportedLanguage>(() => getStoredLang());
 
   const setLang = useCallback((newLang: SupportedLanguage) => {
     setLangState(newLang);

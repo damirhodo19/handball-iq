@@ -4,6 +4,7 @@
 
 import { HandballPosition, AgeGroup, PlayingLevel } from './positions';
 import { supabase } from './supabase';
+import { fetchPublishedScenariosForPosition } from '@/services/scenarioService';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -255,7 +256,6 @@ export function loadPublishedScenariosForPosition(position: HandballPosition): A
 // Async version that fetches from Supabase with local fallback
 export async function loadPublishedScenariosForPositionAsync(position: HandballPosition): Promise<AdminScenario[]> {
   try {
-    const { fetchPublishedScenariosForPosition } = await import('@/services/scenarioService');
     const remote = await fetchPublishedScenariosForPosition(position);
     if (remote.length >= 3) return remote;
   } catch {}
