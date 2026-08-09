@@ -64,9 +64,14 @@ const PLAYING_LEVEL_KEYS: Record<string, string> = {
 
 const DIFFICULTY_KEYS: Record<string, string> = {
   'Beginner': 'difficulty.beginner',
-  'Intermediate': 'difficulty.intermediate',
-  'Advanced': 'difficulty.advanced',
-  'Expert': 'difficulty.expert',
+  'Easy': 'difficulty.easy',
+  'Intermediate': 'difficulty.medium',
+  'Medium': 'difficulty.medium',
+  'Advanced': 'difficulty.hard',
+  'Hard': 'difficulty.hard',
+  'Expert': 'difficulty.elite',
+  'Elite': 'difficulty.elite',
+  'Professional': 'difficulty.professional',
 };
 
 const DEV_GOAL_KEYS: Record<string, string> = {
@@ -140,6 +145,29 @@ const PERSONAL_GOAL_KEYS: Record<string, string> = {
   'Improve communication': 'personalGoal.improveCommunication',
   'Fast break saves': 'personalGoal.fastBreakSaves',
   'Seven metre saves': 'personalGoal.sevenMetreSaves',
+  'Control the tempo': 'personalGoal.controlTempo',
+  'Read the defence': 'personalGoal.readDefence',
+  'Connect with the pivot': 'personalGoal.connectPivot',
+  'Lead the attack': 'personalGoal.leadAttack',
+  'Manage pressure situations': 'personalGoal.managePressure',
+  'Final attack decisions': 'personalGoal.finalAttack',
+  'Shot selection': 'personalGoal.shotSelection',
+  'One-on-one decisions': 'personalGoal.oneOnOne',
+  'Creating space': 'personalGoal.creatingSpace',
+  'Defensive positioning': 'personalGoal.defensivePositioning',
+  'Pressure situations': 'personalGoal.pressureSituations',
+  'Playing with the pivot': 'personalGoal.playingWithPivot',
+  'Improve finishing': 'personalGoal.improveFinishing',
+  'Fast break timing': 'personalGoal.fastBreakTiming',
+  'Read the goalkeeper': 'personalGoal.readGoalkeeper',
+  'Off-ball movement': 'personalGoal.offBallMovement',
+  'Pressure finishing': 'personalGoal.pressureFinishing',
+  'Angle management': 'personalGoal.angleManagement',
+  'Improve positioning': 'personalGoal.improvePositioning',
+  'Blocking decisions': 'personalGoal.blockingDecisions',
+  'Receiving under pressure': 'personalGoal.receivingPressure',
+  'Finishing at six metres': 'personalGoal.finishingSixMetres',
+  'Defensive work': 'personalGoal.defensiveWork',
 };
 
 const SESSION_TYPE_KEYS: Record<string, string> = {
@@ -193,6 +221,39 @@ const ATTACK_DEFENCE_KEYS: Record<string, string> = {
   'Defence': 'term.defence',
 };
 
+const CATEGORY_KEYS: Record<string, string> = {
+  'General': 'category.general',
+  'Goalkeeper': 'position.goalkeeper',
+  'Left Wing': 'position.leftWing',
+  'Right Wing': 'position.rightWing',
+  'Left Back': 'position.leftBack',
+  'Centre Back': 'position.centreBack',
+  'Right Back': 'position.rightBack',
+  'Pivot': 'position.pivot',
+  'Defence': 'term.defence',
+  'Fast Break': 'category.fastBreak',
+  'Power Play': 'category.powerPlay',
+  'Short Handed': 'category.shortHanded',
+  'Match Ending': 'category.matchEnding',
+  'Decision Making': 'category.decisionMaking',
+  'Wing Shots': 'category.wingShots',
+  '7m Throws': 'category.7mThrows',
+  'Reading 6:0 Defence': 'category.reading60Defence',
+  'Finishing at Six Metres': 'category.finishingSixMetres',
+  'Fast Break Timing': 'category.fastBreakTiming',
+  'Pressure': 'category.pressure',
+  'Mental': 'category.mental',
+};
+
+const DEFENSIVE_SYSTEM_KEYS: Record<string, string> = {
+  '6-0': 'defensiveSystem.60',
+  '5-1': 'defensiveSystem.51',
+  '4-2': 'defensiveSystem.42',
+  '3-2-1': 'defensiveSystem.321',
+  'Man-to-Man': 'defensiveSystem.manToMan',
+  'Mixed': 'defensiveSystem.mixed',
+};
+
 function makeTranslator(keyMap: Record<string, string>): (value: string, t: TFunc) => string {
   return (value: string, t: TFunc) => {
     const key = keyMap[value];
@@ -224,5 +285,16 @@ export const translateSkill = makeTranslator(SKILL_KEYS);
 export const translatePlayerType = makeTranslator(PLAYER_TYPE_KEYS);
 export const translateDay = makeTranslator(DAY_KEYS);
 export const translateAttackDefence = makeTranslator(ATTACK_DEFENCE_KEYS);
+export const translateCategory = makeTranslator(CATEGORY_KEYS);
+export const translateDefensiveSystem = makeTranslator(DEFENSIVE_SYSTEM_KEYS);
+
+const ENGLISH_DEFAULT_STATEMENT = 'Today I will focus on the next action, not the previous result.';
+
+export function resolveDefaultStatement(statement: string, t: TFunc): string {
+  if (statement === 'default.statement' || statement === ENGLISH_DEFAULT_STATEMENT) {
+    return t('default.statement');
+  }
+  return statement;
+}
 
 export { TFunc };

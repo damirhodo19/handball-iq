@@ -2,24 +2,25 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Modal, TextInput } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, Bell, Send, Check, X, ChevronRight } from 'lucide-react-native';
+import { Bell, Send, Check, X, ChevronRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { loadPlayers, sendNotification, PlayerProfile } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translatePosition } from '@/lib/translations';
 
-const QUICK_MESSAGES = [
-  'Great job.',
-  'Focus on patience.',
-  "Repeat today's session.",
-  'Prepare for tomorrow\'s match.',
-  'Trust your positioning.',
-  'Reset after every goal.',
-  'Read the shooter before moving.',
-];
+const QUICK_MESSAGE_KEYS = [
+  'cdNotif.quick1',
+  'cdNotif.quick2',
+  'cdNotif.quick3',
+  'cdNotif.quick4',
+  'cdNotif.quick5',
+  'cdNotif.quick6',
+  'cdNotif.quick7',
+] as const;
 
 export default function NotificationsScreen() {
   const { t } = useTranslation();
@@ -51,9 +52,7 @@ export default function NotificationsScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdNotif.title')}</Text>
             <Text style={styles.headerSub}>{t('cdNotif.subtitle')}</Text>
@@ -83,16 +82,18 @@ export default function NotificationsScreen() {
         <Animated.View entering={FadeInDown.delay(50).duration(500)}>
           <Text style={styles.label}>{t('cdNotif.message')}</Text>
           <View style={styles.quickGrid}>
-            {QUICK_MESSAGES.map((msg) => (
+            {QUICK_MESSAGE_KEYS.map((key) => {
+              const msg = t(key);
+              return (
               <TouchableOpacity
-                key={msg}
+                key={key}
                 style={[styles.quickChip, message === msg && styles.quickChipActive]}
                 onPress={() => setMessage(msg)}
                 activeOpacity={0.8}
               >
                 <Text style={[styles.quickChipText, message === msg && styles.quickChipTextActive]}>{msg}</Text>
               </TouchableOpacity>
-            ))}
+            );})}
           </View>
         </Animated.View>
 
@@ -121,7 +122,7 @@ export default function NotificationsScreen() {
 
         {/* Recent Notifications */}
         <Animated.View entering={FadeInDown.delay(200).duration(500)}>
-          <Text style={styles.sectionLabel}>RECENTLY SENT</Text>
+          <Text style={styles.sectionLabel}>{t('cdNotif.recentlySent')}</Text>
           {players.flatMap((p) => p.notifications.map((n) => ({ player: p, notif: n }))).sort((a, b) => b.notif.sentAt.localeCompare(a.notif.sentAt)).slice(0, 5).map(({ player, notif }, i) => (
             <Card key={notif.id} variant="gradient" shadow="card" style={styles.notifCard}>
               <View style={styles.notifHeader}>
@@ -143,7 +144,7 @@ export default function NotificationsScreen() {
             <View style={styles.successCard}>
               <View style={styles.successIcon}><Check size={32} color={Colors.success} /></View>
               <Text style={styles.successText}>{t('cdNotif.success')}</Text>
-              <Text style={styles.successSub}>The player will see it on their home screen.</Text>
+              <Text style={styles.successSub}>{t('cdNotif.successSub')}</Text>
             </View>
           </Animated.View>
         )}
@@ -169,7 +170,7 @@ export default function NotificationsScreen() {
                 >
                   <View style={{ flex: 1 }}>
                     <Text style={styles.modalPlayerName}>{p.name}</Text>
-                    <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} yrs · {p.club}</Text>
+                    <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} {t('common.yrs')} · {p.club}</Text>
                   </View>
                   {selectedPlayer?.id === p.id && <Check size={18} color={Colors.gold} />}
                 </TouchableOpacity>
@@ -186,7 +187,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

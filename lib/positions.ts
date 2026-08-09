@@ -413,55 +413,53 @@ export const ALL_POSITIONS: HandballPosition[] = [
 
 // ── API helpers ────────────────────────────────────────────────────────────────
 
-export function getPositionConfig(pos: HandballPosition | null): PositionConfig {
-  if (!pos) return POSITION_CONFIGS.Goalkeeper;
-  return POSITION_CONFIGS[pos] ?? POSITION_CONFIGS.Goalkeeper;
+/** Returns config only for a validated position — never invents a default. */
+export function getPositionConfig(pos: HandballPosition | null | undefined): PositionConfig | null {
+  if (!pos || !(pos in POSITION_CONFIGS)) return null;
+  return POSITION_CONFIGS[pos];
 }
 
-export function getDevelopmentTitle(pos: HandballPosition | null): string {
-  return getPositionConfig(pos).developmentTitle;
+export function getDevelopmentTitle(pos: HandballPosition | null | undefined): string {
+  return getPositionConfig(pos)?.developmentTitle ?? '';
 }
 
-export function getDailySession(pos: HandballPosition | null): { title: string; desc: string } {
+export function getDailySession(pos: HandballPosition | null | undefined): { title: string; desc: string } | null {
   const cfg = getPositionConfig(pos);
+  if (!cfg) return null;
   return { title: cfg.dailySessionTitle, desc: cfg.dailySessionDesc };
 }
 
-export function getScenarioCategories(pos: HandballPosition | null) {
-  return getPositionConfig(pos).scenarioCategories;
+export function getScenarioCategories(pos: HandballPosition | null | undefined) {
+  return getPositionConfig(pos)?.scenarioCategories ?? [];
 }
 
-export function getPositionMetrics(pos: HandballPosition | null) {
-  return getPositionConfig(pos).metrics;
+export function getPositionMetrics(pos: HandballPosition | null | undefined) {
+  return getPositionConfig(pos)?.metrics ?? [];
 }
 
-export function getMatchDayReminders(pos: HandballPosition | null): string[] {
-  return getPositionConfig(pos).matchDayReminders;
+export function getMatchDayReminders(pos: HandballPosition | null | undefined): string[] {
+  return getPositionConfig(pos)?.matchDayReminders ?? [];
 }
 
-export function getMatchDayPersonalGoals(pos: HandballPosition | null): string[] {
-  return getPositionConfig(pos).matchDayPersonalGoals;
+export function getMatchDayPersonalGoals(pos: HandballPosition | null | undefined): string[] {
+  return getPositionConfig(pos)?.matchDayPersonalGoals ?? [];
 }
 
-export function getMatchScenarioTypes(pos: HandballPosition | null): string[] {
-  return getPositionConfig(pos).matchScenarioTypes;
+export function getMatchScenarioTypes(pos: HandballPosition | null | undefined): string[] {
+  return getPositionConfig(pos)?.matchScenarioTypes ?? [];
 }
 
-export function getCoachReportLabels(pos: HandballPosition | null): { key: string; label: string }[] {
-  return getPositionConfig(pos).coachReportLabels;
+export function getCoachReportLabels(pos: HandballPosition | null | undefined): { key: string; label: string }[] {
+  return getPositionConfig(pos)?.coachReportLabels ?? [];
 }
 
-export function getTrainingPlanFocus(pos: HandballPosition | null): string[] {
-  return getPositionConfig(pos).trainingPlanFocus;
+export function getTrainingPlanFocus(pos: HandballPosition | null | undefined): string[] {
+  return getPositionConfig(pos)?.trainingPlanFocus ?? [];
 }
 
-export function getPlayerTypeOptions(pos: HandballPosition | null): string[] {
-  return getPositionConfig(pos).playerTypeOptions;
+export function getPlayerTypeOptions(pos: HandballPosition | null | undefined): string[] {
+  return getPositionConfig(pos)?.playerTypeOptions ?? [];
 }
-
-// ── Default fallback for old users ─────────────────────────────────────────────
-
-export const DEFAULT_POSITION: HandballPosition = 'Goalkeeper';
 
 // ── Age groups and playing levels ──────────────────────────────────────────────
 

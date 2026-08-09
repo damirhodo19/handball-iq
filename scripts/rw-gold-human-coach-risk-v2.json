@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-08-09T23:26:10.148Z",
+  "bankCount": 65,
+  "top15": [
+    {
+      "id": "scn_bank_881",
+      "familyKey": "rw_60_defender_stays_home",
+      "title": "Right Wing — Defender Stays Home on the Corner",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Beginner",
+      "perception": false,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_884",
+      "familyKey": "rw_60_stay_wide_for_release",
+      "title": "Right Wing — Keep the Release Wide",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Beginner",
+      "perception": false,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_885",
+      "familyKey": "rw_60_step_inside_for_lane",
+      "title": "Right Wing — Step Inside to Clear the Passing Lane",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Intermediate",
+      "perception": true,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_887",
+      "familyKey": "rw_rb_create_width_for_drive",
+      "title": "Right Wing — Create Width for the Right Back’s Drive",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Beginner",
+      "perception": false,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_889",
+      "familyKey": "rw_rb_not_ready_hold_width",
+      "title": "Right Wing — Right Back Is Not Ready",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Beginner",
+      "perception": true,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_895",
+      "familyKey": "rw_pivot_decoy_stay_wide",
+      "title": "Right Wing — Pivot Is a Decoy, Hold the Corner",
+      "risk": 4.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener",
+        "B weakly conditioned"
+      ],
+      "difficulty": "Intermediate",
+      "perception": false,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_880",
+      "familyKey": "rw_def_protect_wing_until_handover",
+      "title": "Right Wing — Defence: Protect the Pass to the Wing Until Handover",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Expert",
+      "perception": true,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_902",
+      "familyKey": "rw_trans_2v1_finish_lane",
+      "title": "Right Wing — First Wave 2v1: Stay Wide as the Pass Option",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Intermediate",
+      "perception": true,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_910",
+      "familyKey": "rw_5v6_safe_width",
+      "title": "Right Wing — 5v6: Hold Width, Do Not Force the Corner",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Intermediate",
+      "perception": false,
+      "attackOrDefence": "Attack"
+    },
+    {
+      "id": "scn_bank_929",
+      "familyKey": "rw_def_close_transition_lane",
+      "title": "Right Wing — Defence in 3v2: Protect Your Sideline Pass Lane",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Advanced",
+      "perception": true,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_931",
+      "familyKey": "rw_def_stop_first_wave",
+      "title": "Right Wing — Defence: Stop the First Wave",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Expert",
+      "perception": false,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_932",
+      "familyKey": "rw_def_2v2_wing_side",
+      "title": "Right Wing — Defence: Solve the 2v2 on Your Side",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Expert",
+      "perception": false,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_933",
+      "familyKey": "rw_def_deny_long_outlet",
+      "title": "Right Wing — Defence: Deny the Long First Pass",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Advanced",
+      "perception": false,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_934",
+      "familyKey": "rw_def_ball_vs_wing_choice",
+      "title": "Right Wing — Defence: Ball or Wing?",
+      "risk": 4,
+      "verdict": "KEEP",
+      "reasons": [
+        "B weakly conditioned"
+      ],
+      "difficulty": "Expert",
+      "perception": false,
+      "attackOrDefence": "Defence"
+    },
+    {
+      "id": "scn_bank_882",
+      "familyKey": "rw_60_defender_late_recover",
+      "title": "Right Wing — Catch Before the Late Recovery",
+      "risk": 3.5,
+      "verdict": "KEEP",
+      "reasons": [
+        "Signal: opener"
+      ],
+      "difficulty": "Intermediate",
+      "perception": true,
+      "attackOrDefence": "Attack"
+    }
+  ],
+  "top15VerdictCounts": {
+    "KEEP": 15
+  },
+  "bankRisk": {
+    "avg": 3.3,
+    "max": 4.5,
+    "min": 2,
+    "rewriteOrRemoveInTop15": 0,
+    "polishOrKeepInTop15": 15
+  },
+  "systemicTemplateCluster": false,
+  "readyForHumanReview": true,
+  "note": "Goal is not zero risk. Top 15 should be mostly POLISH/KEEP."
+}

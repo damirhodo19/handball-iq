@@ -1,0 +1,1582 @@
+[
+  {
+    "familyKey": "cb_cross_unnecessary",
+    "title": {
+      "en": "Centre Back — Crossing Is Unnecessary",
+      "hr": "Srednji vanjski — križanje nije potrebno",
+      "de": "Rückraum Mitte — Kreuzen ist unnötig"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 24,
+    "score": "14:13",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "crossing",
+      "shotReading",
+      "screening",
+      "pressureDecisions",
+      "defensiveReading"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 14:13 at 24' against a set 6:0. You have just bound the central defender with a hard step; he is half a step late recovering. Your left back is already free in a clean mid-range lane with the block arm still low. The right back calls for a cross that would swap your positions — but the advantage is already on the left.",
+      "hr": "Vodite 14:13 u 24. minuti protiv postavljene 6:0. Upravo si vezao središnjeg braniča tvrdim korakom; kasni pola koraka u povratku. Lijevi vanjski već je slobodan u čistoj liniji iz srednje distance, a ruka bloka još je niska. Desni vanjski zove križanje koje bi zamijenilo pozicije — ali prednost je već lijevo.",
+      "de": "Ihr führt 14:13 in Minute 24 gegen stehende 6:0. Du hast den zentralen Verteidiger gerade mit hartem Schritt gebunden; er holt einen halben Schritt spät auf. Dein Linker Rückraum ist schon frei in sauberer Mittelstrecke, Blockarm noch tief. Der Rechte Rückraum ruft Kreuzen — aber der Vorteil liegt schon links."
+    },
+    "question": {
+      "en": "With the left back already free, what does the organizer do?",
+      "hr": "Kad je lijevi vanjski već slobodan, što radi organizator?",
+      "de": "Wenn der Linke Rückraum schon frei ist — was macht der Organisator?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Skip the cross: play early to the free left back before the recovering defender closes the lane",
+          "hr": "Preskoči križanje: rano dodaj slobodnom lijevom vanjskom prije nego se branič zatvori",
+          "de": "Kreuzen lassen: früh zum freien Linken Rückraum, bevor der Verteidiger schließt"
+        },
+        "feedback": {
+          "en": "Correct — when the advantage already exists, a cross only burns the window.",
+          "hr": "Točno — kad prednost već postoji, križanje samo troši prozor.",
+          "de": "Richtig — wenn der Vorteil schon da ist, verbrennt Kreuzen nur das Fenster."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Take one more binding step yourself, then release to the left if the lane stays open",
+          "hr": "Uzmi još jedan vezujući korak sam, pa pusti lijevo ako linija ostane otvorena",
+          "de": "Noch einen Bindungsschritt selbst, dann links abgeben wenn die Bahn offen bleibt"
+        },
+        "feedback": {
+          "en": "Good binding habit, but the left back is already free — delay is the main risk.",
+          "hr": "Dobra navika vezivanja, ali lijevi vanjski je već slobodan — odgoda je glavni rizik.",
+          "de": "Gute Bindungsgewohnheit, aber der Linke ist schon frei — Verzögerung ist das Risiko."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Cross with the right back first to “create” the same advantage from the other side",
+          "hr": "Prvo se križaj s desnim vanjskim da “stvoriš” istu prednost s druge strane",
+          "de": "Zuerst mit dem Rechten kreuzen, um denselben Vorteil von der anderen Seite zu “bauen”"
+        },
+        "feedback": {
+          "en": "Risky — you invent work the defence already gave you for free.",
+          "hr": "Rizično — izmišljaš posao koji ti je obrana već dala besplatno.",
+          "de": "Riskant — du erfindest Arbeit, die die Abwehr schon geschenkt hat."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Ignore the free left back and force a deep contested shot through the recovering centre",
+          "hr": "Ignoriraj slobodnog lijevog vanjskog i forsiraj duboki otežan šut kroz vraćajućeg središnjeg",
+          "de": "Den freien Linken ignorieren und einen tiefen umkämpften Wurf durch den zurückkehrenden Zentralen erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you throw away the open surplus for the hardest look on the floor.",
+          "hr": "Loše — bacaš otvoreni višak za najteži šut na terenu.",
+          "de": "Schlecht — du verschenkst den offenen Vorteil für den schwersten Wurf."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: central defender half a step late and left back already free with a low block arm. The organizer’s job is to play the advantage, not manufacture a new one with a cross. One more bind (B) can be right when the lane is not yet open; here it only costs time.",
+      "hr": "Signal: središnji branič kasni pola koraka, a lijevi vanjski je već slobodan uz nisku ruku bloka. Posao organizatora je odigrati prednost, ne praviti novu križanjem. Još jedno vezivanje (B) ima smisla kad linija još nije otvorena; ovdje samo troši vrijeme.",
+      "de": "Signal: Zentraler einen halben Schritt spät, Linker schon frei bei tiefem Blockarm. Der Organisator spielt den Vorteil — er kreuzt nicht neu."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the free left-back lane already exists; another binding step only gives the late central defender time to recover. B is correct when you still need to create the surplus — not when it is already on the floor.",
+      "hr": "A je bolji od B jer slobodna linija lijevog vanjskog već postoji; još jedan vezujući korak samo daje kasnom središnjem braniču vrijeme da se vrati. B je točan kad još trebaš stvoriti višak — ne kad je već na terenu.",
+      "de": "A schlägt B, weil die freie Linke-Rückraum-Bahn schon da ist; ein weiterer Bindungsschritt schenkt dem späten Zentralen nur Zeit."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_punish_late_switch",
+    "title": {
+      "en": "Centre Back — Punish a Late Defensive Switch",
+      "hr": "Srednji vanjski — kazni kasnu zamjenu u obrani",
+      "de": "Rückraum Mitte — späten Abwehrwechsel bestrafen"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 31,
+    "score": "17:17",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "defensiveReading",
+      "decisionMaking",
+      "screening",
+      "pressureDecisions"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 17:17 at 31' against a 6:0. You start a short exchange with your left back; the central and left-half defenders begin to switch. The switch is late — for one beat both look at the ball while the left-back lane opens a body width and the near block arm is still turning. Your pivot holds the inside hip.",
+      "hr": "Neriješeno je 17:17 u 31. minuti protiv 6:0. Krećeš kratku razmjenu s lijevim vanjskim; središnji i lijevi polubranitelj kreću u zamjenu. Zamjena kasni — jedan takt obojica gledaju loptu dok se linija lijevog vanjskog otvara za širinu tijela, a bliža ruka bloka se još okreće. Pivot drži unutarnji bok.",
+      "de": "Unentschieden 17:17 in Minute 31 gegen 6:0. Du startest kurzen Austausch mit dem Linken; Zentraler und linker Halber beginnen den Wechsel. Der Wechsel kommt spät — einen Takt schauen beide zum Ball, die Bahn des Linken öffnet sich körperbreit, der nahe Blockarm dreht noch. Der Kreisläufer hält die Innenhüfte."
+    },
+    "question": {
+      "en": "What do you punish in a late switch?",
+      "hr": "Što kažnjavaš u kasnoj zamjeni?",
+      "de": "Was bestrafst du beim späten Wechsel?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Attack the open left-back lane immediately while both switchers are still looking at the ball",
+          "hr": "Odmah napadni otvorenu liniju lijevog vanjskog dok oba u zamjeni još gledaju loptu",
+          "de": "Sofort die offene Linke-Rückraum-Bahn angreifen, solange beide Wechsler noch zum Ball schauen"
+        },
+        "feedback": {
+          "en": "Correct — a late switch is punished in the beat before the new match-up settles.",
+          "hr": "Točno — kasna zamjena kažnjava se u taktu prije nego se novo čuvanje slegne.",
+          "de": "Richtig — ein später Wechsel wird im Takt vor dem neuen Match-up bestraft."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Feed the pivot on the held inside hip if the left lane closes a half-step sooner than expected",
+          "hr": "Dodaj pivotu na držani unutarnji bok ako se lijeva linija zatvori pola koraka ranije nego očekuješ",
+          "de": "Zum Kreisläufer an der gehaltenen Innenhüfte, wenn die linke Bahn einen halben Schritt früher schließt"
+        },
+        "feedback": {
+          "en": "Good second option — but the first cue is the open perimeter lane during the late switch.",
+          "hr": "Dobra druga opcija — ali prvi signal je otvorena vanjska linija tijekom kasne zamjene.",
+          "de": "Gute Zweitoption — erstes Signal ist die offene Außenbahn im späten Wechsel."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Wait for the switch to finish, then restart a full new attack from the middle",
+          "hr": "Pričekaj da zamjena završi, pa kreni potpuno novi napad iz sredine",
+          "de": "Den Wechsel fertig werden lassen und dann einen komplett neuen Angriff aus der Mitte starten"
+        },
+        "feedback": {
+          "en": "Risky — you gift the defence the settle they were late for.",
+          "hr": "Rizično — poklanjaš obrani slijeganje zbog kojeg su kasnili.",
+          "de": "Riskant — du schenkst der Abwehr das Setzen, für das sie zu spät war."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Cross away from the open lane to the covered right side",
+          "hr": "Križaj se od otvorene linije na pokrivenu desnu stranu",
+          "de": "Weg von der offenen Bahn auf die gedeckte rechte Seite kreuzen"
+        },
+        "feedback": {
+          "en": "Poor — you leave the punishment zone and enter a settled match-up.",
+          "hr": "Loše — napuštaš zonu kazne i ulaziš u slegnuto čuvanje.",
+          "de": "Schlecht — du verlässt die Strafzone und gehst ins gesetzte Match-up."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: late switch with both defenders looking at the ball and a body-width left lane. Punish that beat immediately through the free left back. Pivot on the held hip (B) is the correct fallback if the lane closes a half-step early — not the first read.",
+      "hr": "Signal: kasna zamjena, oba braniča gledaju loptu i linija lijevo široka kao tijelo. Kazni taj takt odmah preko slobodnog lijevog vanjskog. Pivot na držanom boku (B) je ispravan rezervni plan ako linija umre pola koraka ranije — ne prvo čitanje.",
+      "de": "Signal: später Wechsel, beide schauen zum Ball, körperbreite linke Bahn — sofort bestrafen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the late-switch window is on the perimeter first; the pivot is a safety valve if that lane closes early. Choosing B first ignores the clearer, higher-percentage cue on the left.",
+      "hr": "A je bolji od B jer je prozor kasne zamjene prvo na vanjskom; pivot je sigurnosni ventil ako se ta linija rano zatvori. Biranje B prvo zanemaruje jasniji, bolji signal lijevo.",
+      "de": "A schlägt B, weil das Spätwechsel-Fenster zuerst außen liegt; der Kreisläufer ist Ventil, nicht Erstlesung."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_pivot_direct_feed",
+    "title": {
+      "en": "Centre Back — Direct Pass to the Open Pivot",
+      "hr": "Srednji vanjski — izravno dodavanje otvorenom pivotu",
+      "de": "Rückraum Mitte — direkter Pass zum offenen Kreisläufer"
+    },
+    "difficulty": "Beginner",
+    "pressureLevel": "Low",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 9,
+    "score": "5:4",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "screening"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 5:4 at 9' against a set 6:0. You receive at the middle of nine metres. Your pivot has sealed the inside hip of the central defender and shows a clear target hand between the six-metre line and the block. The defender in front of you stays high and does not drop. No wing is freer than the pivot.",
+      "hr": "Vodite 5:4 u 9. minuti protiv postavljene 6:0. Primaš na sredini na devet metara. Pivot je zatvorio unutarnji bok središnjeg braniča i pokazuje čistu ruku između šest metara i bloka. Branič ispred tebe ostaje visoko i ne pada. Nijedno krilo nije slobodnije od pivota.",
+      "de": "Ihr führt 5:4 in Minute 9 gegen stehende 6:0. Du bekommst in der Mitte auf neun Metern. Der Kreisläufer hat die Innenhüfte des Zentralen abgedichtet und zeigt eine klare Zielhand zwischen Sechsmetermarke und Block. Dein Verteidiger bleibt hoch und fällt nicht. Kein Außen ist freier als der Kreisläufer."
+    },
+    "question": {
+      "en": "Where does the organizer play when the pivot is clearly open?",
+      "hr": "Kamo organizator dodaje kad je pivot jasno otvoren?",
+      "de": "Wohin spielt der Organisator, wenn der Kreisläufer klar offen ist?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Play a firm early pass to the pivot’s target hand before the central defender can recover the hip",
+          "hr": "Odigraj čvrsto rano dodavanje u pivota u otvorenu ruku za prijem prije nego središnji branič vrati bok",
+          "de": "Frühen festen Pass in die Zielhand des Kreisläufers, bevor der Zentrale die Hüfte zurückholt"
+        },
+        "feedback": {
+          "en": "Correct — a sealed hip and a clear target hand is the simplest CB finish.",
+          "hr": "Točno — zatvoren bok i jasna ruka za prijem najjednostavniji su završetak srednjeg vanjskog.",
+          "de": "Richtig — abgedichtete Hüfte und klare Zielhand ist der einfachste RM-Abschluss."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Take one short fake to lift the near block arm, then play the same pivot pass",
+          "hr": "Uzmi kratku varku da podigneš bližu ruku bloka, pa odigraj isto dodavanje pivotu",
+          "de": "Kurze Finte zum Heben des nahen Blockarms, dann denselben Pass zum Kreisläufer"
+        },
+        "feedback": {
+          "en": "Good when the arm is already high; here the target is already clear without the fake.",
+          "hr": "Dobro kad je ruka već visoka; ovdje je cilj jasan i bez varke.",
+          "de": "Gut bei schon hohem Arm; hier ist das Ziel ohne Finte klar."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Skip the open pivot and swing wide to a covered wing",
+          "hr": "Preskoči otvorenog pivota i prebaci široko na pokriveno krilo",
+          "de": "Den offenen Kreisläufer überspringen und breit auf den gedeckten Außen"
+        },
+        "feedback": {
+          "en": "Risky — you leave the best look for a worse angle.",
+          "hr": "Rizično — ostavljaš najbolji šut za lošiji kut.",
+          "de": "Riskant — du lässt den besten Abschluss für den schlechteren Winkel."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long static shot over the high defender while the pivot stands free",
+          "hr": "Forsiraj daleki statičan šut preko visokog braniča dok pivot stoji slobodan",
+          "de": "Langen Standwurf über den hohen Verteidiger erzwingen, während der Kreisläufer frei steht"
+        },
+        "feedback": {
+          "en": "Poor — you ignore the open inside man you organized.",
+          "hr": "Loše — zanemaruješ otvorenog unutarnjeg kojeg si organizirao.",
+          "de": "Schlecht — du ignorierst den offenen Innenmann, den du organisiert hast."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: pivot sealed on the inside hip with a clear target hand, defender stays high. Play early and firm to the pivot. A short fake (B) is useful only if the block arm already threatens the lane.",
+      "hr": "Signal: pivot zatvoren na unutarnjem boku s jasno ponuđenom rukom za prijem, branič ostaje visoko. Rano i čvrsto dodaj pivotu. Kratka varka (B) koristi samo ako ruka bloka već prijeti prolazu.",
+      "de": "Signal: Kreisläufer an Innenhüfte abgedichtet, klare Zielhand — früh und fest passen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the target hand is already free; a fake only adds a beat for the central defender to reclaim the hip. B becomes right when the near block arm already sits in the passing lane.",
+      "hr": "A je bolji od B jer je ruka za prijem već slobodna; varka samo dodaje takt da središnji branič vrati bok. B postaje točan kad bliža ruka bloka već sjedi u liniji dodavanja.",
+      "de": "A schlägt B, weil die Zielhand schon frei ist; die Finte schenkt dem Zentralen nur einen Takt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_pivot_feed_not_available",
+    "title": {
+      "en": "Centre Back — Pivot Pass Not Available",
+      "hr": "Srednji vanjski — dodavanje pivotu nije dostupno",
+      "de": "Rückraum Mitte — Pass zum Kreisläufer nicht verfügbar"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 16,
+    "score": "9:9",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading",
+      "screening"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 9:9 at 16' against a 6:0. Your pivot raises a hand between two defenders, so the pass looks open at first glance. On a second read the near defender’s outside foot is already shading the lane and his hip is half a step inside the target. The left back shows a cleaner mid-range window with a low block arm.",
+      "hr": "Neriješeno je 9:9 u 16. minuti protiv 6:0. Pivot diže ruku između dva braniča, pa dodavanje na prvi pogled izgleda otvoreno. Na drugom čitanju vanjsko stopalo bližeg braniča već sjenuje prolaz, a bok mu je pola koraka unutar cilja. Lijevi vanjski pokazuje čišći prozor iz srednje distance uz nisku ruku bloka.",
+      "de": "Unentschieden 9:9 in Minute 16 gegen 6:0. Der Kreisläufer hebt die Hand zwischen zwei Verteidigern — der Pass wirkt zuerst offen. Im Zweitlesen schattet der nahe Verteidiger mit dem Außenfuß schon die Bahn, Hüfte einen halben Schritt im Ziel. Der Linke Rückraum zeigt ein saubereres Mittelstreckenfenster bei tiefem Blockarm."
+    },
+    "question": {
+      "en": "What does the second read tell you about the pivot pass?",
+      "hr": "Što ti drugo čitanje kaže o dodavanju pivotu?",
+      "de": "Was sagt dir das Zweitlesen über den Pass zum Kreisläufer?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Leave the fake-open pivot: play the cleaner left-back window before the shaded lane steals the ball",
+          "hr": "Ostavi lažno otvorenog pivota: odigraj čišći prozor lijevog vanjskog prije nego osjenčani prolaz ukrade loptu",
+          "de": "Den scheinbar offenen Kreisläufer lassen: das sauberere Linke-Fenster spielen, bevor die beschattete Bahn den Ball stiehlt"
+        },
+        "feedback": {
+          "en": "Correct — a raised hand is not an open pass when the foot already shades the lane.",
+          "hr": "Točno — dignuta ruka nije otvoreno dodavanje kad stopalo već sjenuje prolaz.",
+          "de": "Richtig — gehobene Hand ist kein offener Pass, wenn der Fuß die Bahn schon schattet."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Recycle to the right back and restart if neither the pivot nor the left window is clean in the next beat",
+          "hr": "Vrati na desnog vanjskog i kreni iznova ako u sljedećem taktu ni pivot ni lijevi prozor nisu čisti",
+          "de": "Zum Rechten zurück und neu aufbauen, wenn weder Kreisläufer noch linkes Fenster im nächsten Takt sauber sind"
+        },
+        "feedback": {
+          "en": "Good control option, but here the left window is already cleaner than the shaded pivot.",
+          "hr": "Dobra kontrolna opcija, ali ovdje je lijevi prozor već čišći od osjenčanog pivota.",
+          "de": "Gute Kontrolloption, aber das linke Fenster ist schon sauberer als der beschattete Kreisläufer."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force a bounce into the shaded pivot because the hand is up",
+          "hr": "Forsiraj odskok u osjenčanog pivota jer je ruka gore",
+          "de": "Einen Bounce in den beschatteten Kreisläufer erzwingen, weil die Hand oben ist"
+        },
+        "feedback": {
+          "en": "Risky — that is exactly the steal the shading foot is waiting for.",
+          "hr": "Rizično — upravo tu krađu čeka stopalo koje sjenuje.",
+          "de": "Riskant — genau den Ball klaut der schattende Fuß."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Hold and wait for the pivot to become more open without moving the defence",
+          "hr": "Drži i čekaj da pivot postane otvoreniji bez pomicanja obrane",
+          "de": "Halten und warten, dass der Kreisläufer offener wird, ohne die Abwehr zu bewegen"
+        },
+        "feedback": {
+          "en": "Poor — empty waiting invites passive play and never clears a shaded lane.",
+          "hr": "Loše — prazno čekanje zove pasivnu igru i nikad ne čisti osjenčani prolaz.",
+          "de": "Schlecht — leeres Warten lädt Passivspiel ein und öffnet keine beschattete Bahn."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: pivot hand up, but near defender’s outside foot already shades the lane. Second read kills the pass — play the cleaner left-back window. Recycle (B) is right only if that window also closes.",
+      "hr": "Signal: pivota ruka gore, ali vanjsko stopalo bližeg braniča već sjenuje prolaz. Drugo čitanje ubija dodavanje — odigraj čišći prozor lijevog vanjskog. Povratak (B) je točan samo ako i taj prozor umre.",
+      "de": "Signal: Hand oben, aber Außenfuß schattet schon — Zweitlesen tötet den Pass."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because a clean left-back window is already present; recycling first throws away a higher-percentage look. B is the right control tool when both the pivot and the left window are unclean.",
+      "hr": "A je bolji od B jer čist prozor lijevog vanjskog već postoji; povratak prvo baca bolji šut. B je pravi kontrolni alat kad ni pivot ni lijevi prozor nisu čisti.",
+      "de": "A schlägt B, weil das saubere Linke-Fenster schon da ist; Zurückspielen zuerst verschenkt die bessere Quote."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_pivot_as_decoy",
+    "title": {
+      "en": "Centre Back — Pivot as Decoy",
+      "hr": "Srednji vanjski — pivot kao mamac",
+      "de": "Rückraum Mitte — Kreisläufer als Köder"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 28,
+    "score": "15:14",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "screening"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 15:14 at 28' against a 6:0. Your pivot starts a hard seal on the central defender; both half defenders shade inside toward him. The pass into the pivot is tight. At the same moment your right back’s defender leaves a half-step of space outside because he helped on the seal — the right mid-range lane opens with a low block arm.",
+      "hr": "Vodite 15:14 u 28. minuti protiv 6:0. Pivot kreće tvrdi držanje na središnjeg braniča; oba polubranitelja sjene unutra prema njemu. Dodavanje u pivota je usko. Istodobno branič tvog desnog vanjskog ostavlja pola koraka prostora vani jer je pomogao na držanju — desna linija iz srednje distance otvara se uz nisku ruku bloka.",
+      "de": "Ihr führt 15:14 in Minute 28 gegen 6:0. Der Kreisläufer setzt einen harten Siegel auf den Zentralen; beide Halben schatten innen zu ihm. Der Pass zum Kreisläufer ist eng. Gleichzeitig lässt der Verteidiger deines Rechten einen halben Schritt außen, weil er zum Siegel half — die rechte Mittelstrecke öffnet sich bei tiefem Blockarm."
+    },
+    "question": {
+      "en": "How do you use a pivot who is attracting help?",
+      "hr": "Kako koristiš pivota koji privlači pomoć?",
+      "de": "Wie nutzt du einen Kreisläufer, der Hilfe anzieht?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Treat the pivot as decoy: skip the tight inside pass and release early to the freer right back",
+          "hr": "Tretiraj pivota kao mamac: preskoči usko unutarnje dodavanje i rano pusti slobodnijem desnom vanjskom",
+          "de": "Kreisläufer als Köder: den engen Innenpass lassen und früh zum freieren Rechten abgeben"
+        },
+        "feedback": {
+          "en": "Correct — when help collapses on the seal, the surplus appears on the perimeter.",
+          "hr": "Točno — kad pomoć pada na držanje, višak se pojavi na vanjskom.",
+          "de": "Richtig — wenn Hilfe auf den Siegel fällt, entsteht der Vorteil außen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Hold one more beat and play the pivot only if a half-defender jumps fully past the target hand",
+          "hr": "Drži još jedan takt i dodaj pivotu samo ako polubranitelj potpuno preskoči ruku za prijem",
+          "de": "Einen Takt halten und nur zum Kreisläufer spielen, wenn ein Halber die Zielhand voll überspringt"
+        },
+        "feedback": {
+          "en": "Good if a true overhelp appears; here the cleaner cue is already the right-back space.",
+          "hr": "Dobro ako se pojavi pravo pretjerano pomaganje; ovdje je čišći signal već prostor desnog vanjskog.",
+          "de": "Gut bei echtem Überhelfen; hier ist das sauberere Signal schon der Rechte."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the tight bounce into the sealed pivot while both half defenders are shading",
+          "hr": "Forsiraj uski odskok u pokrivenog pivota dok oba polubranitelja sjene",
+          "de": "Den engen Bounce in den gesiegelten Kreisläufer erzwingen, während beide Halben schatten"
+        },
+        "feedback": {
+          "en": "Risky — that is the steal the shaded help is built for.",
+          "hr": "Rizično — upravo tu krađu sjena pomoći i čeka.",
+          "de": "Riskant — genau den Ball klaut die schattende Hilfe."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Ignore both the decoy and the open right lane and shoot into the collapsed middle",
+          "hr": "Ignoriraj i mamac i otvorenu desnu liniju i šutiraj u srušenu sredinu",
+          "de": "Köder und offene rechte Bahn ignorieren und in die kollabierte Mitte werfen"
+        },
+        "feedback": {
+          "en": "Poor — you attack the most crowded zone the decoy just created.",
+          "hr": "Loše — napadaš najgušću zonu koju je mamac upravo stvorio.",
+          "de": "Schlecht — du greifst die vollste Zone an, die der Köder gerade schuf."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: pivot seal attracts both half defenders and the right-back lane opens a half-step. Use the pivot as decoy and release early right. Playing the pivot (B) waits for a true overhelp that is not yet fully there.",
+      "hr": "Signal: pivota držanje privlači oba polubranitelja, a linija desnog vanjskog otvara se pola koraka. Koristi pivota kao mamac i rano pusti desno. Dodavanje pivotu (B) čeka pravo pretjerano pomaganje koje još nije potpuno tu.",
+      "de": "Signal: Siegel zieht beide Halben, rechte Bahn öffnet sich — Köder nutzen, früh rechts abgeben."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the surplus from the decoy already sits on the right back; waiting for a fuller overhelp risks closing that cleaner lane. B is correct only when a half defender fully jumps past the target hand.",
+      "hr": "A je bolji od B jer višak od mamca već sjedi na desnom vanjskom; čekanje punijeg pretjeranog pomaganja rizikuje zatvaranje te čišće linije. B je točan samo kad polubranitelj potpuno preskoči ruku za prijem.",
+      "de": "A schlägt B, weil der Köder-Vorteil schon beim Rechten liegt; auf volles Überhelfen zu warten schließt oft die sauberere Bahn."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_double_pivot_6v6",
+    "title": {
+      "en": "Centre Back — Two Pivots in 6v6",
+      "hr": "Srednji vanjski — dva pivota u 6 na 6",
+      "de": "Rückraum Mitte — zwei Kreisläufer im 6 gegen 6"
+    },
+    "difficulty": "Expert",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 34,
+    "score": "19:18",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 19:18 at 34' in 6v6 with two pivots: one sealed left of the six-metre line, one starting between right half and centre. The 6:0 compresses toward both. You receive in the middle. The left wing holds extreme width; the defender in front of you steps to help the nearer pivot and his outside hip opens toward the right back.",
+      "hr": "Vodite 19:18 u 34. minuti u 6 na 6 s dva pivota: jedan zatvara lijevo na šest metara, drugi kreće između desnog polubranitelja i sredine. Obrana 6:0 stišće se prema oba. Primaš u sredini. Lijevo krilo drži ekstremnu širinu; branič ispred tebe ulazi u pomoć bližem pivotu i vanjski mu se bok otvara prema desnom vanjskom.",
+      "de": "Ihr führt 19:18 in Minute 34 im 6 gegen 6 mit zwei Kreisläufern: einer links auf sechs Metern, einer zwischen rechtem Halben und Mitte. Die 6:0 komprimiert auf beide. Du bekommst in der Mitte. Linksaußen hält extreme Breite; dein Verteidiger hilft zum nahen Kreisläufer — äußere Hüfte öffnet sich zum Rechten."
+    },
+    "question": {
+      "en": "Where does the surplus appear with two pivots compressing a 6:0?",
+      "hr": "Gdje nastaje višak kad dva pivota stišću 6:0?",
+      "de": "Wo entsteht der Vorteil, wenn zwei Kreisläufer die 6:0 komprimieren?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Play early to the right back into the space opened when your defender helped the nearer pivot",
+          "hr": "Rano dodaj desnom vanjskom u prostor koji se otvorio kad je tvoj branič pomogao bližem pivotu",
+          "de": "Früh zum Rechten in den Raum, der entstand als dein Verteidiger dem nahen Kreisläufer half"
+        },
+        "feedback": {
+          "en": "Correct — two pivots compress the line; the help creates the perimeter surplus.",
+          "hr": "Točno — dva pivota stišću liniju; pomoć stvara vanjski višak.",
+          "de": "Richtig — zwei Kreisläufer komprimieren die Linie; die Hilfe schafft den Außen-Vorteil."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Use the extreme left wing if the right lane closes and the far defender is late sliding",
+          "hr": "Iskoristi ekstremno lijevo krilo ako se desna linija zatvori i daleki branič kasni u klizanju",
+          "de": "Extremen Linksaußen nutzen, wenn die rechte Bahn schließt und der ferne Verteidiger spät schiebt"
+        },
+        "feedback": {
+          "en": "Good width option, but the first surplus is the right-back space from the help step.",
+          "hr": "Dobra opcija širine, ali prvi višak je prostor desnog vanjskog od koraka pomoći.",
+          "de": "Gute Breitenoption, aber der erste Vorteil ist der Rechte durch den Hilfeschritt."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force a contested bounce into the nearer pivot while the helper is already on his hip",
+          "hr": "Forsiraj otežan odskok u bližeg pivota dok je pomagač već na njegovu boku",
+          "de": "Umkämpften Bounce auf den nahen Kreisläufer erzwingen, während der Helfer schon an seiner Hüfte ist"
+        },
+        "feedback": {
+          "en": "Risky — you pass into the help you just attracted.",
+          "hr": "Rizično — dodaješ u pomoć koju si upravo privukao.",
+          "de": "Riskant — du passt in die Hilfe, die du gerade angezogen hast."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Stand and shoot into the compressed middle over both pivots",
+          "hr": "Stoj i šutiraj u stisnutu sredinu preko oba pivota",
+          "de": "Stehen und in die komprimierte Mitte über beide Kreisläufer werfen"
+        },
+        "feedback": {
+          "en": "Poor — two pivots made the middle denser, not freer.",
+          "hr": "Loše — dva pivota učinila su sredinu gušćom, ne slobodnijom.",
+          "de": "Schlecht — zwei Kreisläufer machen die Mitte dichter, nicht freier."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: two pivots compress the 6:0 and your defender helps the nearer one, opening the right-back lane. Organize to that surplus first. The extreme wing (B) is the correct second width option.",
+      "hr": "Signal: dva pivota stišću 6:0, a tvoj branič pomaže bližem — otvara se linija desnog vanjskog. Prvo organiziraj taj višak. Ekstremno krilo (B) je ispravna druga opcija širine.",
+      "de": "Signal: zwei Kreisläufer komprimieren, Helfer öffnet den Rechten — zuerst dorthin organisieren."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the help step opens the right back first and closest; the extreme wing needs an extra slide-late cue. B is right when the right lane closes and the far defender is late.",
+      "hr": "A je bolji od B jer korak pomoći prvo i najbliže otvara desnog vanjskog; ekstremno krilo treba dodatni signal kasnog klizanja. B je točan kad desna linija umre i daleki branič kasni.",
+      "de": "A schlägt B, weil der Hilfeschritt zuerst den Rechten öffnet; der extreme Außen braucht ein Extra-Signal."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_wing_lw_release",
+    "title": {
+      "en": "Centre Back — Release to the Left Wing",
+      "hr": "Srednji vanjski — puštanje lijevom krilu",
+      "de": "Rückraum Mitte — Abspielen zum Linksaußen"
+    },
+    "difficulty": "Beginner",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 21,
+    "score": "12:11",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "crossing",
+      "angleSelection",
+      "defensiveReading"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 12:11 at 21' against a 6:0. You bind the central defender toward the right; the left-side half and wing defenders both slide inside a step. Your left wing holds the corner and is a clear step ahead of his recovering marker. The left-back lane is only average.",
+      "hr": "Vodite 12:11 u 21. minuti protiv 6:0. Vežeš središnjeg braniča prema desno; lijevi polubranitelj i krilni branič oba kliznu unutra za korak. Tvoje lijevo krilo drži kut i jasno je korak ispred svog vraćajućeg čuvara. Linija lijevog vanjskog samo je prosječna.",
+      "de": "Ihr führt 12:11 in Minute 21 gegen 6:0. Du bindest den Zentralen nach rechts; linker Halber und Außenverteidiger schieben beide einen Schritt innen. Dein Linksaußen hält die Ecke und ist klar einen Schritt vor seinem zurückkehrenden Bewacher. Die Linke-Rückraum-Bahn ist nur durchschnittlich."
+    },
+    "question": {
+      "en": "Where do you release after binding the middle to the right?",
+      "hr": "Kamo puštaš nakon vezivanja sredine prema desno?",
+      "de": "Wohin spielst du ab, nachdem du die Mitte nach rechts gebunden hast?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Release early to the left wing while he is still a step ahead of the recovering marker",
+          "hr": "Rano pusti lijevom krilu dok je još korak ispred vraćajućeg čuvara",
+          "de": "Früh zum Linksaußen abspielen, solange er noch einen Schritt vor dem zurückkehrenden Bewacher ist"
+        },
+        "feedback": {
+          "en": "Correct — the bind pulled help inside; the freest man is the wide left wing.",
+          "hr": "Točno — vezivanje je povuklo pomoć unutra; najslobodniji je široko lijevo krilo.",
+          "de": "Richtig — die Bindung zog Hilfe innen; der Freie ist der breite Linksaußen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Play the left back if his angle improves to a clear mid-range before the wing window closes",
+          "hr": "Dodaj lijevom vanjskom ako mu se kut popravi do čiste srednje distance prije zatvaranja krila",
+          "de": "Zum Linken Rückraum, wenn sein Winkel zur klaren Mittelstrecke wird bevor das Außenfenster schließt"
+        },
+        "feedback": {
+          "en": "Good if the left-back look becomes truly clean; here it is still only average.",
+          "hr": "Dobro ako šut lijevog vanjskog postane stvarno čist; ovdje je još samo prosječan.",
+          "de": "Gut wenn der Linke wirklich sauber wird; hier ist er noch nur mittel."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Keep the ball and drive back into the crowded middle you just filled",
+          "hr": "Zadrži loptu i prodri natrag u gužvu sredine koju si upravo napunio",
+          "de": "Den Ball halten und zurück in die volle Mitte treiben, die du gerade gefüllt hast"
+        },
+        "feedback": {
+          "en": "Risky — you attack the zone you emptied for the wing.",
+          "hr": "Rizično — napadaš zonu koju si ispraznio za krilo.",
+          "de": "Riskant — du greifst die Zone an, die du für den Außen geleert hast."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long pass to the covered right wing against the slide",
+          "hr": "Forsiraj dugo dodavanje na pokriveno desno krilo protiv klizanja",
+          "de": "Langen Pass auf den gedeckten Rechtsaußen gegen die Verschiebung erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you throw across the help into the worse side.",
+          "hr": "Loše — bacaš preko pomoći na lošiju stranu.",
+          "de": "Schlecht — du wirfst über die Hilfe auf die schlechtere Seite."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: bind to the right pulls left-side help inside and the left wing is a step ahead. Release early to that wing. Left back (B) only if his mid-range becomes clearly better than the wing window.",
+      "hr": "Signal: vezivanje desno vuče lijevu pomoć unutra, a lijevo krilo je korak ispred. Rano pusti tom krilu. Lijevi vanjski (B) samo ako mu srednja distanca postane jasno bolja od prozora krila.",
+      "de": "Signal: Bindung nach rechts zieht links Hilfe innen — früh zum führenden Linksaußen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the left wing is already a step ahead while the left-back look is only average. B becomes right when the left-back angle turns clearly cleaner before the wing window closes.",
+      "hr": "A je bolji od B jer je lijevo krilo već korak ispred, a šut lijevog vanjskog samo je prosječan. B postaje točan kad kut lijevog vanjskog postane jasno čišći prije zatvaranja krila.",
+      "de": "A schlägt B, weil der Linksaußen schon einen Schritt voraus ist, während der Linke nur mittel ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_wing_rw_release",
+    "title": {
+      "en": "Centre Back — Release to the Right Wing",
+      "hr": "Srednji vanjski — puštanje desnom krilu",
+      "de": "Rückraum Mitte — Abspielen zum Rechtsaußen"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 19,
+    "score": "11:11",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "crossing",
+      "screening"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 11:11 at 19' against a 6:0. You bind the central defender toward the left; the right-side half and wing defenders both slide inside. Your right wing holds width and is a clear step ahead of his marker. The right-back mid-range is covered by a high block arm.",
+      "hr": "Neriješeno je 11:11 u 19. minuti protiv 6:0. Vežeš središnjeg braniča prema lijevo; desni polubranitelj i krilni branič oba kliznu unutra. Tvoje desno krilo drži širinu i jasno je korak ispred čuvara. Srednja distanca desnog vanjskog pokrivena je visokom rukom bloka.",
+      "de": "Unentschieden 11:11 in Minute 19 gegen 6:0. Du bindest den Zentralen nach links; rechter Halber und Außenverteidiger schieben beide innen. Dein Rechtsaußen hält Breite und ist klar einen Schritt voraus. Die Mittelstrecke des Rechten ist durch hohen Blockarm zugestellt."
+    },
+    "question": {
+      "en": "Where do you release after binding the middle to the left?",
+      "hr": "Kamo puštaš nakon vezivanja sredine prema lijevo?",
+      "de": "Wohin spielst du ab, nachdem du die Mitte nach links gebunden hast?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Release early to the right wing while he still owns the step on his recovering marker",
+          "hr": "Rano pusti desnom krilu dok još drži korak prednosti pred vraćajućim čuvarom",
+          "de": "Früh zum Rechtsaußen, solange er den Schritt Vorsprung vor dem zurückkehrenden Bewacher hat"
+        },
+        "feedback": {
+          "en": "Correct — the bind emptied the right corner; that is the release.",
+          "hr": "Točno — vezivanje je ispraznilo desni kut; to je puštanje.",
+          "de": "Richtig — die Bindung leerte die rechte Ecke; dort abspielen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Recycle through the left back and restart if the right wing’s marker recovers the step",
+          "hr": "Vrati preko lijevog vanjskog i kreni iznova ako čuvar desnog krila vrati korak",
+          "de": "Über den Linken zurück und neu aufbauen, wenn der Bewacher des Rechtsaußen den Schritt aufholt"
+        },
+        "feedback": {
+          "en": "Good control if the wing window closes; here the wing still has the step.",
+          "hr": "Dobra kontrola ako prozor krila umre; ovdje krilo još ima korak.",
+          "de": "Gute Kontrolle wenn das Außenfenster stirbt; hier hat der Außen noch den Schritt."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the right back to shoot under the high block arm",
+          "hr": "Natjeraj desnog vanjskog da šutira pod visokom rukom bloka",
+          "de": "Den Rechten unter dem hohen Blockarm zum Wurf zwingen"
+        },
+        "feedback": {
+          "en": "Risky — you choose the covered look over the open corner.",
+          "hr": "Rizično — biraš pokriveni šut umjesto otvorenog kuta.",
+          "de": "Riskant — du wählst den gedeckten Wurf statt der offenen Ecke."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Shoot yourself into the left-side traffic you just created with the bind",
+          "hr": "Šutiraj sam u gužvu lijeve strane koju si upravo stvorio vezivanjem",
+          "de": "Selbst in den linken Verkehr werfen, den du mit der Bindung gerade erzeugt hast"
+        },
+        "feedback": {
+          "en": "Poor — you finish where you packed the defence.",
+          "hr": "Loše — završavaš gdje si zbio obranu.",
+          "de": "Schlecht — du schließt ab, wo du die Abwehr zusammengezogen hast."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: bind left empties the right corner and the right wing is a step ahead; right-back mid-range is covered. Release early to the right wing. Recycle (B) only if the marker recovers the step.",
+      "hr": "Signal: vezivanje lijevo prazni desni kut, desno krilo je korak ispred; srednja distanca desnog vanjskog je pokrivena. Rano pusti desnom krilu. Povratak (B) samo ako čuvar vrati korak.",
+      "de": "Signal: Bindung nach links leert die rechte Ecke — früh zum führenden Rechtsaußen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the right wing still owns the step; recycling first wastes a live width advantage. B is correct when that marker recovers before the release.",
+      "hr": "A je bolji od B jer desno krilo još drži korak; povratak prvo troši živu prednost širine. B je točan kad čuvar vrati korak prije puštanja.",
+      "de": "A schlägt B, weil der Rechtsaußen den Schritt noch hat; Zurückspielen zuerst vergeudet den Breiten-Vorteil."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_wing_covered_no_force",
+    "title": {
+      "en": "Centre Back — Covered Wing: Do Not Force",
+      "hr": "Srednji vanjski — pokriveno krilo: ne forsiraj",
+      "de": "Rückraum Mitte — gedeckter Außen: nicht erzwingen"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 26,
+    "score": "14:14",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading",
+      "angleSelection"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 14:14 at 26' against a 6:0. Teammates call for the left wing. You look wide: the wing defender is already square on the corner, body between ball and wing, and the passing lane is a half-step closed. Your left back shows a cleaner give-and-go return after your bind.",
+      "hr": "Neriješeno je 14:14 u 26. minuti protiv 6:0. Suigrači zovu lijevo krilo. Gledaš široko: krilni branič već stoji ravno na kutu, tijelo između lopte i krila, a linija dodavanja zatvorena je pola koraka. Lijevi vanjski pokazuje čišći povratak nakon tvog vezivanja.",
+      "de": "Unentschieden 14:14 in Minute 26 gegen 6:0. Mitspieler rufen Linksaußen. Du schaust breit: der Außenverteidiger steht schon frontal in der Ecke, Körper zwischen Ball und Außen, Passbahn einen halben Schritt zu. Der Linke Rückraum zeigt saubereres Rückspiel nach deiner Bindung."
+    },
+    "question": {
+      "en": "What do you do when the wing call is louder than the wing window?",
+      "hr": "Što radiš kad je zov krila glasniji od prozora krila?",
+      "de": "Was tust du, wenn der Ruf zum Außen lauter ist als das Außenfenster?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Refuse the covered wing pass; continue through the left back’s cleaner return lane",
+          "hr": "Odbij dodavanje na pokriveno krilo; nastavi kroz čišću liniju povratka lijevog vanjskog",
+          "de": "Den gedeckten Außenpass ablehnen; über die sauberere Rückspielbahn des Linken weiter"
+        },
+        "feedback": {
+          "en": "Correct — a covered corner is a no; the organizer plays the open return.",
+          "hr": "Točno — pokriven kut je ne; organizator odigrava otvoreni povratak.",
+          "de": "Richtig — gedeckte Ecke ist Nein; der Organisator spielt das offene Rückspiel."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Hold one beat to re-open width only if the wing defender turns his hips fully inside",
+          "hr": "Drži jedan takt da ponovo otvoriš širinu samo ako krilni branič potpuno okrene bokove unutra",
+          "de": "Einen Takt halten und Breite nur neu öffnen, wenn der Außenverteidiger die Hüften voll innen dreht"
+        },
+        "feedback": {
+          "en": "Good if a true hip turn recreates the lane; here the lane is already half closed.",
+          "hr": "Dobro ako pravi okret bokova ponovo stvori prolaz; ovdje je prolaz već napola zatvoren.",
+          "de": "Gut wenn eine echte Hüftdrehung die Bahn neu öffnet; hier ist sie schon halb zu."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force a flat pass into the covered corner because the wing called for it",
+          "hr": "Forsiraj ravno dodavanje u pokriven kut jer je krilo zvalo",
+          "de": "Flachen Pass in die gedeckte Ecke erzwingen, weil der Außen gerufen hat"
+        },
+        "feedback": {
+          "en": "Risky — calls do not open a shaded lane.",
+          "hr": "Rizično — zov ne otvara osjenčani prolaz.",
+          "de": "Riskant — Rufe öffnen keine beschattete Bahn."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Lob a high float to the covered wing and hope the defender misjudges",
+          "hr": "Pošalji visoki spor balon na pokriveno krilo i nadaj se da branič krivo procijeni",
+          "de": "Hohen langsamen Bogen auf den gedeckten Außen und hoffen, dass der Verteidiger falsch steht"
+        },
+        "feedback": {
+          "en": "Poor — a float is the easiest steal in a closed corner.",
+          "hr": "Loše — spor balon najlakša je krađa u zatvorenom kutu.",
+          "de": "Schlecht — ein Bogenpass ist der leichteste Ballgewinn in der geschlossenen Ecke."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: wing defender square on the corner with the lane half closed, while left back offers a cleaner return. Do not force the wing. Holding for a hip turn (B) is only right if that turn truly reopens width.",
+      "hr": "Signal: krilni branič ravno na kutu, prolaz napola zatvoren, a lijevi vanjski nudi čišći povratak. Ne forsiraj krilo. Držanje za okret bokova (B) ima smisla samo ako taj okret stvarno ponovo otvori širinu.",
+      "de": "Signal: Außenverteidiger frontal, Bahn halb zu — nicht erzwingen; sauberes Rückspiel nutzen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the wing lane is already half closed and a live left-back return exists now. Waiting a beat hopes for a reopen that is not promised. B is right only after a full inside hip turn recreates width.",
+      "hr": "A je bolji od B jer je linija krila već napola zatvorena, a živ povratak lijevog vanjskog postoji sada. Čekanje jednog takta nagađa ponovno otvaranje koje nije zajamčeno. B je točan tek nakon punog okretanja bokova unutra.",
+      "de": "A schlägt B, weil die Außenbahn schon halb zu ist und das Rückspiel des Linken jetzt lebt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_7v6_which_pivot",
+    "title": {
+      "en": "Centre Back — 7v6: Which Pivot to Play",
+      "hr": "Srednji vanjski — 7 na 6: kojem pivotu dodati",
+      "de": "Rückraum Mitte — 7 gegen 6: welchen Kreisläufer bedienen"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 37,
+    "score": "20:19",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "numericalAdvantage",
+      "shotReading",
+      "pressureDecisions"
+    ],
+    "perception": true,
+    "numerical": "7v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 20:19 at 37' in 7v6 with two pivots. The first pivot is sealed but his defender’s chest is already on the target hand. The second pivot starts between right half and centre; his marker is a half-step late after a perimeter swing and shows an open hip. Your own goal is still guarded.",
+      "hr": "Vodite 20:19 u 37. minuti u 7 na 6 s dva pivota. Prvi pivot je zatvoren, ali mu je branič već prsima na ruci za prijem. Drugi pivot kreće između desnog polubranitelja i sredine; čuvar mu kasni pola koraka nakon obilaska perimetra i pokazuje otvoren bok. Vlastiti gol još je čuvan.",
+      "de": "Ihr führt 20:19 in Minute 37 im 7 gegen 6 mit zwei Kreisläufern. Der erste ist abgedichtet, aber die Brust seines Verteidigers liegt schon auf der Zielhand. Der zweite startet zwischen rechtem Halben und Mitte; sein Bewacher ist nach Perimeterkreisung einen halben Schritt spät und zeigt offene Hüfte. Euer Tor ist noch besetzt."
+    },
+    "question": {
+      "en": "In 7v6 with two pivots, which inside man do you choose?",
+      "hr": "U 7 na 6 s dva pivota, kojeg unutarnjeg biraš?",
+      "de": "Im 7 gegen 6 mit zwei Kreisläufern — welchen Innenmann wählst du?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Play the second pivot on the open hip while his marker is still half a step late",
+          "hr": "Dodaj drugom pivotu na otvoren bok dok mu čuvar još kasni pola koraka",
+          "de": "Den zweiten Kreisläufer an der offenen Hüfte bedienen, solange der Bewacher noch einen halben Schritt spät ist"
+        },
+        "feedback": {
+          "en": "Correct — 7v6 is about the free second pivot, not the sealed-but-covered first.",
+          "hr": "Točno — 7 na 6 je o slobodnom drugom pivotu, ne o zatvorenom ali pokrivenom prvom.",
+          "de": "Richtig — 7 gegen 6 meint den freien zweiten Kreisläufer, nicht den zugestellten ersten."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Skip both pivots and release to a freer wing if neither hip stays open for the next beat",
+          "hr": "Preskoči oba pivota i pusti slobodnijem krilu ako nijedan bok ne ostane otvoren u sljedećem taktu",
+          "de": "Beide Kreisläufer lassen und zum freieren Außen, wenn keine Hüfte im nächsten Takt offen bleibt"
+        },
+        "feedback": {
+          "en": "Good escape if both insides die; here the second pivot’s hip is still open.",
+          "hr": "Dobar izlaz ako oba unutarnja prolaza se zatvore; ovdje je bok drugog pivota još otvoren.",
+          "de": "Guter Ausweg wenn beide Innen sterben; hier ist die Hüfte des Zweiten noch offen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the first pivot anyway because he is “the main” pivot",
+          "hr": "Svejedno forsiraj prvog pivota jer je “glavni” pivot",
+          "de": "Trotzdem den ersten Kreisläufer erzwingen, weil er der “Haupt”-Kreisläufer ist"
+        },
+        "feedback": {
+          "en": "Risky — labels do not beat a chest on the target hand.",
+          "hr": "Rizično — nazivi ne pobjeđuju prsa na ruci za prijem.",
+          "de": "Riskant — Etiketten schlagen keine Brust auf der Zielhand."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Hold the ball at nine metres without choosing either pivot until the defence settles",
+          "hr": "Drži loptu na devet metara bez izbora pivota dok se obrana ne slegne",
+          "de": "Auf neun Metern halten ohne Kreisläufer-Wahl bis die Abwehr sich setzt"
+        },
+        "feedback": {
+          "en": "Poor — 7v6 closes when you wait for the defence to organize.",
+          "hr": "Loše — 7 na 6 umire kad čekaš da se obrana organizira.",
+          "de": "Schlecht — 7 gegen 6 stirbt, wenn du die Abwehr sich organisieren lässt."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: first pivot sealed but chested; second pivot’s marker half a step late with open hip. In 7v6 choose the freer second pivot. Wing escape (B) is right only if both hips die.",
+      "hr": "Signal: prvi pivot zatvoren ali s prsima na ruci; čuvar drugog pivota kasni pola koraka uz otvoren bok. U 7 na 6 biraj slobodnijeg drugog pivota. Izlaz na krilo (B) samo ako oba boka se zatvore.",
+      "de": "Signal: erster zugestellt, zweiter mit offener Hüfte — im 7 gegen 6 den zweiten wählen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the second pivot’s open hip is already the 7v6 surplus; skipping to the wing first ignores a higher-percentage inside cue. B is the right escape when neither pivot stays open.",
+      "hr": "A je bolji od B jer je otvoren bok drugog pivota već višak 7 na 6; preskakanje na krilo prvo zanemaruje bolji unutarnji signal. B je pravi izlaz kad nijedan pivot ne ostane otvoren.",
+      "de": "A schlägt B, weil die offene Hüfte des zweiten schon der 7-gegen-6-Vorteil ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_7v6_two_pivot_spacing",
+    "title": {
+      "en": "Centre Back — 7v6: Two-Pivot Spacing",
+      "hr": "Srednji vanjski — 7 na 6: razmak dva pivota",
+      "de": "Rückraum Mitte — 7 gegen 6: Abstand zweier Kreisläufer"
+    },
+    "difficulty": "Expert",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 41,
+    "score": "22:21",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "numericalAdvantage",
+      "screening"
+    ],
+    "perception": false,
+    "numerical": "7v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 22:21 at 41' in 7v6. Both pivots are almost stacked on the same hip of the six-metre line, so one defender covers both hands. The perimeter still has a free right-back lane because the stacked pivots pulled two bodies into one spot. You are the organizer with the ball in the middle.",
+      "hr": "Vodite 22:21 u 41. minuti u 7 na 6. Prvi i drugi pivot gotovo su složeni na istom boku šest metara, pa jedan branič pokriva obje ruke. Na vanjskom još postoji slobodna linija desnog vanjskog jer su složeni pivoti povukli dva tijela na jedno mjesto. Ti si organizator s loptom u sredini.",
+      "de": "Ihr führt 22:21 in Minute 41 im 7 gegen 6. Beide Kreisläufer sind fast auf derselben Hüfte der Sechs gestapelt — ein Verteidiger deckt beide Hände. Außen bleibt eine freie Rechte-Bahn, weil die Stapelung zwei Körper auf einen Punkt zog. Du bist Organisator mit Ball in der Mitte."
+    },
+    "question": {
+      "en": "What does bad two-pivot spacing ask the organizer to do?",
+      "hr": "Što loš razmak dva pivota traži od organizatora?",
+      "de": "Was verlangt schlechter Abstand zweier Kreisläufer vom Organisator?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Skip the stacked pivots: play the free right-back lane created by the compressed inside",
+          "hr": "Preskoči složene pivote: odigraj slobodnu liniju desnog vanjskog koju je stisnuti unutra stvorio",
+          "de": "Die gestapelten Kreisläufer lassen: die freie Rechte-Bahn spielen, die die komprimierte Innenzone schuf"
+        },
+        "feedback": {
+          "en": "Correct — stacked pivots waste 7v6; the surplus moves to the perimeter.",
+          "hr": "Točno — složeni pivoti troše 7 na 6; višak ide na vanjski.",
+          "de": "Richtig — gestapelte Kreisläufer verschwenden 7 gegen 6; der Vorteil wandert nach außen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Call one pivot to separate a metre before the next swing if you still have attack time",
+          "hr": "Pozovi jednog pivota da se odvoji metar prije sljedećeg obilaska ako još imaš vremena napada",
+          "de": "Einen Kreisläufer um einen Meter trennen lassen vor der nächsten Kreisung, wenn noch Angriffszeit bleibt"
+        },
+        "feedback": {
+          "en": "Good spacing fix, but only if the free right lane is not already live now.",
+          "hr": "Dobar popravak razmaka, ali samo ako slobodna desna linija nije već živa sada.",
+          "de": "Gute Abstands-Korrektur, aber nur wenn die freie rechte Bahn nicht schon jetzt lebt."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force a bounce into the stacked double target anyway",
+          "hr": "Svejedno forsiraj odskok u složeni dvostruki cilj",
+          "de": "Trotzdem einen Bounce in das gestapelte Doppelziel erzwingen"
+        },
+        "feedback": {
+          "en": "Risky — one defender owns both hands.",
+          "hr": "Rizično — jedan branič drži obje ruke.",
+          "de": "Riskant — ein Verteidiger besitzt beide Hände."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Keep swinging endlessly without using the open right lane or fixing spacing",
+          "hr": "Nastavi beskrajno obilaziti bez korištenja otvorene desne linije i bez popravka razmaka",
+          "de": "Endlos kreisen ohne die offene rechte Bahn und ohne Abstandskorrektur"
+        },
+        "feedback": {
+          "en": "Poor — empty circulation kills 7v6 structure.",
+          "hr": "Loše — prazna cirkulacija ubija strukturu 7 na 6.",
+          "de": "Schlecht — leere Zirkulation tötet die 7-gegen-6-Struktur."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: both pivots stacked so one defender covers two hands, while the right-back lane is free. Play the perimeter surplus. Separating the pivots (B) is the right structural fix when that lane is not live.",
+      "hr": "Signal: prvi i drugi pivot složeni, jedan branič pokriva dvije ruke, a linija desnog vanjskog je slobodna. Odigraj vanjski višak. Odvajanje pivota (B) je pravi strukturni popravak kad ta linija nije živa.",
+      "de": "Signal: gestapelte Kreisläufer, freie Rechte-Bahn — Außen-Vorteil spielen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because a free right-back lane already exists from the bad spacing; fixing spacing first can wait when the surplus is live. B is correct when you must rebuild structure before the next advantage.",
+      "hr": "A je bolji od B jer slobodna linija desnog vanjskog već postoji zbog lošeg razmaka; popravak razmaka može pričekati kad je višak živ. B je točan kad moraš obnoviti strukturu prije sljedeće prednosti.",
+      "de": "A schlägt B, weil die freie Rechte-Bahn durch den schlechten Abstand schon lebt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_7v6_wing_release",
+    "title": {
+      "en": "Centre Back — 7v6: Wing Release",
+      "hr": "Srednji vanjski — 7 na 6: puštanje krilu",
+      "de": "Rückraum Mitte — 7 gegen 6: Abspiel zum Außen"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 44,
+    "score": "23:22",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "numericalAdvantage",
+      "pressureDecisions",
+      "angleSelection",
+      "defensiveReading"
+    ],
+    "perception": false,
+    "numerical": "7v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 23:22 at 44' in 7v6. Both pivots are covered after the defence collapsed inside. The left wing holds extreme width; his marker helped one step on the second pivot and is late recovering to the corner. You have the ball in the middle with a clean lane to that wing.",
+      "hr": "Vodite 23:22 u 44. minuti u 7 na 6. Oba pivota su pokrivena nakon što se obrana srušila unutra. Lijevo krilo drži ekstremnu širinu; čuvar mu je pomogao jedan korak na drugom pivotu i kasni u povratku u kut. Imaš loptu u sredini s čistom linijom do tog krila.",
+      "de": "Ihr führt 23:22 in Minute 44 im 7 gegen 6. Beide Kreisläufer sind zugestellt nach Innenkollaps. Linksaußen hält extreme Breite; sein Bewacher half einen Schritt zum zweiten Kreisläufer und kommt spät zurück in die Ecke. Du hast den Ball in der Mitte mit sauberer Bahn zu diesem Außen."
+    },
+    "question": {
+      "en": "When both pivots are covered in 7v6, where is the release?",
+      "hr": "Kad su oba pivota pokrivena u 7 na 6, gdje je puštanje?",
+      "de": "Wenn beide Kreisläufer im 7 gegen 6 zugestellt sind — wo ist das Abspiel?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Release early to the left wing while his marker is still late from helping the second pivot",
+          "hr": "Rano pusti lijevom krilu dok mu čuvar još kasni od pomoći drugom pivotu",
+          "de": "Früh zum Linksaußen, solange sein Bewacher vom Helfen am zweiten Kreisläufer noch spät ist"
+        },
+        "feedback": {
+          "en": "Correct — covered pivots in 7v6 push the surplus to the emptied wing.",
+          "hr": "Točno — pokriveni pivoti u 7 na 6 guraju višak na ispražnjeno krilo.",
+          "de": "Richtig — zugestellte Kreisläufer im 7 gegen 6 schieben den Vorteil auf den geleerten Außen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Take one more short swing to reopen a pivot hip if the wing marker recovers early",
+          "hr": "Uzmi još jedan kratki obilazak da ponovo otvoriš bok pivota ako čuvar krila rano vrati",
+          "de": "Noch eine kurze Kreisung um eine Kreisläufer-Hüfte neu zu öffnen, wenn der Außenbewacher früh zurückkommt"
+        },
+        "feedback": {
+          "en": "Good rebuild if the wing closes; here the wing window is still open.",
+          "hr": "Dobra obnova ako krilo umre; ovdje je prozor krila još otvoren.",
+          "de": "Guter Neuaufbau wenn der Außen stirbt; hier ist das Außenfenster noch offen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force a bounce into either covered pivot to “use” the extra attacker",
+          "hr": "Forsiraj odskok u bilo kojeg pokrivenog pivota da “iskoristiš” dodatnog napadača",
+          "de": "Bounce auf einen zugestellten Kreisläufer erzwingen um den Extraangreifer zu “nutzen”"
+        },
+        "feedback": {
+          "en": "Risky — the extra man is wasted if you feed covered hands.",
+          "hr": "Rizično — dodatni napadač je uzaludan ako dodaješ u pokrivene ruke.",
+          "de": "Riskant — der Extraangreifer ist nutzlos bei Pässen in zugestellte Hände."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Shoot a low-percentage deep jumper from the middle over the collapsed line",
+          "hr": "Šutiraj duboki skok-šut niskog postotka iz sredine preko srušene linije",
+          "de": "Tiefen Sprungwurf mit niedriger Quote aus der Mitte über die kollabierte Linie"
+        },
+        "feedback": {
+          "en": "Poor — you ignore the open corner the collapse created.",
+          "hr": "Loše — zanemaruješ otvoren kut koji je pad stvorio.",
+          "de": "Schlecht — du ignorierst die offene Ecke, die der Kollaps schuf."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: both pivots covered after inside collapse; left-wing marker late from helping the second pivot. Release early to that wing. Another swing (B) only if the wing recovers first.",
+      "hr": "Signal: oba pivota pokrivena nakon pada unutra; čuvar lijevog krila kasni od pomoći drugom pivotu. Rano pusti tom krilu. Još jedan obilazak (B) samo ako krilo prvo vrati.",
+      "de": "Signal: beide Kreisläufer zu, Linksaußen-Bewacher spät vom zweiten — früh zum Außen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the wing window from the late recovery is live now; another swing risks closing it. B is right when the wing marker recovers before the release.",
+      "hr": "A je bolji od B jer je prozor krila od kasnog povratka živ sada; još jedan obilazak rizikuje zatvaranje. B je točan kad čuvar krila vrati prije puštanja.",
+      "de": "A schlägt B, weil das Außenfenster durch die späte Rückkehr jetzt lebt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_7v6_safe_pass_geometry",
+    "title": {
+      "en": "Centre Back — 7v6: Safe Pass Geometry With Empty Own Goal Risk",
+      "hr": "Srednji vanjski — 7 na 6: sigurna geometrija dodavanja uz rizik vlastitog praznog gola",
+      "de": "Rückraum Mitte — 7 gegen 6: sichere Passgeometrie bei eigenem Leertor-Risiko"
+    },
+    "difficulty": "Expert",
+    "pressureLevel": "Critical",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Final Minutes",
+    "minute": 57,
+    "score": "28:27",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "pressureDecisions",
+      "numericalAdvantage",
+      "shotReading"
+    ],
+    "perception": false,
+    "numerical": "7v6",
+    "gameState": "empty_goal_own",
+    "situation": {
+      "en": "You lead 28:27 at 57' in 7v6 with your own goal empty — the goalkeeper is at the substitution area. Two pivots are on the line; the short bounce to the first pivot crosses three hands. The second pivot’s lane is a safer diagonal that stays outside the steal zone. An opponent wing is already halfway for a long outlet if you turn the ball over.",
+      "hr": "Vodite 28:27 u 57. minuti u 7 na 6 s vlastitim praznim golom — vratar je na prostoru za zamjene. Dva pivota su na liniji; kratki odskok na prvog pivota prolazi kroz tri ruke. Linija drugog pivota sigurnija je dijagonala koja ostaje izvan zone krađe. Protivničko krilo već je na pola puta za dugi kontranapad ako izgubiš loptu.",
+      "de": "Ihr führt 28:27 in Minute 57 im 7 gegen 6 mit eigenem leeren Tor — Torwart am Wechselraum. Zwei Kreisläufer auf der Linie; der kurze Bounce zum ersten kreuzt drei Hände. Die Bahn des zweiten ist die sicherere Diagonale außerhalb der Klauzone. Ein Gegneraußen ist schon halb draußen für den langen Outlet bei Ballverlust."
+    },
+    "question": {
+      "en": "With an empty own goal, which 7v6 pass geometry do you choose?",
+      "hr": "Uz vlastiti prazan gol, koju geometriju dodavanja u 7 na 6 biraš?",
+      "de": "Bei eigenem leeren Tor — welche 7-gegen-6-Passgeometrie wählst du?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Use the safer diagonal to the second pivot; refuse the three-hand bounce that risks the empty goal",
+          "hr": "Koristi sigurniju dijagonalu na drugog pivota; odbij odskok kroz tri ruke koji rizika prazan gol",
+          "de": "Die sicherere Diagonale zum zweiten Kreisläufer; den Drei-Hände-Bounce ablehnen der das Leertor riskiert"
+        },
+        "feedback": {
+          "en": "Correct — empty own goal turns risky geometry into a game-deciding mistake.",
+          "hr": "Točno — vlastiti prazan gol pretvara rizičnu geometriju u pogrešku koja odlučuje utakmicu.",
+          "de": "Richtig — eigenes Leertor macht riskante Geometrie zum spielentscheidenden Fehler."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Call the goalkeeper back and settle into 6v6 if neither pivot lane stays safe",
+          "hr": "Pozovi vratara natrag i prijeđi u 6 na 6 ako nijedna linija pivota ne ostane sigurna",
+          "de": "Torwart zurückrufen und ins 6 gegen 6 setzen, wenn keine Kreisläufer-Bahn sicher bleibt"
+        },
+        "feedback": {
+          "en": "Good emergency if both insides are unsafe; here the second-pivot diagonal is still safe.",
+          "hr": "Dobra hitna opcija ako su oba unutarnja nesigurna; ovdje je dijagonala drugog pivota još sigurna.",
+          "de": "Gute Notlösung wenn beide Innen unsicher sind; hier ist die Diagonale des Zweiten noch sicher."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the short three-hand bounce to the first pivot to finish faster",
+          "hr": "Forsiraj kratki odskok kroz tri ruke na prvog pivota da brže završiš",
+          "de": "Den kurzen Drei-Hände-Bounce zum ersten erzwingen um schneller abzuschließen"
+        },
+        "feedback": {
+          "en": "Risky — a steal here is an empty-goal counter.",
+          "hr": "Rizično — krađa ovdje znači kontru u prazan gol.",
+          "de": "Riskant — Ballverlust hier ist Konter ins leere Tor."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Lob a high float across the middle while the opponent wing is already running",
+          "hr": "Pošalji visoki spor balon preko sredine dok protivničko krilo već trči",
+          "de": "Hohen Bogen durch die Mitte während der Gegneraußen schon läuft"
+        },
+        "feedback": {
+          "en": "Poor — the highest turnover risk with an empty goal behind you.",
+          "hr": "Loše — najveći rizik gubitka uz prazan gol iza tebe.",
+          "de": "Schlecht — höchstes Verlustrisiko bei leerem Tor hinter euch."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: empty own goal, three-hand bounce to first pivot vs safer diagonal to second pivot, outlet wing already running. Choose safe geometry to the second pivot. Calling the goalkeeper back (B) is right when no safe inside lane remains.",
+      "hr": "Signal: vlastiti prazan gol, odskok kroz tri ruke na prvog pivota naspram sigurnije dijagonale na drugog pivota, krilo za kontranapad već trči. Biraj sigurnu geometriju na drugog pivota. Poziv vratara natrag (B) je točan kad ne ostane sigurna unutarnja linija.",
+      "de": "Signal: eigenes Leertor, unsicherer Bounce vs sichere Diagonale zum zweiten — sichere Geometrie wählen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because a safe second-pivot diagonal still exists; pulling the goalkeeper back first ends a live 7v6 advantage. B is correct when neither pivot lane is safe and empty-goal risk dominates.",
+      "hr": "A je bolji od B jer sigurna dijagonala na drugog pivota još postoji; povlačenje vratara prvo gasi živu prednost 7 na 6. B je točan kad nijedna linija pivota nije sigurna i rizik praznog gola dominira.",
+      "de": "A schlägt B, weil die sichere Diagonale zum zweiten noch lebt; Torwart zurück zuerst beendet den 7-gegen-6-Vorteil."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_7v6_not_force_pivot",
+    "title": {
+      "en": "Centre Back — 7v6: Do Not Force the Covered Pivot",
+      "hr": "Srednji vanjski — 7 na 6: ne forsiraj pokrivenog pivota",
+      "de": "Rückraum Mitte — 7 gegen 6: gedeckten Kreisläufer nicht erzwingen"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 39,
+    "score": "21:20",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "numericalAdvantage",
+      "shotReading",
+      "pressureDecisions"
+    ],
+    "perception": true,
+    "numerical": "7v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 21:20 at 39' in 7v6. Teammates shout for the first pivot. You see his defender’s chest and outside foot already in the lane; the second pivot is also tight. The right back has just received a half-step of space after a late slide. Your own goal is guarded.",
+      "hr": "Vodite 21:20 u 39. minuti u 7 na 6. Suigrači viču na prvog pivota. Vidiš da su mu prsa braniča i vanjsko stopalo već u prolazu; i drugi pivot je ustipt. Desni vanjski upravo je dobio pola koraka prostora nakon kasnog klizanja. Vlastiti gol je čuvan.",
+      "de": "Ihr führt 21:20 in Minute 39 im 7 gegen 6. Mitspieler rufen den ersten Kreisläufer. Du siehst Brust und Außenfuß seines Verteidigers schon in der Bahn; auch der zweite ist eng. Der Rechte hat nach spätem Schieben einen halben Schritt Raum. Euer Tor ist besetzt."
+    },
+    "question": {
+      "en": "What does 7v6 demand when both pivots are covered?",
+      "hr": "Što 7 na 6 traži kad su oba pivota pokrivena?",
+      "de": "Was verlangt 7 gegen 6, wenn beide Kreisläufer zugestellt sind?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Refuse both covered pivots; attack the freer right-back space from the late slide",
+          "hr": "Odbij oba pokrivena pivota; napadni slobodniji prostor desnog vanjskog od kasnog klizanja",
+          "de": "Beide zugestellten Kreisläufer ablehnen; den freieren Raum des Rechten nach dem späten Schieben angreifen"
+        },
+        "feedback": {
+          "en": "Correct — 7v6 is not an obligation to force the pivot.",
+          "hr": "Točno — 7 na 6 nije obveza forsirati pivota.",
+          "de": "Richtig — 7 gegen 6 ist keine Pflicht, den Kreisläufer zu erzwingen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Recycle and rebuild spacing if the right-back space also closes in the next beat",
+          "hr": "Vrati i obnovi razmak ako se i prostor desnog vanjskog zatvori u sljedećem taktu",
+          "de": "Zurück und Abstand neu bauen, wenn auch der Raum des Rechten im nächsten Takt schließt"
+        },
+        "feedback": {
+          "en": "Good control if the perimeter closes too; here the right space is still open.",
+          "hr": "Dobra kontrola ako i vanjski umre; ovdje je desni prostor još otvoren.",
+          "de": "Gute Kontrolle wenn auch außen stirbt; hier ist der rechte Raum noch offen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the first pivot because the crowd is calling his name",
+          "hr": "Forsiraj prvog pivota jer ga suigrači zovu po imenu",
+          "de": "Den ersten Kreisläufer erzwingen, weil die Mitspieler seinen Namen rufen"
+        },
+        "feedback": {
+          "en": "Risky — noise does not clear a chested lane.",
+          "hr": "Rizično — buka ne čisti prolaz s prsima u njemu.",
+          "de": "Riskant — Lärm öffnet keine Bahn mit Brust darin."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Float a soft bounce between both covered pivots and hope one tip wins",
+          "hr": "Pošalji mekani odskok između oba pokrivena pivota i nadaj se da jedan dobije dodir",
+          "de": "Weichen Bounce zwischen beide zugestellte Kreisläufer und hoffen auf einen Tip"
+        },
+        "feedback": {
+          "en": "Poor — you invent a third worse option between two closed ones.",
+          "hr": "Loše — izmišljaš treću lošiju opciju između dvije zatvorene.",
+          "de": "Schlecht — du erfindest eine dritte schlechtere Option zwischen zwei geschlossenen."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: both pivots covered, right back half a step free after a late slide. Do not force 7v6 into covered hands — attack the freer perimeter. Recycle (B) if that space also closes.",
+      "hr": "Signal: oba pivota pokrivena, desni vanjski pola koraka slobodan nakon kasnog klizanja. Ne forsiraj 7 na 6 u pokrivene ruke — napadni slobodniji vanjski. Povratak (B) ako i taj prostor umre.",
+      "de": "Signal: beide Kreisläufer zu, Rechter einen halben Schritt frei — nicht erzwingen, Perimeter nutzen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the right-back space from the late slide is already live; recycling first wastes the 7v6 surplus. B is correct when that perimeter space closes too.",
+      "hr": "A je bolji od B jer prostor desnog vanjskog od kasnog klizanja već živi; povratak prvo troši višak 7 na 6. B je točan kad se i taj vanjski prostor zatvori.",
+      "de": "A schlägt B, weil der Raum des Rechten nach dem späten Schieben schon lebt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_6v5_direct_organize",
+    "title": {
+      "en": "Centre Back — 6v5: Organize Directly",
+      "hr": "Srednji vanjski — 6 na 5: organiziraj izravno",
+      "de": "Rückraum Mitte — 6 gegen 5: direkt organisieren"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 29,
+    "score": "16:15",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "numericalAdvantage",
+      "shotReading",
+      "defensiveReading"
+    ],
+    "perception": false,
+    "numerical": "6v5",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 16:15 at 29' in 6v5 after their exclusion. The defence drops into a short five. You receive in the middle. The free zone is clearly between left half and centre — one body width — with your left back already aligned. Wasting a full extra swing only lets the five settle.",
+      "hr": "Vodite 16:15 u 29. minuti u 6 na 5 nakon njihova isključenja. Obrana pada u kratku petorku. Primaš u sredini. Slobodna zona jasno je između lijevog polubranitelja i sredine — širina tijela — a lijevi vanjski već je poravnat. Trošenje još jednog punog obilaska samo pušta petorku da se slegne.",
+      "de": "Ihr führt 16:15 in Minute 29 im 6 gegen 5 nach ihrer Zeitstrafe. Die Abwehr fällt in eine kurze Fünf. Du bekommst in der Mitte. Die freie Zone liegt klar zwischen linkem Halben und Mitte — körperbreit — und dein Linker ist schon ausgerichtet. Eine volle Extra-Kreisung lässt die Fünf nur setzen."
+    },
+    "question": {
+      "en": "How should the organizer use a clear 6v5 free zone?",
+      "hr": "Kako organizator treba iskoristiti jasnu slobodnu zonu u 6 na 5?",
+      "de": "Wie soll der Organisator eine klare 6-gegen-5-Freizone nutzen?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Organize directly into the free left gap with tempo before the short five settles",
+          "hr": "Organiziraj izravno u slobodnu lijevu rupu s tempom prije nego se kratka petorka slegne",
+          "de": "Direkt in die freie linke Lücke mit Tempo organisieren, bevor die kurze Fünf sich setzt"
+        },
+        "feedback": {
+          "en": "Correct — 6v5 is a direct advantage; delay is the defence’s friend.",
+          "hr": "Točno — 6 na 5 je izravna prednost; odgoda je prijatelj obrane.",
+          "de": "Richtig — 6 gegen 5 ist direkter Vorteil; Verzögerung hilft der Abwehr."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Take one short fake to pin the near half, then play the same left gap",
+          "hr": "Uzmi kratku varku da prikvačiš bližeg polubranitelja, pa odigraj istu lijevu rupu",
+          "de": "Kurze Finte zum Fixieren des nahen Halben, dann dieselbe linke Lücke"
+        },
+        "feedback": {
+          "en": "Good if the half steps out; here the gap is already body-width open.",
+          "hr": "Dobro ako polubranitelj izađe; ovdje je rupa već otvorena za širinu tijela.",
+          "de": "Gut wenn der Halbe heraustritt; hier ist die Lücke schon körperbreit offen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Run a full decorative swing to “use the extra man” before attacking the gap",
+          "hr": "Odigraj puni ukrasni obilazak da “iskoristiš viška” prije napada na rupu",
+          "de": "Eine volle Schmuckkreisung um den “Überzahlmann zu nutzen” bevor die Lücke kommt"
+        },
+        "feedback": {
+          "en": "Risky — you gift the short five time to organize.",
+          "hr": "Rizično — poklanjaš kratkoj petorci vrijeme za organizaciju.",
+          "de": "Riskant — du schenkst der kurzen Fünf Organisationszeit."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a deep shot into the densest part of the short five",
+          "hr": "Forsiraj duboki šut u najgušći dio kratke petorke",
+          "de": "Tiefen Wurf in den dichtesten Teil der kurzen Fünf erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you attack where the numerical advantage is smallest.",
+          "hr": "Loše — napadaš gdje je brojčana prednost najmanja.",
+          "de": "Schlecht — du greifst an, wo der Überzahlvorteil am kleinsten ist."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: clear body-width free zone left of centre in 6v5 with left back aligned. Organize directly with tempo. A short fake (B) only if the near half steps out into the lane.",
+      "hr": "Signal: jasna rupa širine tijela lijevo od sredine u 6 na 5 uz poravnatog lijevog vanjskog. Organiziraj izravno s tempom. Kratka varka (B) samo ako bliži polubranitelj izađe u prolaz.",
+      "de": "Signal: körperbreite Freizone links der Mitte im 6 gegen 5 — direkt mit Tempo organisieren."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the free zone is already body-width open; a fake only buys the short five settle time. B is right when the near half starts to step into the gap.",
+      "hr": "A je bolji od B jer je slobodna zona već otvorena za širinu tijela; varka samo kupuje kratkoj petorci vrijeme za slijeganje. B je točan kad bliži polubranitelj kreće u rupu.",
+      "de": "A schlägt B, weil die Freizone schon körperbreit offen ist; die Finte schenkt der kurzen Fünf nur Zeit."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_5v6_organize_survive",
+    "title": {
+      "en": "Centre Back — 5v6: Controlled Attack While Trailing",
+      "hr": "Srednji vanjski — 5 na 6: kontrolirani napad u zaostatku",
+      "de": "Rückraum Mitte — 5 gegen 6: kontrollierter Angriff im Rückstand"
+    },
+    "difficulty": "Expert",
+    "pressureLevel": "Critical",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 36,
+    "score": "18:19",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "pressureDecisions",
+      "numericalAdvantage",
+      "shotReading",
+      "fastBreakTiming"
+    ],
+    "perception": false,
+    "numerical": "5v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You trail 18:19 at 36' attacking 5v6 after an exclusion. They compress the middle. You organise with the ball. A forced deep shot is available but low value — the block arms are high and the lane is crowded. A short exchange to the left back keeps possession and can pull one central defender, opening a higher-quality look. You still need a goal; killing the clock alone does not solve the deficit.",
+      "hr": "Gubite 18:19 u 36. minuti u napadu 5 na 6 nakon isključenja. Oni zbijaju sredinu. Organiziraš s loptom. Forsirani duboki šut postoji, ali je niske vrijednosti — ruke bloka su visoke, prolaz zbijen. Kratka razmjena na lijevog vanjskog čuva posjed i može izvući jednog središnjeg, pa otvoriti kvalitetniji završetak. Još vam treba gol; samo trošenje sata ne rješava zaostatak.",
+      "de": "Ihr liegt 18:19 in Minute 36 im Angriff 5 gegen 6 nach einer Zeitstrafe. Sie verdichten die Mitte. Du organisierst mit Ball. Ein erzwungener Tiefschuss ist möglich, aber von geringem Wert — Blockarme hoch, Gasse eng. Ein kurzer Austausch auf den linken Rückraum sichert den Ball und kann einen zentralen Verteidiger ziehen, für einen höherwertigen Abschluss. Ihr braucht noch ein Tor; reine Zeitverbrennung löst den Rückstand nicht."
+    },
+    "question": {
+      "en": "What does a 5v6 attack require from the organiser while trailing?",
+      "hr": "Što napad 5 na 6 traži od organizatora dok gubite?",
+      "de": "Was verlangt der Angriff 5 gegen 6 vom Organisator im Rückstand?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Control the ball with purposeful short exchanges, move a defender, and only finish when a clear high-value window opens",
+          "hr": "Kontroliraj loptu svrhovitim kratkim razmjenama, pomakni braniča i završi tek kad se otvori jasan prozor visoke vrijednosti",
+          "de": "Ball mit gezielten kurzen Austauschen kontrollieren, einen Verteidiger bewegen und erst abschließen, wenn ein klar hochwertiges Fenster öffnet"
+        },
+        "feedback": {
+          "en": "Correct — trailing 5v6 needs controlled attack and a real finishing chance, not a forced shot and not empty clock-killing.",
+          "hr": "Točno — u zaostatku 5 na 6 treba kontrolirani napad i stvarnu priliku za gol, ne forsiran šut i ne prazno trošenje sata.",
+          "de": "Richtig — im Rückstand 5 gegen 6 braucht ihr kontrollierten Angriff und eine echte Torchance, keinen Zwangswurf und keine leere Zeitverbrennung."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Take the deep shot now only if the block arm stays low and the angle is truly clean",
+          "hr": "Uzmi duboki šut sada samo ako ruka bloka ostane niska i kut je stvarno čist",
+          "de": "Den Tiefschuss jetzt nur nehmen, wenn der Blockarm tief bleibt und der Winkel wirklich sauber ist"
+        },
+        "feedback": {
+          "en": "Right when the window is truly clean; here the deep look is crowded and low value — organise first.",
+          "hr": "Točno kad je prozor stvarno čist; ovdje je duboki šut zbijen i niske vrijednosti — prvo organiziraj.",
+          "de": "Richtig bei wirklich sauberem Fenster; hier ist der Tiefschuss eng und geringwertig — zuerst organisieren."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold the ball in place to burn clock without moving a defender",
+          "hr": "Drži loptu u mjestu da trošiš sat bez pomicanja braniča",
+          "de": "Ball auf der Stelle halten, um Zeit zu verbrauchen ohne Verteidiger zu bewegen"
+        },
+        "feedback": {
+          "en": "Risky — you trail by one; passive clock-killing does not create a goal.",
+          "hr": "Rizično — gubite za jedan; pasivno trošenje sata ne stvara gol.",
+          "de": "Riskant — ihr liegt zurück; passive Zeitverbrennung schafft kein Tor."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a skip into traffic hoping for a miracle finish",
+          "hr": "Forsiraj dugo dodavanje u gužvu u nadi u čudesni završetak",
+          "de": "Einen Skip in den Verkehr erzwingen und auf ein Wunder hoffen"
+        },
+        "feedback": {
+          "en": "Poor — a turnover here gifts an easy counter while you are short-handed.",
+          "hr": "Loše — gubitak lopte ovdje poklanja lak kontranapad dok ste u brojčanom minusu.",
+          "de": "Schlecht — Ballverlust schenkt einen leichten Gegenstoß in Unterzahl."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: trailing by one in 5v6, middle compressed, deep shot low value. Organise with short exchanges that move a defender and wait for a high-value finish. Empty clock-killing (C) fails because you need a goal; forcing the deep shot (B) is only right on a truly clean window.",
+      "hr": "Signal: zaostatak od jednog u 5 na 6, sredina zbijena, duboki šut niske vrijednosti. Organiziraj kratkim razmjenama koje miču braniča i čekaj završetak visoke vrijednosti. Prazno trošenje sata (C) pada jer vam treba gol; forsiranje dubokog šuta (B) točno je samo na stvarno čistom prozoru.",
+      "de": "Signal: ein Tor Rückstand in 5 gegen 6, Mitte verdichtet, Tiefschuss geringwertig. Mit kurzen Austauschen organisieren, die einen Verteidiger bewegen, und auf hochwertigen Abschluss warten. Leere Zeitverbrennung (C) scheitert, weil ihr ein Tor braucht."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A builds a controlled attack that can still score while trailing; B takes a currently low-value deep shot that the cues mark as crowded.",
+      "hr": "A gradi kontrolirani napad koji još može dati gol u zaostatku; B uzima trenutačno nisko vrijedan duboki šut koji signali označavaju kao zbijen.",
+      "de": "A baut einen kontrollierten Angriff, der im Rückstand noch treffen kann; B nimmt den aktuell geringwertigen Tiefschuss, den die Signale als eng markieren."
+    },
+    "rubricBias": 0
+  }
+]

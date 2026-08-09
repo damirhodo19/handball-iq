@@ -3,13 +3,14 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-nati
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, BarChart3, Layers, TrendingUp, AlertTriangle,
+  BarChart3, Layers, TrendingUp, AlertTriangle,
   FileText, CheckCircle2, Clock, Archive, ChevronRight,
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { getContentStats } from '@/lib/admin-storage';
 import { ALL_POSITIONS } from '@/lib/positions';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -24,10 +25,8 @@ export default function AdminStatisticsScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <Animated.View entering={FadeIn.duration(500)} style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <BackButton />
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.headerTitle}>{t('adminStats.title')}</Text>
             <Text style={styles.headerSub}>{t('adminStats.subtitle')}</Text>
           </View>

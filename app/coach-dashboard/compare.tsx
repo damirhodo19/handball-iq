@@ -2,10 +2,11 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Modal } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, UserCircle, Check, X, ChevronRight, TrendingUp, TrendingDown, Minus } from 'lucide-react-native';
+import { UserCircle, Check, X, ChevronRight, TrendingUp, TrendingDown, Minus } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { loadPlayers, PlayerProfile } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSkill, translatePosition } from '@/lib/translations';
@@ -44,9 +45,7 @@ export default function CompareScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdCompare.title')}</Text>
             <Text style={styles.headerSub}>{t('cdCompare.subtitle')}</Text>
@@ -105,23 +104,23 @@ export default function CompareScreen() {
             </Card>
 
             {/* Progress Comparison */}
-            <Text style={styles.sectionLabel}>PROGRESS</Text>
+            <Text style={styles.sectionLabel}>{t('cdCompare.progress')}</Text>
             <Card variant="gradient" shadow="card" style={styles.progressCard}>
               <View style={styles.progressRow}>
                 <View style={styles.progressCol}>
                   <Text style={styles.progressName}>{playerA.name.split(' ')[0]}</Text>
                   <TrendBadge value={playerA.weeklyTrend} />
-                  <Text style={styles.progressLabel}>Weekly Trend</Text>
+                  <Text style={styles.progressLabel}>{t('cdCompare.weeklyTrend')}</Text>
                   <TrendBadge value={playerA.monthlyTrend} />
-                  <Text style={styles.progressLabel}>Monthly Trend</Text>
+                  <Text style={styles.progressLabel}>{t('cdCompare.monthlyTrend')}</Text>
                 </View>
                 <View style={styles.progressDivider} />
                 <View style={styles.progressCol}>
                   <Text style={styles.progressName}>{playerB.name.split(' ')[0]}</Text>
                   <TrendBadge value={playerB.weeklyTrend} />
-                  <Text style={styles.progressLabel}>Weekly Trend</Text>
+                  <Text style={styles.progressLabel}>{t('cdCompare.weeklyTrend')}</Text>
                   <TrendBadge value={playerB.monthlyTrend} />
-                  <Text style={styles.progressLabel}>Monthly Trend</Text>
+                  <Text style={styles.progressLabel}>{t('cdCompare.monthlyTrend')}</Text>
                 </View>
               </View>
             </Card>
@@ -160,7 +159,7 @@ export default function CompareScreen() {
                   >
                     <View style={{ flex: 1 }}>
                       <Text style={styles.modalPlayerName}>{p.name}</Text>
-                      <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} yrs · {t('cdCompare.decisionScore')}: {p.decisionScore}%</Text>
+                      <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} {t('common.yrs')} · {t('cdCompare.decisionScore')}: {p.decisionScore}%</Text>
                     </View>
                     {isSelected && <Check size={18} color={Colors.gold} />}
                   </TouchableOpacity>
@@ -212,7 +211,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

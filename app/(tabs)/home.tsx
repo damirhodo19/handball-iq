@@ -1,37 +1,60 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, RefreshControl } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
 import {
   Shield,
-  Library,
   TrendingUp,
   ArrowRight,
-  Clock,
   Flame,
   Target,
   Zap,
-  Award,
-  Sparkles,
   ChevronRight,
   Activity,
-  Play,
   Brain,
   Users,
+  Sun,
+  AlertCircle,
 } from 'lucide-react-native';
-import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
+import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
+import { useDevelopment } from '@/hooks/useDevelopment';
+import { setSessionMode } from '@/lib/development';
 import { ScreenBackground } from '@/components/Screen';
 import { ProgressRing } from '@/components/ProgressRing';
 import { useAuth } from '@/context/AuthContext';
 import { useDevAuth } from '@/context/DevAuthContext';
-import { fetchScenarios, fetchRecentAttempts } from '@/lib/training';
-import { TrainingScenario } from '@/types/database';
-import { loadProfile, loadStreak, loadSessions, UserProfile, StreakData, SessionRecord } from '@/lib/storage';
-import { getDevelopmentTitle, getDailySession, HandballPosition } from '@/lib/positions';
+import { useTheme } from '@/context/ThemeContext';
+import {
+  loadProfile,
+  loadStreak,
+  loadSessions,
+  loadMatchHistory,
+  UserProfile,
+  StreakData,
+  SessionRecord,
+} from '@/lib/storage';
+import { computePlayerStats } from '@/lib/player-stats';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translatePosition } from '@/lib/translations';
+import { migrateLocalProfileToV2 } from '@/lib/platform/migrate-profile';
+import { profileNeedsCompletion, resolveAppRole } from '@/lib/platform/personalization';
+import { resolveContent } from '@/lib/platform/content-resolver';
+import { setSessionIntent } from '@/lib/development/session-intent';
+import { clearActiveTrainingSession } from '@/lib/development/active-session';
+import { translateCategory } from '@/lib/translations';
+import { useMode } from '@/context/ModeContext';
+import { CoachHome } from '@/components/CoachHome';
+import { LoadingState } from '@/components/LoadingState';
+import { Button } from '@/components/Button';
+import { getSyncUiStatus, type SyncUiStatus } from '@/services/syncService';
+import {
+  activeModeNeedsPlayerPosition,
+  resolvePlayerPosition,
+} from '@/lib/platform/resolve-position';
+import { isPlatformStorageHydrated } from '@/lib/platform-storage';
+import { useTabScreenBottomPadding } from '@/lib/layout';
 
 function getGreetingKey(): string {
   const hour = new Date().getHours();
@@ -40,443 +63,759 @@ function getGreetingKey(): string {
   return 'home.goodEvening';
 }
 
-function getPositionLabel(position: string | null, t: (key: string, vars?: Record<string, string | number>) => string): string {
-  return translatePosition(position ?? 'Goalkeeper', t);
+function goalLabel(
+  goal: string | null | undefined,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
+  if (!goal) return t('home.noGoalsYet');
+  const keyMap: Record<string, string> = {
+    'Decision Making': 'devGoal.decisionMaking',
+    'Game Intelligence': 'goal.gameIntelligence',
+    Defence: 'goal.defence',
+    Attack: 'goal.attack',
+    'Mental Preparation': 'devGoal.mentalPreparation',
+    'Match Preparation': 'goal.matchPreparation',
+    Leadership: 'goal.leadership',
+    'Complete Development': 'goal.completeDevelopment',
+    Tactics: 'coachGoal.tactics',
+    'Player Development': 'coachGoal.playerDevelopment',
+    'Training Planning': 'coachGoal.trainingPlanning',
+    'Match Analysis': 'coachGoal.matchAnalysis',
+  };
+  const key = keyMap[goal];
+  return key ? t(key) : goal;
 }
 
 export default function HomeScreen() {
   const { t } = useTranslation();
-  const { profile: authProfile } = useAuth();
+  const { themeVersion } = useTheme();
+  const { profile: authProfile, loading: authLoading } = useAuth();
   const { isDevAuthenticated, testUser } = useDevAuth();
-  const [scenarios, setScenarios] = useState<TrainingScenario[]>([]);
-  const [attempts, setAttempts] = useState<any[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [profileReady, setProfileReady] = useState(false);
   const [streak, setStreak] = useState<StreakData | null>(null);
   const [localSessions, setLocalSessions] = useState<SessionRecord[]>([]);
   const [localProfile, setLocalProfile] = useState<UserProfile | null>(null);
+  const [matches, setMatches] = useState<ReturnType<typeof loadMatchHistory>>([]);
+  const [syncStatus, setSyncStatus] = useState<SyncUiStatus>('idle');
+  const { activeMode, isCoachMode, canSwitch: showModeSwitch, setMode, refreshMode } = useMode();
+  // Measured tab bar height + small visual gap (see lib/layout.ts).
+  const tabBottomPad = useTabScreenBottomPadding();
 
-  const loadData = useCallback(async () => {
-    const [scenarioRes, attemptRes] = await Promise.all([fetchScenarios(), fetchRecentAttempts(20)]);
-    if (scenarioRes.scenarios) setScenarios(scenarioRes.scenarios);
-    if (attemptRes.data) setAttempts(attemptRes.data);
+  const loadData = useCallback(() => {
+    if (!isPlatformStorageHydrated() && typeof window === 'undefined') {
+      setProfileReady(false);
+      return;
+    }
+    const profile = migrateLocalProfileToV2();
+    setLocalProfile(profile);
     setStreak(loadStreak());
     setLocalSessions(loadSessions());
-    setLocalProfile(loadProfile());
-  }, []);
+    setMatches(loadMatchHistory());
+    setSyncStatus(getSyncUiStatus());
+    refreshMode();
+    setProfileReady(true);
+  }, [refreshMode]);
 
-  useEffect(() => { loadData(); }, [loadData]);
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadData();
+    }, [loadData]),
+  );
+
+  const {
+    dailyChallenge,
+    coachReport,
+    state: devState,
+    dailyGoals,
+    weeklyGoalSummary,
+    todayProgramSession,
+    levelProgress,
+    streak: devStreak,
+    refresh: refreshDev,
+  } = useDevelopment();
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    await loadData();
+    loadData();
+    refreshDev();
     setRefreshing(false);
-  }, [loadData]);
+  }, [loadData, refreshDev]);
+  const stats = useMemo(
+    () => computePlayerStats(localSessions, matches),
+    [localSessions, matches],
+  );
 
-  const score = isDevAuthenticated ? (testUser?.handball_iq_score ?? 82) : (authProfile?.handball_iq_score ?? 82);
-  const streakDays = streak?.currentStreak ?? 0;
-  const totalPoints = isDevAuthenticated ? (testUser?.total_points ?? 0) : (authProfile?.total_points ?? 0);
-  const playerName = isDevAuthenticated ? (testUser?.name ?? 'Damir') : (authProfile?.display_name ?? (localProfile?.name ?? 'Damir'));
-  const positionLabel = isDevAuthenticated
-    ? translatePosition('Goalkeeper', t)
-    : getPositionLabel(localProfile?.position ?? authProfile?.position ?? 'Goalkeeper', t);
-  const dailySession = getDailySession((localProfile?.position ?? authProfile?.position ?? 'Goalkeeper') as HandballPosition);
-  const sessionsCompleted = localSessions.length;
-  const recentCorrect = localSessions.filter((s) => s.correctCount === s.totalCount).length;
-  const mentalFocus = localSessions.length > 0 ? Math.round((recentCorrect / localSessions.length) * 100) : 0;
+  const styles = useMemo(() => createStyles(), [themeVersion]);
+
+  const safeProfile = localProfile ?? migrateLocalProfileToV2();
+  const playerPosition = resolvePlayerPosition(safeProfile);
+  const needsPlayerPosition = activeModeNeedsPlayerPosition(safeProfile, activeMode);
+
+  const resolved = useMemo(
+    () => resolveContent({ profile: safeProfile, activeMode }),
+    [safeProfile, activeMode, localSessions, matches],
+  );
+
+  const iqScore = resolved.iq.overall;
+  const positionIq = resolved.iq.positionIq.score;
+  const score = iqScore ?? (isDevAuthenticated
+    ? (testUser?.handball_iq_score ?? (stats.decisionScore || 0))
+    : (authProfile?.handball_iq_score ?? (stats.decisionScore || 0)));
+
+  const playerName = isDevAuthenticated
+    ? (testUser?.name ?? t('role.player'))
+    : (authProfile?.display_name?.trim()
+      || safeProfile?.name?.trim()
+      || t('role.player'));
+
+  const appRole = resolveAppRole(safeProfile);
+  const showCoachDashboard = isCoachMode || appRole === 'coach' || appRole === 'player_coach';
+  const needsCompletion = profileNeedsCompletion(safeProfile);
+
+  const focusSkillId = resolved.training.focusParams?.skill
+    ? String(resolved.training.focusParams.skill)
+    : null;
+  const focusText = focusSkillId
+    ? t('sprint5.focus.skill', { skill: t(`iq.skill.${focusSkillId}`) })
+    : t(resolved.training.focusKey);
+  const recommendation = {
+    title: t(resolved.training.recommendedTitleKey, { n: resolved.training.recommendedCount }),
+    subtitle: t(resolved.training.recommendedSubtitleKey),
+    route: '/session',
+  };
+
+  const startRecommended = () => {
+    clearActiveTrainingSession();
+    setSessionIntent({ scenarioIds: resolved.training.scenarioIds });
+    setSessionMode('standard');
+    router.push('/session');
+  };
+
+  const sessionsThisWeek = streak?.sessionsThisWeek ?? stats.sessionsThisWeek ?? 0;
+  const trend = devState.statistics?.improvementTrend ?? 0;
+  const upcomingGoal = goalLabel(resolved.developmentGoal, t);
+
+  const positionLabel = playerPosition
+    ? translatePosition(playerPosition, t)
+    : t('role.player');
+
+  if (authLoading || !profileReady) {
+    return (
+      <ScreenBackground edges={['top']}>
+        <LoadingState
+          message={t('home.profileLoading')}
+          accessibilityLabel={t('home.profileLoading')}
+        />
+      </ScreenBackground>
+    );
+  }
+
+  const weakestLabel = resolved.iq.weakest
+    ? t(`iq.skill.${resolved.iq.weakest.id}`)
+    : t('home.noIqYet');
+  const strongestLabel = resolved.iq.strongest
+    ? t(`iq.skill.${resolved.iq.strongest.id}`)
+    : t('home.noIqYet');
+
+  const dailyTitle = dailyChallenge.focusCategory
+    ? t('home.dailyChallengeTitle', {
+        focus: translateCategory(dailyChallenge.focusCategory, t),
+      })
+    : dailyChallenge.title;
+
+  const trendText =
+    trend > 2
+      ? t('home.trendUp', { n: trend })
+      : trend < -2
+        ? t('home.trendDown', { n: trend })
+        : t('home.trendFlat');
 
   return (
-    <ScreenBackground>
+    <ScreenBackground edges={['top']}>
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={Colors.gold} />}
       >
-        {/* Greeting */}
         <Animated.View entering={FadeIn.duration(400)}>
           <Text style={styles.greeting}>{t(getGreetingKey(), { name: playerName })}</Text>
-          <Text style={styles.greetingSub}>{positionLabel}</Text>
+          <Text style={styles.greetingSub}>
+            {isCoachMode ? t('coachHome.title') : positionLabel}
+          </Text>
         </Animated.View>
 
-        {/* Play Match - Primary Feature */}
-        <Animated.View entering={FadeInDown.delay(50).duration(600)} style={styles.playMatchWrap}>
-          <PressableCard
-            onPress={() => router.push('/match/intro')}
-            variant="gradient"
-            padding={0}
-            shadow="cardLg"
-            style={styles.playMatchCard}
+        {(syncStatus === 'pending' || syncStatus === 'failed' || syncStatus === 'synced') && (
+          <Text
+            style={{
+              textAlign: 'center',
+              color: syncStatus === 'failed' ? Colors.error : Colors.textSecondary,
+              fontFamily: 'Inter-Regular',
+              fontSize: 12,
+              marginBottom: Spacing.sm,
+            }}
           >
-            <LinearGradient
-              colors={['rgba(212,175,55,0.14)', 'rgba(212,175,55,0.03)']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.playMatchGradient}
+            {syncStatus === 'pending'
+              ? t('sprint5.sync.pending')
+              : syncStatus === 'failed'
+                ? t('sprint5.sync.failed')
+                : t('sprint5.sync.synced')}
+          </Text>
+        )}
+
+        {showModeSwitch && (
+          <Animated.View entering={FadeInDown.delay(10).duration(400)} style={styles.modeRow}>
+            <TouchableOpacity
+              style={[styles.modeChip, activeMode === 'player' && styles.modeChipActive]}
+              onPress={() => setMode('player')}
+              activeOpacity={0.85}
             >
-              <View style={styles.playMatchTop}>
-                <View style={styles.playMatchIcon}>
-                  <Shield size={26} color={Colors.gold} />
-                </View>
-                <View style={styles.playMatchBadge}>
-                  <Text style={styles.playMatchBadgeText}>{t('home.mainFeature')}</Text>
-                </View>
-              </View>
-              <Text style={styles.playMatchTitle}>{t('home.playMatch')}</Text>
-              <Text style={styles.playMatchDesc} numberOfLines={2}>
-                {t('home.playMatchDesc')}
+              <Text style={[styles.modeChipText, activeMode === 'player' && styles.modeChipTextActive]}>
+                {t('mode.player')}
               </Text>
-              <TouchableOpacity
-                style={styles.playMatchBtn}
-                activeOpacity={0.85}
-                onPress={() => router.push('/match/intro')}
-              >
-                <LinearGradient
-                  colors={Colors.goldGradient}
-                  start={{ x: 0, y: 0 }}
-                  end={{ x: 1, y: 1 }}
-                  style={styles.playMatchBtnGradient}
-                >
-                  <Play size={18} color={Colors.background} />
-                  <Text style={styles.playMatchBtnText}>{t('home.playMatch')}</Text>
-                  <ArrowRight size={20} color={Colors.background} />
-                </LinearGradient>
-              </TouchableOpacity>
-            </LinearGradient>
-          </PressableCard>
-        </Animated.View>
-
-        {/* Today's Session */}
-        <Animated.View entering={FadeInDown.delay(150).duration(600)}>
-          <Text style={styles.sectionLabel}>{t('home.todaysFocus')}</Text>
-          <PressableCard
-            onPress={() => router.push('/session')}
-            variant="gradient"
-            padding={0}
-            shadow="cardLg"
-            style={styles.sessionCard}
-          >
-            <LinearGradient
-              colors={['rgba(212,175,55,0.10)', 'rgba(212,175,55,0.02)']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.sessionGradient}
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.modeChip, activeMode === 'coach' && styles.modeChipActive]}
+              onPress={() => setMode('coach')}
+              activeOpacity={0.85}
             >
-              <View style={styles.sessionTop}>
-                <View style={styles.sessionIconWrap}>
-                  <Target size={24} color={Colors.gold} />
-                </View>
-                <View style={styles.sessionMeta}>
-                  <View style={styles.sessionBadge}>
-                    <Zap size={10} color={Colors.gold} />
-                    <Text style={styles.sessionBadgeText}>{t('difficulty.intermediate').toUpperCase()}</Text>
-                  </View>
-                </View>
-              </View>
-
-              <Text style={styles.sessionTitle}>{t('home.trainingSession')}</Text>
-              <Text style={styles.sessionDesc} numberOfLines={2}>
-                {t('home.trainingSessionSub')}
+              <Text style={[styles.modeChipText, activeMode === 'coach' && styles.modeChipTextActive]}>
+                {t('mode.coach')}
               </Text>
+            </TouchableOpacity>
+          </Animated.View>
+        )}
 
-              <View style={styles.sessionMetaRow}>
-                <View style={styles.sessionMetaItem}>
-                  <Clock size={13} color={Colors.textTertiary} />
-                  <Text style={styles.sessionMetaText}>{t('home.tenMin')}</Text>
-                </View>
-                <View style={styles.sessionMetaDivider} />
-                <View style={styles.sessionMetaItem}>
-                  <Zap size={13} color={Colors.textTertiary} />
-                  <Text style={styles.sessionMetaText}>{t('difficulty.intermediate')}</Text>
-                </View>
-              </View>
+        {isCoachMode ? (
+          <CoachHome profile={safeProfile} styles={styles} />
+        ) : needsPlayerPosition ? (
+          <Animated.View entering={FadeInDown.delay(20).duration(400)} style={styles.completionWrap}>
+            <AlertCircle size={36} color={Colors.gold} />
+            <Text style={styles.completionTitle} testID="home-complete-profile-title">
+              {t('home.completeProfileTitle')}
+            </Text>
+            <Text style={styles.completionBody}>{t('home.completeProfileBody')}</Text>
+            <View testID="home-setup-profile-cta">
+              <Button
+                label={t('home.setupProfileCta')}
+                onPress={() => router.push('/(auth)/onboarding')}
+              />
+            </View>
+          </Animated.View>
+        ) : (
+        <>
 
-              <TouchableOpacity
-                style={styles.startBtn}
-                activeOpacity={0.85}
-                onPress={() => router.push('/session')}
-              >
-                <LinearGradient
-                  colors={Colors.goldGradient}
-                  start={{ x: 0, y: 0 }}
-                  end={{ x: 1, y: 1 }}
-                  style={styles.startBtnGradient}
-                >
-                  <Text style={styles.startBtnText}>{t('home.startSession')}</Text>
-                  <ArrowRight size={20} color={Colors.background} />
-                </LinearGradient>
-              </TouchableOpacity>
-            </LinearGradient>
-          </PressableCard>
-        </Animated.View>
-
-        {/* Navigation Cards */}
-        <Animated.View entering={FadeInDown.delay(200).duration(500)}>
-          <View style={styles.navGrid}>
-            {/* Match Preparation */}
+        {needsCompletion && (
+          <Animated.View entering={FadeInDown.delay(20).duration(400)}>
             <PressableCard
-              onPress={() => router.push('/(tabs)/match-day')}
+              onPress={() => router.push('/(auth)/onboarding')}
               variant="gradient"
-              shadow="card"
-              style={styles.navCard}
+              style={styles.bannerCard}
             >
-              <View style={styles.navCardInner}>
-                <View style={styles.navIconWrap}>
-                  <Shield size={22} color={Colors.gold} />
+              <View style={styles.bannerRow}>
+                <AlertCircle size={22} color={Colors.gold} />
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.bannerTitle}>{t('home.completeProfile')}</Text>
+                  <Text style={styles.bannerSub}>{t('home.completeProfileSub')}</Text>
                 </View>
-                <Text style={styles.navTitle}>{t('home.match')}</Text>
-                <Text style={styles.navTitleSecond}>{t('home.preparation')}</Text>
+                <ChevronRight size={18} color={Colors.gold} />
               </View>
             </PressableCard>
+          </Animated.View>
+        )}
 
-            {/* Scenario Library */}
-            <PressableCard
-              onPress={() => router.push('/(tabs)/training')}
-              variant="gradient"
-              shadow="card"
-              style={styles.navCard}
-            >
-              <View style={styles.navCardInner}>
-                <View style={styles.navIconWrap}>
-                  <Library size={22} color={Colors.gold} />
-                </View>
-                <Text style={styles.navTitle}>{t('home.scenario')}</Text>
-                <Text style={styles.navTitleSecond}>{t('home.library')}</Text>
-              </View>
-            </PressableCard>
-          </View>
-        </Animated.View>
-
-        {/* AI Coach */}
-        <Animated.View entering={FadeInDown.delay(250).duration(500)}>
-          <PressableCard
-            onPress={() => router.push('/coach')}
-            variant="gradient"
-            shadow="cardLg"
-            style={styles.coachCard}
-          >
-            <LinearGradient
-              colors={['rgba(212,175,55,0.12)', 'rgba(212,175,55,0.03)']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.coachGradient}
-            >
-              <View style={styles.coachRow}>
-                <View style={styles.coachIconWrap}>
-                  <Brain size={24} color={Colors.gold} />
-                </View>
-                <View style={{ flex: 1, gap: 2 }}>
-                  <Text style={styles.coachTitle}>{t('home.aiCoach')}</Text>
-                  <Text style={styles.coachSub} numberOfLines={1}>{t('home.aiCoachSub')}</Text>
-                </View>
-                <ChevronRight size={20} color={Colors.gold} />
-              </View>
-            </LinearGradient>
-          </PressableCard>
-        </Animated.View>
-
-        {/* Coach Dashboard */}
-        <Animated.View entering={FadeInDown.delay(300).duration(500)}>
-          <PressableCard
-            onPress={() => router.push('/coach-dashboard')}
-            variant="gradient"
-            shadow="cardLg"
-            style={styles.coachCard}
-          >
-            <LinearGradient
-              colors={['rgba(212,175,55,0.12)', 'rgba(212,175,55,0.03)']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.coachGradient}
-            >
-              <View style={styles.coachRow}>
-                <View style={styles.coachIconWrap}>
-                  <Users size={24} color={Colors.gold} />
-                </View>
-                <View style={{ flex: 1, gap: 2 }}>
-                  <Text style={styles.coachTitle}>{t('home.coachDashboard')}</Text>
-                  <Text style={styles.coachSub} numberOfLines={1}>{t('home.coachDashboardSub')}</Text>
-                </View>
-                <ChevronRight size={20} color={Colors.gold} />
-              </View>
-            </LinearGradient>
-          </PressableCard>
-        </Animated.View>
-
-        {/* Your Progress */}
-        <Animated.View entering={FadeInDown.delay(300).duration(500)}>
+        {/* Today's Handball IQ */}
+        <Animated.View entering={FadeInDown.delay(50).duration(500)}>
           <PressableCard
             onPress={() => router.push('/(tabs)/progress')}
             variant="gradient"
-            shadow="cardLg"
-            style={styles.progressCard}
+            padding={0}
+            style={styles.heroCard}
           >
-            <View style={styles.progressTop}>
-              <View style={styles.progressIconWrap}>
-                <TrendingUp size={22} color={Colors.gold} />
+            <LinearGradient
+              colors={['rgba(212,175,55,0.16)', 'rgba(212,175,55,0.03)']}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.heroGradient}
+            >
+              <Text style={styles.sectionMicro}>{t('home.overallIq')}</Text>
+              <View style={styles.heroRow}>
+                <ProgressRing progress={Math.min(score, 100) / 100} size={118} strokeWidth={10}>
+                  <View style={styles.ringInner}>
+                    <Text style={styles.ringValue}>{iqScore == null && !score ? '—' : score}</Text>
+                    <Text style={styles.ringLabel}>{t('home.overallIq').toUpperCase()}</Text>
+                  </View>
+                </ProgressRing>
+                <View style={styles.heroMeta}>
+                  <View style={styles.metaRow}>
+                    <Brain size={16} color={Colors.gold} />
+                    <Text style={styles.metaText}>
+                      {t('home.positionIq')}: {positionIq == null ? '—' : positionIq}
+                    </Text>
+                  </View>
+                  <View style={styles.metaRow}>
+                    <Flame size={16} color={Colors.gold} />
+                    <Text style={styles.metaText}>
+                      {t('home.dayStreak', { n: streak?.currentStreak ?? stats.currentStreak })}
+                    </Text>
+                  </View>
+                  <View style={styles.metaRow}>
+                    <Activity size={16} color={Colors.gold} />
+                    <Text style={styles.metaText}>{t('home.sessionsThisWeek', { n: sessionsThisWeek })}</Text>
+                  </View>
+                </View>
               </View>
-              <View style={styles.progressHeaderText}>
-                <Text style={styles.progressTitle}>{t('home.yourProgress')}</Text>
-                <Text style={styles.progressSub}>{t('home.viewProgressSub')}</Text>
-              </View>
-              <ChevronRight size={18} color={Colors.gold} />
-            </View>
+            </LinearGradient>
+          </PressableCard>
+        </Animated.View>
 
-            <View style={styles.progressStatsRow}>
-              <View style={styles.progressStat}>
-                <Text style={styles.progressStatValue}>{sessionsCompleted}</Text>
-                <Text style={styles.progressStatLabel}>{t('home.sessions')}</Text>
-              </View>
-              <View style={styles.progressStatDivider} />
-              <View style={styles.progressStat}>
-                <Text style={styles.progressStatValue}>{score}</Text>
-                <Text style={styles.progressStatLabel}>{t('home.decisionScore')}</Text>
-              </View>
-              <View style={styles.progressStatDivider} />
-              <View style={styles.progressStat}>
-                <Text style={styles.progressStatValue}>{mentalFocus}%</Text>
-                <Text style={styles.progressStatLabel}>{t('home.mentalFocus')}</Text>
-              </View>
-            </View>
+        {/* Today's Focus */}
+        <Animated.View entering={FadeInDown.delay(80).duration(500)}>
+          <Text style={styles.sectionLabel}>{t('home.todaysFocusLabel')}</Text>
+          <Card variant="gradient" style={styles.focusCard}>
+            <Text style={styles.focusText}>{focusText}</Text>
+          </Card>
+        </Animated.View>
 
-            <View style={styles.progressRingRow}>
-              <ProgressRing progress={score / 100} size={90} strokeWidth={7}>
-                <View style={styles.ringInner}>
-                  <Text style={styles.ringValue}>{score}</Text>
-                  <Text style={styles.ringLabel}>{t('home.iq')}</Text>
+        {/* Current Program */}
+        {!isCoachMode && todayProgramSession ? (
+          <Animated.View entering={FadeInDown.delay(95).duration(500)}>
+            <Text style={styles.sectionLabel}>{t('sprint5.programs.current')}</Text>
+            <PressableCard onPress={() => router.push('/programs')} variant="gradient" style={styles.focusCard}>
+              <Text style={styles.focusText}>{t(todayProgramSession.objectiveKey)}</Text>
+              <Text style={styles.metaText}>
+                {t('sprint4.programProgress', { percent: todayProgramSession.completionPercent })}
+                {todayProgramSession.isCheckpoint ? ` · ${t('sprint5.programs.checkpoint')}` : ''}
+              </Text>
+              <View style={[styles.metaRow, { marginTop: 8 }]}>
+                <Text style={styles.sectionMicro}>{t('sprint5.programs.view')}</Text>
+                <ChevronRight size={16} color={Colors.gold} />
+              </View>
+            </PressableCard>
+          </Animated.View>
+        ) : !isCoachMode ? (
+          <Animated.View entering={FadeInDown.delay(95).duration(500)}>
+            <PressableCard onPress={() => router.push('/programs')} variant="gradient" style={styles.focusCard}>
+              <Text style={styles.focusText}>{t('sprint5.programs.recommended')}</Text>
+              <Text style={styles.metaText}>{t('sprint5.programs.view')}</Text>
+            </PressableCard>
+          </Animated.View>
+        ) : null}
+
+        {/* Recommended Session */}
+        {!isCoachMode && (
+          <Animated.View entering={FadeInDown.delay(110).duration(500)}>
+            <Text style={styles.sectionLabel}>{recommendation.title}</Text>
+            <PressableCard onPress={startRecommended} variant="gradient" padding={0} style={styles.ctaCard}>
+              <LinearGradient
+                colors={['rgba(212,175,55,0.14)', 'rgba(212,175,55,0.03)']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.ctaGradient}
+              >
+                <View style={styles.ctaIcon}>
+                  <Zap size={22} color={Colors.gold} />
                 </View>
-              </ProgressRing>
-              <View style={styles.progressDetails}>
-                <View style={styles.progressDetailRow}>
-                  <Flame size={14} color={Colors.gold} />
-                  <Text style={styles.progressDetailText}>{t('home.dayStreak', { n: streakDays })}</Text>
+                <Text style={styles.ctaTitle}>{t('home.startSession')}</Text>
+                <Text style={styles.ctaSub}>{recommendation.subtitle}</Text>
+                <TouchableOpacity
+                  testID="home-start-session-cta"
+                  style={styles.ctaBtn}
+                  activeOpacity={0.85}
+                  onPress={startRecommended}
+                >
+                  <LinearGradient colors={Colors.goldGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.ctaBtnGradient}>
+                    <Text style={styles.ctaBtnText}>{t('home.startSession')}</Text>
+                    <ArrowRight size={18} color={Colors.background} />
+                  </LinearGradient>
+                </TouchableOpacity>
+              </LinearGradient>
+            </PressableCard>
+          </Animated.View>
+        )}
+
+        {/* Daily Challenge */}
+        {!isCoachMode && (
+          <Animated.View entering={FadeInDown.delay(140).duration(500)}>
+            <Text style={styles.sectionLabel}>{t('home.dailyChallenge')}</Text>
+            <PressableCard
+              testID="home-daily-challenge-card"
+              onPress={() => {
+                clearActiveTrainingSession();
+                setSessionMode('daily_challenge');
+                router.push('/session');
+              }}
+              variant="gradient"
+              style={styles.linkCard}
+            >
+              <View style={styles.linkRow}>
+                <View style={styles.linkIcon}>
+                  <Sun size={20} color={Colors.gold} />
                 </View>
-                <View style={styles.progressDetailRow}>
-                  <Sparkles size={14} color={Colors.gold} />
-                  <Text style={styles.progressDetailText}>{t('home.totalPoints', { n: totalPoints })}</Text>
+                <View style={styles.linkTextCol}>
+                  <Text style={styles.linkTitle}>{dailyTitle}</Text>
+                  <Text style={styles.linkSub}>
+                    {t('home.dailyChallengeSub')}
+                  </Text>
                 </View>
-                <View style={styles.progressDetailRow}>
-                  <Activity size={14} color={Colors.gold} />
-                  <Text style={styles.progressDetailText}>{t('home.accuracy', { n: mentalFocus })}</Text>
+                <View style={styles.linkChevronWrap}>
+                  <ChevronRight size={18} color={Colors.gold} />
                 </View>
+              </View>
+            </PressableCard>
+          </Animated.View>
+        )}
+
+        {/* Weekly Goal + Streak + Recent Improvement */}
+        {!isCoachMode && dailyGoals ? (
+          <Animated.View entering={FadeInDown.delay(160).duration(500)}>
+            <Text style={styles.sectionLabel}>{t('sprint4.weeklyGoals')}</Text>
+            <Card variant="gradient" style={styles.focusCard}>
+              <Text style={styles.focusText}>
+                {t('sprint4.goalsCompleted', {
+                  done: weeklyGoalSummary.completed,
+                  total: weeklyGoalSummary.completed + weeklyGoalSummary.remaining,
+                })}
+              </Text>
+            </Card>
+          </Animated.View>
+        ) : null}
+
+        <Animated.View entering={FadeInDown.delay(170).duration(500)} style={styles.twoCol}>
+          <Card variant="gradient" style={styles.statHalf}>
+            <Text style={styles.statLabel}>{t('sprint4.currentStreak', { n: devStreak?.currentStreak ?? streak?.currentStreak ?? 0 })}</Text>
+            <Text style={styles.statValue}>{devStreak?.currentStreak ?? streak?.currentStreak ?? 0}</Text>
+            <Text style={styles.statHint}>{t('home.sessionsThisWeek', { n: sessionsThisWeek })}</Text>
+          </Card>
+          <Card variant="gradient" style={styles.statHalf}>
+            <Text style={styles.statLabel}>{t('sprint5.recentImprovement')}</Text>
+            <View style={styles.trendRow}>
+              <TrendingUp size={18} color={Colors.gold} />
+              <Text style={styles.statHint}>
+                {trend === 0
+                  ? t('sprint5.recentImprovementFlat')
+                  : t('sprint5.recentImprovementValue', { n: trend })}
+              </Text>
+            </View>
+          </Card>
+        </Animated.View>
+
+        {/* Weakest / Strongest */}
+        {!isCoachMode && (
+          <Animated.View entering={FadeInDown.delay(190).duration(500)} style={styles.twoCol}>
+            <Card variant="gradient" style={styles.statHalf}>
+              <Text style={styles.statLabel}>{t('home.weakestSkill')}</Text>
+              <Text style={styles.statHint}>{weakestLabel}</Text>
+            </Card>
+            <Card variant="gradient" style={styles.statHalf}>
+              <Text style={styles.statLabel}>{t('home.strongestSkill')}</Text>
+              <Text style={styles.statHint}>{strongestLabel}</Text>
+            </Card>
+          </Animated.View>
+        )}
+
+        {/* Development Goal */}
+        <Animated.View entering={FadeInDown.delay(200).duration(500)}>
+          <Text style={styles.sectionLabel}>{t('home.developmentGoal')}</Text>
+          <Card variant="gradient" style={styles.focusCard}>
+            <View style={styles.metaRow}>
+              <Target size={18} color={Colors.gold} />
+              <Text style={styles.focusText}>{upcomingGoal}</Text>
+            </View>
+          </Card>
+        </Animated.View>
+
+        {/* Recommended Session */}
+        <Animated.View entering={FadeInDown.delay(230).duration(500)}>
+          <Text style={styles.sectionLabel}>{t('home.recommendedSession')}</Text>
+          <PressableCard
+            onPress={startRecommended}
+            variant="gradient"
+            style={styles.linkCard}
+          >
+            <View style={styles.linkRow}>
+              <View style={styles.linkIcon}>
+                <Brain size={20} color={Colors.gold} />
+              </View>
+              <View style={styles.linkTextCol}>
+                <Text style={styles.linkTitle}>{recommendation.title}</Text>
+                <Text style={styles.linkSub}>{recommendation.subtitle}</Text>
+              </View>
+              <View style={styles.linkChevronWrap}>
+                <ChevronRight size={18} color={Colors.gold} />
               </View>
             </View>
           </PressableCard>
         </Animated.View>
 
-        {/* Founding Member Badge */}
-        <Animated.View entering={FadeInDown.delay(400).duration(500)}>
-          <View style={styles.foundingWrap}>
-            <LinearGradient
-              colors={['rgba(212,175,55,0.08)', 'rgba(212,175,55,0.02)']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.foundingGradient}
-            >
-              <View style={styles.foundingLeft}>
-                <View style={styles.foundingIconWrap}>
-                  <Award size={22} color={Colors.gold} />
-                </View>
-                <View>
-                  <Text style={styles.foundingTitle}>{t('home.foundingMember')}</Text>
-                  <Text style={styles.foundingSub}>{t('home.earlyAccessPioneer')}</Text>
-                </View>
-              </View>
-              <View style={styles.foundingBadge}>
-                <Text style={styles.foundingBadgeText}>#001</Text>
-              </View>
-            </LinearGradient>
-          </View>
+        {/* Soft links — last Home section before bottom spacer */}
+        <Animated.View
+          entering={FadeInDown.delay(260).duration(500)}
+          style={styles.softLinks}
+          testID="home-final-cta"
+        >
+          <PressableCard onPress={() => router.push('/match/intro')} variant="gradient" style={styles.softCard}>
+            <Shield size={18} color={Colors.gold} />
+            <Text style={styles.softText}>{t('home.playMatch')}</Text>
+          </PressableCard>
+          <PressableCard onPress={() => router.push('/coach')} variant="gradient" style={styles.softCard}>
+            <Brain size={18} color={Colors.gold} />
+            <Text style={styles.softText}>{t('home.aiCoach')}</Text>
+          </PressableCard>
+          {showCoachDashboard && (
+            <PressableCard onPress={() => router.push('/coach-dashboard')} variant="gradient" style={styles.softCard}>
+              <Users size={18} color={Colors.gold} />
+              <Text style={styles.softText}>{t('home.coachDashboard')}</Text>
+            </PressableCard>
+          )}
         </Animated.View>
+        </>
+        )}
+
+        {/*
+          Explicit spacer — RN-web ScrollView has dropped contentContainerStyle.paddingBottom
+          from scroll extent, leaving the last CTA under the tab bar. Height = measured tab
+          bar + visual gap via useTabScreenBottomPadding().
+        */}
+        <View testID="home-bottom-spacer" style={{ height: tabBottomPad }} collapsable={false} />
       </ScrollView>
     </ScreenBackground>
   );
 }
 
-const styles = StyleSheet.create({
-  scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
-
-  greeting: { ...Typography.h1, fontFamily: 'Inter-ExtraBold', color: Colors.textPrimary, fontSize: 28, lineHeight: 34 },
-  greetingSub: { ...Typography.bodySmall, color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 14, marginTop: 2, marginBottom: Spacing.xl, letterSpacing: 0.5 },
-
-  sectionLabel: { ...Typography.micro, color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', letterSpacing: 1.5, marginBottom: Spacing.sm },
-
-  // Play Match
-  playMatchWrap: { marginBottom: Spacing.lg },
-  playMatchCard: { overflow: 'hidden' },
-  playMatchGradient: { borderRadius: Radius.lg, padding: Spacing.lg, gap: Spacing.md },
-  playMatchTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
-  playMatchIcon: { width: 56, height: 56, borderRadius: 18, backgroundColor: Colors.goldSoft, borderWidth: 1.5, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-  playMatchBadge: { backgroundColor: Colors.gold, paddingHorizontal: 10, paddingVertical: 5, borderRadius: Radius.sm },
-  playMatchBadgeText: { color: Colors.background, fontFamily: 'Inter-ExtraBold', fontSize: 10, letterSpacing: 1.5 },
-  playMatchTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 24, color: Colors.textPrimary, lineHeight: 30 },
-  playMatchDesc: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 14, lineHeight: 21 },
-  playMatchBtn: { borderRadius: Radius.lg, overflow: 'hidden' },
-  playMatchBtnGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: Spacing.sm, paddingVertical: 16, borderRadius: Radius.lg },
-  playMatchBtnText: { fontFamily: 'Inter-ExtraBold', fontSize: 17, color: Colors.background },
-
-  // Today's Session
-  sessionCard: { overflow: 'hidden', marginBottom: Spacing.lg },
-  sessionGradient: { borderRadius: Radius.lg, padding: Spacing.lg, gap: Spacing.md },
-  sessionTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
-  sessionIconWrap: { width: 52, height: 52, borderRadius: 16, backgroundColor: Colors.goldSoft, borderWidth: 1, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-  sessionMeta: { alignItems: 'flex-end' },
-  sessionBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: Colors.goldSoft, paddingHorizontal: 8, paddingVertical: 4, borderRadius: Radius.sm, borderWidth: 1, borderColor: Colors.gold },
-  sessionBadgeText: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 10, letterSpacing: 1 },
-  sessionTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary, lineHeight: 28 },
-  sessionDesc: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 14, lineHeight: 21 },
-
-  sessionMetaRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
-  sessionMetaItem: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  sessionMetaText: { color: Colors.textTertiary, fontFamily: 'Inter-Medium', fontSize: 13 },
-  sessionMetaDivider: { width: 1, height: 16, backgroundColor: Colors.hairline },
-
-  startBtn: { borderRadius: Radius.lg, overflow: 'hidden', marginTop: Spacing.xs },
-  startBtnGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: Spacing.sm, paddingVertical: 16, borderRadius: Radius.lg },
-  startBtnText: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.background },
-
-  // Nav grid
-  navGrid: { flexDirection: 'row', gap: Spacing.sm, marginBottom: Spacing.lg },
-  navCard: { flex: 1 },
-  navCardInner: { gap: Spacing.xs },
-  navIconWrap: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center', marginBottom: Spacing.sm },
-  navTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary, lineHeight: 20 },
-  navTitleSecond: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary, lineHeight: 20 },
-
-  // AI Coach
-  coachCard: { marginBottom: Spacing.lg, overflow: 'hidden' },
-  coachGradient: { borderRadius: Radius.lg, padding: Spacing.lg, borderWidth: 1, borderColor: Colors.gold },
-  coachRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
-  coachIconWrap: { width: 48, height: 48, borderRadius: 14, backgroundColor: Colors.goldSoft, borderWidth: 1.5, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-  coachTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 17, color: Colors.textPrimary },
-  coachSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13 },
-
-  // Your Progress
-  progressCard: { marginBottom: Spacing.xl, gap: Spacing.lg, padding: Spacing.lg, ...Shadows.cardLg, borderWidth: 1, borderColor: Colors.border, borderRadius: Radius.lg, backgroundColor: Colors.surface, overflow: 'hidden', shadowColor: '#000', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.5, shadowRadius: 24, elevation: 12 },
-  progressTop: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
-  progressIconWrap: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
-  progressHeaderText: { flex: 1, gap: 2 },
-  progressTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 17, color: Colors.textPrimary },
-  progressSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13 },
-  progressStatsRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: Spacing.md, borderTopWidth: 1, borderTopColor: Colors.hairline, borderBottomWidth: 1, borderBottomColor: Colors.hairline },
-  progressStat: { flex: 1, alignItems: 'center', gap: 4 },
-  progressStatValue: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
-  progressStatLabel: { ...Typography.micro, color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', letterSpacing: 0.5, textTransform: 'uppercase' },
-  progressStatDivider: { width: 1, height: 36, backgroundColor: Colors.hairline },
-
-  progressRingRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.lg },
-  ringInner: { alignItems: 'center', justifyContent: 'center' },
-  ringValue: { fontFamily: 'Inter-ExtraBold', fontSize: 26, color: Colors.textPrimary },
-  ringLabel: { fontFamily: 'Inter-SemiBold', fontSize: 9, color: Colors.gold, letterSpacing: 2 },
-  progressDetails: { flex: 1, gap: Spacing.sm },
-  progressDetailRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },
-  progressDetailText: { color: Colors.textSecondary, fontFamily: 'Inter-Medium', fontSize: 14 },
-
-  // Founding Member
-  foundingWrap: { borderRadius: Radius.lg, overflow: 'hidden', borderWidth: 1, borderColor: Colors.gold, ...Shadows.gold },
-  foundingGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: Spacing.lg, borderRadius: Radius.lg },
-  foundingLeft: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
-  foundingIconWrap: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, borderWidth: 1, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-  foundingTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary },
-  foundingSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 12, marginTop: 2 },
-  foundingBadge: { backgroundColor: Colors.gold, paddingHorizontal: 14, paddingVertical: 8, borderRadius: Radius.pill },
-  foundingBadgeText: { fontFamily: 'Inter-ExtraBold', fontSize: 15, color: Colors.background },
-});
+function createStyles() {
+  return StyleSheet.create({
+    scroll: {
+      paddingHorizontal: Spacing.lg,
+      paddingTop: Spacing.xxxl + 16,
+      // Bottom clearance via home-bottom-spacer (measured tab bar + gap)
+      width: '100%',
+      maxWidth: '100%',
+    },
+    greeting: {
+      ...Typography.h1,
+      fontFamily: 'Inter-ExtraBold',
+      color: Colors.textPrimary,
+      fontSize: 28,
+      lineHeight: 34,
+    },
+    greetingSub: {
+      ...Typography.bodySmall,
+      color: Colors.gold,
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 14,
+      marginTop: 2,
+      marginBottom: Spacing.sm,
+      letterSpacing: 0.5,
+    },
+    modeRow: {
+      flexDirection: 'row',
+      gap: Spacing.sm,
+      marginBottom: Spacing.lg,
+    },
+    modeChip: {
+      flex: 1,
+      paddingVertical: 10,
+      borderRadius: Radius.lg,
+      borderWidth: 1,
+      borderColor: Colors.border,
+      backgroundColor: Colors.surface,
+      alignItems: 'center',
+    },
+    modeChipActive: {
+      borderColor: Colors.gold,
+      backgroundColor: Colors.goldSoft,
+    },
+    modeChipText: {
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 13,
+      color: Colors.textTertiary,
+    },
+    modeChipTextActive: {
+      color: Colors.gold,
+    },
+    completionWrap: {
+      marginTop: Spacing.lg,
+      padding: Spacing.xl,
+      gap: Spacing.md,
+      alignItems: 'center',
+      backgroundColor: Colors.surface,
+      borderRadius: Radius.lg,
+      borderWidth: 1,
+      borderColor: Colors.gold,
+    },
+    completionTitle: {
+      fontFamily: 'Inter-ExtraBold',
+      fontSize: 20,
+      color: Colors.textPrimary,
+      textAlign: 'center',
+      lineHeight: 28,
+    },
+    completionBody: {
+      fontFamily: 'Inter-Regular',
+      fontSize: 14,
+      color: Colors.textSecondary,
+      textAlign: 'center',
+      lineHeight: 21,
+      marginBottom: Spacing.sm,
+    },
+    bannerCard: { marginBottom: Spacing.lg, borderWidth: 1, borderColor: Colors.gold },
+    bannerRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
+    bannerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 15, color: Colors.textPrimary },
+    bannerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
+    heroCard: { overflow: 'hidden', marginBottom: Spacing.lg },
+    heroGradient: { borderRadius: Radius.lg, padding: Spacing.lg, gap: Spacing.md },
+    sectionMicro: {
+      color: Colors.gold,
+      fontFamily: 'Inter-ExtraBold',
+      fontSize: 10,
+      letterSpacing: 2,
+    },
+    heroRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.lg },
+    ringInner: { alignItems: 'center', justifyContent: 'center' },
+    ringValue: { fontFamily: 'Inter-ExtraBold', fontSize: 34, color: Colors.textPrimary, lineHeight: 38 },
+    ringLabel: { fontFamily: 'Inter-SemiBold', fontSize: 9, color: Colors.gold, letterSpacing: 1.5 },
+    heroMeta: { flex: 1, gap: Spacing.sm },
+    metaRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },
+    metaText: { color: Colors.textSecondary, fontFamily: 'Inter-Medium', fontSize: 14, flex: 1 },
+    sectionLabel: {
+      ...Typography.micro,
+      color: Colors.textTertiary,
+      fontFamily: 'Inter-SemiBold',
+      letterSpacing: 1.5,
+      marginBottom: Spacing.sm,
+    },
+    focusCard: { marginBottom: Spacing.lg, padding: Spacing.lg },
+    focusText: { color: Colors.textPrimary, fontFamily: 'Inter-Medium', fontSize: 15, lineHeight: 22, flex: 1 },
+    ctaCard: { overflow: 'hidden', marginBottom: Spacing.lg },
+    ctaGradient: { borderRadius: Radius.lg, padding: Spacing.lg, gap: Spacing.sm },
+    ctaIcon: {
+      width: 48,
+      height: 48,
+      borderRadius: 14,
+      backgroundColor: Colors.goldSoft,
+      borderWidth: 1,
+      borderColor: Colors.gold,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginBottom: Spacing.xs,
+    },
+    ctaTitle: {
+      fontFamily: 'Inter-ExtraBold',
+      fontSize: 22,
+      color: Colors.textPrimary,
+      flexShrink: 1,
+      flexWrap: 'wrap',
+    },
+    ctaSub: {
+      color: Colors.textSecondary,
+      fontFamily: 'Inter-Regular',
+      fontSize: 14,
+      marginBottom: Spacing.sm,
+      flexShrink: 1,
+      flexWrap: 'wrap',
+    },
+    ctaBtn: { borderRadius: Radius.lg, overflow: 'hidden', alignSelf: 'stretch' },
+    ctaBtnGradient: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: Spacing.sm,
+      paddingVertical: 14,
+      paddingHorizontal: Spacing.md,
+      borderRadius: Radius.lg,
+      flexWrap: 'wrap',
+    },
+    ctaBtnText: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.background, flexShrink: 1 },
+    linkCard: { marginBottom: Spacing.lg, width: '100%', maxWidth: '100%', overflow: 'hidden', alignSelf: 'stretch' },
+    linkRow: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      flexWrap: 'wrap',
+      gap: Spacing.md,
+      width: '100%',
+      maxWidth: '100%',
+    },
+    linkIcon: {
+      width: 44,
+      height: 44,
+      borderRadius: 14,
+      backgroundColor: Colors.goldSoft,
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexShrink: 0,
+    },
+    linkTextCol: {
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: 160,
+      minWidth: 0,
+      maxWidth: '100%',
+    },
+    linkTitle: {
+      fontFamily: 'Inter-ExtraBold',
+      fontSize: 16,
+      color: Colors.textPrimary,
+      flexShrink: 1,
+      maxWidth: '100%',
+      width: '100%',
+    },
+    linkSub: {
+      color: Colors.textTertiary,
+      fontFamily: 'Inter-Regular',
+      fontSize: 13,
+      marginTop: 2,
+      flexShrink: 1,
+      maxWidth: '100%',
+      width: '100%',
+    },
+    linkChevronWrap: {
+      flexShrink: 0,
+      marginTop: 4,
+    },
+    twoCol: { flexDirection: 'row', gap: Spacing.sm, marginBottom: Spacing.lg, width: '100%' },
+    statHalf: { flex: 1, minWidth: 0, padding: Spacing.md, gap: 6, overflow: 'hidden' },
+    statLabel: {
+      color: Colors.textTertiary,
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 11,
+      letterSpacing: 0.8,
+      textTransform: 'uppercase',
+      flexShrink: 1,
+    },
+    statValue: { fontFamily: 'Inter-ExtraBold', fontSize: 28, color: Colors.textPrimary },
+    statHint: {
+      color: Colors.textSecondary,
+      fontFamily: 'Inter-Medium',
+      fontSize: 13,
+      flexShrink: 1,
+      flexWrap: 'wrap',
+    },
+    trendRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 4, flexWrap: 'wrap' },
+    statExtra: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 12, marginTop: 4 },
+    softLinks: { gap: Spacing.sm, width: '100%', paddingBottom: Spacing.sm },
+    softCard: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: Spacing.md,
+      paddingVertical: Spacing.md,
+      paddingHorizontal: Spacing.lg,
+      width: '100%',
+      maxWidth: '100%',
+      overflow: 'hidden',
+    },
+    softText: {
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 15,
+      color: Colors.textPrimary,
+      flex: 1,
+      flexShrink: 1,
+      minWidth: 0,
+      flexWrap: 'wrap',
+    },
+  });
+}

@@ -2,12 +2,14 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, TrendingUp, TrendingDown, Minus, Calendar, AlertCircle, CheckCircle2, Target, Lightbulb } from 'lucide-react-native';
+import { TrendingUp, TrendingDown, Minus, Calendar, AlertCircle, CheckCircle2, Target, Lightbulb } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { buildPlayerProfile, generateWeeklyReport, WeeklyReport } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateSkillCategory, renderCoachMessage } from '@/lib/coach-i18n';
 
 export default function WeeklyScreen() {
   const { t } = useTranslation();
@@ -35,9 +37,7 @@ export default function WeeklyScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachWeekly.title')}</Text>
             <Text style={styles.headerSub}>{t('coachWeekly.subtitle')}</Text>
@@ -69,7 +69,7 @@ export default function WeeklyScreen() {
             iconBg={Colors.successSoft}
             iconBorder={Colors.success}
             title={t('coachWeekly.biggestImprovement')}
-            text={report.biggestImprovement}
+            text={renderCoachMessage(t, report.biggestImprovement)}
           />
         </Animated.View>
 
@@ -80,16 +80,16 @@ export default function WeeklyScreen() {
             iconBg={Colors.warningSoft}
             iconBorder={Colors.warning}
             title={t('coachWeekly.biggestWeakness')}
-            text={report.biggestWeakness}
+            text={renderCoachMessage(t, report.biggestWeakness)}
           />
         </Animated.View>
 
         {/* Most Improved Skill */}
         <Animated.View entering={FadeInDown.delay(200).duration(400)}>
           <View style={styles.skillRow}>
-            <SkillBadge label={t('coachWeekly.mostImprovedSkill')} value={report.mostImprovedSkill} color={Colors.success} />
+            <SkillBadge label={t('coachWeekly.mostImprovedSkill')} value={translateSkillCategory(report.mostImprovedSkill, t)} color={Colors.success} />
             <View style={{ width: Spacing.sm }} />
-            <SkillBadge label={t('coachWeekly.skillAttention')} value={report.skillNeedingAttention} color={Colors.warning} />
+            <SkillBadge label={t('coachWeekly.skillAttention')} value={translateSkillCategory(report.skillNeedingAttention, t)} color={Colors.warning} />
           </View>
         </Animated.View>
 
@@ -100,7 +100,7 @@ export default function WeeklyScreen() {
               <View style={styles.recommendIcon}><Lightbulb size={18} color={Colors.gold} /></View>
               <Text style={styles.recommendTitle}>{t('coachWeekly.recommendation')}</Text>
             </View>
-            <Text style={styles.recommendText}>{report.recommendation}</Text>
+            <Text style={styles.recommendText}>{renderCoachMessage(t, report.recommendation)}</Text>
           </Card>
         </Animated.View>
       </ScrollView>
@@ -135,7 +135,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

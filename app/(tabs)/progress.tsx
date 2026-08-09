@@ -1,19 +1,28 @@
-import { useState, useEffect, useCallback } from 'react';
-import { View, StyleSheet, Text, ScrollView, Dimensions, RefreshControl } from 'react-native';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { View, StyleSheet, Text, ScrollView, Dimensions, RefreshControl, TouchableOpacity } from 'react-native';
+import { router } from 'expo-router';
 import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
-import { BarChart3, Target, Shield, Eye, Activity, TrendingUp } from 'lucide-react-native';
+import { BarChart3, Target, Shield, Eye, Activity, TrendingUp, Award } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
-import { loadMetrics, loadSessions, MetricHistory, SessionRecord } from '@/lib/storage';
+import { loadMetrics, loadSessions, loadMatchHistory, loadStreak, loadProfile, MetricHistory, SessionRecord } from '@/lib/storage';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateSkill } from '@/lib/translations';
+import { buildWeaknessRecommendations, formatWeaknessRecommendation } from '@/lib/development/weakness-i18n';
+import { localizeContent } from '@/lib/content-localize';
+import { useDevelopment } from '@/hooks/useDevelopment';
+import { resolveContent } from '@/lib/platform/content-resolver';
+import { getPositionModule, isHandballPosition } from '@/lib/platform/position-modules';
+import { getProgramDef } from '@/lib/development/programs';
+import { AchievementDetail } from '@/components/AchievementDetail';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const CHART_WIDTH = SCREEN_WIDTH - Spacing.lg * 2 - 40;
 const CHART_HEIGHT = 160;
 
 export default function ProgressScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [metrics, setMetrics] = useState<MetricHistory[]>([]);
   const [sessions, setSessions] = useState<SessionRecord[]>([]);
   const [refreshing, setRefreshing] = useState(false);
@@ -35,7 +44,39 @@ export default function ProgressScreen() {
   const totalSessions = sessions.length;
   const avgScore = totalSessions > 0 ? Math.round(sessions.reduce((s, ss) => s + ss.decisionScore, 0) / totalSessions) : 0;
   const bestScore = totalSessions > 0 ? Math.max(...sessions.map((s) => s.decisionScore)) : 0;
+  const { state: devState, weaknesses, coachReport, achievements, activeProgram, weeklyGoalSummary, streak: devStreak } = useDevelopment();
+  const completedPrograms = devState.completedPrograms ?? [];
+  const [selectedAch, setSelectedAch] = useState<string | null>(null);
+  const weaknessRecs = buildWeaknessRecommendations(weaknesses);
+  const localizedWeaknessRecs = weaknessRecs.length > 0
+    ? weaknessRecs.map((item) => formatWeaknessRecommendation(item, t))
+    : [t('dev.rec.maintainConsistency')];
+  const stats = devState.statistics;
   const totalTime = sessions.reduce((s, ss) => s + ss.timeSpent, 0);
+  const topCategories = Object.entries(stats.byCategory)
+    .filter(([, s]) => s.total >= 3)
+    .sort((a, b) => b[1].accuracy - a[1].accuracy)
+    .slice(0, 5);
+  const profile = loadProfile();
+  const resolved = useMemo(() => resolveContent({ profile }), [profile, sessions]);
+  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const mod = position ? getPositionModule(position) : null;
+  const skillRows = mod
+    ? mod.positionSkills.map((id) => ({
+        id,
+        accuracy: stats.bySkill?.[id]?.accuracy ?? null,
+        total: stats.bySkill?.[id]?.total ?? 0,
+        iqScore: resolved.iq.positionSkills.find((s) => s.id === id)?.score ?? null,
+      }))
+    : [];
+  const progressCtx = {
+    sessionCount: sessions.length,
+    decisionCount: stats.totalDecisions,
+    streak: devStreak?.currentStreak ?? loadStreak().currentStreak,
+    matchCount: loadMatchHistory().length,
+    programWeeks: activeProgram?.weeksCompleted.length ?? 0,
+    programsCompleted: completedPrograms.filter((p) => p.completed).length,
+  };
 
   return (
     <ScreenBackground>
@@ -53,14 +94,184 @@ export default function ProgressScreen() {
           </View>
         </View>
 
+        {/* Handball IQ trend */}
+        <SectionLabel label={t('home.overallIq')} />
+        <Animated.View entering={FadeInDown.delay(80).duration(500)}>
+          <View style={styles.statsRow}>
+            <StatCard value={resolved.iq.overall == null ? '—' : `${resolved.iq.overall}`} label={t('home.overallIq')} />
+            <StatCard value={resolved.iq.positionIq.score == null ? '—' : `${resolved.iq.positionIq.score}`} label={t('home.positionIq')} />
+            <StatCard value={stats.improvementTrend >= 0 ? `+${stats.improvementTrend}` : `${stats.improvementTrend}`} label={t('sprint5.recentImprovement')} />
+          </View>
+        </Animated.View>
+
+        {/* Skill matrix */}
+        {skillRows.length > 0 && (
+          <>
+            <SectionLabel label={t('sprint5.skillMatrix')} />
+            <Animated.View entering={FadeInDown.delay(100).duration(500)}>
+              <Card variant="gradient" shadow="card" style={styles.catCard}>
+                {skillRows.map((row) => (
+                  <View key={row.id} style={styles.catRow}>
+                    <Text style={styles.catName} numberOfLines={1}>{t(`iq.skill.${row.id}`)}</Text>
+                    <Text style={styles.catAcc}>
+                      {row.iqScore != null ? row.iqScore : row.accuracy != null ? `${row.accuracy}%` : '—'}
+                    </Text>
+                    <ProgressBar
+                      progress={(row.iqScore ?? row.accuracy ?? 0) / 100}
+                      height={4}
+                      color={Colors.gold}
+                    />
+                  </View>
+                ))}
+              </Card>
+            </Animated.View>
+          </>
+        )}
+
+        {/* Current program + history */}
+        <SectionLabel label={t('sprint5.programs.current')} />
+        <Animated.View entering={FadeInDown.delay(110).duration(500)}>
+          <Card variant="gradient" shadow="card" style={styles.recCard}>
+            {activeProgram && !activeProgram.completed ? (
+              <TouchableOpacity onPress={() => router.push('/programs')}>
+                <Text style={styles.recText}>
+                  {t(getProgramDef(activeProgram.programId)?.titleKey ?? activeProgram.programId)} · {activeProgram.completionPercent}%
+                </Text>
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={() => router.push('/programs')}>
+                <Text style={styles.recText}>{t('sprint5.programs.recommended')}</Text>
+              </TouchableOpacity>
+            )}
+            <Text style={[styles.recText, { marginTop: 8 }]}>{t('sprint5.programHistory')}</Text>
+            {completedPrograms.slice(0, 3).map((p) => (
+              <Text key={`${p.programId}_${p.startedAt}`} style={styles.recText}>
+                • {t(getProgramDef(p.programId)?.titleKey ?? p.programId)}
+              </Text>
+            ))}
+          </Card>
+        </Animated.View>
+
+        <SectionLabel label={t('sprint4.weeklyGoals')} />
+        <Animated.View entering={FadeInDown.delay(115).duration(500)}>
+          <View style={styles.statsRow}>
+            <StatCard value={`${devStreak?.currentStreak ?? 0}`} label={t('profile.currentStreak')} />
+            <StatCard
+              value={`${weeklyGoalSummary.completed}/${weeklyGoalSummary.completed + weeklyGoalSummary.remaining}`}
+              label={t('sprint4.weeklyGoals')}
+            />
+            <StatCard value={`${totalSessions}`} label={t('progress.sessionsCompleted')} />
+          </View>
+        </Animated.View>
+
+        {/* Achievements */}
+        <SectionLabel label={t('sprint5.achievements')} />
+        <Animated.View entering={FadeInDown.delay(120).duration(500)}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
+            {achievements.slice(0, 8).map((a) => (
+              <TouchableOpacity
+                key={a.id}
+                onPress={() => setSelectedAch(a.id)}
+                style={{
+                  width: '47%',
+                  padding: 10,
+                  borderRadius: Radius.md,
+                  backgroundColor: Colors.surface,
+                  opacity: a.unlocked ? 1 : 0.55,
+                  flexDirection: 'row',
+                  gap: 8,
+                  alignItems: 'center',
+                }}
+              >
+                <Award size={16} color={a.unlocked ? Colors.gold : Colors.textTertiary} />
+                <Text style={{ ...Typography.caption, color: Colors.textPrimary, flex: 1 }} numberOfLines={2}>
+                  {t(`dev.achievement.${a.id}`)}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </Animated.View>
+
         {/* Summary Stats */}
-        <Animated.View entering={FadeInDown.delay(100).duration(500)}>
+        <Animated.View entering={FadeInDown.delay(130).duration(500)}>
           <View style={styles.statsRow}>
             <StatCard value={`${totalSessions}`} label={t('progress.sessionsCompleted')} />
             <StatCard value={`${avgScore}%`} label={t('progress.avgScore')} />
-            <StatCard value={`${bestScore}%`} label="Best Score" />
+            <StatCard value={`${bestScore}%`} label={t('progress.bestScore')} />
           </View>
         </Animated.View>
+
+        {/* Development Statistics */}
+        <SectionLabel label={t('dev.statistics')} />
+        <Animated.View entering={FadeInDown.delay(120).duration(500)}>
+          <View style={styles.statsRow}>
+            <StatCard value={`${stats.decisionAccuracy}%`} label={t('dev.decisionAccuracy')} />
+            <StatCard value={stats.avgReactionMs > 0 ? `${(stats.avgReactionMs / 1000).toFixed(1)}s` : '—'} label={t('dev.reactionTime')} />
+            <StatCard value={stats.improvementTrend >= 0 ? `+${stats.improvementTrend}%` : `${stats.improvementTrend}%`} label={t('dev.improvementTrend')} />
+          </View>
+        </Animated.View>
+
+        {(stats.bestDay || stats.worstDay) && (
+          <Animated.View entering={FadeInDown.delay(140).duration(500)}>
+            <Card variant="gradient" shadow="card" style={styles.dayCard}>
+              {stats.bestDay && (
+                <View style={styles.dayRow}>
+                  <Text style={styles.dayLabel}>{t('dev.bestDay')}</Text>
+                  <Text style={styles.dayValue}>{stats.bestDay.date.slice(5)} · {stats.bestDay.accuracy}%</Text>
+                </View>
+              )}
+              {stats.worstDay && (
+                <View style={styles.dayRow}>
+                  <Text style={styles.dayLabel}>{t('dev.worstDay')}</Text>
+                  <Text style={styles.dayValue}>{stats.worstDay.date.slice(5)} · {stats.worstDay.accuracy}%</Text>
+                </View>
+              )}
+            </Card>
+          </Animated.View>
+        )}
+
+        {topCategories.length > 0 && (
+          <>
+            <SectionLabel label={t('dev.categoryPerformance')} />
+            <Animated.View entering={FadeInDown.delay(160).duration(500)}>
+              <Card variant="gradient" shadow="card" style={styles.catCard}>
+                {topCategories.map(([name, s]) => (
+                  <View key={name} style={styles.catRow}>
+                    <Text style={styles.catName} numberOfLines={1}>{translateSkill(name, t)}</Text>
+                    <Text style={styles.catAcc}>{s.accuracy}%</Text>
+                    <ProgressBar progress={s.accuracy / 100} height={4} color={Colors.gold} />
+                  </View>
+                ))}
+              </Card>
+            </Animated.View>
+          </>
+        )}
+
+        {localizedWeaknessRecs.length > 0 && (
+          <>
+            <SectionLabel label={t('dev.recommendations')} />
+            <Animated.View entering={FadeInDown.delay(180).duration(500)}>
+              <Card variant="gradient" shadow="card" style={styles.recCard}>
+                {localizedWeaknessRecs.slice(0, 4).map((rec, i) => (
+                  <Text key={i} style={styles.recText}>• {rec}</Text>
+                ))}
+              </Card>
+            </Animated.View>
+          </>
+        )}
+
+        {coachReport.trainNext.length > 0 && (
+          <>
+            <SectionLabel label={t('dev.trainNext')} />
+            <Animated.View entering={FadeInDown.delay(200).duration(500)}>
+              <Card variant="gradient" shadow="card" style={styles.recCard}>
+                {coachReport.trainNext.slice(0, 3).map((item, i) => (
+                  <Text key={i} style={styles.recText}>• {localizeContent(item, lang, t)}</Text>
+                ))}
+              </Card>
+            </Animated.View>
+          </>
+        )}
 
         {totalSessions === 0 && (
           <Card variant="gradient" shadow="card" style={styles.emptyCard}>
@@ -73,32 +284,32 @@ export default function ProgressScreen() {
         {/* Decision Score Chart */}
         {totalSessions > 0 && (
           <>
-            <ChartSection title="Decision Score" subtitle="Last sessions" icon={<Target size={16} color={Colors.gold} />}>
-              <LineChart data={recentMetrics.map((m) => m.decisionScore)} labels={recentMetrics.map((m) => m.date.slice(5))} />
+            <ChartSection title={t('progress.decisionScoreChart')} subtitle={t('progress.lastSessions')} icon={<Target size={16} color={Colors.gold} />}>
+              <LineChart data={recentMetrics.map((m) => m.decisionScore)} labels={recentMetrics.map((m) => m.date.slice(5))} emptyText={t('progress.noDataYet')} />
             </ChartSection>
 
             {/* Pressure Control Chart */}
-            <ChartSection title="Pressure Control" subtitle="Performance under pressure" icon={<Shield size={16} color={Colors.gold} />}>
-              <BarChart data={recentMetrics.map((m) => m.pressureControl)} labels={recentMetrics.map((m) => m.date.slice(5))} maxValue={100} color={Colors.info} />
+            <ChartSection title={t('progress.pressureControl')} subtitle={t('progress.pressureSub')} icon={<Shield size={16} color={Colors.gold} />}>
+              <BarChart data={recentMetrics.map((m) => m.pressureControl)} labels={recentMetrics.map((m) => m.date.slice(5))} maxValue={100} color={Colors.info} emptyText={t('progress.noDataYet')} />
             </ChartSection>
 
             {/* Shooter Reading Chart */}
-            <ChartSection title="Shooter Reading" subtitle="Reading the shooter accuracy" icon={<Eye size={16} color={Colors.gold} />}>
-              <LineChart data={recentMetrics.map((m) => m.shooterReading)} labels={recentMetrics.map((m) => m.date.slice(5))} color={Colors.success} />
+            <ChartSection title={t('progress.shooterReading')} subtitle={t('progress.readingSub')} icon={<Eye size={16} color={Colors.gold} />}>
+              <LineChart data={recentMetrics.map((m) => m.shooterReading)} labels={recentMetrics.map((m) => m.date.slice(5))} color={Colors.success} emptyText={t('progress.noDataYet')} />
             </ChartSection>
 
             {/* Consistency Chart */}
-            <ChartSection title="Consistency" subtitle="Overall decision consistency" icon={<Activity size={16} color={Colors.gold} />}>
-              <BarChart data={recentMetrics.map((m) => m.consistency)} labels={recentMetrics.map((m) => m.date.slice(5))} maxValue={100} color={Colors.gold} />
+            <ChartSection title={t('progress.consistency')} subtitle={t('progress.consistencySub')} icon={<Activity size={16} color={Colors.gold} />}>
+              <BarChart data={recentMetrics.map((m) => m.consistency)} labels={recentMetrics.map((m) => m.date.slice(5))} maxValue={100} color={Colors.gold} emptyText={t('progress.noDataYet')} />
             </ChartSection>
 
             {/* Total Time */}
-            <SectionLabel label="TOTAL TRAINING TIME" />
+            <SectionLabel label={t('progress.totalTrainingTime')} />
             <Animated.View entering={FadeInDown.delay(500).duration(500)}>
               <Card variant="gradient" shadow="card" style={styles.timeCard}>
                 <View style={styles.timeRow}>
                   <View style={styles.timeIcon}><TrendingUp size={18} color={Colors.gold} /></View>
-                  <Text style={styles.timeLabel}>Time invested</Text>
+                  <Text style={styles.timeLabel}>{t('progress.timeInvested')}</Text>
                   <Text style={styles.timeValue}>{Math.round(totalTime / 60)}m</Text>
                 </View>
               </Card>
@@ -106,6 +317,21 @@ export default function ProgressScreen() {
           </>
         )}
       </ScrollView>
+      <AchievementDetail
+        achievementId={selectedAch}
+        unlocked={
+          selectedAch && achievements.find((a) => a.id === selectedAch)?.unlocked
+            ? {
+                id: selectedAch,
+                unlockedAt:
+                  achievements.find((a) => a.id === selectedAch)?.unlockedAt ||
+                  new Date().toISOString(),
+              }
+            : null
+        }
+        progressCtx={progressCtx}
+        onClose={() => setSelectedAch(null)}
+      />
     </ScreenBackground>
   );
 }
@@ -142,8 +368,8 @@ function StatCard({ value, label }: { value: string; label: string }) {
   );
 }
 
-function LineChart({ data, labels, color = Colors.gold }: { data: number[]; labels: string[]; color?: string }) {
-  if (data.length === 0) return <Text style={styles.emptyText}>No data yet.</Text>;
+function LineChart({ data, labels, color = Colors.gold, emptyText }: { data: number[]; labels: string[]; color?: string; emptyText: string }) {
+  if (data.length === 0) return <Text style={styles.emptyText}>{emptyText}</Text>;
   const stepX = data.length > 1 ? CHART_WIDTH / (data.length - 1) : CHART_WIDTH;
   const points = data.map((v, i) => ({ x: i * stepX, y: CHART_HEIGHT - 20 - (v / 100) * (CHART_HEIGHT - 40) }));
   const path = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
@@ -184,8 +410,8 @@ function LineChart({ data, labels, color = Colors.gold }: { data: number[]; labe
   );
 }
 
-function BarChart({ data, labels, maxValue, color }: { data: number[]; labels: string[]; maxValue: number; color: string }) {
-  if (data.length === 0) return <Text style={styles.emptyText}>No data yet.</Text>;
+function BarChart({ data, labels, maxValue, color, emptyText }: { data: number[]; labels: string[]; maxValue: number; color: string; emptyText: string }) {
+  if (data.length === 0) return <Text style={styles.emptyText}>{emptyText}</Text>;
   const barWidth = (CHART_WIDTH - (data.length - 1) * 8) / data.length;
   return (
     <View style={styles.chartWrap}>
@@ -244,4 +470,17 @@ const styles = StyleSheet.create({
   timeIcon: { width: 36, height: 36, borderRadius: 10, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   timeLabel: { flex: 1, color: Colors.textSecondary, fontFamily: 'Inter-Medium', fontSize: 15 },
   timeValue: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.gold },
+
+  dayCard: { gap: Spacing.sm, marginBottom: Spacing.sm },
+  dayRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  dayLabel: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textSecondary },
+  dayValue: { fontFamily: 'Inter-ExtraBold', fontSize: 14, color: Colors.gold },
+
+  catCard: { gap: Spacing.md, marginBottom: Spacing.sm },
+  catRow: { gap: 4 },
+  catName: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textPrimary },
+  catAcc: { fontFamily: 'Inter-ExtraBold', fontSize: 12, color: Colors.gold, alignSelf: 'flex-end' },
+
+  recCard: { gap: Spacing.sm, marginBottom: Spacing.sm },
+  recText: { fontFamily: 'Inter-Regular', fontSize: 14, color: Colors.textSecondary, lineHeight: 20 },
 });

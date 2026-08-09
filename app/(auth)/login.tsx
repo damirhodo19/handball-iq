@@ -3,18 +3,14 @@ import { View, StyleSheet, Text, TextInput, TouchableOpacity, KeyboardAvoidingVi
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
-import { Chrome, Apple, Mail, ArrowRight, Shield, Eye, EyeOff, FlaskConical } from 'lucide-react-native';
+import { Apple, Mail, ArrowRight, Shield, Eye, EyeOff, FlaskConical } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Button } from '@/components/Button';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useDevAuth } from '@/context/DevAuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
-import * as WebBrowser from 'expo-web-browser';
-import * as Linking from 'expo-linking';
-
-WebBrowser.maybeCompleteAuthSession();
-
-const sb = () => { if (!supabase) throw new Error('Supabase not configured'); return supabase; };
+import { isValidEmail, isValidPassword, isNonEmpty } from '@/lib/form-validation';
+import { mapAuthError } from '@/lib/map-error';
 
 export default function LoginScreen() {
   const { t } = useTranslation();
@@ -23,65 +19,106 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [authProvider, setAuthProvider] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const { signInAsTestUser } = useDevAuth();
+  const [notice, setNotice] = useState<string | null>(null);
+  const { signInAsTestUser, clearDevAuth } = useDevAuth();
 
-  const redirectTo = Linking.createURL('/(auth)/onboarding');
+  async function waitForBrowserSession(maxAttempts = 25): Promise<boolean> {
+    if (!supabase) return false;
+    for (let i = 0; i < maxAttempts; i++) {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        await supabase.auth.refreshSession();
+        return true;
+      }
+      await new Promise((r) => setTimeout(r, 120));
+    }
+    return false;
+  }
 
   async function signInWithEmail() {
     setError(null);
-    if (!email.trim() || !password.trim()) { setError(t('auth.errorEmptyFields')); return; }
+    setNotice(null);
+    if (!isSupabaseConfigured || !supabase) {
+      setError(t('auth.errorSignIn'));
+      return;
+    }
+    if (!isNonEmpty(email) || !isNonEmpty(password)) { setError(t('auth.errorEmptyFields')); return; }
+    if (!isValidEmail(email)) { setError(t('auth.errorInvalidEmail')); return; }
     setLoading(true);
     try {
-      const { error } = await sb().auth.signInWithPassword({ email: email.trim(), password });
-      if (error) { setError(error.message); setLoading(false); return; }
-      router.replace('/(auth)/onboarding');
-    } catch (e: any) {
-      setError(e.message ?? t('auth.errorSignIn'));
+      const { error: signInError } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+      if (signInError) { setError(mapAuthError(signInError.message, t)); setLoading(false); return; }
+      const hasSession = await waitForBrowserSession();
+      setLoading(false);
+      if (!hasSession) { setError(t('auth.errorSignIn')); return; }
+      clearDevAuth();
+      router.replace('/(auth)/splash');
+    } catch (e: unknown) {
+      setError(mapAuthError(e instanceof Error ? e.message : null, t));
       setLoading(false);
     }
   }
 
   async function signUpWithEmail() {
     setError(null);
-    if (!email.trim() || !password.trim()) { setError(t('auth.errorEmptyFields')); return; }
-    if (password.length < 6) { setError(t('auth.errorShortPassword')); return; }
+    setNotice(null);
+    if (!isSupabaseConfigured || !supabase) {
+      setError(t('auth.errorSignUp'));
+      return;
+    }
+    if (!isNonEmpty(email) || !isNonEmpty(password)) { setError(t('auth.errorEmptyFields')); return; }
+    if (!isValidEmail(email)) { setError(t('auth.errorInvalidEmail')); return; }
+    if (!isValidPassword(password)) { setError(t('auth.errorShortPassword')); return; }
     setLoading(true);
     try {
-      const { error } = await sb().auth.signUp({ email: email.trim(), password });
-      if (error) { setError(error.message); setLoading(false); return; }
-      router.replace('/(auth)/onboarding');
-    } catch (e: any) {
-      setError(e.message ?? t('auth.errorSignUp'));
+      const { data, error: signUpError } = await supabase.auth.signUp({ email: email.trim(), password });
+      if (signUpError) { setError(mapAuthError(signUpError.message, t)); setLoading(false); return; }
+      if (!data.session) {
+        const { error: signInError } = await supabase.auth.signInWithPassword({
+          email: email.trim(),
+          password,
+        });
+        if (signInError) {
+          setError(mapAuthError(signInError.message, t));
+          setLoading(false);
+          return;
+        }
+      }
+      const hasSession = await waitForBrowserSession();
+      setLoading(false);
+      if (!hasSession) { setError(t('auth.errorSignUp')); return; }
+      clearDevAuth();
+      router.replace('/(auth)/splash');
+    } catch (e: unknown) {
+      setError(e instanceof Error ? mapAuthError(e.message, t) : t('auth.errorSignUp'));
       setLoading(false);
     }
   }
 
-  async function signInWith(provider: 'google' | 'apple') {
+  function handleAppleSignIn() {
     setError(null);
-    if (provider === 'apple') { setError(t('auth.errorApple')); return; }
-    setAuthProvider(provider);
-    setLoading(true);
-    try {
-      const { error } = await sb().auth.signInWithOAuth({ provider, options: { redirectTo } });
-      if (error) { setError(error.message); setLoading(false); setAuthProvider(null); }
-    } catch (e: any) {
-      setError(e.message ?? t('auth.errorGoogle'));
-      setLoading(false);
-      setAuthProvider(null);
-    }
+    setNotice(t('auth.comingSoon'));
   }
 
   async function handleForgotPassword() {
     setError(null);
+    setNotice(null);
+    if (!isSupabaseConfigured || !supabase) {
+      setError(t('auth.resetFailed'));
+      return;
+    }
     if (!email.trim()) { setError(t('auth.errorNoEmail')); return; }
     setLoading(true);
     try {
-      const { error } = await sb().auth.resetPasswordForEmail(email.trim());
-      if (error) { setError(error.message); } else { setError(t('auth.resetSent')); }
-    } catch (e: any) {
-      setError(e.message ?? t('auth.resetFailed'));
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email.trim());
+      if (resetError) {
+        setError(mapAuthError(resetError.message, t));
+      } else {
+        setNotice(t('auth.resetSent'));
+      }
+    } catch (e: unknown) {
+      setError(e instanceof Error ? mapAuthError(e.message, t) : t('auth.resetFailed'));
     }
     setLoading(false);
   }
@@ -100,11 +137,20 @@ export default function LoginScreen() {
 
           {mode === 'choose' && (
             <Animated.View entering={FadeInDown.delay(300).duration(500)} style={styles.actions}>
-              <Button label={t('auth.google')} onPress={() => signInWith('google')} variant="dark" loading={loading && authProvider === 'google'} icon={<Chrome size={20} color={Colors.textPrimary} />} />
-              <Button label={t('auth.apple')} onPress={() => signInWith('apple')} variant="dark" loading={loading && authProvider === 'apple'} icon={<Apple size={20} color={Colors.textPrimary} />} />
-              <Button label={t('auth.email')} onPress={() => setMode('email-signin')} variant="outline" icon={<Mail size={20} color={Colors.gold} />} />
+              <Button
+                label={t('auth.apple')}
+                onPress={handleAppleSignIn}
+                variant="dark"
+                icon={<Apple size={20} color={Colors.textPrimary} />}
+              />
+              <Button
+                label={t('auth.email')}
+                onPress={() => { setNotice(null); setMode('email-signin'); }}
+                variant="outline"
+                icon={<Mail size={20} color={Colors.gold} />}
+              />
 
-              <TouchableOpacity style={styles.signupRow} onPress={() => setMode('email-signup')}>
+              <TouchableOpacity style={styles.signupRow} onPress={() => { setNotice(null); setMode('email-signup'); }}>
                 <Text style={styles.signupText}>{t('auth.newHere')} </Text>
                 <Text style={styles.signupLink}>{t('auth.createAccountLink')}</Text>
               </TouchableOpacity>
@@ -144,6 +190,7 @@ export default function LoginScreen() {
               </View>
 
               {error && <Text style={styles.errorText}>{error}</Text>}
+              {notice && <Text style={styles.noticeText}>{notice}</Text>}
 
               <Button
                 label={mode === 'email-signin' ? t('auth.signIn') : t('auth.createAccount')}
@@ -158,32 +205,34 @@ export default function LoginScreen() {
                 </TouchableOpacity>
               )}
 
-              <TouchableOpacity onPress={() => setMode('choose')}>
+              <TouchableOpacity onPress={() => { setError(null); setNotice(null); setMode('choose'); }}>
                 <Text style={styles.backText}>{t('auth.backToOptions')}</Text>
               </TouchableOpacity>
             </Animated.View>
           )}
 
+          {notice && mode === 'choose' && <Text style={styles.noticeText}>{notice}</Text>}
           {error && mode === 'choose' && <Text style={styles.errorText}>{error}</Text>}
 
-          {/* Dev test user bypass */}
-          <Animated.View entering={FadeInDown.delay(300).duration(500)} style={styles.devBypass}>
-            <View style={styles.devDivider}>
-              <View style={styles.devDividerLine} />
-              <Text style={styles.devDividerText}>{t('auth.devDivider')}</Text>
-              <View style={styles.devDividerLine} />
-            </View>
-            <TouchableOpacity
-              style={styles.devBtn}
-              activeOpacity={0.85}
-              onPress={signInAsTestUser}
-            >
-              <FlaskConical size={18} color={Colors.gold} />
-              <Text style={styles.devBtnText}>{t('auth.testUser')}</Text>
-              <ArrowRight size={18} color={Colors.gold} />
-            </TouchableOpacity>
-            <Text style={styles.devHint}>{t('auth.devHint')}</Text>
-          </Animated.View>
+          {__DEV__ && (
+            <Animated.View entering={FadeInDown.delay(300).duration(500)} style={styles.devBypass}>
+              <View style={styles.devDivider}>
+                <View style={styles.devDividerLine} />
+                <Text style={styles.devDividerText}>{t('auth.devDivider')}</Text>
+                <View style={styles.devDividerLine} />
+              </View>
+              <TouchableOpacity
+                style={styles.devBtn}
+                activeOpacity={0.85}
+                onPress={signInAsTestUser}
+              >
+                <FlaskConical size={18} color={Colors.gold} />
+                <Text style={styles.devBtnText}>{t('auth.testUser')}</Text>
+                <ArrowRight size={18} color={Colors.gold} />
+              </TouchableOpacity>
+              <Text style={styles.devHint}>{t('auth.devHint')}</Text>
+            </Animated.View>
+          )}
 
           <View style={styles.footer}>
             <Shield size={13} color={Colors.textQuaternary} />
@@ -230,6 +279,7 @@ const styles = StyleSheet.create({
   passwordWrap: { flexDirection: 'row', alignItems: 'center' },
   eyeBtn: { position: 'absolute', right: 14, padding: 4 },
   errorText: { color: Colors.error, fontFamily: 'Inter-Regular', fontSize: 14, textAlign: 'center', paddingHorizontal: Spacing.md },
+  noticeText: { color: Colors.textSecondary, fontFamily: 'Inter-Medium', fontSize: 14, textAlign: 'center', paddingHorizontal: Spacing.md, marginTop: Spacing.sm },
   signupRow: { flexDirection: 'row', justifyContent: 'center', paddingVertical: Spacing.sm },
   signupText: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 14 },
   signupLink: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 14 },
@@ -238,7 +288,6 @@ const styles = StyleSheet.create({
   footer: { marginTop: 'auto', paddingTop: Spacing.xxl, alignItems: 'center', gap: 6, flexDirection: 'row', justifyContent: 'center' },
   footerText: { color: Colors.textQuaternary, fontFamily: 'Inter-Regular', fontSize: 12 },
 
-  // Dev bypass
   devBypass: { marginTop: Spacing.xl, paddingHorizontal: Spacing.sm },
   devDivider: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.md },
   devDividerLine: { flex: 1, height: 1, backgroundColor: Colors.hairline },

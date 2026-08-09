@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "rwCount": 65,
+  "lbCount": 62,
+  "rbCount": 63,
+  "cbCount": 70,
+  "lockedRefsUnchanged": true,
+  "familyCount": 65,
+  "uniqueTeachingCueCount": 65,
+  "parentFamilyCount": 13,
+  "taxonomyKeys": 65,
+  "defencePct": 16.9,
+  "perceptionPct": 63.1,
+  "perceptionCount": 41,
+  "difficulty": {
+    "Beginner": 6,
+    "Intermediate": 22,
+    "Advanced": 26,
+    "Expert": 11
+  },
+  "handedness": {
+    "left": 0,
+    "right": 0,
+    "none": 65
+  },
+  "avgRubric": 8.7,
+  "minRubric": 8.3,
+  "maxRubric": 8.9,
+  "errorCount": 0,
+  "warningCount": 0
+}

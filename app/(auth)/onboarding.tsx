@@ -1,650 +1,628 @@
-import { useState, useEffect, useCallback } from 'react';
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { useState, useCallback, useMemo, type ReactNode } from 'react';
+import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-import Animated, {
-  FadeIn,
-  FadeInDown,
-  FadeInUp,
-  SlideInRight,
-  SlideOutLeft,
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-  withSpring,
-  withDelay,
-  Easing,
-  runOnJS,
-} from 'react-native-reanimated';
-import {
-  ArrowRight,
-  ArrowLeft,
-  Check,
-  Target,
-  Brain,
-  Eye,
-  Shield,
-  Sparkles,
-  Zap,
-  Activity,
-  Users,
-} from 'lucide-react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { ArrowRight, ArrowLeft, Check } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
-import { ProgressRing } from '@/components/ProgressRing';
+import { ScreenBackground } from '@/components/Screen';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
-import {
-  HandballPosition,
-  DominantHand,
-  AgeGroup,
-  PlayingLevel,
-  DevelopmentGoal,
-  ALL_POSITIONS,
-  AGE_GROUPS,
-  PLAYING_LEVELS,
-  DEVELOPMENT_GOALS,
-  POSITION_CONFIGS,
-} from '@/lib/positions';
+import { ALL_POSITIONS, DominantHand, HandballPosition } from '@/lib/positions';
 import { loadProfile, saveProfile } from '@/lib/storage';
+import { mapServiceError } from '@/lib/map-error';
 import { useTranslation } from '@/hooks/useTranslation';
+import type { SupportedLanguage } from '@/locales';
+import { translatePosition, translateHand } from '@/lib/translations';
+import {
+  AppRole,
+  COUNTRIES,
+  PLAYING_LEVELS_V2,
+  PLAYER_GOALS_V2,
+  COACH_TYPES_V2,
+  EXPERIENCE_BANDS,
+  DEFENSE_SYSTEMS_V2,
+  ATTACK_STYLES_V2,
+  DEFENSE_LABEL_KEYS,
+  ATTACK_LABEL_KEYS,
+  COACH_GOALS_V2,
+  PlayingLevelId,
+  PlayerGoalId,
+  CoachTypeId,
+  ExperienceBand,
+  DefenseSystemId,
+  AttackStyleId,
+  CoachGoalId,
+} from '@/lib/platform/types';
+import { normalizeHandballPosition } from '@/lib/platform/resolve-position';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
-
-const POSITION_ICONS: Record<HandballPosition, React.ReactNode> = {
-  Goalkeeper: <Shield size={26} color={Colors.gold} />,
-  'Left Wing': <ArrowLeft size={26} color={Colors.gold} />,
-  'Right Wing': <ArrowRight size={26} color={Colors.gold} />,
-  Pivot: <Users size={26} color={Colors.gold} />,
-  'Centre Back': <Target size={26} color={Colors.gold} />,
-  'Left Back': <ArrowLeft size={26} color={Colors.gold} />,
-  'Right Back': <ArrowRight size={26} color={Colors.gold} />,
-};
-
-const GOAL_ICONS: Record<DevelopmentGoal, React.ReactNode> = {
-  'Decision Making': <Brain size={22} color={Colors.gold} />,
-  'Tactical Understanding': <Target size={22} color={Colors.gold} />,
-  'Mental Preparation': <Shield size={22} color={Colors.gold} />,
-  'Playing Under Pressure': <Zap size={22} color={Colors.gold} />,
-  'Reading the Defence': <Eye size={22} color={Colors.gold} />,
-  'Position Specific Skills': <Activity size={22} color={Colors.gold} />,
-};
-
-const TOTAL_STEPS = 7;
-
-const LANGUAGES: { code: 'en' | 'hr'; label: string }[] = [
-  { code: 'en', label: 'English' },
-  { code: 'hr', label: 'Hrvatski' },
+const LANGUAGES: { code: SupportedLanguage; labelKey: string; flag: string }[] = [
+  { code: 'en', labelKey: 'settings.languageEn', flag: '🇬🇧' },
+  { code: 'hr', labelKey: 'settings.languageHr', flag: '🇭🇷' },
+  { code: 'de', labelKey: 'settings.languageDe', flag: '🇩🇪' },
 ];
 
+const LEVEL_KEYS: Record<PlayingLevelId, string> = {
+  Beginner: 'playingLevel.beginner',
+  Youth: 'level.youth',
+  Junior: 'level.junior',
+  Senior: 'level.senior',
+  Professional: 'playingLevel.professional',
+};
+
+const GOAL_KEYS: Record<PlayerGoalId, string> = {
+  'Decision Making': 'devGoal.decisionMaking',
+  'Game Intelligence': 'goal.gameIntelligence',
+  Defence: 'goal.defence',
+  Attack: 'goal.attack',
+  'Mental Preparation': 'devGoal.mentalPreparation',
+  'Match Preparation': 'goal.matchPreparation',
+  Leadership: 'goal.leadership',
+  'Complete Development': 'goal.completeDevelopment',
+};
+
+const COACH_TYPE_KEYS: Record<CoachTypeId, string> = {
+  'Youth Coach': 'coachType.youth',
+  'Senior Coach': 'coachType.senior',
+  'Professional Coach': 'coachType.professional',
+  'Goalkeeper Coach': 'coachType.goalkeeper',
+  'Assistant Coach': 'coachType.assistant',
+  'Head Coach': 'coachType.head',
+};
+
+const EXPERIENCE_KEYS: Record<ExperienceBand, string> = {
+  '0-2': 'experience.0_2',
+  '3-5': 'experience.3_5',
+  '6-10': 'experience.6_10',
+  '10+': 'experience.10_plus',
+};
+
+const COACH_GOAL_KEYS: Record<CoachGoalId, string> = {
+  Tactics: 'coachGoal.tactics',
+  Leadership: 'coachGoal.leadership',
+  'Player Development': 'coachGoal.playerDevelopment',
+  'Training Planning': 'coachGoal.trainingPlanning',
+  'Match Analysis': 'coachGoal.matchAnalysis',
+  'Complete Development': 'coachGoal.complete',
+};
+
+type StepId = 'locale' | 'role' | 'player' | 'coach';
+
+function Chip({
+  label,
+  selected,
+  onPress,
+  compact,
+}: {
+  label: string;
+  selected: boolean;
+  onPress: () => void;
+  compact?: boolean;
+}) {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.85}
+      style={[
+        styles.chip,
+        compact && styles.chipCompact,
+        selected && styles.chipSelected,
+      ]}
+    >
+      {selected && <Check size={14} color={Colors.background} />}
+      <Text style={[styles.chipText, selected && styles.chipTextSelected]} numberOfLines={2}>
+        {label}
+      </Text>
+    </TouchableOpacity>
+  );
+}
+
+function ChipGrid({ children }: { children: ReactNode }) {
+  return <View style={styles.chipGrid}>{children}</View>;
+}
+
 export default function OnboardingScreen() {
-  const { user, refreshProfile } = useAuth();
+  const { user, profile: authProfile, refreshProfile } = useAuth();
   const { lang, setLang, t } = useTranslation();
-  const [step, setStep] = useState(0);
+
+  const [stepIndex, setStepIndex] = useState(0);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const [country, setCountry] = useState('');
+  const [role, setRole] = useState<AppRole | null>(null);
   const [position, setPosition] = useState<HandballPosition | null>(null);
-  const [secondaryPosition, setSecondaryPosition] = useState<HandballPosition | null>(null);
   const [dominantHand, setDominantHand] = useState<DominantHand | null>(null);
-  const [ageGroup, setAgeGroup] = useState<AgeGroup | null>(null);
-  const [playingLevel, setPlayingLevel] = useState<PlayingLevel | null>(null);
-  const [developmentGoal, setDevelopmentGoal] = useState<DevelopmentGoal | null>(null);
+  const [playingLevel, setPlayingLevel] = useState<PlayingLevelId | null>(null);
+  const [developmentGoal, setDevelopmentGoal] = useState<PlayerGoalId | null>(null);
+  const [coachType, setCoachType] = useState<CoachTypeId | null>(null);
+  const [experienceBand, setExperienceBand] = useState<ExperienceBand | null>(null);
+  const [favoriteDefense, setFavoriteDefense] = useState<DefenseSystemId | null>(null);
+  const [favoriteAttack, setFavoriteAttack] = useState<AttackStyleId | null>(null);
+  const [coachDevelopmentGoal, setCoachDevelopmentGoal] = useState<CoachGoalId | null>(null);
+
+  const steps = useMemo<StepId[]>(() => {
+    const list: StepId[] = ['locale', 'role'];
+    if (role === 'player' || role === 'player_coach') list.push('player');
+    if (role === 'coach' || role === 'player_coach') list.push('coach');
+    return list;
+  }, [role]);
+
+  const step = steps[Math.min(stepIndex, steps.length - 1)];
+  const totalSteps = steps.length;
 
   const canProceed = () => {
-    if (step === 0) return true;
-    if (step === 1) return true; // language selection — always proceedable
-    if (step === 2) return position !== null;
-    if (step === 3) return position !== null; // secondary is optional
-    if (step === 4) return dominantHand !== null && ageGroup !== null;
-    if (step === 5) return playingLevel !== null && developmentGoal !== null;
+    if (step === 'locale') return Boolean(country);
+    if (step === 'role') return role !== null;
+    if (step === 'player') {
+      return Boolean(position && dominantHand && playingLevel && developmentGoal);
+    }
+    if (step === 'coach') {
+      return Boolean(coachType && experienceBand && favoriteDefense && favoriteAttack && coachDevelopmentGoal);
+    }
     return false;
   };
 
   const finishOnboarding = useCallback(async () => {
+    if (!role) return;
     setSaving(true);
     setError(null);
 
-    // Save to local storage
-    const profile = loadProfile();
-    saveProfile({
-      ...profile,
-      position: position ?? 'Goalkeeper',
-      secondaryPosition,
-      dominantHand: dominantHand ?? 'Right',
-      ageGroup,
-      playingLevel,
-      developmentGoal,
-    });
+    const existing = loadProfile();
+    const name =
+      authProfile?.display_name?.trim() ||
+      (user?.user_metadata?.full_name as string | undefined)?.trim() ||
+      existing.name ||
+      '';
 
-    // Save to Supabase if user is logged in
-    if (user) {
-      const { error: upsertError } = await supabase!.from('profiles').upsert({
+    const canonicalPosition =
+      normalizeHandballPosition(position) ??
+      normalizeHandballPosition(existing.position) ??
+      '';
+
+    const nextProfile = {
+      ...existing,
+      name,
+      role,
+      country,
+      position: canonicalPosition,
+      dominantHand: dominantHand ?? existing.dominantHand ?? '',
+      playingLevel: playingLevel ?? existing.playingLevel,
+      developmentGoal: developmentGoal ?? existing.developmentGoal,
+      coachType: coachType ?? null,
+      experienceBand: experienceBand ?? null,
+      favoriteDefense: favoriteDefense ?? null,
+      favoriteAttack: favoriteAttack ?? null,
+      coachDevelopmentGoal: coachDevelopmentGoal ?? null,
+      onboardingVersion: 2,
+    };
+    saveProfile(nextProfile);
+
+    if (user && supabase) {
+      // Preserve player | coach | player_coach — never collapse dual-role to player
+      const dbRole = role;
+      const base = {
         id: user.id,
-        primary_position: position,
-        secondary_position: secondaryPosition,
+        role: dbRole,
+        primary_position: canonicalPosition || null,
         dominant_hand: dominantHand,
-        age_group: ageGroup,
-        playing_level: playingLevel as any,
+        playing_level: playingLevel,
         development_goal: developmentGoal,
+        country,
         onboarded: true,
-        position: position, // Keep legacy column in sync
-      });
+        onboarding_version: 2,
+        position: canonicalPosition || null,
+      };
+
+      const fullPayload = {
+        ...base,
+        coach_type: coachType,
+        experience_band: experienceBand,
+        favorite_defense: favoriteDefense,
+        favorite_attack: favoriteAttack,
+        coach_development_goal: coachDevelopmentGoal,
+      };
+
+      let { error: upsertError } = await supabase.from('profiles').upsert(fullPayload as any);
+
       if (upsertError) {
-        setError(upsertError.message);
+        if (__DEV__) {
+          console.error('[onboarding] profiles.upsert (full) failed', {
+            operation: 'profiles.upsert',
+            code: upsertError.code,
+            message: upsertError.message,
+            details: upsertError.details,
+            hint: upsertError.hint,
+            fields: Object.keys(fullPayload),
+          });
+        }
+        ({ error: upsertError } = await supabase.from('profiles').upsert(base as any));
+      }
+
+      if (upsertError) {
+        if (__DEV__) {
+          console.error('[onboarding] profiles.upsert (base) failed', {
+            operation: 'profiles.upsert',
+            code: upsertError.code,
+            message: upsertError.message,
+            details: upsertError.details,
+            hint: upsertError.hint,
+            fields: Object.keys(base),
+          });
+        } else {
+          // Production: keep console diagnostics non-sensitive for beta triage
+          console.error('[onboarding] profiles.upsert failed', {
+            operation: 'profiles.upsert',
+            code: upsertError.code,
+            message: upsertError.message,
+            details: upsertError.details,
+            hint: upsertError.hint,
+          });
+        }
+        setError(mapServiceError(upsertError.message, t));
         setSaving(false);
-        setStep(5);
         return;
+      }
+      try {
+        const { syncPreferencesToCloud } = await import('@/services/preferencesService');
+        await syncPreferencesToCloud(user.id);
+      } catch {
+        /* preferences sync is best-effort; profile row already has onboarding_version */
       }
       await refreshProfile();
     }
 
     setSaving(false);
-    router.replace('/(tabs)');
-  }, [user, position, secondaryPosition, dominantHand, ageGroup, playingLevel, developmentGoal, refreshProfile]);
+    if (role === 'coach') {
+      router.replace('/coach-dashboard');
+    } else {
+      router.replace('/(tabs)/home');
+    }
+  }, [
+    role, country, position, dominantHand, playingLevel, developmentGoal,
+    coachType, experienceBand, favoriteDefense, favoriteAttack, coachDevelopmentGoal,
+    user, authProfile, refreshProfile, t,
+  ]);
 
   function next() {
-    if (step < TOTAL_STEPS - 1) setStep(step + 1);
+    if (stepIndex < steps.length - 1) {
+      setStepIndex(stepIndex + 1);
+      return;
+    }
+    void finishOnboarding();
   }
+
   function back() {
-    if (step > 0) setStep(step - 1);
+    if (stepIndex > 0) setStepIndex(stepIndex - 1);
   }
+
+  const isLast = stepIndex >= steps.length - 1;
 
   return (
-    <LinearGradient colors={Colors.bgGradient} style={styles.container}>
-      {step < TOTAL_STEPS - 1 && (
-        <View style={styles.progressRow}>
-          {Array.from({ length: TOTAL_STEPS - 1 }).map((_, i) => (
-            <View
-              key={i}
-              style={[
-                styles.progressDot,
-                i === step && styles.progressDotActive,
-                i < step && styles.progressDotDone,
-              ]}
-            />
-          ))}
-        </View>
-      )}
-
-      <ScrollView
-        contentContainerStyle={styles.scroll}
-        keyboardShouldPersistTaps="handled"
-        scrollEnabled={step !== 6}
-      >
-        {/* Step 0: Welcome */}
-        {step === 0 && (
-          <Animated.View entering={FadeIn.duration(600)} style={styles.welcomeContainer}>
-            <Animated.View
-              entering={FadeInDown.delay(100).duration(800).springify().damping(18)}
-              style={styles.welcomeGlowWrap}
-            >
-              <View style={styles.welcomeGlow} />
-              <LinearGradient
-                colors={Colors.goldGradient}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={styles.welcomeLogo}
-              >
-                <Text style={styles.welcomeLogoText}>IQ</Text>
-              </LinearGradient>
-            </Animated.View>
-
-            <Animated.Text entering={FadeInUp.delay(400).duration(600)} style={styles.welcomeTitle}>
-              Welcome to{'\n'}Handball IQ
-            </Animated.Text>
-
-            <Animated.Text entering={FadeInUp.delay(600).duration(600)} style={styles.welcomeSub}>
-              The first AI platform designed to improve handball intelligence for every position.
-            </Animated.Text>
-
-            <Animated.View entering={FadeInUp.delay(800).duration(600)} style={styles.welcomeFeatures}>
-              <FeatureRow icon={<Brain size={16} color={Colors.gold} />} text="Position-specific training" />
-              <FeatureRow icon={<Shield size={16} color={Colors.gold} />} text="Mental preparation routines" />
-              <FeatureRow icon={<Activity size={16} color={Colors.gold} />} text="Performance analytics" />
-            </Animated.View>
-          </Animated.View>
-        )}
-
-        {/* Step 1: Language Selection */}
-        {step === 1 && (
-          <Animated.View
-            key="language"
-            entering={SlideInRight.duration(350).springify().damping(20)}
-            exiting={SlideOutLeft.duration(300)}
-            style={styles.stepContainer}
-          >
-            <View style={styles.stepIconWrap}><Sparkles size={26} color={Colors.gold} /></View>
-            <Text style={styles.stepTitle}>{t('onboarding.languageTitle')}</Text>
-            <Text style={styles.stepSubtitle}>{t('onboarding.languageSub')}</Text>
-            <View style={styles.positionGrid}>
-              {LANGUAGES.map((l, i) => (
-                <Animated.View key={l.code} entering={FadeInDown.delay(80 + i * 40).duration(400)} style={styles.positionItemWrap}>
-                  <TouchableOpacity
-                    onPress={() => setLang(l.code)}
-                    activeOpacity={0.85}
-                    style={[styles.positionChip, lang === l.code && styles.positionChipSelected]}
-                  >
-                    <View style={styles.positionIconWrap}>
-                      <Text style={styles.languageFlag}>{l.code === 'en' ? '🇬🇧' : '🇭🇷'}</Text>
-                    </View>
-                    <Text style={[styles.positionLabel, lang === l.code && styles.positionLabelSelected]}>{l.label}</Text>
-                    {lang === l.code && (
-                      <View style={styles.positionCheck}><Check size={12} color={Colors.background} /></View>
-                    )}
-                  </TouchableOpacity>
-                </Animated.View>
-              ))}
-            </View>
-          </Animated.View>
-        )}
-
-        {/* Step 2: Choose Your Position */}
-        {step === 2 && (
-          <Animated.View
-            key="position"
-            entering={SlideInRight.duration(350).springify().damping(20)}
-            exiting={SlideOutLeft.duration(300)}
-            style={styles.stepContainer}
-          >
-            <View style={styles.stepIconWrap}><Target size={26} color={Colors.gold} /></View>
-            <Text style={styles.stepTitle}>Choose Your Position</Text>
-            <Text style={styles.stepSubtitle}>
-              Your training plan and match scenarios will be personalized to your role.
-            </Text>
-            <View style={styles.positionGrid}>
-              {ALL_POSITIONS.map((p, i) => (
-                <Animated.View key={p} entering={FadeInDown.delay(80 + i * 40).duration(400)} style={styles.positionItemWrap}>
-                  <TouchableOpacity
-                    onPress={() => setPosition(p)}
-                    activeOpacity={0.85}
-                    style={[styles.positionChip, position === p && styles.positionChipSelected]}
-                  >
-                    <View style={styles.positionIconWrap}>{POSITION_ICONS[p]}</View>
-                    <Text style={[styles.positionLabel, position === p && styles.positionLabelSelected]}>{p}</Text>
-                    {position === p && (
-                      <View style={styles.positionCheck}><Check size={12} color={Colors.background} /></View>
-                    )}
-                  </TouchableOpacity>
-                </Animated.View>
-              ))}
-            </View>
-          </Animated.View>
-        )}
-
-        {/* Step 3: Secondary Position (optional) */}
-        {step === 3 && (
-          <Animated.View
-            key="secondary"
-            entering={SlideInRight.duration(350).springify().damping(20)}
-            exiting={SlideOutLeft.duration(300)}
-            style={styles.stepContainer}
-          >
-            <View style={styles.stepIconWrap}><Users size={26} color={Colors.gold} /></View>
-            <Text style={styles.stepTitle}>Secondary Position</Text>
-            <Text style={styles.stepSubtitle}>
-              Optional — select a second position if you play multiple roles.
-            </Text>
-            <View style={styles.positionGrid}>
-              {ALL_POSITIONS.filter((p) => p !== position).map((p, i) => (
-                <Animated.View key={p} entering={FadeInDown.delay(80 + i * 40).duration(400)} style={styles.positionItemWrap}>
-                  <TouchableOpacity
-                    onPress={() => setSecondaryPosition(secondaryPosition === p ? null : p)}
-                    activeOpacity={0.85}
-                    style={[styles.positionChip, secondaryPosition === p && styles.positionChipSelected]}
-                  >
-                    <View style={styles.positionIconWrap}>{POSITION_ICONS[p]}</View>
-                    <Text style={[styles.positionLabel, secondaryPosition === p && styles.positionLabelSelected]}>{p}</Text>
-                    {secondaryPosition === p && (
-                      <View style={styles.positionCheck}><Check size={12} color={Colors.background} /></View>
-                    )}
-                  </TouchableOpacity>
-                </Animated.View>
-              ))}
-            </View>
-            <TouchableOpacity onPress={() => setSecondaryPosition(null)} style={styles.skipBtn}>
-              <Text style={styles.skipText}>Skip — I only play one position</Text>
-            </TouchableOpacity>
-          </Animated.View>
-        )}
-
-        {/* Step 4: Dominant Hand + Age Group */}
-        {step === 4 && (
-          <Animated.View
-            key="hand-age"
-            entering={SlideInRight.duration(350).springify().damping(20)}
-            exiting={SlideOutLeft.duration(300)}
-            style={styles.stepContainer}
-          >
-            <View style={styles.stepIconWrap}><Activity size={26} color={Colors.gold} /></View>
-            <Text style={styles.stepTitle}>About You</Text>
-            <Text style={styles.stepSubtitle}>Tell us a bit more about your profile.</Text>
-
-            {/* Dominant Hand */}
-            <Text style={styles.fieldLabel}>Dominant Hand</Text>
-            <View style={styles.chipRow}>
-              {(['Left', 'Right'] as DominantHand[]).map((h) => (
-                <TouchableOpacity
-                  key={h}
-                  style={[styles.fieldChip, dominantHand === h && styles.fieldChipSelected]}
-                  onPress={() => setDominantHand(h)}
-                  activeOpacity={0.85}
-                >
-                  {dominantHand === h && <Check size={14} color={Colors.background} />}
-                  <Text style={[styles.fieldChipText, dominantHand === h && styles.fieldChipTextSelected]}>{h}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            {/* Age Group */}
-            <Text style={styles.fieldLabel}>Age Group</Text>
-            <View style={styles.levelList}>
-              {AGE_GROUPS.map((ag) => (
-                <TouchableOpacity
-                  key={ag}
-                  style={[styles.levelChip, ageGroup === ag && styles.levelChipSelected]}
-                  onPress={() => setAgeGroup(ag)}
-                  activeOpacity={0.85}
-                >
-                  <Text style={[styles.levelLabel, ageGroup === ag && styles.levelLabelSelected]}>{ag}</Text>
-                  {ageGroup === ag && <View style={styles.levelCheck}><Check size={16} color={Colors.background} /></View>}
-                </TouchableOpacity>
-              ))}
-            </View>
-          </Animated.View>
-        )}
-
-        {/* Step 5: Playing Level + Development Goal */}
-        {step === 5 && (
-          <Animated.View
-            key="level-goal"
-            entering={SlideInRight.duration(350).springify().damping(20)}
-            exiting={SlideOutLeft.duration(300)}
-            style={styles.stepContainer}
-          >
-            <View style={styles.stepIconWrap}><Sparkles size={26} color={Colors.gold} /></View>
-            <Text style={styles.stepTitle}>Your Level & Goal</Text>
-            <Text style={styles.stepSubtitle}>We'll focus your training plan around this.</Text>
-
-            {/* Playing Level */}
-            <Text style={styles.fieldLabel}>Playing Level</Text>
-            <View style={styles.levelList}>
-              {PLAYING_LEVELS.map((lvl) => (
-                <TouchableOpacity
-                  key={lvl}
-                  style={[styles.levelChip, playingLevel === lvl && styles.levelChipSelected]}
-                  onPress={() => setPlayingLevel(lvl)}
-                  activeOpacity={0.85}
-                >
-                  <Text style={[styles.levelLabel, playingLevel === lvl && styles.levelLabelSelected]}>{lvl}</Text>
-                  {playingLevel === lvl && <View style={styles.levelCheck}><Check size={16} color={Colors.background} /></View>}
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            {/* Development Goal */}
-            <Text style={styles.fieldLabel}>Primary Development Goal</Text>
-            <View style={styles.goalList}>
-              {DEVELOPMENT_GOALS.map((g) => (
-                <TouchableOpacity
-                  key={g}
-                  style={[styles.goalChip, developmentGoal === g && styles.goalChipSelected]}
-                  onPress={() => setDevelopmentGoal(g)}
-                  activeOpacity={0.85}
-                >
-                  <View style={[styles.goalIcon, developmentGoal === g && styles.goalIconSelected]}>{GOAL_ICONS[g]}</View>
-                  <View style={styles.goalInfo}>
-                    <Text style={[styles.goalLabel, developmentGoal === g && styles.goalLabelSelected]}>{g}</Text>
-                  </View>
-                  {developmentGoal === g && <View style={styles.goalCheck}><Check size={16} color={Colors.background} /></View>}
-                </TouchableOpacity>
-              ))}
-            </View>
-          </Animated.View>
-        )}
-
-        {/* Step 6: Loading */}
-        {step === 6 && (
-          <LoadingScreen
-            position={position}
-            secondaryPosition={secondaryPosition}
-            playingLevel={playingLevel}
-            developmentGoal={developmentGoal}
-            onFinish={finishOnboarding}
+    <ScreenBackground>
+      <View style={styles.progressRow}>
+        {Array.from({ length: totalSteps }).map((_, i) => (
+          <View
+            key={i}
+            style={[
+              styles.progressDot,
+              i === stepIndex && styles.progressDotActive,
+              i < stepIndex && styles.progressDotDone,
+            ]}
           />
+        ))}
+      </View>
+      <Text style={styles.stepOf}>
+        {t('onboarding.v2.stepOf', { n: stepIndex + 1, total: totalSteps })}
+      </Text>
+
+      <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+        {step === 'locale' && (
+          <Animated.View entering={FadeInDown.duration(400)} style={styles.step}>
+            <Text style={styles.title}>{t('onboarding.v2.welcomeTitle')}</Text>
+            <Text style={styles.sub}>{t('onboarding.v2.welcomeSub')}</Text>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.language')}</Text>
+            <ChipGrid>
+              {LANGUAGES.map((l) => (
+                <Chip
+                  key={l.code}
+                  label={`${l.flag}  ${t(l.labelKey)}`}
+                  selected={lang === l.code}
+                  onPress={() => setLang(l.code)}
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.country')}</Text>
+            <Text style={styles.hint}>{t('onboarding.v2.selectCountry')}</Text>
+            <ChipGrid>
+              {COUNTRIES.map((c) => (
+                <Chip
+                  key={c}
+                  label={c}
+                  selected={country === c}
+                  onPress={() => setCountry(c)}
+                  compact
+                />
+              ))}
+            </ChipGrid>
+          </Animated.View>
+        )}
+
+        {step === 'role' && (
+          <Animated.View entering={FadeInDown.duration(400)} style={styles.step}>
+            <Text style={styles.title}>{t('onboarding.v2.whoAreYou')}</Text>
+            <View style={styles.roleList}>
+              {(
+                [
+                  { id: 'player' as const, title: t('onboarding.v2.player'), sub: t('onboarding.v2.playerSub') },
+                  { id: 'coach' as const, title: t('onboarding.v2.coach'), sub: t('onboarding.v2.coachSub') },
+                  { id: 'player_coach' as const, title: t('onboarding.v2.playerCoach'), sub: t('onboarding.v2.playerCoachSub') },
+                ]
+              ).map((opt) => (
+                <TouchableOpacity
+                  key={opt.id}
+                  activeOpacity={0.85}
+                  onPress={() => setRole(opt.id)}
+                >
+                  <Card
+                    variant="gradient"
+                    style={[styles.roleCard, role === opt.id && styles.roleCardSelected]}
+                  >
+                    <Text style={[styles.roleTitle, role === opt.id && styles.roleTitleSelected]}>
+                      {opt.title}
+                    </Text>
+                    <Text style={styles.roleSub}>{opt.sub}</Text>
+                  </Card>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </Animated.View>
+        )}
+
+        {step === 'player' && (
+          <Animated.View entering={FadeInDown.duration(400)} style={styles.step}>
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.position')}</Text>
+            <ChipGrid>
+              {ALL_POSITIONS.map((p) => (
+                <Chip
+                  key={p}
+                  label={translatePosition(p, t)}
+                  selected={position === p}
+                  onPress={() => setPosition(p)}
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.dominantHand')}</Text>
+            <ChipGrid>
+              {(['Left', 'Right'] as DominantHand[]).map((h) => (
+                <Chip
+                  key={h}
+                  label={translateHand(h, t)}
+                  selected={dominantHand === h}
+                  onPress={() => setDominantHand(h)}
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.playingLevel')}</Text>
+            <ChipGrid>
+              {PLAYING_LEVELS_V2.map((lvl) => (
+                <Chip
+                  key={lvl}
+                  label={t(LEVEL_KEYS[lvl])}
+                  selected={playingLevel === lvl}
+                  onPress={() => setPlayingLevel(lvl)}
+                  compact
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.devGoal')}</Text>
+            <ChipGrid>
+              {PLAYER_GOALS_V2.map((g) => (
+                <Chip
+                  key={g}
+                  label={t(GOAL_KEYS[g])}
+                  selected={developmentGoal === g}
+                  onPress={() => setDevelopmentGoal(g)}
+                />
+              ))}
+            </ChipGrid>
+          </Animated.View>
+        )}
+
+        {step === 'coach' && (
+          <Animated.View entering={FadeInDown.duration(400)} style={styles.step}>
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.coachType')}</Text>
+            <ChipGrid>
+              {COACH_TYPES_V2.map((ct) => (
+                <Chip
+                  key={ct}
+                  label={t(COACH_TYPE_KEYS[ct])}
+                  selected={coachType === ct}
+                  onPress={() => setCoachType(ct)}
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.experience')}</Text>
+            <ChipGrid>
+              {EXPERIENCE_BANDS.map((band) => (
+                <Chip
+                  key={band}
+                  label={t(EXPERIENCE_KEYS[band])}
+                  selected={experienceBand === band}
+                  onPress={() => setExperienceBand(band)}
+                  compact
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.favDefence')}</Text>
+            <ChipGrid>
+              {DEFENSE_SYSTEMS_V2.map((d) => (
+                <Chip
+                  key={d}
+                  label={t(DEFENSE_LABEL_KEYS[d])}
+                  selected={favoriteDefense === d}
+                  onPress={() => setFavoriteDefense(d)}
+                  compact
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.favAttack')}</Text>
+            <ChipGrid>
+              {ATTACK_STYLES_V2.map((a) => (
+                <Chip
+                  key={a}
+                  label={t(ATTACK_LABEL_KEYS[a])}
+                  selected={favoriteAttack === a}
+                  onPress={() => setFavoriteAttack(a)}
+                  compact
+                />
+              ))}
+            </ChipGrid>
+
+            <Text style={styles.fieldLabel}>{t('onboarding.v2.coachGoal')}</Text>
+            <ChipGrid>
+              {COACH_GOALS_V2.map((g) => (
+                <Chip
+                  key={g}
+                  label={t(COACH_GOAL_KEYS[g])}
+                  selected={coachDevelopmentGoal === g}
+                  onPress={() => setCoachDevelopmentGoal(g)}
+                />
+              ))}
+            </ChipGrid>
+          </Animated.View>
         )}
       </ScrollView>
 
-      {error && step < 6 && <Text style={styles.errorText}>{error}</Text>}
+      {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-      {step < TOTAL_STEPS - 1 && (
-        <View style={styles.navRow}>
-          {step > 0 ? (
-            <TouchableOpacity onPress={back} style={styles.backBtn}>
-              <ArrowLeft size={20} color={Colors.textSecondary} />
-            </TouchableOpacity>
-          ) : (
-            <View style={styles.backBtnPlaceholder} />
-          )}
-          <View style={{ flex: 1 }}>
-            <Button
-              label={step === 0 ? 'Start' : 'Continue'}
-              onPress={next}
-              disabled={!canProceed()}
-              loading={saving}
-              iconRight={<ArrowRight size={20} color={Colors.background} />}
-            />
-          </View>
+      <View style={styles.navRow}>
+        {stepIndex > 0 ? (
+          <TouchableOpacity onPress={back} style={styles.backBtn}>
+            <ArrowLeft size={20} color={Colors.textSecondary} />
+          </TouchableOpacity>
+        ) : (
+          <View style={styles.backBtnPlaceholder} />
+        )}
+        <View style={{ flex: 1 }}>
+          <Button
+            label={isLast ? t('onboarding.v2.finish') : t('onboarding.v2.continue')}
+            onPress={next}
+            disabled={!canProceed()}
+            loading={saving}
+            iconRight={<ArrowRight size={20} color={Colors.background} />}
+          />
         </View>
-      )}
-    </LinearGradient>
-  );
-}
-
-function FeatureRow({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <View style={styles.featureRow}>
-      <View style={styles.featureIcon}>{icon}</View>
-      <Text style={styles.featureText}>{text}</Text>
-    </View>
-  );
-}
-
-function LoadingScreen({
-  position,
-  secondaryPosition,
-  playingLevel,
-  developmentGoal,
-  onFinish,
-}: {
-  position: HandballPosition | null;
-  secondaryPosition: HandballPosition | null;
-  playingLevel: PlayingLevel | null;
-  developmentGoal: DevelopmentGoal | null;
-  onFinish: () => void;
-}) {
-  const ringProgress = useSharedValue(0);
-  const [statusText, setStatusText] = useState('Analyzing your profile...');
-  const [showSummary, setShowSummary] = useState(false);
-
-  const statuses = [
-    'Analyzing your profile...',
-    'Mapping position scenarios...',
-    'Building your training plan...',
-    'Calibrating difficulty levels...',
-    'Preparing your dashboard...',
-  ];
-
-  useEffect(() => {
-    ringProgress.value = withTiming(1, { duration: 3500, easing: Easing.inOut(Easing.ease) });
-
-    let statusIdx = 0;
-    const statusInterval = setInterval(() => {
-      statusIdx++;
-      if (statusIdx < statuses.length) {
-        setStatusText(statuses[statusIdx]);
-      } else {
-        clearInterval(statusInterval);
-      }
-    }, 700);
-
-    const summaryTimer = setTimeout(() => setShowSummary(true), 2800);
-    const finishTimer = setTimeout(() => runOnJS(onFinish)(), 4200);
-
-    return () => {
-      clearInterval(statusInterval);
-      clearTimeout(summaryTimer);
-      clearTimeout(finishTimer);
-    };
-  }, []);
-
-  const ringStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${ringProgress.value * 360}deg` }],
-  }));
-
-  const cfg = position ? POSITION_CONFIGS[position] : null;
-
-  return (
-    <Animated.View entering={FadeIn.duration(400)} style={styles.loadingContainer}>
-      <Animated.View entering={FadeInDown.duration(600)} style={styles.loadingRingWrap}>
-        <ProgressRing progress={ringProgress} size={140} strokeWidth={6}>
-          <View style={styles.loadingRingInner}>
-            <LinearGradient
-              colors={Colors.goldGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.loadingInnerCircle}
-            >
-              <Brain size={32} color={Colors.background} />
-            </LinearGradient>
-          </View>
-        </ProgressRing>
-      </Animated.View>
-
-      <Animated.Text entering={FadeInUp.delay(200).duration(500)} style={styles.loadingTitle}>
-        Creating your personal{'\n'}development plan
-      </Animated.Text>
-
-      <Animated.Text entering={FadeIn.delay(300).duration(400)} style={styles.loadingStatus}>
-        {statusText}
-      </Animated.Text>
-
-      {showSummary && (
-        <Animated.View entering={FadeInUp.duration(500)} style={styles.loadingSummary}>
-          <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Position</Text>
-            <Text style={styles.summaryValue}>{position ?? '—'}</Text>
-          </View>
-          {secondaryPosition && (
-            <>
-              <View style={styles.summaryDivider} />
-              <View style={styles.summaryRow}>
-                <Text style={styles.summaryLabel}>Secondary</Text>
-                <Text style={styles.summaryValue}>{secondaryPosition}</Text>
-              </View>
-            </>
-          )}
-          <View style={styles.summaryDivider} />
-          <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Level</Text>
-            <Text style={styles.summaryValue}>{playingLevel ?? '—'}</Text>
-          </View>
-          <View style={styles.summaryDivider} />
-          <View style={styles.summaryRow}>
-            <Text style={styles.summaryLabel}>Focus</Text>
-            <Text style={styles.summaryValue}>{developmentGoal ?? '—'}</Text>
-          </View>
-          {cfg && (
-            <>
-              <View style={styles.summaryDivider} />
-              <View style={styles.summaryRow}>
-                <Text style={styles.summaryLabel}>Training</Text>
-                <Text style={styles.summaryValue}>{cfg.dailySessionTitle}</Text>
-              </View>
-            </>
-          )}
-        </Animated.View>
-      )}
-    </Animated.View>
+      </View>
+    </ScreenBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  progressRow: { flexDirection: 'row', gap: Spacing.sm, paddingHorizontal: Spacing.lg, paddingTop: Spacing.huge },
+  progressRow: {
+    flexDirection: 'row',
+    gap: Spacing.sm,
+    paddingHorizontal: Spacing.lg,
+    paddingTop: Spacing.huge,
+  },
   progressDot: { flex: 1, height: 4, borderRadius: 2, backgroundColor: Colors.border },
   progressDotActive: { backgroundColor: Colors.gold },
   progressDotDone: { backgroundColor: Colors.goldDeep },
-  scroll: { flexGrow: 1, paddingHorizontal: Spacing.lg, paddingVertical: Spacing.xl },
-
-  welcomeContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: Spacing.xl, paddingVertical: Spacing.xxl },
-  welcomeGlowWrap: { justifyContent: 'center', alignItems: 'center' },
-  welcomeGlow: { position: 'absolute', width: 200, height: 200, borderRadius: 100, backgroundColor: Colors.goldGlow },
-  welcomeLogo: { width: 96, height: 96, borderRadius: 26, justifyContent: 'center', alignItems: 'center' },
-  welcomeLogoText: { fontFamily: 'Inter-ExtraBold', fontSize: 34, color: Colors.background, letterSpacing: -1 },
-  welcomeTitle: { ...Typography.hero, fontFamily: 'Inter-ExtraBold', color: Colors.textPrimary, fontSize: 32, textAlign: 'center', lineHeight: 40 },
-  welcomeSub: { ...Typography.body, color: Colors.textSecondary, textAlign: 'center', paddingHorizontal: Spacing.xl, lineHeight: 24, fontFamily: 'Inter-Medium' },
-  welcomeFeatures: { gap: Spacing.md, paddingHorizontal: Spacing.xl, marginTop: Spacing.md },
-  featureRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },
-  featureIcon: { width: 32, height: 32, borderRadius: 10, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
-  featureText: { ...Typography.bodySmall, color: Colors.textSecondary, fontFamily: 'Inter-Medium' },
-
-  stepContainer: { flex: 1, alignItems: 'center', paddingTop: Spacing.xl },
-  stepIconWrap: { width: 60, height: 60, borderRadius: 18, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center', marginBottom: Spacing.lg },
-  stepTitle: { ...Typography.hero, fontFamily: 'Inter-ExtraBold', color: Colors.textPrimary, fontSize: 26, textAlign: 'center' },
-  stepSubtitle: { ...Typography.bodySmall, color: Colors.textSecondary, textAlign: 'center', marginTop: Spacing.sm, paddingHorizontal: Spacing.md, lineHeight: 22 },
-
-  positionGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.sm, justifyContent: 'center', marginTop: Spacing.xxl, paddingHorizontal: Spacing.xs },
-  positionItemWrap: { width: '47%' },
-  positionChip: { alignItems: 'center', gap: 8, paddingVertical: 22, borderRadius: Radius.lg, backgroundColor: Colors.surface, borderWidth: 1.5, borderColor: Colors.border, position: 'relative' },
-  positionChipSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
-  positionIconWrap: { width: 48, height: 48, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: Colors.border },
-  positionLabel: { color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 14 },
-  positionLabelSelected: { color: Colors.gold },
-  positionCheck: { position: 'absolute', top: 8, right: 8, width: 20, height: 20, borderRadius: 10, backgroundColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-  languageFlag: { fontSize: 26 },
-
-  skipBtn: { marginTop: Spacing.lg, paddingVertical: Spacing.sm, paddingHorizontal: Spacing.lg },
-  skipText: { color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', fontSize: 14 },
-
-  fieldLabel: { color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', fontSize: 13, letterSpacing: 0.5, marginTop: Spacing.lg, marginBottom: Spacing.sm, alignSelf: 'stretch' },
-  chipRow: { flexDirection: 'row', gap: Spacing.sm, alignSelf: 'stretch' },
-  fieldChip: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 14, borderRadius: Radius.lg, backgroundColor: Colors.surface, borderWidth: 1.5, borderColor: Colors.border },
-  fieldChipSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
-  fieldChipText: { color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 16 },
-  fieldChipTextSelected: { color: Colors.gold },
-
-  levelList: { gap: Spacing.sm, marginTop: Spacing.sm, width: '100%' },
-  levelChip: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: Spacing.lg, paddingVertical: 16, borderRadius: Radius.lg, backgroundColor: Colors.surface, borderWidth: 1.5, borderColor: Colors.border },
-  levelChipSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
-  levelLabel: { flex: 1, color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 16 },
-  levelLabelSelected: { color: Colors.gold },
-  levelCheck: { width: 28, height: 28, borderRadius: 14, backgroundColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-
-  goalList: { gap: Spacing.sm, marginTop: Spacing.sm, width: '100%' },
-  goalChip: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, paddingHorizontal: Spacing.lg, paddingVertical: 14, borderRadius: Radius.lg, backgroundColor: Colors.surface, borderWidth: 1.5, borderColor: Colors.border },
-  goalChipSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
-  goalIcon: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: Colors.border },
-  goalIconSelected: { borderColor: Colors.gold },
-  goalInfo: { flex: 1 },
-  goalLabel: { color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 15 },
-  goalLabelSelected: { color: Colors.gold },
-  goalCheck: { width: 28, height: 28, borderRadius: 14, backgroundColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
-
-  loadingContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: Spacing.xl, paddingVertical: Spacing.xxxl },
-  loadingRingWrap: { marginBottom: Spacing.lg },
-  loadingRingInner: { justifyContent: 'center', alignItems: 'center' },
-  loadingInnerCircle: { width: 64, height: 64, borderRadius: 20, justifyContent: 'center', alignItems: 'center' },
-  loadingTitle: { ...Typography.h1, fontFamily: 'Inter-ExtraBold', color: Colors.textPrimary, fontSize: 24, textAlign: 'center', lineHeight: 32 },
-  loadingStatus: { ...Typography.bodySmall, color: Colors.gold, fontFamily: 'Inter-Medium', fontSize: 14, letterSpacing: 0.5 },
-  loadingSummary: { backgroundColor: Colors.surface, borderRadius: Radius.lg, padding: Spacing.lg, borderWidth: 1, borderColor: Colors.border, width: '100%', maxWidth: 320, gap: Spacing.md },
-  summaryRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  summaryLabel: { ...Typography.caption, color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', letterSpacing: 0.5 },
-  summaryValue: { ...Typography.bodyStrong, color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 15 },
-  summaryDivider: { height: 1, backgroundColor: Colors.hairline },
-
-  navRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, paddingHorizontal: Spacing.lg, paddingBottom: Spacing.xl, paddingTop: Spacing.md },
-  backBtn: { width: 52, height: 52, borderRadius: Radius.md, backgroundColor: Colors.surface, borderWidth: 1, borderColor: Colors.border, justifyContent: 'center', alignItems: 'center' },
+  stepOf: {
+    ...Typography.caption,
+    color: Colors.textTertiary,
+    fontFamily: 'Inter-SemiBold',
+    textAlign: 'center',
+    marginTop: Spacing.sm,
+    letterSpacing: 0.5,
+  },
+  scroll: { flexGrow: 1, paddingHorizontal: Spacing.lg, paddingVertical: Spacing.lg, paddingBottom: Spacing.xxl },
+  step: { gap: Spacing.sm },
+  title: {
+    ...Typography.hero,
+    fontFamily: 'Inter-ExtraBold',
+    color: Colors.textPrimary,
+    fontSize: 28,
+    lineHeight: 34,
+    marginBottom: Spacing.xs,
+  },
+  sub: {
+    ...Typography.body,
+    color: Colors.textSecondary,
+    marginBottom: Spacing.md,
+    lineHeight: 22,
+  },
+  fieldLabel: {
+    color: Colors.textTertiary,
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 13,
+    letterSpacing: 0.5,
+    marginTop: Spacing.md,
+    marginBottom: Spacing.sm,
+  },
+  hint: {
+    ...Typography.caption,
+    color: Colors.textTertiary,
+    marginBottom: Spacing.sm,
+  },
+  chipGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.sm },
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: Spacing.md,
+    paddingVertical: 14,
+    borderRadius: Radius.lg,
+    backgroundColor: Colors.surface,
+    borderWidth: 1.5,
+    borderColor: Colors.border,
+    minWidth: '46%',
+    flexGrow: 1,
+  },
+  chipCompact: { minWidth: '30%', flexGrow: 0 },
+  chipSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
+  chipText: { color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 14, flexShrink: 1 },
+  chipTextSelected: { color: Colors.gold },
+  roleList: { gap: Spacing.sm, marginTop: Spacing.lg },
+  roleCard: { padding: Spacing.lg, borderWidth: 1.5, borderColor: Colors.border },
+  roleCardSelected: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
+  roleTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 18, color: Colors.textPrimary },
+  roleTitleSelected: { color: Colors.gold },
+  roleSub: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 14, marginTop: 4 },
+  navRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.md,
+    paddingHorizontal: Spacing.lg,
+    paddingBottom: Spacing.xl,
+    paddingTop: Spacing.md,
+  },
+  backBtn: {
+    width: 52,
+    height: 52,
+    borderRadius: Radius.md,
+    backgroundColor: Colors.surface,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   backBtnPlaceholder: { width: 52 },
-  errorText: { color: Colors.error, fontFamily: 'Inter-Regular', fontSize: 14, textAlign: 'center', paddingHorizontal: Spacing.lg, paddingBottom: Spacing.sm },
+  errorText: {
+    color: Colors.error,
+    fontFamily: 'Inter-Regular',
+    fontSize: 14,
+    textAlign: 'center',
+    paddingHorizontal: Spacing.lg,
+    paddingBottom: Spacing.sm,
+  },
 });

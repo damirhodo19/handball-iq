@@ -1,0 +1,251 @@
+{
+  "changedCount": 38,
+  "unchangedCount": 32,
+  "changedIds": [
+    "scn_bank_803",
+    "scn_bank_806",
+    "scn_bank_807",
+    "scn_bank_809",
+    "scn_bank_810",
+    "scn_bank_811",
+    "scn_bank_812",
+    "scn_bank_813",
+    "scn_bank_814",
+    "scn_bank_818",
+    "scn_bank_819",
+    "scn_bank_824",
+    "scn_bank_829",
+    "scn_bank_830",
+    "scn_bank_831",
+    "scn_bank_834",
+    "scn_bank_835",
+    "scn_bank_836",
+    "scn_bank_837",
+    "scn_bank_838",
+    "scn_bank_840",
+    "scn_bank_842",
+    "scn_bank_844",
+    "scn_bank_845",
+    "scn_bank_846",
+    "scn_bank_848",
+    "scn_bank_849",
+    "scn_bank_851",
+    "scn_bank_852",
+    "scn_bank_855",
+    "scn_bank_856",
+    "scn_bank_857",
+    "scn_bank_858",
+    "scn_bank_859",
+    "scn_bank_861",
+    "scn_bank_863",
+    "scn_bank_865",
+    "scn_bank_869"
+  ],
+  "hrFixes": 20,
+  "deFixes": 44,
+  "enFixes": 23,
+  "malformedFixes": 12,
+  "tacticalRewrites": 4,
+  "passiveFixes": 1,
+  "distractorImprovements": 2,
+  "ambiguityFixes": 2,
+  "metadataChanges": 0,
+  "details": {
+    "hrFixes": [
+      "scn_bank_803: naturalised HR phrasing",
+      "scn_bank_803: naturalised HR phrasing",
+      "scn_bank_806: naturalised HR phrasing",
+      "scn_bank_810: naturalised HR phrasing",
+      "scn_bank_810: naturalised HR phrasing",
+      "scn_bank_810: naturalised HR phrasing",
+      "scn_bank_818: naturalised HR phrasing",
+      "scn_bank_831: naturalised HR phrasing",
+      "scn_bank_835: naturalised HR phrasing",
+      "scn_bank_835: naturalised HR phrasing",
+      "scn_bank_835: naturalised HR phrasing",
+      "scn_bank_835: naturalised HR phrasing",
+      "scn_bank_837: naturalised HR phrasing",
+      "scn_bank_837: naturalised HR phrasing",
+      "scn_bank_842: naturalised HR phrasing",
+      "scn_bank_845: naturalised HR phrasing",
+      "scn_bank_857: naturalised HR phrasing",
+      "scn_bank_858: naturalised HR phrasing",
+      "scn_bank_858: naturalised HR phrasing",
+      "scn_bank_858: naturalised HR phrasing"
+    ],
+    "deFixes": [
+      "scn_bank_803: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_809: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_810: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_811: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_812: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_813: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_814: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_814: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_814: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_814: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_814: naturalised DE (committed/Point/Kreischance)",
+      "scn_bank_865: überleben → Ballkontrolle"
+    ],
+    "enFixes": "21 scenarios with EN polish",
+    "malformedFixes": [
+      "scn_bank_824: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_829: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_831: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_834: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_837: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_840: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_857: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_863: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_869: fixed -vaš→tvoj verb corruption / držanjeira",
+      "scn_bank_829: question → Kako završavaš akciju dodaj-i-idi?",
+      "scn_bank_831: 831 question verified",
+      "scn_bank_837: 837 risky answer HR cleaned"
+    ],
+    "tacticalRewrites": [
+      "scn_bank_814: 814 single-best: attack middle-line gap first",
+      "scn_bank_830: 830 single-best: release to LB first",
+      "scn_bank_848: 848 controlled attack vs survive/clock-kill",
+      "scn_bank_861: 861 positional handover responsibility, not generic communicate"
+    ],
+    "passiveFixes": [
+      "scn_bank_855: 855 removed fake 2-3 second clock; advanced warning + clean window"
+    ],
+    "known": {
+      "814": "Rewrote DE committed/Vorder-Sprung; sharpened A to immediate gap attack; B = short exchange as slower second option.",
+      "830": "Sharpened cues so left-back release is clearly first; self-attack of stuck half becomes B.",
+      "831": "Fixed malformed HR question to \"Kako završavaš križanje s desnim vanjskim?\". Optimal already single-action (release to free RB).",
+      "848": "Retitled and rewritten: trailing 5v6 = controlled attack seeking high-value finish; not survive/clock-kill.",
+      "855": "Removed fixed 2–3s language; urgency from advanced passive warning, used actions, clean window, risk of another circulation.",
+      "861": "Geometry-first: CB closes left-back lane; half takes carrier after release. Removed generic communicate optimal."
+    }
+  },
+  "rbHandedness": 15,
+  "cbPerceptionTags": 24,
+  "cbCount": 70,
+  "pass2ExtraAmbiguityFixes": 12,
+  "finalOrOptimalsRemaining": 0,
+  "humanReviewIds": [
+    {
+      "label": "1_6_0",
+      "id": "scn_bank_801",
+      "familyEn": "Centre Back — Bind the Central Defender in 6:0"
+    },
+    {
+      "label": "2_5_1",
+      "id": "scn_bank_810",
+      "familyEn": "Centre Back — Space Behind the 5:1 Point"
+    },
+    {
+      "label": "3_3_2_1",
+      "id": "scn_bank_814",
+      "familyEn": "Centre Back — Play Behind the First Line in 3:2:1"
+    },
+    {
+      "label": "4_3_3_or_open",
+      "id": "scn_bank_818",
+      "familyEn": "Centre Back — Read Where 3:3 Space Opens First"
+    },
+    {
+      "label": "5_pivot",
+      "id": "scn_bank_803",
+      "familyEn": "Centre Back — Pivot Pass After Binding the 6:0 Centre"
+    },
+    {
+      "label": "6_lb_coop",
+      "id": "scn_bank_830",
+      "familyEn": "Centre Back — Crossing With the Left Back"
+    },
+    {
+      "label": "7_rb_coop",
+      "id": "scn_bank_831",
+      "familyEn": "Centre Back — Crossing With the Right Back"
+    },
+    {
+      "label": "8_wing",
+      "id": "scn_bank_839",
+      "familyEn": "Centre Back — Release to the Left Wing"
+    },
+    {
+      "label": "9_cross_or_parallel",
+      "id": "scn_bank_832",
+      "familyEn": "Centre Back — Parallel Play and Return"
+    },
+    {
+      "label": "10_7v6",
+      "id": "scn_bank_842",
+      "familyEn": "Centre Back — 7v6: Which Pivot to Play"
+    },
+    {
+      "label": "11_5v6",
+      "id": "scn_bank_848",
+      "familyEn": "Centre Back — 5v6: Controlled Attack While Trailing"
+    },
+    {
+      "label": "12_passive",
+      "id": "scn_bank_855",
+      "familyEn": "Centre Back — Passive Play: Take the Clean Shot"
+    },
+    {
+      "label": "13_transition",
+      "id": "scn_bank_858",
+      "familyEn": "Centre Back — Transition: Stop and Settle"
+    },
+    {
+      "label": "14_end_game",
+      "id": "scn_bank_854",
+      "familyEn": "Centre Back — Tie in Final Possession"
+    },
+    {
+      "label": "15_defence",
+      "id": "scn_bank_861",
+      "familyEn": "Centre Back — Defence: Clean Handover on the Switch"
+    }
+  ],
+  "finalChangedEstimate": 45,
+  "finalUnchangedEstimate": 25,
+  "validation": {
+    "cb": "PASS",
+    "perceptionPct": 35.7,
+    "avgRubric": 8.4,
+    "minRubric": 8.1,
+    "maxRubric": 8.4
+  },
+  "remainingGaps": [
+    "Expert share still ~16% (aspirational 25–30%) — labels not artificially raised",
+    "Some EN \"closes\" replacements from \"dies\" may read slightly stiff in edge cases",
+    "Parallel-play / RB-coop depth still thinner than pivot/7v6 (unchanged by design)"
+  ]
+}

@@ -6,13 +6,9 @@ export async function saveMatchSimulation(
 ): Promise<{ error: string | null; id: string | null }> {
   if (!isSupabaseConfigured || !supabase) return { error: 'Supabase not configured.', id: null };
   try {
-    const { data, error } = await supabase
-      .from('match_simulations')
-      .insert(record)
-      .select('id')
-      .single();
+    const { error } = await supabase.from('match_simulations').insert(record);
     if (error) return { error: error.message, id: null };
-    return { error: null, id: data.id };
+    return { error: null, id: null };
   } catch (e: any) {
     return { error: e.message ?? 'Failed to save match simulation.', id: null };
   }

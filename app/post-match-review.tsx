@@ -3,19 +3,22 @@ import { View, StyleSheet, Text, ScrollView, TextInput, TouchableOpacity } from 
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { X, ClipboardList, ArrowRight, Brain, Target, Shield } from 'lucide-react-native';
+import { ClipboardList, ArrowRight, Brain, Target, Shield } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
-import { supabase } from '@/lib/supabase';
+import { BackButton } from '@/components/BackButton';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
+import { isValidDateString, isNonEmpty } from '@/lib/form-validation';
+import { mapServiceError } from '@/lib/map-error';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const RATING_KEYS = ['postMatch.ratingPoor', 'postMatch.ratingBelowAvg', 'postMatch.ratingAverage', 'postMatch.ratingGood', 'postMatch.ratingExcellent'];
 
 export default function PostMatchReviewScreen() {
-  const { refreshProfile } = useAuth();
+  const { refreshProfile, user } = useAuth();
   const { t } = useTranslation();
   const [opponent, setOpponent] = useState('');
   const [matchDate, setMatchDate] = useState(new Date().toISOString().split('T')[0]);
@@ -30,10 +33,16 @@ export default function PostMatchReviewScreen() {
   const [saved, setSaved] = useState(false);
 
   async function submit() {
-    if (!opponent.trim()) { setError(t('postMatch.errorOpponent')); return; }
+    if (!isNonEmpty(opponent)) { setError(t('postMatch.errorOpponent')); return; }
+    if (!isValidDateString(matchDate)) { setError(t('postMatch.errorInvalidDate')); return; }
+    if (!user) { setError(t('postMatch.errorNotSignedIn')); return; }
+    if (!isSupabaseConfigured || !supabase) {
+      setError(t('error.serverConnectFailed'));
+      return;
+    }
     setSaving(true);
     setError(null);
-    const { error } = await supabase!.from('post_match_reviews').insert({
+    const { error } = await supabase.from('post_match_reviews').insert({
       opponent: opponent.trim(),
       match_date: matchDate ? new Date(matchDate).toISOString() : new Date().toISOString(),
       decision_making: decisionMaking,
@@ -44,7 +53,7 @@ export default function PostMatchReviewScreen() {
       notes: notes.trim() || null,
     });
     setSaving(false);
-    if (error) { setError(error.message); return; }
+    if (error) { setError(mapServiceError(error.message, t)); return; }
     setSaved(true);
     await refreshProfile();
   }
@@ -65,9 +74,9 @@ export default function PostMatchReviewScreen() {
   return (
     <ScreenBackground>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.closeBtn}><X size={22} color={Colors.textSecondary} /></TouchableOpacity>
+        <BackButton fallbackHref="/(tabs)/match-day" />
         <Text style={styles.headerTitle}>{t('postMatch.title')}</Text>
-        <View style={{ width: 22 }} />
+        <View style={{ width: 44 }} />
       </View>
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
         <Text style={styles.intro}>{t('postMatch.intro')}</Text>
@@ -80,7 +89,7 @@ export default function PostMatchReviewScreen() {
             </View>
             <View style={styles.inputGroup}>
               <Text style={styles.inputLabel}>{t('postMatch.matchDate')}</Text>
-              <TextInput style={styles.input} placeholder="YYYY-MM-DD" placeholderTextColor={Colors.textQuaternary} value={matchDate} onChangeText={setMatchDate} />
+              <TextInput style={styles.input} placeholder={t('common.datePlaceholder')} placeholderTextColor={Colors.textQuaternary} value={matchDate} onChangeText={setMatchDate} />
             </View>
           </Card>
         </Animated.View>

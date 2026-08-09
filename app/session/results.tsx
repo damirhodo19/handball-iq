@@ -6,33 +6,56 @@ import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { ProgressRing } from '@/components/ProgressRing';
 import { useSession } from '@/context/SessionContext';
-import { SESSION_RESULTS, getMetricRating } from '@/lib/scenarios';
+import { getMetricRating } from '@/lib/scenarios';
 import { saveSession } from '@/lib/storage';
-import { saveSessionResult } from '@/services/sessionService';
 import { useAuth } from '@/context/AuthContext';
-import { useEffect, useRef, useState } from 'react';
+import { loadProfile } from '@/lib/storage';
+import { buildTrainingActivityPayload, processActivity, clearSessionMode, stableActivityId } from '@/lib/development';
+import { syncDevelopmentFull } from '@/services/developmentService';
+import { persistOrQueue } from '@/services/syncService';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSkill } from '@/lib/translations';
+import { getLocalizedSessionResults } from '@/lib/content-localize';
+import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 
 export default function ResultsScreen() {
   const { scenarios, answers, decisionScore, correctCount, resetSession } = useSession();
   const { user } = useAuth();
-  const { t } = useTranslation();
-  const savedRef = useRef(false);
+  const { t, lang } = useTranslation();
+  const activityKeyRef = useRef<string | null>(null);
+  const cloudSavedRef = useRef(false);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [devResult, setDevResult] = useState<{ xp: number; achievements: string[]; levelUp: boolean } | null>(null);
+
+  const sourceId = useMemo(
+    () =>
+      scenarios.length === 0
+        ? ''
+        : stableActivityId('s', [
+            ...scenarios.map((s) => s.id ?? s.metric),
+            ...answers.map((a) => a ?? 'x'),
+            decisionScore,
+            correctCount,
+          ]),
+    [scenarios, answers, decisionScore, correctCount],
+  );
 
   useEffect(() => {
-    if (savedRef.current) return;
-    savedRef.current = true;
+    if (!sourceId || scenarios.length === 0) return;
+    if (activityKeyRef.current === sourceId) return;
+    activityKeyRef.current = sourceId;
     const sessionMetrics = scenarios.map((s, i) => ({
       metric: s.metric,
       correct: answers[i] === s.correctIndex,
     }));
     saveSession({
+      id: sourceId,
       date: new Date().toISOString(),
-      sessionName: 'Reading the Shooter',
+      sessionName: scenarios[0]?.metric ?? t('home.trainingSession'),
       decisionScore,
       timeSpent: scenarios.length * 120,
       correctCount,
@@ -40,29 +63,83 @@ export default function ResultsScreen() {
       metrics: sessionMetrics,
     });
 
-    // Save to Supabase if user is logged in
-    if (user) {
-      saveSessionResult({
+    const profile = loadProfile();
+    const position = resolvePlayerPosition(profile);
+    if (position) {
+      const payload = buildTrainingActivityPayload(
+        scenarios, answers, decisionScore, correctCount, position, sourceId, t('home.trainingSession'),
+      );
+      const result = processActivity(payload);
+      setDevResult({ xp: result.xpEarned, achievements: result.newAchievements, levelUp: result.levelUp });
+    }
+    clearSessionMode();
+  }, [sourceId, scenarios, answers, decisionScore, correctCount, t]);
+
+  useEffect(() => {
+    if (cloudSavedRef.current || !sourceId || scenarios.length === 0) return;
+    if (!user) {
+      // Queue once so completed session is never discarded while auth hydrates
+      const sessionMetrics = scenarios.map((s, i) => ({
+        metric: s.metric,
+        correct: answers[i] === s.correctIndex,
+      }));
+      void persistOrQueue(
+        'session',
+        {
+          session_type: 'training',
+          session_name: scenarios[0]?.metric ?? t('home.trainingSession'),
+          position: null,
+          score: decisionScore,
+          decision_score: decisionScore,
+          mental_readiness: 0,
+          pressure_control: 0,
+          duration_seconds: scenarios.length * 120,
+          answers: sessionMetrics,
+        },
+        { dedupeKey: sourceId },
+      );
+      return;
+    }
+    cloudSavedRef.current = true;
+    const sessionMetrics = scenarios.map((s, i) => ({
+      metric: s.metric,
+      correct: answers[i] === s.correctIndex,
+    }));
+    void persistOrQueue(
+      'session',
+      {
         session_type: 'training',
-        session_name: 'Reading the Shooter',
+        session_name: scenarios[0]?.metric ?? t('home.trainingSession'),
         position: null,
         score: decisionScore,
         decision_score: decisionScore,
         mental_readiness: 0,
         pressure_control: 0,
         duration_seconds: scenarios.length * 120,
-        answers: sessionMetrics as any[],
-      }).then(({ error }) => {
-        if (error) setSaveError(error);
-      });
-    }
-  }, []);
+        answers: sessionMetrics,
+      },
+      { dedupeKey: sourceId, userId: user.id },
+    ).then(({ error, queued }) => {
+      if (error && !queued) setSaveError(error);
+      else if (!error) syncDevelopmentFull(user.id);
+      else if (queued) setSaveError(null);
+    });
+  }, [user, sourceId, scenarios, answers, decisionScore, t]);
 
-  const metrics: { name: string; rating: string }[] = [
-    { name: 'Patience', rating: getMetricRating('Patience', countMetricCorrect('Patience'), countMetricTotal('Patience')) },
-    { name: 'Reading the Shooter', rating: getMetricRating('Reading the Shooter', countMetricCorrect('Reading the Shooter'), countMetricTotal('Reading the Shooter')) },
-    { name: 'Pressure Control', rating: getMetricRating('Pressure Control', countMetricCorrect('Pressure Control'), countMetricTotal('Pressure Control')) },
-  ];
+  const sessionResults = getLocalizedSessionResults(lang);
+
+  const metricKeys = useMemo(() => {
+    const fromScenarios = [...new Set(scenarios.map((s) => s.metric).filter(Boolean))];
+    return fromScenarios.length > 0 ? fromScenarios : ['decisionMaking', 'pressureControl', 'gameReading'];
+  }, [scenarios]);
+  const metrics: { name: string; rating: string }[] = metricKeys.map((name) => ({
+    name: (() => {
+      const key = `iq.skill.${name}`;
+      const localized = t(key);
+      return localized === key ? translateSkill(name, t) : localized;
+    })(),
+    rating: getMetricRating(name, countMetricCorrect(name), countMetricTotal(name)),
+  }));
 
   function countMetricCorrect(metric: string): number {
     return scenarios.reduce((count, s, i) => {
@@ -77,12 +154,27 @@ export default function ResultsScreen() {
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-        {saveError && <Text style={{ color: Colors.error, textAlign: 'center', fontFamily: 'Inter-Regular', fontSize: 13, marginBottom: Spacing.sm }}>Failed to sync result: {saveError}</Text>}
+        <View style={{ marginBottom: Spacing.md }}>
+          <BackButton fallbackHref="/(tabs)/home" />
+        </View>
+        {saveError && <Text style={{ color: Colors.error, textAlign: 'center', fontFamily: 'Inter-Regular', fontSize: 13, marginBottom: Spacing.sm }}>{t('error.failedSaveSession')}</Text>}
+
+        {devResult && devResult.xp > 0 && (
+          <Animated.View entering={FadeIn.duration(400)}>
+            <Card variant="gradient" shadow="card" style={{ marginBottom: Spacing.md, padding: Spacing.md, gap: 6 }}>
+              <Text style={styles.xpEarned}>+{devResult.xp} XP</Text>
+              {devResult.levelUp && <Text style={styles.levelUp}>{t('dev.levelUp')}</Text>}
+              {devResult.achievements.length > 0 && (
+                <Text style={styles.achievementUnlock}>{t('dev.achievementUnlocked', { n: devResult.achievements.length })}</Text>
+              )}
+            </Card>
+          </Animated.View>
+        )}
 
         {/* Header */}
         <Animated.View entering={FadeIn.duration(500)}>
           <Text style={styles.completeLabel}>{t('training.sessionComplete')}</Text>
-          <Text style={styles.sessionTitle}>{t('training.readingTheShooter')}</Text>
+          <Text style={styles.sessionTitle}>{t('home.trainingSession')}</Text>
         </Animated.View>
 
         {/* Score ring */}
@@ -122,7 +214,7 @@ export default function ResultsScreen() {
         <Animated.View entering={FadeInDown.delay(300).duration(500)}>
           <Text style={styles.sectionLabel}>{t('training.strengths')}</Text>
           <Card variant="gradient" shadow="card" style={styles.listCard}>
-            {SESSION_RESULTS.strengths.map((s, i) => (
+            {sessionResults.strengths.map((s, i) => (
               <View key={i} style={styles.listItem}>
                 <View style={styles.listIconGreen}>
                   <Check size={14} color={Colors.success} />
@@ -137,7 +229,7 @@ export default function ResultsScreen() {
         <Animated.View entering={FadeInDown.delay(350).duration(500)}>
           <Text style={styles.sectionLabel}>{t('training.areasToImprove')}</Text>
           <Card variant="gradient" shadow="card" style={styles.listCard}>
-            {SESSION_RESULTS.improve.map((s, i) => (
+            {sessionResults.improve.map((s, i) => (
               <View key={i} style={styles.listItem}>
                 <View style={styles.listIconAmber}>
                   <TrendingUp size={14} color={Colors.warning} />
@@ -155,7 +247,7 @@ export default function ResultsScreen() {
               <Lightbulb size={16} color={Colors.gold} />
               <Text style={styles.recommendationLabel}>{t('training.recommendation')}</Text>
             </View>
-            <Text style={styles.recommendationText}>{SESSION_RESULTS.recommendation}</Text>
+            <Text style={styles.recommendationText}>{sessionResults.recommendation}</Text>
           </View>
         </Animated.View>
 
@@ -224,4 +316,7 @@ const styles = StyleSheet.create({
   recommendationText: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 14, lineHeight: 21 },
 
   buttonWrap: { gap: Spacing.sm },
+  xpEarned: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.gold, textAlign: 'center' },
+  levelUp: { fontFamily: 'Inter-SemiBold', fontSize: 14, color: Colors.success, textAlign: 'center' },
+  achievementUnlock: { fontFamily: 'Inter-Medium', fontSize: 13, color: Colors.textSecondary, textAlign: 'center' },
 });

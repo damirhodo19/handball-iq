@@ -1,0 +1,151 @@
+{
+  "status": "APPLIED",
+  "targets": 15,
+  "byType": {
+    "tactical rewrite": 7,
+    "language only": 4,
+    "answer polish": 2,
+    "metadata only": 2
+  },
+  "rwCount": 65,
+  "lockedUnchanged": true,
+  "rows": [
+    {
+      "id": "scn_bank_871",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Split take-off first decision from GK finish; remove handedness",
+      "difficulty": "Beginner",
+      "perception": true,
+      "handedness": "none",
+      "handednessReason": "First decision identical for either throwing hand",
+      "remainingUncertainty": "None material"
+    },
+    {
+      "id": "scn_bank_886",
+      "changeType": "language only",
+      "tacticalReason": "Unchanged hips-recover wait decision",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_890",
+      "changeType": "language only",
+      "tacticalReason": "Same second-help entry timing",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_874",
+      "changeType": "answer polish",
+      "tacticalReason": "A = take-off before block clears; GK is next read",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_875",
+      "changeType": "metadata only",
+      "tacticalReason": "Same GK early-commit read; remove left-hand framing",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "handedness": "none",
+      "handednessReason": "Far-side availability comes from GK commit, not throwing hand",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_883",
+      "changeType": "language only",
+      "tacticalReason": "Same closed take-off → short return",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_902",
+      "changeType": "language only",
+      "tacticalReason": "Same 2v1 width hold; HR gender/consistency fix",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_877",
+      "changeType": "metadata only",
+      "tacticalReason": "Same settle decision; perception=true for reading recovery/set defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_878",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Question now tests defender-distance read, not comprehension repeat",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_910",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Player-term defender geometry; 5v6 width/risk decision",
+      "difficulty": "Intermediate",
+      "perception": false,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_912",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Distinct 7v6: second-pivot collapse + empty-own-goal urgency binary",
+      "difficulty": "Expert",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "Still related to free-wing family but game-state risk now material"
+    },
+    {
+      "id": "scn_bank_922",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Late deficit + time pressure justifies taking clean wing chance now",
+      "difficulty": "Expert",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "Still shares free-takeoff DNA with 871/878 but game-state is now the teaching point"
+    },
+    {
+      "id": "scn_bank_924",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Fixed tied score; removed duplicate minute/score; passive timing meaningful",
+      "difficulty": "Expert",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_880",
+      "changeType": "answer polish",
+      "tacticalReason": "Distinct B too much help / C no help / D lose awareness",
+      "difficulty": "Expert",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    },
+    {
+      "id": "scn_bank_929",
+      "changeType": "tactical rewrite",
+      "tacticalReason": "Explicit 3v2: teammate covers far side; RW closes own-side pass lane",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "remainingUncertainty": "None"
+    }
+  ]
+}

@@ -1,12 +1,45 @@
 import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
-import { GK_SCENARIOS, GKScenario } from '@/lib/scenarios';
+import { GKScenario } from '@/lib/scenarios';
 import { loadPublishedScenariosForPositionAsync, AdminScenario } from '@/lib/admin-storage';
 import { loadProfile } from '@/lib/storage';
 import { HandballPosition } from '@/lib/positions';
+import {
+  getSessionMode,
+  getOrCreateDailyChallenge,
+  getDailyChallengeScenarios,
+  clearSessionMode,
+} from '@/lib/development';
+import { getSessionIntent, clearSessionIntent } from '@/lib/development/session-intent';
+import {
+  clearActiveTrainingSession,
+  loadActiveTrainingSession,
+  saveActiveTrainingSession,
+} from '@/lib/development/active-session';
+import { isHandballPosition } from '@/lib/platform/position-modules';
+import {
+  resolveTrainingScenariosAsGk,
+  resolveRecommendedScenarios,
+  filterResolvedScenarios,
+} from '@/lib/platform/content-resolver';
+import { getAllScenarios, toGKScenario } from '@/lib/scenario-bank';
+import { isScenarioForPosition } from '@/lib/platform/scenario-position';
+import {
+  dedupeIdsPreserveOrder,
+  pickUniqueScenariosWithoutReplacement,
+} from '@/lib/platform/unique-scenarios';
+import {
+  getScenarioFamilyId,
+  logScenarioSelectionDiagnostics,
+} from '@/lib/platform/scenario-family';
+import type { BankScenario } from '@/content/scenario-bank/types';
+
+const DEFAULT_SESSION_LENGTH = 5;
+const MIN_SESSION_LENGTH = 3;
 
 function adminScenarioToGKScenario(s: AdminScenario, index: number): GKScenario {
   return {
     id: 1000 + index,
+    bankId: s.id,
     half: s.matchPhase === 'Second Half' ? 'Second Half' : 'First Half',
     time: `${s.minute}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
     score: s.score,
@@ -15,8 +48,102 @@ function adminScenarioToGKScenario(s: AdminScenario, index: number): GKScenario 
     options: s.answerOptions,
     correctIndex: s.recommendedAnswer,
     explanation: s.explanation,
-    metric: s.mentalSkill as any || 'Reading the Shooter',
+    metric: s.mentalSkill as any || 'decisionMaking',
   };
+}
+
+function bankToSessionScenarios(bank: BankScenario[], position: HandballPosition): GKScenario[] {
+  return bank.map((s, i) => toGKScenario(s, i + 1, position));
+}
+
+function dedupeAdminByContent(rows: AdminScenario[]): AdminScenario[] {
+  const seenIds = new Set<string>();
+  const seenContent = new Set<string>();
+  const out: AdminScenario[] = [];
+  for (const s of rows) {
+    if (seenIds.has(s.id)) continue;
+    const key = `${s.title}||${s.question}||${s.situation}`.toLowerCase();
+    if (seenContent.has(key)) continue;
+    seenIds.add(s.id);
+    seenContent.add(key);
+    out.push(s);
+  }
+  return out;
+}
+
+function logSessionIds(source: string, scenarios: GKScenario[]): void {
+  const ids = scenarios.map((s) => s.bankId ?? String(s.id));
+  if (__DEV__) {
+    console.log(`[session] ${source} selected bankIds (${ids.length}):`, ids);
+  }
+}
+
+function resolveFromBankIds(ids: string[], position: HandballPosition): BankScenario[] {
+  const all = getAllScenarios();
+  const map = new Map(all.map((s) => [s.id, s]));
+  const ordered: BankScenario[] = [];
+  const seenFamilies = new Set<string>();
+  for (const id of dedupeIdsPreserveOrder(ids)) {
+    const s = map.get(id);
+    if (!s) continue;
+    if (s.primaryPosition === 'Goalkeeper' && position !== 'Goalkeeper') continue;
+    const family = getScenarioFamilyId(s);
+    if (seenFamilies.has(family)) continue;
+    seenFamilies.add(family);
+    ordered.push(s);
+  }
+  return ordered;
+}
+
+function finalizeSession(bank: BankScenario[], position: HandballPosition, source: string): GKScenario[] {
+  logScenarioSelectionDiagnostics(bank, `${source}:${position}`);
+  return bankToSessionScenarios(bank, position);
+}
+
+function loadPersonalizedScenarios(position: HandballPosition, targetCount = DEFAULT_SESSION_LENGTH): GKScenario[] {
+  const profile = loadProfile();
+  const intent = getSessionIntent();
+
+  if (intent?.scenarioIds?.length) {
+    const uniqueIds = dedupeIdsPreserveOrder(intent.scenarioIds);
+    const fromIntent = resolveFromBankIds(uniqueIds, position);
+    const picked = pickUniqueScenariosWithoutReplacement(fromIntent, targetCount, position);
+    if (picked.length >= MIN_SESSION_LENGTH) {
+      return finalizeSession(picked, position, 'intent');
+    }
+  }
+
+  let recommended = resolveRecommendedScenarios(position, profile, Math.max(targetCount * 3, 12));
+  if (intent?.category || intent?.difficulty) {
+    recommended = filterResolvedScenarios(recommended, {
+      category: intent?.category,
+      difficulty: intent?.difficulty,
+    });
+    if (recommended.length < MIN_SESSION_LENGTH) {
+      recommended = filterResolvedScenarios(
+        getAllScenarios().filter((s) => isScenarioForPosition(s, position)),
+        { category: intent?.category, difficulty: intent?.difficulty },
+      );
+    }
+  }
+
+  const unique = pickUniqueScenariosWithoutReplacement(recommended, targetCount, position);
+  if (unique.length >= MIN_SESSION_LENGTH) {
+    return finalizeSession(unique, position, 'recommended');
+  }
+
+  // Broaden with position-compatible pool — still one family per session slot
+  const broadened = pickUniqueScenariosWithoutReplacement(
+    getAllScenarios().filter((s) => isScenarioForPosition(s, position)),
+    targetCount,
+    position,
+  );
+  if (broadened.length > 0) {
+    return finalizeSession(broadened, position, 'broadened');
+  }
+
+  // Last resort: resolver helper (already family-aware via resolveRecommended)
+  return resolveTrainingScenariosAsGk(position, profile, Math.min(targetCount, 5));
 }
 
 interface SessionState {
@@ -37,24 +164,112 @@ interface SessionState {
 const SessionContext = createContext<SessionState | undefined>(undefined);
 
 export function SessionProvider({ children }: { children: ReactNode }) {
-  const [scenarios, setScenarios] = useState<GKScenario[]>(GK_SCENARIOS);
+  const [scenarios, setScenarios] = useState<GKScenario[]>([]);
 
   useEffect(() => {
+    let cancelled = false;
+
+    const restoreIfActive = (position: HandballPosition): boolean => {
+      const active = loadActiveTrainingSession();
+      if (!active || active.position !== position || active.bankIds.length < MIN_SESSION_LENGTH) {
+        return false;
+      }
+      const restored = resolveFromBankIds(active.bankIds, position);
+      if (restored.length < MIN_SESSION_LENGTH) return false;
+      const gk = bankToSessionScenarios(restored, position);
+      logSessionIds('resume', gk);
+      if (!cancelled) setScenarios(gk);
+      return true;
+    };
+
     (async () => {
       const profile = loadProfile();
-      const position = (profile.position as HandballPosition) || 'Goalkeeper';
+      const position = isHandballPosition(profile.position) ? profile.position : null;
+
+      if (!position) {
+        if (!cancelled) setScenarios([]);
+        return;
+      }
+
+      // Resume: navigating away/back must not regenerate the active pool
+      if (restoreIfActive(position)) return;
+
+      if (getSessionMode() === 'daily_challenge') {
+        const challenge = getOrCreateDailyChallenge(position);
+        const dailyScenarios = getDailyChallengeScenarios(challenge, position);
+        const uniqueDaily = (() => {
+          const seen = new Set<string>();
+          const out: GKScenario[] = [];
+          for (const s of dailyScenarios) {
+            const key = s.bankId ?? `${s.question}||${s.situation}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            out.push({ ...s, id: out.length + 1 });
+          }
+          return out;
+        })();
+        if (uniqueDaily.length >= MIN_SESSION_LENGTH) {
+          if (cancelled) return;
+          // Another mount may have already persisted a pool (Strict Mode)
+          if (restoreIfActive(position)) return;
+          logSessionIds('daily_challenge', uniqueDaily);
+          saveActiveTrainingSession({
+            position,
+            bankIds: uniqueDaily.map((s) => s.bankId!).filter(Boolean),
+            startedAt: new Date().toISOString(),
+          });
+          setScenarios(uniqueDaily);
+          clearSessionMode();
+          clearSessionIntent();
+          return;
+        }
+      }
+
       try {
         const adminScenarios = await loadPublishedScenariosForPositionAsync(position);
-        if (adminScenarios.length >= 3) {
-          setScenarios(adminScenarios.slice(0, 5).map((s, i) => adminScenarioToGKScenario(s, i)));
+        if (cancelled) return;
+        if (restoreIfActive(position)) return;
+        const exact = dedupeAdminByContent(adminScenarios.filter((s) => s.position === position));
+        if (exact.length >= MIN_SESSION_LENGTH) {
+          const slice = exact.slice(0, DEFAULT_SESSION_LENGTH);
+          const gk = slice.map((s, i) => adminScenarioToGKScenario(s, i));
+          logSessionIds('admin', gk);
+          saveActiveTrainingSession({
+            position,
+            bankIds: slice.map((s) => s.id),
+            startedAt: new Date().toISOString(),
+          });
+          setScenarios(gk);
+          clearSessionIntent();
+          return;
         }
-      } catch {}
+      } catch {
+        // fall through to bank resolver
+      }
+
+      if (cancelled) return;
+      if (restoreIfActive(position)) return;
+
+      const personalized = loadPersonalizedScenarios(position, DEFAULT_SESSION_LENGTH);
+      logSessionIds('bank', personalized);
+      const bankIds = personalized.map((s) => s.bankId).filter((id): id is string => Boolean(id));
+      if (bankIds.length >= MIN_SESSION_LENGTH) {
+        saveActiveTrainingSession({
+          position,
+          bankIds,
+          startedAt: new Date().toISOString(),
+        });
+      }
+      if (!cancelled) setScenarios(personalized);
+      clearSessionIntent();
     })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  const [answers, setAnswers] = useState<(number | null)[]>(
-    () => GK_SCENARIOS.map(() => null)
-  );
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [confirmed, setConfirmed] = useState(false);
@@ -82,15 +297,18 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [currentScenarioIndex, scenarios.length]);
 
   const resetSession = useCallback(() => {
+    // Restart same pool (answers only) — do not regenerate scenarios
     setAnswers(scenarios.map(() => null));
     setCurrentScenarioIndex(0);
     setSelectedIndex(null);
     setConfirmed(false);
   }, [scenarios]);
 
-  // Update answers array length when scenarios change
   useEffect(() => {
-    setAnswers(scenarios.map(() => null));
+    setAnswers((prev) => {
+      if (prev.some((a) => a !== null)) return prev;
+      return scenarios.map(() => null);
+    });
   }, [scenarios]);
 
   const correctCount = answers.reduce<number>((count, ans, i) => {
@@ -101,7 +319,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
 
   const decisionScore = scenarios.length > 0 ? Math.round((correctCount / scenarios.length) * 100) : 0;
 
-  const isComplete = currentScenarioIndex === scenarios.length - 1 && confirmed;
+  const isComplete = scenarios.length > 0 && currentScenarioIndex === scenarios.length - 1 && confirmed;
+
+  useEffect(() => {
+    if (isComplete) {
+      clearActiveTrainingSession();
+    }
+  }, [isComplete]);
 
   return (
     <SessionContext.Provider

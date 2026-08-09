@@ -7,7 +7,7 @@ import { HandballPosition } from '@/lib/positions';
 function toDbRow(s: Partial<AdminScenario>): Partial<Scenario> {
   return {
     title: s.title,
-    position: s.position ?? 'Goalkeeper',
+    position: s.position ?? '',
     secondary_positions: s.secondaryPositions ?? [],
     category: s.category ?? 'General',
     difficulty: s.difficulty ?? 'Intermediate',
@@ -78,7 +78,8 @@ export async function fetchPublishedScenariosForPosition(position: HandballPosit
       .select('*')
       .eq('status', 'Published')
       .is('deleted_at', null)
-      .or(`position.eq.${position},position.eq.All,secondary_positions.cs.{${position}}`)
+      // Quote values — "Left Back" contains a space and breaks unquoted PostgREST filters
+      .or(`position.eq."${position}",position.eq.All`)
       .order('created_at', { ascending: false });
     if (error || !data) return [];
     return (data as Scenario[]).map(toAdminScenario);

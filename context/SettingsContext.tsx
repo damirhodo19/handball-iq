@@ -9,9 +9,12 @@ interface SettingsContextValue {
 const SettingsContext = createContext<SettingsContextValue | undefined>(undefined);
 
 const DEFAULT_SETTINGS: AppSettings = {
-  darkMode: true,
+  darkMode: false,
+  theme: 'light',
+  themeMigrated: true,
   language: 'English',
   dailyReminder: false,
+  activeMode: 'player',
 };
 
 export function SettingsProvider({ children }: { children: ReactNode }) {

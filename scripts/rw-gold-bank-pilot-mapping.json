@@ -1,0 +1,52 @@
+[
+  {
+    "pilotId": "rw_pilot_01",
+    "familyKey": "rw_60_rb_binds_takeoff",
+    "productionId": "scn_bank_871"
+  },
+  {
+    "pilotId": "rw_pilot_02",
+    "familyKey": "rw_rb_hips_ask_now",
+    "productionId": "scn_bank_872"
+  },
+  {
+    "pilotId": "rw_pilot_03",
+    "familyKey": "rw_entry_when_not",
+    "productionId": "scn_bank_873"
+  },
+  {
+    "pilotId": "rw_pilot_04",
+    "familyKey": "rw_pivot_block_middle_takeoff",
+    "productionId": "scn_bank_874"
+  },
+  {
+    "pilotId": "rw_pilot_05",
+    "familyKey": "rw_gk_near_post_commit",
+    "productionId": "scn_bank_875"
+  },
+  {
+    "pilotId": "rw_pilot_06",
+    "familyKey": "rw_trans_3v2_hold_width",
+    "productionId": "scn_bank_876"
+  },
+  {
+    "pilotId": "rw_pilot_07",
+    "familyKey": "rw_trans_second_wave_positional",
+    "productionId": "scn_bank_877"
+  },
+  {
+    "pilotId": "rw_pilot_08",
+    "familyKey": "rw_6v5_free_finish",
+    "productionId": "scn_bank_878"
+  },
+  {
+    "pilotId": "rw_pilot_09",
+    "familyKey": "rw_empty_own_goal_safe_return",
+    "productionId": "scn_bank_879"
+  },
+  {
+    "pilotId": "rw_pilot_10",
+    "familyKey": "rw_def_protect_wing_until_handover",
+    "productionId": "scn_bank_880"
+  }
+]

@@ -1,15 +1,13 @@
 // ── Types ─────────────────────────────────────────────────────────────────────
 
+import { readStorageJson, writeStorageJson, removeStorageKey } from '@/lib/platform-storage';
+import type { HandballPosition } from '@/lib/positions';
+
 export type MatchType = 'League' | 'Cup' | 'Friendly' | 'Tournament';
 export type MatchLocation = 'Home' | 'Away' | 'Neutral';
 export type PlayingTime = 'Starter' | 'Shared minutes' | 'Substitute';
-export type PersonalGoal =
-  | 'Stay patient'
-  | 'Read the shooter'
-  | 'Control emotions'
-  | 'Improve communication'
-  | 'Fast break saves'
-  | 'Seven metre saves';
+/** Language-neutral Match Day goal labels from position config (any position). */
+export type PersonalGoal = string;
 
 export interface PrepSetup {
   opponent: string;
@@ -17,6 +15,11 @@ export interface PrepSetup {
   location: MatchLocation;
   playingTime: PlayingTime;
   goals: PersonalGoal[];
+  /** Canonical position captured at prep start — required for tactics/plan. */
+  position: HandballPosition;
+  developmentGoal?: string | null;
+  playingLevel?: string | null;
+  dominantHand?: string | null;
 }
 
 export type PrepMode = 'complete' | 'quick';
@@ -64,22 +67,14 @@ const KEYS = {
   IN_PROGRESS: 'hbiq_match_day_in_progress',
 };
 
+// ── Storage ───────────────────────────────────────────────────────────────────
+
 function get<T>(key: string, fallback: T): T {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(key);
-      if (raw) return JSON.parse(raw) as T;
-    }
-  } catch {}
-  return fallback;
+  return readStorageJson(key, fallback);
 }
 
 function set<T>(key: string, value: T): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  } catch {}
+  writeStorageJson(key, value);
 }
 
 // ── Preps ─────────────────────────────────────────────────────────────────────
@@ -148,11 +143,7 @@ export function loadInProgress(): InProgressState | null {
 }
 
 export function clearInProgress(): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.removeItem(KEYS.IN_PROGRESS);
-    }
-  } catch {}
+  removeStorageKey(KEYS.IN_PROGRESS);
 }
 
 // ── Reflections ───────────────────────────────────────────────────────────────

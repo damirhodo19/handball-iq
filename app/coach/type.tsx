@@ -2,12 +2,14 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, UserCircle, CheckCircle2, AlertTriangle, Target } from 'lucide-react-native';
+import { UserCircle, CheckCircle2, AlertTriangle, Target } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { buildPlayerProfile, classifyPlayerType, PlayerTypeInfo } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateStructuredPlayerType, renderCoachMessage, renderCoachMessages } from '@/lib/coach-i18n';
 
 export default function TypeScreen() {
   const { t } = useTranslation();
@@ -34,9 +36,7 @@ export default function TypeScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachType.title')}</Text>
             <Text style={styles.headerSub}>{t('coachType.subtitle')}</Text>
@@ -48,8 +48,8 @@ export default function TypeScreen() {
           <Card variant="gradient" shadow="cardLg" style={styles.typeCard}>
             <View style={styles.typeIconWrap}><UserCircle size={40} color={Colors.gold} /></View>
             <Text style={styles.typeLabel}>{t('coachType.style')}</Text>
-            <Text style={styles.typeName}>{typeInfo.type}</Text>
-            <Text style={styles.typeDesc}>{typeInfo.description}</Text>
+            <Text style={styles.typeName}>{translateStructuredPlayerType(typeInfo.type, t)}</Text>
+            <Text style={styles.typeDesc}>{renderCoachMessage(t, typeInfo.description)}</Text>
             <View style={styles.typeScoreRow}>
               <Text style={styles.typeScoreLabel}>{t('coachType.overallScore')}</Text>
               <Text style={styles.typeScoreValue}>{overall}%</Text>
@@ -69,7 +69,7 @@ export default function TypeScreen() {
             {typeInfo.strengths.map((s, i) => (
               <View key={i} style={styles.listItem}>
                 <View style={[styles.listDot, { backgroundColor: Colors.success }]} />
-                <Text style={styles.listText}>{s}</Text>
+                <Text style={styles.listText}>{renderCoachMessage(t, s)}</Text>
               </View>
             ))}
           </Card>
@@ -87,7 +87,7 @@ export default function TypeScreen() {
             {typeInfo.risks.map((r, i) => (
               <View key={i} style={styles.listItem}>
                 <View style={[styles.listDot, { backgroundColor: Colors.warning }]} />
-                <Text style={styles.listText}>{r}</Text>
+                <Text style={styles.listText}>{renderCoachMessage(t, r)}</Text>
               </View>
             ))}
           </Card>
@@ -100,7 +100,7 @@ export default function TypeScreen() {
               <View style={styles.focusIcon}><Target size={18} color={Colors.gold} /></View>
               <Text style={styles.focusTitle}>{t('coachType.suggestedFocus')}</Text>
             </View>
-            <Text style={styles.focusText}>{typeInfo.suggestedFocus}</Text>
+            <Text style={styles.focusText}>{renderCoachMessage(t, typeInfo.suggestedFocus)}</Text>
           </Card>
         </Animated.View>
       </ScrollView>
@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

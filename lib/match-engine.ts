@@ -3,6 +3,10 @@ export interface MatchDecision {
   text: string;
   quality: 'optimal' | 'good' | 'risky' | 'poor';
   feedback: string;
+  text_hr?: string;
+  text_de?: string;
+  feedback_hr?: string;
+  feedback_de?: string;
 }
 
 export interface MatchSituation {
@@ -14,7 +18,11 @@ export interface MatchSituation {
   pressure: 'Low' | 'Moderate' | 'High' | 'Critical';
   formation: string;
   description: string;
+  description_hr?: string;
+  description_de?: string;
   scenarioType: string;
+  scenarioType_hr?: string;
+  scenarioType_de?: string;
   decisions: MatchDecision[];
   correctDecisionId: string;
 }
@@ -52,10 +60,10 @@ export interface MatchReport {
   momentum: Momentum;
   confidence: Confidence;
   decisionAccuracy: number;
-  strengths: string[];
-  areasToImprove: string[];
-  summary: string;
-  finalMessage: string;
+  optimalCount: number;
+  goodCount: number;
+  riskyCount: number;
+  poorCount: number;
 }
 
 export interface MatchRecord {
@@ -74,7 +82,7 @@ export interface MatchRecord {
 }
 
 export const MATCH_CONFIG: MatchConfig = {
-  opponent: 'Berlin Lions',
+  opponent: 'Opponent',
   competition: 'League Match',
   difficulty: 'Intermediate',
   duration: '10–15 minutes',
@@ -353,10 +361,10 @@ export function evaluateMatch(answers: MatchAnswer[], situations: MatchSituation
       momentum: 'Balanced',
       confidence: 'Low',
       decisionAccuracy: 0,
-      strengths: [],
-      areasToImprove: [],
-      summary: 'No data available.',
-      finalMessage: 'Complete a match to receive your coaching report.',
+      optimalCount: 0,
+      goodCount: 0,
+      riskyCount: 0,
+      poorCount: 0,
     };
   }
 
@@ -398,28 +406,6 @@ export function evaluateMatch(answers: MatchAnswer[], situations: MatchSituation
   const riskyCount = answers.filter((a) => a.quality === 'risky').length;
   const poorCount = answers.filter((a) => a.quality === 'poor').length;
 
-  const strengths: string[] = [];
-  const areasToImprove: string[] = [];
-
-  if (optimalCount >= 5) strengths.push('Excellent decision-making in the majority of situations');
-  if (pressureControl >= 75) strengths.push('Composed and effective under high-pressure moments');
-  if (readingAbility >= 75) strengths.push('Strong ability to read shooters and anticipate shot direction');
-  if (consistency >= 75) strengths.push('Consistent performance across the entire match');
-  if (optimalCount + goodCount >= 10) strengths.push('Rarely made poor decisions throughout the match');
-
-  if (poorCount >= 2) areasToImprove.push('Avoid committing too early before reading the shooter');
-  if (riskyCount >= 3) areasToImprove.push('Reduce risky guesses in favour of patient reaction');
-  if (pressureControl < 60) areasToImprove.push('Improve composure in critical and high-pressure situations');
-  if (readingAbility < 60) areasToImprove.push('Work on reading the shooter\'s body and release point');
-  if (consistency < 60) areasToImprove.push('Maintain focus and decision quality across all 60 minutes');
-
-  if (strengths.length === 0) strengths.push('Showed willingness to make decisions in every situation');
-  if (areasToImprove.length === 0) areasToImprove.push('Continue refining your anticipation and timing');
-
-  // Generate coaching summary
-  const summary = generateSummary(decisionScore, pressureControl, readingAbility, optimalCount, riskyCount, poorCount);
-  const finalMessage = generateFinalMessage(decisionScore, pressureControl, readingAbility, optimalCount, riskyCount, poorCount);
-
   return {
     matchRating,
     decisionScore,
@@ -430,10 +416,10 @@ export function evaluateMatch(answers: MatchAnswer[], situations: MatchSituation
     momentum,
     confidence,
     decisionAccuracy,
-    strengths,
-    areasToImprove,
-    summary,
-    finalMessage,
+    optimalCount,
+    goodCount,
+    riskyCount,
+    poorCount,
   };
 }
 
@@ -487,141 +473,4 @@ export function calculateDecisionAccuracy(answers: MatchAnswer[]): number {
   if (answers.length === 0) return 0;
   const correctCount = answers.filter((a) => a.isCorrect).length;
   return Math.round((correctCount / answers.length) * 100);
-}
-
-/**
- * Generate a dynamic halftime coach message based on first-half performance.
- */
-export function generateHalftimeMessage(answers: MatchAnswer[], situations: MatchSituation[]): string {
-  if (answers.length === 0) {
-    return 'Stay patient. Read the shooter before committing.';
-  }
-
-  const firstHalf = answers.slice(0, 8);
-  const correctCount = firstHalf.filter((a) => a.quality === 'optimal' || a.quality === 'good').length;
-  const accuracy = correctCount / firstHalf.length;
-  const poorCount = firstHalf.filter((a) => a.quality === 'poor').length;
-  const riskyCount = firstHalf.filter((a) => a.quality === 'risky').length;
-
-  const pressureAnswers = firstHalf.filter((a) => {
-    const s = situations[a.situationIndex];
-    return s && (s.pressure === 'High' || s.pressure === 'Critical');
-  });
-  const pressurePoor = pressureAnswers.filter((a) => a.quality === 'poor' || a.quality === 'risky').length;
-
-  // Excellent performance — praise anticipation and positioning
-  if (accuracy >= 0.8 && poorCount === 0) {
-    const messages = [
-      'Excellent anticipation. You are reading the shooter before they release — keep doing exactly that.',
-      'Your positioning is excellent today. Trust your read and stay patient in the second half.',
-      'Outstanding first half. Your decision-making has been sharp — maintain this level of focus.',
-    ];
-    return messages[Math.floor(Math.random() * messages.length)];
-  }
-
-  // Committing too early — address timing
-  if (poorCount >= 2 || riskyCount >= 3) {
-    const messages = [
-      'Delay your first movement. You are committing before reading the shooter — stay patient.',
-      'Stay patient before committing. Read the shooter\'s body language, then react.',
-      'You are moving too early. Wait for the release cue and trust your reflexes.',
-    ];
-    return messages[Math.floor(Math.random() * messages.length)];
-  }
-
-  // Struggling under pressure
-  if (pressureAnswers.length > 0 && pressurePoor / pressureAnswers.length >= 0.5) {
-    const messages = [
-      'In high-pressure moments, stay calm and delay your first movement. Do not rush the read.',
-      'Pressure situations are costing you. Breathe, read the shooter, then commit.',
-    ];
-    return messages[Math.floor(Math.random() * messages.length)];
-  }
-
-  // Pivot-specific weakness
-  const pivotAnswers = firstHalf.filter((a) => a.scenarioType === 'Pivot Shot');
-  const pivotPoor = pivotAnswers.filter((a) => a.quality === 'poor' || a.quality === 'risky').length;
-  if (pivotAnswers.length > 0 && pivotPoor / pivotAnswers.length >= 0.5) {
-    return 'Watch the pivot more carefully. Track their movement and anticipate the pick before it happens.';
-  }
-
-  // Solid but not perfect — encourage consistency
-  if (accuracy >= 0.6) {
-    const messages = [
-      'Good first half. Stay patient before committing and you will keep this level in the second half.',
-      'Solid reading so far. Keep trusting your anticipation and do not rush the big moments.',
-      'You are reading the game well. Maintain this focus — the second half will test your consistency.',
-    ];
-    return messages[Math.floor(Math.random() * messages.length)];
-  }
-
-  // Below average — focus on fundamentals
-  const messages = [
-    'Stay patient. Read the shooter before committing — do not guess.',
-    'Focus on the fundamentals: read the shooter, delay your movement, and react.',
-    'Trust your read. You have been rushing — slow down and let the game come to you.',
-  ];
-  return messages[Math.floor(Math.random() * messages.length)];
-}
-
-function generateSummary(
-  decisionScore: number, pressureControl: number, readingAbility: number,
-  optimalCount: number, riskyCount: number, poorCount: number,
-): string {
-  const parts: string[] = [];
-
-  if (decisionScore >= 80) {
-    parts.push('You produced an excellent mental performance, making strong decisions throughout the match.');
-  } else if (decisionScore >= 65) {
-    parts.push('You delivered a solid performance with good decision-making in most situations.');
-  } else if (decisionScore >= 50) {
-    parts.push('You showed flashes of strong reading but were inconsistent at key moments.');
-  } else {
-    parts.push('This was a challenging match where several decisions did not go your way.');
-  }
-
-  if (pressureControl >= 75) {
-    parts.push('Your composure under pressure was a standout aspect of your performance.');
-  } else if (pressureControl < 55) {
-    parts.push('High-pressure situations were where you struggled most, often committing early.');
-  }
-
-  if (readingAbility >= 75) {
-    parts.push('You consistently read the shooter\'s body and anticipated shot direction well.');
-  } else if (readingAbility < 55) {
-    parts.push('Reading the shooter before committing is an area that needs attention.');
-  }
-
-  if (riskyCount >= 3) {
-    parts.push(`You made ${riskyCount} risky decisions that could have been avoided with more patience.`);
-  }
-
-  if (poorCount >= 2) {
-    parts.push(`${poorCount} poor decisions cost you in moments where a safer read was available.`);
-  }
-
-  if (optimalCount >= 6) {
-    parts.push(`Your ${optimalCount} optimal decisions show a strong tactical understanding of the goalkeeper position.`);
-  }
-
-  return parts.join(' ');
-}
-
-function generateFinalMessage(
-  decisionScore: number, pressureControl: number, readingAbility: number,
-  optimalCount: number, riskyCount: number, poorCount: number,
-): string {
-  if (decisionScore >= 85) {
-    return 'You controlled the match with intelligence and composure. Your reading of the shooter was consistently excellent, and your decisions under pressure were calm and correct. Continue trusting your read and refining your timing.';
-  }
-  if (decisionScore >= 70) {
-    if (pressureControl < 65) {
-      return 'You saved your team several goals through good anticipation, but committed too early during two high-pressure situations. Focus on delaying your first movement in your next training session.';
-    }
-    return 'You produced a strong performance with good reading and solid pressure control. A few risky decisions kept the score closer than necessary. Continue building patience before committing.';
-  }
-  if (decisionScore >= 50) {
-    return 'You showed good moments of reading and anticipation, but inconsistency let the opposition back into the match. Work on maintaining focus across all 60 minutes and trust your read before moving.';
-  }
-  return 'This was a difficult match where several decisions went against you. Focus on the fundamentals: read the shooter, delay your first movement, and stay patient. The next match is a fresh opportunity.';
 }

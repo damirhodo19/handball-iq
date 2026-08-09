@@ -1,5 +1,21 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { SessionResult } from '@/types/database';
+import { SessionRecord } from '@/lib/storage';
+
+export function sessionResultToRecord(result: SessionResult): SessionRecord {
+  const answers = Array.isArray(result.answers) ? result.answers : [];
+  const correctCount = answers.filter((a) => a?.correct === true).length;
+  return {
+    id: result.id,
+    date: result.completed_at,
+    sessionName: result.session_name,
+    decisionScore: result.decision_score,
+    timeSpent: result.duration_seconds,
+    correctCount,
+    totalCount: answers.length,
+    metrics: answers as SessionRecord['metrics'],
+  };
+}
 
 export async function saveSessionResult(
   record: Omit<SessionResult, 'id' | 'user_id' | 'completed_at'>

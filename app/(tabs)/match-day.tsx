@@ -8,11 +8,13 @@ import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
 import { loadPreps, MatchDayPrep } from '@/lib/match-day-storage';
+import { useMatchDay } from '@/context/MatchDayContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateMatchType } from '@/lib/translations';
 
 export default function MatchDayTabScreen() {
   const { t } = useTranslation();
+  const { resumePrep } = useMatchDay();
   const [preps, setPreps] = useState<MatchDayPrep[]>([]);
 
   useFocusEffect(useCallback(() => {
@@ -43,7 +45,7 @@ export default function MatchDayTabScreen() {
             <View style={styles.doneBanner}>
               <View style={styles.doneIcon}><Check size={16} color={Colors.success} /></View>
               <View style={{ flex: 1 }}>
-                <Text style={styles.doneBannerTitle}>Today's preparation complete</Text>
+                <Text style={styles.doneBannerTitle}>{t('matchDay.todayPrepComplete')}</Text>
                 <Text style={styles.doneBannerSub}>{t('matchDay.vsOpponent', { opponent: todayPrep.setup.opponent })} · {translateMatchType(todayPrep.setup.matchType, t)}</Text>
               </View>
               <TouchableOpacity onPress={() => router.push('/match-day/history')} style={styles.doneHistoryBtn}>
@@ -59,12 +61,16 @@ export default function MatchDayTabScreen() {
             <TouchableOpacity
               activeOpacity={0.85}
               style={styles.resumeBanner}
-              onPress={() => router.push({ pathname: '/match-day/setup', params: { resumeId: latestIncomplete.id } })}
+              onPress={() => {
+                if (resumePrep(latestIncomplete.id)) {
+                  router.push('/match-day/prepare');
+                }
+              }}
             >
               <View style={styles.resumeIcon}><RotateCcw size={16} color={Colors.gold} /></View>
               <View style={{ flex: 1 }}>
-                <Text style={styles.resumeTitle}>Resume preparation</Text>
-                <Text style={styles.resumeSub}>{t('matchDay.vsOpponent', { opponent: latestIncomplete.setup.opponent })} — not yet completed</Text>
+                <Text style={styles.resumeTitle}>{t('matchDay.resumePrep')}</Text>
+                <Text style={styles.resumeSub}>{t('matchDay.vsOpponent', { opponent: latestIncomplete.setup.opponent })} — {t('matchDay.notYetCompleted')}</Text>
               </View>
               <ChevronRight size={18} color={Colors.gold} />
             </TouchableOpacity>
@@ -91,10 +97,10 @@ export default function MatchDayTabScreen() {
             >
               <View style={styles.mainCardTop}>
                 <View style={styles.mainCardIcon}><Shield size={26} color={Colors.gold} /></View>
-                <View style={styles.mainCardBadge}><Text style={styles.mainCardBadgeText}>COMPLETE</Text></View>
+                <View style={styles.mainCardBadge}><Text style={styles.mainCardBadgeText}>{t('matchDay.modeComplete').toUpperCase()}</Text></View>
               </View>
               <Text style={styles.mainCardTitle}>{t('matchDay.completePrep')}</Text>
-              <Text style={styles.mainCardDesc}>Full 5-step match-day protocol. Breathing, mental reset, visualization, tactical scenarios and your personal match plan.</Text>
+              <Text style={styles.mainCardDesc}>{t('matchDay.completePrepDesc')}</Text>
               <View style={styles.mainCardMeta}>
                 <Clock size={13} color={Colors.textTertiary} />
                 <Text style={styles.mainCardMetaText}>{t('matchDay.completePrepTime')}</Text>
@@ -113,7 +119,7 @@ export default function MatchDayTabScreen() {
               <View style={styles.quickIcon}><Clock size={20} color={Colors.gold} /></View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.quickTitle}>{t('matchDay.quickPrep')}</Text>
-                <Text style={styles.quickSub}>Condensed essentials — breathing, one visualization and three tactical scenarios.</Text>
+                <Text style={styles.quickSub}>{t('matchDay.quickPrepDesc')}</Text>
                 <View style={styles.quickMeta}>
                   <Clock size={12} color={Colors.textQuaternary} />
                   <Text style={styles.quickMetaText}>{t('matchDay.quickPrepTime')}</Text>
@@ -126,7 +132,7 @@ export default function MatchDayTabScreen() {
 
         {/* Post Match Reflection */}
         <Animated.View entering={FadeInDown.delay(200).duration(500)}>
-          <Text style={styles.sectionLabel}>AFTER THE MATCH</Text>
+          <Text style={styles.sectionLabel}>{t('matchDay.afterMatch')}</Text>
           <PressableCard
             onPress={() => router.push('/match-day/reflection')}
             variant="gradient"
@@ -165,11 +171,11 @@ export default function MatchDayTabScreen() {
                   <View style={styles.historyScores}>
                     <View style={styles.historyScore}>
                       <Text style={styles.historyScoreVal}>{prep.mentalReadiness}%</Text>
-                      <Text style={styles.historyScoreLabel}>Mental</Text>
+                      <Text style={styles.historyScoreLabel}>{t('matchDay.mentalShort')}</Text>
                     </View>
                     <View style={styles.historyScore}>
                       <Text style={styles.historyScoreVal}>{prep.tacticalReadiness}%</Text>
-                      <Text style={styles.historyScoreLabel}>Tactical</Text>
+                      <Text style={styles.historyScoreLabel}>{t('matchDay.tacticalShort')}</Text>
                     </View>
                   </View>
                 </View>

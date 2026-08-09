@@ -1,6 +1,16 @@
 // Database types matching the Supabase schema
 
-export type UserRole = 'player' | 'coach' | 'admin';
+export type UserRole = 'player' | 'coach' | 'player_coach' | 'admin';
+
+export interface UserPreferences {
+  user_id: string;
+  notifications_enabled: boolean | null;
+  daily_reminder_time: string | null;
+  active_mode: 'player' | 'coach' | null;
+  onboarding_version: number | null;
+  created_at: string;
+  updated_at: string;
+}
 
 export interface Profile {
   id: string;
@@ -17,6 +27,14 @@ export interface Profile {
   club: string | null;
   team_id: string | null;
   development_goal: string | null;
+  coach_type: string | null;
+  experience_band: string | null;
+  favorite_defense: string | null;
+  favorite_attack: string | null;
+  coach_development_goal: string | null;
+  preferred_language: string | null;
+  theme: string | null;
+  onboarding_version: number | null;
   founding_member: boolean;
   founding_member_number: number | null;
   // Legacy fields from original schema
@@ -37,10 +55,15 @@ export interface Profile {
 export interface Team {
   id: string;
   name: string;
+  club_id: string | null;
   club_name: string | null;
   country: string | null;
   age_group: string | null;
+  team_category: string | null;
   playing_level: string | null;
+  season: string | null;
+  logo_url: string | null;
+  description: string | null;
   invitation_code: string | null;
   created_by: string;
   created_at: string;
@@ -168,6 +191,60 @@ export interface AssignedSession {
   message: string | null;
   status: string;
   due_date: string | null;
+  position: string | null;
+  difficulty: string | null;
+  category: string | null;
+  scenario_count: number | null;
+  completed_at: string | null;
+  created_at: string;
+}
+
+export interface Club {
+  id: string;
+  name: string;
+  country: string | null;
+  league: string | null;
+  season: string | null;
+  logo_url: string | null;
+  description: string | null;
+  owner_id: string;
+  created_at: string;
+  updated_at?: string;
+}
+
+export interface TeamInvitation {
+  id: string;
+  team_id: string;
+  invited_by: string;
+  email: string | null;
+  invite_token: string;
+  status: string;
+  expires_at: string;
+  accepted_by: string | null;
+  created_at: string;
+}
+
+export interface CoachNote {
+  id: string;
+  team_id: string;
+  player_id: string;
+  coach_id: string;
+  note_type: string;
+  content: string;
+  is_private: boolean;
+  created_at: string;
+}
+
+export interface TeamCalendarEvent {
+  id: string;
+  team_id: string;
+  event_type: string;
+  event_date: string;
+  title: string;
+  description: string | null;
+  player_id: string | null;
+  assignment_id: string | null;
+  created_by: string | null;
   created_at: string;
 }
 

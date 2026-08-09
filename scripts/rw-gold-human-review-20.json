@@ -1,0 +1,1927 @@
+{
+  "generatedAt": "2026-08-09T23:08:28.304Z",
+  "purpose": "Final human coach review sample — diversity slots, HR first",
+  "count": 20,
+  "scenarios": [
+    {
+      "slot": "6:0 positional",
+      "id": "scn_bank_871",
+      "familyKey": "rw_60_rb_binds_takeoff",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — iskoristi prostor za odraz nakon što desni vanjski povuče krilnog braniča unutra",
+        "situation": "Ljevoruki si desno krilo. Vodite 8:7 u 14. minuti protiv postavljene 6:0. Desni vanjski napada između polubranitelja i krilnog braniča i veže krilnog braniča cijeli korak unutra. Ti ostaješ široko uz aut-liniju. Lopta dolazi dok je krilni branič još okrenut prema desnom vanjskom i nije se vratio u kut — imaš prostor za odraz prema sredini. Vratar stoji bliže prvoj stativi i još nije izašao prema tebi. Kao ljevoruki, iz odraza prema sredini dolaziš u bolji položaj za završnicu, a konačan šut biraš prema položaju vratara.",
+        "question": "Što moraš prvo učiniti dok je krilni branič još unutra?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Odmah se odrazi prema sredini i završi tamo gdje ti vratar ostavlja više prostora — stoji bliže prvoj stativi",
+            "feedback": "Točno — prvo iskoristi otvoren odraz prije nego se vrati; vratar bliže prvoj stativi pokazuje završetak."
+          },
+          {
+            "quality": "good",
+            "text": "Drži prijem i lažiraj prvu stativu da pomakneš vratara prije odraza",
+            "feedback": "Može kasnije ako je branič već natrag; ovdje čekanje samo pomaže da se vrati u kut."
+          },
+          {
+            "quality": "risky",
+            "text": "Vrati loptu desnom vanjskom koji je već pod vraćajućim krilnim braničem",
+            "feedback": "Rizično — poklanjaš čisti krilni završetak u zbijeni vanjski prostor."
+          },
+          {
+            "quality": "poor",
+            "text": "Ostani zalijepljen za aut-liniju i forsiraj šut na prvu stativu iz mjesta bez odraza prema sredini",
+            "feedback": "Loše — zanemaruješ prostor za odraz koji je desni vanjski upravo otvorio."
+          }
+        ],
+        "explanation": "Signal: krilni branič još unutra na desnom vanjskom; prostor za odraz prema sredini; vratar bliže prvoj stativi. Prva odluka je odraz sada. Kao ljevoruki, iz odraza prema sredini dolaziš u bolji položaj za završnicu, a konačan šut biraš prema položaju vratara. Odgođena varka (B) samo pomaže braniču da se vrati.",
+        "whyCorrectOverSecondBest": "A koristi otvoren odraz prije povratka i čita vratara za završetak; B odgađa i daje krilnom braniču vrijeme da se vrati u kut."
+      },
+      "en": {
+        "title": "Right Wing — Use the Take-Off Space After RB Pulls the Wing Defender Inside",
+        "situation": "You lead 8:7 at 14' against a set 6:0. The right back drives between the half defender and the wing defender and binds the wing defender one full step inside. You stay wide near the sideline. The ball comes while the wing defender is still turned toward the right back and has not recovered to the corner — you have room to take off toward the middle. The goalkeeper stands closer to the near post and has not yet moved out toward you. As a left-hander, from that take-off toward the middle you arrive in a better body position for the finish; you still choose the final shot from the goalkeeper’s position.",
+        "question": "What must you do first while the wing defender is still inside?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Take off toward the middle immediately and finish where the goalkeeper leaves more room — he is closer to the near post",
+            "feedback": "Correct — first use the open take-off before he recovers; the goalkeeper’s near-post shade points the finish."
+          },
+          {
+            "quality": "good",
+            "text": "Hold the catch and fake near post to move the goalkeeper before you take off",
+            "feedback": "Can work later if the defender is already back; here waiting only helps him recover to the corner."
+          },
+          {
+            "quality": "risky",
+            "text": "Pass back to the right back who is already crowded by the recovering wing defender",
+            "feedback": "Risky — you give away a clean wing finish into a crowded backcourt."
+          },
+          {
+            "quality": "poor",
+            "text": "Stay glued to the sideline and force a standing near-post shot without using the take-off toward the middle",
+            "feedback": "Poor — you ignore the take-off space the right back just created."
+          }
+        ],
+        "explanation": "Cue: wing defender still inside on the right back; room for take-off toward the middle; goalkeeper closer to the near post. First decision is take off now. As a left-hander that take-off puts you in a better finishing position; the goalkeeper still decides the shot. The delayed fake (B) only helps the defender recover.",
+        "whyCorrectOverSecondBest": "A uses the open take-off before recovery and reads the goalkeeper for the finish; B delays and gives the wing defender time to return to the corner."
+      },
+      "de": {
+        "title": "Rechtsaußen — Absprungraum nutzen nachdem der rechte Rückraum den Außenverteidiger nach innen zieht",
+        "situation": "Ihr führt 8:7 in Minute 14 gegen eine stehende 6:0. Der rechte Rückraum zieht zwischen Halbem und Außenverteidiger und bindet den Außenverteidiger einen vollen Schritt nach innen. Du bleibst breit an der Seitenlinie. Der Ball kommt, während der Außenverteidiger noch zum Rückraum gedreht ist und nicht in die Ecke zurück ist — du hast Raum für den Absprung zur Mitte. Der Torhüter steht näher am nahen Pfosten und ist noch nicht zu dir herausgekommen. Als Linkshänder kommst du aus dem Absprung zur Mitte in eine bessere Körperposition für den Abschluss; den finalen Wurf wählst du trotzdem nach der Torhüterstellung.",
+        "question": "Was musst du zuerst tun solange der Außenverteidiger noch innen ist?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Sofort zur Mitte abspringen und dorthin abschließen wo der Torhüter mehr Raum lässt — er steht näher am nahen Pfosten",
+            "feedback": "Richtig — zuerst den offenen Absprung nutzen bevor er zurückkommt; die Nahpfostenstellung zeigt den Abschluss."
+          },
+          {
+            "quality": "good",
+            "text": "Fang halten und Nahpfosten finiten um den Torhüter vor dem Absprung zu bewegen",
+            "feedback": "Kann später gehen wenn der Verteidiger schon zurück ist; hier hilft Warten nur seiner Rückkehr in die Ecke."
+          },
+          {
+            "quality": "risky",
+            "text": "Zurück auf den rechten Rückraum der schon unter dem zurückkehrenden Außenverteidiger steht",
+            "feedback": "Riskant — du verschenkst einen sauberen Flügelabschluss in den verdichteten Rückraum."
+          },
+          {
+            "quality": "poor",
+            "text": "An der Seitenlinie kleben und den Nahpfosten vom Stand erzwingen ohne Absprung zur Mitte",
+            "feedback": "Schlecht — du ignorierst den Absprungraum den der rechte Rückraum gerade geöffnet hat."
+          }
+        ],
+        "explanation": "Signal: Außenverteidiger noch innen am Rückraum; Absprungraum zur Mitte; Torhüter näher am nahen Pfosten. Erste Entscheidung: jetzt abspringen. Als Linkshänder kommst du aus dem Absprung zur Mitte in eine bessere Abschlussposition; den Wurf entscheidet trotzdem der Torhüter. Die verzögerte Finte (B) hilft nur der Rückkehr des Verteidigers.",
+        "whyCorrectOverSecondBest": "A nutzt den offenen Absprung vor der Rückkehr und liest den Torhüter für den Abschluss; B verzögert und schenkt dem Außenverteidiger Zeit zurück in die Ecke."
+      }
+    },
+    {
+      "slot": "RB cooperation",
+      "id": "scn_bank_872",
+      "familyKey": "rw_rb_hips_ask_now",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — čitaj bokove krilnog braniča prije nego tražiš loptu",
+        "situation": "Neriješeno je 12:12 u 22. minuti protiv 6:0. Desni vanjski ima loptu na devet metara. Bokovi i obje noge tvog krilnog braniča još gledaju desnog vanjskog; nije se okrenuo prema kutu. Stojiš široko uz aut-liniju i linija dodavanja do tebe je otvorena. Polubranitelj je zaposlen pivotom. Ako zatražiš loptu kasno, krilni branič može se okrenuti i dočekati te na prijemu.",
+        "question": "Što ti bokovi krilnog braniča govore o sljedećem dodavanju?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Ostani široko i traži loptu sada — dok je još okrenut prema desnom vanjskom, lopta može stići prije nego se vrati prema tebi",
+            "feedback": "Točno — bokovi na desnom vanjskom znače da se još nije počeo vraćati prema tebi."
+          },
+          {
+            "quality": "good",
+            "text": "Prvo uđi metar unutra da otvoriš novu liniju dodavanja ako put uz aut izgleda zatvoren",
+            "feedback": "Korisno kad je linija zatvorena; ovdje je već otvorena dok mu bokovi gledaju desnog vanjskog."
+          },
+          {
+            "quality": "risky",
+            "text": "Kreći duboki ulazak iza leđa prije nego je desni vanjski spreman dodati",
+            "feedback": "Rizično — napuštaš širinu dok je jednostavno dodavanje na krilo dostupno."
+          },
+          {
+            "quality": "poor",
+            "text": "Odustani od prijema i traži da desni vanjski prebaci na drugu stranu",
+            "feedback": "Loše — bokovi kažu da je dodavanje na krilo sada dostupno; ti to predaješ."
+          }
+        ],
+        "explanation": "Signal: bokovi i noge krilnog braniča još gledaju desnog vanjskog; linija dodavanja do tebe je otvorena. Ostani široko i uzmi loptu sada. Ulazak unutra (B) je za zatvorenu liniju, ne za ovaj trenutak.",
+        "whyCorrectOverSecondBest": "A koristi signal bokova da se branič još nije počeo vraćati; B se premješta dok je dodavanje na krilo već otvoreno."
+      },
+      "en": {
+        "title": "Right Wing — Read the Wing Defender’s Hips Before Asking for the Ball",
+        "situation": "Tied 12:12 at 22' against 6:0. The right back has the ball at nine metres. Your wing defender’s hips and both feet still face the right back; he has not turned toward the corner. You are wide near the sideline and the passing lane to you is open. The half defender is occupied by the pivot. If you ask for the ball late, the wing defender can turn and meet you on the catch.",
+        "question": "What do the wing defender’s hips tell you about the next pass?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Stay wide and ask for the ball now — while he is still turned toward the right back, the pass can arrive before he recovers to you",
+            "feedback": "Correct — hips on the right back mean the recovery toward you has not started."
+          },
+          {
+            "quality": "good",
+            "text": "Step one metre inside first to open a new passing lane if the sideline path looks blocked",
+            "feedback": "Useful when the lane is blocked; here it is already open while his hips face the right back."
+          },
+          {
+            "quality": "risky",
+            "text": "Start a deep cut behind him before the right back is ready to pass",
+            "feedback": "Risky — you leave width while a simple pass to the wing is available."
+          },
+          {
+            "quality": "poor",
+            "text": "Pass up your catch and ask the right back to circulate to the weak side instead",
+            "feedback": "Poor — his hips say the wing pass is available now; you give that away."
+          }
+        ],
+        "explanation": "Cue: wing defender’s hips and feet still face the right back; passing lane to you is open. Stay wide and take the ball now. Stepping inside (B) is for a blocked lane, not this moment.",
+        "whyCorrectOverSecondBest": "A uses the hip cue that recovery has not started; B relocates while the pass to the wing is already open."
+      },
+      "de": {
+        "title": "Rechtsaußen — Hüften des Außenverteidigers lesen bevor du den Ball forderst",
+        "situation": "Unentschieden 12:12 in Minute 22 gegen 6:0. Der rechte Rückraum hat den Ball auf neun Metern. Hüfte und beide Füße deines Außenverteidigers zeigen noch zum Rückraum; er ist nicht zur Ecke gedreht. Du stehst breit an der Seitenlinie und die Passlinie zu dir ist offen. Der Halbe ist vom Kreisläufer beschäftigt. Forderst du den Ball zu spät, kann der Außenverteidiger drehen und dich beim Fang stellen.",
+        "question": "Was sagen dir die Hüften des Außenverteidigers über den nächsten Pass?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Breit bleiben und den Ball jetzt fordern — solange er noch zum Rückraum gedreht ist, kommt der Pass bevor er zu dir zurückkommt",
+            "feedback": "Richtig — Hüften am Rückraum heißen: die Rückkehr zu dir hat noch nicht begonnen."
+          },
+          {
+            "quality": "good",
+            "text": "Zuerst einen Meter nach innen für eine neue Passlinie wenn der Weg an der Seitenlinie verstellt wirkt",
+            "feedback": "Nützlich wenn die Linie verstellt ist; hier ist sie schon offen solange die Hüften zum Rückraum zeigen."
+          },
+          {
+            "quality": "risky",
+            "text": "Tief hinter ihn einlaufen bevor der Rückraum abspielbereit ist",
+            "feedback": "Riskant — du verlässt die Breite obwohl der einfache Pass auf den Flügel da ist."
+          },
+          {
+            "quality": "poor",
+            "text": "Auf den Fang verzichten und den Rückraum bitten auf die andere Seite zu spielen",
+            "feedback": "Schlecht — seine Hüften sagen der Flügelpass ist jetzt da; du gibst das weg."
+          }
+        ],
+        "explanation": "Signal: Hüften und Füße zeigen noch zum Rückraum; Passlinie zu dir offen. Breit bleiben und den Ball jetzt nehmen. Innenschritt (B) gilt bei verstellter Linie, nicht in diesem Moment.",
+        "whyCorrectOverSecondBest": "A nutzt das Hüftsignal dass die Rückkehr noch nicht begonnen hat; B verlagert obwohl der Pass auf den Flügel schon offen ist."
+      }
+    },
+    {
+      "slot": "wing defender hips",
+      "id": "scn_bank_886",
+      "familyKey": "rw_rb_hips_wait_recover",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — bokovi se vraćaju prema kutu",
+        "situation": "Neriješeno je 17:17 u 33. minuti. Desni vanjski drži loptu nakon neuspjelog prvog prodora. Tvoj krilni branič okrenuo je bokove prema kutu i već radi prvi korak povratka prema tebi. Desni vanjski još nije u položaju za dodavanje. Pivot zatvara polubranitelja s unutarnje strane.",
+        "question": "Što ti okret bokova govori da sada učiniš?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Pričekaj široko sljedeću cirkulaciju; branič se već vraća prije nego što dodavanje može stići",
+            "feedback": "Točno — bokovi i prvi korak govore da se rani prozor zatvorio."
+          },
+          {
+            "quality": "good",
+            "text": "Utrči iza njega samo ako ga desni vanjski odmah ponovno veže novim prodorom",
+            "feedback": "Valjana druga slika, ali tog novog vezanja još nema."
+          },
+          {
+            "quality": "risky",
+            "text": "Traži brzo dodavanje u njegov put povratka",
+            "feedback": "Rizično — kreće se da te dočeka na prijemu."
+          },
+          {
+            "quality": "poor",
+            "text": "Trči prema sredini i ukloni širinu desne strane",
+            "feedback": "Loše — napadu još treba tvoja širina za sljedeću fazu."
+          }
+        ],
+        "explanation": "Signal: bokovi i prva noga već se vraćaju prema kutu dok desni vanjski još ne može dodati. Trenutačna šansa na krilu nestala je; ostani dostupan za novu sliku.",
+        "whyCorrectOverSecondBest": "A poštuje trenutačni povratak braniča. B treba da desni vanjski prvo stvori novo vezanje."
+      },
+      "en": {
+        "title": "Right Wing — Hips Turn Back to the Corner",
+        "situation": "At 17:17 in the 33rd minute, the right back holds the ball after a failed first drive. Your wing defender has turned his hips toward the corner and already takes his first recovery step to you. The right back is not yet in a throwing position. The pivot is sealing the half defender on the inside.",
+        "question": "What does the hip turn tell you to do now?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Wait wide for the next circulation; the defender is already recovering before the pass can arrive",
+            "feedback": "Correct — hips and first step say the early window has closed."
+          },
+          {
+            "quality": "good",
+            "text": "Enter behind him only if the right back immediately fixes him again with a new drive",
+            "feedback": "A valid second picture, but that new bind is not there yet."
+          },
+          {
+            "quality": "risky",
+            "text": "Demand a fast pass into his recovery path",
+            "feedback": "Risky — he is moving to meet the catch."
+          },
+          {
+            "quality": "poor",
+            "text": "Run toward the centre and remove the right-side width",
+            "feedback": "Poor — the attack still needs your width for the next phase."
+          }
+        ],
+        "explanation": "Cue: hips and first foot already return to the corner while the right back cannot pass yet. The immediate wing chance is gone; stay available for a new picture.",
+        "whyCorrectOverSecondBest": "A respects the defender’s recovery now. B needs the right back to create a fresh bind first."
+      },
+      "de": {
+        "title": "Rechtsaußen — Hüften drehen zurück zur Ecke",
+        "situation": "Beim 17:17 in Minute 33 hält der rechte Rückraum den Ball nach einem gescheiterten ersten Zug. Dein Außenverteidiger hat die Hüften zur Ecke gedreht und macht schon den ersten Rückkehrschritt zu dir. Der rechte Rückraum ist noch nicht in Wurfposition. Der Kreisläufer sperrt den Halben innen.",
+        "question": "Was sagt dir die Hüftdrehung jetzt?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Breit auf die nächste Zirkulation warten; der Verteidiger kommt schon zurück bevor der Pass ankommen kann",
+            "feedback": "Richtig — Hüften und erster Schritt sagen, dass das frühe Fenster zu ist."
+          },
+          {
+            "quality": "good",
+            "text": "Nur hinter ihn einlaufen wenn der rechte Rückraum ihn sofort wieder mit einem neuen Zug bindet",
+            "feedback": "Ein gültiges zweites Bild, aber diese neue Bindung gibt es noch nicht."
+          },
+          {
+            "quality": "risky",
+            "text": "Einen schnellen Pass in seinen Rückkehrweg fordern",
+            "feedback": "Riskant — er bewegt sich, um dich beim Fang zu stellen."
+          },
+          {
+            "quality": "poor",
+            "text": "Zur Mitte laufen und die Breite rechts entfernen",
+            "feedback": "Schlecht — der Angriff braucht deine Breite für die nächste Phase."
+          }
+        ],
+        "explanation": "Signal: Hüften und erster Fuß kehren schon zur Ecke zurück, während der rechte Rückraum noch nicht passen kann. Die direkte Flügelchance ist weg; für ein neues Bild verfügbar bleiben.",
+        "whyCorrectOverSecondBest": "A respektiert die Rückkehr des Verteidigers jetzt. B braucht erst eine neue Bindung durch den rechten Rückraum."
+      }
+    },
+    {
+      "slot": "stay-wide",
+      "id": "scn_bank_873",
+      "familyKey": "rw_entry_when_not",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — kada NE napuštati kut za ulazak",
+        "situation": "Vodite 16:15 u 31. minuti protiv 6:0. Desni vanjski upravo prima s otvorenim prodorom. Tvoj krilni branič već je ušao pola metra unutra da pomogne na taj prodor. Pivot drži polubranitelja. Ako sada utrčiš iza krilnog braniča prema šest metara, ulaziš u isti prostor koji desni vanjski napada — i nitko ne ostaje široko za dodavanje na krilo.",
+        "question": "Je li ulazak krila koristan u ovom trenutku?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Ne — ostani široko da desni vanjski i dalje ima dodavanje na krilo; branič već pomaže unutra",
+            "feedback": "Točno — rani ulazak gužva prodor i skida širinu."
+          },
+          {
+            "quality": "good",
+            "text": "Utrči samo nakon što desni vanjski povuče drugog braniča i kut iza njega ostane prazan",
+            "feedback": "Taj tajming može kasnije biti točan; ovdje je pomoć već tu i moraš držati širinu."
+          },
+          {
+            "quality": "risky",
+            "text": "Sada utrči u onaj pola metra koji je krilni branič upravo napustio prema desnom vanjskom",
+            "feedback": "Rizično — ti i desni vanjski napadaš isto tijelo."
+          },
+          {
+            "quality": "poor",
+            "text": "Napusti kut rano svaki put kad desni vanjski krene u 1 na 1, bez čitanja pomoći",
+            "feedback": "Loše — automatski ulazak uništava razmak."
+          }
+        ],
+        "explanation": "Signal: krilni branič već pomaže unutra na prodor desnog vanjskog. Drži širinu za dodavanje na krilo. Ulazak postaje koristan tek kad se povuče drugi branič i kut iza ostane otvoren.",
+        "whyCorrectOverSecondBest": "A drži širinu dok je pomoć već unutra; B opisuje kasniji ulazak koji još nije dostupan."
+      },
+      "en": {
+        "title": "Right Wing — When NOT to Leave the Corner for an Entry",
+        "situation": "You lead 16:15 at 31' against 6:0. The right back is about to receive with a free driving lane. Your wing defender has already stepped half a metre inside to help on that drive. The pivot holds the half defender. If you cut behind the wing defender toward six metres now, you run into the same space the right back is attacking — and nobody stays wide for the pass to the wing.",
+        "question": "Is the wing entry useful in this moment?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "No — stay wide so the right back still has a pass to the wing; the defender is already helping inside",
+            "feedback": "Correct — early entry crowds the drive and removes width."
+          },
+          {
+            "quality": "good",
+            "text": "Enter only after the right back has drawn a second defender and the corner behind him is empty",
+            "feedback": "That timing can be right later; here the help is already there and you must hold width."
+          },
+          {
+            "quality": "risky",
+            "text": "Cut now into the half-metre the wing defender just vacated toward the right back",
+            "feedback": "Risky — you and the right back attack the same body."
+          },
+          {
+            "quality": "poor",
+            "text": "Leave the corner early every time the right back starts a 1v1, without reading the help",
+            "feedback": "Poor — automatic entry destroys spacing."
+          }
+        ],
+        "explanation": "Cue: wing defender already helping inside on the right back’s drive. Hold width for the pass to the wing. Entry becomes useful only after a second defender is drawn and the corner opens behind.",
+        "whyCorrectOverSecondBest": "A keeps width while help is already inside; B describes a later entry that is not available yet."
+      },
+      "de": {
+        "title": "Rechtsaußen — wann du die Ecke NICHT für den Einlauf verlässt",
+        "situation": "Ihr führt 16:15 in Minute 31 gegen 6:0. Der rechte Rückraum fängt gleich mit freier Zugbahn. Dein Außenverteidiger ist schon einen halben Meter innen um zu helfen. Der Kreisläufer hält den Halben. Läufst du jetzt hinter den Außenverteidiger auf sechs Meter, läufst du in denselben Raum den der Rückraum angreift — und niemand bleibt breit für den Pass auf den Flügel.",
+        "question": "Ist der Flügeleinlauf in diesem Moment nützlich?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Nein — breit bleiben damit der Rückraum weiter den Pass auf den Flügel hat; der Verteidiger hilft schon innen",
+            "feedback": "Richtig — früher Einlauf verstopft den Zug und nimmt die Breite weg."
+          },
+          {
+            "quality": "good",
+            "text": "Einlaufen erst nachdem der Rückraum einen zweiten Verteidiger gezogen hat und die Ecke dahinter leer ist",
+            "feedback": "Dieses Timing kann später stimmen; hier ist die Hilfe schon da und du musst Breite halten."
+          },
+          {
+            "quality": "risky",
+            "text": "Jetzt in den halben Meter einlaufen den der Außenverteidiger gerade zum Rückraum verlassen hat",
+            "feedback": "Riskant — du und der Rückraum greifen denselben Körper an."
+          },
+          {
+            "quality": "poor",
+            "text": "Die Ecke früh verlassen sobald der Rückraum 1 gegen 1 geht, ohne die Hilfe zu lesen",
+            "feedback": "Schlecht — automatischer Einlauf zerstört den Abstand."
+          }
+        ],
+        "explanation": "Signal: Außenverteidiger hilft schon innen am Zug des Rückraums. Breite halten für den Pass auf den Flügel. Einlauf erst wenn ein zweiter Verteidiger gezogen ist und die Ecke dahinter öffnet.",
+        "whyCorrectOverSecondBest": "A hält Breite solange die Hilfe schon innen ist; B beschreibt einen späteren Einlauf der noch nicht da ist."
+      }
+    },
+    {
+      "slot": "entry",
+      "id": "scn_bank_890",
+      "familyKey": "rw_entry_when_yes_second",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — utrči na drugo vezanje",
+        "situation": "Gubite 18:19 u 36. minuti. Na prvom prodoru desnog vanjskog ostao si široko i krilni branič se vratio. Desni vanjski ponovno napada; ovaj put je polubranitelj već zauzet pivotom pa krilni branič ulazi dva metra unutra da zaustavi prodor. Leđima je prema kutu, a desni vanjski vidi tvoj koridor iza njega.",
+        "question": "Kada krećeš u ulazak krila?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Sada utrči iza leđa krilnog braniča, nakon što je drugom pomoći unutra ispraznio kut",
+            "feedback": "Točno — drugo vezanje, a ne prvi prodor, stvara slobodan koridor."
+          },
+          {
+            "quality": "good",
+            "text": "Ostani široko za još jedno dodavanje ako desni vanjski ne vidi tvoje utrčavanje",
+            "feedback": "Dobra sigurnosna opcija, ali sada vidi koridor."
+          },
+          {
+            "quality": "risky",
+            "text": "Utrči preko linije prodora desnog vanjskog prije nego branič iskorači",
+            "feedback": "Rizično — ponavljaš zbijenu sliku prvog prodora."
+          },
+          {
+            "quality": "poor",
+            "text": "Ostani u kutu i zanemari prazan koridor iza njega",
+            "feedback": "Loše — vidljiva druga pomoć signal je za ulazak."
+          }
+        ],
+        "explanation": "Signal: na drugom prodoru pivot drži polubranitelja, a krilni branič pomaže dva metra unutra, leđima prema kutu. Sada se ulazak odvaja od linije desnog vanjskog.",
+        "whyCorrectOverSecondBest": "A koristi slobodan koridor na točnom drugom vezanju. B treba samo ako dodavač izgubi vizualni kontakt."
+      },
+      "en": {
+        "title": "Right Wing — Enter on the Second Bind",
+        "situation": "You trail 18:19 at 36'. On the first right-back drive you stayed wide and the wing defender recovered. The right back attacks again; this time the half defender is already occupied by the pivot, so the wing defender steps two metres inside to stop the drive. His back is now to the corner and the right back can see your lane behind him.",
+        "question": "When do you start the wing entry?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Enter behind the wing defender now, after his second inside help has emptied the corner",
+            "feedback": "Correct — the second bind, not the first drive, creates the free lane."
+          },
+          {
+            "quality": "good",
+            "text": "Stay wide for one more pass if the right back cannot see your run",
+            "feedback": "A sound contingency, but he can see the lane now."
+          },
+          {
+            "quality": "risky",
+            "text": "Enter across the right back’s driving line before the defender steps in",
+            "feedback": "Risky — that repeats the crowded first-drive picture."
+          },
+          {
+            "quality": "poor",
+            "text": "Stay in the corner and ignore the empty lane behind him",
+            "feedback": "Poor — the observable second help is the signal to go."
+          }
+        ],
+        "explanation": "Cue: on the second drive the pivot holds the half and the wing defender helps two metres inside, back to the corner. Now the entry separates from the right back’s lane.",
+        "whyCorrectOverSecondBest": "A uses the free lane at the exact second bind. B is only needed if the passer loses visual contact."
+      },
+      "de": {
+        "title": "Rechtsaußen — beim zweiten Binden einlaufen",
+        "situation": "Ihr liegt 18:19 in Minute 36 zurück. Beim ersten Zug des rechten Rückraums bliebst du breit und der Außenverteidiger kam zurück. Der rechte Rückraum greift erneut an; diesmal bindet der Kreisläufer den Halben, deshalb tritt der Außenverteidiger zwei Meter innen zur Hilfe. Sein Rücken ist zur Ecke, der rechte Rückraum sieht deine Bahn hinter ihm.",
+        "question": "Wann startest du den Flügeleinlauf?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Jetzt hinter dem Außenverteidiger einlaufen, nachdem seine zweite Innenhilfe die Ecke geleert hat",
+            "feedback": "Richtig — das zweite Binden, nicht der erste Zug, schafft die freie Bahn."
+          },
+          {
+            "quality": "good",
+            "text": "Für einen weiteren Pass breit bleiben wenn der rechte Rückraum deinen Lauf nicht sehen kann",
+            "feedback": "Eine gute Absicherung, aber jetzt sieht er die Bahn."
+          },
+          {
+            "quality": "risky",
+            "text": "Vor dem Heraustreten des Verteidigers durch die Zuglinie des rechten Rückraums einlaufen",
+            "feedback": "Riskant — das wiederholt das enge Bild des ersten Zugs."
+          },
+          {
+            "quality": "poor",
+            "text": "In der Ecke bleiben und die leere Bahn hinter ihm ignorieren",
+            "feedback": "Schlecht — die sichtbare zweite Hilfe ist das Signal zu gehen."
+          }
+        ],
+        "explanation": "Signal: Beim zweiten Zug hält der Kreis den Halben, der Außenverteidiger hilft zwei Meter innen mit Rücken zur Ecke. Jetzt trennt sich der Einlauf von der Zuglinie des Rückraums.",
+        "whyCorrectOverSecondBest": "A nutzt die freie Bahn beim genauen zweiten Binden. B ist nur nötig wenn der Passgeber den Sichtkontakt verliert."
+      }
+    },
+    {
+      "slot": "pivot cooperation",
+      "id": "scn_bank_874",
+      "familyKey": "rw_pivot_block_middle_takeoff",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — blok pivota otvara odraz prema sredini",
+        "situation": "Neriješeno je 14:14 u 27. minuti protiv 6:0. Pivot postavlja blok na unutarnje rame tvog krilnog braniča — branič ne može skliznuti prema sredini bez prekršaja. Primaš blizu aut-linije s prostorom za odraz prema sredini prije nego branič obiđe pivota. Vratar ostaje duboko na golu i nije izašao prema tebi. Prava prednost je taj prostor za odraz; završetak biraj prema čitanju vratara tijekom odraza.",
+        "question": "Koja je prava prednost bloka pivota iz kuta?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Odrazi se prema sredini prije nego branič obiđe blok, pa završi prema vrataru koji ostaje duboko",
+            "feedback": "Točno — blok kupuje prostor za odraz; duboki vratar oblikuje završetak."
+          },
+          {
+            "quality": "good",
+            "text": "Dodaj pivotu koji se okreće s bloka ako branič prijeđe preko bloka i zatvori ti odraz prema sredini",
+            "feedback": "Točno kad ti zatvore odraz; ovdje je odraz prema sredini još dostupan."
+          },
+          {
+            "quality": "risky",
+            "text": "Čekaj da branič obiđe blok pa forsiraj šut iz mjesta iz kuta",
+            "feedback": "Rizično — predaješ prostor za odraz koji je blok otvorio."
+          },
+          {
+            "quality": "poor",
+            "text": "Odmakni se od bloka prema aut-liniji i izgubi kontakt s linijom šest metara",
+            "feedback": "Loše — izlaziš iz geometrije koju je pivot napravio."
+          }
+        ],
+        "explanation": "Signal: pivot blokira unutarnji povratak krilnog braniča; prostor za odraz prema sredini; vratar još duboko. Iskoristi odraz sada. Završetak biraj prema vrataru. Dodavanje pivotu (B) samo ako ti zatvore odraz.",
+        "whyCorrectOverSecondBest": "A troši blok na odraz prema sredini plus čitanje vratara; B čeka zatvoren odraz koji još nije nastupio."
+      },
+      "en": {
+        "title": "Right Wing — Pivot Block Opens Take-Off Toward the Middle",
+        "situation": "Tied 14:14 at 27' against 6:0. The pivot sets a block on your wing defender’s inside shoulder — the defender cannot slide toward the middle without fouling. You receive near the sideline with room to take off toward the middle before he recovers around the pivot. The goalkeeper stays deep on the goal line and has not stepped out toward you. The real advantage is that take-off space; choose the finish from the goalkeeper read during the take-off.",
+        "question": "What is the real advantage of the pivot’s block from the corner?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Take off toward the middle before the defender clears the block, then finish from the goalkeeper’s deep position",
+            "feedback": "Correct — the block buys take-off space; the deep goalkeeper shapes the finish."
+          },
+          {
+            "quality": "good",
+            "text": "Pass to the pivot rolling off the block if the defender fights over and closes your take-off toward the middle",
+            "feedback": "Right when the take-off is closed; here the take-off toward the middle is still available."
+          },
+          {
+            "quality": "risky",
+            "text": "Wait for the defender to clear the block, then force a standing shot from the corner",
+            "feedback": "Risky — you give away the take-off space the block created."
+          },
+          {
+            "quality": "poor",
+            "text": "Drift away from the block toward the sideline and lose contact with the six-metre line",
+            "feedback": "Poor — you walk out of the geometry the pivot built."
+          }
+        ],
+        "explanation": "Cue: pivot blocks the wing defender’s inside recovery; room for take-off toward the middle; goalkeeper still deep. Use the take-off now. Finish from the goalkeeper read. Pivot pass (B) only if the take-off closes.",
+        "whyCorrectOverSecondBest": "A spends the block on take-off toward the middle plus goalkeeper read; B waits for a closed take-off that has not happened yet."
+      },
+      "de": {
+        "title": "Rechtsaußen — Kreisläuferblock öffnet den Absprung zur Mitte",
+        "situation": "Unentschieden 14:14 in Minute 27 gegen 6:0. Der Kreisläufer setzt den Block auf die Innenschulter deines Außenverteidigers — ohne Foul kommt er nicht zur Mitte. Du fängst nahe der Seitenlinie mit Raum für den Absprung zur Mitte bevor er um den Kreisläufer herumkommt. Der Torhüter bleibt tief auf der Torlinie und ist nicht zu dir herausgekommen. Der echte Vorteil ist dieser Absprungraum; den Abschluss aus dem Torhüterlesen während des Absprungs wählen.",
+        "question": "Was ist der echte Vorteil des Kreisläuferblocks aus der Ecke?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Zur Mitte abspringen bevor der Verteidiger den Block umläuft, dann aus der tiefen Torhüterstellung abschließen",
+            "feedback": "Richtig — der Block kauft Absprungraum; der tiefe Torhüter formt den Abschluss."
+          },
+          {
+            "quality": "good",
+            "text": "Auf den Kreisläufer abspielen wenn der Verteidiger über den Block kommt und deinen Absprung zur Mitte schließt",
+            "feedback": "Richtig wenn der Absprung zu ist; hier ist der Absprung zur Mitte noch da."
+          },
+          {
+            "quality": "risky",
+            "text": "Warten bis der Verteidiger umläuft und dann einen Standwurf aus der Ecke erzwingen",
+            "feedback": "Riskant — du verschenkst den Absprungraum den der Block geöffnet hat."
+          },
+          {
+            "quality": "poor",
+            "text": "Vom Block zur Seitenlinie wegdriften und den Kontakt zur Sechs-Meter-Linie verlieren",
+            "feedback": "Schlecht — du läufst aus der Geometrie die der Kreisläufer gebaut hat."
+          }
+        ],
+        "explanation": "Signal: Kreisläufer blockt die Innenrückkehr; Absprungraum zur Mitte; Torhüter noch tief. Absprung jetzt nutzen. Abschluss aus dem Torhüterlesen. Pass auf den Kreis (B) nur wenn der Absprung zu ist.",
+        "whyCorrectOverSecondBest": "A nutzt den Block für Absprung zur Mitte plus Torhüterlesen; B wartet auf einen geschlossenen Absprung der noch nicht da ist."
+      }
+    },
+    {
+      "slot": "goalkeeper near-post read",
+      "id": "scn_bank_875",
+      "familyKey": "rw_gk_near_post_commit",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — vratar se prerano obvezuje prema prvoj stativi",
+        "situation": "Ljevoruki si desno krilo. Vodite 10:9 u 19. minuti. Primaš sam u desnom kutu; krilni branič kasni jedan korak s pomoći unutra. Prije odraza bliža noga i bliža ruka vratara već idu prema prvoj stativi — prerano zatvara tu stranu i ostavlja više prostora prema drugoj stativi. Odraziš se prema sredini; kao ljevoruki još uvijek čisto dosežeš tu daleku stranu.",
+        "question": "Koji dio gola je postao dostupniji?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Strana druge stative — već je obvezao bližu nogu i bližu ruku na prvu stativu",
+            "feedback": "Točno — rana obveza na prvu stativu ostavlja daleku stranu."
+          },
+          {
+            "quality": "good",
+            "text": "Lob samo ako rano napusti podlogu i spusti obje ruke",
+            "feedback": "Valjano na iskoku; ovdje je jasan signal bočna obveza na prvu stativu."
+          },
+          {
+            "quality": "risky",
+            "text": "Forsiraj šut na prvu stativu u stranu koju već zatvara",
+            "feedback": "Rizično — pucaš u njegov rani pokret."
+          },
+          {
+            "quality": "poor",
+            "text": "Zanemari njegove noge i vrati loptu bez čitanja vratara",
+            "feedback": "Loše — imao si čitljiv završetak i odbio ga."
+          }
+        ],
+        "explanation": "Signal: prije odraza bliža noga i bliža ruka vratara idu prema prvoj stativi. To čini stranu druge stative dostupnijom. Ruka kojom bacaš pomaže doseći tu stranu iz odraza prema sredini; ne stvara fiksno pravilo. Lob (B) treba spuštene ruke i iskok.",
+        "whyCorrectOverSecondBest": "A odgovara na jasnu dostupnost daleke strane zbog rane obveze na prvu stativu; B čeka signal iskoka koji nije prisutan."
+      },
+      "en": {
+        "title": "Right Wing — Goalkeeper Commits Early Toward the Near Post",
+        "situation": "You lead 10:9 at 19'. You receive alone in the right corner; the wing defender is one step late from helping inside. Before you take off, the goalkeeper’s near foot and near arm already move toward the near post — he closes that side early and leaves more room toward the far post. You take off toward the middle; as a left-hander your release can still reach that far side cleanly.",
+        "question": "Which part of the goal has become more available?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "The far-post side — he has already committed his near foot and near arm to the near post",
+            "feedback": "Correct — the early near-post commit leaves the far side."
+          },
+          {
+            "quality": "good",
+            "text": "A lob only if he also leaves the floor early and drops both hands",
+            "feedback": "Valid on a jump-out; here the clear cue is the lateral commit to the near post."
+          },
+          {
+            "quality": "risky",
+            "text": "Force the near-post shot into the side he is already closing",
+            "feedback": "Risky — you shoot into his early movement."
+          },
+          {
+            "quality": "poor",
+            "text": "Ignore his feet and pass back without reading the goalkeeper",
+            "feedback": "Poor — you had a readable finish and declined it."
+          }
+        ],
+        "explanation": "Cue: before take-off the goalkeeper’s near foot and near arm move toward the near post. That makes the far-post side more available. Handedness supports reaching that side from a take-off toward the middle; it does not create a fixed rule. Lob (B) needs hands dropping and leaving the floor.",
+        "whyCorrectOverSecondBest": "A answers the clear far-side availability from the early near-post commit; B waits for a jump-out cue that is not present."
+      },
+      "de": {
+        "title": "Rechtsaußen — Torhüter legt sich früh auf den nahen Pfosten fest",
+        "situation": "Ihr führt 10:9 in Minute 19. Du fängst allein in der rechten Ecke; der Außenverteidiger ist einen Schritt spät von der Innenhilfe. Vor dem Absprung gehen naher Fuß und naher Arm des Torhüters schon zum nahen Pfosten — er schließt diese Seite früh und lässt mehr Raum zum langen Pfosten. Du springst zur Mitte ab; als Linkshänder erreichst du diese lange Seite weiterhin sauber.",
+        "question": "Welcher Teil des Tors ist zugänglicher geworden?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Die lange Pfostenseite — er hat nahen Fuß und nahen Arm schon auf den nahen Pfosten festgelegt",
+            "feedback": "Richtig — die frühe Nahpfosten-Festlegung lässt die lange Seite."
+          },
+          {
+            "quality": "good",
+            "text": "Ein Lob nur wenn er auch früh vom Boden geht und beide Hände fallen lässt",
+            "feedback": "Gültig beim Herausspringen; hier ist das klare Signal die seitliche Festlegung auf den nahen Pfosten."
+          },
+          {
+            "quality": "risky",
+            "text": "Nahpfosten in die Seite erzwingen die er schon schließt",
+            "feedback": "Riskant — du wirfst in seine frühe Bewegung."
+          },
+          {
+            "quality": "poor",
+            "text": "Seine Füße ignorieren und zurückspielen ohne den Torhüter zu lesen",
+            "feedback": "Schlecht — du hattest einen lesbaren Abschluss und hast ihn abgelehnt."
+          }
+        ],
+        "explanation": "Signal: vor dem Absprung gehen naher Fuß und Arm zum nahen Pfosten. Das macht die lange Seite zugänglicher. Die Wurfhand hilft diese Seite aus dem Absprung zur Mitte zu erreichen; sie schafft keine feste Regel. Lob (B) braucht fallende Hände und Absprung vom Boden.",
+        "whyCorrectOverSecondBest": "A beantwortet die klare Zugänglichkeit der langen Seite durch die frühe Nahpfosten-Festlegung; B wartet auf ein Heraussprung-Signal das fehlt."
+      }
+    },
+    {
+      "slot": "goalkeeper depth",
+      "id": "scn_bank_897",
+      "familyKey": "rw_gk_stays_deep",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — duboki vratar, kasni završetak",
+        "situation": "Vodite 12:10 u 23. minuti. Krilni branič kasni i iz desnog kuta radiš odraz prema sredini. Tijekom prve faze skoka vratar drži obje noge blizu gol-crte i ne izlazi prema tebi. Ruke su mu aktivne u visini ramena; nije se obvezao ni na jednu stativu.",
+        "question": "Kako trebaš iskoristiti dubokog vratara?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Nosi loptu dublje u skoku i kasno izaberi završetak prema njegovu zadnjem pomaku na stativu",
+            "feedback": "Točno — dao ti je vrijeme, a ne fiksnu stativu."
+          },
+          {
+            "quality": "good",
+            "text": "Pusti loptu rano samo ako krilni branič dođe do tvoje šuterske ruke",
+            "feedback": "Korisna zaštita, ali ruka ti je ovdje slobodna."
+          },
+          {
+            "quality": "risky",
+            "text": "Odluči za prvu stativu prije nego se pomakne",
+            "feedback": "Rizično — još nije pokazao tu stranu."
+          },
+          {
+            "quality": "poor",
+            "text": "Vrati loptu u skoku jer je vratar duboko",
+            "feedback": "Loše — duboki vratar ne uklanja čist krilni završetak."
+          }
+        ],
+        "explanation": "Signal: vratar ostaje duboko bez obveze na stativu, a šuterska ruka ti je slobodna. Iskoristi dodatno vrijeme u letu za čitanje, a ne za izbor strane po navici.",
+        "whyCorrectOverSecondBest": "A koristi vrijeme koje ti vratar daje. B je važan tek ako obrambeni pritisak oduzme to vrijeme."
+      },
+      "en": {
+        "title": "Right Wing — Deep Goalkeeper, Finish Late",
+        "situation": "You lead 12:10 at 23'. The wing defender is late and you take off from the right corner toward the middle. Through your first jump phase the goalkeeper keeps both feet close to the goal line and does not step toward you. His hands remain active at shoulder height; he has not committed to either post.",
+        "question": "How should you use the deep goalkeeper?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Carry the ball deeper in the jump and choose the finish late from his final post movement",
+            "feedback": "Correct — he has given you time, not a fixed post."
+          },
+          {
+            "quality": "good",
+            "text": "Release early only if the wing defender reaches your shooting arm",
+            "feedback": "A useful protection, but your arm is free here."
+          },
+          {
+            "quality": "risky",
+            "text": "Choose near post before he moves",
+            "feedback": "Risky — he has not shown that side yet."
+          },
+          {
+            "quality": "poor",
+            "text": "Pass back in mid-air because the goalkeeper is deep",
+            "feedback": "Poor — a deep goalkeeper does not remove a clean wing finish."
+          }
+        ],
+        "explanation": "Cue: goalkeeper stays deep with no post commitment and your shooting arm is free. Use the extra flight time to read, rather than choosing a side by habit.",
+        "whyCorrectOverSecondBest": "A uses the time the goalkeeper gives you. B only matters if defensive pressure takes that time away."
+      },
+      "de": {
+        "title": "Rechtsaußen — tiefer Torhüter, spät abschließen",
+        "situation": "Ihr führt 12:10 in Minute 23. Der Außenverteidiger ist spät und du springst aus der rechten Ecke zur Mitte ab. In der ersten Flugphase bleiben beide Füße des Torhüters nah an der Torlinie, er tritt nicht zu dir heraus. Seine Hände sind aktiv auf Schulterhöhe; auf keinen Pfosten hat er sich festgelegt.",
+        "question": "Wie solltest du den tiefen Torhüter nutzen?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Den Ball im Sprung länger tragen und den Abschluss spät nach seiner letzten Pfostenbewegung wählen",
+            "feedback": "Richtig — er gibt dir Zeit, keinen festen Pfosten."
+          },
+          {
+            "quality": "good",
+            "text": "Nur früh abwerfen wenn der Außenverteidiger deinen Wurfarm erreicht",
+            "feedback": "Ein sinnvoller Schutz, aber dein Arm ist hier frei."
+          },
+          {
+            "quality": "risky",
+            "text": "Vor seiner Bewegung den nahen Pfosten wählen",
+            "feedback": "Riskant — diese Seite hat er noch nicht gezeigt."
+          },
+          {
+            "quality": "poor",
+            "text": "Im Sprung zurückpassen weil der Torhüter tief steht",
+            "feedback": "Schlecht — ein tiefer Torhüter nimmt keinen sauberen Flügelabschluss weg."
+          }
+        ],
+        "explanation": "Signal: Torhüter bleibt tief ohne Pfostenbindung, dein Wurfarm ist frei. Die zusätzliche Flugzeit zum Lesen nutzen, nicht eine Seite aus Gewohnheit wählen.",
+        "whyCorrectOverSecondBest": "A nutzt die Zeit, die der Torhüter dir gibt. B zählt erst wenn Abwehrdruck diese Zeit nimmt."
+      }
+    },
+    {
+      "slot": "take-off geometry",
+      "id": "scn_bank_883",
+      "familyKey": "rw_60_takeoff_closed_from_inside",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — zatvoren odraz prema sredini",
+        "situation": "Vodite 13:11 u 25. minuti. Primaš blizu desne aut-linije. Krilni branič vratio se iznutra i stoji između tvoje odrazne noge i sredine, prsima prema tebi. Polubranitelj je otišao za pivotom pa je desni vanjski slobodan za kratku povratnu loptu na devet metara.",
+        "question": "Što trebaš učiniti kad je prostor za odraz zatvoren?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Odigraj kratku povratnu loptu slobodnom desnom vanjskom i zadrži širinu za sljedeću akciju",
+            "feedback": "Točno — njegovo tijelo zatvara odraz unutra, a povratna lopta je slobodna."
+          },
+          {
+            "quality": "good",
+            "text": "Zadrži loptu samo ako ga možeš povući prema van i ponovno otvoriti dodavanje pivotu",
+            "feedback": "Moguće kasnije, ali trenutačna povratna lopta nosi manje rizika."
+          },
+          {
+            "quality": "risky",
+            "text": "Forsiraj odraz kroz njegovo unutarnje rame",
+            "feedback": "Rizično — skačeš u postavljenu liniju braniča."
+          },
+          {
+            "quality": "poor",
+            "text": "Baci slijepo dodavanje preko obrane na drugo krilo",
+            "feedback": "Loše — jednostavna sigurna povratna lopta već je dostupna."
+          }
+        ],
+        "explanation": "Signal: prsa i noge braniča zatvaraju odraz prema sredini. Nemoj automatski šutirati s krila; vrati slobodnom desnom vanjskom i zadrži kut zauzetim.",
+        "whyCorrectOverSecondBest": "A uzima jasno slobodnu opciju. B traži dodatnu akciju koju branič još nije ponudio."
+      },
+      "en": {
+        "title": "Right Wing — Inside Take-Off Lane Is Closed",
+        "situation": "You lead 13:11 at 25'. You catch near the right sideline. The wing defender has recovered from inside and stands between your take-off foot and the middle, chest facing you. The half defender has followed the pivot, leaving the right back free for a short return at nine metres.",
+        "question": "What should you do with the closed take-off lane?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Play the short return to the free right back and keep your width for the next action",
+            "feedback": "Correct — his body closes the inside take-off, while the return is free."
+          },
+          {
+            "quality": "good",
+            "text": "Keep the ball only if you can draw him outward and reopen the pass to the pivot",
+            "feedback": "Possible later, but the immediate return has less risk."
+          },
+          {
+            "quality": "risky",
+            "text": "Force a take-off through his inside shoulder",
+            "feedback": "Risky — you jump into the defender’s set line."
+          },
+          {
+            "quality": "poor",
+            "text": "Throw a blind pass across the defence to the far wing",
+            "feedback": "Poor — a simple safe return is already available."
+          }
+        ],
+        "explanation": "Cue: defender’s chest and feet close the middle take-off. Do not make an automatic wing shot; return to the free right back and keep the corner occupied.",
+        "whyCorrectOverSecondBest": "A takes the clearly free option. B needs an extra action that the defender has not offered."
+      },
+      "de": {
+        "title": "Rechtsaußen — Absprung zur Mitte ist geschlossen",
+        "situation": "Ihr führt 13:11 in Minute 25. Du fängst nahe der rechten Seitenlinie. Der Außenverteidiger ist von innen zurück und steht mit Brust zu dir zwischen deinem Absprungfuß und der Mitte. Der Halbe folgt dem Kreisläufer, der rechte Rückraum ist für den kurzen Rückpass auf neun Metern frei.",
+        "question": "Was solltest du bei geschlossenem Absprungraum tun?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Den kurzen Rückpass zum freien rechten Rückraum spielen und Breite für die nächste Aktion halten",
+            "feedback": "Richtig — sein Körper schließt den Innenabsprung, der Rückpass ist frei."
+          },
+          {
+            "quality": "good",
+            "text": "Den Ball nur halten wenn du ihn nach außen ziehen und den Pass zum Kreis wieder öffnen kannst",
+            "feedback": "Später möglich, aber der sofortige Rückpass hat weniger Risiko."
+          },
+          {
+            "quality": "risky",
+            "text": "Den Absprung durch seine Innenschulter erzwingen",
+            "feedback": "Riskant — du springst in die stehende Linie des Verteidigers."
+          },
+          {
+            "quality": "poor",
+            "text": "Einen blinden Pass über die Abwehr zum anderen Flügel werfen",
+            "feedback": "Schlecht — ein einfacher sicherer Rückpass ist schon da."
+          }
+        ],
+        "explanation": "Signal: Brust und Füße des Verteidigers schließen den Absprung zur Mitte. Keinen automatischen Flügelwurf erzwingen; zum freien rechten Rückraum zurückspielen und die Ecke besetzt halten.",
+        "whyCorrectOverSecondBest": "A nimmt die klar freie Lösung. B braucht eine zusätzliche Aktion, die der Verteidiger noch nicht anbietet."
+      }
+    },
+    {
+      "slot": "first wave",
+      "id": "scn_bank_902",
+      "familyKey": "rw_trans_2v1_finish_lane",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — prvi val 2 na 1: ostani široka opcija za dodavanje",
+        "situation": "Vodite 10:9 u 20. minuti. Nakon osvajanja lopte ti i srednji vanjski trčite 2 na 1 desnom stranom prvog vala. Srednji vanjski vodi loptu sredinom. Jedini branič u povratku stoji između njega i gola, prsima prema lopti. Ti si široko desno uz liniju šest metara s čistim putem ako on krene na srednjeg. Ako rano urežeš u njegova prsa, sam zatvaraš 2 na 1.",
+        "question": "U ovom 2 na 1, što je tvoj prvi posao desno?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Drži širinu uz šest metara i ostani dostupna opcija za dodavanje dok srednji veže braniča",
+            "feedback": "Točno — širina drži 2 na 1 živim."
+          },
+          {
+            "quality": "good",
+            "text": "Ureži iza njega tek kad mu srednji veže noge prijetnjom šuta ili prodorom",
+            "feedback": "Dobro kao druga akcija nakon vezivanja."
+          },
+          {
+            "quality": "risky",
+            "text": "Odmah utrči u sredinu i traži loptu na vrhu devetke",
+            "feedback": "Zatvara jedini slobodni put koji srednji koristi."
+          },
+          {
+            "quality": "poor",
+            "text": "Stani izvan devet metara i čekaj da se složi pozicijski napad",
+            "feedback": "Ubija živi 2 na 1 bez razloga."
+          }
+        ],
+        "explanation": "Jedan branič između lopte i gola: ostani široka opcija. Ulaz tek kad je vezan. Rani utrčaji u sredinu uništavaju 2 na 1.",
+        "whyCorrectOverSecondBest": "A je točan sada dok je branič još na lopti; B postaje točan nakon pravog vezivanja."
+      },
+      "en": {
+        "title": "Right Wing — First Wave 2v1: Stay the Wide Pass Option",
+        "situation": "You lead 10:9 at 20'. After the ball win you and the centre back run a 2v1 on the right side of the first wave. The centre back has the ball centrally. The only recovering defender stands between him and the goal, chest toward the ball. You are wide on the right near the six-metre line with a clear lane if he commits to the centre back. If you cut early into his chest, you close the 2v1 yourself.",
+        "question": "In this 2v1, what is your first job on the right?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Hold width near six metres and stay available as the pass option while the centre back fixes the defender",
+            "feedback": "Correct — width keeps the 2v1 alive."
+          },
+          {
+            "quality": "good",
+            "text": "Cut behind him only after the centre back has fixed his feet with a shot threat or drive",
+            "feedback": "Good as the second action after the fix."
+          },
+          {
+            "quality": "risky",
+            "text": "Sprint into the middle now to demand the ball at the top of the nine",
+            "feedback": "Crowds the only free lane the centre back is using."
+          },
+          {
+            "quality": "poor",
+            "text": "Stop outside nine metres and wait for a set attack to form",
+            "feedback": "Kills a live 2v1 without a reason."
+          }
+        ],
+        "explanation": "One defender between ball and goal: stay the wide option. Cut only after he is fixed. Early middle runs destroy the 2v1.",
+        "whyCorrectOverSecondBest": "A is correct now while the defender is still on the ball; B becomes correct after a real fix."
+      },
+      "de": {
+        "title": "Rechtsaußen — erste Welle 2v1: breite Passoption bleiben",
+        "situation": "Ihr führt 10:9 in Minute 20. Nach dem Ballgewinn lauft ihr mit dem Rückraum Mitte ein 2v1 auf der rechten Seite der ersten Welle. Der Rückraum Mitte führt den Ball zentral. Der einzige zurücklaufende Verteidiger steht zwischen ihm und dem Tor, Brust zum Ball. Du bist breit rechts an der Sechs-Meter-Linie mit klarer Gasse wenn er zum Rückraum geht. Schneidet du früh in seine Brust, machst du das 2v1 selbst zu.",
+        "question": "Was ist in diesem 2v1 dein erster Job rechts?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Breite an der Sechs halten und als Passoption bleiben während der Rückraum den Verteidiger bindet",
+            "feedback": "Richtig — Breite hält das 2v1 lebendig."
+          },
+          {
+            "quality": "good",
+            "text": "Hinter ihn schneiden erst wenn der Rückraum seine Füße mit Schussdrohung oder Durchbruch bindet",
+            "feedback": "Gut als zweite Aktion nach dem Binden."
+          },
+          {
+            "quality": "risky",
+            "text": "Sofort in die Mitte sprinten und den Ball oben an der Neun fordern",
+            "feedback": "Macht die einzige freie Gasse des Rückraums zu."
+          },
+          {
+            "quality": "poor",
+            "text": "Außerhalb der Neun stoppen und auf den Positionsangriff warten",
+            "feedback": "Tötet ein lebendiges 2v1 ohne Grund."
+          }
+        ],
+        "explanation": "Ein Verteidiger zwischen Ball und Tor: breite Option bleiben. Schneiden erst nach dem Binden. Frühe Läufe in die Mitte zerstören das 2v1.",
+        "whyCorrectOverSecondBest": "A ist jetzt richtig während der Verteidiger noch am Ball ist; B wird richtig nach echtem Binden."
+      }
+    },
+    {
+      "slot": "3v2",
+      "id": "scn_bank_876",
+      "familyKey": "rw_trans_3v2_hold_width",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — prvi val: drži širinu u 3 na 2",
+        "situation": "Neriješeno je 13:13 u 24. minuti. Nakon osvajanja lopte trčiš desni koridor u prvom valu. Ispred je 3 na 2: srednji vanjski s loptom, lijevo krilo nasuprot, ti desno. Jedan branič u povratku sprinta da pokrije sredinu između srednjeg vanjskog i linije šest metara. Drugi branič kasni na lijevoj strani. Ako prerano uđeš unutra, susrećeš srednjeg vanjskog u istom koridoru koji taj branič pokriva.",
+        "question": "U ovom 3 na 2, što trebaš raditi na desnoj strani?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Drži širinu u desnom koridoru i dođi do šest metara kao opcija za dodavanje — ne ulazi prerano prema sredini koju on pokriva",
+            "feedback": "Točno — širina rasteže 3 na 2; ne može pokriti i sredinu i tebe odjednom."
+          },
+          {
+            "quality": "good",
+            "text": "Utrči iza braniča u povratku samo nakon što ga srednji vanjski veže prijetnjom šuta",
+            "feedback": "Dobra druga akcija; prvo rastegni obranu širinom."
+          },
+          {
+            "quality": "risky",
+            "text": "Odmah dijagonalno utrči u sredinu da podržiš loptu",
+            "feedback": "Rizično — ulaziš mu u put povratka i ubijaš rastezanje."
+          },
+          {
+            "quality": "poor",
+            "text": "Uspori i skreni prema srednjem vanjskom tražeći loptu u sredini",
+            "feedback": "Loše — predaješ široko rastezanje 3 na 2."
+          }
+        ],
+        "explanation": "Signal: 3 na 2 s jednim braničem u povratku koji pokriva sredinu. Drži širinu do šest metara kao opciju za dodavanje. Rani ulazak unutra (C) stavlja dva napadača u njegov koridor.",
+        "whyCorrectOverSecondBest": "A ga sada rasteže širinom; B-ov ulazak točan je tek kad je taj branič vezan."
+      },
+      "en": {
+        "title": "Right Wing — First Wave: Hold Width in a 3v2",
+        "situation": "Tied 13:13 at 24'. After the ball win you run the right lane in the first wave. Ahead is a 3v2: centre back with the ball, left wing opposite, you on the right. One recovering defender sprints to cover the middle between the centre back and the six-metre line. The second defender is late on the left. If you cut inside too early, you meet the centre back in the same corridor that recovering defender is covering.",
+        "question": "In this 3v2, what should you do on the right?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Hold width in the right lane and arrive at six metres as a pass option — do not crowd the middle he is covering",
+            "feedback": "Correct — width stretches the 3v2; he cannot cover middle and you at once."
+          },
+          {
+            "quality": "good",
+            "text": "Cut behind the recovering defender only after the centre back has fixed him with a shot threat",
+            "feedback": "Good second action; first stretch the defence with width."
+          },
+          {
+            "quality": "risky",
+            "text": "Sprint diagonally into the middle immediately to support the ball",
+            "feedback": "Risky — you run into his recovery path and kill the stretch."
+          },
+          {
+            "quality": "poor",
+            "text": "Slow down and drift toward the centre back asking for the ball in the middle",
+            "feedback": "Poor — you surrender the wide 3v2 stretch."
+          }
+        ],
+        "explanation": "Cue: 3v2 with one recovering defender covering the middle. Hold width to six metres as a pass option. Cutting inside early (C) puts two attackers in his corridor.",
+        "whyCorrectOverSecondBest": "A stretches him with width now; B’s cut is only right after that defender is fixed."
+      },
+      "de": {
+        "title": "Rechtsaußen — erste Welle: Breite halten im 3 gegen 2",
+        "situation": "Unentschieden 13:13 in Minute 24. Nach Ballgewinn läufst du den rechten Korridor in der ersten Welle. Vor euch 3 gegen 2: Rückraum Mitte mit Ball, Linksaußen gegenüber, du rechts. Ein zurücksprintender Verteidiger deckt die Mitte zwischen Rückraum Mitte und Sechs-Meter-Linie. Der zweite Verteidiger ist links spät. Schneist du zu früh hinein, triffst du den Rückraum Mitte im selben Korridor den dieser Verteidiger deckt.",
+        "question": "In diesem 3 gegen 2 — was solltest du rechts tun?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Breite im rechten Korridor halten und auf Sechs Meter als Passoption ankommen — nicht früh in die Mitte die er deckt",
+            "feedback": "Richtig — Breite dehnt das 3 gegen 2; er kann nicht Mitte und dich zugleich."
+          },
+          {
+            "quality": "good",
+            "text": "Hinter den Zurückkommenden erst wenn der Rückraum Mitte ihn mit Wurfandrohung gebunden hat",
+            "feedback": "Gute zweite Aktion; zuerst die Abwehr mit Breite dehnen."
+          },
+          {
+            "quality": "risky",
+            "text": "Sofort diagonal in die Mitte sprinten um den Ball zu unterstützen",
+            "feedback": "Riskant — du läufst in seinen Rückkehrweg und tötest die Dehnung."
+          },
+          {
+            "quality": "poor",
+            "text": "Abbremen und zum Rückraum Mitte ziehen und den Ball in der Mitte fordern",
+            "feedback": "Schlecht — du gibst die breite 3-gegen-2-Dehnung auf."
+          }
+        ],
+        "explanation": "Signal: 3 gegen 2 mit einem Zurückkommenden der die Mitte deckt. Breite bis Sechs Meter als Passoption halten. Frühes Hineinschneiden (C) stellt zwei Angreifer in seinen Korridor.",
+        "whyCorrectOverSecondBest": "A dehnt ihn jetzt mit Breite; B-Einlauf erst wenn dieser Verteidiger gebunden ist."
+      }
+    },
+    {
+      "slot": "second wave",
+      "id": "scn_bank_877",
+      "familyKey": "rw_trans_second_wave_positional",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": false,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — drugi val: prestani forsirati kad prednost u tranziciji nestane",
+        "situation": "Vodite 18:17 u 35. minuti. Prvi val došao je do 2 na 2 na desnoj strani; srednji vanjski usporava jer je branič u povratku već između njega i tebe. Drugi branič u povratku udaljen je dva koraka od linije šest metara. Nema čistog završetka. Obrana se u međuvremenu postavila u 6:0. Još si visoko i široko desno — ako sada forsiraš ulazak unutra, kasno stižeš u zbijeni prostor bez lopte.",
+        "question": "Završetak prvog vala je nestao — što radiš na desnoj strani?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Ostani široko na desnoj strani i vrati se na svoju poziciju u pozicijskom napadu",
+            "feedback": "Točno — obrana je postavljena; drži širinu i prijeđi u pozicijski napad umjesto da forsiraš brzi napad."
+          },
+          {
+            "quality": "good",
+            "text": "Ponudi kratko sigurno dodavanje ako je srednji vanjski pod trenutačnim pritiskom",
+            "feedback": "Korisno pod pritiskom; ovdje je već namjerno usporio — prvo organiziraj širinu."
+          },
+          {
+            "quality": "risky",
+            "text": "Svejedno forsiraj ulazak iza leđa dvojice koji se vraćaju",
+            "feedback": "Rizično — brojčani trenutak je prošao; trčiš u gužvu."
+          },
+          {
+            "quality": "poor",
+            "text": "Napusti desnu stranu i stani neiskorišten na devet metara u sredini",
+            "feedback": "Loše — pozicijskom napadu još treba širina desno."
+          }
+        ],
+        "explanation": "Signal: 2 na 2 prvog vala nestaje; braniči u povratku su stigli; obrana se postavila u 6:0. Prestani forsirati brzi napad, ostani široko desno i prijeđi u pozicijski napad. Forsiranje ulaska (C) ignorira da je prednost u brzom napadu nestala.",
+        "whyCorrectOverSecondBest": "A organizira širinu u pozicijski napad; B-ovo sigurno dodavanje prvo je samo ako je srednji vanjski pod trenutačnim pritiskom."
+      },
+      "en": {
+        "title": "Right Wing — Second Wave: Stop Forcing When the Transition Advantage Is Gone",
+        "situation": "You lead 18:17 at 35'. The first wave reached a 2v2 on the right; the centre back slows because a recovering defender is already between him and you. A second recovering defender is two strides from the six-metre line. There is no clean finish now. The defence has already set into a 6:0. You are still high and wide on the right — if you force inside now, you arrive late into a crowded area without the ball.",
+        "question": "The first-wave finish is gone — what do you do on the right?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Stay wide on the right and return to your position in the set attack",
+            "feedback": "Correct — the defence is set; keep width and move into positional attack instead of forcing the fast break."
+          },
+          {
+            "quality": "good",
+            "text": "Offer a short safe pass if the centre back is under immediate pressure",
+            "feedback": "Useful under pressure; here he already slowed by choice — organize width first."
+          },
+          {
+            "quality": "risky",
+            "text": "Force a cut behind the two recovering defenders anyway",
+            "feedback": "Risky — the numerical moment is gone; you run into traffic."
+          },
+          {
+            "quality": "poor",
+            "text": "Leave the right side and stand unused at nine metres in the middle",
+            "feedback": "Poor — the set attack still needs width on the right."
+          }
+        ],
+        "explanation": "Cue: first-wave 2v2 is gone; recovering defenders have arrived; the defence has set into 6:0. Stop forcing the fast attack, keep width on the right, and move into positional attack. Forcing the cut (C) ignores that the transition advantage is gone.",
+        "whyCorrectOverSecondBest": "A organizes width into the set attack; B’s safe pass is only first if the centre back is under immediate pressure."
+      },
+      "de": {
+        "title": "Rechtsaußen — zweite Welle: nicht mehr erzwingen wenn der Tempovorteil weg ist",
+        "situation": "Ihr führt 18:17 in Minute 35. Die erste Welle war 2 gegen 2 rechts; der Rückraum Mitte bremst weil ein Zurückkommender schon zwischen ihm und dir steht. Ein zweiter Zurückkommender ist zwei Schritte von der Sechs entfernt. Es gibt keinen sauberen Abschluss. Die Abwehr hat sich inzwischen in einer 6:0 gestellt. Du bist noch hoch und breit rechts — erzwingst du jetzt den Einlauf innen, kommst du spät in den engen Raum ohne Ball.",
+        "question": "Der Abschluss der ersten Welle ist weg — was tust du rechts?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Rechts breit bleiben und in deine Position im Positionsangriff zurückkehren",
+            "feedback": "Richtig — die Abwehr steht; Breite halten und in den Positionsangriff gehen statt den Tempogegenstoß zu erzwingen."
+          },
+          {
+            "quality": "good",
+            "text": "Kurzes sicheres Abspiel anbieten wenn der Rückraum Mitte unter Sofortdruck steht",
+            "feedback": "Nützlich unter Druck; hier hat er bewusst gebremst — zuerst Breite organisieren."
+          },
+          {
+            "quality": "risky",
+            "text": "Trotzdem den Einlauf hinter die beiden Zurückkommenden erzwingen",
+            "feedback": "Riskant — der numerische Moment ist weg; du läufst in den Verkehr."
+          },
+          {
+            "quality": "poor",
+            "text": "Die rechte Seite verlassen und ungenutzt auf neun Metern in der Mitte stehen",
+            "feedback": "Schlecht — der Positionsangriff braucht weiter Breite rechts."
+          }
+        ],
+        "explanation": "Signal: 2 gegen 2 der ersten Welle ist weg; Zurückkommende sind da; die Abwehr steht in der 6:0. Tempogegenstoß nicht mehr erzwingen, rechts breit bleiben und in den Positionsangriff. Erzwungener Einlauf (C) ignoriert dass der Tempovorteil weg ist.",
+        "whyCorrectOverSecondBest": "A organisiert Breite in den Positionsangriff; B-Abspiel nur zuerst wenn der Rückraum Mitte unter Sofortdruck steht."
+      }
+    },
+    {
+      "slot": "6v5",
+      "id": "scn_bank_878",
+      "familyKey": "rw_6v5_free_finish",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — 6 na 5: završi dok si sam i pomoć kasni",
+        "situation": "Vodite 21:20 u 41. minuti u igraču više 6 na 5 nakon njihovog isključenja. Desni vanjski povukao je dva braniča. Primaš sam blizu aut-linije; najbliži branič u povratku još je više od dva metra od mjesta tvog odraza i ne može ga ometati. Vratar ostaje duboko na golu. Još jedan puni prelazak lopte na drugu stranu dao bi obrani vremena da se vrati u tvoj kut. Igrač više pomaže stvoriti ovu sliku — odluka dolazi iz toga što si sam.",
+        "question": "Zašto trebaš završiti s ovog prijema?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Jer si sam i najbliži branič je predaleko da ometa tvoj odraz",
+            "feedback": "Točno — signal je sloboda i kasna pomoć, ne „6 na 5 uvijek šut“."
+          },
+          {
+            "quality": "good",
+            "text": "Kratko dodavanje desnom vanjskom samo ako te branič skoči prije nego primiš loptu pod kontrolom",
+            "feedback": "Hitna opcija; ovdje primiš loptu pod kontrolom sam s distancom — završi."
+          },
+          {
+            "quality": "risky",
+            "text": "Ponovno prebaci na drugu stranu da nastaviš cirkulaciju dok se oni vraćaju u tvoj kut",
+            "feedback": "Rizično — daješ im vrijeme da se vrate prema tebi."
+          },
+          {
+            "quality": "poor",
+            "text": "Forsiraj dodavanje u zbijeni prostor pivota umjesto slobodnog krilnog završetka",
+            "feedback": "Loše — napuštaš slobodan krilni završetak zbog gužve."
+          }
+        ],
+        "explanation": "Signal: sam blizu aut-linije, najbliži branič u povratku više od dva metra od odraza, vratar duboko. Završi sada. 6 na 5 pomaže stvoriti sliku; sloboda i kasna pomoć odlučuju. Još jedan prelazak (C) daje im vrijeme za povratak.",
+        "whyCorrectOverSecondBest": "A koristi slobodan odraz dok pomoć kasni; B je prvi samo ako te skoče prije nego primiš loptu pod kontrolom."
+      },
+      "en": {
+        "title": "Right Wing — 6v5: Finish When You Are Free and Help Is Late",
+        "situation": "You lead 21:20 at 41' in a 6v5 after their exclusion. The right back has pulled two defenders. You receive alone near the sideline; the nearest recovering defender is still more than two metres from your take-off spot and cannot contest it. The goalkeeper stays deep on the goal line. Another full swing to the other side would give the defence time to recover to your corner. The player-up helps create this picture — the decision itself comes from you being free.",
+        "question": "Why should you finish from this catch?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Because you are alone and the nearest defender is too far to contest your take-off",
+            "feedback": "Correct — the cue is freedom and late help, not ‘6v5 always shoot’."
+          },
+          {
+            "quality": "good",
+            "text": "Short pass to the right back only if a defender jumps you before you control the catch",
+            "feedback": "Emergency option; here you control the catch alone with distance — finish."
+          },
+          {
+            "quality": "risky",
+            "text": "Swing to the other side again to keep circulating while they recover to your corner",
+            "feedback": "Risky — you give them time to recover to you."
+          },
+          {
+            "quality": "poor",
+            "text": "Force a pass into the crowded pivot area instead of using the free wing finish",
+            "feedback": "Poor — you leave a free wing finish for traffic."
+          }
+        ],
+        "explanation": "Cue: alone near the sideline, nearest recovering defender more than two metres from your take-off, goalkeeper deep. Finish now. 6v5 helps create the picture; freedom and late help decide it. Another swing (C) gives them recovery time.",
+        "whyCorrectOverSecondBest": "A uses the free take-off while help is late; B is only first if you are jumped before controlling the catch."
+      },
+      "de": {
+        "title": "Rechtsaußen — 6 gegen 5: abschließen wenn du frei bist und Hilfe spät kommt",
+        "situation": "Ihr führt 21:20 in Minute 41 im Überzahl 6 gegen 5 nach ihrer Zeitstrafe. Der rechte Rückraum hat zwei Verteidiger gezogen. Du fängst allein nahe der Seitenlinie; der nächste zurückkommende Verteidiger ist noch mehr als zwei Meter von deinem Absprungpunkt und kann ihn nicht stören. Der Torhüter bleibt tief auf der Torlinie. Ein weiterer voller Seitenwechsel gäbe der Abwehr Zeit zurück in deine Ecke. Die Überzahl hilft dieses Bild zu schaffen — die Entscheidung kommt daraus dass du frei bist.",
+        "question": "Warum solltest du aus diesem Fang abschließen?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Weil du allein bist und der nächste Verteidiger zu weit ist um deinen Absprung zu stören",
+            "feedback": "Richtig — das Signal ist Freiheit und späte Hilfe, nicht „6 gegen 5 immer werfen“."
+          },
+          {
+            "quality": "good",
+            "text": "Kurzer Pass auf den rechten Rückraum nur wenn ein Verteidiger dich anspringt bevor du den Fang kontrollierst",
+            "feedback": "Notfalloption; hier kontrollierst du den Fang allein mit Distanz — abschließen."
+          },
+          {
+            "quality": "risky",
+            "text": "Nochmal auf die andere Seite schieben und weiter zirkulieren während sie in deine Ecke zurückkehren",
+            "feedback": "Riskant — du schenkst ihnen Zeit zurück zu dir."
+          },
+          {
+            "quality": "poor",
+            "text": "Pass in den verdichteten Kreisraum erzwingen statt des freien Flügelabschlusses",
+            "feedback": "Schlecht — du verlässt den freien Flügelabschluss zugunsten von Gedränge."
+          }
+        ],
+        "explanation": "Signal: allein nahe der Seitenlinie, nächster Zurückkommender mehr als zwei Meter vom Absprung, Torhüter tief. Jetzt abschließen. 6 gegen 5 hilft das Bild; Freiheit und späte Hilfe entscheiden. Weiterer Seitenwechsel (C) schenkt Rückkehrzeit.",
+        "whyCorrectOverSecondBest": "A nutzt den freien Absprung bei später Hilfe; B nur zuerst wenn du vor dem kontrollierten Fang angesprungen wirst."
+      }
+    },
+    {
+      "slot": "5v6",
+      "id": "scn_bank_910",
+      "familyKey": "rw_5v6_safe_width",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": false,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — 5 na 6: drži širinu, ne forsiraj kut",
+        "situation": "Gubite 18:17 u 36. minuti s igračem manje (5 na 6). Obrana je kompaktna. Krilni branič ne prati loptu unutra; ostaje između tebe i prve stative s obje noge prema kutu. Desnom vanjskom treba sigurna opcija desno. Forsiranje završetka iz kuta u to tijelo riskira loptu i prostor iza napada.",
+        "question": "U ovom 5 na 6, što je tvoj posao na desnom krilu?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Drži širinu uz aut-liniju kao sigurnu opciju za dodavanje i čuvaj kut bez forsiranja šuta",
+            "feedback": "Točno — širina štiti posjed kad ste igrač manje."
+          },
+          {
+            "quality": "good",
+            "text": "Traži loptu tek kad se krilni branič okrene unutra u pomoć i ostavi pravu odraznu nogu",
+            "feedback": "Točno ako pomoć napokon otvori kut."
+          },
+          {
+            "quality": "risky",
+            "text": "Forsiraj završetak iz kuta sada radi šanse za odbijenu",
+            "feedback": "Skup šut dok ste igrač manje."
+          },
+          {
+            "quality": "poor",
+            "text": "Rano uđi u gužvu u sredini da iznuješ prekršaj",
+            "feedback": "Predaje jedinu sigurnu široku opciju."
+          }
+        ],
+        "explanation": "Igrač manje: čuvaj širinu kao sigurnu opciju. Ne forsiraj kut u braniča koji čuva dom. Traži loptu samo ako pomogne unutra i otvori nogu.",
+        "whyCorrectOverSecondBest": "A je posao za ovu zatvorenu sliku 5 na 6; B čeka signal pomoći kojeg još nema."
+      },
+      "en": {
+        "title": "Right Wing — 5v6: Hold Width, Do Not Force the Corner",
+        "situation": "You trail 18:17 at 36' a player down (5v6). The defence is compact. Your wing defender does not follow the ball inside; he stays between you and the near post with both feet toward the corner. The right back needs a safe release on the right. Forcing a corner finish into that body risks the ball and the empty space behind your attack.",
+        "question": "In this 5v6, what is your job on the right wing?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Hold width near the sideline as the safe release pass and keep the corner available without forcing a shot",
+            "feedback": "Correct — width protects possession when you are a player down."
+          },
+          {
+            "quality": "good",
+            "text": "Ask for the ball only after the wing defender turns inside to help and leaves a real take-off foot",
+            "feedback": "Correct if help finally opens the corner."
+          },
+          {
+            "quality": "risky",
+            "text": "Force the corner finish now to create a rebound chance",
+            "feedback": "High-cost shot while a player down."
+          },
+          {
+            "quality": "poor",
+            "text": "Enter early into the crowded middle to chase a foul",
+            "feedback": "Gives away the only safe wide release."
+          }
+        ],
+        "explanation": "Player down: keep width as the safe release. Do not force the corner into a home wing defender. Ask only if he helps inside and opens the foot.",
+        "whyCorrectOverSecondBest": "A is the job for this covered 5v6 picture; B waits for a help cue that is not present yet."
+      },
+      "de": {
+        "title": "Rechtsaußen — 5v6: Breite halten, Ecke nicht erzwingen",
+        "situation": "Ihr liegt 18:17 in Minute 36 in Unterzahl (5v6). Die Abwehr ist kompakt. Dein Außenverteidiger folgt dem Ball nicht nach innen; er bleibt zwischen dir und dem nahen Pfosten mit beiden Füßen zur Ecke. Der rechte Rückraum braucht eine sichere Ablage rechts. Ein erzwungener Eckenabschluss in diesen Körper riskiert Ball und Raum hinter eurem Angriff.",
+        "question": "Was ist in diesem 5v6 dein Job auf Rechtsaußen?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Breite an der Seitenlinie als sichere Ablage halten und die Ecke ohne erzwungenen Wurf verfügbar lassen",
+            "feedback": "Richtig — Breite schützt den Besitz in Unterzahl."
+          },
+          {
+            "quality": "good",
+            "text": "Den Ball erst fordern wenn der Außenverteidiger innen hilft und einen echten Absprungfuß lässt",
+            "feedback": "Richtig wenn Hilfe die Ecke endlich öffnet."
+          },
+          {
+            "quality": "risky",
+            "text": "Eckenabschluss jetzt erzwingen für eine Abprallerchance",
+            "feedback": "Teurer Wurf in Unterzahl."
+          },
+          {
+            "quality": "poor",
+            "text": "Früh in die gedrängte Mitte gehen um ein Foul zu holen",
+            "feedback": "Verschenkt die einzige sichere breite Ablage."
+          }
+        ],
+        "explanation": "Unterzahl: Breite als sichere Ablage. Keine Ecke in den heimatgebundenen Außenverteidiger erzwingen. Ball nur fordern wenn er innen hilft.",
+        "whyCorrectOverSecondBest": "A ist der Job für dieses verstellte 5v6; B wartet auf ein Hilfe-Signal das noch fehlt."
+      }
+    },
+    {
+      "slot": "7v6",
+      "id": "scn_bank_912",
+      "familyKey": "rw_7v6_extra_attacker_space",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — 7 na 6: iskoristi prostor kad krilni branič uđe unutra",
+        "situation": "Vodite 20:19 u 40. minuti u napadu 7 na 6, vratar je vani kao sedmi napadač. Drugi pivot veže polubranitelja i središnjeg braniča. Desni vanjski povlači krilnog braniča jedan čist korak unutra. Primaš sam uz aut-liniju s slobodnom odraznom nogom prema sredini. Odgađanje mu daje povratak prije ispuštanja.",
+        "question": "U ovom 7 na 6, kada koristiš dodatni prostor na krilu?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Odraz prema sredini sada dok je krilni branič još taj korak unutra",
+            "feedback": "Točno — signal je otvorena odrazna noga, ne sama oznaka 7 na 6."
+          },
+          {
+            "quality": "good",
+            "text": "Kratka povratna ako se vrati na odraznu nogu prije nego kontroliraš prijem",
+            "feedback": "Točno ako se prilika zatvori na prijema."
+          },
+          {
+            "quality": "risky",
+            "text": "Drži loptu da spustiš sat jer vodite",
+            "feedback": "S praznim vlastitim golom skupe su odgođene odluke."
+          },
+          {
+            "quality": "poor",
+            "text": "Dodaj preko lica gola tražeći spektakularan završetak",
+            "feedback": "Nepotrebni rizik s praznim vlastitim golom iza."
+          }
+        ],
+        "explanation": "7 na 6 pomaže samo kad unutarnji korak krilnog braniča otvara odraz. Iskoristi taj trenutak sada; vrati ako se vrati na nogu. Prazan vlastiti gol čini odgodu skupom.",
+        "whyCorrectOverSecondBest": "A koristi otvoreni odraz koji postoji sada; B je izlaz ako povratak pobijedi prijem."
+      },
+      "en": {
+        "title": "Right Wing — 7v6: Use the Extra Space When the Wing Defender Steps In",
+        "situation": "You lead 20:19 at 40' attacking 7v6 with your goalkeeper out as the seventh attacker. The second pivot binds the half defender and the centre defender. The right back pulls your wing defender one clear step inside. You receive alone near the sideline with a free take-off foot toward the middle. Delaying lets him recover before the release.",
+        "question": "In this 7v6, when do you use the extra space on the wing?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Take off toward the middle now while the wing defender is still that step inside",
+            "feedback": "Correct — the open take-off foot is the cue, not the 7v6 label alone."
+          },
+          {
+            "quality": "good",
+            "text": "Short return if he recovers onto your take-off foot before you control the catch",
+            "feedback": "Correct if the window closes on the catch."
+          },
+          {
+            "quality": "risky",
+            "text": "Hold the ball to run down the clock because you lead",
+            "feedback": "With your own goal empty, delayed decisions are expensive."
+          },
+          {
+            "quality": "poor",
+            "text": "Pass across the face of goal looking for a spectacular finish",
+            "feedback": "Unnecessary risk with an empty own goal behind you."
+          }
+        ],
+        "explanation": "7v6 helps only when the wing defender’s inside step opens your take-off. Finish that window now; return if he recovers onto the foot. Empty own goal makes delay costly.",
+        "whyCorrectOverSecondBest": "A uses the open take-off that exists now; B is the escape if recovery beats the catch."
+      },
+      "de": {
+        "title": "Rechtsaußen — 7v6: Extra-Raum nutzen wenn der Außenverteidiger innen geht",
+        "situation": "Ihr führt 20:19 in Minute 40 im 7v6-Angriff, Torwart draußen als siebter Angreifer. Der zweite Kreis bindet Halben und Mitte. Der rechte Rückraum zieht deinen Außenverteidiger einen klaren Schritt nach innen. Du fängst allein an der Seitenlinie mit freiem Absprungfuß zur Mitte. Verzögern lässt ihn vor der Abgabe zurückkommen.",
+        "question": "Wann nutzt du in diesem 7v6 den Extra-Raum auf dem Flügel?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Jetzt zur Mitte abspringen solange der Außenverteidiger noch diesen Schritt innen ist",
+            "feedback": "Richtig — Signal ist der freie Absprungfuß, nicht nur die 7v6-Marke."
+          },
+          {
+            "quality": "good",
+            "text": "Kurzer Rückpass wenn er vor der Fangkontrolle auf deinen Absprungfuß zurückkommt",
+            "feedback": "Richtig wenn das Fenster beim Fang zugeht."
+          },
+          {
+            "quality": "risky",
+            "text": "Ball halten um die Uhr herunterzuspielen weil ihr führt",
+            "feedback": "Mit eigenem leerem Tor sind verzögerte Entscheidungen teuer."
+          },
+          {
+            "quality": "poor",
+            "text": "Vor dem Tor vorbeipassen für einen spektakulären Abschluss",
+            "feedback": "Unnötiges Risiko mit leerem eigenem Tor hinter euch."
+          }
+        ],
+        "explanation": "7v6 hilft nur wenn der Innenschritt den Absprung öffnet. Fenster jetzt nutzen; zurück wenn er auf den Fuß kommt. Leeres eigenes Tor macht Verzögerung teuer.",
+        "whyCorrectOverSecondBest": "A nutzt den jetzt offenen Absprung; B ist der Ausweg wenn die Rückkehr den Fang schlägt."
+      }
+    },
+    {
+      "slot": "own empty goal",
+      "id": "scn_bank_879",
+      "familyKey": "rw_empty_own_goal_safe_return",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — prazan vlastiti gol: siguran završetak ili siguran povratak",
+        "situation": "Neriješeno je 28:28 u 58. minuti. Tvoj vratar je na klupi s druge strane — vlastiti gol prazan. Primaš na desnom krilu protiv postavljene 6:0. Krilni branič kasni pola koraka, pa završetak izgleda moguć, ali lopta ti dolazi iza tijela i moraš dodatno namjestiti korak prije odraza. Branič se već vraća prema tebi. Njihovo lijevo krilo je visoko uz aut-liniju, spremno za šut na prazan gol ako izgubiš loptu. Kratki povratak desnom vanjskom dostupan je bez pritiska.",
+        "question": "Uz prazan vlastiti gol, koja je točna odluka na ovom prijemu?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Kratki siguran povratak desnom vanjskom — još moraš namjestiti korak, a branič se već vraća",
+            "feedback": "Točno — prazan vlastiti gol podiže cijenu forsiranog završetka iz lošeg prijema."
+          },
+          {
+            "quality": "good",
+            "text": "Završi samo ako u jednom koraku primiš loptu pod kontrolom i odraziš se prije dolaska braniča",
+            "feedback": "Pravilo za čist prijem; ovdje ti lopta dolazi iza tijela i još trebaš dodatni korak."
+          },
+          {
+            "quality": "risky",
+            "text": "Svejedno forsiraj šut iz nezgodnog prijema",
+            "feedback": "Rizično — gubitak lopte postaje utrka do praznog gola koju njihovo krilo već pokreće."
+          },
+          {
+            "quality": "poor",
+            "text": "Pokušaj dugo dijagonalno dodavanje preko obrane dok je gol prazan",
+            "feedback": "Loše — najveći rizik gubitka uz prazan gol iza sebe."
+          }
+        ],
+        "explanation": "Signal: vlastiti gol prazan; lopta dolazi iza tijela; još trebaš namjestiti korak; branič se vraća; protivničko krilo visoko za šut na prazan gol. Prvo kratki siguran povratak. Završetak (B) samo na čistom prijemu pod kontrolom s odmah dostupnim odrazom.",
+        "whyCorrectOverSecondBest": "A skida rizik kontre u prazan gol jer prijem još treba dodatni korak; B je točan samo kad su kontrola i odraz već čisti."
+      },
+      "en": {
+        "title": "Right Wing — Empty Own Goal: Safe Finish or Safe Return",
+        "situation": "Tied 28:28 at 58'. Your goalkeeper is at the opposite bench — own goal empty. You receive on the right wing against a set 6:0. The wing defender is half a step late, so a finish looks possible, but the ball arrives behind your body and you need an extra step to set your feet before take-off. The wing defender is already recovering toward you. Their left wing is high near the sideline, ready to shoot at the empty goal on a turnover. A short return to the right back is available under no pressure.",
+        "question": "With your own goal empty, what is the right decision on this catch?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Short safe return to the right back — you still need an extra step and the defender is already recovering",
+            "feedback": "Correct — empty own goal raises the cost of forcing a finish from a messy catch."
+          },
+          {
+            "quality": "good",
+            "text": "Finish only if you control the ball cleanly in one step and take off before the defender arrives",
+            "feedback": "The rule for a clean catch; here the ball is behind your body and you still need the extra step."
+          },
+          {
+            "quality": "risky",
+            "text": "Force the shot from the awkward catch anyway",
+            "feedback": "Risky — turnover becomes a race to the empty goal their wing is already starting."
+          },
+          {
+            "quality": "poor",
+            "text": "Try a long diagonal across the defence while your goal is empty",
+            "feedback": "Poor — highest turnover risk with an empty goal behind you."
+          }
+        ],
+        "explanation": "Cue: own goal empty; ball arrives behind your body; extra step still needed; defender recovering; opponent wing high for the empty-goal shot. Short safe return first. Finish (B) only on a clean controlled catch with immediate take-off.",
+        "whyCorrectOverSecondBest": "A removes empty-goal turnover risk because the catch still needs an extra step; B is correct only when control and take-off are already clean."
+      },
+      "de": {
+        "title": "Rechtsaußen — eigenes leeres Tor: sicherer Abschluss oder sicherer Rückpass",
+        "situation": "Unentschieden 28:28 in Minute 58. Euer Torhüter ist an der gegenüberliegenden Bank — eigenes Tor leer. Du fängst rechts gegen stehende 6:0. Der Außenverteidiger ist einen halben Schritt spät, Abschluss wirkt möglich, aber der Ball kommt hinter deinen Körper und du brauchst einen zusätzlichen Schritt um vor dem Absprung zu stehen. Der Verteidiger kommt schon auf dich zurück. Ihr Linksaußen steht hoch an der Seitenlinie, bereit aufs leere Tor zu werfen bei Ballverlust. Kurzer Rückpass auf den rechten Rückraum ist druckfrei möglich.",
+        "question": "Bei eigenem leeren Tor — was ist die richtige Entscheidung bei diesem Fang?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Kurzer sicherer Rückpass auf den rechten Rückraum — du brauchst noch den Schritt und der Verteidiger kommt schon zurück",
+            "feedback": "Richtig — leeres eigenes Tor erhöht den Preis eines erzwungenen Abschlusses aus unsauberem Fang."
+          },
+          {
+            "quality": "good",
+            "text": "Nur abschließen wenn du den Ball in einem Schritt sauber kontrollierst und abspringst bevor der Verteidiger kommt",
+            "feedback": "Die Regel für sauberen Fang; hier kommt der Ball hinter den Körper und du brauchst noch den Extra-Schritt."
+          },
+          {
+            "quality": "risky",
+            "text": "Den Wurf aus dem unsauberen Fang trotzdem erzwingen",
+            "feedback": "Riskant — Ballverlust wird zum Sprint aufs leere Tor den ihr Flügel schon startet."
+          },
+          {
+            "quality": "poor",
+            "text": "Langen Diagonalpass über die Abwehr versuchen während euer Tor leer ist",
+            "feedback": "Schlecht — höchstes Verlustrisiko bei leerem Tor hinter euch."
+          }
+        ],
+        "explanation": "Signal: eigenes Tor leer; Ball hinter dem Körper; Extra-Schritt nötig; Verteidiger kommt zurück; gegnerischer Flügel hoch für Wurf aufs leere Tor. Zuerst kurzer sicherer Rückpass. Abschluss (B) nur bei sauber kontrolliertem Fang mit sofortigem Absprung.",
+        "whyCorrectOverSecondBest": "A nimmt das Risiko Konter ins leere Tor weil der Fang noch den Extra-Schritt braucht; B nur wenn Kontrolle und Absprung schon sauber sind."
+      }
+    },
+    {
+      "slot": "late-game attack",
+      "id": "scn_bank_922",
+      "familyKey": "rw_trailing_one_force_window",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "perception": false,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — gol zaostatka: iskoristi kratki trenutak",
+        "situation": "Gubite 26:27 u 59. minuti. Desni vanjski povukao je krilnog braniča cijeli korak unutra. Primaš sam blizu aut-linije s čistim odrazom prema sredini; branič se okreće natrag, ali ne može stići na prvi korak. Vratar ostaje duboko na golu.",
+        "question": "Što moraš učiniti prije nego se trenutak zatvori?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Odmah se odrazi prema sredini i završi prema čitanju vratara",
+            "feedback": "Točno — treba ti gol, a branič se još nije vratio."
+          },
+          {
+            "quality": "good",
+            "text": "Vrati loptu samo ako branič stigne na odraz prije nego kontroliraš prijem",
+            "feedback": "Hitna opcija; odraz je sada slobodan."
+          },
+          {
+            "quality": "risky",
+            "text": "Zadrži loptu za još jedan puni prijenos",
+            "feedback": "Rizično — daješ mu vrijeme za povratak koje nemaš."
+          },
+          {
+            "quality": "poor",
+            "text": "Uđi unutra bez lopte i zatvori prostor desnom vanjskom",
+            "feedback": "Loše — napuštaš slobodan završetak s krila."
+          }
+        ],
+        "explanation": "Signal: gubite gol razlike, a branič je ostao unutra nakon pomoći. Uzmi prvi dostupan odraz; još jedan prijenos pomaže obrani.",
+        "whyCorrectOverSecondBest": "A koristi stvarni trenutak sada; B vrijedi samo ako se zatvori prije kontrole."
+      },
+      "en": {
+        "title": "Right Wing — One Down: Use the Brief Window",
+        "situation": "You trail 26:27 at 59'. The right back has drawn the wing defender one full step inside. You catch alone near the sideline with a clear take-off toward the middle; the defender is turning back but cannot reach the first step. The goalkeeper remains deep.",
+        "question": "What must you do before the window closes?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Take off toward the middle now and finish from the goalkeeper read",
+            "feedback": "Correct — you need the goal and the defender has not recovered."
+          },
+          {
+            "quality": "good",
+            "text": "Return only if the defender reaches your take-off before the catch is controlled",
+            "feedback": "Emergency option; the take-off is free now."
+          },
+          {
+            "quality": "risky",
+            "text": "Hold the ball for another full circulation",
+            "feedback": "Risky — you give him recovery time you do not have."
+          },
+          {
+            "quality": "poor",
+            "text": "Drift inward without the ball and close the right back’s lane",
+            "feedback": "Poor — you abandon the free wing finish."
+          }
+        ],
+        "explanation": "Cue: you trail by one and the defender remains inside after helping. Take the first available take-off; another circulation helps the defence.",
+        "whyCorrectOverSecondBest": "A uses the real window now; B only applies if that window closes before control."
+      },
+      "de": {
+        "title": "Rechtsaußen — Ein Tor zurück: kurzes Fenster nutzen",
+        "situation": "Ihr liegt 26:27 in Minute 59 zurück. Der rechte Rückraum hat den Außenverteidiger einen vollen Schritt nach innen gezogen. Du fängst allein nahe der Seitenlinie mit freiem Absprung zur Mitte; er dreht zurück, erreicht aber den ersten Schritt nicht. Der Torhüter bleibt tief.",
+        "question": "Was musst du tun bevor das Fenster zugeht?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Jetzt zur Mitte abspringen und aus dem Torhüterlesen abschließen",
+            "feedback": "Richtig — ihr braucht das Tor und der Verteidiger ist noch nicht zurück."
+          },
+          {
+            "quality": "good",
+            "text": "Nur zurückspielen wenn der Verteidiger deinen Absprung erreicht bevor du den Fang kontrollierst",
+            "feedback": "Notoption; der Absprung ist jetzt frei."
+          },
+          {
+            "quality": "risky",
+            "text": "Den Ball für einen weiteren vollen Umlauf halten",
+            "feedback": "Riskant — du schenkst ihm Rückkehrzeit die ihr nicht habt."
+          },
+          {
+            "quality": "poor",
+            "text": "Ohne Ball nach innen laufen und die Bahn des rechten Rückraums schließen",
+            "feedback": "Schlecht — du gibst den freien Flügelabschluss auf."
+          }
+        ],
+        "explanation": "Signal: ihr liegt ein Tor zurück und der Verteidiger bleibt nach der Hilfe innen. Den ersten verfügbaren Absprung nehmen; weiterer Umlauf hilft der Abwehr.",
+        "whyCorrectOverSecondBest": "A nutzt das echte Fenster jetzt; B gilt nur wenn es vor der Kontrolle schließt."
+      }
+    },
+    {
+      "slot": "passive play",
+      "id": "scn_bank_924",
+      "familyKey": "rw_passive_warning_no_force",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "perception": false,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — pasivna igra: ne forsiraj zatvoreno krilo",
+        "situation": "Vodite 25:25 u 49. minuti. U 49. minuti pri 25:25 pokazana je pasivna igra. Primaš u desnom kutu, ali krilni branič stoji ispred tebe između tebe i linije šest metara, a polubranitelj je zatvorio pomoć iznutra. Vratar je izašao. Desni vanjski je slobodan iza tebe za kratku povratnu loptu.",
+        "question": "Koja je najbolja odluka bez linije s krila?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Sigurno vrati desnom vanjskom za sljedeću akciju",
+            "feedback": "Točno — pasivna igra ne čini zatvoren, ometan šut dobrim."
+          },
+          {
+            "quality": "good",
+            "text": "Završi samo ako se branič okrene unutra i otvori ti odraz",
+            "feedback": "To čitanje vrijedi tek nakon što se pojavi linija."
+          },
+          {
+            "quality": "risky",
+            "text": "Skoči u braniča i nadaj se sedmercu",
+            "feedback": "Rizično — on je postavljen, a vratar je izašao."
+          },
+          {
+            "quality": "poor",
+            "text": "Baci loptu naslijepo prema pivotu",
+            "feedback": "Loše — to stvara gubitak lopte, ne priliku."
+          }
+        ],
+        "explanation": "Upozorenje traži stvarnu akciju, ne loš šut s krila. Kad su branič, pomoć iznutra i vratar postavljeni, vrati loptu za bolju akciju.",
+        "whyCorrectOverSecondBest": "A čuva loptu u zatvorenoj situaciji; B treba otvor koji ne postoji."
+      },
+      "en": {
+        "title": "Right Wing — Passive Warning: Do Not Force a Closed Wing",
+        "situation": "You lead 25:25 at 49'. Passive warning is shown at 49', 25:25. You catch in the right corner, but the wing defender is square between you and the six-metre line and the half defender has closed inside help. The goalkeeper has stepped out. The right back is free behind you for a short return.",
+        "question": "What is the best decision with no wing lane?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Return safely to the right back for the next action",
+            "feedback": "Correct — passive warning does not make a closed, contested shot good."
+          },
+          {
+            "quality": "good",
+            "text": "Finish only if the defender turns inside and opens your take-off",
+            "feedback": "That read is valid only after the lane appears."
+          },
+          {
+            "quality": "risky",
+            "text": "Jump into the defender and hope for a penalty",
+            "feedback": "Risky — he is set and the goalkeeper is out."
+          },
+          {
+            "quality": "poor",
+            "text": "Throw the ball blindly toward the pivot",
+            "feedback": "Poor — this creates a turnover, not a chance."
+          }
+        ],
+        "explanation": "The warning calls for a real action, not a bad wing shot. With defender, inside help, and goalkeeper all set, return for a better action.",
+        "whyCorrectOverSecondBest": "A preserves the ball in a closed picture; B needs an opening that is absent."
+      },
+      "de": {
+        "title": "Rechtsaußen — Passiv: geschlossenen Flügel nicht erzwingen",
+        "situation": "Ihr führt 25:25 in Minute 49. Bei 25:25 in Minute 49 ist passives Spiel angezeigt. Du fängst in der rechten Ecke, aber der Außenverteidiger steht frontal zwischen dir und der Sechs-Meter-Linie, der Halbe schließt innen. Der Torhüter ist herausgetreten. Der rechte Rückraum ist hinter dir frei.",
+        "question": "Was ist die beste Entscheidung ohne Flügelbahn?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Sicher zum rechten Rückraum für die nächste Aktion zurückspielen",
+            "feedback": "Richtig — Passiv macht einen geschlossenen, umkämpften Wurf nicht gut."
+          },
+          {
+            "quality": "good",
+            "text": "Nur abschließen wenn der Verteidiger nach innen dreht und deinen Absprung öffnet",
+            "feedback": "Dieses Lesen gilt erst wenn die Bahn entsteht."
+          },
+          {
+            "quality": "risky",
+            "text": "In den Verteidiger springen und auf Siebenmeter hoffen",
+            "feedback": "Riskant — er steht bereit und der Torhüter ist draußen."
+          },
+          {
+            "quality": "poor",
+            "text": "Den Ball blind zum Kreis werfen",
+            "feedback": "Schlecht — das schafft Ballverlust, keine Chance."
+          }
+        ],
+        "explanation": "Die Anzeige verlangt eine echte Aktion, keinen schlechten Flügelwurf. Bei gesetztem Verteidiger, Innenhilfe und Torhüter zurückspielen.",
+        "whyCorrectOverSecondBest": "A hält den Ball im geschlossenen Bild; B braucht eine Öffnung die fehlt."
+      }
+    },
+    {
+      "slot": "wing defence",
+      "id": "scn_bank_880",
+      "familyKey": "rw_def_protect_wing_until_handover",
+      "difficulty": "Expert",
+      "attackOrDefence": "Defence",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — obrana: štiti dodavanje na krilo do preuzimanja",
+        "situation": "Neriješeno je 22:22 u 44. minuti. Braniš desno krilo u 6:0 ekipe. Dogovoreno pravilo: polubranitelj preuzima igrača s loptom; krilni branič štiti dodavanje na krilo dok nema jasnog poziva za preuzimanje. Njihov lijevi vanjski napada rupu između polubranitelja i tebe. Tvoj polubranitelj kasni jedan korak i nije pozvao preuzimanje. Njihovo lijevo krilo ostaje široko. Ako prerano potpuno napustiš svoje krilo da pomogneš unutra, njihovo lijevo krilo prima samo. Ako nikad ne pritisneš prodor, lijevi vanjski hoda na šest metara.",
+        "question": "Prema pravilu ekipe, koja je tvoja odgovornost na ovom prodoru?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Štiti dodavanje na njihovo krilo, pokaži kontrolirani korak unutra prema prodoru i čekaj poziv za preuzimanje",
+            "feedback": "Točno — po pravilu ostaješ odgovoran za dodavanje na krilo do preuzimanja; kontrolirana pomoć i dalje može usporiti prodor."
+          },
+          {
+            "quality": "good",
+            "text": "Sada potpuno napusti krilo i sam zatvori prodor jer polubranitelj kasni",
+            "feedback": "Primamljivo jer polubranitelj kasni — ali krivo: preuzimanje nije pozvano, pa njihovo krilo ostaje slobodno."
+          },
+          {
+            "quality": "risky",
+            "text": "Odmah potpuno utrči unutra i ostavi njihovo krilo samo iza sebe",
+            "feedback": "Rizično — kršiš pravilo i poklanjaš dodavanje na krilo."
+          },
+          {
+            "quality": "poor",
+            "text": "Okreni leđa lopti i samo gledaj njihovo krilo uz aut-liniju",
+            "feedback": "Loše — lijevom vanjskom daješ slobodan hod na šest metara."
+          }
+        ],
+        "explanation": "Signal: pravilo ekipe — polubranitelj preuzima igrača s loptom; krilo štiti dodavanje na krilo do preuzimanja. Polubranitelj kasni i nije pozvao. A drži odgovornost za krilo uz kontroliranu pomoć. B izgleda točno jer polubranitelj kasni, ali potpuni odlazak prije preuzimanja oslobađa njihovo krilo. C potpuno napušta krilo; D ignorira loptu.",
+        "whyCorrectOverSecondBest": "A sada prati pravilo: štiti dodavanje na krilo do preuzimanja. B je prerano — potpuno zatvaranje prodora prije preuzimanja oslobađa njihovo krilo."
+      },
+      "en": {
+        "title": "Right Wing — Defence: Protect the Pass to the Wing Until Handover",
+        "situation": "Tied 22:22 at 44'. You defend the right wing in your team’s 6:0. Agreed rule: the half defender takes the ball carrier; the wing defender protects the pass to the wing until there is a clear handover call. Their left back drives into the gap between the half defender and you. Your half defender is one step late and has not called handover. Their left wing stays wide. If you fully leave your wing early to help inside, their left wing receives alone. If you never pressure the drive, the left back walks to six metres.",
+        "question": "Under your team’s rule, what is your responsibility on this drive?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Protect the pass to their wing, show a controlled step inside toward the drive, and wait for the handover call",
+            "feedback": "Correct — under the rule you stay responsible for the wing pass until handover; controlled help can still delay the drive."
+          },
+          {
+            "quality": "good",
+            "text": "Fully leave the wing now and close the drive yourself because the half defender is late",
+            "feedback": "Tempting because the half is late — but wrong: no handover has been called, so their wing becomes free."
+          },
+          {
+            "quality": "risky",
+            "text": "Sprint fully inside immediately and leave their wing alone behind you",
+            "feedback": "Risky — you break the rule and gift the pass to the wing."
+          },
+          {
+            "quality": "poor",
+            "text": "Turn your back to the ball and only watch their wing at the sideline",
+            "feedback": "Poor — you give the left back a free walk to six metres."
+          }
+        ],
+        "explanation": "Cue: team rule — half takes the ball carrier; wing protects the pass to the wing until handover. Half is late and has not called. A keeps wing responsibility with controlled help. B looks right because the half is late, but fully leaving before handover frees their wing. C abandons the wing completely; D ignores the ball.",
+        "whyCorrectOverSecondBest": "A follows the rule now: protect the wing pass until handover. B is premature — fully closing the drive before handover frees their wing."
+      },
+      "de": {
+        "title": "Rechtsaußen — Abwehr: Pass auf den Flügel sichern bis zur Übergabe",
+        "situation": "Unentschieden 22:22 in Minute 44. Du verteidigst Rechtsaußen in eurer 6:0. Vereinbarte Regel: der Halbe übernimmt den Spieler am Ball; der Außenverteidiger sichert den Pass auf den Flügel bis es einen klaren Übergaberuf gibt. Ihr linker Rückraum zieht in die Lücke zwischen Halbem und dir. Dein Halber ist einen Schritt spät und hat die Übergabe nicht gerufen. Ihr Linksaußen bleibt breit. Verlässt du deinen Flügel früh vollständig zur Innenhilfe, fängt ihr Linksaußen allein. Drückst du den Zug nie, geht der linke Rückraum auf sechs Meter.",
+        "question": "Nach eurer Teamregel — was ist deine Verantwortung bei diesem Zug?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Den Pass auf ihren Flügel sichern, einen kontrollierten Innenschritt zum Zug zeigen und auf den Übergaberuf warten",
+            "feedback": "Richtig — nach Regel bleibst du für den Flügelpass verantwortlich bis zur Übergabe; kontrollierte Hilfe kann den Zug trotzdem bremsen."
+          },
+          {
+            "quality": "good",
+            "text": "Den Flügel jetzt vollständig verlassen und den Zug selbst schließen weil der Halbe spät ist",
+            "feedback": "Verlockend weil der Halbe spät ist — aber falsch: keine Übergabe gerufen, also ist ihr Flügel frei."
+          },
+          {
+            "quality": "risky",
+            "text": "Sofort voll nach innen sprinten und ihren Flügel allein hinter dir lassen",
+            "feedback": "Riskant — du brichst die Regel und schenkst den Pass auf den Flügel."
+          },
+          {
+            "quality": "poor",
+            "text": "Dem Ball den Rücken drehen und nur ihren Flügel an der Seitenlinie beobachten",
+            "feedback": "Schlecht — du schenkst dem linken Rückraum den freien Weg auf sechs Meter."
+          }
+        ],
+        "explanation": "Signal: Teamregel — Halber übernimmt den Spieler am Ball; Flügel sichert den Pass bis Übergabe. Halber ist spät und hat nicht gerufen. A hält Flügelverantwortung mit kontrollierter Hilfe. B wirkt richtig weil der Halbe spät ist, aber volles Verlassen vor der Übergabe gibt ihren Flügel frei. C verlässt den Flügel ganz; D ignoriert den Ball.",
+        "whyCorrectOverSecondBest": "A folgt jetzt der Regel: Flügelpass bis Übergabe sichern. B ist verfrüht — den Zug vor der Übergabe voll schließen gibt ihren Flügel frei."
+      }
+    },
+    {
+      "slot": "transition defence",
+      "id": "scn_bank_929",
+      "familyKey": "rw_def_close_transition_lane",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "perception": true,
+      "handedness": "none",
+      "hr": {
+        "title": "Desno krilo — obrana: zatvori koridor u tranziciji",
+        "situation": "Neriješeno je 17:17 u 33. minuti. Pri 17:17 nakon tvog gubitka lopte ti si desni branič u 3 na 2. Njihov srednji igrač vodi loptu kroz sredinu, lijevo krilo je široko nasuprot, a njihovo desno krilo sprinta uz tvoju aut-liniju. Dva si koraka od izravne linije dodavanja tom desnom krilu; ako juriš igrača s loptom, ostavljaš liniju otvorenom.",
+        "question": "Koji je tvoj prvi obrambeni zadatak?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Spusti se u izravnu liniju dodavanja njihovom desnom krilu i natjeraj igrača s loptom na kasniju odluku",
+            "feedback": "Točno — prvo oduzmi trenutačni široki završetak."
+          },
+          {
+            "quality": "good",
+            "text": "Izađi na loptu tek kad suigrač pokrije dodavanje na krilo",
+            "feedback": "Dobra druga akcija; linija prema krilu sada je tvoja."
+          },
+          {
+            "quality": "risky",
+            "text": "Odmah sprintaj ravno na igrača s loptom",
+            "feedback": "Rizično — doda pored tebe slobodnom krilu."
+          },
+          {
+            "quality": "poor",
+            "text": "Stani na devet metara i pokaži nekome drugome da trči",
+            "feedback": "Loše — prvi val dolazi do tvog krila bez otpora."
+          }
+        ],
+        "explanation": "U ovom 3 na 2 trenutačna opasnost je izravno dodavanje tvojom stranom. Prvo ga zatvori; pritisak na loptu dolazi kad je dodavanje pokriveno.",
+        "whyCorrectOverSecondBest": "A oduzima dodavanje dostupno sada; B vrijedi tek kad je ta linija pokrivena."
+      },
+      "en": {
+        "title": "Right Wing — Defence: Close the Transition Lane",
+        "situation": "Tied 17:17 at 33'. At 17:17 after your turnover, you are the right-side defender in a 3v2. Their centre runner carries centrally, their left wing is wide opposite, and their right wing sprints down your sideline. You are two steps from the direct pass lane to that right wing; chasing the ball carrier would leave the lane open.",
+        "question": "What is your first defensive job?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "Drop into the direct pass lane to their right wing and force the ball carrier to decide later",
+            "feedback": "Correct — remove the immediate wide finish first."
+          },
+          {
+            "quality": "good",
+            "text": "Step to the ball only after the wing pass is covered by a teammate",
+            "feedback": "Good second action; the wing lane is yours now."
+          },
+          {
+            "quality": "risky",
+            "text": "Sprint straight at the ball carrier immediately",
+            "feedback": "Risky — he passes around you to the free wing."
+          },
+          {
+            "quality": "poor",
+            "text": "Stop at nine metres and point for someone else to run",
+            "feedback": "Poor — the first wave reaches your wing unchallenged."
+          }
+        ],
+        "explanation": "In this 3v2, the immediate danger is the direct pass down your side. Close it first; pressure on the ball follows when the pass is covered.",
+        "whyCorrectOverSecondBest": "A removes the pass available now; B is correct only after that lane is covered."
+      },
+      "de": {
+        "title": "Rechtsaußen — Abwehr: Übergangsbahn schließen",
+        "situation": "Unentschieden 17:17 in Minute 33. Bei 17:17 nach eurem Ballverlust bist du der rechte Verteidiger im 3 gegen 2. Ihr zentraler Läufer führt den Ball, Linksaußen bleibt gegenüber breit und Rechtsaußen sprintet an deiner Seitenlinie. Du bist zwei Schritte von der direkten Passlinie zu Rechtsaußen; jagst du den Ballführer, bleibt sie offen.",
+        "question": "Was ist deine erste Abwehraufgabe?",
+        "answers": [
+          {
+            "quality": "optimal",
+            "text": "In die direkte Passlinie zu ihrem Rechtsaußen fallen und den Ballführer später entscheiden lassen",
+            "feedback": "Richtig — zuerst den sofortigen breiten Abschluss wegnehmen."
+          },
+          {
+            "quality": "good",
+            "text": "Erst zum Ball treten wenn ein Mitspieler den Flügelpass deckt",
+            "feedback": "Gute zweite Aktion; die Flügelbahn ist jetzt deine."
+          },
+          {
+            "quality": "risky",
+            "text": "Sofort gerade auf den Ballführer sprinten",
+            "feedback": "Riskant — er spielt um dich zum freien Flügel."
+          },
+          {
+            "quality": "poor",
+            "text": "Auf neun Metern stehen bleiben und jemand anderen zum Laufen auffordern",
+            "feedback": "Schlecht — die erste Welle erreicht deinen Flügel ungehindert."
+          }
+        ],
+        "explanation": "In diesem 3 gegen 2 ist der direkte Pass auf deiner Seite die sofortige Gefahr. Erst schließen; Ball Druck erst wenn der Pass gedeckt ist.",
+        "whyCorrectOverSecondBest": "A nimmt den Pass weg der jetzt da ist; B gilt erst wenn diese Bahn gedeckt ist."
+      }
+    }
+  ]
+}

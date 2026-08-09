@@ -3,35 +3,31 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, FileText, CheckCircle2, Archive, PlusCircle,
-  Download, Upload, BarChart3, Layers, TrendingUp, AlertTriangle,
-  LogOut, ChevronRight, Clock,
+  FileText, CheckCircle2, Archive, PlusCircle, Download, Upload, BarChart3, Layers, TrendingUp, AlertTriangle, LogOut, ChevronRight, Clock
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
-import { getContentStats, isAdminLoggedIn, logoutAdmin, AdminScenario } from '@/lib/admin-storage';
+import { BackButton } from '@/components/BackButton';
+import { getContentStats, AdminScenario } from '@/lib/admin-storage';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translatePosition, translateDifficulty } from '@/lib/translations';
+import { translatePosition, translateDifficulty, translateCategory } from '@/lib/translations';
+import { useSignOut } from '@/hooks/useSignOut';
 
 export default function AdminDashboardScreen() {
   const { t } = useTranslation();
+  const signOut = useSignOut();
   const [stats, setStats] = useState<ReturnType<typeof getContentStats> | null>(null);
 
   useFocusEffect(() => {
-    if (!isAdminLoggedIn()) {
-      router.replace('/admin/login');
-      return;
-    }
     setStats(getContentStats());
   });
 
   if (!stats) return null;
 
   const handleLogout = () => {
-    logoutAdmin();
-    router.replace('/admin/login');
+    signOut();
   };
 
   const handleExport = () => {
@@ -44,9 +40,7 @@ export default function AdminDashboardScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <Animated.View entering={FadeIn.duration(500)} style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('admin.dashboardTitle')}</Text>
             <Text style={styles.headerSub}>{t('admin.dashboardSub')}</Text>
@@ -195,7 +189,7 @@ function RecentRow({ scenario, isLast }: { scenario: AdminScenario; isLast: bool
     >
       <View style={{ flex: 1 }}>
         <Text style={styles.recentTitle} numberOfLines={1}>{scenario.title}</Text>
-        <Text style={styles.recentMeta}>{translatePosition(scenario.position, t)} · {scenario.category} · {date}</Text>
+        <Text style={styles.recentMeta}>{translatePosition(scenario.position, t)} · {translateCategory(scenario.category, t)} · {date}</Text>
       </View>
       <ChevronRight size={18} color={Colors.textQuaternary} />
     </TouchableOpacity>
@@ -205,7 +199,6 @@ function RecentRow({ scenario, isLast }: { scenario: AdminScenario; isLast: bool
 const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.xl },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 24, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
   logoutBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.errorSoft, justifyContent: 'center', alignItems: 'center' },

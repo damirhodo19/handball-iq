@@ -1,0 +1,1562 @@
+{
+  "auditedAt": "2026-08-09T17:58:46.122Z",
+  "position": "Centre Back",
+  "totalCount": 45,
+  "trueUniqueFamilies": 12,
+  "cloneFamilies": [
+    {
+      "familyId": "centre back - basic ball shift vs 6:0",
+      "ids": [
+        "scn_bank_202",
+        "scn_bank_214",
+        "scn_bank_226"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - choosing the open side",
+      "ids": [
+        "scn_bank_203",
+        "scn_bank_215",
+        "scn_bank_227"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - organising tempo vs compact 6:0",
+      "ids": [
+        "scn_bank_204",
+        "scn_bank_216",
+        "scn_bank_228"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - building the pivot connection",
+      "ids": [
+        "scn_bank_205",
+        "scn_bank_217",
+        "scn_bank_229"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - tempo when protecting a lead",
+      "ids": [
+        "scn_bank_206",
+        "scn_bank_218",
+        "scn_bank_230",
+        "scn_bank_242",
+        "scn_bank_254"
+      ],
+      "count": 5
+    },
+    {
+      "familyId": "centre back - breaking the 5:1 front press",
+      "ids": [
+        "scn_bank_207",
+        "scn_bank_219",
+        "scn_bank_231",
+        "scn_bank_243",
+        "scn_bank_255"
+      ],
+      "count": 5
+    },
+    {
+      "familyId": "centre back - finding the weak line in 3:2:1",
+      "ids": [
+        "scn_bank_208",
+        "scn_bank_220",
+        "scn_bank_232",
+        "scn_bank_244",
+        "scn_bank_256"
+      ],
+      "count": 5
+    },
+    {
+      "familyId": "centre back - directing the 6-on-5",
+      "ids": [
+        "scn_bank_209",
+        "scn_bank_221",
+        "scn_bank_233"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - organising transition defence",
+      "ids": [
+        "scn_bank_210",
+        "scn_bank_222",
+        "scn_bank_234",
+        "scn_bank_246",
+        "scn_bank_258"
+      ],
+      "count": 5
+    },
+    {
+      "familyId": "centre back - timing the back-screen set",
+      "ids": [
+        "scn_bank_211",
+        "scn_bank_223",
+        "scn_bank_235"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - final possession execution",
+      "ids": [
+        "scn_bank_212",
+        "scn_bank_224",
+        "scn_bank_236"
+      ],
+      "count": 3
+    },
+    {
+      "familyId": "centre back - calm direction when trailing",
+      "ids": [
+        "scn_bank_213",
+        "scn_bank_225",
+        "scn_bank_237",
+        "scn_bank_249"
+      ],
+      "count": 4
+    }
+  ],
+  "cloneFamilyCount": 12,
+  "exactDuplicates": [],
+  "exactDuplicateCount": 0,
+  "semanticDuplicates": [
+    {
+      "semanticKey": "centre back tempo when protecting a lead",
+      "items": [
+        {
+          "id": "scn_bank_206",
+          "title": "Centre Back — Tempo When Protecting a Lead"
+        },
+        {
+          "id": "scn_bank_218",
+          "title": "Centre Back — Tempo When Protecting a Lead"
+        },
+        {
+          "id": "scn_bank_230",
+          "title": "Centre Back — Tempo When Protecting a Lead"
+        },
+        {
+          "id": "scn_bank_242",
+          "title": "Centre Back — Tempo When Protecting a Lead"
+        },
+        {
+          "id": "scn_bank_254",
+          "title": "Centre Back — Tempo When Protecting a Lead"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back breaking the front press",
+      "items": [
+        {
+          "id": "scn_bank_207",
+          "title": "Centre Back — Breaking the 5:1 Front Press"
+        },
+        {
+          "id": "scn_bank_219",
+          "title": "Centre Back — Breaking the 5:1 Front Press"
+        },
+        {
+          "id": "scn_bank_231",
+          "title": "Centre Back — Breaking the 5:1 Front Press"
+        },
+        {
+          "id": "scn_bank_243",
+          "title": "Centre Back — Breaking the 5:1 Front Press"
+        },
+        {
+          "id": "scn_bank_255",
+          "title": "Centre Back — Breaking the 5:1 Front Press"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back finding the weak line in",
+      "items": [
+        {
+          "id": "scn_bank_208",
+          "title": "Centre Back — Finding the Weak Line in 3:2:1"
+        },
+        {
+          "id": "scn_bank_220",
+          "title": "Centre Back — Finding the Weak Line in 3:2:1"
+        },
+        {
+          "id": "scn_bank_232",
+          "title": "Centre Back — Finding the Weak Line in 3:2:1"
+        },
+        {
+          "id": "scn_bank_244",
+          "title": "Centre Back — Finding the Weak Line in 3:2:1"
+        },
+        {
+          "id": "scn_bank_256",
+          "title": "Centre Back — Finding the Weak Line in 3:2:1"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back organising transition defence",
+      "items": [
+        {
+          "id": "scn_bank_210",
+          "title": "Centre Back — Organising Transition Defence"
+        },
+        {
+          "id": "scn_bank_222",
+          "title": "Centre Back — Organising Transition Defence"
+        },
+        {
+          "id": "scn_bank_234",
+          "title": "Centre Back — Organising Transition Defence"
+        },
+        {
+          "id": "scn_bank_246",
+          "title": "Centre Back — Organising Transition Defence"
+        },
+        {
+          "id": "scn_bank_258",
+          "title": "Centre Back — Organising Transition Defence"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back calm direction when trailing",
+      "items": [
+        {
+          "id": "scn_bank_213",
+          "title": "Centre Back — Calm Direction When Trailing"
+        },
+        {
+          "id": "scn_bank_225",
+          "title": "Centre Back — Calm Direction When Trailing"
+        },
+        {
+          "id": "scn_bank_237",
+          "title": "Centre Back — Calm Direction When Trailing"
+        },
+        {
+          "id": "scn_bank_249",
+          "title": "Centre Back — Calm Direction When Trailing"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back basic ball shift",
+      "items": [
+        {
+          "id": "scn_bank_202",
+          "title": "Centre Back — Basic Ball Shift vs 6:0"
+        },
+        {
+          "id": "scn_bank_214",
+          "title": "Centre Back — Basic Ball Shift vs 6:0"
+        },
+        {
+          "id": "scn_bank_226",
+          "title": "Centre Back — Basic Ball Shift vs 6:0"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back choosing the open side",
+      "items": [
+        {
+          "id": "scn_bank_203",
+          "title": "Centre Back — Choosing the Open Side"
+        },
+        {
+          "id": "scn_bank_215",
+          "title": "Centre Back — Choosing the Open Side"
+        },
+        {
+          "id": "scn_bank_227",
+          "title": "Centre Back — Choosing the Open Side"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back organising tempo compact",
+      "items": [
+        {
+          "id": "scn_bank_204",
+          "title": "Centre Back — Organising Tempo vs Compact 6:0"
+        },
+        {
+          "id": "scn_bank_216",
+          "title": "Centre Back — Organising Tempo vs Compact 6:0"
+        },
+        {
+          "id": "scn_bank_228",
+          "title": "Centre Back — Organising Tempo vs Compact 6:0"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back building the pivot connection",
+      "items": [
+        {
+          "id": "scn_bank_205",
+          "title": "Centre Back — Building the Pivot Connection"
+        },
+        {
+          "id": "scn_bank_217",
+          "title": "Centre Back — Building the Pivot Connection"
+        },
+        {
+          "id": "scn_bank_229",
+          "title": "Centre Back — Building the Pivot Connection"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back directing the 6 on 5",
+      "items": [
+        {
+          "id": "scn_bank_209",
+          "title": "Centre Back — Directing the 6-on-5"
+        },
+        {
+          "id": "scn_bank_221",
+          "title": "Centre Back — Directing the 6-on-5"
+        },
+        {
+          "id": "scn_bank_233",
+          "title": "Centre Back — Directing the 6-on-5"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back timing the back screen set",
+      "items": [
+        {
+          "id": "scn_bank_211",
+          "title": "Centre Back — Timing the Back-Screen Set"
+        },
+        {
+          "id": "scn_bank_223",
+          "title": "Centre Back — Timing the Back-Screen Set"
+        },
+        {
+          "id": "scn_bank_235",
+          "title": "Centre Back — Timing the Back-Screen Set"
+        }
+      ]
+    },
+    {
+      "semanticKey": "centre back final possession execution",
+      "items": [
+        {
+          "id": "scn_bank_212",
+          "title": "Centre Back — Final Possession Execution"
+        },
+        {
+          "id": "scn_bank_224",
+          "title": "Centre Back — Final Possession Execution"
+        },
+        {
+          "id": "scn_bank_236",
+          "title": "Centre Back — Final Possession Execution"
+        }
+      ]
+    }
+  ],
+  "semanticDuplicateClusterCount": 12,
+  "attackCount": 40,
+  "defenceCount": 5,
+  "defencePct": 11.1,
+  "difficulty": {
+    "Beginner": 6,
+    "Intermediate": 11,
+    "Advanced": 21,
+    "Expert": 7
+  },
+  "perception": {
+    "count": 0,
+    "pct": 0,
+    "method": "RB validator perception regex on question.hr OR skillTags includes perception",
+    "ids": []
+  },
+  "defensiveSystemCoverage": {
+    "present": [
+      "6:0",
+      "5:1",
+      "3:2:1"
+    ],
+    "missing": [
+      "3:3",
+      "4:2",
+      "1:5",
+      "5+1",
+      "4+2",
+      "open/individual"
+    ],
+    "detail": {
+      "6:0": {
+        "present": true,
+        "count": 9,
+        "sampleIds": [
+          "scn_bank_202",
+          "scn_bank_204",
+          "scn_bank_209",
+          "scn_bank_214",
+          "scn_bank_216"
+        ]
+      },
+      "5:1": {
+        "present": true,
+        "count": 5,
+        "sampleIds": [
+          "scn_bank_207",
+          "scn_bank_219",
+          "scn_bank_231",
+          "scn_bank_243",
+          "scn_bank_255"
+        ]
+      },
+      "3:2:1": {
+        "present": true,
+        "count": 5,
+        "sampleIds": [
+          "scn_bank_208",
+          "scn_bank_220",
+          "scn_bank_232",
+          "scn_bank_244",
+          "scn_bank_256"
+        ]
+      },
+      "3:3": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      },
+      "4:2": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      },
+      "1:5": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      },
+      "5+1": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      },
+      "4+2": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      },
+      "open/individual": {
+        "present": false,
+        "count": 0,
+        "sampleIds": []
+      }
+    }
+  },
+  "numericalSituationCoverage": {
+    "6v5": {
+      "present": true,
+      "count": 3,
+      "sampleIds": [
+        "scn_bank_209",
+        "scn_bank_221",
+        "scn_bank_233"
+      ]
+    },
+    "5v6": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "7v6": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "empty_goal": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "second_pivot": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "two_pivots": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    }
+  },
+  "transitionCoverage": {
+    "transition_attack": {
+      "present": true,
+      "count": 10,
+      "sampleIds": [
+        "scn_bank_206",
+        "scn_bank_210",
+        "scn_bank_218",
+        "scn_bank_222",
+        "scn_bank_230"
+      ]
+    },
+    "transition_defence": {
+      "present": true,
+      "count": 13,
+      "sampleIds": [
+        "scn_bank_207",
+        "scn_bank_209",
+        "scn_bank_210",
+        "scn_bank_219",
+        "scn_bank_221"
+      ]
+    }
+  },
+  "gameStateCoverage": {
+    "lead_late": {
+      "present": true,
+      "count": 16,
+      "sampleIds": [
+        "scn_bank_206",
+        "scn_bank_207",
+        "scn_bank_213",
+        "scn_bank_218",
+        "scn_bank_219"
+      ]
+    },
+    "trail_late": {
+      "present": true,
+      "count": 15,
+      "sampleIds": [
+        "scn_bank_203",
+        "scn_bank_210",
+        "scn_bank_212",
+        "scn_bank_213",
+        "scn_bank_215"
+      ]
+    },
+    "tie_late": {
+      "present": true,
+      "count": 3,
+      "sampleIds": [
+        "scn_bank_203",
+        "scn_bank_215",
+        "scn_bank_227"
+      ]
+    },
+    "passive": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "seconds_remaining": {
+      "present": true,
+      "count": 6,
+      "sampleIds": [
+        "scn_bank_204",
+        "scn_bank_212",
+        "scn_bank_216",
+        "scn_bank_224",
+        "scn_bank_228"
+      ]
+    }
+  },
+  "themeCoverage": {
+    "pivot_cooperation": {
+      "present": true,
+      "count": 20,
+      "sampleIds": [
+        "scn_bank_202",
+        "scn_bank_203",
+        "scn_bank_204",
+        "scn_bank_205",
+        "scn_bank_208"
+      ]
+    },
+    "wing_cooperation": {
+      "present": true,
+      "count": 24,
+      "sampleIds": [
+        "scn_bank_202",
+        "scn_bank_203",
+        "scn_bank_204",
+        "scn_bank_207",
+        "scn_bank_208"
+      ]
+    },
+    "crossing_or_parallel": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "7v6": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "passive": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    },
+    "end_game": {
+      "present": true,
+      "count": 6,
+      "sampleIds": [
+        "scn_bank_204",
+        "scn_bank_212",
+        "scn_bank_216",
+        "scn_bank_224",
+        "scn_bank_228"
+      ]
+    },
+    "gk_reading": {
+      "present": false,
+      "count": 0,
+      "sampleIds": []
+    }
+  },
+  "hrTerminologyProblems": {
+    "scenariosWithIssues": 45,
+    "sample": [
+      {
+        "id": "scn_bank_202",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "titleHr": "srednji vanjski — Osnovna promjena lopte protiv 6:0",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "Primate"
+          },
+          {
+            "type": "vi_form",
+            "match": "Primate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Osnovna promjena lopte protiv 6:0"
+          },
+          {
+            "type": "mt_smell",
+            "match": "Osnovna promjena"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_203",
+        "titleEn": "Centre Back — Choosing the Open Side",
+        "titleHr": "Središnja stražnja strana — odabir otvorene strane",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_204",
+        "titleEn": "Centre Back — Organising Tempo vs Compact 6:0",
+        "titleHr": "srednji vanjski — Organiziranje Tempa protiv Compacta 6:0",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Organiziranje Tempa protiv Compacta 6:0"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_205",
+        "titleEn": "Centre Back — Building the Pivot Connection",
+        "titleHr": "Središnja stražnja strana — izgradnja zakretne veze",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "feed"
+          },
+          {
+            "type": "vi_form",
+            "match": "Imate"
+          },
+          {
+            "type": "raw_en_in_hr",
+            "match": "feed"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_206",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "titleHr": "Srednji vanjski — Tempo kada štiti vodstvo",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_207",
+        "titleEn": "Centre Back — Breaking the 5:1 Front Press",
+        "titleHr": "Srednji vanjski — Razbijanje 5:1 prednjeg tiska",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "hvatate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_208",
+        "titleEn": "Centre Back — Finding the Weak Line in 3:2:1",
+        "titleHr": "srednji vanjski — Pronalaženje slabe linije u 3:2:1",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Pronalaženje slabe linije u 3:2:1"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_209",
+        "titleEn": "Centre Back — Directing the 6-on-5",
+        "titleHr": "srednji vanjski — vođenje igre 6 na 5",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — vođenje igre 6 na 5"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_210",
+        "titleEn": "Centre Back — Organising Transition Defence",
+        "titleHr": "srednji vanjski — Organiziranje prijelazne obrane",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Organiziranje prijelazne obrane"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_211",
+        "titleEn": "Centre Back — Timing the Back-Screen Set",
+        "titleHr": "Središnja stražnja strana — mjerenje vremena postavljanja stražnjeg bloka",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_212",
+        "titleEn": "Centre Back — Final Possession Execution",
+        "titleHr": "srednji vanjski — izvođenje konačnog posjeda",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "zujalic"
+          },
+          {
+            "type": "vi_form",
+            "match": "Imate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — izvođenje konačnog posjeda"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_213",
+        "titleEn": "Centre Back — Calm Direction When Trailing",
+        "titleHr": "srednji vanjski dio — smiren smjer pri zaostajanju",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski dio — smiren smjer pri zaostajanju"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_214",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "titleHr": "srednji vanjski — Osnovna promjena lopte protiv 6:0",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "Primate"
+          },
+          {
+            "type": "vi_form",
+            "match": "Primate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Osnovna promjena lopte protiv 6:0"
+          },
+          {
+            "type": "mt_smell",
+            "match": "Osnovna promjena"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_215",
+        "titleEn": "Centre Back — Choosing the Open Side",
+        "titleHr": "Središnja stražnja strana — odabir otvorene strane",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_216",
+        "titleEn": "Centre Back — Organising Tempo vs Compact 6:0",
+        "titleHr": "srednji vanjski — Organiziranje Tempa protiv Compacta 6:0",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Organiziranje Tempa protiv Compacta 6:0"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_217",
+        "titleEn": "Centre Back — Building the Pivot Connection",
+        "titleHr": "Središnja stražnja strana — izgradnja zakretne veze",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "feed"
+          },
+          {
+            "type": "vi_form",
+            "match": "Imate"
+          },
+          {
+            "type": "raw_en_in_hr",
+            "match": "feed"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_218",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "titleHr": "Srednji vanjski — Tempo kada štiti vodstvo",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_219",
+        "titleEn": "Centre Back — Breaking the 5:1 Front Press",
+        "titleHr": "Srednji vanjski — Razbijanje 5:1 prednjeg tiska",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "hvatate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_220",
+        "titleEn": "Centre Back — Finding the Weak Line in 3:2:1",
+        "titleHr": "srednji vanjski — Pronalaženje slabe linije u 3:2:1",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Pronalaženje slabe linije u 3:2:1"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_221",
+        "titleEn": "Centre Back — Directing the 6-on-5",
+        "titleHr": "srednji vanjski — vođenje igre 6 na 5",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "centaršut"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — vođenje igre 6 na 5"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_222",
+        "titleEn": "Centre Back — Organising Transition Defence",
+        "titleHr": "srednji vanjski — Organiziranje prijelazne obrane",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Organiziranje prijelazne obrane"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_223",
+        "titleEn": "Centre Back — Timing the Back-Screen Set",
+        "titleHr": "Središnja stražnja strana — mjerenje vremena postavljanja stražnjeg bloka",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_224",
+        "titleEn": "Centre Back — Final Possession Execution",
+        "titleHr": "srednji vanjski — izvođenje konačnog posjeda",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "zujalic"
+          },
+          {
+            "type": "vi_form",
+            "match": "Imate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — izvođenje konačnog posjeda"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_225",
+        "titleEn": "Centre Back — Calm Direction When Trailing",
+        "titleHr": "srednji vanjski dio — smiren smjer pri zaostajanju",
+        "issues": [
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski dio — smiren smjer pri zaostajanju"
+          }
+        ]
+      },
+      {
+        "id": "scn_bank_226",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "titleHr": "srednji vanjski — Osnovna promjena lopte protiv 6:0",
+        "issues": [
+          {
+            "type": "forbidden_hr",
+            "match": "Primate"
+          },
+          {
+            "type": "vi_form",
+            "match": "Primate"
+          },
+          {
+            "type": "football_de_title",
+            "match": "Innenverteidiger"
+          },
+          {
+            "type": "hr_title_lowercase_start",
+            "match": "srednji vanjski — Osnovna promjena lopte protiv 6:0"
+          },
+          {
+            "type": "mt_smell",
+            "match": "Osnovna promjena"
+          },
+          {
+            "type": "ti_vi_mix",
+            "match": "both ti and vi forms"
+          }
+        ]
+      }
+    ],
+    "allIssueCounts": {
+      "forbidden_hr": 25,
+      "vi_form": 9,
+      "football_de_title": 45,
+      "hr_title_lowercase_start": 26,
+      "mt_smell": 3,
+      "ti_vi_mix": 9,
+      "raw_en_in_hr": 3
+    },
+    "illustrativeExcerpts": [
+      {
+        "id": "scn_bank_203",
+        "problem": "Football CB calque in HR title",
+        "text": "Središnja stražnja strana — odabir otvorene strane (should be srednji vanjski)"
+      },
+      {
+        "id": "scn_bank_205",
+        "problem": "MT garbage + forbidden seal/feed terms",
+        "text": "title: izgradnja zakretne veze; Q: Kako stvarate čistu hranu u brtvilu?; sit: pivot brtvi… kao playmakera"
+      },
+      {
+        "id": "scn_bank_207",
+        "problem": "tisak/press calque + vi-form hvatate",
+        "text": "Razbijanje 5:1 prednjeg tiska; Njihov prednji branič napada vas dok hvatate vrh"
+      },
+      {
+        "id": "scn_bank_209",
+        "problem": "Football/MT: hitac, zakretne brtve, kratkim rukama",
+        "text": "Kako brojčanu prednost pretvoriti u hitac?; Jedan branič s kratkim rukama…; zakretne brtve lijevo od sredine"
+      },
+      {
+        "id": "scn_bank_210",
+        "problem": "vi-forms throughout defence family",
+        "text": "Vi ste najdublji igrač… Vaši suigrači… (should be ti/coach register)"
+      },
+      {
+        "id": "scn_bank_211",
+        "problem": "MT: stražnji dio / help slides",
+        "text": "oslobođeni stražnji dio ima prozor… prije slajdova za pomoć"
+      },
+      {
+        "id": "scn_bank_212",
+        "problem": "MT: poleđina for backcourt player",
+        "text": "Jedna poleđina ima razmak koji se može igrati"
+      },
+      {
+        "id": "scn_bank_202",
+        "problem": "DE football position + HR ti/vi mix",
+        "text": "DE title Innenverteidiger; HR: Primate… čeka tvoju prvu akciju"
+      },
+      {
+        "id": "scn_bank_204",
+        "problem": "Untranslated English Compacta",
+        "text": "Organiziranje Tempa protiv Compacta 6:0"
+      },
+      {
+        "id": "scn_bank_213",
+        "problem": "Odd HR title + mixed address",
+        "text": "srednji vanjski dio — smiren smjer; Suigrači očekuju od vas…"
+      }
+    ]
+  },
+  "weakAnswerOrAmbiguousSamples": {
+    "scenariosFlagged": 20,
+    "heuristicSample": [
+      {
+        "id": "scn_bank_202",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "questionEn": "What is your first job before forcing a shot?",
+        "optimalEn": "Shift the ball once to move the block, then attack the gap or feed",
+        "goodEn": "Threaten a drive first to freeze the centre, then shift the ball",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue"
+        ]
+      },
+      {
+        "id": "scn_bank_206",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "questionEn": "How do you set tempo while still threatening to score?",
+        "optimalEn": "Structured build-up, use the clock, attack only on clear gaps",
+        "goodEn": "One quick attack if a clear break opens, otherwise rebuild",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_210",
+        "titleEn": "Centre Back — Organising Transition Defence",
+        "questionEn": "What is your first responsibility in this break?",
+        "optimalEn": "Delay centrally and direct wing coverage with clear communication",
+        "goodEn": "Sprint to cut the far-wing skip first, then recover to the middle",
+        "notes": [
+          "cartoon/weak distractor (poor): Stop to protest the turnover before recovering goal-side"
+        ]
+      },
+      {
+        "id": "scn_bank_212",
+        "titleEn": "Centre Back — Final Possession Execution",
+        "questionEn": "What is the right final-possession standard here?",
+        "optimalEn": "Take the best available system shot before the clock expires",
+        "goodEn": "One decisive pass to the open back, then they finish inside the clock",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_213",
+        "titleEn": "Centre Back — Calm Direction When Trailing",
+        "questionEn": "How do you lead the next attack without turning it into panic?",
+        "optimalEn": "Stay calm, call one clear structure, take calculated risks inside it",
+        "goodEn": "Speed up ball movement inside the same structure to create earlier gaps",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_214",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "questionEn": "What is your first job before forcing a shot?",
+        "optimalEn": "Shift the ball once to move the block, then attack the gap or feed",
+        "goodEn": "Threaten a drive first to freeze the centre, then shift the ball",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue"
+        ]
+      },
+      {
+        "id": "scn_bank_218",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "questionEn": "How do you set tempo while still threatening to score?",
+        "optimalEn": "Structured build-up, use the clock, attack only on clear gaps",
+        "goodEn": "One quick attack if a clear break opens, otherwise rebuild",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_222",
+        "titleEn": "Centre Back — Organising Transition Defence",
+        "questionEn": "What is your first responsibility in this break?",
+        "optimalEn": "Delay centrally and direct wing coverage with clear communication",
+        "goodEn": "Sprint to cut the far-wing skip first, then recover to the middle",
+        "notes": [
+          "cartoon/weak distractor (poor): Stop to protest the turnover before recovering goal-side"
+        ]
+      },
+      {
+        "id": "scn_bank_224",
+        "titleEn": "Centre Back — Final Possession Execution",
+        "questionEn": "What is the right final-possession standard here?",
+        "optimalEn": "Take the best available system shot before the clock expires",
+        "goodEn": "One decisive pass to the open back, then they finish inside the clock",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_225",
+        "titleEn": "Centre Back — Calm Direction When Trailing",
+        "questionEn": "How do you lead the next attack without turning it into panic?",
+        "optimalEn": "Stay calm, call one clear structure, take calculated risks inside it",
+        "goodEn": "Speed up ball movement inside the same structure to create earlier gaps",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      },
+      {
+        "id": "scn_bank_226",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "questionEn": "What is your first job before forcing a shot?",
+        "optimalEn": "Shift the ball once to move the block, then attack the gap or feed",
+        "goodEn": "Threaten a drive first to freeze the centre, then shift the ball",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue"
+        ]
+      },
+      {
+        "id": "scn_bank_230",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "questionEn": "How do you set tempo while still threatening to score?",
+        "optimalEn": "Structured build-up, use the clock, attack only on clear gaps",
+        "goodEn": "One quick attack if a clear break opens, otherwise rebuild",
+        "notes": [
+          "optimal and good both plausible system answers — thin single-best cue",
+          "vague/coaching-platitude optimal — weak cue specificity"
+        ]
+      }
+    ],
+    "qualitativeSample": [
+      {
+        "id": "scn_bank_202",
+        "titleEn": "Centre Back — Basic Ball Shift vs 6:0",
+        "issue": "Optimal (\"Shift the ball once…\") and good (\"Threaten a drive first… then shift\") are both correct CB habits; situation lacks a cue that uniquely ranks one above the other."
+      },
+      {
+        "id": "scn_bank_205",
+        "titleEn": "Centre Back — Building the Pivot Connection",
+        "issue": "Good (\"Shoot if the fake makes both half-backs drop\") can be equally correct when the cue is only \"narrow lane into the seal\"; no half-step timing cue forces pass-first."
+      },
+      {
+        "id": "scn_bank_206",
+        "titleEn": "Centre Back — Tempo When Protecting a Lead",
+        "issue": "Optimal and good are both tempo-control coaching advice; \"clear gaps\" vs \"clear break\" are nearly interchangeable without a concrete read."
+      },
+      {
+        "id": "scn_bank_212",
+        "titleEn": "Centre Back — Final Possession Execution",
+        "issue": "Optimal (take best system shot) vs good (one decisive pass then finish) are both correct final-possession standards; situation says both a playable gap AND eight seconds — either can be right."
+      },
+      {
+        "id": "scn_bank_213",
+        "titleEn": "Centre Back — Calm Direction When Trailing",
+        "issue": "Optimal is a pure coaching platitude (\"Stay calm, call one clear structure…\") with no tactical cue; good is a more specific tempo choice and may be stronger."
+      },
+      {
+        "id": "scn_bank_210",
+        "titleEn": "Centre Back — Organising Transition Defence",
+        "issue": "Poor (\"Stop to protest the turnover…\") is a cartoon distractor; optimal vs good (delay centre vs cut far-wing skip) both viable without a clearer first-threat cue."
+      }
+    ]
+  },
+  "coverageNotes": {
+    "5v6": "False positive risk: \"short-handed defender\" in 6-on-5 family. Corrected regex treats true 5v6 as missing.",
+    "open/individual": "Earlier \"otvoren\" hits were \"otvorene strane\" (open side), not open/individual defence. Corrected to missing.",
+    "passive": "Earlier hits were \"pasivna držanja\" / \"passive holds\" in poor-answer feedback, not the passive-play rule. Corrected to missing.",
+    "gk_reading": "Tightened away from generic \"blok/block\" (screens). Remaining hits require GK/vratar language."
+  },
+  "qualityScoreDistribution": {
+    "note": "Stored qualityScore field — NOT trusted; often inflated vs Rubric 2.0",
+    "buckets": {
+      "9": 45
+    },
+    "min": 9,
+    "max": 9,
+    "avg": 9
+  },
+  "allTitles": [
+    {
+      "id": "scn_bank_202",
+      "titleEn": "Centre Back — Basic Ball Shift vs 6:0"
+    },
+    {
+      "id": "scn_bank_203",
+      "titleEn": "Centre Back — Choosing the Open Side"
+    },
+    {
+      "id": "scn_bank_204",
+      "titleEn": "Centre Back — Organising Tempo vs Compact 6:0"
+    },
+    {
+      "id": "scn_bank_205",
+      "titleEn": "Centre Back — Building the Pivot Connection"
+    },
+    {
+      "id": "scn_bank_206",
+      "titleEn": "Centre Back — Tempo When Protecting a Lead"
+    },
+    {
+      "id": "scn_bank_207",
+      "titleEn": "Centre Back — Breaking the 5:1 Front Press"
+    },
+    {
+      "id": "scn_bank_208",
+      "titleEn": "Centre Back — Finding the Weak Line in 3:2:1"
+    },
+    {
+      "id": "scn_bank_209",
+      "titleEn": "Centre Back — Directing the 6-on-5"
+    },
+    {
+      "id": "scn_bank_210",
+      "titleEn": "Centre Back — Organising Transition Defence"
+    },
+    {
+      "id": "scn_bank_211",
+      "titleEn": "Centre Back — Timing the Back-Screen Set"
+    },
+    {
+      "id": "scn_bank_212",
+      "titleEn": "Centre Back — Final Possession Execution"
+    },
+    {
+      "id": "scn_bank_213",
+      "titleEn": "Centre Back — Calm Direction When Trailing"
+    },
+    {
+      "id": "scn_bank_214",
+      "titleEn": "Centre Back — Basic Ball Shift vs 6:0"
+    },
+    {
+      "id": "scn_bank_215",
+      "titleEn": "Centre Back — Choosing the Open Side"
+    },
+    {
+      "id": "scn_bank_216",
+      "titleEn": "Centre Back — Organising Tempo vs Compact 6:0"
+    },
+    {
+      "id": "scn_bank_217",
+      "titleEn": "Centre Back — Building the Pivot Connection"
+    },
+    {
+      "id": "scn_bank_218",
+      "titleEn": "Centre Back — Tempo When Protecting a Lead"
+    },
+    {
+      "id": "scn_bank_219",
+      "titleEn": "Centre Back — Breaking the 5:1 Front Press"
+    },
+    {
+      "id": "scn_bank_220",
+      "titleEn": "Centre Back — Finding the Weak Line in 3:2:1"
+    },
+    {
+      "id": "scn_bank_221",
+      "titleEn": "Centre Back — Directing the 6-on-5"
+    },
+    {
+      "id": "scn_bank_222",
+      "titleEn": "Centre Back — Organising Transition Defence"
+    },
+    {
+      "id": "scn_bank_223",
+      "titleEn": "Centre Back — Timing the Back-Screen Set"
+    },
+    {
+      "id": "scn_bank_224",
+      "titleEn": "Centre Back — Final Possession Execution"
+    },
+    {
+      "id": "scn_bank_225",
+      "titleEn": "Centre Back — Calm Direction When Trailing"
+    },
+    {
+      "id": "scn_bank_226",
+      "titleEn": "Centre Back — Basic Ball Shift vs 6:0"
+    },
+    {
+      "id": "scn_bank_227",
+      "titleEn": "Centre Back — Choosing the Open Side"
+    },
+    {
+      "id": "scn_bank_228",
+      "titleEn": "Centre Back — Organising Tempo vs Compact 6:0"
+    },
+    {
+      "id": "scn_bank_229",
+      "titleEn": "Centre Back — Building the Pivot Connection"
+    },
+    {
+      "id": "scn_bank_230",
+      "titleEn": "Centre Back — Tempo When Protecting a Lead"
+    },
+    {
+      "id": "scn_bank_231",
+      "titleEn": "Centre Back — Breaking the 5:1 Front Press"
+    },
+    {
+      "id": "scn_bank_232",
+      "titleEn": "Centre Back — Finding the Weak Line in 3:2:1"
+    },
+    {
+      "id": "scn_bank_233",
+      "titleEn": "Centre Back — Directing the 6-on-5"
+    },
+    {
+      "id": "scn_bank_234",
+      "titleEn": "Centre Back — Organising Transition Defence"
+    },
+    {
+      "id": "scn_bank_235",
+      "titleEn": "Centre Back — Timing the Back-Screen Set"
+    },
+    {
+      "id": "scn_bank_236",
+      "titleEn": "Centre Back — Final Possession Execution"
+    },
+    {
+      "id": "scn_bank_237",
+      "titleEn": "Centre Back — Calm Direction When Trailing"
+    },
+    {
+      "id": "scn_bank_242",
+      "titleEn": "Centre Back — Tempo When Protecting a Lead"
+    },
+    {
+      "id": "scn_bank_243",
+      "titleEn": "Centre Back — Breaking the 5:1 Front Press"
+    },
+    {
+      "id": "scn_bank_244",
+      "titleEn": "Centre Back — Finding the Weak Line in 3:2:1"
+    },
+    {
+      "id": "scn_bank_246",
+      "titleEn": "Centre Back — Organising Transition Defence"
+    },
+    {
+      "id": "scn_bank_249",
+      "titleEn": "Centre Back — Calm Direction When Trailing"
+    },
+    {
+      "id": "scn_bank_254",
+      "titleEn": "Centre Back — Tempo When Protecting a Lead"
+    },
+    {
+      "id": "scn_bank_255",
+      "titleEn": "Centre Back — Breaking the 5:1 Front Press"
+    },
+    {
+      "id": "scn_bank_256",
+      "titleEn": "Centre Back — Finding the Weak Line in 3:2:1"
+    },
+    {
+      "id": "scn_bank_258",
+      "titleEn": "Centre Back — Organising Transition Defence"
+    }
+  ],
+  "goldFamilyStructure": {
+    "source": "scripts/scenario-bank/data/left-back-gold-families-a.mjs (+ RB adds handedness)",
+    "requiredFields": [
+      "familyKey",
+      "title (L10n: en/hr/de)",
+      "difficulty",
+      "pressureLevel",
+      "attackOrDefence",
+      "matchPhase",
+      "minute",
+      "score",
+      "defensiveSystem (optional enum)",
+      "skillTags",
+      "perception (boolean)",
+      "numerical",
+      "gameState",
+      "situation (L10n)",
+      "question (L10n)",
+      "answers (4x quality ladder optimal/good/risky/poor with text+feedback L10n)",
+      "explanation (L10n)",
+      "human { singleBestOk, cueSpecific, gameStateExplicit, rubricBias }"
+    ],
+    "rbExtraFields": [
+      "handedness: left|right|none"
+    ],
+    "familyIdMethod": "title.en strip trailing (N), lower, replace —/– with '-', collapse whitespace (validators + lib/platform/scenario-family.ts)"
+  },
+  "packageScriptsRelated": {
+    "build:left-back-gold-bank": "node scripts/build-left-back-gold-bank.mjs",
+    "validate:left-back-gold-bank": "node scripts/validate-left-back-gold-bank.mjs",
+    "build:right-back-gold-bank": "node scripts/build-right-back-gold-bank.mjs",
+    "validate:right-back-gold-bank": "node scripts/validate-right-back-gold-bank.mjs",
+    "note": "No CB gold build/validate scripts exist yet"
+  }
+}

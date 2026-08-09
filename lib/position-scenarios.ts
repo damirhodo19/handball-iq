@@ -5,10 +5,15 @@
 import { HandballPosition } from '@/lib/positions';
 import { MatchDecision, MatchSituation } from '@/lib/match-engine';
 import { loadPublishedScenariosForPosition, loadPublishedScenariosForPositionAsync, AdminScenario } from '@/lib/admin-storage';
+import { getMatchTemplatesForPosition } from '@/lib/scenario-bank';
 
 interface ScenarioTemplate {
   type: string;
+  type_hr?: string;
+  type_de?: string;
   description: string;
+  description_hr?: string;
+  description_de?: string;
   pressure: 'Low' | 'Moderate' | 'High' | 'Critical';
   attackOrDefence: 'Attack' | 'Defence';
   decisions: MatchDecision[];
@@ -759,13 +764,13 @@ const PIVOT_SCENARIOS: ScenarioTemplate[] = [
 // ── Scenario Selection by Position ─────────────────────────────────────────────
 
 const SCENARIO_MAP: Record<HandballPosition, ScenarioTemplate[]> = {
-  Goalkeeper: GK_SCENARIOS,
-  'Centre Back': CB_SCENARIOS,
-  'Left Back': BACK_SCENARIOS,
-  'Right Back': BACK_SCENARIOS,
-  'Left Wing': WING_SCENARIOS,
-  'Right Wing': WING_SCENARIOS,
-  Pivot: PIVOT_SCENARIOS,
+  Goalkeeper: getMatchTemplatesForPosition('Goalkeeper'),
+  'Centre Back': getMatchTemplatesForPosition('Centre Back'),
+  'Left Back': getMatchTemplatesForPosition('Left Back'),
+  'Right Back': getMatchTemplatesForPosition('Right Back'),
+  'Left Wing': getMatchTemplatesForPosition('Left Wing'),
+  'Right Wing': getMatchTemplatesForPosition('Right Wing'),
+  Pivot: getMatchTemplatesForPosition('Pivot'),
 };
 
 // ── Match Generation ───────────────────────────────────────────────────────────
@@ -795,7 +800,23 @@ function distributeGoals(totalGoals: number, slots: number): number[] {
   return result;
 }
 
-const FALLBACK: ScenarioTemplate = GK_SCENARIOS[0];
+function getFallbackTemplate(position: HandballPosition): ScenarioTemplate {
+  const pool = SCENARIO_MAP[position] ?? [];
+  if (pool[0]) return pool[0];
+  // Neutral decision template — not goalkeeper-specific
+  return {
+    type: 'Decision Under Pressure',
+    description: 'The play develops quickly. You must choose the highest-percentage action for your position.',
+    pressure: 'High',
+    attackOrDefence: 'Attack',
+    decisions: [
+      { id: 'a', text: 'Scan, decide once, and commit', quality: 'optimal', feedback: 'Correct — a clear early decision beats hesitation.' },
+      { id: 'b', text: 'Hold and wait for a better option', quality: 'good', feedback: 'Reasonable — but waiting can let the defence recover.' },
+      { id: 'c', text: 'Force a low-percentage action', quality: 'risky', feedback: 'Risky — forcing under pressure often loses the ball.' },
+      { id: 'd', text: 'Freeze and hope for support', quality: 'poor', feedback: 'Poor — freezing concedes initiative.' },
+    ],
+  };
+}
 
 function adminScenarioToMatchSituation(s: AdminScenario, index: number, minute: number, scoreTeam: number, scoreOpp: number): MatchSituation {
   const qualityOrder = ['optimal', 'good', 'risky', 'poor'] as const;
@@ -833,8 +854,8 @@ export function generatePositionMatch(position: HandballPosition): MatchSituatio
 }
 
 function generatePositionMatchFromScenarios(position: HandballPosition, adminScenarios: AdminScenario[]): MatchSituation[] {
-  const pool = SCENARIO_MAP[position] ?? GK_SCENARIOS;
-  const shuffled = shuffle(pool);
+  const pool = SCENARIO_MAP[position] ?? [];
+  const shuffled = shuffle(pool.length ? pool : [getFallbackTemplate(position)]);
 
   const TOTAL_SITUATIONS = 15;
   const targetTotalGoals = 28 + Math.floor(Math.random() * 5);
@@ -849,11 +870,12 @@ function generatePositionMatchFromScenarios(position: HandballPosition, adminSce
   let scoreOpp = 0;
   const situations: MatchSituation[] = [];
 
-  // If we have enough admin-published scenarios, use them to replace built-in ones
-  const useAdminScenarios = adminScenarios.length >= 5;
+  // Only override bank templates with position-exact admin rows (not All / Goalkeeper bleed)
+  const exactAdmin = adminScenarios.filter((s) => s.position === position);
+  const useAdminScenarios = exactAdmin.length >= 5;
 
   for (let i = 0; i < TOTAL_SITUATIONS; i++) {
-    const template = shuffled[i % shuffled.length] ?? FALLBACK;
+    const template = shuffled[i % shuffled.length] ?? getFallbackTemplate(position);
     const isSecondHalf = i >= 7;
     // First half: minutes 1-29, Second half: minutes 31-59
     const minute = isSecondHalf
@@ -874,9 +896,9 @@ function generatePositionMatchFromScenarios(position: HandballPosition, adminSce
     const correct = decisions.find((d) => d.quality === 'optimal') ?? decisions[0];
 
     // Use admin scenario if available, otherwise fall back to built-in template
-    if (useAdminScenarios && i < adminScenarios.length) {
+    if (useAdminScenarios && i < exactAdmin.length) {
       situations.push(
-        adminScenarioToMatchSituation(adminScenarios[i], i, minute, scoreTeam, scoreOpp)
+        adminScenarioToMatchSituation(exactAdmin[i], i, minute, scoreTeam, scoreOpp)
       );
     } else {
       situations.push({
@@ -888,7 +910,11 @@ function generatePositionMatchFromScenarios(position: HandballPosition, adminSce
         pressure,
         formation,
         description: template.description,
+        description_hr: template.description_hr,
+        description_de: template.description_de,
         scenarioType: template.type,
+        scenarioType_hr: template.type_hr,
+        scenarioType_de: template.type_de,
         decisions,
         correctDecisionId: correct.id,
       });

@@ -1,0 +1,41 @@
+{
+  "name": "Handball IQ 2.0 — Closed Beta Readiness",
+  "date": "2026-08-07T16:46:30.644Z",
+  "verdict": "READY TO BUILD PREVIEW",
+  "failures": [],
+  "manualSmoke": {
+    "devices": [
+      "iPhone (required)",
+      "Android physical or emulator"
+    ],
+    "flows": [
+      "Splash → Register → Onboarding → Home",
+      "Login → session restore after kill",
+      "Training / Match / Programs / Progress / Profile / Settings",
+      "Offline activity → reopen → online sync (no duplicates)",
+      "Goalkeeper / Wing / Back / Pivot personalization accounts",
+      "Coach + player_coach mode switch / no XP mix",
+      "Light / Dark / System + EN/HR/DE",
+      "Settings → Beta feedback email compose"
+    ],
+    "eas": [
+      "eas login",
+      "eas init (set EAS_PROJECT_ID)",
+      "eas secret:create EXPO_PUBLIC_SUPABASE_URL / EXPO_PUBLIC_SUPABASE_ANON_KEY",
+      "npm run build:preview:ios",
+      "npm run build:preview:android"
+    ]
+  },
+  "security": {
+    "bundledSecretsAllowed": [
+      "EXPO_PUBLIC_SUPABASE_URL",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY"
+    ],
+    "neverBundle": [
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "database password",
+      "admin private keys"
+    ],
+    "note": ".env.save may exist locally — ensure it stays untracked (now gitignored)."
+  }
+}

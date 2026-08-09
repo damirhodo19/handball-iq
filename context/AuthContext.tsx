@@ -1,9 +1,18 @@
-import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, useRef, ReactNode } from 'react';
+import { AppState, AppStateStatus } from 'react-native';
 import { Session, User } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import { Profile } from '@/types/database';
 import { fetchProfile } from '@/services/profileService';
+import { pullPreferencesFromCloud, syncPreferencesToCloud } from '@/services/preferencesService';
+import { ensureProfileForUser } from '@/services/authService';
 import { flushOfflineQueue, hasUnsyncedData, hasMigrationBeenPrompted } from '@/services/syncService';
+import { hydrateDevelopmentFromCloud } from '@/services/developmentService';
+import {
+  hydrateCoachDevelopmentFromCloud,
+  setCoachSyncUser,
+  syncCoachDevelopmentFull,
+} from '@/services/coachDevelopmentService';
 
 interface AuthContextValue {
   session: Session | null;
@@ -26,7 +35,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   return Promise.race([
     promise,
     new Promise<T>((_, reject) =>
-      setTimeout(() => reject(new Error('Initialization timed out')), ms)
+      setTimeout(() => reject(new Error('error.initTimeout')), ms)
     ),
   ]);
 }
@@ -41,16 +50,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const fetchProfileData = useCallback(async (userId: string) => {
     try {
+      const { bindDataOwner } = await import('@/lib/clear-user-local');
+      bindDataOwner(userId);
       const data = await fetchProfile(userId);
       setProfile(data);
       if (!data) {
-        setError('Could not load your profile. Using local mode.');
+        setError('error.profileLoadFailed');
       } else {
         setError(null);
+        await pullPreferencesFromCloud(userId);
+        await hydrateDevelopmentFromCloud(userId);
+        await hydrateCoachDevelopmentFromCloud(userId);
+        setCoachSyncUser(userId);
+        // Reconcile after hydrate: push merged local→cloud once (same integrity rule as coach)
+        const { syncDevelopmentFull } = await import('@/services/developmentService');
+        await syncDevelopmentFull(userId);
+        await syncCoachDevelopmentFull(userId);
+        await flushOfflineQueue();
       }
     } catch {
       setProfile(null);
-      setError('Could not load your profile. Using local mode.');
+      setError('error.profileLoadFailed');
     }
   }, []);
 
@@ -76,7 +96,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       );
 
       if (sessionError) {
-        setError('Could not connect to the server. Using local mode.');
+        setError('error.serverConnectFailed');
         setLoading(false);
         return;
       }
@@ -88,7 +108,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           fetchProfileData(data.session.user.id),
           INIT_TIMEOUT_MS
         ).catch(() => {
-          setError('Could not load your profile. Using local mode.');
+          setError('error.profileLoadFailed');
         });
 
         if (!hasMigrationBeenPrompted() && hasUnsyncedData()) {
@@ -101,8 +121,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           // sync failure should not block startup
         }
       }
-    } catch {
-      setError('Could not connect to the server. Using local mode.');
+    } catch (err) {
+      setError(err instanceof Error && err.message.startsWith('error.') ? err.message : 'error.serverConnectFailed');
     } finally {
       setLoading(false);
     }
@@ -115,11 +135,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!supabase) return;
 
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, newSession) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((event, newSession) => {
       setSession(newSession);
       if (newSession?.user) {
         (async () => {
           try {
+            if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+              if (event === 'SIGNED_IN') {
+                await ensureProfileForUser(newSession.user);
+              }
+              const { data: refreshed } = await supabase!.auth.getUser();
+              if (refreshed.user) {
+                setSession((current) =>
+                  current
+                    ? { ...current, user: refreshed.user }
+                    : current
+                );
+              }
+            }
             await fetchProfileData(newSession.user.id);
           } catch {
             // profile fetch failure should not block the user
@@ -145,7 +178,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => sub.subscription.unsubscribe();
   }, [fetchProfileData]);
 
+  const appState = useRef(AppState.currentState);
+
+  useEffect(() => {
+    if (!supabase) return;
+
+    const handleAppStateChange = async (nextState: AppStateStatus) => {
+      if (
+        appState.current.match(/inactive|background/) &&
+        nextState === 'active'
+      ) {
+        try {
+          const client = supabase;
+          if (!client) return;
+          const { data, error: refreshError } = await client.auth.refreshSession();
+          if (!refreshError && data.session) {
+            setSession(data.session);
+            if (data.session.user) {
+              await fetchProfileData(data.session.user.id);
+            }
+          }
+          await flushOfflineQueue();
+        } catch {
+          // resume refresh should not block the user
+        }
+      }
+      appState.current = nextState;
+    };
+
+    const subscription = AppState.addEventListener('change', handleAppStateChange);
+    return () => subscription.remove();
+  }, [fetchProfileData]);
+
   const signOut = useCallback(async () => {
+    const { clearUserScopedLocalData } = await import('@/lib/clear-user-local');
+    clearUserScopedLocalData({ preserveDeviceSettings: true });
     if (supabase) await supabase.auth.signOut();
     setProfile(null);
     setSession(null);

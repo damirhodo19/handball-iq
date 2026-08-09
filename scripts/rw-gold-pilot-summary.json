@@ -1,0 +1,84 @@
+{
+  "status": "RIGHT WING PILOT HUMAN-REVIEW READY FOR FINAL APPROVAL",
+  "count": 10,
+  "ids": [
+    "rw_pilot_01",
+    "rw_pilot_02",
+    "rw_pilot_03",
+    "rw_pilot_04",
+    "rw_pilot_05",
+    "rw_pilot_06",
+    "rw_pilot_07",
+    "rw_pilot_08",
+    "rw_pilot_09",
+    "rw_pilot_10"
+  ],
+  "families": [
+    {
+      "id": "rw_pilot_01",
+      "family": "rw_60_rb_binds_wing_def",
+      "familyEn": "Right Wing — Use the Take-Off Space After RB Pulls the Wing Defender Inside"
+    },
+    {
+      "id": "rw_pilot_02",
+      "family": "rw_rb_pass_timing_hips",
+      "familyEn": "Right Wing — Read the Wing Defender’s Hips Before Asking for the Ball"
+    },
+    {
+      "id": "rw_pilot_03",
+      "family": "rw_entry_when_not",
+      "familyEn": "Right Wing — When NOT to Leave the Corner for an Entry"
+    },
+    {
+      "id": "rw_pilot_04",
+      "family": "rw_pivot_block_six_metre",
+      "familyEn": "Right Wing — Pivot Block Opens Take-Off Toward the Middle"
+    },
+    {
+      "id": "rw_pilot_05",
+      "family": "rw_gk_near_post_early",
+      "familyEn": "Right Wing — Goalkeeper Commits Early Toward the Near Post"
+    },
+    {
+      "id": "rw_pilot_06",
+      "family": "rw_trans_first_wave_3v2",
+      "familyEn": "Right Wing — First Wave: Hold Width in a 3v2"
+    },
+    {
+      "id": "rw_pilot_07",
+      "family": "rw_trans_second_wave_settle",
+      "familyEn": "Right Wing — Second Wave: Stop Forcing When the Transition Advantage Is Gone"
+    },
+    {
+      "id": "rw_pilot_08",
+      "family": "rw_6v5_overload_finish",
+      "familyEn": "Right Wing — 6v5: Finish When You Are Free and Help Is Late"
+    },
+    {
+      "id": "rw_pilot_09",
+      "family": "rw_empty_goal_late_safe",
+      "familyEn": "Right Wing — Empty Own Goal: Safe Finish or Safe Return"
+    },
+    {
+      "id": "rw_pilot_10",
+      "family": "rw_def_close_wing_vs_help",
+      "familyEn": "Right Wing — Defence: Protect the Pass to the Wing Until Handover"
+    }
+  ],
+  "difficulty": {
+    "Beginner": 1,
+    "Intermediate": 4,
+    "Advanced": 3,
+    "Expert": 2
+  },
+  "attack": 9,
+  "defence": 1,
+  "handednessSpecific": 2,
+  "handednessLeft": 2,
+  "handednessRight": 0,
+  "perceptionCount": 10,
+  "avgRubric": 8.4,
+  "minRubric": 8.2,
+  "maxRubric": 8.6,
+  "productionBankUntouched": true
+}

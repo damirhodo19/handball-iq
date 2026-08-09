@@ -1,10 +1,11 @@
 import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { router, useFocusEffect } from 'expo-router';
+import { useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, Check, Clock, Calendar } from 'lucide-react-native';
+import { Check, Clock, Calendar } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { loadPreps, MatchDayPrep } from '@/lib/match-day-storage';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -23,9 +24,7 @@ export default function HistoryScreen() {
     return (
       <ScreenBackground>
         <View style={styles.emptyWrap}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton fallbackHref="/(tabs)/match-day" />
           <View style={styles.emptyContent}>
             <Calendar size={48} color={Colors.textQuaternary} />
             <Text style={styles.emptyTitle}>{t('matchDay.historyEmptyTitle')}</Text>
@@ -42,10 +41,8 @@ export default function HistoryScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <BackButton fallbackHref="/(tabs)/match-day" />
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.headerTitle}>{t('matchDay.historyTitle')}</Text>
             <Text style={styles.headerSub}>{t('matchDay.historySub', { n: preps.length })}</Text>
           </View>

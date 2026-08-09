@@ -1,0 +1,377 @@
+{
+  "parentFamilies": [
+    {
+      "id": "positional_takeoff",
+      "label": "Positional take-off & width",
+      "count": 6,
+      "keys": [
+        {
+          "familyKey": "rw_60_rb_binds_takeoff",
+          "productionId": "scn_bank_871"
+        },
+        {
+          "familyKey": "rw_60_defender_stays_home",
+          "productionId": "scn_bank_881"
+        },
+        {
+          "familyKey": "rw_60_defender_late_recover",
+          "productionId": "scn_bank_882"
+        },
+        {
+          "familyKey": "rw_60_takeoff_closed_from_inside",
+          "productionId": "scn_bank_883"
+        },
+        {
+          "familyKey": "rw_60_stay_wide_for_release",
+          "productionId": "scn_bank_884"
+        },
+        {
+          "familyKey": "rw_60_step_inside_for_lane",
+          "productionId": "scn_bank_885"
+        }
+      ]
+    },
+    {
+      "id": "rb_timing",
+      "label": "RB pass timing & hips",
+      "count": 5,
+      "keys": [
+        {
+          "familyKey": "rw_rb_hips_ask_now",
+          "productionId": "scn_bank_872"
+        },
+        {
+          "familyKey": "rw_rb_hips_wait_recover",
+          "productionId": "scn_bank_886"
+        },
+        {
+          "familyKey": "rw_rb_create_width_for_drive",
+          "productionId": "scn_bank_887"
+        },
+        {
+          "familyKey": "rw_rb_short_vs_long_release",
+          "productionId": "scn_bank_888"
+        },
+        {
+          "familyKey": "rw_rb_not_ready_hold_width",
+          "productionId": "scn_bank_889"
+        }
+      ]
+    },
+    {
+      "id": "entry",
+      "label": "Wing entry timing",
+      "count": 5,
+      "keys": [
+        {
+          "familyKey": "rw_entry_when_not",
+          "productionId": "scn_bank_873"
+        },
+        {
+          "familyKey": "rw_entry_when_yes_second",
+          "productionId": "scn_bank_890"
+        },
+        {
+          "familyKey": "rw_entry_backdoor_open",
+          "productionId": "scn_bank_891"
+        },
+        {
+          "familyKey": "rw_entry_crowd_rb_space",
+          "productionId": "scn_bank_892"
+        },
+        {
+          "familyKey": "rw_entry_after_help_leaves",
+          "productionId": "scn_bank_893"
+        }
+      ]
+    },
+    {
+      "id": "pivot",
+      "label": "Pivot cooperation",
+      "count": 4,
+      "keys": [
+        {
+          "familyKey": "rw_pivot_block_middle_takeoff",
+          "productionId": "scn_bank_874"
+        },
+        {
+          "familyKey": "rw_pivot_roll_after_seal",
+          "productionId": "scn_bank_894"
+        },
+        {
+          "familyKey": "rw_pivot_decoy_stay_wide",
+          "productionId": "scn_bank_895"
+        },
+        {
+          "familyKey": "rw_pivot_feed_unavailable",
+          "productionId": "scn_bank_896"
+        }
+      ]
+    },
+    {
+      "id": "gk",
+      "label": "Goalkeeper reads",
+      "count": 6,
+      "keys": [
+        {
+          "familyKey": "rw_gk_near_post_commit",
+          "productionId": "scn_bank_875"
+        },
+        {
+          "familyKey": "rw_gk_stays_deep",
+          "productionId": "scn_bank_897"
+        },
+        {
+          "familyKey": "rw_gk_attacks_wing",
+          "productionId": "scn_bank_898"
+        },
+        {
+          "familyKey": "rw_gk_drops_hands_lob",
+          "productionId": "scn_bank_899"
+        },
+        {
+          "familyKey": "rw_gk_opens_during_takeoff",
+          "productionId": "scn_bank_900"
+        },
+        {
+          "familyKey": "rw_gk_near_arm_high",
+          "productionId": "scn_bank_901"
+        }
+      ]
+    },
+    {
+      "id": "transition_first",
+      "label": "First-wave transition",
+      "count": 5,
+      "keys": [
+        {
+          "familyKey": "rw_trans_3v2_hold_width",
+          "productionId": "scn_bank_876"
+        },
+        {
+          "familyKey": "rw_trans_2v1_finish_lane",
+          "productionId": "scn_bank_902"
+        },
+        {
+          "familyKey": "rw_trans_finish_before_recovery",
+          "productionId": "scn_bank_903"
+        },
+        {
+          "familyKey": "rw_trans_pressure_catch",
+          "productionId": "scn_bank_904"
+        },
+        {
+          "familyKey": "rw_trans_cut_after_fix",
+          "productionId": "scn_bank_905"
+        }
+      ]
+    },
+    {
+      "id": "transition_second",
+      "label": "Second-wave / settle",
+      "count": 4,
+      "keys": [
+        {
+          "familyKey": "rw_trans_second_wave_positional",
+          "productionId": "scn_bank_877"
+        },
+        {
+          "familyKey": "rw_trans_stop_forcing",
+          "productionId": "scn_bank_906"
+        },
+        {
+          "familyKey": "rw_trans_safe_continuation",
+          "productionId": "scn_bank_907"
+        },
+        {
+          "familyKey": "rw_trans_second_wave_width_hold",
+          "productionId": "scn_bank_908"
+        }
+      ]
+    },
+    {
+      "id": "numerical",
+      "label": "Numerical situations",
+      "count": 6,
+      "keys": [
+        {
+          "familyKey": "rw_6v5_free_finish",
+          "productionId": "scn_bank_878"
+        },
+        {
+          "familyKey": "rw_6v5_recycle_when_covered",
+          "productionId": "scn_bank_909"
+        },
+        {
+          "familyKey": "rw_5v6_safe_width",
+          "productionId": "scn_bank_910"
+        },
+        {
+          "familyKey": "rw_5v6_no_force_corner",
+          "productionId": "scn_bank_911"
+        },
+        {
+          "familyKey": "rw_7v6_extra_attacker_space",
+          "productionId": "scn_bank_912"
+        },
+        {
+          "familyKey": "rw_7v6_no_force_covered",
+          "productionId": "scn_bank_913"
+        }
+      ]
+    },
+    {
+      "id": "empty_goal",
+      "label": "Empty goal / late risk",
+      "count": 4,
+      "keys": [
+        {
+          "familyKey": "rw_empty_own_goal_safe_return",
+          "productionId": "scn_bank_879"
+        },
+        {
+          "familyKey": "rw_empty_own_goal_clean_finish",
+          "productionId": "scn_bank_914"
+        },
+        {
+          "familyKey": "rw_opp_empty_goal_quick_finish",
+          "productionId": "scn_bank_915"
+        },
+        {
+          "familyKey": "rw_empty_own_no_skip_risk",
+          "productionId": "scn_bank_916"
+        }
+      ]
+    },
+    {
+      "id": "after_rb",
+      "label": "After RB draws two / rotation",
+      "count": 4,
+      "keys": [
+        {
+          "familyKey": "rw_after_rb_two_finish",
+          "productionId": "scn_bank_917"
+        },
+        {
+          "familyKey": "rw_after_rb_two_short_return",
+          "productionId": "scn_bank_918"
+        },
+        {
+          "familyKey": "rw_rotation_finish_window",
+          "productionId": "scn_bank_919"
+        },
+        {
+          "familyKey": "rw_rotation_too_late_recycle",
+          "productionId": "scn_bank_920"
+        }
+      ]
+    },
+    {
+      "id": "endgame",
+      "label": "End-game / special state",
+      "count": 7,
+      "keys": [
+        {
+          "familyKey": "rw_protect_one_goal_lead",
+          "productionId": "scn_bank_921"
+        },
+        {
+          "familyKey": "rw_trailing_one_force_window",
+          "productionId": "scn_bank_922"
+        },
+        {
+          "familyKey": "rw_passive_warning_clear_lane",
+          "productionId": "scn_bank_923"
+        },
+        {
+          "familyKey": "rw_passive_warning_no_force",
+          "productionId": "scn_bank_924"
+        },
+        {
+          "familyKey": "rw_bad_catch_late_possession",
+          "productionId": "scn_bank_925"
+        },
+        {
+          "familyKey": "rw_clock_safe_return",
+          "productionId": "scn_bank_926"
+        },
+        {
+          "familyKey": "rw_fast_restart_ready",
+          "productionId": "scn_bank_927"
+        }
+      ]
+    },
+    {
+      "id": "defence",
+      "label": "Defence",
+      "count": 8,
+      "keys": [
+        {
+          "familyKey": "rw_def_protect_wing_until_handover",
+          "productionId": "scn_bank_880"
+        },
+        {
+          "familyKey": "rw_def_handover_then_help",
+          "productionId": "scn_bank_928"
+        },
+        {
+          "familyKey": "rw_def_close_transition_lane",
+          "productionId": "scn_bank_929"
+        },
+        {
+          "familyKey": "rw_def_return_correct_lane",
+          "productionId": "scn_bank_930"
+        },
+        {
+          "familyKey": "rw_def_stop_first_wave",
+          "productionId": "scn_bank_931"
+        },
+        {
+          "familyKey": "rw_def_2v2_wing_side",
+          "productionId": "scn_bank_932"
+        },
+        {
+          "familyKey": "rw_def_deny_long_outlet",
+          "productionId": "scn_bank_933"
+        },
+        {
+          "familyKey": "rw_def_ball_vs_wing_choice",
+          "productionId": "scn_bank_934"
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "Other systems (non-6:0 attack)",
+      "count": 6,
+      "keys": [
+        {
+          "familyKey": "rw_51_wide_vs_point",
+          "productionId": "scn_bank_935"
+        },
+        {
+          "familyKey": "rw_33_fast_ball_wide",
+          "productionId": "scn_bank_936"
+        },
+        {
+          "familyKey": "rw_42_free_lane_finish",
+          "productionId": "scn_bank_937"
+        },
+        {
+          "familyKey": "rw_open_1v1_wing",
+          "productionId": "scn_bank_938"
+        },
+        {
+          "familyKey": "rw_321_behind_high_wing",
+          "productionId": "scn_bank_939"
+        },
+        {
+          "familyKey": "rw_15_punish_high_wing_def",
+          "productionId": "scn_bank_940"
+        }
+      ]
+    }
+  ],
+  "totalScenarios": 70,
+  "uniqueFamilyKeys": 70
+}

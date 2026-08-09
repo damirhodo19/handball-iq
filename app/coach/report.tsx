@@ -2,12 +2,14 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, FileText, TrendingUp, TrendingDown, Minus } from 'lucide-react-native';
+import { FileText, TrendingUp, TrendingDown, Minus } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { buildPlayerProfile, generateCoachReport, CoachReportEntry } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateSkillCategory, renderCoachMessages } from '@/lib/coach-i18n';
 
 export default function ReportScreen() {
   const { t } = useTranslation();
@@ -26,9 +28,7 @@ export default function ReportScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachReport.title')}</Text>
             <Text style={styles.headerSub}>{t('coachReport.subtitle')}</Text>
@@ -59,19 +59,20 @@ export default function ReportScreen() {
 }
 
 function ReportCard({ entry, index }: { entry: CoachReportEntry; index: number }) {
+  const { t } = useTranslation();
   const scoreColor = entry.score >= 80 ? Colors.success : entry.score >= 60 ? Colors.gold : entry.score >= 40 ? Colors.warning : Colors.error;
 
   return (
     <Animated.View entering={FadeInDown.delay(index * 60 + 50).duration(400)}>
       <Card variant="gradient" shadow="card" style={styles.reportCard}>
         <View style={styles.reportHeader}>
-          <Text style={styles.reportLabel}>{entry.label}</Text>
+          <Text style={styles.reportLabel}>{translateSkillCategory(entry.category, t)}</Text>
           <View style={[styles.scoreBadge, { backgroundColor: scoreColor + '22', borderColor: scoreColor }]}>
             <Text style={[styles.scoreText, { color: scoreColor }]}>{entry.score}</Text>
           </View>
         </View>
         <ProgressBar progress={entry.score / 100} height={4} color={scoreColor} />
-        <Text style={styles.feedbackText}>{entry.feedback}</Text>
+        <Text style={styles.feedbackText}>{renderCoachMessages(t, entry.feedback)}</Text>
       </Card>
     </Animated.View>
   );
@@ -81,7 +82,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

@@ -1,47 +1,18 @@
-export const Colors = {
-  // Surfaces
-  background: '#0B0B0D',
-  surface: '#141417',
-  surfaceElevated: '#1A1A1E',
-  surfaceRaised: '#222227',
-  border: '#2A2A30',
-  borderLight: '#1F1F24',
-  hairline: 'rgba(255,255,255,0.06)',
+import { darkPalette, lightPalette, type ThemePalette } from '@/lib/theme/palettes';
 
-  // Text
-  white: '#FFFFFF',
-  textPrimary: '#F5F5F7',
-  textSecondary: '#A1A1AA',
-  textTertiary: '#71717A',
-  textQuaternary: '#52525B',
+export type { ThemePalette };
+export type ThemePreference = 'light' | 'dark' | 'system';
 
-  // Brand
-  gold: '#D4AF37',
-  goldBright: '#E8C547',
-  goldDeep: '#A8842A',
-  goldGlow: 'rgba(212,175,55,0.18)',
-  goldSoft: 'rgba(212,175,55,0.12)',
-  goldFaint: 'rgba(212,175,55,0.06)',
+/** Mutable active palette — light is the Sprint 1 default. */
+export const Colors: ThemePalette = { ...lightPalette };
 
-  // Status
-  success: '#22C55E',
-  successSoft: 'rgba(34,197,94,0.12)',
-  warning: '#F59E0B',
-  warningSoft: 'rgba(245,158,11,0.12)',
-  error: '#EF4444',
-  errorSoft: 'rgba(239,68,68,0.12)',
-  info: '#3B82F6',
-  infoSoft: 'rgba(59,130,246,0.12)',
+export function applyThemePalette(palette: ThemePalette): void {
+  Object.assign(Colors, palette);
+}
 
-  // Overlays
-  overlay: 'rgba(11,11,13,0.92)',
-  overlayLight: 'rgba(11,11,13,0.6)',
-
-  // Gradients
-  goldGradient: ['#E8C547', '#D4AF37', '#A8842A'] as const,
-  surfaceGradient: ['#1A1A1E', '#141417'] as const,
-  bgGradient: ['#0B0B0D', '#0E0E11', '#0B0B0D'] as const,
-} as const;
+export function getPaletteForScheme(scheme: 'light' | 'dark'): ThemePalette {
+  return scheme === 'dark' ? darkPalette : lightPalette;
+}
 
 export const Spacing = {
   xs: 4,
@@ -55,8 +26,8 @@ export const Spacing = {
 } as const;
 
 export const Radius = {
-  sm: 10,
-  md: 14,
+  sm: 12,
+  md: 16,
   lg: 20,
   xl: 28,
   pill: 999,
@@ -80,32 +51,32 @@ export const Typography = {
 
 export const Shadows = {
   card: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.4,
-    shadowRadius: 16,
-    elevation: 8,
+    shadowColor: '#0F172A',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 3,
   },
   cardLg: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.5,
-    shadowRadius: 24,
-    elevation: 12,
+    shadowColor: '#0F172A',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.12,
+    shadowRadius: 20,
+    elevation: 6,
   },
   gold: {
-    shadowColor: '#D4AF37',
+    shadowColor: '#C9A227',
     shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 10,
+    shadowOpacity: 0.2,
+    shadowRadius: 14,
+    elevation: 6,
   },
   float: {
-    shadowColor: '#000',
+    shadowColor: '#0F172A',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.06,
     shadowRadius: 8,
-    elevation: 4,
+    elevation: 2,
   },
 } as const;
 
@@ -115,3 +86,7 @@ export const Motion = {
   timing: { duration: 400 } as const,
   timingSlow: { duration: 800 } as const,
 };
+
+export const Accessibility = {
+  minTouchTarget: 44,
+} as const;

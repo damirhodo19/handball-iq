@@ -1,42 +1,42 @@
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { Shield, Clock, Layers, AlertTriangle, ArrowRight, ChevronLeft } from 'lucide-react-native';
+import { Shield, Clock, Layers, AlertTriangle, ArrowRight } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
-import { SESSION_INFO } from '@/lib/scenarios';
+import { getLocalizedSessionInfo } from '@/lib/content-localize';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateDifficulty } from '@/lib/translations';
 
 export default function SessionIntroScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
+  const info = getLocalizedSessionInfo(lang);
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-        {/* Back button */}
-        <TouchableOpacity
-          style={styles.backBtn}
-          activeOpacity={0.7}
-          onPress={() => router.replace('/(tabs)/home')}
-        >
-          <ChevronLeft size={22} color={Colors.textSecondary} />
-          <Text style={styles.backText}>{t('common.backToHome')}</Text>
-        </TouchableOpacity>
+        <BackButton
+          labeled
+          label={t('common.backToHome')}
+          fallbackHref="/(tabs)/home"
+          style={{ marginBottom: Spacing.xl }}
+        />
 
         {/* Header */}
         <Animated.View entering={FadeInDown.duration(500)}>
           <View style={styles.headerIcon}>
             <Shield size={32} color={Colors.gold} />
           </View>
-          <Text style={styles.sessionLabel}>{SESSION_INFO.subtitle}</Text>
-          <Text style={styles.sessionNumber}>{SESSION_INFO.sessionNumber}</Text>
-          <Text style={styles.sessionTitle}>{SESSION_INFO.title}</Text>
+          <Text style={styles.sessionLabel}>{info.subtitle}</Text>
+          <Text style={styles.sessionNumber}>{info.sessionNumber}</Text>
+          <Text style={styles.sessionTitle}>{info.title}</Text>
         </Animated.View>
 
         {/* Description */}
         <Animated.View entering={FadeInDown.delay(100).duration(500)}>
-          <Text style={styles.description}>{SESSION_INFO.description}</Text>
+          <Text style={styles.description}>{info.description}</Text>
         </Animated.View>
 
         {/* Session Structure */}
@@ -45,17 +45,17 @@ export default function SessionIntroScreen() {
           <Card variant="gradient" shadow="card" style={styles.structureCard}>
             <View style={styles.structureRow}>
               <View style={styles.structureIcon}><Layers size={18} color={Colors.gold} /></View>
-              <Text style={styles.structureText}>{SESSION_INFO.structure[0]}</Text>
+              <Text style={styles.structureText}>{info.structure[0]}</Text>
             </View>
             <View style={styles.divider} />
             <View style={styles.structureRow}>
               <View style={styles.structureIcon}><Clock size={18} color={Colors.gold} /></View>
-              <Text style={styles.structureText}>{SESSION_INFO.structure[1]}</Text>
+              <Text style={styles.structureText}>{info.structure[1]}</Text>
             </View>
             <View style={styles.divider} />
             <View style={styles.structureRow}>
               <View style={styles.structureIcon}><Shield size={18} color={Colors.gold} /></View>
-              <Text style={styles.structureText}>{SESSION_INFO.structure[2]}</Text>
+              <Text style={styles.structureText}>{info.structure[2]}</Text>
             </View>
           </Card>
         </Animated.View>
@@ -67,7 +67,7 @@ export default function SessionIntroScreen() {
               <AlertTriangle size={15} color={Colors.gold} />
               <Text style={styles.instructionLabel}>{t('training.instruction')}</Text>
             </View>
-            <Text style={styles.instructionText}>{SESSION_INFO.instruction}</Text>
+            <Text style={styles.instructionText}>{info.instruction}</Text>
           </View>
         </Animated.View>
 
@@ -76,12 +76,12 @@ export default function SessionIntroScreen() {
           <View style={styles.metaRow}>
             <View style={styles.metaItem}>
               <Clock size={14} color={Colors.textTertiary} />
-              <Text style={styles.metaText}>{SESSION_INFO.duration}</Text>
+              <Text style={styles.metaText}>{info.duration}</Text>
             </View>
             <View style={styles.metaDivider} />
             <View style={styles.metaItem}>
               <Layers size={14} color={Colors.textTertiary} />
-              <Text style={styles.metaText}>{SESSION_INFO.difficulty}</Text>
+              <Text style={styles.metaText}>{translateDifficulty(info.difficulty, t)}</Text>
             </View>
           </View>
         </Animated.View>

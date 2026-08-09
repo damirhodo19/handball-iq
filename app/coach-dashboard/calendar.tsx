@@ -2,13 +2,16 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Modal, TextInput } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, Calendar, Plus, Dumbbell, Trophy, Heart, ClipboardList, X } from 'lucide-react-native';
+import { Calendar, Plus, Dumbbell, Trophy, Heart, ClipboardList, X } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { loadCalendar, addCalendarEvent, CalendarEvent, CalendarEventType } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
+import { msg } from '@/lib/i18n-message';
+import { renderCoachMessage } from '@/lib/coach-i18n';
 
 const TYPE_CONFIG: Record<CalendarEventType, { icon: React.ReactNode; color: string; bg: string }> = {
   'Training': { icon: <Dumbbell size={14} color={Colors.gold} />, color: Colors.gold, bg: Colors.goldSoft },
@@ -44,7 +47,12 @@ export default function CalendarScreen() {
 
   const handleAdd = () => {
     if (!newTitle.trim()) return;
-    addCalendarEvent({ date: newDate, type: newType, title: newTitle.trim(), description: newDesc.trim() || '' });
+    addCalendarEvent({
+      date: newDate,
+      type: newType,
+      title: msg('cdCalendar.custom.title', { text: newTitle.trim() }),
+      description: msg('cdCalendar.custom.description', { text: newDesc.trim() || '—' }),
+    });
     setEvents(loadCalendar());
     setShowAddModal(false);
     setNewTitle('');
@@ -59,9 +67,7 @@ export default function CalendarScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdCalendar.title')}</Text>
             <Text style={styles.headerSub}>{t('cdCalendar.subtitle')}</Text>
@@ -104,8 +110,8 @@ export default function CalendarScreen() {
                     <View style={styles.eventRow}>
                       <View style={[styles.eventIcon, { backgroundColor: cfg.bg, borderColor: cfg.color }]}>{cfg.icon}</View>
                       <View style={{ flex: 1, gap: 2 }}>
-                        <Text style={styles.eventTitle}>{e.title}</Text>
-                        <Text style={styles.eventDesc}>{e.description}</Text>
+                        <Text style={styles.eventTitle}>{renderCoachMessage(t, e.title)}</Text>
+                        <Text style={styles.eventDesc}>{renderCoachMessage(t, e.description)}</Text>
                       </View>
                       <View style={[styles.eventTypePill, { backgroundColor: cfg.bg, borderColor: cfg.color }]}>
                         <Text style={[styles.eventTypeText, { color: cfg.color }]}>{e.type === 'Training' ? t('cdCalendar.eventTraining') : e.type === 'Match' ? t('cdCalendar.eventMatch') : e.type === 'Recovery' ? t('cdCalendar.eventRecovery') : t('cdCalendar.eventAssigned')}</Text>
@@ -138,7 +144,7 @@ export default function CalendarScreen() {
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
               <Text style={styles.modalLabel}>{t('cdCalendar.dateField')}</Text>
-              <TextInput style={styles.modalInput} value={newDate} onChangeText={setNewDate} placeholder="YYYY-MM-DD" placeholderTextColor={Colors.textQuaternary} />
+              <TextInput style={styles.modalInput} value={newDate} onChangeText={setNewDate} placeholder={t('cdCalendar.datePlaceholder')} placeholderTextColor={Colors.textQuaternary} />
               <Text style={styles.modalLabel}>{t('cdCalendar.eventType')}</Text>
               <View style={styles.typeRow}>
                 {(Object.keys(TYPE_CONFIG) as CalendarEventType[]).map((et) => (
@@ -153,9 +159,9 @@ export default function CalendarScreen() {
                 ))}
               </View>
               <Text style={styles.modalLabel}>{t('cdCalendar.titleField')}</Text>
-              <TextInput style={styles.modalInput} value={newTitle} onChangeText={setNewTitle} placeholder="e.g. Team Training" placeholderTextColor={Colors.textQuaternary} />
+              <TextInput style={styles.modalInput} value={newTitle} onChangeText={setNewTitle} placeholder={t('cdCalendar.titlePlaceholder')} placeholderTextColor={Colors.textQuaternary} />
               <Text style={styles.modalLabel}>{t('cdCalendar.descriptionField')}</Text>
-              <TextInput style={[styles.modalInput, { minHeight: 60 }]} value={newDesc} onChangeText={setNewDesc} placeholder="Optional description..." placeholderTextColor={Colors.textQuaternary} multiline />
+              <TextInput style={[styles.modalInput, { minHeight: 60 }]} value={newDesc} onChangeText={setNewDesc} placeholder={t('cdCalendar.descPlaceholder')} placeholderTextColor={Colors.textQuaternary} multiline />
               <Button label={t('cdCalendar.save')} onPress={handleAdd} disabled={!newTitle.trim()} style={{ marginTop: Spacing.md }} />
             </ScrollView>
           </View>
@@ -169,7 +175,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
   addBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },

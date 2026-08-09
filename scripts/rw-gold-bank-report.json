@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "original": 70,
+  "final": 65,
+  "kept": 50,
+  "polished": 0,
+  "rewritten": 15,
+  "removed": 0,
+  "newlyAdded": 0,
+  "attack": 54,
+  "defence": 11,
+  "perceptionPct": 58.5,
+  "handedness": {
+    "left": 0,
+    "right": 0,
+    "none": 65
+  },
+  "difficulty": {
+    "Beginner": 6,
+    "Intermediate": 22,
+    "Advanced": 27,
+    "Expert": 10
+  },
+  "avgRubric": 8.7,
+  "minRubric": 8.3,
+  "maxRubric": 8.9,
+  "lbUnchanged": 62,
+  "rbUnchanged": 63,
+  "cbUnchanged": 70,
+  "lockedUnchanged": true
+}

@@ -1,0 +1,10 @@
+# Fallback hosting if Vercel is unavailable.
+[build]
+  command = "npx expo export --platform web"
+  publish = "dist"
+
+# SPA fallback — Expo Router client routes must not 404 on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

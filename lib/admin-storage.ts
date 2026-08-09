@@ -5,6 +5,8 @@
 import { HandballPosition, AgeGroup, PlayingLevel } from './positions';
 import { supabase } from './supabase';
 import { fetchPublishedScenariosForPosition } from '@/services/scenarioService';
+import { readStorageJson, writeStorageJson } from '@/lib/platform-storage';
+import { isAdminScenarioForPosition } from '@/lib/platform/scenario-position';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -74,27 +76,16 @@ export interface ContentStats {
 // ── Storage keys ──────────────────────────────────────────────────────────────
 
 const SCENARIOS_KEY = 'hbiq_admin_scenarios';
-const ADMIN_SESSION_KEY = 'hbiq_admin_session';
 const MIGRATION_KEY = 'hbiq_admin_migrated_v1';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function getItem<T>(key: string, fallback: T): T {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(key);
-      if (raw) return JSON.parse(raw) as T;
-    }
-  } catch {}
-  return fallback;
+  return readStorageJson(key, fallback);
 }
 
 function setItem<T>(key: string, value: T): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  } catch {}
+  writeStorageJson(key, value);
 }
 
 function generateId(): string {
@@ -152,7 +143,7 @@ export function createScenario(partial: Partial<AdminScenario>): AdminScenario {
   const scenario: AdminScenario = {
     id: generateId(),
     title: partial.title ?? 'Untitled Scenario',
-    position: partial.position ?? 'Goalkeeper',
+    position: partial.position ?? 'All',
     secondaryPositions: partial.secondaryPositions ?? [],
     category: partial.category ?? 'General',
     difficulty: partial.difficulty ?? 'Intermediate',
@@ -221,6 +212,19 @@ export function archiveScenario(id: string): void {
   updateScenario(id, { status: 'Archived' });
 }
 
+export function publishScenario(id: string): void {
+  updateScenario(id, { status: 'Published' });
+}
+
+export function bulkUpdateScenarioStatus(ids: string[], status: ScenarioStatus): number {
+  let count = 0;
+  for (const id of ids) {
+    const updated = updateScenario(id, { status });
+    if (updated) count++;
+  }
+  return count;
+}
+
 export function unarchiveScenario(id: string): void {
   updateScenario(id, { status: 'Draft' });
 }
@@ -246,11 +250,8 @@ export function loadPublishedScenarios(): AdminScenario[] {
 }
 
 export function loadPublishedScenariosForPosition(position: HandballPosition): AdminScenario[] {
-  // Try Supabase first (async), but this sync function returns local fallback
-  // The async version is in scenarioService.fetchPublishedScenariosForPosition
-  return loadScenarios().filter(
-    (s) => s.position === position || s.position === 'All' || s.secondaryPositions.includes(position)
-  );
+  // Published only. Exact position or All — never Goalkeeper rows for field players via secondary.
+  return loadPublishedScenarios().filter((s) => isAdminScenarioForPosition(s, position));
 }
 
 // Async version that fetches from Supabase with local fallback
@@ -335,7 +336,7 @@ export function importScenarios(jsonString: string): ImportResult {
     const scenario: AdminScenario = {
       id,
       title: raw.title,
-      position: raw.position ?? 'Goalkeeper',
+      position: raw.position ?? 'All',
       secondaryPositions: Array.isArray(raw.secondaryPositions) ? raw.secondaryPositions : [],
       category: raw.category ?? 'General',
       difficulty: raw.difficulty ?? 'Intermediate',
@@ -432,25 +433,6 @@ export function getContentStats(): ContentStats {
     averageDifficulty: avgLabel,
     warnings,
   };
-}
-
-// ── Admin session (mocked locally) ────────────────────────────────────────────
-
-export function isAdminLoggedIn(): boolean {
-  return getItem<boolean>(ADMIN_SESSION_KEY, false);
-}
-
-export function loginAdmin(password: string): boolean {
-  // Mocked — accept a simple password for demo purposes
-  if (password === 'admin' || password === 'handball') {
-    setItem(ADMIN_SESSION_KEY, true);
-    return true;
-  }
-  return false;
-}
-
-export function logoutAdmin(): void {
-  setItem(ADMIN_SESSION_KEY, false);
 }
 
 // ── Validation ─────────────────────────────────────────────────────────────────
@@ -655,7 +637,7 @@ function createSeedScenarios(): AdminScenario[] {
 function toDbRow(s: Partial<AdminScenario>): Record<string, any> {
   return {
     title: s.title,
-    position: s.position ?? 'Goalkeeper',
+    position: s.position ?? 'All',
     secondary_positions: s.secondaryPositions ?? [],
     category: s.category ?? 'General',
     difficulty: s.difficulty ?? 'Intermediate',

@@ -1,0 +1,13 @@
+{
+  "total": 137,
+  "passing": 137,
+  "failing": 0,
+  "avgDepth": 9.9,
+  "byDifficulty": {
+    "Beginner": 19,
+    "Intermediate": 31,
+    "Advanced": 59,
+    "Expert": 28
+  },
+  "failures": []
+}

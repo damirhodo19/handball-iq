@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeInDown, useSharedValue, useAnimatedStyle, withTiming, withRepeat, withSequence } from 'react-native-reanimated';
@@ -6,12 +6,17 @@ import { ArrowLeft, ArrowRight, Pause, Play, SkipForward, Check } from 'lucide-r
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
 import { useMatchDay } from '@/context/MatchDayContext';
-import { VISUALIZATION_STEPS, getScenariosForGoals, TacticalScenario } from '@/lib/match-day-scenarios';
-import { calculateReadiness } from '@/lib/match-day-storage';
+import {
+  getVisualizationStepsForPosition,
+  TacticalScenario,
+} from '@/lib/match-day-scenarios';
+import { buildMatchPlan } from '@/lib/match-day-tactics';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal } from '@/lib/translations';
+import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal, resolveDefaultStatement } from '@/lib/translations';
+import { localizeTacticalScenario, localizeVisualizationStep } from '@/lib/scenario-localize';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -136,7 +141,7 @@ function BreathingTimer({
         {!done && (
           <TouchableOpacity style={bStyles.controlBtn} onPress={() => setPaused((p) => !p)}>
             {paused ? <Play size={18} color={Colors.gold} /> : <Pause size={18} color={Colors.gold} />}
-            <Text style={bStyles.controlText}>{paused ? t('matchDay.breatheIn') : t('matchDay.pause')}</Text>
+            <Text style={bStyles.controlText}>{paused ? t('common.continue') : t('matchDay.pause')}</Text>
           </TouchableOpacity>
         )}
         <TouchableOpacity style={bStyles.controlBtn} onPress={onComplete}>
@@ -168,45 +173,96 @@ export default function PrepareScreen() {
     activePrep, prepMode, currentStep, goToStep,
     leaveBehinds, setLeaveBehinds,
     visualStep, setVisualStep,
-    tacticalScenarios, setTacticalScenarios,
+    tacticalScenarios,
     tacticalAnswers, submitTacticalAnswer,
+    matchPlan,
     personalStatement, setPersonalStatement,
     finishPrep,
+    regenerateTactics,
   } = useMatchDay();
 
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [showResetMessage, setShowResetMessage] = useState(false);
   const [tacticalStep, setTacticalStep] = useState(0);
   const [selectedDecision, setSelectedDecision] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [showQuickPlan, setShowQuickPlan] = useState(false);
+
+  // Position is captured on prep at setup — never re-invented / never GK default
+  const playerPosition = activePrep?.setup?.position ?? null;
+  const vizSteps = useMemo(
+    () => getVisualizationStepsForPosition(playerPosition),
+    [playerPosition],
+  );
+  const plan = useMemo(() => {
+    if (matchPlan) return matchPlan;
+    if (activePrep?.setup?.position) return buildMatchPlan(activePrep.setup, activePrep.setup.position);
+    return null;
+  }, [matchPlan, activePrep]);
 
   const isQuick = prepMode === 'quick';
   const totalSteps = isQuick ? 3 : 5;
   const totalCycles = isQuick ? 2 : 4;
   const totalVisualize = isQuick ? 1 : 3;
-  const totalTactical = isQuick ? 3 : 5;
 
-  // Generate scenarios once
   useEffect(() => {
-    if (tacticalScenarios.length === 0 && activePrep) {
-      const s = getScenariosForGoals(activePrep.setup.goals, totalTactical);
-      setTacticalScenarios(s);
+    if (!activePrep) return;
+    if (__DEV__) {
+      console.log('[match-day] prepare.mount', {
+        prepId: activePrep.id,
+        position: activePrep.setup?.position ?? null,
+        goals: activePrep.setup?.goals ?? [],
+        tacticalN: tacticalScenarios.length,
+        tacticalIds: tacticalScenarios.map((s) => s.id),
+        hasPlan: !!plan,
+        step: currentStep,
+        mode: prepMode,
+      });
+    }
+  }, [activePrep?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // If tactics missing (resume / race), regenerate from prep.setup.position
+  useEffect(() => {
+    if (!activePrep?.setup?.position) return;
+    if (tacticalScenarios.length > 0) return;
+    if (__DEV__) console.log('[match-day] prepare.regenerate-missing-tactics');
+    regenerateTactics();
+  }, [activePrep?.id, activePrep?.setup?.position, tacticalScenarios.length, regenerateTactics]);
+
+  const stepLabels = isQuick
+    ? [t('matchDay.stepBreathing'), t('matchDay.stepVisualization'), t('matchDay.stepTacticalAndPlan')]
+    : [t('matchDay.stepBreathing'), t('matchDay.stepMentalReset'), t('matchDay.stepVisualization'), t('matchDay.stepTactical'), t('matchDay.stepMatchPlan')];
+
+  const currentScenarioRaw: TacticalScenario | undefined =
+    !showQuickPlan && tacticalStep < tacticalScenarios.length
+      ? tacticalScenarios[tacticalStep]
+      : undefined;
+  const currentScenario = useMemo(
+    () => (currentScenarioRaw ? localizeTacticalScenario(currentScenarioRaw, lang, t) : undefined),
+    [currentScenarioRaw, lang, t],
+  );
+  const localizedVizStep = useMemo(() => {
+    const step = vizSteps[Math.min(visualStep, vizSteps.length - 1)] ?? vizSteps[0];
+    return step ? localizeVisualizationStep(step, lang, t) : { title: '', instruction: '' };
+  }, [vizSteps, visualStep, lang, t]);
+
+  useEffect(() => {
+    if (!activePrep) {
+      router.replace('/(tabs)/match-day');
     }
   }, [activePrep]);
 
   if (!activePrep) {
     return (
       <ScreenBackground>
-        <View style={styles.centered}><Text style={styles.loadingText}>{t('matchDay.loadingPrep')}</Text></View>
+        <View style={styles.centered}>
+          <Text style={styles.loadingText}>{t('matchDay.loadingPrep')}</Text>
+          <BackButton labeled label={t('common.back')} fallbackHref="/(tabs)/match-day" style={{ marginTop: Spacing.lg }} />
+        </View>
       </ScreenBackground>
     );
   }
 
-  const stepLabels = isQuick
-    ? ['Breathing', 'Visualization', 'Tactical & Plan']
-    : ['Breathing', 'Mental Reset', 'Visualization', 'Tactical', 'Match Plan'];
-
-  const currentScenario: TacticalScenario | undefined = tacticalScenarios[tacticalStep];
   const currentAnswer = tacticalAnswers.find((a) => a.scenarioIndex === tacticalStep);
 
   const nextStep = () => {
@@ -236,12 +292,30 @@ export default function PrepareScreen() {
   };
 
   const nextTactical = () => {
-    if (tacticalStep < totalTactical - 1) {
-      setTacticalStep((t) => t + 1);
+    if (tacticalStep < tacticalScenarios.length - 1) {
+      setTacticalStep((idx) => idx + 1);
       setSelectedDecision(null);
       setShowExplanation(false);
-    } else {
-      nextStep();
+      return;
+    }
+    // Quick mode: surface plan before finish; complete mode advances to plan step
+    if (isQuick) {
+      setShowQuickPlan(true);
+      setSelectedDecision(null);
+      setShowExplanation(false);
+      return;
+    }
+    nextStep();
+  };
+
+  const retryTactics = () => {
+    setTacticalStep(0);
+    setShowQuickPlan(false);
+    setSelectedDecision(null);
+    setShowExplanation(false);
+    const next = regenerateTactics();
+    if (__DEV__) {
+      console.log('[match-day] prepare.retryTactics', { n: next.length, ids: next.map((s) => s.id) });
     }
   };
 
@@ -269,14 +343,16 @@ export default function PrepareScreen() {
 
         {/* Header nav */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={prevStep} disabled={currentStep === 0}>
-            <ArrowLeft size={20} color={currentStep === 0 ? Colors.textQuaternary : Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          {currentStep === 0 ? (
+            <BackButton fallbackHref="/(tabs)/match-day" />
+          ) : (
+            <BackButton onPress={prevStep} />
+          )}
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.stepLabel}>{t('matchDay.stepProgress', { n: currentStep + 1, total: totalSteps })}</Text>
-            <Text style={styles.stepName}>{stepLabels[currentStep]}</Text>
+            <Text style={styles.stepName} numberOfLines={2}>{stepLabels[currentStep]}</Text>
           </View>
-          <Text style={styles.opponentTag}>{t('matchDay.vsOpponent', { opponent: activePrep.setup.opponent })}</Text>
+          <Text style={styles.opponentTag} numberOfLines={1}>{t('matchDay.vsOpponent', { opponent: activePrep.setup.opponent })}</Text>
         </View>
 
         {/* Progress */}
@@ -366,8 +442,8 @@ export default function PrepareScreen() {
                 <View style={styles.vizBadge}>
                   <Text style={styles.vizBadgeText}>{t('matchDay.situationN', { n: visualStep + 1 })}</Text>
                 </View>
-                <Text style={styles.vizTitle}>{VISUALIZATION_STEPS[visualStep].title}</Text>
-                <Text style={styles.vizText}>{VISUALIZATION_STEPS[visualStep].instruction}</Text>
+                <Text style={styles.vizTitle}>{localizedVizStep.title}</Text>
+                <Text style={styles.vizText}>{localizedVizStep.instruction}</Text>
               </Animated.View>
 
               <View style={styles.vizNav}>
@@ -396,13 +472,51 @@ export default function PrepareScreen() {
           </Animated.View>
         )}
 
+        {/* TACTICAL — genuine failure / missing position (no fake Continue pad) */}
+        {(content === 'tactical' || content === 'tactical-and-plan') &&
+          !currentScenario &&
+          !showQuickPlan &&
+          !playerPosition && (
+          <Animated.View key="tac-no-pos" entering={FadeInDown.duration(500)}>
+            <Card variant="gradient" shadow="cardLg" style={styles.stepCard}>
+              <Text style={styles.stepTitle}>{t('home.completeProfileTitle')}</Text>
+              <Text style={styles.stepDesc}>{t('home.completeProfileBody')}</Text>
+              <Button
+                label={t('home.setupProfileCta')}
+                onPress={() => router.replace('/(auth)/onboarding')}
+              />
+            </Card>
+          </Animated.View>
+        )}
+
+        {(content === 'tactical' || content === 'tactical-and-plan') &&
+          !currentScenario &&
+          !showQuickPlan &&
+          !!playerPosition &&
+          tacticalScenarios.length === 0 && (
+          <Animated.View key="tac-error" entering={FadeInDown.duration(500)}>
+            <Card variant="gradient" shadow="cardLg" style={styles.stepCard}>
+              <Text style={styles.stepTitle}>{t('matchDay.tacticalErrorTitle')}</Text>
+              <Text style={styles.stepDesc}>{t('matchDay.tacticalErrorSub')}</Text>
+              <Button label={t('matchDay.retryTactics')} onPress={retryTactics} />
+              <View style={{ marginTop: Spacing.sm }}>
+                <Button
+                  label={t('common.back')}
+                  onPress={() => router.replace('/(tabs)/match-day')}
+                  variant="outline"
+                />
+              </View>
+            </Card>
+          </Animated.View>
+        )}
+
         {/* TACTICAL */}
         {(content === 'tactical' || content === 'tactical-and-plan') && currentScenario && (
           <Animated.View key={`tac-${tacticalStep}`} entering={FadeInDown.duration(500)}>
             <Card variant="gradient" shadow="cardLg" style={styles.stepCard}>
               <View style={styles.tacHeader}>
                 <Text style={styles.stepTitle}>{t('matchDay.tacticalTitle')}</Text>
-                <Text style={styles.tacCount}>{t('matchDay.scoreCounter', { n: tacticalStep + 1, total: totalTactical })}</Text>
+                <Text style={styles.tacCount}>{t('matchDay.scoreCounter', { n: tacticalStep + 1, total: Math.max(tacticalScenarios.length, 1) })}</Text>
               </View>
               <View style={styles.tacTypeBadge}>
                 <Text style={styles.tacTypeText}>{currentScenario.type.toUpperCase()}</Text>
@@ -448,7 +562,13 @@ export default function PrepareScreen() {
                   </View>
                   <Text style={styles.explanationText}>{currentScenario.explanation}</Text>
                   <Button
-                    label={tacticalStep < totalTactical - 1 ? t('matchDay.nextScenario') : content === 'tactical-and-plan' ? t('matchDay.continueToPlan') : t('matchDay.breathingComplete')}
+                    label={
+                      tacticalStep < tacticalScenarios.length - 1
+                        ? t('matchDay.nextScenario')
+                        : content === 'tactical-and-plan'
+                          ? t('matchDay.continueToPlan')
+                          : t('matchDay.breathingComplete')
+                    }
                     onPress={nextTactical}
                     iconRight={<ArrowRight size={20} color={Colors.background} />}
                   />
@@ -472,12 +592,22 @@ export default function PrepareScreen() {
                 <SummaryRow label={t('matchDay.planGoals')} value={activePrep.setup.goals.map((g) => translatePersonalGoal(g, t)).join(', ')} />
               </View>
 
-              {/* Fixed reminders */}
+              {/* Position-appropriate match plan */}
               <View style={styles.reminders}>
-                <Reminder text={t('matchDay.reminder1')} />
-                <Reminder text={t('matchDay.reminder2')} />
-                <Reminder text={t('matchDay.reminder3')} />
+                {(plan?.reminders?.length
+                  ? plan.reminders
+                  : [t('matchDay.reminder1'), t('matchDay.reminder2'), t('matchDay.reminder3')]
+                ).map((text, i) => (
+                  <Reminder key={`r-${i}`} text={text} />
+                ))}
               </View>
+              {plan?.focusPoints?.length ? (
+                <View style={[styles.reminders, { marginTop: Spacing.sm }]}>
+                  {plan.focusPoints.map((text, i) => (
+                    <Reminder key={`f-${i}`} text={text} />
+                  ))}
+                </View>
+              ) : null}
 
               {/* Editable personal statement */}
               <View style={styles.statementWrap}>
@@ -485,7 +615,7 @@ export default function PrepareScreen() {
                 <TextInput
                   style={styles.statementInput}
                   multiline
-                  value={personalStatement}
+                  value={resolveDefaultStatement(personalStatement, t)}
                   onChangeText={setPersonalStatement}
                   placeholderTextColor={Colors.textQuaternary}
                   placeholder={t('matchDay.statementPlaceholder')}
@@ -502,7 +632,7 @@ export default function PrepareScreen() {
         )}
 
         {/* Quick mode: after all tactical scenarios, show the plan */}
-        {content === 'tactical-and-plan' && tacticalAnswers.length === totalTactical && !currentScenario && (
+        {content === 'tactical-and-plan' && showQuickPlan && (
           <Animated.View key="quick-plan" entering={FadeInDown.duration(500)}>
             <Card variant="gradient" shadow="cardLg" style={styles.stepCard}>
               <Text style={styles.stepTitle}>{t('matchDay.planTitle')}</Text>
@@ -511,16 +641,26 @@ export default function PrepareScreen() {
                 <SummaryRow label={t('matchDay.planGoals')} value={activePrep.setup.goals.map((g) => translatePersonalGoal(g, t)).join(', ')} />
               </View>
               <View style={styles.reminders}>
-                <Reminder text={t('matchDay.reminder1')} />
-                <Reminder text={t('matchDay.reminder2')} />
-                <Reminder text={t('matchDay.reminder3')} />
+                {(plan?.reminders?.length
+                  ? plan.reminders
+                  : [t('matchDay.reminder1'), t('matchDay.reminder2'), t('matchDay.reminder3')]
+                ).map((text, i) => (
+                  <Reminder key={`qr-${i}`} text={text} />
+                ))}
               </View>
+              {plan?.focusPoints?.length ? (
+                <View style={[styles.reminders, { marginTop: Spacing.sm }]}>
+                  {plan.focusPoints.map((text, i) => (
+                    <Reminder key={`qf-${i}`} text={text} />
+                  ))}
+                </View>
+              ) : null}
               <View style={styles.statementWrap}>
                 <Text style={styles.statementLabel}>{t('matchDay.yourStatement')}</Text>
                 <TextInput
                   style={styles.statementInput}
                   multiline
-                  value={personalStatement}
+                  value={resolveDefaultStatement(personalStatement, t)}
                   onChangeText={setPersonalStatement}
                   placeholderTextColor={Colors.textQuaternary}
                 />
@@ -564,7 +704,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.md },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.surfaceRaised, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: Colors.border },
   stepLabel: { fontFamily: 'Inter-SemiBold', fontSize: 11, color: Colors.gold, letterSpacing: 1.5 },
   stepName: { fontFamily: 'Inter-ExtraBold', fontSize: 20, color: Colors.textPrimary },
   opponentTag: { fontFamily: 'Inter-SemiBold', fontSize: 12, color: Colors.textTertiary },

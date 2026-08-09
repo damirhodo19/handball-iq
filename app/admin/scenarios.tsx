@@ -3,22 +3,23 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput, Alert,
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, Search, Plus, Filter, Download, Upload, ChevronRight,
-  Copy, Archive, Trash2, Pencil, Eye, X, FileJson,
+  Search, Plus, Filter, Download, Upload, ChevronRight, Copy, Archive, Trash2, Pencil, Eye, X, FileJson
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import {
   loadScenarios, loadScenariosAsync, duplicateScenarioAsync, archiveScenarioAsync,
-  deleteScenarioAsync, exportScenarios, importScenarios, AdminScenario,
+  deleteScenarioAsync, exportScenarios, importScenarios, bulkUpdateScenarioStatus, AdminScenario,
 } from '@/lib/admin-storage';
 import { ALL_POSITIONS, AGE_GROUPS, PLAYING_LEVELS } from '@/lib/positions';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   translatePosition, translateDifficulty, translateStatus,
   translateAgeGroup, translatePlayingLevel, translateAttackDefence,
+  translateCategory, translateDefensiveSystem, translatePressure,
 } from '@/lib/translations';
 
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert'] as const;
@@ -36,6 +37,10 @@ export default function AdminScenariosScreen() {
   const [showImport, setShowImport] = useState(tab === 'import');
   const [importText, setImportText] = useState('');
   const [importResult, setImportResult] = useState<string | null>(null);
+  const [statusTab, setStatusTab] = useState<'All' | 'Published' | 'Draft' | 'Archived'>('All');
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const [filters, setFilters] = useState({
     position: '' as string,
@@ -54,8 +59,16 @@ export default function AdminScenariosScreen() {
   });
 
   const refresh = async () => {
-    const data = await loadScenariosAsync();
-    setScenarios(data);
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const data = await loadScenariosAsync();
+      setScenarios(data);
+    } catch {
+      setLoadError(t('adminScenarios.loadFailed'));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const allCategories = useMemo(() => {
@@ -66,6 +79,7 @@ export default function AdminScenariosScreen() {
 
   const filtered = useMemo(() => {
     return scenarios.filter((s) => {
+      if (statusTab !== 'All' && s.status !== statusTab) return false;
       if (search) {
         const q = search.toLowerCase();
         if (!s.title.toLowerCase().includes(q) && !s.situation.toLowerCase().includes(q) && !s.learningObjective.toLowerCase().includes(q)) return false;
@@ -81,7 +95,45 @@ export default function AdminScenariosScreen() {
       if (filters.status && s.status !== filters.status) return false;
       return true;
     });
-  }, [scenarios, search, filters]);
+  }, [scenarios, search, filters, statusTab]);
+
+  const toggleSelect = (id: string) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedIds.size === filtered.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(filtered.map((s) => s.id)));
+    }
+  };
+
+  const handleBulkPublish = () => {
+    const n = bulkUpdateScenarioStatus([...selectedIds], 'Published');
+    Alert.alert(t('adminScenarios.bulkPublish'), t('adminScenarios.bulkPublishDone', { n }));
+    setSelectedIds(new Set());
+    refresh();
+  };
+
+  const handleBulkDraft = () => {
+    const n = bulkUpdateScenarioStatus([...selectedIds], 'Draft');
+    Alert.alert(t('adminScenarios.bulkDraft'), t('adminScenarios.bulkDraftDone', { n }));
+    setSelectedIds(new Set());
+    refresh();
+  };
+
+  const handleBulkArchive = () => {
+    const n = bulkUpdateScenarioStatus([...selectedIds], 'Archived');
+    Alert.alert(t('adminScenarios.bulkArchive'), t('adminScenarios.bulkArchiveDone', { n }));
+    setSelectedIds(new Set());
+    refresh();
+  };
 
   const handleDuplicate = async (id: string) => {
     await duplicateScenarioAsync(id);
@@ -132,9 +184,7 @@ export default function AdminScenariosScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {/* Header */}
         <Animated.View entering={FadeIn.duration(500)} style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('adminScenarios.title')}</Text>
             <Text style={styles.headerSub}>{filtered.length} of {scenarios.length} {t('adminScenarios.title').toLowerCase()}</Text>
@@ -161,6 +211,33 @@ export default function AdminScenariosScreen() {
           </View>
         </Animated.View>
 
+        {/* Status tabs */}
+        <Animated.View entering={FadeInDown.delay(80).duration(400)} style={styles.statusTabs}>
+          {(['All', 'Published', 'Draft', 'Archived'] as const).map((tab) => (
+            <TouchableOpacity
+              key={tab}
+              style={[styles.statusTab, statusTab === tab && styles.statusTabActive]}
+              onPress={() => { setStatusTab(tab); setSelectedIds(new Set()); }}
+            >
+              <Text style={[styles.statusTabText, statusTab === tab && styles.statusTabTextActive]}>
+                {tab === 'All' ? t('adminScenarios.statusAll') : tab === 'Published' ? t('adminScenarios.statusPublished') : tab === 'Draft' ? t('adminScenarios.statusDraft') : t('adminScenarios.statusArchived')}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </Animated.View>
+
+        {/* Bulk actions */}
+        {selectedIds.size > 0 && (
+          <Animated.View entering={FadeInDown.duration(300)} style={styles.bulkBar}>
+            <TouchableOpacity onPress={toggleSelectAll} accessibilityRole="checkbox">
+              <Text style={styles.bulkSelectText}>{t('adminScenarios.selectedCount', { n: selectedIds.size })}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.bulkBtn} onPress={handleBulkPublish}><Text style={styles.bulkBtnText}>{t('adminScenarios.bulkPublish')}</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.bulkBtn} onPress={handleBulkDraft}><Text style={styles.bulkBtnText}>{t('adminScenarios.bulkDraft')}</Text></TouchableOpacity>
+            <TouchableOpacity style={[styles.bulkBtn, styles.bulkBtnDanger]} onPress={handleBulkArchive}><Text style={styles.bulkBtnTextDanger}>{t('adminScenarios.bulkArchive')}</Text></TouchableOpacity>
+          </Animated.View>
+        )}
+
         {/* Filter toggle */}
         <Animated.View entering={FadeInDown.delay(100).duration(400)} style={styles.filterRow}>
           <TouchableOpacity style={[styles.filterBtn, showFilters && styles.filterBtnActive]} onPress={() => setShowFilters(!showFilters)}>
@@ -180,31 +257,31 @@ export default function AdminScenariosScreen() {
           <Animated.View entering={FadeInDown.duration(300)}>
             <Card padding={Spacing.md} style={{ marginBottom: Spacing.md }}>
               <FilterSection label={t('adminScenarios.filterPosition')}>
-                <FilterChips values={['', ...ALL_POSITIONS]} current={filters.position} onChange={(v) => setFilters({ ...filters, position: v })} />
+                <FilterChips values={['', ...ALL_POSITIONS]} current={filters.position} onChange={(v) => setFilters({ ...filters, position: v })} translate={(v) => translatePosition(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterCategory')}>
-                <FilterChips values={['', ...allCategories]} current={filters.category} onChange={(v) => setFilters({ ...filters, category: v })} />
+                <FilterChips values={['', ...allCategories]} current={filters.category} onChange={(v) => setFilters({ ...filters, category: v })} translate={(v) => translateCategory(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterDifficulty')}>
-                <FilterChips values={['', ...DIFFICULTIES]} current={filters.difficulty} onChange={(v) => setFilters({ ...filters, difficulty: v })} />
+                <FilterChips values={['', ...DIFFICULTIES]} current={filters.difficulty} onChange={(v) => setFilters({ ...filters, difficulty: v })} translate={(v) => translateDifficulty(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterAgeGroup')}>
-                <FilterChips values={['', ...AGE_GROUPS, 'All']} current={filters.ageGroup} onChange={(v) => setFilters({ ...filters, ageGroup: v })} />
+                <FilterChips values={['', ...AGE_GROUPS, 'All']} current={filters.ageGroup} onChange={(v) => setFilters({ ...filters, ageGroup: v })} translate={(v) => v === 'All' ? t('common.all') : translateAgeGroup(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterPlayingLevel')}>
-                <FilterChips values={['', ...PLAYING_LEVELS, 'All']} current={filters.playingLevel} onChange={(v) => setFilters({ ...filters, playingLevel: v })} />
+                <FilterChips values={['', ...PLAYING_LEVELS, 'All']} current={filters.playingLevel} onChange={(v) => setFilters({ ...filters, playingLevel: v })} translate={(v) => v === 'All' ? t('common.all') : translatePlayingLevel(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterAttackDefence')}>
-                <FilterChips values={['', ...ATTACK_DEFENCE]} current={filters.attackOrDefence} onChange={(v) => setFilters({ ...filters, attackOrDefence: v })} />
+                <FilterChips values={['', ...ATTACK_DEFENCE]} current={filters.attackOrDefence} onChange={(v) => setFilters({ ...filters, attackOrDefence: v })} translate={(v) => translateAttackDefence(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterDefensiveSystem')}>
-                <FilterChips values={['', ...DEFENSIVE_SYSTEMS]} current={filters.defensiveSystem} onChange={(v) => setFilters({ ...filters, defensiveSystem: v })} />
+                <FilterChips values={['', ...DEFENSIVE_SYSTEMS]} current={filters.defensiveSystem} onChange={(v) => setFilters({ ...filters, defensiveSystem: v })} translate={(v) => translateDefensiveSystem(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterPressureLevel')}>
-                <FilterChips values={['', ...PRESSURE_LEVELS]} current={filters.pressureLevel} onChange={(v) => setFilters({ ...filters, pressureLevel: v })} />
+                <FilterChips values={['', ...PRESSURE_LEVELS]} current={filters.pressureLevel} onChange={(v) => setFilters({ ...filters, pressureLevel: v })} translate={(v) => translatePressure(v, t)} />
               </FilterSection>
               <FilterSection label={t('adminScenarios.filterStatus')}>
-                <FilterChips values={['', ...STATUSES]} current={filters.status} onChange={(v) => setFilters({ ...filters, status: v })} />
+                <FilterChips values={['', ...STATUSES]} current={filters.status} onChange={(v) => setFilters({ ...filters, status: v })} translate={(v) => translateStatus(v, t)} />
               </FilterSection>
             </Card>
           </Animated.View>
@@ -252,25 +329,41 @@ export default function AdminScenariosScreen() {
 
         {/* Scenario List */}
         <View style={{ gap: Spacing.sm }}>
-          {filtered.length === 0 ? (
+          {loading ? (
+            <Card padding={Spacing.xl} style={{ alignItems: 'center' }}>
+              <Text style={styles.emptySub}>{t('common.loading')}</Text>
+            </Card>
+          ) : loadError ? (
+            <Card padding={Spacing.xl} style={{ alignItems: 'center', gap: Spacing.md }}>
+              <Text style={styles.emptyTitle}>{t('adminScenarios.loadFailed')}</Text>
+              <Button label={t('common.retry')} onPress={refresh} variant="outline" size="md" />
+            </Card>
+          ) : filtered.length === 0 ? (
             <Card padding={Spacing.xl} style={{ alignItems: 'center' }}>
               <Text style={styles.emptyTitle}>{t('adminScenarios.emptyTitle')}</Text>
               <Text style={styles.emptySub}>{t('adminScenarios.emptySub')}</Text>
               <Button label={t('adminScenarios.createScenario')} onPress={() => router.push('/admin/editor')} variant="gold" size="md" style={{ marginTop: Spacing.md }} />
             </Card>
           ) : (
-            filtered.map((s, i) => (
-              <Animated.View key={s.id} entering={FadeInDown.delay(Math.min(i * 30, 300)).duration(400)}>
-                <ScenarioCard
-                  scenario={s}
-                  onOpen={() => router.push(`/admin/editor?id=${s.id}&mode=view`)}
-                  onEdit={() => router.push(`/admin/editor?id=${s.id}`)}
-                  onDuplicate={() => handleDuplicate(s.id)}
-                  onArchive={() => handleArchive(s.id)}
-                  onDelete={() => handleDelete(s.id, s.title)}
-                />
-              </Animated.View>
-            ))
+            <>
+              <TouchableOpacity style={styles.selectAllRow} onPress={toggleSelectAll}>
+                <Text style={styles.selectAllText}>{t('adminScenarios.selectAll')}</Text>
+              </TouchableOpacity>
+              {filtered.map((s, i) => (
+                <Animated.View key={s.id} entering={FadeInDown.delay(Math.min(i * 30, 300)).duration(400)}>
+                  <ScenarioCard
+                    scenario={s}
+                    selected={selectedIds.has(s.id)}
+                    onToggleSelect={() => toggleSelect(s.id)}
+                    onOpen={() => router.push(`/admin/editor?id=${s.id}&mode=view`)}
+                    onEdit={() => router.push(`/admin/editor?id=${s.id}`)}
+                    onDuplicate={() => handleDuplicate(s.id)}
+                    onArchive={() => handleArchive(s.id)}
+                    onDelete={() => handleDelete(s.id, s.title)}
+                  />
+                </Animated.View>
+              ))}
+            </>
           )}
         </View>
       </ScrollView>
@@ -287,13 +380,13 @@ function FilterSection({ label, children }: { label: string; children: React.Rea
   );
 }
 
-function FilterChips({ values, current, onChange }: { values: readonly string[]; current: string; onChange: (v: string) => void }) {
+function FilterChips({ values, current, onChange, translate }: { values: readonly string[]; current: string; onChange: (v: string) => void; translate?: (v: string) => string }) {
   const { t } = useTranslation();
   return (
     <View style={styles.chipWrap}>
       {values.map((v) => {
         const active = current === v;
-        const label = v === '' ? t('common.all') : v;
+        const label = v === '' ? t('common.all') : (translate ? translate(v) : v);
         return (
           <TouchableOpacity
             key={v || 'all'}
@@ -309,9 +402,11 @@ function FilterChips({ values, current, onChange }: { values: readonly string[];
 }
 
 function ScenarioCard({
-  scenario, onOpen, onEdit, onDuplicate, onArchive, onDelete,
+  scenario, selected, onToggleSelect, onOpen, onEdit, onDuplicate, onArchive, onDelete,
 }: {
   scenario: AdminScenario;
+  selected?: boolean;
+  onToggleSelect?: () => void;
   onOpen: () => void;
   onEdit: () => void;
   onDuplicate: () => void;
@@ -323,12 +418,18 @@ function ScenarioCard({
   const updatedDate = new Date(scenario.updatedAt).toLocaleDateString();
 
   return (
-    <Card padding={Spacing.md}>
-      <TouchableOpacity onPress={onOpen} activeOpacity={0.7} style={{ marginBottom: Spacing.sm }}>
+    <Card padding={Spacing.md} style={selected ? { borderColor: Colors.gold, borderWidth: 2 } : undefined}>
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: Spacing.sm }}>
+        {onToggleSelect ? (
+          <TouchableOpacity onPress={onToggleSelect} style={[styles.checkbox, selected && styles.checkboxSelected]} accessibilityRole="checkbox" accessibilityState={{ checked: selected }}>
+            {selected ? <Text style={styles.checkboxMark}>✓</Text> : null}
+          </TouchableOpacity>
+        ) : null}
+        <TouchableOpacity onPress={onOpen} activeOpacity={0.7} style={{ flex: 1, marginBottom: Spacing.sm }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <View style={{ flex: 1, marginRight: Spacing.sm }}>
             <Text style={styles.cardTitle} numberOfLines={2}>{scenario.title}</Text>
-            <Text style={styles.cardMeta}>{translatePosition(scenario.position, t)} · {scenario.category} · {translateDifficulty(scenario.difficulty, t)}</Text>
+            <Text style={styles.cardMeta}>{translatePosition(scenario.position, t)} · {translateCategory(scenario.category, t)} · {translateDifficulty(scenario.difficulty, t)}</Text>
             <Text style={styles.cardMeta2}>{t('adminScenarios.cardMeta', { minute: scenario.minute, date: updatedDate })}</Text>
           </View>
           <View style={[styles.statusBadge, { backgroundColor: statusColor + '20', borderColor: statusColor }]}>
@@ -336,6 +437,7 @@ function ScenarioCard({
           </View>
         </View>
       </TouchableOpacity>
+      </View>
       <View style={styles.actionRow}>
         <CardAction icon={<Eye size={16} color={Colors.textSecondary} />} label={t('adminScenarios.cardOpen')} onPress={onOpen} />
         <CardAction icon={<Pencil size={16} color={Colors.textSecondary} />} label={t('adminScenarios.cardEdit')} onPress={onEdit} />
@@ -359,7 +461,6 @@ function CardAction({ icon, label, onPress, danger }: { icon: React.ReactNode; l
 const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   iconBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 24, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
@@ -393,4 +494,20 @@ const styles = StyleSheet.create({
   cardActionText: { fontSize: 12, color: Colors.textSecondary, fontFamily: 'Inter-Medium' },
   emptyTitle: { fontSize: 18, color: Colors.textPrimary, fontFamily: 'Inter-Bold', marginBottom: 4 },
   emptySub: { fontSize: 14, color: Colors.textTertiary, fontFamily: 'Inter-Regular', textAlign: 'center' },
+  statusTabs: { flexDirection: 'row', gap: 6, marginBottom: Spacing.md, flexWrap: 'wrap' },
+  statusTab: { paddingHorizontal: 14, paddingVertical: 10, borderRadius: 99, backgroundColor: Colors.surfaceRaised, borderWidth: 1, borderColor: Colors.border, minHeight: 44, justifyContent: 'center' },
+  statusTabActive: { backgroundColor: Colors.gold, borderColor: Colors.gold },
+  statusTabText: { fontSize: 13, color: Colors.textSecondary, fontFamily: 'Inter-SemiBold' },
+  statusTabTextActive: { color: Colors.background },
+  bulkBar: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.md, padding: Spacing.md, backgroundColor: Colors.surface, borderRadius: Radius.md, borderWidth: 1, borderColor: Colors.gold },
+  bulkSelectText: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.gold, marginRight: Spacing.sm },
+  bulkBtn: { paddingHorizontal: 12, paddingVertical: 8, borderRadius: Radius.sm, backgroundColor: Colors.goldSoft, borderWidth: 1, borderColor: Colors.gold, minHeight: 44, justifyContent: 'center' },
+  bulkBtnText: { fontFamily: 'Inter-SemiBold', fontSize: 12, color: Colors.gold },
+  bulkBtnDanger: { borderColor: Colors.error, backgroundColor: Colors.errorSoft },
+  bulkBtnTextDanger: { fontFamily: 'Inter-SemiBold', fontSize: 12, color: Colors.error },
+  selectAllRow: { paddingVertical: Spacing.sm },
+  selectAllText: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.gold },
+  checkbox: { width: 28, height: 28, borderRadius: 8, borderWidth: 2, borderColor: Colors.border, justifyContent: 'center', alignItems: 'center', marginTop: 2 },
+  checkboxSelected: { backgroundColor: Colors.gold, borderColor: Colors.gold },
+  checkboxMark: { color: Colors.background, fontFamily: 'Inter-ExtraBold', fontSize: 14 },
 });

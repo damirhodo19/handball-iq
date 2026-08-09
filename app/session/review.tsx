@@ -1,30 +1,27 @@
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ChevronLeft, Check, X, Clock, Target } from 'lucide-react-native';
+import { Check, X, Clock, Target } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { useSession } from '@/context/SessionContext';
 import { useTranslation } from '@/hooks/useTranslation';
+import { localizeGKScenario } from '@/lib/scenario-localize';
+import { translateMatchPhase } from '@/lib/translations';
 
 export default function ReviewScreen() {
   const { scenarios, answers } = useSession();
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Top bar */}
         <View style={styles.topBar}>
-          <TouchableOpacity
-            style={styles.backBtn}
-            activeOpacity={0.7}
-            onPress={() => router.back()}
-          >
-            <ChevronLeft size={22} color={Colors.textSecondary} />
-          </TouchableOpacity>
+          <BackButton fallbackHref="/session/results" />
           <Text style={styles.topBarTitle}>{t('sessionReview.title')}</Text>
           <View style={styles.backBtnPlaceholder} />
         </View>
@@ -32,7 +29,8 @@ export default function ReviewScreen() {
         <Text style={styles.subtitle}>{t('sessionReview.subtitle')}</Text>
 
         {/* Scenario reviews */}
-        {scenarios.map((scenario, i) => {
+        {scenarios.map((rawScenario, i) => {
+          const scenario = localizeGKScenario(rawScenario, lang, t);
           const userAnswer = answers[i];
           const isCorrect = userAnswer === scenario.correctIndex;
           const userText = userAnswer !== null ? scenario.options[userAnswer] : t('sessionReview.noAnswer');
@@ -59,13 +57,13 @@ export default function ReviewScreen() {
                 {/* Match info */}
                 <View style={styles.matchInfoRow}>
                   <View style={styles.matchBadge}>
-                    <Text style={styles.matchBadgeText}>{scenario.half}</Text>
+                    <Text style={styles.matchBadgeText}>{translateMatchPhase(scenario.half, t)}</Text>
                   </View>
                   <View style={styles.matchTime}>
                     <Clock size={12} color={Colors.textTertiary} />
                     <Text style={styles.matchTimeText}>{scenario.time}</Text>
                   </View>
-                  <Text style={styles.scoreText}>Score {scenario.score}</Text>
+                  <Text style={styles.scoreText}>{t('match.score')} {scenario.score}</Text>
                 </View>
 
                 {/* Situation */}
@@ -108,7 +106,7 @@ export default function ReviewScreen() {
         <View style={styles.buttonWrap}>
           <Button
             label={t('sessionReview.backToResults')}
-            onPress={() => router.replace('/(tabs)/home')}
+            onPress={() => router.replace('/session/results')}
           />
         </View>
       </ScrollView>

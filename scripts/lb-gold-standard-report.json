@@ -1,0 +1,246 @@
+{
+  "updated": 10,
+  "added": 2,
+  "report": [
+    {
+      "id": "scn_bank_156",
+      "title": "Lijevi vanjski — osnovni prostor između braniča",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_158",
+      "title": "Lijevi vanjski — linija bloka protiv zatvorenog pivota",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_159",
+      "title": "Lijevi vanjski — suradnja s pivotom nakon zatvaranja",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 8,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.6,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_161",
+      "title": "Lijevi vanjski — križanje nakon kasnog preuzimanja",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 8,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.6,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_162",
+      "title": "Lijevi vanjski — otvorena strana protiv agresivne 5:1",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_163",
+      "title": "Lijevi vanjski — prostor u igraču više prije rotacije",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_164",
+      "title": "Lijevi vanjski — prvi u povratku u obranu",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_165",
+      "title": "Lijevi vanjski — promjena šuta nakon čitanja vratara",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_166",
+      "title": "Lijevi vanjski — odluka u zadnjem napadu",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_363",
+      "title": "Obrana — zatvaranje u 3:2:1",
+      "qualityScore": 8,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 8,
+          "croatianNaturalness": 9,
+          "positionRelevance": 7,
+          "gameStateClarity": 9
+        },
+        "overall": 8.4,
+        "passGold": false
+      }
+    },
+    {
+      "id": "scn_bank_657",
+      "title": "Lijevi vanjski — prostor iza prve linije u 3:2:1",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    },
+    {
+      "id": "scn_bank_658",
+      "title": "Lijevi vanjski — ulazak drugog pivota u 7 na 6",
+      "qualityScore": 9,
+      "rubricV2": {
+        "version": "2.0.0",
+        "dims": {
+          "tacticalRealism": 8,
+          "singleBestIntegrity": 9,
+          "cueQuality": 9,
+          "distractorPlausibility": 8,
+          "educationalValue": 9,
+          "croatianNaturalness": 9,
+          "positionRelevance": 9,
+          "gameStateClarity": 9
+        },
+        "overall": 8.8,
+        "passGold": true
+      }
+    }
+  ]
+}

@@ -1,13 +1,16 @@
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, Check, X, Clock, Activity } from 'lucide-react-native';
+import { Check, X, Clock, Activity } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { useMatch } from '@/context/MatchContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translatePressure } from '@/lib/translations';
+import { localizeMatchSituation } from '@/lib/scenario-localize';
+import { localizeContent } from '@/lib/content-localize';
 
 const PRESSURE_COLORS: Record<string, string> = {
   Low: Colors.success,
@@ -24,12 +27,8 @@ const QUALITY_COLORS: Record<string, string> = {
 };
 
 export default function MatchReviewScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const { situations, answers } = useMatch();
-
-  function handleBack() {
-    router.back();
-  }
 
   function handleHome() {
     router.push('/(tabs)/home');
@@ -40,9 +39,7 @@ export default function MatchReviewScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} activeOpacity={0.85} onPress={handleBack}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('sessionReview.title')}</Text>
             <Text style={styles.headerSub}>{t('sessionReview.situation', { n: answers.length })}</Text>
@@ -50,7 +47,8 @@ export default function MatchReviewScreen() {
         </View>
 
         {/* Situation-by-situation review */}
-        {situations.map((sit, i) => {
+        {situations.map((rawSit, i) => {
+          const sit = localizeMatchSituation(rawSit, lang, t);
           const answer = answers[i];
           if (!answer) return null;
           const chosen = sit.decisions.find((d) => d.id === answer.chosenDecisionId);
@@ -115,7 +113,7 @@ export default function MatchReviewScreen() {
                 {/* Feedback */}
                 <View style={styles.feedbackBox}>
                   <View style={styles.feedbackIcon}><Activity size={12} color={Colors.gold} /></View>
-                  <Text style={styles.feedbackText}>{answer.feedback}</Text>
+                  <Text style={styles.feedbackText}>{localizeContent(answer.feedback, lang, t)}</Text>
                 </View>
               </Card>
             </Animated.View>
@@ -134,7 +132,6 @@ export default function MatchReviewScreen() {
 const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 1 },
 

@@ -8,9 +8,11 @@ import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { useMatchDay } from '@/context/MatchDayContext';
 import { loadPreps, MatchDayPrep, calculateReadiness } from '@/lib/match-day-storage';
 import { useTranslation } from '@/hooks/useTranslation';
+import { resolveDefaultStatement, translatePersonalGoal } from '@/lib/translations';
 
 export default function ReadyScreen() {
   const { t } = useTranslation();
@@ -44,6 +46,9 @@ export default function ReadyScreen() {
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+        <View style={{ marginBottom: Spacing.md }}>
+          <BackButton fallbackHref="/(tabs)/match-day" />
+        </View>
 
         {/* Hero */}
         <Animated.View entering={FadeIn.duration(600)} style={styles.hero}>
@@ -87,7 +92,7 @@ export default function ReadyScreen() {
                 <Target size={18} color={Colors.gold} />
                 <View style={{ flex: 1 }}>
                   {goals.map((g) => (
-                    <Text key={g} style={styles.focusGoal}>{g}</Text>
+                    <Text key={g} style={styles.focusGoal}>{translatePersonalGoal(g, t)}</Text>
                   ))}
                 </View>
               </View>
@@ -100,7 +105,7 @@ export default function ReadyScreen() {
           <Text style={styles.sectionLabel}>{t('matchDay.yourStatement')}</Text>
           <Card variant="gradient" shadow="card" style={styles.statementCard}>
             <Star size={16} color={Colors.gold} />
-            <Text style={styles.statementText}>{personalStatement}</Text>
+            <Text style={styles.statementText}>{resolveDefaultStatement(personalStatement, t)}</Text>
           </Card>
         </Animated.View>
 

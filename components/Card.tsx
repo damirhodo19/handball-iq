@@ -44,9 +44,19 @@ export function Card({ children, style, variant = 'default', padding = 20, shado
 interface PressableCardProps extends CardProps {
   onPress: () => void;
   pressedScale?: number;
+  testID?: string;
 }
 
-export function PressableCard({ children, onPress, pressedScale = 0.97, style, variant = 'default', padding = 20, shadow = 'card' }: PressableCardProps) {
+export function PressableCard({
+  children,
+  onPress,
+  pressedScale = 0.97,
+  style,
+  variant = 'default',
+  padding = 20,
+  shadow = 'card',
+  testID,
+}: PressableCardProps) {
   const bg = {
     default: Colors.surface,
     elevated: Colors.surfaceElevated,
@@ -57,9 +67,18 @@ export function PressableCard({ children, onPress, pressedScale = 0.97, style, v
 
   return (
     <Pressable
+      testID={testID}
       onPress={onPress}
       style={({ pressed }) => [
-        { backgroundColor: bg, borderRadius: Radius.lg, padding, borderWidth: 1, borderColor: Colors.border },
+        {
+          backgroundColor: bg,
+          borderRadius: Radius.lg,
+          padding,
+          borderWidth: 1,
+          borderColor: Colors.border,
+          maxWidth: '100%',
+          alignSelf: 'stretch',
+        },
         shadowStyle,
         pressed && { transform: [{ scale: pressedScale }], opacity: 0.95 },
         style,

@@ -1,0 +1,24 @@
+{
+  "version": "1.1.0",
+  "status": "PASS",
+  "managedTerms": 116,
+  "localeMismatches": [],
+  "forbiddenHits": [],
+  "bankMtHits": [],
+  "replacedTerms": [],
+  "manualReview": [
+    {
+      "area": "English scenario source strings",
+      "note": "EN bank source may use goalkeeper/screen; HR/DE must use official terms via glossary + MT fixes."
+    },
+    {
+      "area": "Position abbreviations",
+      "note": "positionShort.gk (GK) is allowed only as compact UI abbreviation, not as full position label."
+    },
+    {
+      "area": "Legacy preference labels",
+      "note": "lib/platform/tactical-systems.ts may keep old HR labels only as normalize inputs."
+    }
+  ],
+  "filesScanned": 333
+}

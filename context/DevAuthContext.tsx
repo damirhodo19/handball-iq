@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import { router } from 'expo-router';
+import { useAuth } from '@/context/AuthContext';
 
 export interface TestUser {
   name: string;
@@ -12,11 +13,11 @@ export interface TestUser {
 }
 
 const TEST_USER: TestUser = {
-  name: 'Damir',
-  role: 'Goalkeeper',
-  membership: 'Founding Member',
-  memberNumber: '#001',
-  handball_iq_score: 82,
+  name: 'Player',
+  role: 'player',
+  membership: 'Developer',
+  memberNumber: '',
+  handball_iq_score: 0,
   streak: 0,
   total_points: 0,
 };
@@ -28,26 +29,15 @@ interface DevAuthContextValue {
   testUser: TestUser | null;
   signInAsTestUser: () => void;
   signOut: () => void;
+  clearDevAuth: () => void;
 }
 
 const DevAuthContext = createContext<DevAuthContextValue | undefined>(undefined);
 
-function readStored(): boolean {
+function clearLegacyDevAuthStorage(): void {
   try {
     if (typeof window !== 'undefined' && window.localStorage) {
-      return window.localStorage.getItem(DEV_AUTH_KEY) === 'true';
-    }
-  } catch {
-    // ignore
-  }
-  return false;
-}
-
-function writeStored(value: boolean): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      if (value) window.localStorage.setItem(DEV_AUTH_KEY, 'true');
-      else window.localStorage.removeItem(DEV_AUTH_KEY);
+      window.localStorage.removeItem(DEV_AUTH_KEY);
     }
   } catch {
     // ignore
@@ -55,32 +45,46 @@ function writeStored(value: boolean): void {
 }
 
 export function DevAuthProvider({ children }: { children: ReactNode }) {
+  const { session, loading: authLoading } = useAuth();
   const [isDevAuthenticated, setIsDevAuthenticated] = useState(false);
   const [testUser, setTestUser] = useState<TestUser | null>(null);
 
+  const clearDevAuth = useCallback(() => {
+    clearLegacyDevAuthStorage();
+    setIsDevAuthenticated(false);
+    setTestUser(null);
+  }, []);
+
   useEffect(() => {
-    if (readStored()) {
-      setIsDevAuthenticated(true);
-      setTestUser(TEST_USER);
+    // Never keep legacy web QA auth in release / preview builds
+    clearLegacyDevAuthStorage();
+    if (!__DEV__) {
+      setIsDevAuthenticated(false);
+      setTestUser(null);
     }
   }, []);
 
+  useEffect(() => {
+    if (authLoading) return;
+    if (session) {
+      clearDevAuth();
+    }
+  }, [session, authLoading, clearDevAuth]);
+
   const signInAsTestUser = useCallback(() => {
-    writeStored(true);
+    if (!__DEV__) return;
     setIsDevAuthenticated(true);
     setTestUser(TEST_USER);
     router.replace('/(tabs)/home');
   }, []);
 
   const signOut = useCallback(() => {
-    writeStored(false);
-    setIsDevAuthenticated(false);
-    setTestUser(null);
+    clearDevAuth();
     router.replace('/(auth)/login');
-  }, []);
+  }, [clearDevAuth]);
 
   return (
-    <DevAuthContext.Provider value={{ isDevAuthenticated, testUser, signInAsTestUser, signOut }}>
+    <DevAuthContext.Provider value={{ isDevAuthenticated, testUser, signInAsTestUser, signOut, clearDevAuth }}>
       {children}
     </DevAuthContext.Provider>
   );

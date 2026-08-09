@@ -1,5 +1,19 @@
+import { readStorageJson, writeStorageJson } from '@/lib/platform-storage';
+import {
+  todayStr as localTodayStr,
+  getWeekStart as localWeekStart,
+  daysBetweenLocal,
+} from '@/lib/development/calendar';
+import {
+  normalizeAttackStyleId,
+  normalizeDefenseSystemId,
+} from '@/lib/platform/tactical-systems';
+
 export interface UserProfile {
   name: string;
+  firstName?: string;
+  lastName?: string;
+  role: 'player' | 'coach' | 'player_coach' | 'admin' | null;
   position: string;
   secondaryPosition: string | null;
   age: string;
@@ -10,6 +24,13 @@ export interface UserProfile {
   experienceLevel: string;
   playingLevel: string | null;
   developmentGoal: string | null;
+  coachType?: string | null;
+  experienceBand?: string | null;
+  favoriteDefense?: string | null;
+  favoriteAttack?: string | null;
+  coachDevelopmentGoal?: string | null;
+  onboardingVersion: number;
+  notificationsEnabled?: boolean;
 }
 
 export interface SessionRecord {
@@ -26,7 +47,10 @@ export interface SessionRecord {
 export interface StreakData {
   currentStreak: number;
   longestStreak: number;
+  /** @deprecated Prefer lastQualifyingDate — kept for persisted data compatibility */
   lastSessionDate: string | null;
+  /** Local calendar date of last qualifying development activity */
+  lastQualifyingDate: string | null;
   sessionsThisWeek: number;
   weekStart: string;
 }
@@ -49,72 +73,72 @@ const KEYS = {
 };
 
 function getItem<T>(key: string, fallback: T): T {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(key);
-      if (raw) return JSON.parse(raw) as T;
-    }
-  } catch {}
-  return fallback;
+  return readStorageJson(key, fallback);
 }
 
 function setItem<T>(key: string, value: T): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  } catch {}
+  writeStorageJson(key, value);
 }
 
 const DEFAULT_PROFILE: UserProfile = {
-  name: 'Damir',
-  position: 'Goalkeeper',
+  name: '',
+  firstName: '',
+  lastName: '',
+  role: null,
+  position: '',
   secondaryPosition: null,
   age: '',
   ageGroup: null,
   club: '',
   country: '',
-  dominantHand: 'Right',
-  experienceLevel: 'Amateur',
+  dominantHand: '',
+  experienceLevel: '',
   playingLevel: null,
   developmentGoal: null,
+  coachType: null,
+  experienceBand: null,
+  favoriteDefense: null,
+  favoriteAttack: null,
+  coachDevelopmentGoal: null,
+  onboardingVersion: 0,
+  notificationsEnabled: true,
 };
 
 const DEFAULT_STREAK: StreakData = {
   currentStreak: 0,
   longestStreak: 0,
   lastSessionDate: null,
+  lastQualifyingDate: null,
   sessionsThisWeek: 0,
-  weekStart: getWeekStart(),
+  weekStart: localWeekStart(),
 };
 
 function getWeekStart(): string {
-  const d = new Date();
-  const day = d.getDay();
-  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
-  d.setDate(diff);
-  d.setHours(0, 0, 0, 0);
-  return d.toISOString().split('T')[0];
+  return localWeekStart();
 }
 
 function todayStr(): string {
-  return new Date().toISOString().split('T')[0];
+  return localTodayStr();
 }
 
 function daysBetween(a: string, b: string): number {
-  const da = new Date(a + 'T00:00:00');
-  const db = new Date(b + 'T00:00:00');
-  return Math.round((db.getTime() - da.getTime()) / 86400000);
+  return daysBetweenLocal(a, b);
 }
 
 // ---- Profile ----
 
 export function loadProfile(): UserProfile {
-  return getItem(KEYS.PROFILE, DEFAULT_PROFILE);
+  const stored = getItem<Partial<UserProfile>>(KEYS.PROFILE, {});
+  return { ...DEFAULT_PROFILE, ...stored };
 }
 
 export function saveProfile(profile: UserProfile): void {
-  setItem(KEYS.PROFILE, profile);
+  const next: UserProfile = { ...profile };
+  const defense = normalizeDefenseSystemId(next.favoriteDefense);
+  if (defense) next.favoriteDefense = defense;
+  const attack = normalizeAttackStyleId(next.favoriteAttack);
+  if (attack) next.favoriteAttack = attack;
+  setItem(KEYS.PROFILE, next);
 }
 
 // ---- Sessions ----
@@ -123,13 +147,17 @@ export function loadSessions(): SessionRecord[] {
   return getItem<SessionRecord[]>(KEYS.SESSIONS, []);
 }
 
-export function saveSession(record: Omit<SessionRecord, 'id'>): SessionRecord {
+export function saveSession(record: Omit<SessionRecord, 'id'> & { id?: string }): SessionRecord {
   const sessions = loadSessions();
-  const full: SessionRecord = { ...record, id: `s_${Date.now()}` };
+  const id = record.id ?? `s_${Date.now()}`;
+  const existing = sessions.find((s) => s.id === id);
+  if (existing) return existing;
+  const { id: _ignore, ...rest } = record as SessionRecord;
+  const full: SessionRecord = { ...rest, id };
   sessions.unshift(full);
   setItem(KEYS.SESSIONS, sessions);
   updateStreak();
-  updateMetrics(record);
+  updateMetrics(full);
   return full;
 }
 
@@ -137,7 +165,19 @@ export function saveSession(record: Omit<SessionRecord, 'id'>): SessionRecord {
 
 export function loadStreak(): StreakData {
   const data = getItem<StreakData>(KEYS.STREAK, DEFAULT_STREAK);
-  // Reset week if needed
+  if (!data.lastQualifyingDate && data.lastSessionDate) {
+    data.lastQualifyingDate = data.lastSessionDate;
+  }
+  // Break streak if a full local calendar day was missed since last load
+  const today = todayStr();
+  const last = data.lastQualifyingDate ?? data.lastSessionDate;
+  if (last) {
+    const gap = daysBetween(last, today);
+    if (gap > 1 && data.currentStreak > 0) {
+      data.currentStreak = 0;
+      setItem(KEYS.STREAK, data);
+    }
+  }
   if (data.weekStart !== getWeekStart()) {
     data.sessionsThisWeek = 0;
     data.weekStart = getWeekStart();
@@ -146,25 +186,37 @@ export function loadStreak(): StreakData {
   return data;
 }
 
+/**
+ * One qualifying development activity per local calendar day continues the streak.
+ * Extra activities the same day do not increase streak again.
+ */
 function updateStreak(): void {
   const data = loadStreak();
   const today = todayStr();
-  if (data.lastSessionDate === today) {
+  const last = data.lastQualifyingDate ?? data.lastSessionDate;
+
+  if (last === today) {
     data.sessionsThisWeek += 1;
     setItem(KEYS.STREAK, data);
     return;
   }
-  if (data.lastSessionDate) {
-    const gap = daysBetween(data.lastSessionDate, today);
+
+  if (last) {
+    const gap = daysBetween(last, today);
     if (gap === 1) {
       data.currentStreak += 1;
     } else if (gap > 1) {
       data.currentStreak = 1;
+    } else {
+      // gap <= 0 (clock skew) — keep streak, still mark today
+      data.currentStreak = Math.max(1, data.currentStreak);
     }
   } else {
     data.currentStreak = 1;
   }
+
   data.longestStreak = Math.max(data.longestStreak, data.currentStreak);
+  data.lastQualifyingDate = today;
   data.lastSessionDate = today;
   data.sessionsThisWeek += 1;
   setItem(KEYS.STREAK, data);
@@ -211,18 +263,25 @@ function updateMetrics(session: Omit<SessionRecord, 'id'>): void {
 
 export interface AppSettings {
   darkMode: boolean;
+  theme: 'light' | 'dark' | 'system';
+  themeMigrated: boolean;
   language: 'English' | 'German' | 'Croatian';
   dailyReminder: boolean;
+  /** Last selected shell for player_coach users */
+  activeMode: 'player' | 'coach';
 }
 
 const DEFAULT_SETTINGS: AppSettings = {
-  darkMode: true,
+  darkMode: false,
+  theme: 'light',
+  themeMigrated: true,
   language: 'English',
   dailyReminder: false,
+  activeMode: 'player',
 };
 
 export function loadSettings(): AppSettings {
-  return getItem(KEYS.SETTINGS, DEFAULT_SETTINGS);
+  return { ...DEFAULT_SETTINGS, ...getItem(KEYS.SETTINGS, DEFAULT_SETTINGS) };
 }
 
 export function saveSettings(settings: AppSettings): void {
@@ -230,6 +289,18 @@ export function saveSettings(settings: AppSettings): void {
 }
 
 // ---- Match History ----
+
+export interface MatchReportSnapshot {
+  decisionScore: number;
+  pressureControl: number;
+  readingAbility: number;
+  consistency: number;
+  matchRating: number;
+  optimalCount: number;
+  goodCount: number;
+  riskyCount: number;
+  poorCount: number;
+}
 
 export interface MatchHistoryRecord {
   id: string;
@@ -241,8 +312,11 @@ export interface MatchHistoryRecord {
   pressureControl: number;
   readingAbility: number;
   consistency: number;
-  summary: string;
-  finalMessage: string;
+  /** @deprecated Legacy localized text — prefer reportSnapshot */
+  summary?: string;
+  /** @deprecated Legacy localized text — prefer reportSnapshot */
+  finalMessage?: string;
+  reportSnapshot?: MatchReportSnapshot;
   answers: any[];
 }
 
@@ -250,10 +324,16 @@ export function loadMatchHistory(): MatchHistoryRecord[] {
   return getItem<MatchHistoryRecord[]>(KEYS.MATCHES, []);
 }
 
-export function saveMatchRecord(record: Omit<MatchHistoryRecord, 'id'>): MatchHistoryRecord {
+export function saveMatchRecord(record: Omit<MatchHistoryRecord, 'id'> & { id?: string }): MatchHistoryRecord {
   const matches = loadMatchHistory();
-  const full: MatchHistoryRecord = { ...record, id: `m_${Date.now()}` };
+  const id = record.id ?? `m_${Date.now()}`;
+  const existing = matches.find((m) => m.id === id);
+  if (existing) return existing;
+  const { id: _ignore, ...rest } = record as MatchHistoryRecord;
+  const full: MatchHistoryRecord = { ...rest, id };
   matches.unshift(full);
   setItem(KEYS.MATCHES, matches);
+  // Match Simulator qualifies as a development activity for the local calendar day
+  updateStreak();
   return full;
 }

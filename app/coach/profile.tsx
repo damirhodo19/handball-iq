@@ -2,12 +2,14 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, TrendingUp, TrendingDown, Minus, Brain } from 'lucide-react-native';
+import { TrendingUp, TrendingDown, Minus, Brain } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { buildPlayerProfile, PlayerProfile, SkillScore } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
+import { translateSkillCategory } from '@/lib/coach-i18n';
 
 export default function ProfileScreen() {
   const { t } = useTranslation();
@@ -31,9 +33,7 @@ export default function ProfileScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachProfile.title')}</Text>
             <Text style={styles.headerSub}>{t('coachProfile.subtitle')}</Text>
@@ -83,7 +83,7 @@ function SkillCard({ skill, index }: { skill: SkillScore; index: number }) {
       <Card variant="gradient" shadow="card" style={styles.skillCard}>
         <View style={styles.skillHeader}>
           <View style={{ flex: 1 }}>
-            <Text style={styles.skillLabel}>{skill.label}</Text>
+            <Text style={styles.skillLabel}>{translateSkillCategory(skill.category, t)}</Text>
             <Text style={styles.skillSample}>{t('coachProfile.dataPoints', { n: skill.sample })}</Text>
           </View>
           <View style={styles.skillScoreWrap}>
@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

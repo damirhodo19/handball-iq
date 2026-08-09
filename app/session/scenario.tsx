@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeInDown, SlideInRight, SlideOutLeft } from 'react-native-reanimated';
-import { ChevronLeft, Check, Clock, Target } from 'lucide-react-native';
+import { Check, Clock, Target } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { useSession } from '@/context/SessionContext';
 import { useTranslation } from '@/hooks/useTranslation';
+import { localizeGKScenario } from '@/lib/scenario-localize';
 
 export default function ScenarioScreen() {
   const {
@@ -21,9 +23,13 @@ export default function ScenarioScreen() {
     nextScenario,
     isComplete,
   } = useSession();
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
-  const scenario = scenarios[currentScenarioIndex];
+  const scenarioRaw = scenarios[currentScenarioIndex];
+  const scenario = useMemo(
+    () => (scenarioRaw ? localizeGKScenario(scenarioRaw, lang, t) : null),
+    [scenarioRaw, lang, t],
+  );
   const progress = ((currentScenarioIndex + (confirmed ? 1 : 0)) / scenarios.length);
 
   useEffect(() => {
@@ -32,7 +38,16 @@ export default function ScenarioScreen() {
     }
   }, [isComplete]);
 
-  if (!scenario) return null;
+  if (!scenario) {
+    return (
+      <ScreenBackground>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: Spacing.lg, gap: Spacing.lg }}>
+          <Text style={{ color: Colors.textSecondary, fontFamily: 'Inter-Regular', textAlign: 'center' }}>{t('session.loadingScenario')}</Text>
+          <BackButton labeled label={t('common.back')} fallbackHref="/session" />
+        </View>
+      </ScreenBackground>
+    );
+  }
 
   const isLast = currentScenarioIndex === scenarios.length - 1;
 
@@ -45,20 +60,7 @@ export default function ScenarioScreen() {
       >
         {/* Top bar */}
         <View style={styles.topBar}>
-          <TouchableOpacity
-            style={styles.backBtn}
-            activeOpacity={0.7}
-            onPress={() => {
-              if (confirmed) {
-                nextScenario();
-                router.replace('/(tabs)/home');
-              } else {
-                router.replace('/(tabs)/home');
-              }
-            }}
-          >
-            <ChevronLeft size={22} color={Colors.textSecondary} />
-          </TouchableOpacity>
+          <BackButton fallbackHref="/session" />
           <View style={styles.topBarCenter}>
             <Text style={styles.topBarTitle}>{t('training.session01')}</Text>
             <Text style={styles.topBarSub}>{t('training.questionProgress', { n: currentScenarioIndex + 1, total: scenarios.length })}</Text>
@@ -156,7 +158,6 @@ export default function ScenarioScreen() {
                   nextScenario();
                 }
               }}
-              iconRight={<ChevronLeft size={0} color="transparent" style={{ display: 'none' }} />}
             />
           ) : (
             <Button

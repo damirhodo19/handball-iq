@@ -4,25 +4,25 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, ArrowRight, Brain, FileText, Calendar, ClipboardList,
-  UserCircle, TrendingUp, Target, MessageSquare, ChevronRight, Sparkles,
+  ArrowRight, Brain, FileText, Calendar, ClipboardList, UserCircle, TrendingUp, Target, MessageSquare, ChevronRight, Sparkles
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
-import { buildPlayerProfile, getDailyCoachMessage, PlayerProfile } from '@/lib/coach-engine';
+import { BackButton } from '@/components/BackButton';
+import { buildPlayerProfile, getDailyCoachMessageIndex, PlayerProfile } from '@/lib/coach-engine';
 import { loadGoals, CoachGoal } from '@/lib/coach-storage';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export default function CoachHome() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [profile, setProfile] = useState<PlayerProfile | null>(null);
-  const [dailyMessage, setDailyMessage] = useState('');
+  const [dailyMessageIndex, setDailyMessageIndex] = useState(0);
   const [goals, setGoals] = useState<CoachGoal[]>([]);
 
   useFocusEffect(useCallback(() => {
     setProfile(buildPlayerProfile());
-    setDailyMessage(getDailyCoachMessage());
+    setDailyMessageIndex(getDailyCoachMessageIndex());
     setGoals(loadGoals());
   }, []));
 
@@ -34,9 +34,7 @@ export default function CoachHome() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coach.title')}</Text>
             <Text style={styles.headerSub}>{t('coach.subtitle')}</Text>
@@ -56,7 +54,7 @@ export default function CoachHome() {
               <View style={styles.dailyMsgIcon}><Sparkles size={16} color={Colors.gold} /></View>
               <Text style={styles.dailyMsgLabel}>{t('coach.todaysMessage')}</Text>
             </View>
-            <Text style={styles.dailyMsgText}>"{dailyMessage}"</Text>
+            <Text style={styles.dailyMsgText}>"{t(`coach.daily.${dailyMessageIndex}`)}"</Text>
           </LinearGradient>
         </Animated.View>
 
@@ -147,7 +145,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 24, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
   headerIcon: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, borderWidth: 1, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },

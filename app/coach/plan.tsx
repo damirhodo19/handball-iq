@@ -2,13 +2,15 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, ClipboardList } from 'lucide-react-native';
+import { ClipboardList } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { buildPlayerProfile, generateTrainingPlan, TrainingDay } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateDay } from '@/lib/translations';
+import { renderCoachMessage } from '@/lib/coach-i18n';
 
 export default function PlanScreen() {
   const { t } = useTranslation();
@@ -25,9 +27,7 @@ export default function PlanScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachPlan.title')}</Text>
             <Text style={styles.headerSub}>{t('coachPlan.subtitle')}</Text>
@@ -67,8 +67,8 @@ function DayCard({ day, index, isWeekend }: { day: TrainingDay; index: number; i
           </View>
           <Text style={styles.dayName}>{translateDay(day.day, t)}</Text>
         </View>
-        <Text style={styles.dayFocus}>{day.focus}</Text>
-        <Text style={styles.dayDesc}>{day.description}</Text>
+        <Text style={styles.dayFocus}>{renderCoachMessage(t, day.focus)}</Text>
+        <Text style={styles.dayDesc}>{renderCoachMessage(t, day.description)}</Text>
       </Card>
     </Animated.View>
   );
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

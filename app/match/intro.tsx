@@ -5,22 +5,27 @@ import { Shield, Trophy, Clock, BarChart3, Play } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { useMatch } from '@/context/MatchContext';
-import { MATCH_CONFIG } from '@/lib/match-engine';
+import { getLocalizedMatchConfig } from '@/lib/match-config-i18n';
 import { loadProfile } from '@/lib/storage';
-import { getDevelopmentTitle, HandballPosition } from '@/lib/positions';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translateDifficulty } from '@/lib/translations';
+import { translateDifficulty, translatePosition } from '@/lib/translations';
+import { isHandballPosition } from '@/lib/platform/position-modules';
 
 export default function MatchIntroScreen() {
   const { t } = useTranslation();
   const { startMatch } = useMatch();
   const profile = loadProfile();
-  const position = (profile.position as HandballPosition) || 'Goalkeeper';
-  const devTitle = getDevelopmentTitle(position);
+  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const matchConfig = getLocalizedMatchConfig(t);
 
   function handleStart() {
+    if (!position) {
+      router.push('/(auth)/onboarding');
+      return;
+    }
     startMatch();
     router.push('/match/play');
   }
@@ -28,38 +33,43 @@ export default function MatchIntroScreen() {
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+        <View style={styles.topNav}>
+          <BackButton />
+        </View>
         {/* Hero */}
         <Animated.View entering={FadeInDown.delay(100).duration(600)} style={styles.heroWrap}>
           <View style={styles.heroIcon}>
             <Shield size={48} color={Colors.gold} />
           </View>
           <Text style={styles.heroTitle}>{t('match.title')}</Text>
-          <Text style={styles.heroSub}>{t('match.subtitle')}</Text>
+          <Text style={styles.heroSub}>
+            {position ? translatePosition(position, t) : t('match.subtitle')}
+          </Text>
         </Animated.View>
 
         {/* Match Info Card */}
         <Animated.View entering={FadeInDown.delay(200).duration(600)}>
           <Card variant="gradient" shadow="cardLg" style={styles.infoCard}>
-            <InfoRow icon={<Trophy size={16} color={Colors.gold} />} label="Opponent" value={MATCH_CONFIG.opponent} />
+            <InfoRow icon={<Trophy size={16} color={Colors.gold} />} label={t('match.opponentLabel')} value={matchConfig.opponent} />
             <Divider />
-            <InfoRow icon={<BarChart3 size={16} color={Colors.gold} />} label="Competition" value={MATCH_CONFIG.competition} />
+            <InfoRow icon={<BarChart3 size={16} color={Colors.gold} />} label={t('match.competitionLabel')} value={matchConfig.competition} />
             <Divider />
-            <InfoRow icon={<BarChart3 size={16} color={Colors.gold} />} label="Difficulty" value={t('match.difficulty', { difficulty: translateDifficulty(MATCH_CONFIG.difficulty, t) })} />
+            <InfoRow icon={<BarChart3 size={16} color={Colors.gold} />} label={t('match.difficultyLabel')} value={t('match.difficulty', { difficulty: translateDifficulty(matchConfig.difficulty, t) })} />
             <Divider />
-            <InfoRow icon={<Clock size={16} color={Colors.gold} />} label="Duration" value={t('match.duration', { duration: MATCH_CONFIG.duration })} />
+            <InfoRow icon={<Clock size={16} color={Colors.gold} />} label={t('match.durationLabel')} value={t('match.duration', { duration: matchConfig.duration })} />
           </Card>
         </Animated.View>
 
         {/* Description */}
         <Animated.View entering={FadeInDown.delay(300).duration(600)}>
           <Card variant="gradient" shadow="card" style={styles.descCard}>
-            <Text style={styles.descText}>{t('match.introDesc', { n: MATCH_CONFIG.situationCount })}</Text>
+            <Text style={styles.descText}>{t('match.introDesc', { n: matchConfig.situationCount })}</Text>
           </Card>
         </Animated.View>
 
         {/* What to expect */}
         <Animated.View entering={FadeInDown.delay(400).duration(600)}>
-          <Text style={styles.sectionLabel}>WHAT TO EXPECT</Text>
+          <Text style={styles.sectionLabel}>{t('match.whatToExpect')}</Text>
           <Card variant="gradient" shadow="card" style={styles.expectCard}>
             <ExpectItem text={t('match.eachDecision')} />
           </Card>
@@ -98,7 +108,8 @@ function ExpectItem({ text }: { text: string }) {
 }
 
 const styles = StyleSheet.create({
-  scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 20, paddingBottom: Spacing.xxxl },
+  scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.lg, paddingBottom: Spacing.xxxl },
+  topNav: { marginBottom: Spacing.md, alignSelf: 'flex-start' },
   heroWrap: { alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.xl },
   heroIcon: { width: 80, height: 80, borderRadius: 24, backgroundColor: Colors.goldSoft, borderWidth: 1.5, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
   heroTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 28, color: Colors.textPrimary },

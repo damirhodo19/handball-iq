@@ -1,0 +1,288 @@
+{
+  "verdict": "PASS",
+  "FAIL": [],
+  "date": "2026-08-09T23:26:11.031Z",
+  "leftBackAudit": {
+    "totalLeftBackScenarios": 62,
+    "exactDuplicateQuestionCount": 0,
+    "semanticDuplicateFamilyCount": 0,
+    "uniqueLeftBackScenarioFamilies": 62,
+    "repetitionCulprits": []
+  },
+  "lbSessions": [
+    {
+      "run": 1,
+      "ok": true,
+      "n": 5,
+      "families": [
+        "left back - basic gap between defenders",
+        "left back - late possession decision",
+        "power play - pivot isolation window",
+        "power play - clean entry shape",
+        "short handed - ball-side rotation rule"
+      ],
+      "ids": [
+        "scn_bank_156",
+        "scn_bank_166",
+        "scn_bank_466",
+        "scn_bank_476",
+        "scn_bank_516"
+      ],
+      "categories": [
+        "Left Back",
+        "Left Back",
+        "Power Play",
+        "Power Play",
+        "Short Handed"
+      ],
+      "titles": [
+        "Left Back — Basic Gap Between Defenders",
+        "Left Back — Late Possession Decision",
+        "Power Play — Pivot Isolation Window",
+        "Power Play — Clean Entry Shape",
+        "Short Handed — Ball-Side Rotation Rule"
+      ]
+    },
+    {
+      "run": 2,
+      "ok": true,
+      "n": 5,
+      "families": [
+        "left back - feeding the sealed pivot",
+        "left back - ball speed vs 3:3 spaces",
+        "defence - 5:1 high press trigger",
+        "fast break - deny the first outlet",
+        "short handed - final ten seconds of the kill"
+      ],
+      "ids": [
+        "scn_bank_159",
+        "scn_bank_659",
+        "scn_bank_359",
+        "scn_bank_419",
+        "scn_bank_519"
+      ],
+      "categories": [
+        "Left Back",
+        "Left Back",
+        "Defence",
+        "Fast Break",
+        "Short Handed"
+      ],
+      "titles": [
+        "Left Back — Feeding the Sealed Pivot",
+        "Left Back — Ball Speed vs 3:3 Spaces",
+        "Defence — 5:1 High Press Trigger",
+        "Fast Break — Deny the First Outlet",
+        "Short Handed — Final Ten Seconds of the Kill"
+      ]
+    },
+    {
+      "run": 3,
+      "ok": true,
+      "n": 5,
+      "families": [
+        "left back - feeding the sealed pivot",
+        "left back - ball speed vs 3:3 spaces",
+        "defence - 5:1 high press trigger",
+        "fast break - deny the first outlet",
+        "short handed - final ten seconds of the kill"
+      ],
+      "ids": [
+        "scn_bank_159",
+        "scn_bank_659",
+        "scn_bank_359",
+        "scn_bank_419",
+        "scn_bank_519"
+      ],
+      "categories": [
+        "Left Back",
+        "Left Back",
+        "Defence",
+        "Fast Break",
+        "Short Handed"
+      ],
+      "titles": [
+        "Left Back — Feeding the Sealed Pivot",
+        "Left Back — Ball Speed vs 3:3 Spaces",
+        "Defence — 5:1 High Press Trigger",
+        "Fast Break — Deny the First Outlet",
+        "Short Handed — Final Ten Seconds of the Kill"
+      ]
+    },
+    {
+      "run": 4,
+      "ok": true,
+      "n": 5,
+      "families": [
+        "left back - crossing after late switch",
+        "left back - free zone vs 5+1 marked pivot",
+        "defence - help timing on beaten teammate",
+        "short handed - final ten seconds of the kill",
+        "short handed - immediate reorganisation"
+      ],
+      "ids": [
+        "scn_bank_161",
+        "scn_bank_661",
+        "scn_bank_361",
+        "scn_bank_511",
+        "scn_bank_521"
+      ],
+      "categories": [
+        "Left Back",
+        "Left Back",
+        "Defence",
+        "Short Handed",
+        "Short Handed"
+      ],
+      "titles": [
+        "Left Back — Crossing After Late Switch",
+        "Left Back — Free Zone vs 5+1 Marked Pivot",
+        "Defence — Help Timing on Beaten Teammate",
+        "Short Handed — Final Ten Seconds of the Kill",
+        "Short Handed — Immediate Reorganisation"
+      ]
+    },
+    {
+      "run": 5,
+      "ok": true,
+      "n": 5,
+      "families": [
+        "left back - breaking the goalkeeper pattern",
+        "left back - defender too deep, shoot or freeze-fake",
+        "short handed - immediate reorganisation",
+        "short handed - final ten seconds of the kill",
+        "decision making - passive warning under lead"
+      ],
+      "ids": [
+        "scn_bank_165",
+        "scn_bank_665",
+        "scn_bank_505",
+        "scn_bank_535",
+        "scn_bank_615"
+      ],
+      "categories": [
+        "Left Back",
+        "Left Back",
+        "Short Handed",
+        "Short Handed",
+        "Decision Making"
+      ],
+      "titles": [
+        "Left Back — Breaking the Goalkeeper Pattern",
+        "Left Back — Defender Too Deep, Shoot or Freeze-Fake",
+        "Short Handed — Immediate Reorganisation",
+        "Short Handed — Final Ten Seconds of the Kill",
+        "Decision Making — Passive Warning Under Lead"
+      ]
+    }
+  ],
+  "sampleSessionLog": [
+    {
+      "id": "scn_bank_159",
+      "title": "Left Back — Feeding the Sealed Pivot",
+      "question": "How do you open the passing lane into the seal?",
+      "category": "Left Back",
+      "subCategory": "feeding the sealed pivot",
+      "positionTags": [
+        "Left Back"
+      ],
+      "goalTags": [
+        "screening"
+      ],
+      "difficulty": "Intermediate",
+      "correctAnswer": "Short drive fake to move the defender with high hands, then play to the pivot in the space he owns",
+      "decisionArchetype": "feeding the sealed pivot",
+      "formation": "6-0",
+      "scenarioFamilyId": "left back - feeding the sealed pivot",
+      "situationSignature": "At 9', you lead 22:21. The pivot seals the right defender at six metres and holds the seal. You have the ball at nine me"
+    },
+    {
+      "id": "scn_bank_659",
+      "title": "Left Back — Ball Speed vs 3:3 Spaces",
+      "question": "Where does the surplus appear first?",
+      "category": "Left Back",
+      "subCategory": "ball speed vs 3:3 spaces",
+      "positionTags": [
+        "Left Back"
+      ],
+      "goalTags": [
+        "perception",
+        "defensiveReading",
+        "tempo"
+      ],
+      "difficulty": "Intermediate",
+      "correctAnswer": "Accelerate the ball through the open channel or 1v1 before the 3:3 compresses",
+      "decisionArchetype": "ball speed vs 3:3 spaces",
+      "formation": "mixed",
+      "scenarioFamilyId": "left back - ball speed vs 3:3 spaces",
+      "situationSignature": "Opponent defends a true 3:3 at 24'. You lead 16:15. Large gaps sit between their three high and three low defenders. You"
+    },
+    {
+      "id": "scn_bank_359",
+      "title": "Defence — 5:1 High Press Trigger",
+      "question": "When do you pressure the centre back without wrecking the line?",
+      "category": "Defence",
+      "subCategory": "5:1 high press trigger",
+      "positionTags": [
+        "All",
+        "Centre Back",
+        "Left Back",
+        "Right Back"
+      ],
+      "goalTags": [
+        "defensiveReading"
+      ],
+      "difficulty": "Intermediate",
+      "correctAnswer": "Press the facing catch to force an early pass, recover if they reverse",
+      "decisionArchetype": "5:1 high press trigger",
+      "formation": "5-1",
+      "scenarioFamilyId": "defence - 5:1 high press trigger",
+      "situationSignature": "You play the high point in a 5:1 at 9' (28–27). The centre back catches facing you with time. Wings are held; the pivot "
+    },
+    {
+      "id": "scn_bank_419",
+      "title": "Fast Break — Deny the First Outlet",
+      "question": "How do you disrupt the outlet without fouling the keeper?",
+      "category": "Fast Break",
+      "subCategory": "deny the first outlet",
+      "positionTags": [
+        "All",
+        "Left Back",
+        "Right Back",
+        "Centre Back"
+      ],
+      "goalTags": [
+        "fastBreakTiming"
+      ],
+      "difficulty": "Intermediate",
+      "correctAnswer": "Take the outlet lane with arms high and no contact on the keeper",
+      "decisionArchetype": "deny the first outlet",
+      "formation": "unknown",
+      "scenarioFamilyId": "fast break - deny the first outlet",
+      "situationSignature": "After a save at 28' (22–21), their goalkeeper looks for the first outlet. You are the nearest presser above the nine-met"
+    },
+    {
+      "id": "scn_bank_519",
+      "title": "Short Handed — Final Ten Seconds of the Kill",
+      "question": "How do you close the last ten seconds without extending the kill?",
+      "category": "Short Handed",
+      "subCategory": "final ten seconds of the kill",
+      "positionTags": [
+        "All",
+        "Left Back",
+        "Right Back",
+        "Centre Back"
+      ],
+      "goalTags": [
+        "shotReading",
+        "pressureDecisions"
+      ],
+      "difficulty": "Expert",
+      "correctAnswer": "No fouls, force a perimeter shot, prepare the counter as the penalty expires",
+      "decisionArchetype": "final ten seconds of the kill",
+      "formation": "unknown",
+      "scenarioFamilyId": "short handed - final ten seconds of the kill",
+      "situationSignature": "5-on-6 with ten seconds left on the exclusion at 28' (22–21). Attack has one final swing. Your returning teammate is at "
+    }
+  ]
+}

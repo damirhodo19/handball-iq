@@ -106,7 +106,7 @@ export function Button({
 }
 
 const styles = StyleSheet.create({
-  touchable: { borderRadius: Radius.lg, overflow: 'hidden' },
+  touchable: { borderRadius: Radius.lg, overflow: 'hidden', minHeight: 48 },
   fullWidth: { width: '100%' },
   inner: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: Spacing.sm },
   goldBtn: { borderRadius: Radius.lg },

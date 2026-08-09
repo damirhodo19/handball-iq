@@ -1,0 +1,19 @@
+{
+  "name": "Handball IQ 2.0 — Beta RC1 (post-hotfix)",
+  "date": "2026-08-07T13:58:32.953Z",
+  "verdict": "READY FOR CLOSED BETA",
+  "open": [],
+  "residual": [
+    {
+      "sev": "MAJOR",
+      "id": "RC-06",
+      "title": "Daily challenge category OR can still broaden pool (monitor in beta)",
+      "evidence": "daily-challenge.ts — not a closed-beta blocker if Universal content is acceptable"
+    }
+  ],
+  "counts": {
+    "blockersOpen": 0,
+    "majorsOpen": 0,
+    "residual": 1
+  }
+}

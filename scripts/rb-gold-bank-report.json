@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "rbBefore": 45,
+  "rbAfter": 63,
+  "removedClones": 45,
+  "familiesAdded": 63,
+  "rejected": [],
+  "lbUnchanged": 62,
+  "attack": 53,
+  "defence": 10,
+  "difficulty": {
+    "Beginner": 7,
+    "Intermediate": 10,
+    "Advanced": 30,
+    "Expert": 16
+  },
+  "handednessSpecific": 16,
+  "perceptionPct": 41.3,
+  "avgRubric": 8.7,
+  "minRubric": 8.5,
+  "maxRubric": 8.8
+}

@@ -30,7 +30,10 @@ yarn-error.*
 # local env files
 .env*.local
 .env
+.env.save
+.env.*.save
 
 # typescript
 *.tsbuildinfo
 .bolt/
+.vercel

@@ -3,14 +3,13 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput, Alert,
 import { router, useLocalSearchParams } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, ChevronRight, ChevronLeft, Check, Plus, X,
-  FileText, Settings2, Crosshair, HelpCircle, BookOpen, Eye,
-  Save, Upload, AlertCircle, Sparkles, Pencil,
+  ChevronRight, ChevronLeft, Check, Plus, X, FileText, Settings2, Crosshair, HelpCircle, BookOpen, Eye, Save, Upload, AlertCircle, Sparkles, Pencil
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import {
   loadScenario, createScenario, updateScenario, validateScenario,
   createScenarioAsync, updateScenarioAsync,
@@ -23,7 +22,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import {
   translatePosition, translateDifficulty, translateAgeGroup,
   translatePlayingLevel, translateStatus, translateMatchPhase,
-  translateAttackDefence, translatePressure,
+  translateAttackDefence, translatePressure, translateCategory,
 } from '@/lib/translations';
 
 const STEPS = ['Basic Info', 'Match Context', 'Decision', 'Learning', 'Preview'];
@@ -152,9 +151,7 @@ export default function AdminEditorScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={handleBack}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton onPress={handleBack} />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{isEditMode ? t('editor.editTitle') : t('editor.createTitle')}</Text>
             <Text style={styles.headerSub}>{t('editor.stepProgress', { n: step + 1, total: STEPS.length, step: t(`editor.step${['Basic', 'MatchContext', 'Decision', 'Learning', 'Preview'][step]}`) })}</Text>
@@ -455,7 +452,7 @@ function Step5Preview({ draft, errors }: { draft: Partial<AdminScenario>; errors
           <Eye size={18} color={Colors.gold} />
           <Text style={styles.previewTitle}>{t('editor.playerPreview')}</Text>
         </View>
-        <Text style={styles.previewMeta}>{translatePosition(draft.position ?? '', t)} · {draft.category} · {translateDifficulty(draft.difficulty ?? '', t)}</Text>
+        <Text style={styles.previewMeta}>{translatePosition(draft.position ?? '', t)} · {translateCategory(draft.category ?? '', t)} · {translateDifficulty(draft.difficulty ?? '', t)}</Text>
         <Text style={styles.previewMinute}>{t('editor.minute')} {draft.minute} · {draft.score} · {translatePressure(draft.pressureLevel ?? '', t)}</Text>
 
         <View style={styles.previewDivider} />
@@ -524,12 +521,10 @@ function PreviewView({ scenario, onBack, onEdit }: { scenario: AdminScenario; on
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={onBack}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton onPress={onBack} />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{scenario.title}</Text>
-            <Text style={styles.headerSub}>{translatePosition(scenario.position, t)} · {scenario.category} · {translateStatus(scenario.status, t)}</Text>
+            <Text style={styles.headerSub}>{translatePosition(scenario.position, t)} · {translateCategory(scenario.category, t)} · {translateStatus(scenario.status, t)}</Text>
           </View>
         </View>
         <Step5Preview draft={scenario} errors={[]} />
@@ -592,7 +587,6 @@ function MultiChipSelector({ values, current, onChange, translate }: { values: r
 const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
   stepBar: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: Spacing.lg, paddingHorizontal: Spacing.sm },

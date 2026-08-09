@@ -1,0 +1,64 @@
+{
+  "added": [
+    {
+      "id": "scn_bank_702",
+      "familyKey": "lb_lead_two_three_control",
+      "title": "Left Back — Lead by Two or Three, Control Late",
+      "perception": false
+    },
+    {
+      "id": "scn_bank_703",
+      "familyKey": "lb_own_empty_gk_return",
+      "title": "Left Back — Own Empty Goal, Goalkeeper Must Return",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_704",
+      "familyKey": "lb_two_pivot_6v6",
+      "title": "Left Back — Two Pivots in 6v6",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_705",
+      "familyKey": "lb_pivot_rescreen",
+      "title": "Left Back — Pivot Re-Screen After Failed First Block",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_706",
+      "familyKey": "lb_def_5_1_inside_depth",
+      "title": "Left Back — Defence vs 5:1, Protect Inside Depth",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_707",
+      "familyKey": "lb_def_3_2_1_no_overcommit",
+      "title": "Left Back — Defence vs 3:2:1, No Overcommit",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_708",
+      "familyKey": "lb_def_5v6_priority",
+      "title": "Left Back — Defence with Player Down",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_709",
+      "familyKey": "lb_def_late_foul_decision",
+      "title": "Left Back — Late Defensive Foul Decision",
+      "perception": false
+    }
+  ],
+  "skipped": [],
+  "lbPrimaryCount": 62,
+  "attack": 51,
+  "defence": 11,
+  "perceptionCount": 17,
+  "perceptionPct": 27.4,
+  "difficulty": {
+    "Beginner": 9,
+    "Intermediate": 14,
+    "Advanced": 22,
+    "Expert": 17
+  }
+}

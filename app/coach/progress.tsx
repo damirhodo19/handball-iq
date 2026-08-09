@@ -2,10 +2,11 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, TrendingUp, TrendingDown, Minus, Activity } from 'lucide-react-native';
+import { TrendingUp, TrendingDown, Minus, Activity } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { getLongTermProgress, ProgressPeriod } from '@/lib/coach-engine';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -31,9 +32,7 @@ export default function ProgressScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('coachProgress.title')}</Text>
             <Text style={styles.headerSub}>{t('coachProgress.subtitle')}</Text>
@@ -68,6 +67,8 @@ export default function ProgressScreen() {
   );
 }
 
+const PERIOD_LABEL_KEYS = ['coachProgress.periodLast7', 'coachProgress.periodLast30', 'coachProgress.periodAllTime'] as const;
+
 function PeriodCard({ period, index }: { period: ProgressPeriod; index: number }) {
   const { t } = useTranslation();
   const TrendIcon = period.trend === 'up' ? TrendingUp : period.trend === 'down' ? TrendingDown : Minus;
@@ -82,7 +83,7 @@ function PeriodCard({ period, index }: { period: ProgressPeriod; index: number }
             <Activity size={18} color={Colors.gold} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={styles.periodLabel}>{period.label}</Text>
+            <Text style={styles.periodLabel}>{t(PERIOD_LABEL_KEYS[index])}</Text>
             <Text style={styles.periodSessionCount}>{t('coachProgress.sessions', { n: period.sessionCount })}</Text>
           </View>
           <View style={[styles.trendBadge, { backgroundColor: trendColor + '22', borderColor: trendColor }]}>
@@ -110,7 +111,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

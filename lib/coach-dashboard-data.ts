@@ -3,6 +3,9 @@
 // All types are designed to map 1:1 to database tables.
 
 import { HandballPosition, getPositionGroup, PositionGroup } from '@/lib/positions';
+import { readStorageJson, writeStorageJson, removeStorageKey } from '@/lib/platform-storage';
+import type { LocalizedMessage } from '@/lib/i18n-message';
+import { msg } from '@/lib/i18n-message';
 
 // ── Coach Account Types ────────────────────────────────────────────────────────
 
@@ -83,8 +86,8 @@ export interface CalendarEvent {
   id: string;
   date: string;
   type: CalendarEventType;
-  title: string;
-  description: string;
+  title: LocalizedMessage;
+  description: LocalizedMessage;
   playerId?: string;
 }
 
@@ -93,85 +96,16 @@ export interface CalendarEvent {
 export interface TrainingRecommendation {
   playerId: string;
   playerName: string;
-  issue: string;
-  recommendation: string;
+  issue: LocalizedMessage;
+  recommendation: LocalizedMessage;
   sessionType: SessionType;
   severity: 'high' | 'medium' | 'low';
 }
 
-// ── Mock Data ────────────────────────────────────────────────────────────────────
-
-const PLAYER_NAMES = [
-  'Damir Mušić', 'Luka Babić', 'Nikao Petrović', 'Filip Vukoja',
-  'Marko Horvat', 'Ivan Kovač', 'Tomislav Novak', 'Petar Marić',
-  'Ante Radić', 'Branimir Šarić',
-];
-
-const PLAYER_POSITIONS: string[] = [
-  'Goalkeeper', 'Goalkeeper', 'Left Wing', 'Right Wing',
-  'Pivot', 'Centre Back', 'Left Back', 'Right Back',
-  'Left Wing', 'Pivot',
-];
-
-const AGE_GROUPS = ['Under 14', 'Under 16', 'Under 18', 'Senior', 'Senior', 'Under 18', 'Senior', 'Under 16', 'Senior', 'Under 18'];
-const PLAYING_LEVELS_LIST = ['Competitive', 'Semi Professional', 'Competitive', 'Amateur', 'Semi Professional', 'Competitive', 'Professional', 'Beginner', 'Semi Professional', 'Competitive'];
-
-function randomScore(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function daysAgo(n: number): string {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return d.toISOString().split('T')[0];
-}
-
-function generateWeeklyHistory(base: number): { week: string; score: number }[] {
-  const history: { week: string; score: number }[] = [];
-  for (let i = 7; i >= 0; i--) {
-    const d = new Date();
-    d.setDate(d.getDate() - i * 7);
-    const variance = randomScore(-8, 8);
-    history.push({
-      week: d.toISOString().split('T')[0],
-      score: Math.max(30, Math.min(98, base + variance - (i * 2))),
-    });
-  }
-  return history;
-}
+// ── Seed data (no personal/demo names) ───────────────────────────────────────────
 
 function generateMockPlayers(): PlayerProfile[] {
-  return PLAYER_NAMES.map((name, i) => {
-    const decisionScore = randomScore(45, 88);
-    const mentalReadiness = randomScore(40, 85);
-    return {
-      id: `player_${i + 1}`,
-      name,
-      position: PLAYER_POSITIONS[i] ?? 'Goalkeeper',
-      secondaryPosition: null,
-      ageGroup: AGE_GROUPS[i] ?? 'Senior',
-      playingLevel: PLAYING_LEVELS_LIST[i] ?? 'Amateur',
-      age: randomScore(17, 32),
-      club: 'Berlin Handball Academy',
-      decisionScore,
-      mentalReadiness,
-      pressurePerformance: randomScore(40, 85),
-      consistency: randomScore(45, 82),
-      readingAbility: randomScore(42, 88),
-      fastBreak: randomScore(38, 80),
-      wingSituations: randomScore(40, 85),
-      pivotSituations: randomScore(42, 82),
-      sevenMetre: randomScore(35, 78),
-      mentalPreparation: randomScore(40, 85),
-      weeklyTrend: randomScore(-5, 8),
-      monthlyTrend: randomScore(-8, 12),
-      lastSessionDate: daysAgo(randomScore(0, 6)),
-      sessionsCompleted: randomScore(8, 45),
-      assignedSession: null,
-      notifications: [],
-      weeklyHistory: generateWeeklyHistory(decisionScore),
-    };
-  });
+  return [];
 }
 
 // ── Storage Layer ────────────────────────────────────────────────────────────────
@@ -185,21 +119,11 @@ const KEYS = {
 };
 
 function get<T>(key: string, fallback: T): T {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(key);
-      if (raw) return JSON.parse(raw) as T;
-    }
-  } catch {}
-  return fallback;
+  return readStorageJson(key, fallback);
 }
 
 function set<T>(key: string, value: T): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  } catch {}
+  writeStorageJson(key, value);
 }
 
 // ── Initialization ────────────────────────────────────────────────────────────────
@@ -223,13 +147,31 @@ function generateMockCalendar(): CalendarEvent[] {
     const dow = d.getDay();
 
     if (dow === 1 || dow === 3) {
-      events.push({ id: `evt_${i}_t`, date: dateStr, type: 'Training', title: 'Team Training', description: 'Tactical drills and set-piece practice' });
+      events.push({
+        id: `evt_${i}_t`,
+        date: dateStr,
+        type: 'Training',
+        title: msg('cdCalendar.teamTraining.title'),
+        description: msg('cdCalendar.teamTraining.desc'),
+      });
     }
     if (dow === 6 && i > 0) {
-      events.push({ id: `evt_${i}_m`, date: dateStr, type: 'Match', title: 'League Match', description: 'vs Hamburg Hawks — Home' });
+      events.push({
+        id: `evt_${i}_m`,
+        date: dateStr,
+        type: 'Match',
+        title: msg('cdCalendar.leagueMatch.title'),
+        description: msg('cdCalendar.leagueMatch.desc', { opponent: 'Opponent' }),
+      });
     }
     if (dow === 0) {
-      events.push({ id: `evt_${i}_r`, date: dateStr, type: 'Recovery', title: 'Recovery Session', description: 'Light recovery and video review' });
+      events.push({
+        id: `evt_${i}_r`,
+        date: dateStr,
+        type: 'Recovery',
+        title: msg('cdCalendar.recovery.title'),
+        description: msg('cdCalendar.recovery.desc'),
+      });
     }
   }
   return events;
@@ -246,11 +188,7 @@ export function saveCoachAccount(account: CoachAccount): void {
 }
 
 export function clearCoachAccount(): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.removeItem(KEYS.COACH);
-    }
-  } catch {}
+  removeStorageKey(KEYS.COACH);
 }
 
 export function createCoachAccount(name: string, email: string, role: CoachRole, teamName: string): CoachAccount {
@@ -312,8 +250,10 @@ export function assignSession(playerId: string, sessionType: SessionType, dueDat
       id: `evt_asg_${Date.now()}`,
       date: dueDate,
       type: 'Assigned Session',
-      title: `${sessionType} — ${players[idx].name}`,
-      description: note || `Assigned by ${coachName}`,
+      title: msg('cdCalendar.assignedSession.title', { sessionType, playerName: players[idx].name }),
+      description: note
+        ? msg('cdCalendar.assignedNote.default')
+        : msg('cdCalendar.assignedSessionDesc', { coachName }),
       playerId,
     });
     set(KEYS.CALENDAR, calendar);
@@ -385,8 +325,8 @@ export function getTeamStats(): TeamStats {
 // ── Team Analysis ────────────────────────────────────────────────────────────────────────
 
 export interface TeamAnalysis {
-  strongestSkill: { label: string; score: number };
-  weakestSkill: { label: string; score: number };
+  strongestSkill: { key: string; score: number };
+  weakestSkill: { key: string; score: number };
   mostImprovedPlayer: PlayerProfile | null;
   playerRequiringAttention: PlayerProfile | null;
   avgMentalReadiness: number;
@@ -396,29 +336,28 @@ export function getTeamAnalysis(): TeamAnalysis {
   const players = loadPlayers();
   if (players.length === 0) {
     return {
-      strongestSkill: { label: 'N/A', score: 0 },
-      weakestSkill: { label: 'N/A', score: 0 },
+      strongestSkill: { key: 'coach.skill.decisionMaking', score: 0 },
+      weakestSkill: { key: 'coach.skill.decisionMaking', score: 0 },
       mostImprovedPlayer: null,
       playerRequiringAttention: null,
       avgMentalReadiness: 0,
     };
   }
 
-  // Calculate team averages per skill
-  const skills: { key: keyof PlayerProfile; label: string }[] = [
-    { key: 'decisionScore', label: 'Decision Making' },
-    { key: 'pressurePerformance', label: 'Pressure Handling' },
-    { key: 'consistency', label: 'Consistency' },
-    { key: 'readingAbility', label: 'Reading the Shooter' },
-    { key: 'fastBreak', label: 'Fast Break' },
-    { key: 'wingSituations', label: 'Wing Situations' },
-    { key: 'pivotSituations', label: 'Pivot Situations' },
-    { key: 'sevenMetre', label: '7m Throws' },
-    { key: 'mentalPreparation', label: 'Mental Preparation' },
+  const skills: { key: keyof PlayerProfile; i18nKey: string }[] = [
+    { key: 'decisionScore', i18nKey: 'coach.skill.decisionMaking' },
+    { key: 'pressurePerformance', i18nKey: 'coach.skill.pressureHandling' },
+    { key: 'consistency', i18nKey: 'coach.skill.consistency' },
+    { key: 'readingAbility', i18nKey: 'coach.skill.readingShooter' },
+    { key: 'fastBreak', i18nKey: 'coach.skill.fastBreak' },
+    { key: 'wingSituations', i18nKey: 'coach.skill.wingSituations' },
+    { key: 'pivotSituations', i18nKey: 'coach.skill.wingSituations' },
+    { key: 'sevenMetre', i18nKey: 'coach.skill.sevenMetre' },
+    { key: 'mentalPreparation', i18nKey: 'coach.skill.mentalPreparation' },
   ];
 
   const skillAverages = skills.map((s) => ({
-    label: s.label,
+    key: s.i18nKey,
     score: Math.round(players.reduce((sum, p) => sum + (p[s.key] as number), 0) / players.length),
   }));
 
@@ -454,8 +393,8 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'Player moves too early during wing situations.',
-      recommendation: 'Assign Wing Session 03.',
+      issue: msg('cdRecommend.issue.wingSituations'),
+      recommendation: msg('cdRecommend.action.wingSituations'),
       sessionType: 'Wing Session',
       severity: player.wingSituations < 45 ? 'high' : 'medium',
     });
@@ -465,8 +404,8 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'Player struggles under pressure.',
-      recommendation: 'Complete Pressure Training.',
+      issue: msg('cdRecommend.issue.pressure'),
+      recommendation: msg('cdRecommend.action.pressure'),
       sessionType: 'Pressure Session',
       severity: player.pressurePerformance < 45 ? 'high' : 'medium',
     });
@@ -476,8 +415,8 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'Fast break decisions are inconsistent.',
-      recommendation: 'Assign Fast Break Session.',
+      issue: msg('cdRecommend.issue.fastBreak'),
+      recommendation: msg('cdRecommend.action.fastBreak'),
       sessionType: 'Fast Break Session',
       severity: player.fastBreak < 45 ? 'high' : 'medium',
     });
@@ -487,8 +426,8 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: '7m throw performance needs improvement.',
-      recommendation: 'Assign 7m Session.',
+      issue: msg('cdRecommend.issue.sevenMetre'),
+      recommendation: msg('cdRecommend.action.sevenMetre'),
       sessionType: '7m Session',
       severity: player.sevenMetre < 40 ? 'high' : 'medium',
     });
@@ -498,8 +437,8 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'Mental preparation routine is inconsistent.',
-      recommendation: 'Complete Mental Training.',
+      issue: msg('cdRecommend.issue.mentalPreparation'),
+      recommendation: msg('cdRecommend.action.mentalPreparation'),
       sessionType: 'Mental Training',
       severity: player.mentalPreparation < 45 ? 'high' : 'low',
     });
@@ -509,20 +448,19 @@ export function generateRecommendations(player: PlayerProfile): TrainingRecommen
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'Reading the shooter needs work — player reacts to early cues.',
-      recommendation: 'Assign Match Day Preparation for visualization practice.',
+      issue: msg('cdRecommend.issue.readingAbility'),
+      recommendation: msg('cdRecommend.action.readingAbility'),
       sessionType: 'Match Day Preparation',
       severity: 'low',
     });
   }
 
-  // If player is doing well, add a positive note
   if (recs.length === 0) {
     recs.push({
       playerId: player.id,
       playerName: player.name,
-      issue: 'No critical weaknesses detected.',
-      recommendation: 'Continue regular training. Assign Match Day Preparation to maintain readiness.',
+      issue: msg('cdRecommend.issue.none'),
+      recommendation: msg('cdRecommend.action.none'),
       sessionType: 'Match Day Preparation',
       severity: 'low',
     });

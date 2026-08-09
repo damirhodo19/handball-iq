@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-08-06T09:55:04.814Z",
+  "total": 800,
+  "pass": true,
+  "categoryCounts": {
+    "Goalkeeper": 75,
+    "Left Wing": 38,
+    "Right Wing": 37,
+    "Left Back": 50,
+    "Centre Back": 50,
+    "Right Back": 50,
+    "Pivot": 75,
+    "Defence": 100,
+    "Fast Break": 75,
+    "Power Play": 50,
+    "Short Handed": 50,
+    "Match Ending": 75,
+    "Decision Making": 75
+  },
+  "positionCounts": {
+    "Goalkeeper": 89,
+    "Left Wing": 38,
+    "Right Wing": 37,
+    "Left Back": 50,
+    "Centre Back": 50,
+    "Right Back": 50,
+    "Pivot": 75,
+    "All": 411
+  },
+  "duplicateIds": [],
+  "similarSituations": [],
+  "weakScenarios": [],
+  "missingTranslations": [],
+  "missingFields": [],
+  "categoryTargetFailures": [],
+  "issues": [],
+  "failReasons": [],
+  "summary": {
+    "duplicateIds": 0,
+    "similarSituations": 0,
+    "weakScenarios": 0,
+    "missingTranslations": 0,
+    "missingFields": 0,
+    "categoryTargetFailures": 0
+  }
+}

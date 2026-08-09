@@ -2,13 +2,15 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, TrendingUp, AlertCircle, Award, Brain, ChevronRight } from 'lucide-react-native';
+import { TrendingUp, AlertCircle, Award, Brain, ChevronRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { getTeamAnalysis, generateTeamRecommendations, TeamAnalysis, TrainingRecommendation } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translateSkill, translateSessionType } from '@/lib/translations';
+import { translateSessionType } from '@/lib/translations';
+import { renderCoachMessage } from '@/lib/coach-i18n';
 
 export default function TeamAnalysisScreen() {
   const { t } = useTranslation();
@@ -34,9 +36,7 @@ export default function TeamAnalysisScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdAnalysis.title')}</Text>
             <Text style={styles.headerSub}>{t('cdAnalysis.subtitle')}</Text>
@@ -49,7 +49,7 @@ export default function TeamAnalysisScreen() {
             <Card variant="gradient" shadow="card" style={[styles.skillCard, { borderColor: Colors.success + '55' }]}>
               <View style={styles.skillIconWrap}><Award size={18} color={Colors.success} /></View>
               <Text style={styles.skillCardLabel}>{t('cdAnalysis.strongestSkill')}</Text>
-              <Text style={[styles.skillCardValue, { color: Colors.success }]}>{translateSkill(analysis.strongestSkill.label, t)}</Text>
+              <Text style={[styles.skillCardValue, { color: Colors.success }]}>{t(analysis.strongestSkill.key)}</Text>
               <Text style={styles.skillCardScore}>{t('cdAnalysis.avgScore', { score: analysis.strongestSkill.score })}</Text>
               <ProgressBar progress={analysis.strongestSkill.score / 100} height={4} color={Colors.success} />
             </Card>
@@ -57,7 +57,7 @@ export default function TeamAnalysisScreen() {
             <Card variant="gradient" shadow="card" style={[styles.skillCard, { borderColor: Colors.warning + '55' }]}>
               <View style={styles.skillIconWrap}><AlertCircle size={18} color={Colors.warning} /></View>
               <Text style={styles.skillCardLabel}>{t('cdAnalysis.weakestSkill')}</Text>
-              <Text style={[styles.skillCardValue, { color: Colors.warning }]}>{translateSkill(analysis.weakestSkill.label, t)}</Text>
+              <Text style={[styles.skillCardValue, { color: Colors.warning }]}>{t(analysis.weakestSkill.key)}</Text>
               <Text style={styles.skillCardScore}>{t('cdAnalysis.avgScore', { score: analysis.weakestSkill.score })}</Text>
               <ProgressBar progress={analysis.weakestSkill.score / 100} height={4} color={Colors.warning} />
             </Card>
@@ -138,8 +138,8 @@ export default function TeamAnalysisScreen() {
                   <Text style={styles.recTypeText}>{translateSessionType(rec.sessionType, t)}</Text>
                 </View>
               </View>
-              <Text style={styles.recIssue}>{rec.issue}</Text>
-              <Text style={styles.recAction}>{rec.recommendation}</Text>
+              <Text style={styles.recIssue}>{renderCoachMessage(t, rec.issue)}</Text>
+              <Text style={styles.recAction}>{renderCoachMessage(t, rec.recommendation)}</Text>
             </Card>
           ))}
         </Animated.View>
@@ -154,7 +154,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

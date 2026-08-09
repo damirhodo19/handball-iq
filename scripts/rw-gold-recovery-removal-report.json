@@ -1,0 +1,177 @@
+{
+  "generatedAt": "2026-08-09T23:07:19.159Z",
+  "original": 70,
+  "final": 65,
+  "removed": [
+    {
+      "oldId": "scn_bank_903",
+      "familyKey": "rw_trans_finish_before_recovery",
+      "teachingObjective": "Finish in first wave before late recovering defender arrives",
+      "reason": "Same lesson as rw_60_defender_late_recover (882) with numerical sticker only",
+      "mergedIntoId": "scn_bank_882",
+      "mergedIntoFamily": "rw_60_defender_late_recover"
+    },
+    {
+      "oldId": "scn_bank_906",
+      "familyKey": "rw_trans_stop_forcing",
+      "teachingObjective": "Stop forcing when first-wave advantage is gone",
+      "reason": "Same lesson as rw_trans_second_wave_positional (877)",
+      "mergedIntoId": "scn_bank_877",
+      "mergedIntoFamily": "rw_trans_second_wave_positional"
+    },
+    {
+      "oldId": "scn_bank_908",
+      "familyKey": "rw_trans_second_wave_width_hold",
+      "teachingObjective": "Hold width as second wave meets set defence",
+      "reason": "Same width-settle lesson as 877; score sticker only",
+      "mergedIntoId": "scn_bank_877",
+      "mergedIntoFamily": "rw_trans_second_wave_positional"
+    },
+    {
+      "oldId": "scn_bank_911",
+      "familyKey": "rw_5v6_no_force_corner",
+      "teachingObjective": "Do not force covered corner finish in 5v6",
+      "reason": "Merged into rw_5v6_safe_width — one clear 5v6 risk lesson",
+      "mergedIntoId": "scn_bank_910",
+      "mergedIntoFamily": "rw_5v6_safe_width"
+    },
+    {
+      "oldId": "scn_bank_916",
+      "familyKey": "rw_empty_own_no_skip_risk",
+      "teachingObjective": "Refuse risky skip with own goal empty",
+      "reason": "Same empty-own-goal risk management as locked 879",
+      "mergedIntoId": "scn_bank_879",
+      "mergedIntoFamily": "rw_empty_own_goal_safe_return"
+    }
+  ],
+  "rewritten": [
+    {
+      "id": "scn_bank_901",
+      "familyKey": "rw_gk_near_arm_high",
+      "oldTeachingObjective": "Finish available side when GK near arm high (template, no real cue use)",
+      "newTeachingObjective": "Near arm stays high before take-off → finish low under that arm, not a blind far-post"
+    },
+    {
+      "id": "scn_bank_902",
+      "familyKey": "rw_trans_2v1_finish_lane",
+      "oldTeachingObjective": "Generic free finish in 2v1 with stock A/B",
+      "newTeachingObjective": "In 2v1 hold the wide lane as the pass option until the CB fixes the lone defender"
+    },
+    {
+      "id": "scn_bank_904",
+      "familyKey": "rw_trans_pressure_catch",
+      "oldTeachingObjective": "Stock short return under pressure (template)",
+      "newTeachingObjective": "Pressure catch in transition: secure first, short return, do not force take-off"
+    },
+    {
+      "id": "scn_bank_905",
+      "familyKey": "rw_trans_cut_after_pass",
+      "oldTeachingObjective": "Template cut-after-fix with corrupted EN/HR",
+      "newTeachingObjective": "Cut inside behind recovering defender only after CB fixes him"
+    },
+    {
+      "id": "scn_bank_907",
+      "familyKey": "rw_trans_safe_continuation",
+      "oldTeachingObjective": "Stock short return when transition finish gone",
+      "newTeachingObjective": "No clean transition finish: short secure continuation, not a forced wing shot"
+    },
+    {
+      "id": "scn_bank_909",
+      "familyKey": "rw_6v5_recycle_when_covered",
+      "oldTeachingObjective": "Stock recycle in 6v5 when covered",
+      "newTeachingObjective": "6v5 with covered take-off: short return — numerical advantage is not an automatic finish"
+    },
+    {
+      "id": "scn_bank_910",
+      "familyKey": "rw_5v6_safe_width",
+      "oldTeachingObjective": "Generic stay wide in 5v6 (template)",
+      "newTeachingObjective": "In 5v6 hold width as safe release — do not force the corner into a home wing defender"
+    },
+    {
+      "id": "scn_bank_912",
+      "familyKey": "rw_7v6_extra_attacker_space",
+      "oldTeachingObjective": "Template free finish in 7v6",
+      "newTeachingObjective": "7v6 with second pivot binding middle: finish when wing defender steps inside and lane opens"
+    },
+    {
+      "id": "scn_bank_913",
+      "familyKey": "rw_7v6_no_force_covered",
+      "oldTeachingObjective": "Stock covered recycle in 7v6",
+      "newTeachingObjective": "7v6 but wing still covered: short return — extra attacker elsewhere is not your finish"
+    },
+    {
+      "id": "scn_bank_914",
+      "familyKey": "rw_empty_own_goal_clean_finish",
+      "oldTeachingObjective": "Template finish with own goal empty",
+      "newTeachingObjective": "Own goal empty but catch/take-off clean and defender late — finish now, do not over-safe"
+    },
+    {
+      "id": "scn_bank_915",
+      "familyKey": "rw_opp_empty_goal_quick_finish",
+      "oldTeachingObjective": "Broken opp-empty finish inventing GK side without GK cues",
+      "newTeachingObjective": "Opponent goal empty + free wing receive — finish immediately into empty net, no fake GK read"
+    },
+    {
+      "id": "scn_bank_917",
+      "familyKey": "rw_after_rb_two_finish",
+      "oldTeachingObjective": "Template finish after RB draws two",
+      "newTeachingObjective": "After RB draws two in 6:0, free wing receive with open take-off — finish now"
+    },
+    {
+      "id": "scn_bank_918",
+      "familyKey": "rw_after_rb_two_short_return",
+      "oldTeachingObjective": "Template short return after RB drew two",
+      "newTeachingObjective": "After RB drew two you are jumped on the catch — short return, not a forced finish"
+    },
+    {
+      "id": "scn_bank_919",
+      "familyKey": "rw_rotation_finish_window",
+      "oldTeachingObjective": "Template finish after rotation with stock available-side answer",
+      "newTeachingObjective": "After defensive rotation, wing defender still one step inside — finish while lane open"
+    },
+    {
+      "id": "scn_bank_920",
+      "familyKey": "rw_rotation_too_late_recycle",
+      "oldTeachingObjective": "Template recycle after late rotation",
+      "newTeachingObjective": "Ball late after rotation and handover already complete — short return, do not force"
+    }
+  ],
+  "locked": {
+    "scn_bank_872": {
+      "hash": "9b406412f5e791ea40fea284700152af4924fe1940d1880787d0d972d82811b6",
+      "unchanged": true,
+      "title": "Right Wing — Read the Wing Defender’s Hips Before Asking for the Ball"
+    },
+    "scn_bank_873": {
+      "hash": "e32253d76e43a3da77b5868eff597bc854e02c0a4874e92874d23ebf4b1e2809",
+      "unchanged": true,
+      "title": "Right Wing — When NOT to Leave the Corner for an Entry"
+    },
+    "scn_bank_876": {
+      "hash": "62826da55e47fdd210fb2ebfd87b618dbdd99d2e422e6558cc75c0c48e7cfcf5",
+      "unchanged": true,
+      "title": "Right Wing — First Wave: Hold Width in a 3v2"
+    },
+    "scn_bank_879": {
+      "hash": "94827102be9b548d792b4b8aa59a4858c9311a226e93eec2bb9f3778e40f189b",
+      "unchanged": true,
+      "title": "Right Wing — Empty Own Goal: Safe Finish or Safe Return"
+    },
+    "scn_bank_880": {
+      "hash": "25d1d74a411a6e42fc2d26a7bff68dae950d68397ee0b9b4107a95201b6ed1e3",
+      "unchanged": true,
+      "title": "Right Wing — Defence: Protect the Pass to the Wing Until Handover"
+    }
+  },
+  "perception": {
+    "count": 38,
+    "pct": 58.5,
+    "justification": "Perception=true only when primary task is reading an observable cue (hips, arms, recovery distance, block geometry, handover state, covered take-off, GK body) before deciding. Score/minute/6v5 label alone is insufficient."
+  },
+  "handedness": {
+    "left": 0,
+    "right": 0,
+    "none": 65,
+    "justification": "No scenario kept handedness:left/right. Coach audit: first decision on former left-tagged pilots (871/875) is identical for either hand; body-orientation notes removed. Do not add right-handed scenarios for balance."
+  }
+}

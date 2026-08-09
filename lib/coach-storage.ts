@@ -1,5 +1,7 @@
 // ── AI Coach Storage: Goals + Seen Messages ──────────────────────────────────
 
+import { readStorageJson, writeStorageJson } from '@/lib/platform-storage';
+
 export interface CoachGoal {
   id: string;
   title: string;
@@ -16,21 +18,11 @@ const KEYS = {
 };
 
 function get<T>(key: string, fallback: T): T {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(key);
-      if (raw) return JSON.parse(raw) as T;
-    }
-  } catch {}
-  return fallback;
+  return readStorageJson(key, fallback);
 }
 
 function set<T>(key: string, value: T): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
-  } catch {}
+  writeStorageJson(key, value);
 }
 
 // ── Goals ────────────────────────────────────────────────────────────────────

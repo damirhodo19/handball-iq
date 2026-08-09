@@ -2,24 +2,23 @@ import { useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react-native';
+import { ArrowRight, Check } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { useMatchDay } from '@/context/MatchDayContext';
 import { MatchType, MatchLocation, PlayingTime, PersonalGoal, PrepMode } from '@/lib/match-day-storage';
-import { getMatchDayPersonalGoals, HandballPosition } from '@/lib/positions';
+import { getMatchDayPersonalGoals } from '@/lib/positions';
 import { loadProfile } from '@/lib/storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal } from '@/lib/translations';
+import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 
 const MATCH_TYPES: MatchType[] = ['League', 'Cup', 'Friendly', 'Tournament'];
 const LOCATIONS: MatchLocation[] = ['Home', 'Away', 'Neutral'];
 const PLAYING_TIMES: PlayingTime[] = ['Starter', 'Shared minutes', 'Substitute'];
-
-// Use string[] instead of PersonalGoal[] since position-specific goals are dynamic
-const POSITION_GOALS = getMatchDayPersonalGoals('Goalkeeper');
 
 export default function SetupScreen() {
   const { mode = 'complete' } = useLocalSearchParams<{ mode?: PrepMode }>();
@@ -33,10 +32,9 @@ export default function SetupScreen() {
   const [goals, setGoals] = useState<string[]>([]);
   const [opponentError, setOpponentError] = useState(false);
 
-  // Load position-specific goals on mount
   const profile = loadProfile();
-  const position = (profile.position as HandballPosition) || 'Goalkeeper';
-  const PERSONAL_GOALS = getMatchDayPersonalGoals(position);
+  const position = resolvePlayerPosition(profile);
+  const PERSONAL_GOALS = position ? getMatchDayPersonalGoals(position) : [];
 
   const toggleGoal = (g: string) => {
     setGoals((prev) => {
@@ -47,12 +45,55 @@ export default function SetupScreen() {
   };
 
   const handleStart = () => {
+    if (!position) {
+      router.push('/(auth)/onboarding');
+      return;
+    }
     if (!opponent.trim()) { setOpponentError(true); return; }
     if (goals.length === 0) return;
     setOpponentError(false);
-    const prep = startPrep(mode as PrepMode, { opponent: opponent.trim(), matchType, location, playingTime, goals: goals as PersonalGoal[] });
+    if (__DEV__) {
+      console.log('[match-day] setup.start', {
+        position,
+        goals,
+        opponent: opponent.trim(),
+        matchType,
+        location,
+        playingTime,
+        developmentGoal: profile.developmentGoal ?? null,
+        playingLevel: profile.playingLevel ?? null,
+        route: '/match-day/prepare',
+      });
+    }
+    const prep = startPrep(mode as PrepMode, {
+      opponent: opponent.trim(),
+      matchType,
+      location,
+      playingTime,
+      goals: goals as PersonalGoal[],
+      position,
+      developmentGoal: profile.developmentGoal ?? null,
+      playingLevel: profile.playingLevel ?? null,
+      dominantHand: profile.dominantHand ?? null,
+    });
+    if (__DEV__) {
+      console.log('[match-day] setup.prep-created', { prepId: prep.id, position: prep.setup.position });
+    }
     router.replace('/match-day/prepare');
   };
+
+  if (!position) {
+    return (
+      <ScreenBackground>
+        <View style={[styles.scroll, { justifyContent: 'center', gap: Spacing.md }]}>
+          <BackButton fallbackHref="/(tabs)/match-day" />
+          <Text style={styles.headerTitle}>{t('home.completeProfileTitle')}</Text>
+          <Text style={styles.headerSub}>{t('home.completeProfileBody')}</Text>
+          <Button label={t('home.setupProfileCta')} onPress={() => router.push('/(auth)/onboarding')} />
+        </View>
+      </ScreenBackground>
+    );
+  }
 
   return (
     <ScreenBackground>
@@ -60,10 +101,8 @@ export default function SetupScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <BackButton fallbackHref="/(tabs)/match-day" />
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.headerTitle}>{t('matchDay.setupTitle')}</Text>
             <Text style={styles.headerSub}>{mode === 'quick' ? t('matchDay.modeQuick') : t('matchDay.modeComplete')}</Text>
           </View>

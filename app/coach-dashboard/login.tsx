@@ -3,32 +3,80 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput } from 
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, ArrowRight, Shield, UserCircle, Check } from 'lucide-react-native';
+import { ArrowRight, Shield, UserCircle, Check } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { CoachRole, createCoachAccount } from '@/lib/coach-dashboard-data';
+import { createClub, createTeam, initCoachPlatform } from '@/lib/team-platform/platform';
+import { useAuth } from '@/context/AuthContext';
+import { useDevAuth } from '@/context/DevAuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateRole, translateRoleShort } from '@/lib/translations';
+import { isValidEmail, isNonEmpty } from '@/lib/form-validation';
+import { mapServiceError } from '@/lib/map-error';
 
 const ROLES: CoachRole[] = ['Coach', 'Assistant Coach', 'Goalkeeper Coach', 'Academy Coach'];
 
 export default function CoachLoginScreen() {
   const { t } = useTranslation();
+  const { user } = useAuth();
+  const { isDevAuthenticated } = useDevAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [teamName, setTeamName] = useState('');
+  const [clubName, setClubName] = useState('');
+  const [country, setCountry] = useState('');
   const [role, setRole] = useState<CoachRole>('Coach');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    if (!name.trim() || !email.trim() || !teamName.trim()) {
+  const handleLogin = async () => {
+    if (!isNonEmpty(name) || !isNonEmpty(email) || !isNonEmpty(teamName) || !isNonEmpty(clubName)) {
       setError(t('coachLogin.errorFields'));
       return;
     }
+    if (!isValidEmail(email)) {
+      setError(t('auth.errorInvalidEmail'));
+      return;
+    }
     setError('');
+    setLoading(true);
+    const coachId = user?.id ?? (isDevAuthenticated ? 'dev_coach' : `coach_${Date.now()}`);
+
     createCoachAccount(name.trim(), email.trim(), role, teamName.trim());
+
+    const { error: clubError, club } = await createClub({
+      name: clubName.trim(),
+      country: country.trim() || undefined,
+      season: '2025/26',
+      description: `${clubName.trim()} — Handball IQ club`,
+      owner_id: coachId,
+    });
+    if (clubError) {
+      setError(mapServiceError(clubError, t));
+      setLoading(false);
+      return;
+    }
+
+    const { error: teamError } = await createTeam({
+      name: teamName.trim(),
+      club_id: club?.id,
+      club_name: clubName.trim(),
+      country: country.trim() || undefined,
+      team_category: 'Senior',
+      created_by: coachId,
+    });
+    if (teamError) {
+      setError(mapServiceError(teamError, t));
+      setLoading(false);
+      return;
+    }
+
+    await initCoachPlatform(coachId, name.trim());
+    setLoading(false);
     router.replace('/coach-dashboard');
   };
 
@@ -38,10 +86,8 @@ export default function CoachLoginScreen() {
 
         {/* Header */}
         <Animated.View entering={FadeIn.duration(500)} style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <BackButton fallbackHref="/(tabs)/home" />
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.headerTitle}>{t('coachLogin.title')}</Text>
             <Text style={styles.headerSub}>{t('coachLogin.subtitle')}</Text>
           </View>
@@ -89,6 +135,30 @@ export default function CoachLoginScreen() {
         </Animated.View>
 
         <Animated.View entering={FadeInDown.delay(200).duration(500)}>
+          <Text style={styles.label}>{t('team.clubName')}</Text>
+          <TextInput
+            style={styles.input}
+            placeholder={t('team.clubNamePlaceholder')}
+            placeholderTextColor={Colors.textQuaternary}
+            value={clubName}
+            onChangeText={setClubName}
+            returnKeyType="next"
+          />
+        </Animated.View>
+
+        <Animated.View entering={FadeInDown.delay(220).duration(500)}>
+          <Text style={styles.label}>{t('team.country')}</Text>
+          <TextInput
+            style={styles.input}
+            placeholder={t('team.countryPlaceholder')}
+            placeholderTextColor={Colors.textQuaternary}
+            value={country}
+            onChangeText={setCountry}
+            returnKeyType="next"
+          />
+        </Animated.View>
+
+        <Animated.View entering={FadeInDown.delay(240).duration(500)}>
           <Text style={styles.label}>{t('coachLogin.teamName')}</Text>
           <TextInput
             style={styles.input}
@@ -127,8 +197,9 @@ export default function CoachLoginScreen() {
         {/* Login button */}
         <Animated.View entering={FadeInDown.delay(300).duration(500)} style={{ marginTop: Spacing.xl }}>
           <Button
-            label={t('coachLogin.enterDashboard')}
+            label={loading ? t('common.loading') : t('coachLogin.enterDashboard')}
             onPress={handleLogin}
+            disabled={loading}
             iconRight={<ArrowRight size={20} color={Colors.background} />}
           />
         </Animated.View>
@@ -141,7 +212,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.xl },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 24, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

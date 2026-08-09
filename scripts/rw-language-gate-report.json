@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "mode": "production",
+  "source": "content/scenario-bank/scenarios.json (Right Wing primary)",
+  "rwCount": 65,
+  "errors": [],
+  "warnings": [
+    "scn_bank_905: situation_hr_weak_geometry_vocabulary"
+  ],
+  "byScenario": [
+    {
+      "id": "scn_bank_905",
+      "title": "Right Wing — Cut Behind Only After the Fix",
+      "errors": [],
+      "warnings": [
+        "situation_hr_weak_geometry_vocabulary"
+      ]
+    }
+  ],
+  "errorCount": 0,
+  "warningCount": 1,
+  "scenariosWithErrors": 0
+}

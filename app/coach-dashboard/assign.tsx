@@ -2,14 +2,18 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput, Modal } from 'react-native';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, ClipboardList, Check, Calendar, X, ChevronRight } from 'lucide-react-native';
+import { ClipboardList, Check, Calendar, X, ChevronRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { loadPlayers, loadCoachAccount, assignSession, PlayerProfile, SessionType } from '@/lib/coach-dashboard-data';
+import { assignTraining, getActiveTeam } from '@/lib/team-platform/platform';
+import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSessionType, translatePosition } from '@/lib/translations';
+import { mapServiceError } from '@/lib/map-error';
 
 const SESSION_TYPES: SessionType[] = [
   'Wing Session',
@@ -31,14 +35,20 @@ const SESSION_ICONS: Record<SessionType, string> = {
 
 export default function AssignScreen() {
   const { t } = useTranslation();
+  const { user } = useAuth();
   const { playerId, sessionType } = useLocalSearchParams<{ playerId?: string; sessionType?: SessionType }>();
   const [players, setPlayers] = useState<PlayerProfile[]>([]);
   const [selectedPlayer, setSelectedPlayer] = useState<PlayerProfile | null>(null);
   const [selectedSession, setSelectedSession] = useState<SessionType | null>(sessionType ?? null);
+  const [position, setPosition] = useState('');
+  const [difficulty, setDifficulty] = useState('Intermediate');
+  const [category, setCategory] = useState('Decision Making');
+  const [scenarioCount, setScenarioCount] = useState('5');
   const [dueDate, setDueDate] = useState(new Date(Date.now() + 86400000).toISOString().split('T')[0]);
   const [note, setNote] = useState('');
   const [showPlayerModal, setShowPlayerModal] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [assignError, setAssignError] = useState<string | null>(null);
 
   useFocusEffect(useCallback(() => {
     const all = loadPlayers();
@@ -49,10 +59,40 @@ export default function AssignScreen() {
     }
   }, [playerId]));
 
-  const handleAssign = () => {
-    if (!selectedPlayer || !selectedSession) return;
+  const handleAssign = async () => {
+    if (!selectedPlayer || !selectedSession) {
+      setAssignError(t('cdAssign.errorMissing'));
+      return;
+    }
+    setAssignError(null);
     const coach = loadCoachAccount();
-    assignSession(selectedPlayer.id, selectedSession, dueDate, note.trim() || `Assigned by ${coach?.name ?? 'Coach'}`, coach?.name ?? 'Coach');
+    assignSession(
+      selectedPlayer.id,
+      selectedSession,
+      dueDate,
+      note.trim() || t('cdAssign.defaultNote', { coach: coach?.name ?? t('role.coach') }),
+      coach?.name ?? t('role.coach'),
+    );
+
+    const team = getActiveTeam();
+    if (team) {
+      const { error } = await assignTraining({
+        coach_id: user?.id ?? 'dev_coach',
+        team_id: team.id,
+        player_ids: [selectedPlayer.id],
+        position,
+        difficulty,
+        category: category || selectedSession,
+        scenario_count: parseInt(scenarioCount, 10) || 5,
+        due_date: dueDate,
+        message: note.trim() || undefined,
+      });
+      if (error) {
+        setAssignError(mapServiceError(error, t));
+        return;
+      }
+    }
+
     setShowSuccess(true);
     setTimeout(() => {
       setShowSuccess(false);
@@ -69,9 +109,7 @@ export default function AssignScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdAssign.title')}</Text>
             <Text style={styles.headerSub}>{t('cdAssign.subtitle')}</Text>
@@ -118,6 +156,18 @@ export default function AssignScreen() {
           </View>
         </Animated.View>
 
+        {/* Training parameters */}
+        <Animated.View entering={FadeInDown.delay(180).duration(500)}>
+          <Text style={styles.label}>{t('team.assignPosition')}</Text>
+          <TextInput style={styles.input} value={position} onChangeText={setPosition} placeholderTextColor={Colors.textQuaternary} />
+          <Text style={styles.label}>{t('team.assignDifficulty')}</Text>
+          <TextInput style={styles.input} value={difficulty} onChangeText={setDifficulty} placeholderTextColor={Colors.textQuaternary} />
+          <Text style={styles.label}>{t('team.assignCategory')}</Text>
+          <TextInput style={styles.input} value={category} onChangeText={setCategory} placeholderTextColor={Colors.textQuaternary} />
+          <Text style={styles.label}>{t('team.scenarioCount')}</Text>
+          <TextInput style={styles.input} value={scenarioCount} onChangeText={setScenarioCount} keyboardType="number-pad" placeholderTextColor={Colors.textQuaternary} />
+        </Animated.View>
+
         {/* Due Date */}
         <Animated.View entering={FadeInDown.delay(100).duration(500)}>
           <Text style={styles.label}>{t('cdAssign.dueDate')}</Text>
@@ -127,7 +177,7 @@ export default function AssignScreen() {
               style={styles.dateInput}
               value={dueDate}
               onChangeText={setDueDate}
-              placeholder="YYYY-MM-DD"
+              placeholder={t('common.datePlaceholder')}
               placeholderTextColor={Colors.textQuaternary}
             />
           </View>
@@ -147,6 +197,8 @@ export default function AssignScreen() {
         </Animated.View>
 
         {/* Assign Button */}
+        {assignError ? <Text style={styles.errorText}>{assignError}</Text> : null}
+
         <Animated.View entering={FadeInDown.delay(200).duration(500)} style={{ marginTop: Spacing.lg }}>
           <Button
             label={t('cdAssign.assignBtn')}
@@ -162,7 +214,7 @@ export default function AssignScreen() {
             <View style={styles.successCard}>
               <View style={styles.successIcon}><Check size={32} color={Colors.success} /></View>
               <Text style={styles.successText}>{t('cdAssign.success')}</Text>
-              <Text style={styles.successSub}>The player will see it on their home screen.</Text>
+              <Text style={styles.successSub}>{t('coachDashboard.assignSuccessSub')}</Text>
             </View>
           </Animated.View>
         )}
@@ -179,7 +231,9 @@ export default function AssignScreen() {
               </TouchableOpacity>
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
-              {players.map((p) => (
+              {players.length === 0 ? (
+                <Text style={styles.emptyModalText}>{t('cdAssign.noPlayers')}</Text>
+              ) : players.map((p) => (
                 <TouchableOpacity
                   key={p.id}
                   style={[styles.modalPlayerCard, selectedPlayer?.id === p.id && styles.modalPlayerCardActive]}
@@ -188,7 +242,7 @@ export default function AssignScreen() {
                 >
                   <View style={{ flex: 1 }}>
                     <Text style={styles.modalPlayerName}>{p.name}</Text>
-                    <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} yrs · {p.club}</Text>
+                    <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} {t('common.yrs')} · {p.club}</Text>
                   </View>
                   {selectedPlayer?.id === p.id && <Check size={18} color={Colors.gold} />}
                 </TouchableOpacity>
@@ -205,7 +259,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 
@@ -223,6 +276,8 @@ const styles = StyleSheet.create({
   sessionChipActive: { backgroundColor: Colors.gold, borderColor: Colors.gold },
   sessionChipText: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textSecondary },
   sessionChipTextActive: { color: Colors.background },
+
+  input: { backgroundColor: Colors.surfaceRaised, borderRadius: Radius.md, borderWidth: 1.5, borderColor: Colors.border, color: Colors.textPrimary, fontFamily: 'Inter-Medium', fontSize: 15, paddingHorizontal: Spacing.md, paddingVertical: 12, marginBottom: Spacing.sm },
 
   dateRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, backgroundColor: Colors.surfaceRaised, borderRadius: Radius.md, borderWidth: 1.5, borderColor: Colors.border, paddingHorizontal: Spacing.md, paddingVertical: 12 },
   dateInput: { flex: 1, color: Colors.textPrimary, fontFamily: 'Inter-Medium', fontSize: 15 },
@@ -244,4 +299,6 @@ const styles = StyleSheet.create({
   modalPlayerCardActive: { borderColor: Colors.gold, backgroundColor: Colors.goldSoft },
   modalPlayerName: { fontFamily: 'Inter-ExtraBold', fontSize: 15, color: Colors.textPrimary },
   modalPlayerMeta: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, marginTop: 2 },
+  errorText: { color: Colors.error, fontFamily: 'Inter-Medium', fontSize: 14, marginBottom: Spacing.sm, textAlign: 'center' },
+  emptyModalText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 14, textAlign: 'center', paddingVertical: Spacing.lg },
 });

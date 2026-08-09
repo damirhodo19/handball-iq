@@ -2,10 +2,12 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, Search, TrendingUp, TrendingDown, Minus, ChevronRight } from 'lucide-react-native';
+import { Search, TrendingUp, TrendingDown, Minus, ChevronRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
+import { EmptyState } from '@/components/EmptyState';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { loadPlayers, PlayerProfile } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translatePosition } from '@/lib/translations';
@@ -30,9 +32,7 @@ export default function PlayersScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('cdPlayers.title')}</Text>
             <Text style={styles.headerSub}>{t('cdPlayers.subtitle', { n: players.length })}</Text>
@@ -56,9 +56,15 @@ export default function PlayersScreen() {
           <PlayerCard key={player.id} player={player} index={i} onPress={() => router.push({ pathname: '/coach-dashboard/player-report', params: { playerId: player.id } })} />
         ))}
 
-        {filtered.length === 0 && (
-          <Text style={styles.emptyText}>{t('cdPlayers.empty')}</Text>
-        )}
+        {filtered.length === 0 ? (
+          <EmptyState
+            icon={<Search size={28} color={Colors.gold} />}
+            title={t('cdPlayers.empty')}
+            description={search ? t('cdPlayers.emptySearch') : t('cdPlayers.emptySub')}
+            actionLabel={search ? t('common.clearAll') : undefined}
+            onAction={search ? () => setSearch('') : undefined}
+          />
+        ) : null}
       </ScrollView>
     </ScreenBackground>
   );
@@ -80,7 +86,7 @@ function PlayerCard({ player, index, onPress }: { player: PlayerProfile; index: 
           <View style={styles.playerHeader}>
             <View style={{ flex: 1 }}>
               <Text style={styles.playerName}>{player.name}</Text>
-              <Text style={styles.playerMeta}>{translatePosition(player.position, t)} · {player.age} yrs · {player.club}</Text>
+              <Text style={styles.playerMeta}>{translatePosition(player.position, t)} · {player.age} {t('common.yrs')} · {player.club}</Text>
             </View>
             <View style={[styles.trendBadge, { backgroundColor: trendColor + '22', borderColor: trendColor }]}>
               <TrendIcon size={12} color={trendColor} />
@@ -128,7 +134,6 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

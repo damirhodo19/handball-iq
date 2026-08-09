@@ -3,15 +3,21 @@
 
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import {
-  loadSessions, loadMatchHistory, loadProfile, saveSession, saveMatchRecord,
+  loadSessions, loadMatchHistory, loadProfile,
   SessionRecord, MatchHistoryRecord, UserProfile,
 } from '@/lib/storage';
 import { saveSessionResult } from '@/services/sessionService';
 import { saveMatchSimulation } from '@/services/matchService';
 import { upsertProfile } from '@/services/profileService';
+import { syncPreferencesToCloud } from '@/services/preferencesService';
+import { readStorageJson, writeStorageJson, readStorageRaw, writeStorageRaw } from '@/lib/platform-storage';
 
 const SYNC_KEY = 'hbiq_synced_records';
 const MIGRATION_PROMPT_KEY = 'hbiq_migration_prompted';
+const OFFLINE_QUEUE_KEY = 'hbiq_offline_queue';
+const SYNC_STATUS_KEY = 'hbiq_sync_status';
+
+export type SyncUiStatus = 'idle' | 'pending' | 'failed' | 'synced';
 
 export interface MigrationData {
   sessions: SessionRecord[];
@@ -37,44 +43,33 @@ export function getUnsyncedLocalData(): MigrationData {
 
 export function hasUnsyncedData(): boolean {
   const data = getUnsyncedLocalData();
-  return data.sessions.length > 0 || data.matches.length > 0;
+  return data.sessions.length > 0 || data.matches.length > 0 || getOfflineQueue().length > 0;
 }
 
 export function hasMigrationBeenPrompted(): boolean {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      return window.localStorage.getItem(MIGRATION_PROMPT_KEY) === 'true';
-    }
-  } catch {}
-  return false;
+  return readStorageRaw(MIGRATION_PROMPT_KEY) === 'true';
 }
 
 export function markMigrationPrompted(): void {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(MIGRATION_PROMPT_KEY, 'true');
-    }
-  } catch {}
+  writeStorageRaw(MIGRATION_PROMPT_KEY, 'true');
 }
 
 function getSyncedIds(): Set<string> {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(SYNC_KEY);
-      if (raw) return new Set(JSON.parse(raw) as string[]);
-    }
-  } catch {}
-  return new Set();
+  return new Set(readStorageJson<string[]>(SYNC_KEY, []));
 }
 
 function markSynced(ids: string[]): void {
   const existing = getSyncedIds();
   ids.forEach((id) => existing.add(id));
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(SYNC_KEY, JSON.stringify([...existing]));
-    }
-  } catch {}
+  writeStorageJson(SYNC_KEY, [...existing]);
+}
+
+export function getSyncUiStatus(): SyncUiStatus {
+  return readStorageJson<SyncUiStatus>(SYNC_STATUS_KEY, 'idle');
+}
+
+export function setSyncUiStatus(status: SyncUiStatus): void {
+  writeStorageJson(SYNC_STATUS_KEY, status);
 }
 
 export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: number; errors: string[] }> {
@@ -88,30 +83,20 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
   const errors: string[] = [];
   const syncedIds: string[] = [];
 
-  // Sync profile
-  if (data.profile) {
+  {
     const { data: userData } = await supabase.auth.getUser();
     const user = userData?.user;
     if (user) {
-      const { error } = await upsertProfile({
-        id: user.id,
-        primary_position: data.profile.position,
-        secondary_position: data.profile.secondaryPosition,
-        dominant_hand: data.profile.dominantHand,
-        age_group: data.profile.ageGroup,
-        playing_level: data.profile.playingLevel,
-        club: data.profile.club,
-        country: data.profile.country,
-        development_goal: data.profile.developmentGoal,
-        onboarded: true,
-      });
-      if (error) errors.push(`Profile: ${error}`);
+      const { error } = await syncPreferencesToCloud(user.id);
+      if (error) errors.push(`Profile/preferences: ${error}`);
+      else if (data.profile) {
+        await upsertProfile({ id: user.id, onboarded: true });
+      }
     }
   }
 
-  // Sync sessions
   for (const session of data.sessions) {
-    const { error, id } = await saveSessionResult({
+    const { error } = await saveSessionResult({
       session_type: 'training',
       session_name: session.sessionName,
       position: null,
@@ -121,7 +106,8 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
       pressure_control: 0,
       duration_seconds: session.timeSpent,
       answers: session.metrics.map((m) => ({ metric: m.metric, correct: m.correct })),
-    });
+      client_record_id: session.id,
+    } as any);
     if (error) {
       failed++;
       errors.push(`Session ${session.id}: ${error}`);
@@ -131,10 +117,9 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
     }
   }
 
-  // Sync matches
   for (const match of data.matches) {
-    const { error, id } = await saveMatchSimulation({
-      position: 'Goalkeeper',
+    const { error } = await saveMatchSimulation({
+      position: data.profile?.position || '',
       opponent: match.opponent,
       difficulty: match.competition,
       final_home_score: 0,
@@ -146,7 +131,8 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
       consistency_score: match.consistency,
       answers: match.answers ?? [],
       report: { summary: match.summary, finalMessage: match.finalMessage },
-    });
+      client_record_id: match.id,
+    } as any);
     if (error) {
       failed++;
       errors.push(`Match ${match.id}: ${error}`);
@@ -161,74 +147,128 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
   return { synced, failed, errors };
 }
 
-// Offline queue: save records locally with pending sync status
-const OFFLINE_QUEUE_KEY = 'hbiq_offline_queue';
-
 interface OfflineQueueItem {
   id: string;
-  type: 'session' | 'match' | 'match_day' | 'reflection';
+  type: 'session' | 'match' | 'match_day' | 'reflection' | 'development';
+  /** Stable dedupe key (e.g. local session/match id) */
+  dedupeKey?: string;
   data: any;
   timestamp: string;
+  userId?: string;
 }
 
-export function addToOfflineQueue(type: OfflineQueueItem['type'], data: any): void {
-  try {
-    if (typeof window === 'undefined' || !window.localStorage) return;
-    const queue = getOfflineQueue();
-    queue.push({
-      id: `oq_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
-      type,
-      data,
-      timestamp: new Date().toISOString(),
-    });
-    window.localStorage.setItem(OFFLINE_QUEUE_KEY, JSON.stringify(queue));
-  } catch {}
+export function addToOfflineQueue(
+  type: OfflineQueueItem['type'],
+  data: any,
+  opts?: { dedupeKey?: string; userId?: string },
+): void {
+  const queue = getOfflineQueue();
+  const dedupeKey = opts?.dedupeKey;
+  if (dedupeKey && queue.some((q) => q.dedupeKey === dedupeKey && q.type === type)) {
+    setSyncUiStatus('pending');
+    return;
+  }
+  queue.push({
+    id: `oq_${dedupeKey ?? Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    type,
+    dedupeKey,
+    data,
+    timestamp: new Date().toISOString(),
+    userId: opts?.userId,
+  });
+  writeStorageJson(OFFLINE_QUEUE_KEY, queue);
+  setSyncUiStatus('pending');
 }
 
 export function getOfflineQueue(): OfflineQueueItem[] {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(OFFLINE_QUEUE_KEY);
-      if (raw) return JSON.parse(raw) as OfflineQueueItem[];
-    }
-  } catch {}
-  return [];
+  return readStorageJson<OfflineQueueItem[]>(OFFLINE_QUEUE_KEY, []);
+}
+
+export function clearOfflineQueue(): void {
+  writeStorageJson(OFFLINE_QUEUE_KEY, []);
 }
 
 export async function flushOfflineQueue(): Promise<{ synced: number; failed: number }> {
   const queue = getOfflineQueue();
-  if (queue.length === 0) return { synced: 0, failed: 0 };
+  if (queue.length === 0) {
+    if (getSyncUiStatus() === 'pending') setSyncUiStatus('synced');
+    return { synced: 0, failed: 0 };
+  }
 
+  setSyncUiStatus('pending');
   let synced = 0;
   let failed = 0;
   const remaining: OfflineQueueItem[] = [];
 
   for (const item of queue) {
     let success = false;
-    if (item.type === 'session') {
-      const { error } = await saveSessionResult(item.data);
-      success = !error;
-    } else if (item.type === 'match') {
-      const { error } = await saveMatchSimulation(item.data);
-      success = !error;
+    try {
+      if (item.type === 'session') {
+        const { error } = await saveSessionResult(item.data);
+        success = !error;
+        if (success && item.dedupeKey) markSynced([item.dedupeKey]);
+      } else if (item.type === 'match') {
+        const { error } = await saveMatchSimulation(item.data);
+        success = !error;
+        if (success && item.dedupeKey) markSynced([item.dedupeKey]);
+      } else if (item.type === 'development' && item.userId) {
+        const mod = await import('@/services/developmentService');
+        const { error } = await mod.syncDevelopmentFull(item.userId);
+        success = !error;
+      } else {
+        success = true;
+      }
+    } catch {
+      success = false;
     }
-    if (success) {
-      synced++;
-    } else {
+    if (success) synced++;
+    else {
       failed++;
       remaining.push(item);
     }
   }
 
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(OFFLINE_QUEUE_KEY, JSON.stringify(remaining));
-    }
-  } catch {}
-
+  writeStorageJson(OFFLINE_QUEUE_KEY, remaining);
+  setSyncUiStatus(failed > 0 ? 'failed' : 'synced');
   return { synced, failed };
 }
 
 export function isOnline(): boolean {
   return typeof navigator !== 'undefined' ? navigator.onLine : true;
+}
+
+/** Persist locally-supported cloud op: try now, else queue. */
+export async function persistOrQueue(
+  type: 'session' | 'match',
+  data: any,
+  opts: { dedupeKey: string; userId?: string },
+): Promise<{ queued: boolean; error: string | null }> {
+  if (!isOnline() || !isSupabaseConfigured || !opts.userId) {
+    addToOfflineQueue(type, data, opts);
+    return { queued: true, error: null };
+  }
+  try {
+    if (type === 'session') {
+      const { error } = await saveSessionResult(data);
+      if (error) {
+        addToOfflineQueue(type, data, opts);
+        setSyncUiStatus('failed');
+        return { queued: true, error };
+      }
+    } else {
+      const { error } = await saveMatchSimulation(data);
+      if (error) {
+        addToOfflineQueue(type, data, opts);
+        setSyncUiStatus('failed');
+        return { queued: true, error };
+      }
+    }
+    markSynced([opts.dedupeKey]);
+    setSyncUiStatus('synced');
+    return { queued: false, error: null };
+  } catch (e: any) {
+    addToOfflineQueue(type, data, opts);
+    setSyncUiStatus('failed');
+    return { queued: true, error: e?.message ?? 'sync failed' };
+  }
 }

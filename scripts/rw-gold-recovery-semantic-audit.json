@@ -1,0 +1,1045 @@
+{
+  "generatedAt": "2026-08-09T23:01:26.593Z",
+  "counts": {
+    "KEEP": 24,
+    "KEEP_LOCKED": 5,
+    "REMOVE": 24,
+    "POLISH": 5,
+    "TACTICAL_REWRITE": 12
+  },
+  "uniqueTeachingKeys": 46,
+  "templateFarmCount": 20,
+  "decisions": [
+    {
+      "id": "scn_bank_871",
+      "familyKey": "rw_60_rb_binds_takeoff",
+      "teachingKey": "rb_bind_takeoff_now",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Beginner",
+      "hand": "left",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_872",
+      "familyKey": "rw_rb_hips_ask_now",
+      "teachingKey": "read_hips_ask_ball",
+      "template": false,
+      "action": "KEEP_LOCKED",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP_LOCKED"
+    },
+    {
+      "id": "scn_bank_873",
+      "familyKey": "rw_entry_when_not",
+      "teachingKey": "entry_when_not",
+      "template": false,
+      "action": "KEEP_LOCKED",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP_LOCKED"
+    },
+    {
+      "id": "scn_bank_874",
+      "familyKey": "rw_pivot_block_middle_takeoff",
+      "teachingKey": "pivot_block_takeoff",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_875",
+      "familyKey": "rw_gk_near_post_commit",
+      "teachingKey": "gk_near_post_commit_far",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "left",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_876",
+      "familyKey": "rw_trans_3v2_hold_width",
+      "teachingKey": "trans_3v2_width",
+      "template": false,
+      "action": "KEEP_LOCKED",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP_LOCKED"
+    },
+    {
+      "id": "scn_bank_877",
+      "familyKey": "rw_trans_second_wave_positional",
+      "teachingKey": "trans_second_wave_settle",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_878",
+      "familyKey": "rw_6v5_free_finish",
+      "teachingKey": "gk_stays_deep",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_879",
+      "familyKey": "rw_empty_own_goal_safe_return",
+      "teachingKey": "empty_own_messy_safe",
+      "template": false,
+      "action": "KEEP_LOCKED",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP_LOCKED"
+    },
+    {
+      "id": "scn_bank_880",
+      "familyKey": "rw_def_protect_wing_until_handover",
+      "teachingKey": "def_handover_protect_wing",
+      "template": false,
+      "action": "KEEP_LOCKED",
+      "ad": "Defence",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP_LOCKED"
+    },
+    {
+      "id": "scn_bank_881",
+      "familyKey": "rw_60_defender_stays_home",
+      "teachingKey": "OTHER_rw_60_defender_stays_home",
+      "template": false,
+      "action": "POLISH",
+      "ad": "Attack",
+      "diff": "Beginner",
+      "hand": "none",
+      "perc": true,
+      "final": "POLISH"
+    },
+    {
+      "id": "scn_bank_882",
+      "familyKey": "rw_60_defender_late_recover",
+      "teachingKey": "OTHER_rw_60_defender_late_recover",
+      "template": false,
+      "action": "POLISH",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "POLISH"
+    },
+    {
+      "id": "scn_bank_883",
+      "familyKey": "rw_60_takeoff_closed_from_inside",
+      "teachingKey": "takeoff_lane_geometry",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_884",
+      "familyKey": "rw_60_stay_wide_for_release",
+      "teachingKey": "entry_when_not",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Beginner",
+      "hand": "none",
+      "perc": false,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey entry_when_not; kept locked scn_bank_873"
+    },
+    {
+      "id": "scn_bank_885",
+      "familyKey": "rw_60_step_inside_for_lane",
+      "teachingKey": "takeoff_lane_geometry",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey takeoff_lane_geometry; kept scn_bank_883"
+    },
+    {
+      "id": "scn_bank_886",
+      "familyKey": "rw_rb_hips_wait_recover",
+      "teachingKey": "read_hips_ask_ball",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey read_hips_ask_ball; kept locked scn_bank_872"
+    },
+    {
+      "id": "scn_bank_887",
+      "familyKey": "rw_rb_create_width_for_drive",
+      "teachingKey": "sys_51_wide",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Beginner",
+      "hand": "none",
+      "perc": false,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_888",
+      "familyKey": "rw_rb_short_vs_long_release",
+      "teachingKey": "rb_short_vs_long",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_889",
+      "familyKey": "rw_rb_not_ready_hold_width",
+      "teachingKey": "rb_not_ready_hold",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Beginner",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_890",
+      "familyKey": "rw_entry_when_yes_second",
+      "teachingKey": "OTHER_rw_entry_when_yes_second",
+      "template": false,
+      "action": "POLISH",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "POLISH"
+    },
+    {
+      "id": "scn_bank_891",
+      "familyKey": "rw_entry_backdoor_open",
+      "teachingKey": "entry_when_yes",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_892",
+      "familyKey": "rw_entry_crowd_rb_space",
+      "teachingKey": "entry_when_not",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey entry_when_not; kept locked scn_bank_873"
+    },
+    {
+      "id": "scn_bank_893",
+      "familyKey": "rw_entry_after_help_leaves",
+      "teachingKey": "sys_51_wide",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey sys_51_wide; kept scn_bank_887"
+    },
+    {
+      "id": "scn_bank_894",
+      "familyKey": "rw_pivot_roll_after_seal",
+      "teachingKey": "pivot_coop_after_seal",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_895",
+      "familyKey": "rw_pivot_decoy_stay_wide",
+      "teachingKey": "pivot_coop_stay_wide",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_896",
+      "familyKey": "rw_pivot_feed_unavailable",
+      "teachingKey": "pivot_coop_feed_unavailable",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_897",
+      "familyKey": "rw_gk_stays_deep",
+      "teachingKey": "def_stays_home_wait_or_create",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_898",
+      "familyKey": "rw_gk_attacks_wing",
+      "teachingKey": "OTHER_rw_gk_attacks_wing",
+      "template": false,
+      "action": "POLISH",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "POLISH"
+    },
+    {
+      "id": "scn_bank_899",
+      "familyKey": "rw_gk_drops_hands_lob",
+      "teachingKey": "gk_drops_hands_lob",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_900",
+      "familyKey": "rw_gk_opens_during_takeoff",
+      "teachingKey": "gk_near_post_commit_far",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey gk_near_post_commit_far; kept scn_bank_875"
+    },
+    {
+      "id": "scn_bank_901",
+      "familyKey": "rw_gk_near_arm_high",
+      "teachingKey": "gk_read_gk_near_arm_high",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_902",
+      "familyKey": "rw_trans_2v1_finish_lane",
+      "teachingKey": "trans_2v1_finish",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_903",
+      "familyKey": "rw_trans_finish_before_recovery",
+      "teachingKey": "gk_stays_deep",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey gk_stays_deep; kept scn_bank_878"
+    },
+    {
+      "id": "scn_bank_904",
+      "familyKey": "rw_trans_pressure_catch",
+      "teachingKey": "trans_pressure_catch",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_905",
+      "familyKey": "rw_trans_cut_after_fix",
+      "teachingKey": "trans_cut_after_fix",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_906",
+      "familyKey": "rw_trans_stop_forcing",
+      "teachingKey": "trans_second_wave_settle",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey trans_second_wave_settle; kept scn_bank_877"
+    },
+    {
+      "id": "scn_bank_907",
+      "familyKey": "rw_trans_safe_continuation",
+      "teachingKey": "OTHER_rw_trans_safe_continuation",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_908",
+      "familyKey": "rw_trans_second_wave_width_hold",
+      "teachingKey": "trans_second_wave_settle",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey trans_second_wave_settle; kept scn_bank_877"
+    },
+    {
+      "id": "scn_bank_909",
+      "familyKey": "rw_6v5_recycle_when_covered",
+      "teachingKey": "num_advantage_covered_return",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey num_advantage_covered_return; kept scn_bank_931"
+    },
+    {
+      "id": "scn_bank_910",
+      "familyKey": "rw_5v6_safe_width",
+      "teachingKey": "num_disadvantage_hold_width",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_911",
+      "familyKey": "rw_5v6_no_force_corner",
+      "teachingKey": "OTHER_rw_5v6_no_force_corner",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_912",
+      "familyKey": "rw_7v6_extra_attacker_space",
+      "teachingKey": "OTHER_rw_7v6_extra_attacker_space",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_913",
+      "familyKey": "rw_7v6_no_force_covered",
+      "teachingKey": "num_advantage_covered_return",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey num_advantage_covered_return; kept scn_bank_931"
+    },
+    {
+      "id": "scn_bank_914",
+      "familyKey": "rw_empty_own_goal_clean_finish",
+      "teachingKey": "empty_own_messy_safe",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey empty_own_messy_safe; kept locked scn_bank_879"
+    },
+    {
+      "id": "scn_bank_915",
+      "familyKey": "rw_opp_empty_goal_quick_finish",
+      "teachingKey": "opp_empty_finish_now",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_916",
+      "familyKey": "rw_empty_own_no_skip_risk",
+      "teachingKey": "empty_own_messy_safe",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey empty_own_messy_safe; kept locked scn_bank_879"
+    },
+    {
+      "id": "scn_bank_917",
+      "familyKey": "rw_after_rb_two_finish",
+      "teachingKey": "def_stays_home_wait_or_create",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_stays_home_wait_or_create; kept scn_bank_897"
+    },
+    {
+      "id": "scn_bank_918",
+      "familyKey": "rw_after_rb_two_short_return",
+      "teachingKey": "after_rb_two_return",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_919",
+      "familyKey": "rw_rotation_finish_window",
+      "teachingKey": "late_trail_force_window",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_920",
+      "familyKey": "rw_rotation_too_late_recycle",
+      "teachingKey": "rotation_too_late_recycle",
+      "template": true,
+      "action": "REMOVE",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_921",
+      "familyKey": "rw_protect_one_goal_lead",
+      "teachingKey": "empty_own_messy_safe",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey empty_own_messy_safe; kept locked scn_bank_879"
+    },
+    {
+      "id": "scn_bank_922",
+      "familyKey": "rw_trailing_one_force_window",
+      "teachingKey": "gk_stays_deep",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey gk_stays_deep; kept scn_bank_878"
+    },
+    {
+      "id": "scn_bank_923",
+      "familyKey": "rw_passive_warning_clear_lane",
+      "teachingKey": "def_stays_home_wait_or_create",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_stays_home_wait_or_create; kept scn_bank_897"
+    },
+    {
+      "id": "scn_bank_924",
+      "familyKey": "rw_passive_warning_no_force",
+      "teachingKey": "passive_no_force_return",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_925",
+      "familyKey": "rw_bad_catch_late_possession",
+      "teachingKey": "OTHER_rw_bad_catch_late_possession",
+      "template": false,
+      "action": "POLISH",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "POLISH"
+    },
+    {
+      "id": "scn_bank_926",
+      "familyKey": "rw_clock_safe_return",
+      "teachingKey": "passive_clear_finish",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_927",
+      "familyKey": "rw_fast_restart_ready",
+      "teachingKey": "def_deny_outlet_restart",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_928",
+      "familyKey": "rw_def_handover_then_help",
+      "teachingKey": "def_handover_protect_wing",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_handover_protect_wing; kept locked scn_bank_880"
+    },
+    {
+      "id": "scn_bank_929",
+      "familyKey": "rw_def_close_transition_lane",
+      "teachingKey": "trans_3v2_width",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey trans_3v2_width; kept locked scn_bank_876"
+    },
+    {
+      "id": "scn_bank_930",
+      "familyKey": "rw_def_return_correct_lane",
+      "teachingKey": "entry_when_not",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey entry_when_not; kept locked scn_bank_873"
+    },
+    {
+      "id": "scn_bank_931",
+      "familyKey": "rw_def_stop_first_wave",
+      "teachingKey": "num_advantage_covered_return",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_932",
+      "familyKey": "rw_def_2v2_wing_side",
+      "teachingKey": "def_deny_outlet_restart",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_deny_outlet_restart; kept scn_bank_927"
+    },
+    {
+      "id": "scn_bank_933",
+      "familyKey": "rw_def_deny_long_outlet",
+      "teachingKey": "def_deny_outlet_restart",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_deny_outlet_restart; kept scn_bank_927"
+    },
+    {
+      "id": "scn_bank_934",
+      "familyKey": "rw_def_ball_vs_wing_choice",
+      "teachingKey": "def_handover_protect_wing",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Expert",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey def_handover_protect_wing; kept locked scn_bank_880"
+    },
+    {
+      "id": "scn_bank_935",
+      "familyKey": "rw_51_wide_vs_point",
+      "teachingKey": "trans_3v2_width",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "REMOVE",
+      "reason": "duplicate teachingKey trans_3v2_width; kept locked scn_bank_876"
+    },
+    {
+      "id": "scn_bank_936",
+      "familyKey": "rw_33_fast_ball_wide",
+      "teachingKey": "sys_33_fast_wide",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_937",
+      "familyKey": "rw_42_free_lane_finish",
+      "teachingKey": "sys_42_finish",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_938",
+      "familyKey": "rw_open_1v1_wing",
+      "teachingKey": "def_open_1v1_wing",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Intermediate",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_939",
+      "familyKey": "rw_321_behind_high_wing",
+      "teachingKey": "sys_321_behind",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Attack",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    },
+    {
+      "id": "scn_bank_940",
+      "familyKey": "rw_15_punish_high_wing_def",
+      "teachingKey": "def_15_high_wing_depth",
+      "template": false,
+      "action": "KEEP",
+      "ad": "Defence",
+      "diff": "Advanced",
+      "hand": "none",
+      "perc": true,
+      "final": "KEEP"
+    }
+  ],
+  "clusters": [
+    {
+      "teachingKey": "read_hips_ask_ball",
+      "ids": [
+        "scn_bank_872",
+        "scn_bank_886"
+      ],
+      "familyKeys": [
+        "rw_rb_hips_ask_now",
+        "rw_rb_hips_wait_recover"
+      ]
+    },
+    {
+      "teachingKey": "entry_when_not",
+      "ids": [
+        "scn_bank_873",
+        "scn_bank_884",
+        "scn_bank_892",
+        "scn_bank_930"
+      ],
+      "familyKeys": [
+        "rw_entry_when_not",
+        "rw_60_stay_wide_for_release",
+        "rw_entry_crowd_rb_space",
+        "rw_def_return_correct_lane"
+      ]
+    },
+    {
+      "teachingKey": "gk_near_post_commit_far",
+      "ids": [
+        "scn_bank_875",
+        "scn_bank_900"
+      ],
+      "familyKeys": [
+        "rw_gk_near_post_commit",
+        "rw_gk_opens_during_takeoff"
+      ]
+    },
+    {
+      "teachingKey": "trans_3v2_width",
+      "ids": [
+        "scn_bank_876",
+        "scn_bank_929",
+        "scn_bank_935"
+      ],
+      "familyKeys": [
+        "rw_trans_3v2_hold_width",
+        "rw_def_close_transition_lane",
+        "rw_51_wide_vs_point"
+      ]
+    },
+    {
+      "teachingKey": "trans_second_wave_settle",
+      "ids": [
+        "scn_bank_877",
+        "scn_bank_906",
+        "scn_bank_908"
+      ],
+      "familyKeys": [
+        "rw_trans_second_wave_positional",
+        "rw_trans_stop_forcing",
+        "rw_trans_second_wave_width_hold"
+      ]
+    },
+    {
+      "teachingKey": "gk_stays_deep",
+      "ids": [
+        "scn_bank_878",
+        "scn_bank_903",
+        "scn_bank_922"
+      ],
+      "familyKeys": [
+        "rw_6v5_free_finish",
+        "rw_trans_finish_before_recovery",
+        "rw_trailing_one_force_window"
+      ]
+    },
+    {
+      "teachingKey": "empty_own_messy_safe",
+      "ids": [
+        "scn_bank_879",
+        "scn_bank_914",
+        "scn_bank_916",
+        "scn_bank_921"
+      ],
+      "familyKeys": [
+        "rw_empty_own_goal_safe_return",
+        "rw_empty_own_goal_clean_finish",
+        "rw_empty_own_no_skip_risk",
+        "rw_protect_one_goal_lead"
+      ]
+    },
+    {
+      "teachingKey": "def_handover_protect_wing",
+      "ids": [
+        "scn_bank_880",
+        "scn_bank_928",
+        "scn_bank_934"
+      ],
+      "familyKeys": [
+        "rw_def_protect_wing_until_handover",
+        "rw_def_handover_then_help",
+        "rw_def_ball_vs_wing_choice"
+      ]
+    },
+    {
+      "teachingKey": "takeoff_lane_geometry",
+      "ids": [
+        "scn_bank_883",
+        "scn_bank_885"
+      ],
+      "familyKeys": [
+        "rw_60_takeoff_closed_from_inside",
+        "rw_60_step_inside_for_lane"
+      ]
+    },
+    {
+      "teachingKey": "sys_51_wide",
+      "ids": [
+        "scn_bank_887",
+        "scn_bank_893"
+      ],
+      "familyKeys": [
+        "rw_rb_create_width_for_drive",
+        "rw_entry_after_help_leaves"
+      ]
+    },
+    {
+      "teachingKey": "def_stays_home_wait_or_create",
+      "ids": [
+        "scn_bank_897",
+        "scn_bank_917",
+        "scn_bank_923"
+      ],
+      "familyKeys": [
+        "rw_gk_stays_deep",
+        "rw_after_rb_two_finish",
+        "rw_passive_warning_clear_lane"
+      ]
+    },
+    {
+      "teachingKey": "num_advantage_covered_return",
+      "ids": [
+        "scn_bank_909",
+        "scn_bank_913",
+        "scn_bank_931"
+      ],
+      "familyKeys": [
+        "rw_6v5_recycle_when_covered",
+        "rw_7v6_no_force_covered",
+        "rw_def_stop_first_wave"
+      ]
+    },
+    {
+      "teachingKey": "def_deny_outlet_restart",
+      "ids": [
+        "scn_bank_927",
+        "scn_bank_932",
+        "scn_bank_933"
+      ],
+      "familyKeys": [
+        "rw_fast_restart_ready",
+        "rw_def_2v2_wing_side",
+        "rw_def_deny_long_outlet"
+      ]
+    }
+  ]
+}

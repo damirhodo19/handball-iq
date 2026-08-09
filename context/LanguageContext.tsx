@@ -1,26 +1,19 @@
 import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
 import { translations, TranslationDict, SupportedLanguage } from '@/locales';
+import { readStorageRaw, writeStorageRaw } from '@/lib/platform-storage';
 
 const STORAGE_KEY = 'handball_iq_language';
 
-const VALID_LANGS: SupportedLanguage[] = ['en', 'hr'];
+const VALID_LANGS: SupportedLanguage[] = ['en', 'hr', 'de'];
 
 function getStoredLang(): SupportedLanguage {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw && VALID_LANGS.includes(raw as SupportedLanguage)) return raw as SupportedLanguage;
-    }
-  } catch {}
+  const raw = readStorageRaw(STORAGE_KEY);
+  if (raw && VALID_LANGS.includes(raw as SupportedLanguage)) return raw as SupportedLanguage;
   return 'en';
 }
 
 function storeLang(lang: SupportedLanguage) {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      window.localStorage.setItem(STORAGE_KEY, lang);
-    }
-  } catch {}
+  writeStorageRaw(STORAGE_KEY, lang);
 }
 
 interface LanguageContextValue {
@@ -63,7 +56,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>) => {
       const dict = translations[lang] ?? translations.en;
-      const val = resolveKey(dict, key) ?? resolveKey(translations.en, key);
+      const val = resolveKey(dict, key);
       if (val === undefined) return key;
       return interpolate(val, vars);
     },

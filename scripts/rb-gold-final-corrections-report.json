@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "handednessFound": 13,
+  "handednessFixed": 13,
+  "handednessSpecificTotal": 15,
+  "required": {
+    "710": "left",
+    "725": "right",
+    "760": "left"
+  },
+  "tactical": {
+    "715": "Pivot blocks inside (central/half) defender; opens inside shoulder; last defender must react; A attacks inside shoulder.",
+    "722": "Corridor already open + wing defender full stride late → immediate ball speed clearly superior to wing exchange (B still plausible but slower).",
+    "750": "Explicit kombinirana 5+1 s individualnim čuvanjem pivota; defensiveSystem remains Mixed."
+  },
+  "croatianIssuesFixed": 13
+}

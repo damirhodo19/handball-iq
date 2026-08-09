@@ -1,0 +1,92 @@
+{
+  "status": "PASS WITH REMAINING GAPS",
+  "headline": "RIGHT WING GOLD BANK RECOVERED AND READY FOR FINAL HUMAN REVIEW",
+  "deploy": false,
+  "doNotStartLeftWing": true,
+  "lbRbCbUnchanged": true,
+  "lockedReferencesUnchanged": true,
+  "originalRwCount": 70,
+  "finalRwCount": 65,
+  "kept": 45,
+  "keptLocked": 5,
+  "polished": 45,
+  "tacticallyRewritten": 15,
+  "removed": 5,
+  "merged": 5,
+  "newlyAdded": 0,
+  "trueTeachingFamilies": 65,
+  "attack": {
+    "count": 54,
+    "pct": 83.1
+  },
+  "defence": {
+    "count": 11,
+    "pct": 16.9
+  },
+  "perception": {
+    "count": 38,
+    "pct": 58.5,
+    "justification": "Perception=true only when primary task is reading an observable cue (hips, arms, recovery distance, block geometry, handover state, covered take-off, GK body) before deciding. Score/minute/6v5 label alone is insufficient."
+  },
+  "difficulty": {
+    "Beginner": 6,
+    "Intermediate": 22,
+    "Advanced": 27,
+    "Expert": 10
+  },
+  "handedness": {
+    "left": 0,
+    "right": 0,
+    "none": 65,
+    "justification": "No scenario kept handedness:left/right. Coach audit: first decision on former left-tagged pilots (871/875) is identical for either hand; body-orientation notes removed. Do not add right-handed scenarios for balance."
+  },
+  "goalkeeperReadFamilies": 6,
+  "transitionFamilies": 6,
+  "numericalFamilies": 5,
+  "gameStateFamilies": 10,
+  "semanticDuplicatesRemoved": 5,
+  "partC": {
+    "kept": 0,
+    "rewritten": 15,
+    "removed": 5,
+    "note": "901–920 template farm eliminated via rewrite or merge"
+  },
+  "corruptedLanguageFixed": true,
+  "weakABFixed": "Part C fully; residual soft A/B in some A/B/D keepers for human polish",
+  "questionableGeometryFixed": "Part C + GK gate in validator",
+  "rubric": {
+    "avg": 8.7,
+    "min": 8.3,
+    "range": "8.3–8.9"
+  },
+  "coachRiskV2": {
+    "readyForHumanReview": true,
+    "systemicTemplateCluster": false,
+    "top15VerdictCounts": {
+      "KEEP": 15
+    },
+    "avgRisk": 3.4,
+    "maxRisk": 4.5
+  },
+  "top5RemainingConcerns": [
+    "Perception ~58.5% is honest vs prior ~97%, but still on the high side of a coach-credible band — some borderline tags may drop further in human review.",
+    "A/B/D keepers outside Part C were lightly polished (tags/handedness), not full language rewrites; residual Signal:/stock phrasing may remain.",
+    "A vs B conditioning is strong in recovered Part C; some older keepers still have softer B options.",
+    "Automated coach-risk v2 is a gate against template relapse, not a substitute for coach reading of the 20-sample.",
+    "No new scenarios were added for micro-gaps (e.g. finer GK during-take-off variants) — only after human review if a true gap is confirmed."
+  ],
+  "strongestFinalReferences": [
+    "scn_bank_872 rw_rb_hips_ask_now",
+    "scn_bank_873 rw_entry_when_not",
+    "scn_bank_876 rw_trans_3v2_hold_width",
+    "scn_bank_879 rw_empty_own_goal_safe_return",
+    "scn_bank_880 rw_def_protect_wing_until_handover"
+  ],
+  "artifacts": {
+    "semanticAudit": "scripts/rw-gold-recovery-semantic-audit.json",
+    "removalReport": "scripts/rw-gold-recovery-removal-report.json",
+    "coachRiskV2": "scripts/rw-gold-human-coach-risk-v2.json",
+    "humanReview20": "scripts/rw-gold-human-review-20.md",
+    "lockedSnapshot": "scripts/rw-gold-locked-refs-snapshot.json"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "date": "2026-08-09T23:26:16.187Z",
+  "verdict": "PASS",
+  "FAIL": [],
+  "report": {
+    "positions": {
+      "Left Back": {
+        "trainingTop": [
+          {
+            "id": "scn_bank_156",
+            "primary": "Left Back",
+            "title": "Left Back — Basic Gap Between Defenders"
+          },
+          {
+            "id": "scn_bank_158",
+            "primary": "Left Back",
+            "title": "Left Back — Block Line vs Sealed Pivot"
+          },
+          {
+            "id": "scn_bank_159",
+            "primary": "Left Back",
+            "title": "Left Back — Feeding the Sealed Pivot"
+          },
+          {
+            "id": "scn_bank_161",
+            "primary": "Left Back",
+            "title": "Left Back — Crossing After Late Switch"
+          },
+          {
+            "id": "scn_bank_162",
+            "primary": "Left Back",
+            "title": "Left Back — Open Side vs Aggressive 5:1"
+          }
+        ],
+        "matchPoolSize": 236,
+        "gkInMatchPool": 0
+      },
+      "Left Wing": {
+        "trainingTop": [
+          {
+            "id": "scn_bank_074",
+            "primary": "Left Wing",
+            "title": "Left Wing — Basic Near-Post Read"
+          },
+          {
+            "id": "scn_bank_075",
+            "primary": "Left Wing",
+            "title": "Left Wing — Far-Post Under Centred Keeper"
+          },
+          {
+            "id": "scn_bank_076",
+            "primary": "Left Wing",
+            "title": "Left Wing — Lob vs Stepping Keeper"
+          },
+          {
+            "id": "scn_bank_077",
+            "primary": "Left Wing",
+            "title": "Left Wing — Fast-Break Arrival Timing"
+          },
+          {
+            "id": "scn_bank_078",
+            "primary": "Left Wing",
+            "title": "Left Wing — Back-Door vs Ball-Watching 6:0"
+          }
+        ],
+        "matchPoolSize": 105,
+        "gkInMatchPool": 0
+      },
+      "Pivot": {
+        "trainingTop": [
+          {
+            "id": "scn_bank_305",
+            "primary": "Pivot",
+            "title": "Pivot — Seal Side vs Flat Line"
+          },
+          {
+            "id": "scn_bank_306",
+            "primary": "Pivot",
+            "title": "Pivot — Clearing the Drive Lane"
+          },
+          {
+            "id": "scn_bank_307",
+            "primary": "Pivot",
+            "title": "Pivot — Secure Under Back Contact"
+          },
+          {
+            "id": "scn_bank_308",
+            "primary": "Pivot",
+            "title": "Pivot — Legal Goalkeeper Screen"
+          },
+          {
+            "id": "scn_bank_309",
+            "primary": "Pivot",
+            "title": "Pivot — Finish Before Recovery"
+          }
+        ],
+        "matchPoolSize": 99,
+        "gkInMatchPool": 0
+      },
+      "Centre Back": {
+        "trainingTop": [
+          {
+            "id": "scn_bank_801",
+            "primary": "Centre Back",
+            "title": "Centre Back — Bind the Central Defender in 6:0"
+          },
+          {
+            "id": "scn_bank_802",
+            "primary": "Centre Back",
+            "title": "Centre Back — Read the Half After Binding the Centre"
+          },
+          {
+            "id": "scn_bank_803",
+            "primary": "Centre Back",
+            "title": "Centre Back — Pivot Pass After Binding the 6:0 Centre"
+          },
+          {
+            "id": "scn_bank_804",
+            "primary": "Centre Back",
+            "title": "Centre Back — Use Pivot Block Geometry in 6:0"
+          },
+          {
+            "id": "scn_bank_805",
+            "primary": "Centre Back",
+            "title": "Centre Back — When Changing Side Is Correct in 6:0"
+          }
+        ],
+        "matchPoolSize": 294,
+        "gkInMatchPool": 0
+      }
+    },
+    "failures": []
+  }
+}

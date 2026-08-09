@@ -1,0 +1,109 @@
+{
+  "status": "PASS WITH REMAINING GAPS",
+  "headline": "RIGHT WING SURGICAL COACH PASS COMPLETE — READY FOR FINAL HUMAN REVIEW",
+  "deploy": false,
+  "reviewed": 15,
+  "changeCounts": {
+    "tactical rewrite": 7,
+    "language only": 4,
+    "answer polish": 2,
+    "metadata only": 2
+  },
+  "mergedRemoved": 0,
+  "rwFinalCount": 65,
+  "perception": {
+    "count": 41,
+    "pct": 63.1
+  },
+  "difficulty": {
+    "Beginner": 6,
+    "Intermediate": 22,
+    "Advanced": 26,
+    "Expert": 11
+  },
+  "handedness": {
+    "left": 0,
+    "right": 0,
+    "none": 65
+  },
+  "results": {
+    "871": "take-off-only Beginner; handedness none",
+    "875": "handedness none — GK commit creates far-side read",
+    "877": "perception true",
+    "878": "question rewritten to defender-distance interpretation",
+    "880": "B too much help / C no help / D lose awareness",
+    "910": "player-term defender geometry; 5v6 width/risk",
+    "912": "distinct 7v6 + empty-own-goal binary kept (not merged)",
+    "922": "distinct late-game trailing decision kept (not merged)",
+    "924": "Neriješeno 25:25; duplicate removed; passive timing",
+    "929": "explicit 3v2 teammate far-side / RW own-side lane"
+  },
+  "lockedHashes": {
+    "scn_bank_872": "UNCHANGED",
+    "scn_bank_873": "UNCHANGED",
+    "scn_bank_876": "UNCHANGED",
+    "scn_bank_879": "UNCHANGED",
+    "scn_bank_897": "UNCHANGED"
+  },
+  "coachRiskV2": {
+    "maxRisk": 4.5,
+    "top15VerdictCounts": {
+      "KEEP": 15
+    },
+    "targetScenariosInTop15": [
+      {
+        "id": "scn_bank_880",
+        "familyKey": "rw_def_protect_wing_until_handover",
+        "title": "Right Wing — Defence: Protect the Pass to the Wing Until Handover",
+        "risk": 4,
+        "verdict": "KEEP",
+        "reasons": [
+          "B weakly conditioned"
+        ],
+        "difficulty": "Expert",
+        "perception": true,
+        "attackOrDefence": "Defence"
+      },
+      {
+        "id": "scn_bank_902",
+        "familyKey": "rw_trans_2v1_finish_lane",
+        "title": "Right Wing — First Wave 2v1: Stay Wide as the Pass Option",
+        "risk": 4,
+        "verdict": "KEEP",
+        "reasons": [
+          "B weakly conditioned"
+        ],
+        "difficulty": "Intermediate",
+        "perception": true,
+        "attackOrDefence": "Attack"
+      },
+      {
+        "id": "scn_bank_910",
+        "familyKey": "rw_5v6_safe_width",
+        "title": "Right Wing — 5v6: Hold Width, Do Not Force the Corner",
+        "risk": 4,
+        "verdict": "KEEP",
+        "reasons": [
+          "B weakly conditioned"
+        ],
+        "difficulty": "Intermediate",
+        "perception": false,
+        "attackOrDefence": "Attack"
+      },
+      {
+        "id": "scn_bank_929",
+        "familyKey": "rw_def_close_transition_lane",
+        "title": "Right Wing — Defence in 3v2: Protect Your Sideline Pass Lane",
+        "risk": 4,
+        "verdict": "KEEP",
+        "reasons": [
+          "B weakly conditioned"
+        ],
+        "difficulty": "Advanced",
+        "perception": true,
+        "attackOrDefence": "Defence"
+      }
+    ],
+    "highRiskFailures": []
+  }
+}

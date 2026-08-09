@@ -2,13 +2,15 @@ import { useState, useCallback } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, TrendingUp, TrendingDown, AlertCircle, ClipboardList, ChevronRight } from 'lucide-react-native';
+import { TrendingUp, TrendingDown, AlertCircle, ClipboardList, ChevronRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { loadPlayerById, generateRecommendations, PlayerProfile, TrainingRecommendation } from '@/lib/coach-dashboard-data';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSessionType, translatePosition } from '@/lib/translations';
+import { renderCoachMessage } from '@/lib/coach-i18n';
 
 export default function PlayerReportScreen() {
   const { t } = useTranslation();
@@ -16,16 +18,30 @@ export default function PlayerReportScreen() {
   const [player, setPlayer] = useState<PlayerProfile | null>(null);
   const [recs, setRecs] = useState<TrainingRecommendation[]>([]);
 
+  const [loaded, setLoaded] = useState(false);
+
   useFocusEffect(useCallback(() => {
     const p = loadPlayerById(playerId);
     setPlayer(p);
     if (p) setRecs(generateRecommendations(p));
+    setLoaded(true);
   }, [playerId]));
+
+  if (!loaded) {
+    return (
+      <ScreenBackground>
+        <View style={styles.centered}><Text style={styles.loadingText}>{t('cdReport.loading')}</Text></View>
+      </ScreenBackground>
+    );
+  }
 
   if (!player) {
     return (
       <ScreenBackground>
-        <View style={styles.centered}><Text style={styles.loadingText}>{t('cdReport.loading')}</Text></View>
+        <View style={styles.centered}>
+          <Text style={styles.loadingText}>{t('cdReport.playerNotFound')}</Text>
+          <BackButton />
+        </View>
       </ScreenBackground>
     );
   }
@@ -51,12 +67,10 @@ export default function PlayerReportScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{player.name}</Text>
-            <Text style={styles.headerSub}>{translatePosition(player.position, t)} · {player.age} yrs · {player.club}</Text>
+            <Text style={styles.headerSub}>{translatePosition(player.position, t)} · {player.age} {t('common.yrs')} · {player.club}</Text>
           </View>
         </View>
 
@@ -145,10 +159,10 @@ export default function PlayerReportScreen() {
                   <Text style={[styles.severityText, { color: rec.severity === 'high' ? Colors.error : rec.severity === 'medium' ? Colors.warning : Colors.success }]}>{rec.severity.toUpperCase()}</Text>
                 </View>
               </View>
-              <Text style={styles.recIssue}>{rec.issue}</Text>
+              <Text style={styles.recIssue}>{renderCoachMessage(t, rec.issue)}</Text>
               <View style={styles.recActionRow}>
                 <Text style={styles.recActionLabel}>{t('cdReport.recommendation')}</Text>
-                <Text style={styles.recAction}>{rec.recommendation}</Text>
+                <Text style={styles.recAction}>{renderCoachMessage(t, rec.recommendation)}</Text>
               </View>
               <PressableCard
                 onPress={() => router.push({ pathname: '/coach-dashboard/assign', params: { playerId: player.id, sessionType: rec.sessionType } })}
@@ -210,7 +224,6 @@ const styles = StyleSheet.create({
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
 

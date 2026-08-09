@@ -2,15 +2,17 @@ import { useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { ArrowLeft, ArrowRight } from 'lucide-react-native';
+import { ArrowRight } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import {
-  saveReflection, generateReflectionSummary, loadPreps, MatchDayPrep,
+  saveReflection, loadPreps, MatchDayPrep,
   MatchDayReflection,
 } from '@/lib/match-day-storage';
+import { generateLocalizedReflectionSummary } from '@/lib/reflection-summary';
 import { savePostMatchReflection } from '@/services/matchDayService';
 import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -81,7 +83,7 @@ export default function ReflectionScreen() {
   const handleSubmit = () => {
     const partial = {
       prepId: recentCompleted?.id ?? '',
-      opponent: recentCompleted?.setup.opponent ?? 'Unknown',
+      opponent: recentCompleted?.setup.opponent ?? t('matchDay.unknownOpponent'),
       preparedFeel,
       resetAfterConceding,
       patience,
@@ -89,7 +91,7 @@ export default function ReflectionScreen() {
       didWell,
       willImprove,
     };
-    const s = generateReflectionSummary(partial);
+    const s = generateLocalizedReflectionSummary(partial, t);
     setSummary(s);
 
     const reflection: MatchDayReflection = {
@@ -168,10 +170,8 @@ export default function ReflectionScreen() {
 
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <BackButton fallbackHref="/(tabs)/match-day" />
+          <View style={{ flex: 1, minWidth: 0 }}>
             <Text style={styles.headerTitle}>{t('matchDay.reflectionTitle')}</Text>
             <Text style={styles.headerSub}>{t('matchDay.reflectionSub')}</Text>
           </View>

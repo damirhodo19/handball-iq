@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
@@ -7,79 +7,127 @@ import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { ProgressRing } from '@/components/ProgressRing';
 import { useMatch } from '@/context/MatchContext';
-import { saveMatchRecord } from '@/lib/storage';
-import { saveMatchSimulation } from '@/services/matchService';
+import { saveMatchRecord, loadProfile } from '@/lib/storage';
 import { useAuth } from '@/context/AuthContext';
-import { useState } from 'react';
+import { buildMatchActivityPayload, processActivity, stableActivityId } from '@/lib/development';
+import { syncDevelopmentFull } from '@/services/developmentService';
+import { persistOrQueue } from '@/services/syncService';
+import { LoadingState } from '@/components/LoadingState';
 import { useTranslation } from '@/hooks/useTranslation';
+import { getLocalizedMatchMetadata } from '@/lib/match-config-i18n';
+import { translatePosition } from '@/lib/translations';
+import { buildLocalizedReportView } from '@/lib/match-report-i18n';
+import { snapshotFromMatchReport } from '@/lib/match-history-i18n';
+import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 
 export default function MatchReportScreen() {
   const { t } = useTranslation();
   const { report, answers, situations, resetMatch } = useMatch();
   const { user } = useAuth();
-  const savedRef = useRef(false);
+  const localSavedKeyRef = useRef<string | null>(null);
+  const cloudSavedKeyRef = useRef<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [devResult, setDevResult] = useState<{ xp: number; levelUp: boolean } | null>(null);
 
+  const profile = loadProfile();
+  const position = resolvePlayerPosition(profile);
+  const positionLabel = position ? translatePosition(position, t) : t('role.player');
+  const matchMeta = getLocalizedMatchMetadata(t, positionLabel);
+
+  const localizedReport = report ? buildLocalizedReportView(report, answers, t) : null;
+
+  const sourceId = report
+    ? stableActivityId('m', [
+        matchMeta.opponent,
+        matchMeta.competition,
+        report.decisionScore,
+        ...answers.map((a) => `${a.situationIndex}:${a.chosenDecisionId}:${a.isCorrect}`),
+      ])
+    : '';
+
+  // Local progression — independent of auth readiness
   useEffect(() => {
-    if (!report || savedRef.current) return;
-    savedRef.current = true;
+    if (!report || !sourceId || localSavedKeyRef.current === sourceId) return;
+    localSavedKeyRef.current = sourceId;
+    const reportSnapshot = snapshotFromMatchReport(report);
     saveMatchRecord({
+      id: sourceId,
       date: new Date().toISOString(),
-      opponent: 'Opponent',
-      competition: 'Match Simulation',
+      opponent: matchMeta.opponent,
+      competition: matchMeta.competition,
       matchRating: report.matchRating,
       decisionScore: report.decisionScore,
       pressureControl: report.pressureControl,
       readingAbility: report.readingAbility,
       consistency: report.consistency,
-      summary: report.summary,
-      finalMessage: report.finalMessage,
+      reportSnapshot,
       answers,
     });
 
-    // Save to Supabase if user is logged in
-    if (user) {
-      saveMatchSimulation({
-        position: 'Goalkeeper',
-        opponent: 'Opponent',
-        difficulty: 'Match Simulation',
-        final_home_score: 0,
-        final_away_score: 0,
-        overall_rating: report.matchRating,
-        decision_score: report.decisionScore,
-        pressure_control: report.pressureControl,
-        reading_score: report.readingAbility,
-        consistency_score: report.consistency,
-        answers: answers as any[],
-        report: { summary: report.summary, finalMessage: report.finalMessage } as any,
-      }).then(({ error }) => {
-        if (error) setSaveError(error);
-      });
+    if (position) {
+      const payload = buildMatchActivityPayload(
+        situations, answers, report.decisionScore, position, sourceId,
+      );
+      const result = processActivity(payload);
+      setDevResult({ xp: result.xpEarned, levelUp: result.levelUp });
     }
-  }, [report, user]);
+  }, [report, sourceId, matchMeta, position, situations, answers]);
 
-  if (saveError) {
-    return (
-      <ScreenBackground>
-        <View style={styles.loadingWrap}>
-          <Text style={styles.loadingText}>{t('match.noData')}</Text>
-        </View>
-      </ScreenBackground>
+  // Cloud persistence — retries when user becomes available; queues when offline
+  useEffect(() => {
+    if (!report || !sourceId || cloudSavedKeyRef.current === sourceId) return;
+    const reportSnapshot = snapshotFromMatchReport(report);
+    const payload = {
+      position: position ?? '',
+      opponent: matchMeta.opponent,
+      difficulty: matchMeta.competition,
+      final_home_score: 0,
+      final_away_score: 0,
+      overall_rating: report.matchRating,
+      decision_score: report.decisionScore,
+      pressure_control: report.pressureControl,
+      reading_score: report.readingAbility,
+      consistency_score: report.consistency,
+      answers: answers as any[],
+      report: { reportSnapshot } as any,
+    };
+    if (!user) {
+      void persistOrQueue('match', payload, { dedupeKey: sourceId });
+      return;
+    }
+    cloudSavedKeyRef.current = sourceId;
+    void persistOrQueue('match', payload, { dedupeKey: sourceId, userId: user.id }).then(
+      ({ error, queued }) => {
+        if (error && !queued) setSaveError(t('error.failedSaveMatch'));
+        else if (!error) syncDevelopmentFull(user.id);
+      },
     );
-  }
+  }, [report, sourceId, user, matchMeta, position, answers, t]);
+
+  useEffect(() => {
+    if (!report) {
+      const timer = setTimeout(() => router.replace('/(tabs)/home'), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [report]);
 
   if (!report) {
     return (
       <ScreenBackground>
-        <View style={styles.loadingWrap}>
-          <Text style={styles.loadingText}>{t('match.emptySub')}</Text>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: Spacing.lg, gap: Spacing.lg }}>
+          <LoadingState message={t('common.loading')} accessibilityLabel={t('common.loading')} />
+          <Button label={t('match.backToHome')} onPress={() => router.replace('/(tabs)/home')} variant="outline" />
         </View>
       </ScreenBackground>
     );
   }
 
+  const lastSituation = situations[situations.length - 1];
+  const finalScoreTeam = lastSituation?.scoreTeam ?? 0;
+  const finalScoreOpp = lastSituation?.scoreOpp ?? 0;
   const ratingColor = report.matchRating >= 80 ? Colors.success : report.matchRating >= 60 ? Colors.gold : report.matchRating >= 40 ? Colors.warning : Colors.error;
 
   function handlePlayAgain() {
@@ -99,6 +147,32 @@ export default function MatchReportScreen() {
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+        <View style={{ marginBottom: Spacing.md }}>
+          <BackButton fallbackHref="/(tabs)/home" />
+        </View>
+        {saveError ? (
+          <Animated.View entering={FadeIn.duration(400)} style={styles.saveErrorBanner}>
+            <Text style={styles.saveErrorText}>{t('editor.saveFailed')}: {saveError}</Text>
+          </Animated.View>
+        ) : null}
+        {devResult && devResult.xp > 0 ? (
+          <Card variant="gradient" shadow="card" style={{ marginBottom: Spacing.md, padding: Spacing.md }}>
+            <Text style={{ fontFamily: 'Inter-ExtraBold', fontSize: 20, color: Colors.gold, textAlign: 'center' }}>+{devResult.xp} XP</Text>
+            {devResult.levelUp ? <Text style={{ fontFamily: 'Inter-SemiBold', fontSize: 14, color: Colors.success, textAlign: 'center', marginTop: 4 }}>{t('dev.levelUp')}</Text> : null}
+          </Card>
+        ) : null}
+        {/* Final Score */}
+        <Animated.View entering={FadeInDown.delay(80).duration(500)}>
+          <Card variant="gradient" shadow="cardLg" style={styles.finalScoreCard}>
+            <Text style={styles.finalScoreLabel}>{t('match.finalScore')}</Text>
+            <Text style={styles.finalScoreValue}>{finalScoreTeam} – {finalScoreOpp}</Text>
+            <View style={styles.decisionHero}>
+              <Text style={styles.decisionHeroLabel}>{t('term.decisionScore')}</Text>
+              <Text style={styles.decisionHeroValue}>{report.decisionScore}%</Text>
+            </View>
+          </Card>
+        </Animated.View>
+
         {/* Match Rating Hero */}
         <Animated.View entering={FadeInDown.delay(100).duration(700)} style={styles.heroWrap}>
           <ProgressRing progress={report.matchRating / 100} size={160} strokeWidth={12} color={ratingColor}>
@@ -128,7 +202,7 @@ export default function MatchReportScreen() {
         <Animated.View entering={FadeInDown.delay(300).duration(600)}>
           <SectionLabel label={t('match.strengths')} />
           <Card variant="gradient" shadow="card" style={styles.listCard}>
-            {report.strengths.map((s, i) => (
+            {(localizedReport?.strengths ?? []).map((s, i) => (
               <View key={i} style={styles.listRow}>
                 <View style={styles.listIconSuccess}><Check size={14} color={Colors.success} /></View>
                 <Text style={styles.listText}>{s}</Text>
@@ -141,7 +215,7 @@ export default function MatchReportScreen() {
         <Animated.View entering={FadeInDown.delay(400).duration(600)}>
           <SectionLabel label={t('match.areasToImprove')} />
           <Card variant="gradient" shadow="card" style={styles.listCard}>
-            {report.areasToImprove.map((s, i) => (
+            {(localizedReport?.areasToImprove ?? []).map((s, i) => (
               <View key={i} style={styles.listRow}>
                 <View style={styles.listIconWarning}><X size={14} color={Colors.warning} /></View>
                 <Text style={styles.listText}>{s}</Text>
@@ -158,7 +232,7 @@ export default function MatchReportScreen() {
               <View style={styles.summaryIcon}><FileText size={16} color={Colors.gold} /></View>
               <Text style={styles.summaryTitle}>{t('match.coachFinalMessage')}</Text>
             </View>
-            <Text style={styles.summaryText}>{report.summary}</Text>
+            <Text style={styles.summaryText}>{localizedReport?.summary ?? ''}</Text>
           </Card>
         </Animated.View>
 
@@ -166,7 +240,7 @@ export default function MatchReportScreen() {
         <Animated.View entering={FadeInDown.delay(600).duration(600)}>
           <Card variant="gradient" shadow="cardLg" style={styles.finalCard}>
             <View style={styles.finalQuote} />
-            <Text style={styles.finalText}>{report.finalMessage}</Text>
+            <Text style={styles.finalText}>{localizedReport?.finalMessage ?? ''}</Text>
           </Card>
         </Animated.View>
 
@@ -219,6 +293,22 @@ const styles = StyleSheet.create({
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 24, paddingBottom: Spacing.xxxl },
   loadingWrap: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   loadingText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 16 },
+  saveErrorBanner: {
+    backgroundColor: Colors.errorSoft,
+    borderWidth: 1,
+    borderColor: Colors.error,
+    borderRadius: Radius.md,
+    padding: Spacing.md,
+    marginBottom: Spacing.lg,
+  },
+  saveErrorText: { color: Colors.error, fontFamily: 'Inter-Medium', fontSize: 13, lineHeight: 18 },
+
+  finalScoreCard: { alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.lg, paddingVertical: Spacing.xl },
+  finalScoreLabel: { fontFamily: 'Inter-SemiBold', fontSize: 11, color: Colors.textTertiary, letterSpacing: 1.5 },
+  finalScoreValue: { fontFamily: 'Inter-ExtraBold', fontSize: 40, color: Colors.gold },
+  decisionHero: { flexDirection: 'row', alignItems: 'baseline', gap: Spacing.sm, marginTop: Spacing.sm, paddingTop: Spacing.md, borderTopWidth: 1, borderTopColor: Colors.hairline, width: '100%', justifyContent: 'center' },
+  decisionHeroLabel: { fontFamily: 'Inter-SemiBold', fontSize: 14, color: Colors.textSecondary },
+  decisionHeroValue: { fontFamily: 'Inter-ExtraBold', fontSize: 28, color: Colors.success },
 
   // Hero
   heroWrap: { alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.xl },

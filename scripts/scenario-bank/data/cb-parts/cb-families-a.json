@@ -1,0 +1,1568 @@
+[
+  {
+    "familyKey": "cb_60_bind_central",
+    "title": {
+      "en": "Centre Back — Bind the Central Defender in 6:0",
+      "hr": "Srednji vanjski — veži srednjeg braniča u 6:0",
+      "de": "Rückraum Mitte — Mittelverteidiger in der 6:0 binden"
+    },
+    "difficulty": "Beginner",
+    "pressureLevel": "Low",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 11,
+    "score": "7:6",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "At 11' you lead 7:6 against a set 6:0. You receive at the top with time. The central defender stands flat on the six-metre line, hands low, eyes on the ball. Both half-defenders shade a half-step outward toward your backs. The pivot is between the central and the left half, still quiet.",
+      "hr": "Vodite 7:6 u 11. minuti protiv postavljene 6:0. Primaš na vrhu s vremenom. Srednji branič stoji ravno na šest metara, ruke nisko, pogled na lopti. Oba polubranitelja klize pola koraka prema vanjskim. Pivot je između srednjeg i lijevog polubranitelja, još miran.",
+      "de": "In Minute 11 führt ihr 7:6 gegen eine stehende 6:0. Du bekommst oben mit Zeit. Der Mittelverteidiger steht flach auf sechs Metern, Hände tief, Blick am Ball. Beide Halbverteidiger schieben einen halben Schritt nach außen zu den Rückraumspielern. Der Kreisläufer steht zwischen Mittel und linkem Halben, noch ruhig."
+    },
+    "question": {
+      "en": "What is your first job with the ball?",
+      "hr": "Što je tvoj prvi posao s loptom?",
+      "de": "Was ist dein erster Job mit dem Ball?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Attack the central defender with one clear step and bind him before you choose the next action",
+          "hr": "Napadni srednjeg braniča jednim jasnim korakom i veži ga prije sljedeće odluke",
+          "de": "Den Mittelverteidiger mit einem klaren Schritt angreifen und binden, bevor du die nächste Aktion wählst"
+        },
+        "feedback": {
+          "en": "Correct — without binding the centre, the 6:0 stays comfortable and every next pass is easy to cover.",
+          "hr": "Točno — bez vezanja sredine 6:0 ostaje udobna i svako sljedeće dodavanje lako pokrivaju.",
+          "de": "Richtig — ohne Bindung der Mitte bleibt die 6:0 komfortabel und jeder Folgestpass ist leicht zu decken."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Swing early to the left back while the central defender is still flat",
+          "hr": "Rano prebaci na lijevog vanjskog dok srednji branič još stoji ravno",
+          "de": "Früh auf den linken Rückraum spielen, während der Mittelverteidiger noch flach steht"
+        },
+        "feedback": {
+          "en": "Good — can work, but without a bind the half-defenders slide across and kill the surplus.",
+          "hr": "Dobro — može proći, ali bez vezanja polubranitelji klize i gase višak.",
+          "de": "Gut — kann gehen, aber ohne Bindung schieben die Halben und löschen den Vorteil."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold at eleven metres and wait for a perfect wing cut without threatening anyone",
+          "hr": "Ostani na jedanaest metara i čekaj savršen ulazak krila bez prijetnje ikome",
+          "de": "Auf elf Metern halten und auf den perfekten Außenlauf warten, ohne jemanden zu bedrohen"
+        },
+        "feedback": {
+          "en": "Risky — waiting without a bind lets the 6:0 reset into its strongest shape.",
+          "hr": "Rizično — čekanje bez vezanja dopušta 6:0 da se vrati u najjači oblik.",
+          "de": "Riskant — Warten ohne Bindung lässt die 6:0 in ihre stärkste Form zurückkehren."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long diagonal to the far wing across a calm defence",
+          "hr": "Forsiraj dugu dijagonalu na daleko krilo preko mirne obrane",
+          "de": "Eine lange Diagonale auf den fernen Außen über die ruhige Abwehr erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — an unbound 6:0 loves empty long balls; you gift the turnover risk for nothing.",
+          "hr": "Loše — nevezana 6:0 voli prazne duge lopte; poklanjaš rizik gubitka bez razloga.",
+          "de": "Schlecht — eine ungebundene 6:0 liebt leere lange Bälle; du schenkst Ballverlust ohne Grund."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: flat central defender, half-defenders shading out, quiet pivot. Your first job as centre back is to bind the middle so the next read has value. Early swing (B) is plausible but slower without that bind.",
+      "hr": "Signal: ravni srednji branič, polubranitelji klize van, miran pivot. Prvi posao srednjeg vanjskog je vezati sredinu da sljedeće čitanje ima vrijednost. Rani prebac (B) je plauzibilan, ali sporiji bez tog vezanja.",
+      "de": "Signal: flacher Mittelverteidiger, Halbe nach außen, ruhiger Kreisläufer. Dein erster Job ist die Mitte zu binden. Frühes Abspielen (B) ist möglich, aber ohne Bindung langsamer."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because binding the central defender creates the surplus that makes the later pass dangerous; swinging early without a bind lets the halves recover.",
+      "hr": "A je bolje od B jer vezanje srednjeg braniča stvara višak koji kasnije dodavanje čini opasnim; rani prebac bez vezanja dopušta polubraniteljima povratak.",
+      "de": "A schlägt B, weil die Bindung des Mittelverteidigers den Vorteil schafft; frühes Abspielen ohne Bindung lässt die Halben zurückkehren."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_half_after_central",
+    "title": {
+      "en": "Centre Back — Read the Half After Binding the Centre",
+      "hr": "Srednji vanjski — čitaj polubranitelja nakon vezanja sredine",
+      "de": "Rückraum Mitte — Halben nach Mittelbindung lesen"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 18,
+    "score": "12:12",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading",
+      "pressureDecisions"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Score is 12:12 at 18'. You just stepped at the central defender in a 6:0; he steps out half a metre and turns his hips toward you. The left half-defender starts a late slide toward the middle, body still open to the left back. Your left back is free at nine metres; the pivot has not yet drawn help.",
+      "hr": "Neriješeno je 12:12 u 18. minuti. Upravo si zakoračio na srednjeg braniča u 6:0; on izlazi pola metra i okreće bokove prema tebi. Lijevi polubranitelj kasno kreće klizanje prema sredini, tijelo još otvoreno prema lijevom vanjskom. Lijevi vanjski je slobodan na devet metara; pivot još nije povukao pomoć.",
+      "de": "Unentschieden 12:12 in Minute 18. Du bist gerade auf den Mittelverteidiger zugegangen; er tritt einen halben Meter heraus und dreht die Hüfte zu dir. Der linke Halbe startet spät zur Mitte, Körper noch offen zum linken Rückraum. Dein linker Rückraum ist auf neun Metern frei; der Kreisläufer hat noch keine Hilfe gezogen."
+    },
+    "question": {
+      "en": "What just changed after you bound the centre?",
+      "hr": "Što se promijenilo nakon što si vezao sredinu?",
+      "de": "Was hat sich geändert, nachdem du die Mitte gebunden hast?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "The left half is late — the surplus is now with the left back before the slide closes",
+          "hr": "Lijevi polubranitelj kasni — višak je sada kod lijevog vanjskog prije nego se klizanje zatvori",
+          "de": "Der linke Halbe ist spät — der Vorteil liegt jetzt beim linken Rückraum, bevor das Schieben schließt"
+        },
+        "feedback": {
+          "en": "Correct — binding the centre forced a late slide; that half-step delay is the whole gift.",
+          "hr": "Točno — vezanje sredine forsiralo je kasno klizanje; to kašnjenje pola koraka je cijeli dar.",
+          "de": "Richtig — die Mittelbindung erzwang das späte Schieben; dieser halbe Schritt ist das Geschenk."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Keep attacking the central defender deeper and look for a shot over him",
+          "hr": "Nastavi dublje napadati srednjeg braniča i traži šut preko njega",
+          "de": "Weiter tief auf den Mittelverteidiger gehen und den Wurf über ihn suchen"
+        },
+        "feedback": {
+          "en": "Good — he is out, but the clearer surplus is the late half, not a contested central shot.",
+          "hr": "Dobro — on je vani, ali jasniji višak je kasni polubranitelj, ne osporeni šut kroz sredinu.",
+          "de": "Gut — er ist draußen, aber der klarere Vorteil ist der späte Halbe, nicht der umkämpfte Mittelwurf."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Ignore the late half and swing all the way to the far wing",
+          "hr": "Zanemari kasnog polubranitelja i prebaci skroz na daleko krilo",
+          "de": "Den späten Halben ignorieren und ganz auf den fernen Außen spielen"
+        },
+        "feedback": {
+          "en": "Risky — you skip the nearest surplus and give the defence a full recovery.",
+          "hr": "Rizično — preskačeš najbliži višak i daješ obrani puni povratak.",
+          "de": "Riskant — du überspringst den nächsten Vorteil und schenkst der Abwehr die komplette Rückkehr."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Stop the attack and reset to eleven metres as if nothing opened",
+          "hr": "Zaustavi napad i vrati se na jedanaest metara kao da se ništa nije otvorilo",
+          "de": "Den Angriff stoppen und auf elf Meter zurücksetzen, als wäre nichts offen"
+        },
+        "feedback": {
+          "en": "Poor — you created the slide delay and then refuse to use it.",
+          "hr": "Loše — stvorio si kašnjenje klizanja, a onda odbijaš iskoristiti ga.",
+          "de": "Schlecht — du hast die Verzögerung erzeugt und nutzt sie dann nicht."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: central defender hips turned to you, left half starting late with body still open to the left back. The change is the late slide — exploit it with the free left back. Continuing deeper on the centre (B) is real but less clean.",
+      "hr": "Signal: bokovi srednjeg braniča prema tebi, lijevi polubranitelj kasno kreće s tijelom još otvorenim prema lijevom vanjskom. Promjena je kasno klizanje — iskoristi ga slobodnim lijevim vanjskim. Dublji napad na sredinu (B) je stvaran, ali manje čist.",
+      "de": "Signal: Hüfte des Mittelverteidigers zu dir, linker Halbe spät mit offenem Körper zum linken Rückraum. Die Änderung ist das späte Schieben."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the late half creates a cleaner surplus than forcing a shot over a defender who already stepped out to you.",
+      "hr": "A je bolje od B jer kasni polubranitelj stvara čišći višak od forsiranja šuta preko braniča koji je već izašao na tebe.",
+      "de": "A schlägt B, weil der späte Halbe den saubereren Vorteil schafft als ein Wurf über den schon herausgetretenen Mittelverteidiger."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_pivot_after_bind",
+    "title": {
+      "en": "Centre Back — Pivot Pass After Binding the 6:0 Centre",
+      "hr": "Srednji vanjski — dodavanje pivotu nakon vezanja sredine u 6:0",
+      "de": "Rückraum Mitte — Kreisläuferpass nach Mittelbindung in der 6:0"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 22,
+    "score": "14:13",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 14:13 at 22'. You have bound the central defender; he is a full step out with both hands reaching for your shot fake. The pivot seals the left half from behind and shows a clear target hand between the central and that half. Help from the right half has not started.",
+      "hr": "Vodite 14:13 u 22. minuti. Vezao si srednjeg braniča; on je puni korak vani s obje ruke prema tvojoj varki šuta. Pivot zatvara lijevog polubranitelja s leđa i jasno nudi ruku za prijem lopte između srednjeg i tog polubranitelja. Pomoć s desnog polubranitelja još nije krenula.",
+      "de": "Ihr führt 14:13 in Minute 22. Du hast den Mittelverteidiger gebunden; er steht einen vollen Schritt draußen, beide Hände an deiner Wurffinte. Der Kreisläufer schließt den linken Halben von hinten und zeigt eine klare Zielhand zwischen Mittel und Halbem. Hilfe vom rechten Halben hat noch nicht begonnen."
+    },
+    "question": {
+      "en": "Where do you play the next pass?",
+      "hr": "Kamo igraš sljedeće dodavanje?",
+      "de": "Wohin spielst du den nächsten Pass?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Feed the pivot now into the seam while help from the far half has not started",
+          "hr": "Dodaj pivotu sada u spoj dok pomoć s dalekog polubranitelja još nije krenula",
+          "de": "Jetzt den Kreisläufer in die Naht bedienen, bevor die Hilfe vom fernen Halben startet"
+        },
+        "feedback": {
+          "en": "Correct — the bind pulled the centre out and the seal created the seam; that window is short.",
+          "hr": "Točno — vezanje je izvuklo sredinu, a zatvaranje je stvorilo spoj; taj prozor je kratak.",
+          "de": "Richtig — die Bindung zog die Mitte heraus, der Abschluss schuf die Naht; das Fenster ist kurz."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Use the left back for a short exchange to widen the same seam",
+          "hr": "Iskoristi lijevog vanjskog za kratku razmjenu da proširiš isti spoj",
+          "de": "Den linken Rückraum für einen kurzen Austausch nutzen, um dieselbe Naht zu verbreitern"
+        },
+        "feedback": {
+          "en": "Good — can enlarge the lane, but you already have a clear pivot target now.",
+          "hr": "Dobro — može proširiti prolaz, ali već sada imaš jasan cilj na pivotu.",
+          "de": "Gut — kann die Bahn verbreitern, aber du hast jetzt schon ein klares Kreisläuferziel."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold one more fake while the far half starts to recover into the seam",
+          "hr": "Drži još jednu varku dok daleki polubranitelj kreće u povratak u spoj",
+          "de": "Noch eine Finte halten, während der ferne Halbe in die Naht zurückkehrt"
+        },
+        "feedback": {
+          "en": "Risky — one extra fake is exactly when the seam closes.",
+          "hr": "Rizično — jedna dodatna varka je trenutak kad se spoj zatvara.",
+          "de": "Riskant — eine Extrafinte ist genau der Moment, in dem die Naht schließt."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Ignore the sealed pivot and force a contested shot into the outstepping centre",
+          "hr": "Zanemari zatvorenog pivota i forsiraj osporeni šut u izašlog srednjeg",
+          "de": "Den abschließenden Kreisläufer ignorieren und einen umkämpften Wurf in den herausgetretenen Mittelverteidiger erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you created the pivot chance and then shoot into the defender you bound.",
+          "hr": "Loše — stvorio si priliku za pivota, a onda pucaš u braniča kojeg si vezao.",
+          "de": "Schlecht — du hast die Kreis-Chance geschaffen und wirfst dann in den gebundenen Verteidiger."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: central defender a full step out with hands high on the fake, pivot sealed with a clear target hand, far half not moving yet. Play the pivot into that seam immediately. A short exchange (B) can widen it but costs the open window.",
+      "hr": "Signal: srednji branič puni korak vani s rukama na varki, pivot zatvorio s jasno ponuđenom rukom za prijem, daleki polubranitelj još miran. Odmah dodaj pivotu u taj spoj. Kratka razmjena (B) može proširiti, ali košta otvoreni prozor.",
+      "de": "Signal: Mittelverteidiger voll draußen, Kreisläufer mit Zielhand, ferner Halber noch ruhig. Sofort in die Naht spielen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the pivot target already exists; the short exchange only helps if the seam is still forming.",
+      "hr": "A je bolje od B jer cilj na pivotu već postoji; kratka razmjena pomaže samo dok se spoj još formira.",
+      "de": "A schlägt B, weil das Kreisläuferziel schon da ist; der kurze Austausch hilft nur, wenn die Naht noch entsteht."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_pivot_block_geometry",
+    "title": {
+      "en": "Centre Back — Use Pivot Block Geometry in 6:0",
+      "hr": "Srednji vanjski — iskoristi geometriju bloka pivota u 6:0",
+      "de": "Rückraum Mitte — Blockgeometrie des Kreisläufers in der 6:0 nutzen"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 27,
+    "score": "17:17",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading",
+      "screening"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 17:17 at 27'. Your pivot sets a hard block on the left half-defender; that defender's outside shoulder is pinned and he cannot slide. The central defender shades toward the block to help. Between the block and the right half a body-width shooting lane opens on your strong step. The left wing is covered.",
+      "hr": "Neriješeno je 17:17 u 27. minuti. Pivot postavlja tvrd blok na lijevog polubranitelja; vanjsko rame tog braniča je zaključano i ne može klizati. Srednji branič klizi prema bloku u pomoć. Između bloka i desnog polubranitelja otvara se rupa široka kao tijelo na tvoj jaki korak. Lijevo krilo je pokriveno.",
+      "de": "Unentschieden 17:17 in Minute 27. Dein Kreisläufer setzt einen harten Block auf den linken Halben; dessen äußere Schulter ist gepinnt, er kann nicht schieben. Der Mittelverteidiger schiebt zur Blockhilfe. Zwischen Block und rechtem Halben öffnet sich eine körperbreite Wurfbahn auf deinen starken Schritt. Linksaußen ist zugestellt."
+    },
+    "question": {
+      "en": "How do you use this block geometry?",
+      "hr": "Kako koristiš ovu geometriju bloka?",
+      "de": "Wie nutzt du diese Blockgeometrie?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Attack the open lane created by the block with one strong step before help fills it",
+          "hr": "Napadni otvoreni prolaz koji je blok stvorio jednim snažnim korakom prije nego ga pomoć zatvori",
+          "de": "Die durch den Block geöffnete Bahn mit einem starken Schritt angreifen, bevor Hilfe sie füllt"
+        },
+        "feedback": {
+          "en": "Correct — the block pinned the half and pulled centre help; the lane exists only for one step.",
+          "hr": "Točno — blok je zaključao polubranitelja i povukao pomoć sredine; prolaz živi samo jedan korak.",
+          "de": "Richtig — der Block pinnt den Halben und zieht Mittelhilfe; die Bahn lebt nur einen Schritt."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Use the left back cutting behind the block after the half is pinned",
+          "hr": "Iskoristi lijevog vanjskog koji ulazi iza bloka nakon što je polubranitelj zaključan",
+          "de": "Den linken Rückraum hinter dem Block einsetzen, nachdem der Halbe gepinnt ist"
+        },
+        "feedback": {
+          "en": "Good — a real second option, but slower than you attacking the already open lane.",
+          "hr": "Dobro — prava druga opcija, ali sporija od tvog napada već otvorenog prolaza.",
+          "de": "Gut — echte zweite Option, aber langsamer als dein Angriff der schon offenen Bahn."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Wait for the pivot to re-block while the central defender fills the lane",
+          "hr": "Čekaj da pivot ponovo blokira dok srednji branič puni prolaz",
+          "de": "Warten, bis der Kreisläufer neu blockt, während der Mittelverteidiger die Bahn füllt"
+        },
+        "feedback": {
+          "en": "Risky — a second block arrives after the geometry you already have is gone.",
+          "hr": "Rizično — drugi blok dolazi tek kad geometrija koju već imaš nestane.",
+          "de": "Riskant — der zweite Block kommt, wenn die vorhandene Geometrie weg ist."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force the covered left wing instead of using the open central lane",
+          "hr": "Forsiraj pokriveno lijevo krilo umjesto otvorenog prolaza u sredini",
+          "de": "Den zugestellten Linksaußen forcieren statt die offene Mittelbahn zu nutzen"
+        },
+        "feedback": {
+          "en": "Poor — you leave the geometric gift and play into coverage.",
+          "hr": "Loše — ostavljaš geometrijski dar i igraš u pokrivenost.",
+          "de": "Schlecht — du lässt das geometrische Geschenk liegen und spielst in die Deckung."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: hard block pinning the left half's outside shoulder, central defender shading to help, body-width lane between block and right half. Attack that lane now. Left-back cut (B) is plausible but slower.",
+      "hr": "Signal: tvrdi blok zaključava vanjsko rame lijevog polubranitelja, srednji klizi u pomoć, rupa široka kao tijelo između bloka i desnog polubranitelja. Napadni taj prolaz sada. Ulazak lijevog vanjskog (B) je plauzibilan, ali sporiji.",
+      "de": "Signal: harter Block pinnt den linken Halben, Mittelverteidiger hilft, körperbreite Bahn. Sofort angreifen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the shooting lane is already open for you; waiting for a cut behind the block gives the helping centre time to fill it.",
+      "hr": "A je bolje od B jer je prolaz za šut već otvoren za tebe; čekanje ulaska iza bloka daje pomažućoj sredini vrijeme da ga zatvori.",
+      "de": "A schlägt B, weil die Wurfbahn für dich schon offen ist; Warten auf den Lauf hinter dem Block gibt der helfenden Mitte Zeit."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_change_side_yes",
+    "title": {
+      "en": "Centre Back — When Changing Side Is Correct in 6:0",
+      "hr": "Srednji vanjski — kada je promjena strane točna u 6:0",
+      "de": "Rückraum Mitte — wann der Seitenwechsel in der 6:0 richtig ist"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 24,
+    "score": "15:14",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "angleSelection"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 15:14 at 24'. You attacked the left half hard; he and the central defender both slid fully to the ball side. On the weak side the right half and right wing defender are still turning their hips back. Your right back is open at nine metres with a clean angle; the near wing is not yet free.",
+      "hr": "Vodite 15:14 u 24. minuti. Jako si napao lijevog polubranitelja; on i srednji branič skliznuli su skroz na stranu lopte. Na slaboj strani desni polubranitelj i branič desnog krila još okreću bokove natrag. Desni vanjski je otvoren na devet metara s čistim kutom; bliže krilo još nije slobodno.",
+      "de": "Ihr führt 15:14 in Minute 24. Du hast den linken Halben hart angegriffen; er und der Mittelverteidiger sind voll auf die Ballseite geschoben. Auf der schwachen Seite drehen rechter Halber und Rechtsaußen-Verteidiger die Hüften noch zurück. Dein rechter Rückraum ist auf neun Metern mit klarem Winkel offen; der nahe Außen ist noch nicht frei."
+    },
+    "question": {
+      "en": "What is the signal to change side?",
+      "hr": "Koji je signal za promjenu strane?",
+      "de": "Was ist das Signal für den Seitenwechsel?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Both ball-side defenders fully committed and the weak-side half still turning — change now to the open right back",
+          "hr": "Oba braniča na strani lopte potpuno su vezana, a polubranitelj na slaboj strani još okreće — promijeni sada na otvorenog desnog vanjskog",
+          "de": "Beide ballseitigen Verteidiger voll gebunden und der schwache Halbe noch drehend — jetzt auf den offenen rechten Rückraum wechseln"
+        },
+        "feedback": {
+          "en": "Correct — full ball-side load plus hips still turning on the weak side is the classic change-side cue.",
+          "hr": "Točno — puno opterećenje na strani lopte plus bokovi koji se još okreću na slaboj strani klasičan je signal za promjenu.",
+          "de": "Richtig — volle Ballseitenlast plus noch drehende Hüften auf der Schwachen ist das klassische Wechsel-Signal."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Keep one more attack on the left half to force an even later recovery",
+          "hr": "Zadrži još jedan napad na lijevog polubranitelja da forsiraš još kasniji povratak",
+          "de": "Noch einen Angriff auf den linken Halben halten, um eine noch späte Rückkehr zu erzwingen"
+        },
+        "feedback": {
+          "en": "Good — can deepen the load, but the weak side is already open and may close on the next step.",
+          "hr": "Dobro — može produbiti opterećenje, ali slaba strana već je otvorena i može se zatvoriti na sljedećem koraku.",
+          "de": "Gut — kann die Last vertiefen, aber die Schwache ist schon offen und kann im nächsten Schritt schließen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Skip the open right back and wait for the far wing to become free",
+          "hr": "Preskoči otvorenog desnog vanjskog i čekaj da daleko krilo postane slobodno",
+          "de": "Den offenen rechten Rückraum überspringen und warten, bis der ferne Außen frei wird"
+        },
+        "feedback": {
+          "en": "Risky — you refuse the first open player and give the defence a full reset.",
+          "hr": "Rizično — odbijaš prvog otvorenog igrača i daješ obrani puni reset.",
+          "de": "Riskant — du lehnst den ersten offenen Spieler ab und schenkst der Abwehr den kompletten Reset."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a shot into the two defenders who already slid onto you",
+          "hr": "Forsiraj šut u dva braniča koji su već skliznuli na tebe",
+          "de": "Einen Wurf in die zwei Verteidiger erzwingen, die schon auf dich geschoben sind"
+        },
+        "feedback": {
+          "en": "Poor — you created the weak-side gift and then shoot into the crowded ball side.",
+          "hr": "Loše — stvorio si dar na slaboj strani, a onda pucaš u gužvu na strani lopte.",
+          "de": "Schlecht — du hast das Geschenk auf der Schwachen geschaffen und wirfst dann in die Ballseite."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: left half and centre fully on the ball side, weak-side defenders still turning hips, right back open at nine metres. That is the change-side signal. One more attack left (B) can work but risks closing the open side.",
+      "hr": "Signal: lijevi polubranitelj i sredina skroz na strani lopte, braniči na slaboj strani još okreću bokove, desni vanjski otvoren na devet metara. To je signal za promjenu strane. Još jedan napad lijevo (B) može, ali riskira zatvaranje.",
+      "de": "Signal: Ballseite voll, schwache Seite noch drehend, rechter Rückraum offen — Seitenwechsel jetzt."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the weak side is already open; another left-side attack only helps if the weak side is still covered.",
+      "hr": "A je bolje od B jer je slaba strana već otvorena; još jedan napad lijevo pomaže samo dok je slaba strana još pokrivena.",
+      "de": "A schlägt B, weil die Schwache schon offen ist; ein weiterer Linksangriff hilft nur, wenn sie noch zugestellt ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_change_side_no",
+    "title": {
+      "en": "Centre Back — When Not to Change Side in 6:0",
+      "hr": "Srednji vanjski — kada ne mijenjati stranu u 6:0",
+      "de": "Rückraum Mitte — wann in der 6:0 nicht die Seite wechseln"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 31,
+    "score": "19:18",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 19:18 at 31'. You pressed the left half, but he recovered early and the central defender stayed connected without fully leaving the middle. On the weak side the right half is already set, hips square, ready for the ball. Your right back is covered a half-step early; the near left lane between you and the left half is still a body width open.",
+      "hr": "Vodite 19:18 u 31. minuti. Pritisnuo si lijevog polubranitelja, ali on se rano vratio, a srednji branič ostao je povezan bez potpunog napuštanja sredine. Na slaboj strani desni polubranitelj već je postavljen, bokovi ravni, spreman na loptu. Desni vanjski pokriven je pola koraka prerano; bliži lijevi prolaz između tebe i lijevog polubranitelja još je otvoren za širinu tijela.",
+      "de": "Ihr führt 19:18 in Minute 31. Du hast den linken Halben bedrängt, aber er ist früh zurück, der Mittelverteidiger bleibt verbunden ohne die Mitte ganz zu verlassen. Auf der Schwachen steht der rechte Halbe schon, Hüften quadratisch, ballbereit. Dein rechter Rückraum ist einen halben Schritt zu früh zugestellt; die nahe linke Bahn zwischen dir und dem linken Halben ist noch körperbreit offen."
+    },
+    "question": {
+      "en": "What do you read — change side or stay?",
+      "hr": "Što čitaš — mijenjaš stranu ili ostaješ?",
+      "de": "Was liest du — Seite wechseln oder bleiben?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Do not change — the weak side is already set; attack the still-open near lane on the ball side",
+          "hr": "Ne mijenjaj — slaba strana već je postavljena; napadni još otvoreni bliži prolaz na strani lopte",
+          "de": "Nicht wechseln — die Schwache ist schon gestellt; die noch offene nahe Bahn auf der Ballseite angreifen"
+        },
+        "feedback": {
+          "en": "Correct — early recovery and a square weak-side half kill the change; the near lane is the real surplus.",
+          "hr": "Točno — rani povratak i ravni polubranitelj na slaboj strani gase promjenu; bliži prolaz je pravi višak.",
+          "de": "Richtig — frühe Rückkehr und quadratischer schwacher Halber töten den Wechsel; die nahe Bahn ist der Vorteil."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Short exchange with the left back to re-bind the recovering half, then decide",
+          "hr": "Kratka razmjena s lijevim vanjskim da ponovo vežeš vraćajućeg polubranitelja, pa odluči",
+          "de": "Kurzer Austausch mit dem linken Rückraum, den zurückkehrenden Halben neu binden, dann entscheiden"
+        },
+        "feedback": {
+          "en": "Good — can recreate a bind, but you already have an open near lane without the extra pass.",
+          "hr": "Dobro — može ponovo stvoriti vezanje, ali već imaš otvoreni bliži prolaz bez dodatnog dodavanja.",
+          "de": "Gut — kann Bindung neu schaffen, aber die nahe Bahn ist schon ohne Extra-Pass offen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Force the side change anyway into the already square weak-side half",
+          "hr": "Ipak forsiraj promjenu strane u već ravnog polubranitelja na slaboj strani",
+          "de": "Den Seitenwechsel trotzdem in den schon quadratischen schwachen Halben erzwingen"
+        },
+        "feedback": {
+          "en": "Risky — you play into a prepared defender and gift an interception angle.",
+          "hr": "Rizično — igraš u pripremljenog braniča i poklanjaš kut za presjek.",
+          "de": "Riskant — du spielst in einen vorbereiteten Verteidiger und schenkst den Abfangwinkel."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Stop and reset high as if neither side offers an advantage",
+          "hr": "Zaustavi se i ponovno organiziraj visoko kao da nijedna strana ne nudi prednost",
+          "de": "Stoppen und hoch zurücksetzen, als böte keine Seite Vorteil"
+        },
+        "feedback": {
+          "en": "Poor — the near lane is open; resetting throws away a created chance.",
+          "hr": "Loše — bliži prolaz je otvoren; reset baca stvorenu priliku.",
+          "de": "Schlecht — die nahe Bahn ist offen; Reset verschenkt die geschaffene Chance."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: early recovery by the left half, centre still connected, weak-side half already square, near left lane still body-width open. Do not change side. Short exchange (B) is a backup if you need a fresh bind.",
+      "hr": "Signal: rani povratak lijevog polubranitelja, sredina još povezana, polubranitelj na slaboj strani već ravno, bliži lijevi prolaz još otvoren za širinu tijela. Ne mijenjaj stranu. Kratka razmjena (B) je rezerva ako trebaš novo vezanje.",
+      "de": "Signal: frühe Rückkehr, Mitte verbunden, schwache Seite schon gestellt, nahe Bahn offen — nicht wechseln."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the near lane is already there; another exchange only helps when the ball-side lane has closed.",
+      "hr": "A je bolje od B jer bliži prolaz već postoji; još jedna razmjena pomaže samo kad se prolaz na strani lopte zatvorio.",
+      "de": "A schlägt B, weil die nahe Bahn schon da ist; ein weiterer Austausch hilft nur, wenn sie geschlossen ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_tempo_compact",
+    "title": {
+      "en": "Centre Back — Tempo Against a Compact 6:0",
+      "hr": "Srednji vanjski — tempo protiv zbijene 6:0",
+      "de": "Rückraum Mitte — Tempo gegen kompakte 6:0"
+    },
+    "difficulty": "Beginner",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 20,
+    "score": "13:13",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "screening"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 13:13 at 20'. The 6:0 is compact: elbows almost touching, no early outsteps. You receive at ten metres with the left and right backs also high. The defence is waiting for a slow swing so they can slide as a block. Your first touch is clean and the central defender has not yet chosen a side.",
+      "hr": "Neriješeno je 13:13 u 20. minuti. Obrana 6:0 je zbijena: laktovi gotovo se dodiruju, nema ranih izlazaka. Primaš na deset metara, a lijevi i desni vanjski također su visoko. Obrana čeka spori prebac da klize kao blok. Prvi dodir je čist, srednji branič još nije odabrao stranu.",
+      "de": "Unentschieden 13:13 in Minute 20. Die 6:0 ist kompakt: Ellbogen fast berühren sich, keine frühen Herausschritte. Du bekommst auf zehn Metern, linker und rechter Rückraum ebenfalls hoch. Die Abwehr wartet auf langsames Pendeln, um als Block zu schieben. Dein erster Kontakt ist sauber, der Mittelverteidiger hat noch keine Seite gewählt."
+    },
+    "question": {
+      "en": "How do you break a compact 6:0?",
+      "hr": "Kako lomiš zbijenu 6:0?",
+      "de": "Wie brichst du eine kompakte 6:0?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Raise ball speed immediately with short, sharp exchanges that force a defender to choose before the block can slide",
+          "hr": "Odmah podigni brzinu lopte kratkim, oštrim razmjenama koje tjeraju braniča da bira prije nego blok može klizati",
+          "de": "Sofort Balltempo mit kurzen, scharfen Austauschen erhöhen, damit ein Verteidiger wählen muss, bevor der Block schiebt"
+        },
+        "feedback": {
+          "en": "Correct — compact 6:0 closes when tempo forces a choice; slow swinging feeds their slide.",
+          "hr": "Točno — zbijena 6:0 puca kad tempo forsira izbor; spori prebac hrani njihovo klizanje.",
+          "de": "Richtig — kompakte 6:0 stirbt, wenn Tempo eine Wahl erzwingt; langsames Pendeln füttert ihr Schieben."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Bind the centre with a hard step, then use the first half who leaves the compact line",
+          "hr": "Veži sredinu jakim korakom, pa iskoristi prvog polubranitelja koji napusti zbijenu liniju",
+          "de": "Die Mitte hart binden, dann den ersten Halben nutzen, der die kompakte Linie verlässt"
+        },
+        "feedback": {
+          "en": "Good — classic bind works, but against a true compact line tempo often creates the first crack faster.",
+          "hr": "Dobro — klasično vezanje radi, ali protiv prave zbijene linije tempo često brže otvara prvu pukotinu.",
+          "de": "Gut — klassische Bindung geht, aber gegen echte Kompaktheit öffnet Tempo oft schneller den ersten Riss."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold the ball high and wait for a perfect gap while the defence stays connected",
+          "hr": "Drži loptu visoko i čekaj savršenu rupu dok obrana ostaje povezana",
+          "de": "Ball hoch halten und auf die perfekte Lücke warten, während die Abwehr verbunden bleibt"
+        },
+        "feedback": {
+          "en": "Risky — waiting is exactly what a compact 6:0 wants.",
+          "hr": "Rizično — čekanje je upravo ono što zbijena 6:0 želi.",
+          "de": "Riskant — Warten ist genau das, was eine kompakte 6:0 will."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long cross-court ball into a defence that has not been stretched",
+          "hr": "Forsiraj dugu dijagonalu u obranu koja nije razvučena",
+          "de": "Einen langen Diagonalball in eine noch nicht gedehnte Abwehr erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — long balls into a compact block are gifts.",
+          "hr": "Loše — duge lopte u zbijeni blok su poklon.",
+          "de": "Schlecht — lange Bälle in den kompakten Block sind Geschenke."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: elbows almost touching, no early outsteps, defence waiting for a slow swing. Break it with ball speed that forces a choice. A hard central bind (B) is solid but often slower than tempo against a true compact line.",
+      "hr": "Signal: laktovi gotovo se dodiruju, nema ranih izlazaka, obrana čeka spori prebac. Slomi je brzinom lopte koja forsira izbor. Jako vezanje sredine (B) je solidno, ali često sporije od tempa.",
+      "de": "Signal: Ellbogen eng, keine Herausschritte, Abwehr wartet auf langsames Pendeln — Balltempo erzwingen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because against a connected compact line the first crack usually comes from tempo before anyone leaves to be bound.",
+      "hr": "A je bolje od B jer protiv povezane zbijene linije prva pukotina obično dolazi iz tempa prije nego netko izađe da ga vežeš.",
+      "de": "A schlägt B, weil gegen verbundene Kompaktheit der erste Riss meist aus Tempo kommt, bevor jemand herauskommt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_60_second_wave",
+    "title": {
+      "en": "Centre Back — Organize the Second Wave in 6:0",
+      "hr": "Srednji vanjski — organiziraj drugi val u 6:0",
+      "de": "Rückraum Mitte — die zweite Welle in der 6:0 organisieren"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 34,
+    "score": "20:20",
+    "defensiveSystem": "6-0",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "pressureDecisions"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 20:20 at 34'. The first wave pulled both half-defenders and the centre toward the left. Help arrived late; the first shooting lane closed. Now the right half is still turning back from help, and your right back is arriving into the freed space at nine metres. The pivot is resetting between centre and right half.",
+      "hr": "Neriješeno je 20:20 u 34. minuti. Prvi val povukao je oba polubranitelja i sredinu prema lijevo. Pomoć je stigla kasno; prvi prolaz za šut zatvorio se. Sada desni polubranitelj još okreće natrag iz pomoći, a desni vanjski stiže u oslobođeni prostor na devet metara. Pivot se resetira između sredine i desnog polubranitelja.",
+      "de": "Unentschieden 20:20 in Minute 34. Die erste Welle zog beide Halben und die Mitte nach links. Hilfe kam spät; die erste Wurfbahn schloss. Jetzt dreht der rechte Halbe noch aus der Hilfe zurück, und dein rechter Rückraum kommt in den freien Raum auf neun Metern. Der Kreisläufer resetet zwischen Mitte und rechtem Halben."
+    },
+    "question": {
+      "en": "How do you play the second wave?",
+      "hr": "Kako igraš drugi val?",
+      "de": "Wie spielst du die zweite Welle?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Move the ball immediately into the returning right half's blind side for the arriving right back",
+          "hr": "Odmah pokreni loptu u slijepu stranu vraćajućeg desnog polubranitelja za stižućeg desnog vanjskog",
+          "de": "Den Ball sofort auf die blinde Seite des zurückkehrenden rechten Halben zum ankommenden rechten Rückraum bringen"
+        },
+        "feedback": {
+          "en": "Correct — second wave lives in the recovery delay; wait and the gift disappears.",
+          "hr": "Točno — drugi val živi u kašnjenju povratka; čekaš i dar nestaje.",
+          "de": "Richtig — die zweite Welle lebt von der Rückkehrverzögerung; Warten löscht das Geschenk."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Use the resetting pivot in the seam if the right half turns fully toward the back",
+          "hr": "Iskoristi pivota koji se resetira u spoju ako se desni polubranitelj skroz okrene prema vanjskom",
+          "de": "Den resetenden Kreisläufer in der Naht nutzen, wenn der rechte Halbe sich voll zum Rückraum dreht"
+        },
+        "feedback": {
+          "en": "Good — valid if the half turns fully, but the first open player is the arriving back.",
+          "hr": "Dobro — valjano ako se polubranitelj skroz okrene, ali prvi otvoreni igrač je stižući vanjski.",
+          "de": "Gut — gültig, wenn der Halbe sich voll dreht, aber der erste Offene ist der ankommende Rückraum."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Restart a slow first-wave attack on the left while the right side recovers",
+          "hr": "Ponovo pokreni spori napad prvog vala lijevo dok se desna strana oporavlja",
+          "de": "Einen langsamen Erstwellen-Angriff links neu starten, während rechts zurückkehrt"
+        },
+        "feedback": {
+          "en": "Risky — you abandon the second-wave surplus you just created.",
+          "hr": "Rizično — napuštaš višak drugog vala koji si upravo stvorio.",
+          "de": "Riskant — du gibst den Zweitwellen-Vorteil auf, den du gerade geschaffen hast."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a shot into the closed first-wave lane against recovered help",
+          "hr": "Forsiraj šut u zatvoreni prolaz prvog vala protiv vraćene pomoći",
+          "de": "Einen Wurf in die geschlossene Erstwellen-Bahn gegen zurückgekehrte Hilfe erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — the first lane is gone; shooting there is denial of the read.",
+          "hr": "Loše — prvi prolaz je nestao; šut tamo je poricanje čitanja.",
+          "de": "Schlecht — die erste Bahn ist weg; dort zu werfen leugnet das Lesen."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: first lane closed after late help, right half still turning from help, right back arriving into freed space. Organize the second wave into that recovery. Pivot (B) is next if the half turns fully onto the back.",
+      "hr": "Signal: prvi prolaz zatvoren nakon kasne pomoći, desni polubranitelj još okreće iz pomoći, desni vanjski stiže u oslobođeni prostor. Organiziraj drugi val u taj povratak. Pivot (B) je sljedeći ako se polubranitelj skroz okrene na vanjskog.",
+      "de": "Signal: erste Bahn zu, rechter Halber noch drehend, rechter Rückraum kommt — zweite Welle sofort."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the arriving right back is the first open player; the pivot becomes best only after the half turns fully onto that back.",
+      "hr": "A je bolje od B jer je stižući desni vanjski prvi otvoreni igrač; pivot postaje najbolji tek kad se polubranitelj skroz okrene na tog vanjskog.",
+      "de": "A schlägt B, weil der ankommende rechte Rückraum der erste Offene ist; der Kreisläufer wird erst best, wenn der Halbe sich voll auf ihn dreht."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_51_manipulate_point",
+    "title": {
+      "en": "Centre Back — Manipulate the 5:1 Point Defender",
+      "hr": "Srednji vanjski — manipuliraj prednjeg braniča u 5:1",
+      "de": "Rückraum Mitte — den vorgeschobenen Verteidiger in der 5:1 manipulieren"
+    },
+    "difficulty": "Beginner",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 16,
+    "score": "10:10",
+    "defensiveSystem": "5-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "pressureDecisions"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 10:10 at 16' against a 5:1. The point defender sits high on you at ten metres, hands active. The back five stay connected. You receive with the left back one short pass away and the pivot behind the point between the two central low defenders. The point has not yet committed to a side.",
+      "hr": "Neriješeno je 10:10 u 16. minuti protiv 5:1. Prednji branič sjedi visoko na tebi na deset metara, ruke aktivne. Niska petorka ostaje povezana. Primaš, lijevi vanjski je jedno kratko dodavanje daleko, a pivot je iza prednjeg između dva središnja niska braniča. Prednji još nije odabrao stranu.",
+      "de": "Unentschieden 10:10 in Minute 16 gegen 5:1. Der Vorgeschobene sitzt hoch auf dir auf zehn Metern, Hände aktiv. Die tiefe Fünf bleibt verbunden. Du bekommst, linker Rückraum ist einen kurzen Pass entfernt, der Kreisläufer steht hinter dem vorgezogenen Verteidiger zwischen den beiden zentralen Tiefen. Der vorgezogene Verteidiger hat noch keine Seite gewählt."
+    },
+    "question": {
+      "en": "How do you manipulate the point?",
+      "hr": "Kako manipuliraš prednjeg braniča?",
+      "de": "Wie manipulierst du den vorgeschobenen Verteidiger?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Threaten both sides with short fakes and force the point to choose, then attack the side he leaves",
+          "hr": "Prijeti objema stranama kratkim varkama i natjeraj prednjeg da bira, pa napadni stranu koju napusti",
+          "de": "Beide Seiten mit kurzen Finten bedrohen, den vorgezogenen Verteidiger zur Wahl zwingen, dann die verlassene Seite angreifen"
+        },
+        "feedback": {
+          "en": "Correct — the point is only dangerous while undecided; make him choose, then punish the vacated lane.",
+          "hr": "Točno — prednji je opasan samo dok nije odlučio; natjeraj ga da bira, pa kazni napušteni prolaz.",
+          "de": "Richtig — der vorgezogene Verteidiger ist nur gefährlich, solange er unentschieden ist; zur Wahl zwingen, dann die freie Bahn bestrafen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Immediate short exchange with the left back to pull the point sideways",
+          "hr": "Odmah kratka razmjena s lijevim vanjskim da povučeš prednjeg u stranu",
+          "de": "Sofort kurzer Austausch mit dem linken Rückraum, um den vorgezogenen Verteidiger seitlich zu ziehen"
+        },
+        "feedback": {
+          "en": "Good — pulls him sideways, but a two-side threat often creates a cleaner choice error.",
+          "hr": "Dobro — vuče ga u stranu, ali prijetnja s dvije strane često stvara čišću grešku izbora.",
+          "de": "Gut — zieht ihn seitlich, aber die Zwei-Seiten-Drohung erzeugt oft den saubereren Wahlfehler."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold the ball high and wait for the point to jump without threatening a side",
+          "hr": "Drži loptu visoko i čekaj da prednji skoči bez prijetnje stranom",
+          "de": "Ball hoch halten und warten, bis der vorgezogene Verteidiger springt, ohne eine Seite zu bedrohen"
+        },
+        "feedback": {
+          "en": "Risky — without a threat the point stays balanced and the back five stay comfortable.",
+          "hr": "Rizično — bez prijetnje prednji ostaje uravnotežen, a niska petorka udobna.",
+          "de": "Riskant — ohne Drohung bleibt der vorgezogene Verteidiger balanciert und die tiefe Fünf komfortabel."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long shot over the point into a connected back five",
+          "hr": "Forsiraj dugi šut preko prednjeg u povezanu nisku petorku",
+          "de": "Einen langen Wurf über den vorgezogenen Verteidiger in die verbundene tiefe Fünf erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you play into the exact shape 5:1 wants.",
+          "hr": "Loše — igraš u oblik koji 5:1 želi.",
+          "de": "Schlecht — du spielst genau in die Form, die die 5:1 will."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: high active point, connected back five, point not yet choosing a side. Manipulate him with two-side threat until he commits. Early exchange (B) also pulls him but is one-sided.",
+      "hr": "Signal: visoki aktivni prednji, povezana niska petorka, prednji još ne bira stranu. Manipuliraj ga prijetnjom s dvije strane dok se ne odluči. Rana razmjena (B) također ga vuče, ali je jednostrana.",
+      "de": "Signal: hoher aktiver vorgezogener Verteidiger, verbundene tiefe Fünf — Zwei-Seiten-Drohung bis zur Wahl."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because forcing a choice error creates a clearer vacated lane than a single early pull to one side.",
+      "hr": "A je bolje od B jer forsiranje greške izbora stvara jasniji napušteni prolaz od jednog ranog povlačenja na jednu stranu.",
+      "de": "A schlägt B, weil der Wahlfehler eine klarere verlassene Bahn schafft als ein früher Zug nur zu einer Seite."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_51_behind_point",
+    "title": {
+      "en": "Centre Back — Space Behind the 5:1 Point",
+      "hr": "Srednji vanjski — prostor iza prednjeg braniča u 5:1",
+      "de": "Rückraum Mitte — Raum hinter dem 5:1-vorgezogener Verteidiger"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 21,
+    "score": "13:12",
+    "defensiveSystem": "5-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 13:12 at 21'. The point defender jumps out hard on your catch, arms high, feet leaving the ten-metre line. Behind him a clear seam opens between the two central low defenders. Your pivot shows a target hand in that seam; both half-backs are covered for a moment.",
+      "hr": "Vodite 13:12 u 21. minuti. Prednji branič jako izlazi na tvoj prijem, ruke visoko, stopala napuštaju liniju od deset metara. Iza njega otvara se čist spoj između dva središnja niska braniča. Pivot jasno nudi ruku za prijem u tom spoju; oba poluvanjska trenutno su pokrivena.",
+      "de": "Ihr führt 13:12 in Minute 21. Der vorgezogene Verteidiger springt hart auf deinen Fang heraus, Arme hoch, Füße verlassen die Zehn-Meter-Linie. Hinter ihm öffnet sich eine klare Naht zwischen den beiden zentralen Tiefen. Dein Kreisläufer zeigt dort die Zielhand; beide Halbrückraumspieler sind kurz zugestellt."
+    },
+    "question": {
+      "en": "Where does the space open after the point jumps?",
+      "hr": "Gdje se otvara prostor nakon što prednji izađe?",
+      "de": "Wo öffnet sich der Raum, nachdem der vorgezogene Verteidiger herausspringt?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Directly behind the jumping point — play the pivot into the central seam now",
+          "hr": "Direktno iza izašlog prednjeg — dodaj pivotu u središnji spoj sada",
+          "de": "Direkt hinter dem herausspringenden vorgezogenen Verteidiger — jetzt den Kreisläufer in die zentrale Naht spielen"
+        },
+        "feedback": {
+          "en": "Correct — a hard jump always leaves the seam behind; that is the first punish.",
+          "hr": "Točno — jaki izlazak uvijek ostavlja spoj iza sebe; to je prva kazna.",
+          "de": "Richtig — ein harter Heraussprung lässt immer die Naht hinter sich; das ist die erste Strafe."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Short bounce to the left back if the near low defender leaves early to cover the seam",
+          "hr": "Kratko dodavanje lijevom vanjskom ako bliži niski branič rano napusti liniju da pokrije spoj",
+          "de": "Kurzer Pass zum linken Rückraum, wenn der nahe Tiefe früh die Naht deckt"
+        },
+        "feedback": {
+          "en": "Good — correct if help leaves early, but the first open target is the pivot in the seam.",
+          "hr": "Dobro — točno ako pomoć rano izađe, ali prvi otvoreni cilj je pivot u spoju.",
+          "de": "Gut — richtig, wenn Hilfe früh kommt, aber das erste offene Ziel ist der Kreisläufer in der Naht."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold and wait for a wider wing lane while the seam is already open",
+          "hr": "Drži i čekaj širi prolaz za krilo dok je spoj već otvoren",
+          "de": "Halten und auf eine breitere Außenbahn warten, während die Naht schon offen ist"
+        },
+        "feedback": {
+          "en": "Risky — you skip the first open space and let the back five recover.",
+          "hr": "Rizično — preskačeš prvi otvoreni prostor i dopuštaš niskoj petorci povratak.",
+          "de": "Riskant — du überspringst den ersten offenen Raum und lässt die tiefe Fünf zurückkehren."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a contested shot into the jumping point's hands",
+          "hr": "Forsiraj osporeni šut u ruke izašlog prednjeg",
+          "de": "Einen umkämpften Wurf in die Hände des herausspringenden vorgezogenen Verteidigers erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — you shoot into the pressure you just drew instead of the space behind it.",
+          "hr": "Loše — pucaš u pritisak koji si upravo izvukao umjesto u prostor iza njega.",
+          "de": "Schlecht — du wirfst in den Druck, den du gerade gezogen hast, statt in den Raum dahinter."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: point jumps hard with feet leaving ten metres, clear seam between central lows, pivot target hand up. Space opens behind the point. Left-back option (B) is next if a low defender leaves early to cover.",
+      "hr": "Signal: prednji jako izlazi, stopala napuštaju deset metara, čist spoj između središnjih niskih, ruka pivota za prijem gore. Prostor se otvara iza prednjeg. Opcija lijevog vanjskog (B) je sljedeća ako niski rano izađe u pokriće.",
+      "de": "Signal: vorgezogener Verteidiger springt hart heraus, Naht zwischen den zentralen Tiefen offen — Raum hinter dem vorgezogenen Verteidiger."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the pivot in the seam is the first opening of the jump; the back pass is only better after help leaves that seam.",
+      "hr": "A je bolje od B jer je pivot u spoju trenutačna prednost izlaska; dodavanje vanjskom bolje je tek kad pomoć napusti taj spoj.",
+      "de": "A schlägt B, weil der Kreisläufer in der Naht das erste Geschenk des Sprungs ist; der Rückraum-Pass ist erst besser, wenn Hilfe die Naht verlässt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_51_2v1_after_commit",
+    "title": {
+      "en": "Centre Back — 2v1 After the 5:1 Point Commits",
+      "hr": "Srednji vanjski — 2 na 1 nakon što se prednji u 5:1 odluči",
+      "de": "Rückraum Mitte — 2 gegen 1 nach Commitment des 5:1-Points"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 28,
+    "score": "17:16",
+    "defensiveSystem": "5-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "pressureDecisions"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 17:16 at 28'. After a short exchange the point commits fully to your left back — hips and both feet turned that way. You receive the return pass with the point still a full step late getting back to you. Your left back stays high; the near low defender has not yet stepped out to cover you.",
+      "hr": "Vodite 17:16 u 28. minuti. Nakon kratke razmjene prednji se skroz odlučio za tvog lijevog vanjskog — bokovi i oba stopala okrenuti tamo. Primaš povratnu loptu, a prednji još kasni puni korak u povratku na tebe. Lijevi vanjski ostaje visoko; bliži niski branič još nije izašao da te pokrije.",
+      "de": "Ihr führt 17:16 in Minute 28. Nach kurzem Austausch verpflichtet sich der vorgezogene Verteidiger vollständig auf deinen linken Rückraum — Hüfte und beide Füße dorthin. Du bekommst den Rückpass, der vorgezogene Verteidiger ist noch einen vollen Schritt spät zu dir zurück. Dein linker Rückraum bleibt hoch; der nahe Tiefe ist noch nicht herausgetreten, um dich zu decken."
+    },
+    "question": {
+      "en": "Who must you bind now to keep the 2v1?",
+      "hr": "Koga moraš vezati sada da zadržiš 2 na 1?",
+      "de": "Wen musst du jetzt binden, um das 2 gegen 1 zu halten?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Bind the recovering front defender so the left back stays free as the second attacker",
+          "hr": "Veži vraćajućeg prednjeg braniča da lijevi vanjski ostane slobodan kao drugi napadač",
+          "de": "Den zurückkehrenden vorgezogenen Verteidiger binden, damit der linke Rückraum als zweiter Angreifer frei bleibt"
+        },
+        "feedback": {
+          "en": "Correct — after the commit, the 2v1 lives only if you bind the recovery; then the free man finishes.",
+          "hr": "Točno — nakon odluke 2 na 1 živi samo ako vežeš povratak; onda slobodni završava.",
+          "de": "Richtig — nach dem Commitment lebt das 2 gegen 1 nur, wenn du die Rückkehr bindest; dann schließt der Freie ab."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Bind the first low helper if the front defender is already too late to recover into the lane",
+          "hr": "Veži prvog niskog pomoćnika ako prednji branič već kasni previše da stigne u liniju",
+          "de": "Den ersten tiefen Helfer binden, wenn der vorgezogene Verteidiger schon zu spät in die Bahn zurückkommt"
+        },
+        "feedback": {
+          "en": "Good — often works, but if you do not threaten the recovery the point can still recover into the lane.",
+          "hr": "Dobro — često radi, ali ako ne ugroziš povratak prednji još može ući u prolaz.",
+          "de": "Gut — geht oft, aber ohne Bedrohung der Rückkehr kann der vorgezogene Verteidiger noch in die Bahn kommen."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold and wait for a perfect pivot seal while the point recovers",
+          "hr": "Drži i čekaj savršeno zatvaranje pivota dok se prednji vraća",
+          "de": "Halten und auf den perfekten Kreisabschluss warten, während der vorgezogene Verteidiger zurückkehrt"
+        },
+        "feedback": {
+          "en": "Risky — waiting returns the point into balance and kills the 2v1.",
+          "hr": "Rizično — čekanje vraća prednjeg u ravnotežu i ubija 2 na 1.",
+          "de": "Riskant — Warten bringt den vorgezogenen Verteidiger zurück in Balance und tötet das 2 gegen 1."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a solo shot while the free left back is still the surplus",
+          "hr": "Forsiraj solo šut dok je slobodni lijevi vanjski još višak",
+          "de": "Einen Solo-Wurf erzwingen, während der freie linke Rückraum noch der Vorteil ist"
+        },
+        "feedback": {
+          "en": "Poor — you ignore the free man the point's commit created.",
+          "hr": "Loše — zanemaruješ slobodnog igrača kojeg je odluka prednjeg stvorila.",
+          "de": "Schlecht — du ignorierst den Freien, den das Commitment geschaffen hat."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: point fully committed to the left back, still a full step late on your return catch, near low not out yet. Bind the recovering defender so the free left back remains the second attacker. Immediate return (B) can work but is weaker if you never threaten the recovery.",
+      "hr": "Signal: prednji skroz na lijevom vanjskom, još kasni puni korak na tvom povratnom prijemu, bliži niski još nije vani. Veži vraćajućeg braniča da slobodni lijevi vanjski ostane drugi napadač. Brzi povratak (B) može, ali je slabiji ako nikad ne ugroziš povratak.",
+      "de": "Signal: vorgezogener Verteidiger vollständig gebunden, noch spät zurück — Bindung der Rückkehr hält das 2 gegen 1."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A binds the recovering front defender who can still kill the 2v1; B switches to the low helper only when that recovery is already impossible.",
+      "hr": "A veže vraćajućeg prednjeg koji još može ugasiti 2 na 1; B prelazi na niskog pomoćnika samo kad je taj povratak već nemoguć.",
+      "de": "A bindet den zurückkehrenden Vorderen, der das 2 gegen 1 noch töten kann; B wechselt zum tiefen Helfer nur wenn diese Rückkehr schon unmöglich ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_51_pivot_behind",
+    "title": {
+      "en": "Centre Back — Pivot Behind the 5:1 Point",
+      "hr": "Srednji vanjski — pivot iza prednjeg braniča u 5:1",
+      "de": "Rückraum Mitte — Kreisläufer hinter dem 5:1-vorgezogener Verteidiger"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 30,
+    "score": "18:18",
+    "defensiveSystem": "5-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 18:18 at 30'. You have pulled the point slightly to your right with a short fake. Behind him the pivot seals the left central low defender and opens a target between that defender and the next low. The point's back is half-turned; he cannot see the pivot's hand. Your left back is covered.",
+      "hr": "Neriješeno je 18:18 u 30. minuti. Kratkom varkom povukao si prednjeg malo udesno. Iza njega pivot zatvara lijevog središnjeg niskog braniča i otvara cilj između tog braniča i sljedećeg niskog. Leđa prednjeg poluokrenuta su; ne vidi ruku pivota. Lijevi vanjski je pokriven.",
+      "de": "Unentschieden 18:18 in Minute 30. Mit kurzer Finte hast du den vorgezogenen Verteidiger leicht nach rechts gezogen. Hinter ihm schließt der Kreisläufer den linken zentralen Tiefen und öffnet ein Ziel zwischen diesem und dem nächsten Tiefen. Der Rücken des vorgezogenen Verteidigers ist halbgdreht; er sieht die Kreishand nicht. Dein linker Rückraum ist zugestellt."
+    },
+    "question": {
+      "en": "What is the cleanest exploit behind the point?",
+      "hr": "Što je najčišće iskorištavanje iza prednjeg?",
+      "de": "Was ist die sauberste Nutzung hinter dem vorgezogenen Verteidiger?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Slip the ball to the sealed pivot behind the point before the next low can help",
+          "hr": "Ubaci loptu zatvorenom pivotu iza prednjeg prije nego sljedeći niski stigne u pomoć",
+          "de": "Den Ball hinter dem vorgezogenen Verteidiger zum abschließenden Kreisläufer spielen, bevor der nächste Tiefe hilft"
+        },
+        "feedback": {
+          "en": "Correct — the half-turned point plus the seal is the classic behind-the-point feed.",
+          "hr": "Točno — poluokrenuti prednji plus zatvaranje klasično je dodavanje iza prednjeg.",
+          "de": "Richtig — halbgedrehter vorgezogener Verteidiger plus Abschluss ist die klassische Bedienung hinter dem vorgezogenen Verteidiger."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Attack the lane the point left on your right if the pivot seal is late",
+          "hr": "Napadni prolaz koji je prednji ostavio na tvojoj desnoj ako je zatvaranje pivota kasno",
+          "de": "Die vom vorgezogener Verteidiger links gelassene Bahn rechts angreifen, wenn der Kreisabschluss spät ist"
+        },
+        "feedback": {
+          "en": "Good — real if the seal is late, but here the pivot target is already clear.",
+          "hr": "Dobro — stvarno ako je zatvaranje kasno, ali ovdje je cilj na pivotu već jasan.",
+          "de": "Gut — echt, wenn der Abschluss spät ist, aber hier ist das Kreisziel schon klar."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Hold for a prettier angle while the next low starts to cover the pivot",
+          "hr": "Drži za ljepši kut dok sljedeći niski kreće pokrivati pivota",
+          "de": "Auf den schöneren Winkel halten, während der nächste Tiefe den Kreisläufer deckt"
+        },
+        "feedback": {
+          "en": "Risky — one extra hold closes the behind-the-point window.",
+          "hr": "Rizično — jedno dodatno držanje zatvara prozor iza prednjeg.",
+          "de": "Riskant — ein Extra-Halten schließt das Fenster hinter dem vorgezogenen Verteidiger."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force the covered left back and ignore the sealed pivot",
+          "hr": "Forsiraj pokrivenog lijevog vanjskog i zanemari zatvorenog pivota",
+          "de": "Den zugestellten linken Rückraum forcieren und den abschließenden Kreisläufer ignorieren"
+        },
+        "feedback": {
+          "en": "Poor — you refuse the cleanest target on the floor.",
+          "hr": "Loše — odbijaš najčišći cilj na terenu.",
+          "de": "Schlecht — du lehnst das sauberste Ziel auf dem Feld ab."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: point half-turned after a right fake, pivot sealed with target between lows, left back covered. Slip the ball behind the point now. Attacking the vacated right lane (B) is backup if the seal is late.",
+      "hr": "Signal: prednji poluokrenut nakon varke udesno, pivot zatvorio s ciljem između niskih, lijevi vanjski pokriven. Ubaci loptu iza prednjeg sada. Napad desnog prolaza (B) je rezerva ako je zatvaranje kasno.",
+      "de": "Signal: vorgezogener Verteidiger halbgedreht, Kreisläufer abschließend — Ball hinter den vorgezogenen Verteidiger."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the sealed pivot is already the clean target; the right lane is only better when that seal has not yet formed.",
+      "hr": "A je bolje od B jer je zatvoreni pivot već čisti cilj; desni prolaz bolji je samo dok to zatvaranje još nije formirano.",
+      "de": "A schlägt B, weil der abschließende Kreisläufer schon das saubere Ziel ist; die rechte Bahn ist nur besser, wenn der Abschluss fehlt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_51_side_change_timing",
+    "title": {
+      "en": "Centre Back — Side-Change Timing vs 5:1",
+      "hr": "Srednji vanjski — tajming promjene strane protiv 5:1",
+      "de": "Rückraum Mitte — Timing des Seitenwechsels gegen 5:1"
+    },
+    "difficulty": "Expert",
+    "pressureLevel": "Critical",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 36,
+    "score": "21:20",
+    "defensiveSystem": "5-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "pressureDecisions"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 21:20 at 36'. You have loaded the left side long enough that the point and the left low defenders are fully shifted. The weak-side low defenders are late by a full step, but the point is starting his sprint recovery across the middle. Your right back is open now — for about one pass, not two.",
+      "hr": "Vodite 21:20 u 36. minuti. Dovoljno dugo si opteretio lijevu stranu da su prednji i lijevi niski braniči skroz pomaknuti. Niski braniči na slaboj strani kasne puni korak, ali prednji kreće sprintom u povratak preko sredine. Desni vanjski otvoren je sada — za otprilike jedno dodavanje, ne za dva.",
+      "de": "Ihr führt 21:20 in Minute 36. Du hast die linke Seite lange genug belastet, dass vorgezogener Verteidiger und linke Tiefe voll verschoben sind. Die schwachen Tiefen sind einen vollen Schritt spät, aber der vorgezogene Verteidiger startet seinen Sprint zurück durch die Mitte. Dein rechter Rückraum ist jetzt offen — für etwa einen Pass, nicht für zwei."
+    },
+    "question": {
+      "en": "When is the side change still on?",
+      "hr": "Kada je promjena strane još u igri?",
+      "de": "Wann ist der Seitenwechsel noch drin?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Change now on one fast pass to the open right back before the point's sprint recovers the middle",
+          "hr": "Promijeni sada jednim brzim dodavanjem na otvorenog desnog vanjskog prije nego sprint prednjeg vrati sredinu",
+          "de": "Jetzt mit einem schnellen Pass auf den offenen rechten Rückraum wechseln, bevor der vorgezogene Verteidiger-Sprint die Mitte zurückholt"
+        },
+        "feedback": {
+          "en": "Correct — vs 5:1 the window is one pass; the recovering point closes two-pass ideas.",
+          "hr": "Točno — protiv 5:1 prozor je jedno dodavanje; vraćajući prednji gasi ideje s dva dodavanja.",
+          "de": "Richtig — gegen 5:1 ist das Fenster ein Pass; der zurücksprintende vorgezogener Verteidiger tötet Zwei-Pass-Ideen."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "One more short bind on the left if the point has not yet started the sprint recovery",
+          "hr": "Još jedno kratko vezanje lijevo ako prednji još nije krenuo sprintom u povratak",
+          "de": "Noch eine kurze Bindung links, wenn der vorgezogene Verteidiger den Rücksprint noch nicht gestartet hat"
+        },
+        "feedback": {
+          "en": "Good — only if the sprint has not started; here it has, so the window is already shrinking.",
+          "hr": "Dobro — samo ako sprint još nije krenuo; ovdje jest, pa se prozor već sužava.",
+          "de": "Gut — nur wenn der Sprint noch nicht läuft; hier läuft er, das Fenster schrumpft schon."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Swing through two passes via yourself again while the point sprints across",
+          "hr": "Prebaci kroz dva dodavanja ponovo preko sebe dok prednji sprinta",
+          "de": "Über zwei Pässe wieder über dich pendeln, während der vorgezogene Verteidiger sprintet"
+        },
+        "feedback": {
+          "en": "Risky — the second pass is exactly when the recovering point arrives.",
+          "hr": "Rizično — drugo dodavanje je trenutak kad stiže vraćajući prednji.",
+          "de": "Riskant — der zweite Pass ist genau der Moment, in dem der vorgezogene Verteidiger ankommt."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a left-side shot into the fully shifted load you created",
+          "hr": "Forsiraj šut s lijeve strane u skroz pomaknuto opterećenje koje si stvorio",
+          "de": "Einen Wurf von links in die voll verschobene Last erzwingen, die du selbst geschaffen hast"
+        },
+        "feedback": {
+          "en": "Poor — you built the weak-side gift and then refuse to use the one-pass window.",
+          "hr": "Loše — sagradio si dar na slaboj strani, a onda odbijaš prozor jednog dodavanja.",
+          "de": "Schlecht — du hast das Geschenk auf der Schwachen gebaut und nutzt das Ein-Pass-Fenster nicht."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: left side fully shifted, weak-side lows a full step late, point already starting sprint recovery, right back open for one pass. Change now. Extra left bind (B) only if the sprint has not started.",
+      "hr": "Signal: lijeva strana skroz pomaknuta, niski na slaboj strani kasne puni korak, prednji već kreće sprintom, desni vanjski otvoren za jedno dodavanje. Promijeni sada. Dodatno vezanje lijevo (B) samo ako sprint još nije krenuo.",
+      "de": "Signal: linke Seite voll, vorgezogener Verteidiger startet Rücksprint, rechter Rückraum für einen Pass offen — jetzt wechseln."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the point's sprint has already started; another left bind would have been right one second earlier, not now.",
+      "hr": "A je bolje od B jer je sprint prednjeg već krenuo; još jedno vezanje lijevo bilo bi točno sekundu ranije, ne sada.",
+      "de": "A schlägt B, weil der vorgezogene Verteidiger-Sprint schon läuft; eine weitere Linkbindung wäre eine Sekunde früher richtig gewesen, nicht jetzt."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_321_behind_first",
+    "title": {
+      "en": "Centre Back — Play Behind the First Line in 3:2:1",
+      "hr": "Srednji vanjski — igraj iza prve linije u 3:2:1",
+      "de": "Rückraum Mitte — hinter der ersten Linie in der 3:2:1 spielen"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 19,
+    "score": "12:11",
+    "defensiveSystem": "3-2-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading"
+    ],
+    "perception": true,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "You lead 12:11 at 19' against a 3:2:1. The front defender steps out fully onto your catch — hips and both feet committed forward — and cannot recover in one stride. Behind him the middle line shows a body-width gap between the two half defenders. Your pivot is sealing the left of those two. The back three are still deep.",
+      "hr": "Vodite 12:11 u 19. minuti protiv 3:2:1. Prednji branič izlazi potpuno na tvoj prijem — bokovi i obje noge idu naprijed — i ne može se vratiti u jednom koraku. Iza njega u srednjoj liniji rupa je široka kao tijelo između dva polubranitelja. Pivot zatvara lijevog od te dvojice. Zadnja trojka još je duboko.",
+      "de": "Ihr führt 12:11 in Minute 19 gegen 3:2:1. Der vorgezogene Verteidiger tritt vollständig auf deinen Fang heraus — Hüfte und beide Füße nach vorn — und kann nicht in einem Schritt zurück. Hinter ihm zeigt die Mittellinie eine körperbreite Lücke zwischen den beiden Halben. Dein Kreisläufer dichtet den linken der beiden ab. Die hintere Drei steht noch tief."
+    },
+    "question": {
+      "en": "What changed when the front defender stepped out fully?",
+      "hr": "Što se promijenilo kad je prednji branič potpuno izašao?",
+      "de": "Was hat sich geändert, als der vorgezogene Verteidiger vollständig herausgetreten ist?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Attack the middle-line gap behind him immediately — that is the first punishable space",
+          "hr": "Odmah napadni rupu u srednjoj liniji iza njega — to je prvi kaznivi prostor",
+          "de": "Sofort die Mittellinien-Lücke hinter ihm angreifen — das ist der erste strafbare Raum"
+        },
+        "feedback": {
+          "en": "Correct — a full step-out with no recovery stride moves the game behind the first line now.",
+          "hr": "Točno — potpuni izlazak bez koraka povratka odmah premješta igru iza prve linije.",
+          "de": "Richtig — ein vollständiger Heraustritt ohne Rückkehrschritt verlagert das Spiel sofort hinter die erste Linie."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Short exchange with a back first to pull one middle-line defender, then enter the gap",
+          "hr": "Prvo kratka razmjena s vanjskim da izvučeš jednog iz srednje linije, pa uđi u rupu",
+          "de": "Zuerst kurzer Austausch mit einem Rückraum, um einen Mittellinien-Verteidiger zu ziehen, dann in die Lücke"
+        },
+        "feedback": {
+          "en": "Plausible later, but the gap is already open — the exchange burns the tempo gift of the step-out.",
+          "hr": "Kasnije moguće, ali rupa je već otvorena — razmjena troši tempo koji je izlazak dao.",
+          "de": "Später plausibel, aber die Lücke ist schon offen — der Austausch verbrennt das Tempo des Herauspringens."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Keep the ball high in front of the recovering first line",
+          "hr": "Drži loptu visoko ispred vraćajuće prve linije",
+          "de": "Den Ball hoch vor der zurückkehrenden ersten Linie halten"
+        },
+        "feedback": {
+          "en": "Risky — you play where the front defender is returning, not where he left space.",
+          "hr": "Rizično — igraš tamo gdje se prednji vraća, ne tamo gdje je ostavio prostor.",
+          "de": "Riskant — du spielst dort, wohin der Vordere zurückkehrt, nicht dort, wo er Raum ließ."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a long wing ball while the middle-line gap is open",
+          "hr": "Forsiraj dugu loptu na krilo dok je rupa u srednjoj liniji otvorena",
+          "de": "Einen langen Außenball forcieren, während die Mittellinien-Lücke offen ist"
+        },
+        "feedback": {
+          "en": "Poor — you skip the structural gift of 3:2:1.",
+          "hr": "Loše — preskačeš strukturni dar obrane 3:2:1.",
+          "de": "Schlecht — du überspringst das strukturelle Geschenk der 3:2:1."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: front defender fully stepped out and cannot recover in one stride; middle-line gap already body-width. First decision is to attack that gap. A short exchange (B) helps only when the gap is still closed.",
+      "hr": "Signal: prednji je potpuno izašao i ne vraća se u jednom koraku; rupa u srednjoj liniji već je široka kao tijelo. Prva odluka je napad na tu rupu. Kratka razmjena (B) pomaže samo dok je rupa još zatvorena.",
+      "de": "Signal: der Vordere ist vollständig heraus und kommt nicht in einem Schritt zurück; die Mittellinien-Lücke ist schon körperbreit. Erste Entscheidung: diese Lücke angreifen. Kurzer Austausch (B) hilft nur, wenn die Lücke noch zu ist."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A attacks the already open middle-line gap created by the irreversible step-out; B adds an exchange while that gap is already punishable.",
+      "hr": "A napada već otvorenu rupu u srednjoj liniji nastalu nepovratnim izlaskom; B dodaje razmjenu dok je ta rupa već kazniva.",
+      "de": "A greift die bereits offene Mittellinien-Lücke durch den irreversiblen Heraustritt an; B fügt einen Austausch hinzu, obwohl die Lücke schon strafbar ist."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_321_short_exchange",
+    "title": {
+      "en": "Centre Back — Short Exchange vs 3:2:1",
+      "hr": "Srednji vanjski — kratka razmjena protiv 3:2:1",
+      "de": "Rückraum Mitte — kurzer Austausch gegen 3:2:1"
+    },
+    "difficulty": "Intermediate",
+    "pressureLevel": "Moderate",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 23,
+    "score": "14:14",
+    "defensiveSystem": "3-2-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "shotReading"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 14:14 at 23'. The front defender of the 3:2:1 is shading you but not fully jumping. The middle-line left half is a half-step high. Your left back is free for a one-touch return. A long swing would meet the back three already sliding.",
+      "hr": "Neriješeno je 14:14 u 23. minuti. Prednji branič u 3:2:1 klizi na tebe, ali ne izlazi skroz. Lijevi polubranitelj srednje linije visok je pola koraka. Lijevi vanjski slobodan je za povratak iz jednog dodira. Dugi prebac naišao bi na zadnju trojku koja već klizi.",
+      "de": "Unentschieden 14:14 in Minute 23. Der Vordere der 3:2:1 schiebt auf dich, springt aber nicht voll. Der linke Halbe der Mittellinie steht einen halben Schritt hoch. Dein linker Rückraum ist frei für den One-Touch-Rückpass. Ein langes Pendeln träfe die schon schiebende hintere Drei."
+    },
+    "question": {
+      "en": "Which exchange creates the surplus?",
+      "hr": "Koja razmjena stvara višak?",
+      "de": "Welcher Austausch schafft den Vorteil?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Short one-touch exchange with the left back to pull the high middle-line half, then attack the freed lane",
+          "hr": "Kratka razmjena iz jednog dodira s lijevim vanjskim da povučeš visokog polubranitelja srednje linije, pa napadni oslobođeni prolaz",
+          "de": "Kurzer One-Touch-Austausch mit dem linken Rückraum, den hohen Mittellinien-Halben ziehen, dann die freie Bahn angreifen"
+        },
+        "feedback": {
+          "en": "Correct — vs 3:2:1 short exchanges break the middle line; long swings feed the back three.",
+          "hr": "Točno — protiv 3:2:1 kratke razmjene lome srednju liniju; dugi prebaci hrane zadnju trojku.",
+          "de": "Richtig — gegen 3:2:1 brechen kurze Austausche die Mittellinie; langes Pendeln füttert die hintere Drei."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Bind the shading front defender first, then use the same left-back exchange",
+          "hr": "Prvo veži prednjeg koji klizi, pa iskoristi istu razmjenu s lijevim vanjskim",
+          "de": "Zuerst den schiebenden Vorderen binden, dann denselben Austausch mit dem linken Rückraum nutzen"
+        },
+        "feedback": {
+          "en": "Good — adds a bind, but the high middle-line half is already the clearer cue.",
+          "hr": "Dobro — dodaje vezanje, ali visoki polubranitelj srednje linije već je jasniji signal.",
+          "de": "Gut — ergänzt eine Bindung, aber der hohe Mittellinien-Halbe ist schon das klarere Signal."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Start a slow lateral swing toward the far wing across all three lines",
+          "hr": "Kreneš spori bočni prebac prema dalekom krilu preko sve tri linije",
+          "de": "Ein langsames seitliches Pendeln zum fernen Außen über alle drei Linien starten"
+        },
+        "feedback": {
+          "en": "Risky — slow laterals are exactly what 3:2:1 slides with.",
+          "hr": "Rizično — spori bočni prebaci upravo su ono s čime 3:2:1 klizi.",
+          "de": "Riskant — langsames seitliches Pendeln ist genau das, womit die 3:2:1 mitschiebt."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a deep solo drive into the front defender without using the free left back",
+          "hr": "Forsiraj duboki solo prodor u prednjeg braniča bez korištenja slobodnog lijevog vanjskog",
+          "de": "Einen tiefen Solo-Durchbruch in den Vorderen erzwingen ohne den freien linken Rückraum"
+        },
+        "feedback": {
+          "en": "Poor — you ignore the free partner that makes the short exchange lethal.",
+          "hr": "Loše — zanemaruješ slobodnog suigrača koji kratku razmjenu čini smrtonosnom.",
+          "de": "Schlecht — du ignorierst den freien Partner, der den kurzen Austausch tödlich macht."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: front shading not fully jumping, middle-line left half a half-step high, left back free for one-touch return, back three ready to slide on a long swing. Short exchange is the tool. Binding the front first (B) is optional seasoning.",
+      "hr": "Signal: prednji klizi ali ne izlazi skroz, lijevi polubranitelj srednje linije visok pola koraka, lijevi vanjski slobodan za povratak iz jednog dodira, zadnja trojka spremna klizati na dugi prebac. Kratka razmjena je alat. Vezanje prednjeg prvo (B) je opcionalni začin.",
+      "de": "Signal: Vordere schiebt, Mittellinien-Halber hoch, linker Rückraum frei — kurzer Austausch."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A beats B because the high middle-line half is already the cue; binding the front first is useful only when that half is not yet high.",
+      "hr": "A je bolje od B jer je visoki polubranitelj srednje linije već signal; vezanje prednjeg prvo korisno je samo dok taj polubranitelj još nije visok.",
+      "de": "A schlägt B, weil der hohe Mittellinien-Halbe schon das Signal ist; zuerst den Vorderen zu binden hilft nur, wenn dieser Halbe noch nicht hoch steht."
+    },
+    "rubricBias": 0
+  },
+  {
+    "familyKey": "cb_321_avoid_slow_lateral",
+    "title": {
+      "en": "Centre Back — Avoid Slow Laterals vs 3:2:1",
+      "hr": "Srednji vanjski — izbjegavaj spore bočne prebace protiv 3:2:1",
+      "de": "Rückraum Mitte — langsames seitliches Pendeln gegen 3:2:1 vermeiden"
+    },
+    "difficulty": "Advanced",
+    "pressureLevel": "High",
+    "attackOrDefence": "Attack",
+    "matchPhase": "Open Play",
+    "minute": 29,
+    "score": "17:17",
+    "defensiveSystem": "3-2-1",
+    "skillTags": [
+      "decisionMaking",
+      "defensiveReading",
+      "pressureDecisions"
+    ],
+    "perception": false,
+    "numerical": "6v6",
+    "gameState": "none",
+    "situation": {
+      "en": "Tied 17:17 at 29'. You start a wide lateral toward the right. The entire 3:2:1 slides with the ball: front, middle line and back three move as one. Your right back receives under pressure; no gap opened. The left side you left is now the only place still late — but only if the ball returns fast, not through another slow swing.",
+      "hr": "Neriješeno je 17:17 u 29. minuti. Krećeš široki bočni prebac udesno. Cijela 3:2:1 klizi s loptom: prednji, srednja linija i zadnja trojka idu kao jedno. Desni vanjski prima pod pritiskom; rupa se nije otvorila. Lijeva strana koju si napustio jedino još kasni — ali samo ako se lopta vrati brzo, ne kroz još jedan spori prebac.",
+      "de": "Unentschieden 17:17 in Minute 29. Du startest ein breites seitliches Pendeln nach rechts. Die ganze 3:2:1 schiebt mit dem Ball: Vorderer, Mittellinie und hintere Drei bewegen sich als eins. Dein rechter Rückraum bekommt unter Druck; keine Lücke öffnete sich. Die linke Seite, die du verließest, ist der einzige noch späte Ort — aber nur bei schnellem Rückball, nicht durch weiteres langsames Pendeln."
+    },
+    "question": {
+      "en": "What must you avoid against this sliding 3:2:1?",
+      "hr": "Što moraš izbjegavati protiv ove klizeće 3:2:1?",
+      "de": "Was musst du gegen diese mitschiebende 3:2:1 vermeiden?"
+    },
+    "answers": [
+      {
+        "quality": "optimal",
+        "text": {
+          "en": "Stop the slow lateral chain — return the ball fast to the late left side with tempo",
+          "hr": "Prekini spori bočni lanac — vrati loptu brzo na zakašnjelu lijevu stranu s tempom",
+          "de": "Die langsame laterale Kette stoppen — den Ball schnell mit Tempo auf die späte linke Seite zurück"
+        },
+        "feedback": {
+          "en": "Correct — 3:2:1 feeds on slow laterals; only a fast return or a tempo crack breaks the slide.",
+          "hr": "Točno — 3:2:1 hrani se sporim bočnim prebacima; samo brzi povratak ili pukotina tempom lomi klizanje.",
+          "de": "Richtig — 3:2:1 ernährt sich von langsamem Pendeln; nur schneller Rückball oder Tempo-Riss bricht das Schieben."
+        }
+      },
+      {
+        "quality": "good",
+        "text": {
+          "en": "Attack the first crack yourself only if the return lane to the left is already closed",
+          "hr": "Sam napadni prvu rupu samo ako je linija povratka ulijevo već zatvorena",
+          "de": "Selbst den ersten Riss angreifen nur wenn die Rückpassbahn nach links schon zu ist"
+        },
+        "feedback": {
+          "en": "Good — can create a local bind, but the clearer late side is already the left you abandoned.",
+          "hr": "Dobro — može stvoriti lokalno vezanje, ali jasnija kasna strana već je lijeva koju si napustio.",
+          "de": "Gut — kann lokale Bindung schaffen, aber die klarere späte Seite ist schon die verlassene Linke."
+        }
+      },
+      {
+        "quality": "risky",
+        "text": {
+          "en": "Continue one more slow swing to the far wing hoping the slide breaks itself",
+          "hr": "Nastavi još jedan spori prebac na daleko krilo u nadi da će se klizanje samo slomiti",
+          "de": "Noch einmal langsam zum fernen Außen pendeln und hoffen, dass das Schieben von selbst bricht"
+        },
+        "feedback": {
+          "en": "Risky — you give the 3:2:1 exactly the tempo it wants.",
+          "hr": "Rizično — daješ 3:2:1 upravo tempo koji želi.",
+          "de": "Riskant — du gibst der 3:2:1 genau das Tempo, das sie will."
+        }
+      },
+      {
+        "quality": "poor",
+        "text": {
+          "en": "Force a low-percentage shot under the full slide pressure on the right",
+          "hr": "Forsiraj šut male postotke pod punim pritiskom klizanja na desnoj",
+          "de": "Einen Low-Percentage-Wurf unter vollem Schiebedruck rechts erzwingen"
+        },
+        "feedback": {
+          "en": "Poor — shooting into the slide wastes the late weak side you created.",
+          "hr": "Loše — šut u klizanje baca kasnu slabu stranu koju si stvorio.",
+          "de": "Schlecht — Wurf in das Schieben verschenkt die späte schwache Seite."
+        }
+      }
+    ],
+    "explanation": {
+      "en": "Cue: whole 3:2:1 sliding with a wide lateral, right back under pressure, no gap, left side still late only for a fast return. Kill the slow lateral chain. Local right exchange (B) is a backup, not the first read.",
+      "hr": "Signal: cijela 3:2:1 klizi sa širokim bočnim prebacem, desni vanjski pod pritiskom, nema rupe, lijeva strana još kasni samo za brzi povratak. Prekini lanac sporog prebaca. Lokalna razmjena desno (B) je rezerva, ne prvo čitanje.",
+      "de": "Signal: ganze 3:2:1 schiebt mit, rechts Druck, links noch spät nur für schnellen Rückball — langsames Pendeln stoppen."
+    },
+    "whyCorrectOverSecondBest": {
+      "en": "A punishes the late left side that the slow lateral created; B is the backup when that return is already denied.",
+      "hr": "A kažnjava zakašnjelu lijevu stranu koju je spori bočni lanac stvorio; B je rezerva kad je taj povratak već onemogućen.",
+      "de": "A bestraft die späte linke Seite aus der langsamen Lateralkette; B ist Reserve wenn dieser Rückpass schon verstellt ist."
+    },
+    "rubricBias": 0
+  }
+]

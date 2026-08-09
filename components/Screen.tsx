@@ -1,12 +1,17 @@
 import { ReactNode, useEffect } from 'react';
 import { View, Text, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing } from 'react-native-reanimated';
 import { Colors, Spacing, Typography, Radius } from '@/lib/theme';
 
-export function ScreenBackground({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
+export function ScreenBackground({ children, style, edges = ['top', 'bottom'] }: { children: ReactNode; style?: StyleProp<ViewStyle>; edges?: ('top' | 'bottom')[] }) {
+  const insets = useSafeAreaInsets();
+  const paddingTop = edges.includes('top') ? Math.max(insets.top, Spacing.sm) : 0;
+  const paddingBottom = edges.includes('bottom') ? Math.max(insets.bottom, Spacing.sm) : 0;
+
   return (
-    <LinearGradient colors={Colors.bgGradient} style={[styles.bg, style]}>
+    <LinearGradient colors={Colors.bgGradient} style={[styles.bg, { paddingTop, paddingBottom }, style]}>
       {children}
     </LinearGradient>
   );
@@ -124,7 +129,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 4,
   },
-  statValue: { ...Typography.statSm, fontFamily: 'Inter-ExtraBold', color: Colors.white },
+  statValue: { ...Typography.statSm, fontFamily: 'Inter-ExtraBold', color: Colors.textPrimary },
   statLabel: { ...Typography.micro, color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', letterSpacing: 0.5, textTransform: 'uppercase' },
   statSublabel: { fontSize: 10, color: Colors.textQuaternary, fontFamily: 'Inter-Regular' },
   progressTrack: { borderRadius: 99, overflow: 'hidden', width: '100%' },

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "lbPrimaryCount": 62,
+  "familyCount": 62,
+  "coverage": {
+    "6:0": true,
+    "5:1": true,
+    "3:2:1": true,
+    "3:3": true,
+    "4:2": true,
+    "1:5": true,
+    "5+1": true,
+    "4+2": true,
+    "open_or_man": true,
+    "1v1": true,
+    "pivot": true,
+    "crossing_or_parallel": true,
+    "7v6": true,
+    "5v6": true,
+    "6v5": true,
+    "passive": true,
+    "transition_attack": true,
+    "transition_defence": true,
+    "end_game": true,
+    "gk_or_shot": true
+  },
+  "difficulty": {
+    "Beginner": 9,
+    "Intermediate": 14,
+    "Advanced": 22,
+    "Expert": 17
+  },
+  "perceptionPct": 25.8,
+  "avgRubricV2": 8.7,
+  "minRubricV2": 8.6,
+  "perceptionCount": 16
+}

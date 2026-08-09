@@ -3,17 +3,18 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-nati
 import { router, useFocusEffect, Redirect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  ArrowLeft, Users, Activity, Target, Brain, TrendingUp, TrendingDown,
-  ChevronRight, Calendar, ClipboardList, BarChart3, Bell, UserCircle, Shield,
-  AlertCircle, Plus,
+  Users, Activity, Target, Brain, TrendingUp, TrendingDown, ChevronRight, Calendar, ClipboardList, BarChart3, Bell, UserCircle, Shield, AlertCircle, Plus
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
+import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { useAuth } from '@/context/AuthContext';
 import { useDevAuth } from '@/context/DevAuthContext';
 import { loadCoachAccount, getTeamStats, TeamStats, generateTeamRecommendations, TrainingRecommendation } from '@/lib/coach-dashboard-data';
+import { useTeamPlatform } from '@/hooks/useTeamPlatform';
+import { renderCoachMessage } from '@/lib/coach-i18n';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateRole } from '@/lib/translations';
 
@@ -28,6 +29,8 @@ export default function CoachDashboardHome() {
   const [topRecs, setTopRecs] = useState<TrainingRecommendation[]>([]);
   const [timedOut, setTimedOut] = useState(false);
   const [dataError, setDataError] = useState(false);
+  const coachId = user?.id ?? (isDevAuthenticated ? 'dev_coach' : undefined);
+  const { team: platformTeam, stats: platformStats, init, refresh: refreshTeam } = useTeamPlatform(coachId, coach?.name);
 
   useEffect(() => {
     if (authLoading && !isDevAuthenticated) {
@@ -42,11 +45,13 @@ export default function CoachDashboardHome() {
       setStats(getTeamStats());
       setCoach(loadCoachAccount());
       setTopRecs(generateTeamRecommendations().slice(0, 3));
+      if (coachId && !platformTeam) init();
+      refreshTeam();
       setDataError(false);
     } catch {
       setDataError(true);
     }
-  }, []));
+  }, [coachId, platformTeam, init, refreshTeam]));
 
   // State: auth still loading (with 8s timeout)
   if (authLoading && !isDevAuthenticated && !timedOut) {
@@ -122,7 +127,9 @@ export default function CoachDashboardHome() {
     );
   }
 
-  const weeklyProgressColor = (stats?.weeklyProgress ?? 0) >= 0 ? Colors.success : Colors.error;
+  const displayTeamName = platformTeam?.name ?? coach.teamName;
+  const dashStats = platformStats ?? stats;
+  const weeklyProgressColor = (dashStats?.weeklyProgress ?? 0) >= 0 ? Colors.success : Colors.error;
 
   return (
     <ScreenBackground>
@@ -130,56 +137,75 @@ export default function CoachDashboardHome() {
 
         {/* Header */}
         <Animated.View entering={FadeIn.duration(400)} style={styles.header}>
-          <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
-            <ArrowLeft size={20} color={Colors.gold} />
-          </TouchableOpacity>
+          <BackButton />
           <View style={{ flex: 1 }}>
-            <Text style={styles.headerTitle}>{coach.teamName}</Text>
+            <Text style={styles.headerTitle}>{displayTeamName}</Text>
             <Text style={styles.headerSub}>{translateRole(coach.role, t)} · {coach.name}</Text>
           </View>
           <View style={styles.headerIcon}><Shield size={20} color={Colors.gold} /></View>
         </Animated.View>
 
+        {/* Platform highlights */}
+        {platformStats && (
+          <Animated.View entering={FadeInDown.delay(30).duration(500)}>
+            <Card variant="gradient" shadow="card" style={styles.highlightCard}>
+              {platformStats.mostImproved && (
+                <Text style={styles.highlightText}>
+                  {t('team.mostImproved')}: {platformStats.mostImproved.display_name} (+{platformStats.mostImproved.improvement ?? 0}%)
+                </Text>
+              )}
+              {platformStats.needsAttention && (
+                <Text style={styles.highlightWarn}>
+                  {t('team.needsAttention')}: {platformStats.needsAttention.display_name} ({platformStats.needsAttention.decision_score ?? 0}%)
+                </Text>
+              )}
+            </Card>
+          </Animated.View>
+        )}
+
         {/* Stats Grid */}
-        {stats && (
+        {dashStats && (
           <Animated.View entering={FadeInDown.delay(50).duration(500)}>
             <Text style={styles.sectionLabel}>{t('coachDashboard.teamOverview')}</Text>
             <View style={styles.statsGrid}>
-              <StatCard icon={<Users size={18} color={Colors.gold} />} value={`${stats.totalPlayers}`} label={t('coachDashboard.totalPlayers')} />
-              <StatCard icon={<Activity size={18} color={Colors.success} />} value={`${stats.todayActive}`} label={t('coachDashboard.activeToday')} />
-              <StatCard icon={<Target size={18} color={Colors.info} />} value={`${stats.sessionsCompleted}`} label={t('coachDashboard.sessionsDone')} />
-              <StatCard icon={<Brain size={18} color={Colors.gold} />} value={`${stats.avgDecisionScore}`} label={t('coachDashboard.avgDecision')} />
+              <StatCard icon={<Users size={18} color={Colors.gold} />} value={`${platformStats?.rosterCount ?? (stats as TeamStats)?.totalPlayers ?? 0}`} label={t('team.roster')} />
+              <StatCard icon={<Activity size={18} color={Colors.success} />} value={`${platformStats?.dailyActivity ?? (stats as TeamStats)?.todayActive ?? 0}`} label={t('team.dailyActivity')} />
+              <StatCard icon={<Target size={18} color={Colors.info} />} value={`${platformStats?.attendanceRate ?? 0}%`} label={t('team.attendance')} />
+              <StatCard icon={<Brain size={18} color={Colors.gold} />} value={`${platformStats?.avgDecisionScore ?? (stats as TeamStats)?.avgDecisionScore ?? 0}`} label={t('coachDashboard.avgDecision')} />
             </View>
           </Animated.View>
         )}
 
         {/* Mental Readiness + Weekly Progress */}
-        {stats && (
+        {dashStats && (
           <Animated.View entering={FadeInDown.delay(100).duration(500)}>
             <Card variant="gradient" shadow="card" style={styles.progressCard}>
               <View style={styles.progressRow}>
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.progressLabel}>{t('coachDashboard.avgMentalReadiness')}</Text>
-                  <Text style={styles.progressValue}>{stats.avgMentalReadiness}%</Text>
-                </View>
-                <View style={styles.progressIconWrap}><Brain size={22} color={Colors.gold} /></View>
-              </View>
-              <ProgressBar progress={stats.avgMentalReadiness / 100} height={5} color={Colors.gold} />
-            </Card>
-
-            <Card variant="gradient" shadow="card" style={styles.progressCard}>
-              <View style={styles.progressRow}>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.progressLabel}>{t('coachDashboard.weeklyProgress')}</Text>
+                  <Text style={styles.progressLabel}>{t('team.weeklyProgress')}</Text>
                   <Text style={[styles.progressValue, { color: weeklyProgressColor }]}>
-                    {stats.weeklyProgress > 0 ? '+' : ''}{t('coachDashboard.pts', { n: stats.weeklyProgress })}
+                    {(platformStats?.weeklyProgress ?? (stats as TeamStats)?.weeklyProgress ?? 0) > 0 ? '+' : ''}
+                    {platformStats?.weeklyProgress ?? (stats as TeamStats)?.weeklyProgress ?? 0}%
                   </Text>
                 </View>
                 <View style={styles.progressIconWrap}>
-                  {stats.weeklyProgress >= 0 ? <TrendingUp size={22} color={Colors.success} /> : <TrendingDown size={22} color={Colors.error} />}
+                  {(platformStats?.weeklyProgress ?? 0) >= 0 ? <TrendingUp size={22} color={Colors.success} /> : <TrendingDown size={22} color={Colors.error} />}
                 </View>
               </View>
             </Card>
+
+            {(stats as TeamStats)?.avgMentalReadiness != null && (
+            <Card variant="gradient" shadow="card" style={styles.progressCard}>
+              <View style={styles.progressRow}>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.progressLabel}>{t('coachDashboard.avgMentalReadiness')}</Text>
+                  <Text style={styles.progressValue}>{(stats as TeamStats).avgMentalReadiness}%</Text>
+                </View>
+                <View style={styles.progressIconWrap}><Brain size={22} color={Colors.gold} /></View>
+              </View>
+              <ProgressBar progress={(stats as TeamStats).avgMentalReadiness / 100} height={5} color={Colors.gold} />
+            </Card>
+            )}
           </Animated.View>
         )}
 
@@ -189,7 +215,7 @@ export default function CoachDashboardHome() {
             <View style={styles.sectionHeader}>
               <Text style={styles.sectionLabel}>{t('coachDashboard.priorityRecs')}</Text>
               <TouchableOpacity onPress={() => router.push('/coach-dashboard/team-analysis')}>
-                <Text style={styles.seeAllText}>See all</Text>
+                <Text style={styles.seeAllText}>{t('common.seeAll')}</Text>
               </TouchableOpacity>
             </View>
             {topRecs.map((rec, i) => (
@@ -198,8 +224,8 @@ export default function CoachDashboardHome() {
                   <View style={[styles.severityDot, { backgroundColor: rec.severity === 'high' ? Colors.error : rec.severity === 'medium' ? Colors.warning : Colors.success }]} />
                   <Text style={styles.recPlayer}>{rec.playerName}</Text>
                 </View>
-                <Text style={styles.recIssue}>{rec.issue}</Text>
-                <Text style={styles.recAction}>{rec.recommendation}</Text>
+                <Text style={styles.recIssue}>{renderCoachMessage(t, rec.issue)}</Text>
+                <Text style={styles.recAction}>{renderCoachMessage(t, rec.recommendation)}</Text>
               </Card>
             ))}
           </Animated.View>
@@ -212,6 +238,11 @@ export default function CoachDashboardHome() {
             <MenuItem icon={<Users size={20} color={Colors.gold} />} title={t('coachDashboard.playerList')} subtitle={t('coachDashboard.playerListSub')} onPress={() => router.push('/coach-dashboard/players')} />
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('coachDashboard.teamAnalysis')} subtitle={t('coachDashboard.teamAnalysisSub')} onPress={() => router.push('/coach-dashboard/team-analysis')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('coachDashboard.sessionAssignment')} subtitle={t('coachDashboard.sessionAssignmentSub')} onPress={() => router.push('/coach-dashboard/assign')} />
+            <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.invitePlayers')} subtitle={t('team.inviteSub')} onPress={() => router.push('/coach-dashboard/invite')} />
+            <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('team.leaderboards')} subtitle={t('team.leaderboardsSub')} onPress={() => router.push('/coach-dashboard/leaderboards')} />
+            <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('team.reports')} subtitle={t('team.reportsSub')} onPress={() => router.push('/coach-dashboard/reports')} />
+            <MenuItem icon={<Shield size={20} color={Colors.gold} />} title={t('team.clubs')} subtitle={t('team.clubsSub')} onPress={() => router.push('/coach-dashboard/clubs')} />
+            <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.coachNotes')} subtitle={t('team.coachNotesSub')} onPress={() => router.push('/coach-dashboard/notes')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('coachDashboard.playerComparison')} subtitle={t('coachDashboard.playerComparisonSub')} onPress={() => router.push('/coach-dashboard/compare')} />
             <MenuItem icon={<Bell size={20} color={Colors.gold} />} title={t('coachDashboard.notifications')} subtitle={t('coachDashboard.notificationsSub')} onPress={() => router.push('/coach-dashboard/notifications')} />
             <MenuItem icon={<Calendar size={20} color={Colors.gold} />} title={t('coachDashboard.teamCalendar')} subtitle={t('coachDashboard.teamCalendarSub')} onPress={() => router.push('/coach-dashboard/calendar')} />
@@ -255,7 +286,6 @@ const styles = StyleSheet.create({
   buttonRow: { flexDirection: 'row', gap: Spacing.md, alignItems: 'center' },
 
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
-  backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 13, marginTop: 2 },
   headerIcon: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, borderWidth: 1, borderColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
@@ -275,6 +305,10 @@ const styles = StyleSheet.create({
   progressLabel: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textTertiary },
   progressValue: { fontFamily: 'Inter-ExtraBold', fontSize: 26, color: Colors.textPrimary, marginTop: 2 },
   progressIconWrap: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
+
+  highlightCard: { gap: Spacing.xs, marginBottom: Spacing.sm, padding: Spacing.md },
+  highlightText: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.success },
+  highlightWarn: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.warning },
 
   recCard: { gap: Spacing.xs, marginBottom: Spacing.sm },
   recHeader: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },

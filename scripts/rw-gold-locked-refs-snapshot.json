@@ -1,0 +1,21 @@
+{
+  "createdAt": "2026-08-09T23:22:40.073Z",
+  "note": "Surgical pass locks: 872,873,876,879,897 (880 editable in surgical pass)",
+  "locked": {
+    "scn_bank_872": {
+      "hash": "9b406412f5e791ea40fea284700152af4924fe1940d1880787d0d972d82811b6"
+    },
+    "scn_bank_873": {
+      "hash": "e32253d76e43a3da77b5868eff597bc854e02c0a4874e92874d23ebf4b1e2809"
+    },
+    "scn_bank_876": {
+      "hash": "62826da55e47fdd210fb2ebfd87b618dbdd99d2e422e6558cc75c0c48e7cfcf5"
+    },
+    "scn_bank_879": {
+      "hash": "94827102be9b548d792b4b8aa59a4858c9311a226e93eec2bb9f3778e40f189b"
+    },
+    "scn_bank_897": {
+      "hash": "f0f776c134779457a0b03a514967bce43d4e06955bb29d006f8f3cded7d85e1e"
+    }
+  }
+}

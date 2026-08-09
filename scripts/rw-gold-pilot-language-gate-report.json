@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "mode": "pilot",
+  "source": "scripts/scenario-bank/data/rw-parts/rw-families-d.json",
+  "rwCount": 20,
+  "errors": [],
+  "warnings": [
+    "rw_passive_warning_clear_lane: score_without_vodite_gubite_nerijeseno",
+    "rw_passive_warning_no_force: score_without_vodite_gubite_nerijeseno",
+    "rw_bad_catch_late_possession: score_without_vodite_gubite_nerijeseno",
+    "rw_fast_restart_ready: situation_hr_weak_geometry_vocabulary",
+    "rw_def_handover_then_help: score_without_vodite_gubite_nerijeseno",
+    "rw_def_close_transition_lane: score_without_vodite_gubite_nerijeseno",
+    "rw_def_return_correct_lane: score_without_vodite_gubite_nerijeseno",
+    "rw_def_stop_first_wave: situation_hr_weak_geometry_vocabulary",
+    "rw_def_stop_first_wave: score_without_vodite_gubite_nerijeseno",
+    "rw_def_2v2_wing_side: score_without_vodite_gubite_nerijeseno",
+    "rw_def_ball_vs_wing_choice: score_without_vodite_gubite_nerijeseno",
+    "rw_51_wide_vs_point: score_without_vodite_gubite_nerijeseno",
+    "rw_33_fast_ball_wide: situation_hr_weak_geometry_vocabulary",
+    "rw_33_fast_ball_wide: score_without_vodite_gubite_nerijeseno",
+    "rw_42_free_lane_finish: score_without_vodite_gubite_nerijeseno",
+    "rw_open_1v1_wing: score_without_vodite_gubite_nerijeseno",
+    "rw_321_behind_high_wing: score_without_vodite_gubite_nerijeseno",
+    "rw_15_punish_high_wing_def: score_without_vodite_gubite_nerijeseno"
+  ],
+  "byScenario": [
+    {
+      "id": "rw_passive_warning_clear_lane",
+      "title": "Right Wing — Passive Warning: Finish the Clear Lane",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_passive_warning_no_force",
+      "title": "Right Wing — Passive Warning: Do Not Force a Closed Wing",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_bad_catch_late_possession",
+      "title": "Right Wing — Late Possession: Secure a Bad Catch",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_fast_restart_ready",
+      "title": "Right Wing — Be Ready for the Fast Restart",
+      "errors": [],
+      "warnings": [
+        "situation_hr_weak_geometry_vocabulary"
+      ]
+    },
+    {
+      "id": "rw_def_handover_then_help",
+      "title": "Right Wing — Defence: Help After the Handover",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_def_close_transition_lane",
+      "title": "Right Wing — Defence: Close the Transition Lane",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_def_return_correct_lane",
+      "title": "Right Wing — Defence: Return Through the Correct Lane",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_def_stop_first_wave",
+      "title": "Right Wing — Defence: Stop the First Wave",
+      "errors": [],
+      "warnings": [
+        "situation_hr_weak_geometry_vocabulary",
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_def_2v2_wing_side",
+      "title": "Right Wing — Defence: Solve the 2v2 on Your Side",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_def_ball_vs_wing_choice",
+      "title": "Right Wing — Defence: Ball or Wing?",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_51_wide_vs_point",
+      "title": "Right Wing — 5:1: Read the Wide Defender and Point",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_33_fast_ball_wide",
+      "title": "Right Wing — 3:3: Move the Ball Wide Fast",
+      "errors": [],
+      "warnings": [
+        "situation_hr_weak_geometry_vocabulary",
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_42_free_lane_finish",
+      "title": "Right Wing — 4:2: Finish the Free Lane",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_open_1v1_wing",
+      "title": "Right Wing — Open Defence: Win the 1v1",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_321_behind_high_wing",
+      "title": "Right Wing — 3:2:1: Go Behind the High Wing Defender",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    },
+    {
+      "id": "rw_15_punish_high_wing_def",
+      "title": "Right Wing — 1:5: Punish the High Wing Defender",
+      "errors": [],
+      "warnings": [
+        "score_without_vodite_gubite_nerijeseno"
+      ]
+    }
+  ],
+  "errorCount": 0,
+  "warningCount": 18,
+  "scenariosWithErrors": 0
+}
