@@ -1,0 +1,224 @@
+{
+  "phase": "LW_BATCH_A_FINAL_SURGICAL_REPAIR",
+  "verdict": "LW BATCH A GOLD CANDIDATE READY",
+  "touchedIds": [
+    "scn_bank_955",
+    "scn_bank_956",
+    "scn_bank_962"
+  ],
+  "batchACount": 12,
+  "temporaryLwCount": 62,
+  "perceptionDistribution": {
+    "true": 8,
+    "false": 4
+  },
+  "difficultyDistribution": {
+    "Beginner": 4,
+    "Intermediate": 6,
+    "Advanced": 1,
+    "Expert": 1
+  },
+  "attackDefenceDistribution": {
+    "attack": 10,
+    "defence": 2
+  },
+  "validators": {
+    "validate:left-back-gold-bank": "PASS",
+    "validate:right-back-gold-bank": "PASS",
+    "validate:centre-back-gold-bank": "PASS",
+    "validate:right-wing-gold-bank": "PASS",
+    "validate:unique-session": "PASS",
+    "validate:no-position-fallback": "PASS",
+    "validate:position-personalization": "PASS",
+    "audit:scenario-quality": "NOT RUN (mutating — forbidden)",
+    "audit-lw-batch-a": "LW BATCH A APPROVED FOR HUMAN REVIEW",
+    "blockers": []
+  },
+  "lockVerification": {
+    "locks": {
+      "LB": {
+        "ok": true,
+        "count": 62,
+        "hash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522"
+      },
+      "RB": {
+        "ok": true,
+        "count": 63,
+        "hash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0"
+      },
+      "CB": {
+        "ok": true,
+        "count": 70,
+        "hash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97"
+      },
+      "RW": {
+        "ok": true,
+        "count": 65,
+        "hash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21"
+      }
+    },
+    "countsOk": true,
+    "pilotAndUntouchedBatchA": "ALL_OK",
+    "seedFails": []
+  },
+  "scn_bank_955": {
+    "mode": "LANGUAGE_POLISH",
+    "languageChanges": [
+      "bliža ruka pada u taj gornji kut → bliža ruka ide s tim povratkom da zatvori bliži gornji kut",
+      "daleka mu je ruka kasno i nisko → daleka ruka još kasni s povratkom preko",
+      "strana koju je zakasnio → nakon bližeg oslonca kasni s povratkom preko"
+    ],
+    "tacticalConceptUnchanged": true,
+    "teachingObjective": "Second cue in the air beats the first GK shade — finish where the recovery leaves him late",
+    "whyANow": "Near plant + near hand with recovery cancel the first far shade; finish far-low where he is late returning.",
+    "whenB": "He keeps going far and never plants the near foot back.",
+    "abResult": "CLEAR",
+    "gkLogicVerdict": "PASS — first shade then recovery; no automatic opposite-post folklore; open side not spoiled",
+    "duplicateVerdict": "UNIQUE vs RW 900/875/901 and LW GK cluster",
+    "coachRisk": 3,
+    "hr": {
+      "title": "Lijevo krilo — ne vjeruj prvom zatvaranju vratara dok si u zraku",
+      "situation": "Neriješeno je 14:14 u 29. minuti protiv 6:0. Čisto ideš u skok s lijevog krila — krilni branič kasni i ne stiže na tvoju ruku. Na početku skoka vratar dalekim stopalom i težinom kreće prema daljoj stativi. Prije nego baciš, vraća bliže stopalo prema bližoj stativi i bliža ruka ide s tim povratkom da zatvori bliži gornji kut. Daleka ruka još kasni s povratkom preko.",
+      "question": "Krenuo je dalje, pa se vratio bliže — što radiš s loptom?",
+      "A": "Pričekaj taj povratak jedan trenutak, pa završi daleko i nisko — nakon bližeg oslonca kasni s povratkom preko",
+      "Afb": "Točno — drugi pokret briše prvo zatvaranje; završi gdje kasni s povratkom.",
+      "B": "Rani bliži završetak samo ako nastavi dalje i ne vrati bliže stopalo",
+      "Bfb": "Valja uz potpuno zatvaranje daleko; ovdje se vratio bliže.",
+      "C": "Odmah baci daleko na prvo zatvaranje bez čekanja sljedećeg stopala",
+      "Cfb": "Rizično — bacaš u povratak koji već radi.",
+      "D": "Lupaj bliže gore u ruku koja je upravo došla s povratkom",
+      "Dfb": "Loše — to je baš povratak koji je napravio.",
+      "explanation": "Prvo zatvaranje daleko nije odluka. Kasniji bliži oslonac i bliža ruka s tim povratkom pokazuju da se vratio. Završi daleko i nisko gdje kasni s povratkom. Rano bliže samo ako se daleko zatvaranje ne vrati.",
+      "why": "A čita drugi pokret (bliži oslonac + bliža ruka s povratkom). B treba nastavljeno zatvaranje daleko bez tog povratka."
+    }
+  },
+  "scn_bank_956": {
+    "mode": "TACTICAL_REWRITE",
+    "familyKey": "lw_gk_depth_read",
+    "familyKeyReplaced": false,
+    "oldProblem": "Forward freeze then hard mid-height — indefensible against reduced angle / GK body",
+    "newTeachingObjective": "Depth leave mid-jump + brake body cue (near load + near hand down) → finish far-high; not deep=wait, not auto-lob, not hard mid",
+    "fullGkGeometry": "Deep on line at take-off → mid-jump forward attack → brake: near foot wider, weight on near leg, near hand down to near-low; far hand late across; not continuing into body",
+    "firstCue": "GK leaves deep / attacks forward during LW jump",
+    "secondCue": "Brake: near plant wider + weight on near leg + near hand down to near-low",
+    "A": "Finish far and high — he is stuck on the near plant with the near hand down and cannot recover across in time",
+    "B": "Soft lift over only if he keeps driving into your body with both hands rising and never plants that near foot wide",
+    "whyANow": "Depth change plus brake: near plant and near hand down leave him late recovering to far-high.",
+    "whenB": "He keeps driving into the body with both hands rising and never plants the near foot wide.",
+    "comparisons": [
+      {
+        "vs": "scn_bank_897",
+        "sharedCue": "GK depth is part of the picture",
+        "sharedTeachingObjective": "none — 897 is stay-deep timing; 956 is leave-deep then brake",
+        "sharedOptimalAction": "none — 897 carry late; 956 far-high after brake",
+        "criticalDifference": "897 stays deep and never steps; 956 leaves deep, brakes with near load + near hand down. Not deep=wait.",
+        "verdict": "UNIQUE"
+      },
+      {
+        "vs": "scn_bank_898",
+        "sharedCue": "GK leaves the line / attacks during wing take-off",
+        "sharedTeachingObjective": "partial — both respond to forward GK, but different continuation",
+        "sharedOptimalAction": "none — 898 lift is A; in 956 lift is only conditional B",
+        "criticalDifference": "898 continuous drive + hands high → lift. 956 brakes with near plant/weight/near hand down → far-high. Lift only if attack never brakes.",
+        "verdict": "UNIQUE"
+      },
+      {
+        "vs": "scn_bank_900",
+        "sharedCue": "near-side commitment can open a far finish",
+        "sharedTeachingObjective": "partial — both use a near commitment cue, but different first phase",
+        "sharedOptimalAction": "partial — far-side finish family, different height/chain",
+        "criticalDifference": "900: central start, lateral near-foot slide, no depth change, far finish. 956: deep→forward→asymmetric brake, far-high. Not a side flip.",
+        "verdict": "UNIQUE"
+      },
+      {
+        "vs": "scn_bank_901",
+        "sharedCue": "near hand/arm position matters",
+        "sharedTeachingObjective": "none — 901 is pre-jump near-high arm → near-low",
+        "sharedOptimalAction": "none — opposite finish side/height logic",
+        "criticalDifference": "901 before take-off near arm high → near-low. 956 mid-jump depth leave + brake near hand down → far-high.",
+        "verdict": "UNIQUE"
+      },
+      {
+        "vs": "scn_bank_946",
+        "sharedCue": "GK leaves line / steps toward LW",
+        "sharedTeachingObjective": "none — 946 is pass-to-LB vs lob into high hands",
+        "sharedOptimalAction": "none — 946 short pass inside; 956 finish far-high",
+        "criticalDifference": "946 includes free LB + high hands → pass. 956 has no free-LB fork; finish from brake body cue after depth change.",
+        "verdict": "UNIQUE"
+      },
+      {
+        "vs": "scn_bank_955",
+        "sharedCue": "second GK action in the air decides finish",
+        "sharedTeachingObjective": "partial — both are two-cue in-air reads, different first cue family",
+        "sharedOptimalAction": "partial — both can finish far, but 955 far-low after far→near recovery; 956 far-high after deep→forward→near brake",
+        "criticalDifference": "955 is lateral shade/recovery with no depth change. 956 is depth change + braking load. Different geometry and height.",
+        "verdict": "UNIQUE"
+      }
+    ],
+    "semanticDuplicateVerdict": "UNIQUE — earns own teaching family",
+    "coachRisk": 4,
+    "hr": {
+      "title": "Lijevo krilo — pročitaj kočenje vratara nakon što izađe iz dubine",
+      "situation": "Vodite 16:15 u 33. minuti protiv 6:0. Čisto ideš u skok s lijevog krila — krilni branič još je van tvoje ruke. Na startu skoka vratar je duboko na crti. Usred skoka kreće naprijed prema tebi. Onda koči: bliže stopalo ide šire, težina pada na tu bližu nogu, a bliža ruka ide dolje da zatvori bliži donji kut. Daleka ruka još kasni s dolaskom preko. Ne nastavlja u tvoje tijelo.",
+      "question": "Izašao je iz dubine, pa kočio s težinom bliže i bližom rukom dolje — gdje završavaš?",
+      "A": "Završi daleko i gore — zaglavljen je na bližem osloncu s bližom rukom dolje i ne stiže se vratiti preko",
+      "Afb": "Točno — promjena dubine plus kočenje: težina bliže i bliža ruka dolje ostavljaju ga kasnog za daleko i gore.",
+      "B": "Meko podigni preko samo ako nastavi ići u tvoje tijelo s obje ruke gore i ne stavi bliže stopalo šire",
+      "Bfb": "Valja uz kontinuirani izlazak; ovdje je kočio s težinom bliže i bližom rukom dolje.",
+      "C": "Nastavi nositi kasno kao da je još duboko na crti iako je već izašao i kočio",
+      "Cfb": "Rizično — to je čekanje kao na dubokoj crti nakon što su se dubina i tijelo već promijenili.",
+      "D": "Lupaj jako kroz sredinu u tijelo koje je upravo doveo naprijed",
+      "Dfb": "Loše — kočenjem naprijed smanjio je taj središnji put; udaraš u tijelo.",
+      "explanation": "Čitaj dva pokreta: izlazi iz dubine, pa koči s težinom na bližem osloncu i bližom rukom dolje. Završi daleko i gore gdje kasni s povratkom. Meko podigni samo ako izlazak ne koči. Nemoj čekati kao da je ostao duboko.",
+      "why": "A čita promjenu dubine plus kočenje (bliži oslonac + bliža ruka dolje). B treba kontinuirani ulazak u tijelo bez tog kočenja."
+    }
+  },
+  "scn_bank_962": {
+    "mode": "LANGUAGE_POLISH",
+    "languageChanges": [
+      "stani u pas → postavi se u liniju dodavanja prema njihovom desnom krilu",
+      "uzmi taj put tijelom i rukama → zatvori dodavanje položajem tijela i rukama",
+      "krilo ostane visoko → krilo se ne nudi za dodavanje",
+      "pas → dodavanje where natural"
+    ],
+    "geometryUnchanged": true,
+    "whyANow": "Half is stuck inside; RB chest/shoulders look wing — close that pass first.",
+    "whenB": "RB chest stays toward middle and wing does not present for the pass.",
+    "abResult": "CLEAR",
+    "vsRw880": {
+      "sharedIdea": "Do not gift the pass to the opposing wing",
+      "criticalDifference": "880 = controlled help + wait handover. 962 = half already removed; close RB→RW pass on shoulder turn. No handover cocktail."
+    },
+    "semanticDuplicateVerdict": "UNIQUE vs RW 880",
+    "coachRisk": 3,
+    "hr": {
+      "title": "Lijevo krilo — obrana: zatvori dodavanje na krilo kad ti polubranitelj nestane",
+      "situation": "Neriješeno je 11:11 u 24. minuti u vašoj 6:0. Braniš lijevo krilo. Njihov desni vanjski ima loptu i već je povukao tvog polubranitelja unutra — polubranitelj je zaglavio na tom prodoru i ne može doći na tvoje krilo. Njihovo desno krilo još je široko. Desni vanjski okreće prsa i ramena prema aut-liniji i gleda to krilo. Ako skočiš na prodor, dodavanje na krilo je slobodno.",
+      "question": "Polubranitelj je zaglavio unutra a desni vanjski gleda krilo — što je prvo?",
+      "A": "Postavi se u liniju dodavanja prema njihovom desnom krilu i zatvori dodavanje položajem tijela i rukama",
+      "Afb": "Točno — kad polubranitelja nema, prvi ti je posao dodavanje na krilo koje on traži.",
+      "B": "Skoči na prodor samo ako mu prsa ostanu prema sredini a krilo se ne nudi za dodavanje",
+      "Bfb": "Valja kad krilo ne traži loptu; ovdje se okreće na krilo.",
+      "C": "Juri desnog vanjskog u sredinu jer prodor izgleda opasnije",
+      "Cfb": "Rizično — poklanjaš dodavanje koje već traži.",
+      "D": "Padni u kut i čekaj tko će primiti nakon što dodavanje ode",
+      "Dfb": "Loše — braniš nakon štete.",
+      "explanation": "Čitaj: polubranitelj zaglavljen unutra + prsa i ramena desnog vanjskog prema krilu. Prva akcija je zatvoriti to dodavanje tijelom i rukama. Skoči na prodor samo ako se krilo ne nudi za dodavanje.",
+      "why": "A zatvara dodavanje na krilo kad polubranitelja nema; B treba prodor prema sredini uz krilo koje se ne nudi za dodavanje."
+    }
+  },
+  "filesChanged": [
+    "content/scenario-bank/scenarios.json",
+    "scripts/scenario-bank/data/lw-parts/lw-families-a.json",
+    "scripts/apply-lw-batch-a-final-surgical.mjs",
+    "scripts/audit-lw-batch-a.mjs",
+    "scripts/lw-gold-batch-a-review.json",
+    "scripts/lw-gold-batch-a-review.md",
+    "scripts/lw-gold-batch-a-audit.json",
+    "scripts/lw-gold-batch-a-audit.md",
+    "scripts/lw-gold-batch-a-duplicate-audit.json",
+    "scripts/lw-gold-batch-a-status.json",
+    "scripts/lw-batch-a-final-surgical-report.json",
+    "scripts/lw-batch-a-final-surgical-report.md"
+  ]
+}

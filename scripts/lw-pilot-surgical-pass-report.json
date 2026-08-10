@@ -1,0 +1,117 @@
+{
+  "status": "SURGICAL_PASS_APPLIED",
+  "changed": [
+    "scn_bank_941",
+    "scn_bank_942",
+    "scn_bank_943",
+    "scn_bank_944",
+    "scn_bank_945",
+    "scn_bank_946",
+    "scn_bank_947",
+    "scn_bank_949",
+    "scn_bank_950"
+  ],
+  "unchanged": [
+    "scn_bank_948"
+  ],
+  "replaceNeeded": [
+    {
+      "id": "scn_bank_948",
+      "verdict": "REPLACE NEEDED",
+      "reason": "Teaching decision matches RW scn_bank_878: free wing, help still >2m from take-off, finish now. Side reversal + incomplete pivot seal is not a sufficient LW-native fork. Missing LW-specific concept e.g. 6v5 feed-vs-finish when pivot IS sealed on left half, or take-off covered while 6v5."
+    }
+  ],
+  "geometry949": {
+    "verdict": "CORRECTED",
+    "before": "Wrong: left-wing defender vs opposing left back / left-side wing labels",
+    "after": "Left-wing defender faces opposing right back (ball) and opposing right wing (wide pass threat); half takes ball carrier; wing protects wing pass until handover — mirrors RW 880 orientation correctly mirrored for left side"
+  },
+  "lockOk": true,
+  "lockHashes": {
+    "LB": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+    "RB": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+    "CB": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+    "RW": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21"
+  },
+  "perScenario": {
+    "scn_bank_941": {
+      "tactical": "POOR distractor replaced (cartoon long-range → early crowd LB); concept kept",
+      "language": "Natural coach HR; removed prava širina/kanal/šav",
+      "avsb": "A width now; B step inside after bind+call — distinct",
+      "perception": false,
+      "handedness": "none"
+    },
+    "scn_bank_942": {
+      "tactical": "None — concept kept",
+      "language": "Removed široki izlaz/linija živa/sebična geometrija; coach training language",
+      "avsb": "A ask now; B return after beat — distinct",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_943": {
+      "tactical": "None — concept kept",
+      "language": "Removed prikvači/dug kanal/zbijena staza; simpler feet/chest coaching",
+      "avsb": "A hold width now; B back-door later — distinct",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_944": {
+      "tactical": "Question no longer gives away take-off; finish still from GK next move",
+      "language": "Removed šav/linija odraza/odvojiš noge phrasing",
+      "avsb": "A jump now; B pivot if jump closed — distinct",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_945": {
+      "tactical": "None — concept kept (strong)",
+      "language": "Light polish only (hodnik/izlaz/kisik)",
+      "avsb": "Unchanged structure",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_946": {
+      "tactical": "Clarified full picture decides (GK+hands+free LB+late WD+lane), not step-out alone; anti-auto-lob",
+      "language": "Removed folklore/meki pas formula language",
+      "avsb": "A short inside; B lob only if hands drop + LB covered",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_947": {
+      "tactical": "None — concept kept",
+      "language": "Light polish (staza/brojčane slike)",
+      "avsb": "Unchanged structure",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_948": {
+      "tactical": "UNCHANGED — REPLACE NEEDED",
+      "language": "Unchanged",
+      "avsb": "n/a",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_949": {
+      "tactical": "Geometry corrected: opp right back + right wing; team rule explicit",
+      "language": "Natural defensive HR",
+      "avsb": "A controlled half-step; B full jump after handover — distinct",
+      "perception": true,
+      "handedness": "none"
+    },
+    "scn_bank_950": {
+      "tactical": "None — concept kept",
+      "language": "Replaced daleki skip / presjeci stazu with natural kontra language",
+      "avsb": "Unchanged structure",
+      "perception": true,
+      "handedness": "none"
+    }
+  },
+  "pilotCount": 10,
+  "validation": {
+    "terminology": "PASS",
+    "lbGold": "PASS",
+    "rbGold": "PASS",
+    "cbGold": "PASS",
+    "rwGold": "PASS",
+    "lwPilotAudit": "PASS WITH GAPS (948 REPLACE NEEDED)"
+  }
+}

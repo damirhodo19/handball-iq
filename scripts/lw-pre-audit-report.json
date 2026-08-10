@@ -1,0 +1,807 @@
+{
+  "generatedAt": "2026-08-10T07:01:46.552Z",
+  "mode": "PRE_AUDIT_ONLY",
+  "bankHashSha256": "4b07b5588a8ca8085269fd9952f6c8b2bd1508c37f7c122a4fb84eaa8cad7df0",
+  "checkpoint": {
+    "commit": "26f5999",
+    "tag": "rw-gold-approved-2026-08-09"
+  },
+  "lockCheck": {
+    "leftBackCount": 62,
+    "rightBackCount": 63,
+    "centreBackCount": 70,
+    "rightWingCount": 65,
+    "leftWingCount": 40,
+    "scenariosJsonModifiedByAudit": false
+  },
+  "verdict": "CURRENT LW BANK NEEDS GOLD REBUILD",
+  "verdictReason": [
+    "Only ~11 true teaching families under 40 IDs — rest is score/minute clone padding.",
+    "Croatian is systematically machine-translated (vi-form, calques, football/basketball leaks, club names).",
+    "Coverage of real LW decision space is mostly MISSING vs a gold architecture (hips, take-off geometry, when-not-to-enter, 5v6/7v6, empty goal, passive, set defence, systems beyond unspecified 6:0).",
+    "GK logic is formulaic; Expert labels are clock/adjective driven.",
+    "Defence has a single thin cloned family.",
+    "Not salvageable by polish alone — needs position-native gold rebuild after RW-quality process (not RW mirror)."
+  ],
+  "counts": {
+    "primaryLeftWing": 40,
+    "trueTeachingFamilies": 11,
+    "cloneFamilies": 11,
+    "attack": 37,
+    "defence": 3,
+    "attackPct": 92.5,
+    "defencePct": 7.5,
+    "difficulty": {
+      "Beginner": 7,
+      "Intermediate": 12,
+      "Advanced": 15,
+      "Expert": 6
+    },
+    "perceptionTagged": 0,
+    "perceptionPct": 0,
+    "handednessTagged": 0,
+    "handednessTaggedIds": [],
+    "handednessMentionedInTextIds": [
+      "scn_bank_080",
+      "scn_bank_083",
+      "scn_bank_091",
+      "scn_bank_094",
+      "scn_bank_102",
+      "scn_bank_105"
+    ],
+    "defensiveSystemCoverage": {
+      "UNSPECIFIED": 40
+    },
+    "numericalFamilyCount": 1,
+    "transitionFamilyCount": 2,
+    "goalkeeperFamilyCount": 6,
+    "entryFamilyCount": 1,
+    "pivotCooperationFamilyCount": 1,
+    "leftBackCooperationFamilyCount": 2,
+    "gameStateFamilyCount": 1,
+    "emptyGoalFamilyCount": 0,
+    "passiveFamilyCount": 0,
+    "endGameFamilyCount": 1,
+    "scenariosWithViFormHr": 40,
+    "scenariosWithAwkwardHr": 37
+  },
+  "trueFamilies": [
+    {
+      "familyKey": "lw_basic_near_post_read",
+      "titleEn": "Left Wing — Basic Near-Post Read",
+      "count": 4,
+      "ids": [
+        "scn_bank_074",
+        "scn_bank_085",
+        "scn_bank_096",
+        "scn_bank_107"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_074",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Beginner",
+      "teachingObjective": "GK drifts far → finish near post",
+      "realism": "BORDERLINE — thin cue (“half step toward far post”) with no take-off geometry",
+      "lwSpecific": "WEAK — generic wing GK post read; could be RW with posts swapped",
+      "geometry": "QUESTIONABLE — no sideline/take-off/body orientation; “near/far” from LW not reconstructed",
+      "gkLogic": "SIMPLISTIC — far drift ⇒ always near post",
+      "abQuality": "WEAK — B lob without dropped-hands cue; C/D cartoon",
+      "questionQuality": "OK but shallow",
+      "difficultyAssessed": "Beginner",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": false,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 9,
+      "mainRisk": "Machine HR + simplistic GK formula + clone padding",
+      "hrQuotes": [
+        "Primate na lijevom krilu",
+        "Što prvo završavate?",
+        "pomicanje daljeg stupića ostavlja otvorenim blizu stupića",
+        "vašeg pokojnog braniča",
+        "Vozite unutra prema sredini"
+      ]
+    },
+    {
+      "familyKey": "lw_far_post_under_centred_keeper",
+      "titleEn": "Left Wing — Far-Post Under Centred Keeper",
+      "count": 4,
+      "ids": [
+        "scn_bank_075",
+        "scn_bank_086",
+        "scn_bank_097",
+        "scn_bank_108"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_075",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Intermediate",
+      "teachingObjective": "Centred GK → far-post finish before recovering defender",
+      "realism": "BORDERLINE — “catch a jump on LW” unclear; defender recovery one step",
+      "lwSpecific": "WEAK — generic wing finish side choice",
+      "geometry": "QUESTIONABLE — “vratar ostaje na sredini od šest metara”; “završni sloj”; take-off not stated",
+      "gkLogic": "SIMPLISTIC — centred keeper ⇒ automatic far post",
+      "abQuality": "WEAK — B near-post vs centred GK poorly motivated",
+      "questionQuality": "BAD — “Gdje postavljaš završni sloj” is not coach language",
+      "difficultyAssessed": "Beginner/Intermediate",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 9,
+      "mainRisk": "Broken HR terminology + automatic far-post rule",
+      "hrQuotes": [
+        "hvatate preskok na lijevom krilu",
+        "Gdje postavljaš završni sloj",
+        "lijevi bočni branič",
+        "Snaga u bližu stativu igra na njihovoj snazi"
+      ]
+    },
+    {
+      "familyKey": "lw_lob_vs_stepping_keeper",
+      "titleEn": "Left Wing — Lob vs Stepping Keeper",
+      "count": 4,
+      "ids": [
+        "scn_bank_076",
+        "scn_bank_087",
+        "scn_bank_098",
+        "scn_bank_109"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_076",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Advanced",
+      "teachingObjective": "GK steps out early → lob",
+      "realism": "QUESTIONABLE — “Kiel plays high” club sticker; geometry thin",
+      "lwSpecific": "WEAK — generic wing lob vs advancing GK",
+      "geometry": "QUESTIONABLE — narrow angle asserted without take-off path",
+      "gkLogic": "SIMPLISTIC — step out ⇒ automatic lob; “lob lane” English calque in HR explanation",
+      "abQuality": "MEDIOCRE",
+      "questionQuality": "OK",
+      "difficultyAssessed": "Intermediate",
+      "difficultyLabelOk": false,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 9,
+      "mainRisk": "Club name + automatic lob formula + HR corruption",
+      "hrQuotes": [
+        "Kiel igra visoko",
+        "lob lane preko bližeg ramena",
+        "Snažan snažan šut",
+        "Povucite se izvan"
+      ]
+    },
+    {
+      "familyKey": "lw_fast_break_arrival_timing",
+      "titleEn": "Left Wing — Fast-Break Arrival Timing",
+      "count": 4,
+      "ids": [
+        "scn_bank_077",
+        "scn_bank_088",
+        "scn_bank_099",
+        "scn_bank_110"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_077",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Intermediate",
+      "teachingObjective": "Sprint on outlet so you arrive at 6m with the catch",
+      "realism": "BORDERLINE — “right back releases long outlet” but LW lane not fully drawn",
+      "lwSpecific": "PARTIAL — transition timing is wing-relevant but not left-native",
+      "geometry": "THIN — one recovering defender between player and 6m; lane unclear",
+      "gkLogic": "N/A",
+      "abQuality": "OK concept; distractors weak",
+      "questionQuality": "BAD HR — “Kada započinjete sprint tako da cilj ostane?”",
+      "difficultyAssessed": "Intermediate",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 8,
+      "mainRisk": "Machine HR; incomplete first-wave geometry; not LB-cooperation native",
+      "hrQuotes": [
+        "Desna poleđina oslobađa dugački otvor",
+        "Sprintajte na izlazu",
+        "prije nego što se ispust pusti",
+        "cilj ostane"
+      ]
+    },
+    {
+      "familyKey": "lw_back_door_vs_ball_watching_6_0",
+      "titleEn": "Left Wing — Back-Door vs Ball-Watching 6:0",
+      "count": 4,
+      "ids": [
+        "scn_bank_078",
+        "scn_bank_089",
+        "scn_bank_100",
+        "scn_bank_111"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_078",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Advanced",
+      "teachingObjective": "Ball-watching wing defender → cut behind to 6m",
+      "realism": "PLAUSIBLE idea; wording broken",
+      "lwSpecific": "YES potential — entry timing / when to leave width",
+      "geometry": "PARTIAL — defender head to ball and pinches; LB about to receive stated",
+      "gkLogic": "N/A",
+      "abQuality": "OK structure (cut vs hold width)",
+      "questionQuality": "BAD — “opciju najveće vrijednosti” academic",
+      "difficultyAssessed": "Advanced",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 8,
+      "mainRisk": "Useful family buried under machine translation",
+      "hrQuotes": [
+        "Sjecanje iza braniča",
+        "ulaz iza leđa srezana na šest metara",
+        "opciju najveće vrijednosti",
+        "poluzaštitnu stazu"
+      ]
+    },
+    {
+      "familyKey": "lw_power_play_wing_overload",
+      "titleEn": "Left Wing — Power-Play Wing Overload",
+      "count": 4,
+      "ids": [
+        "scn_bank_079",
+        "scn_bank_090",
+        "scn_bank_101",
+        "scn_bank_112"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_079",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Advanced",
+      "teachingObjective": "6v5 late rotation → finish or feed sealed pivot",
+      "realism": "PLAUSIBLE numerical idea",
+      "lwSpecific": "PARTIAL — wing overload in 6v5 is real but cues thin",
+      "geometry": "THIN — “rotates one player late from middle”; pivot seal vague",
+      "gkLogic": "N/A",
+      "abQuality": "OK",
+      "questionQuality": "OK concept / bad HR",
+      "difficultyAssessed": "Advanced",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 8,
+      "mainRisk": "HR nonsense (“bližnjeg”, “zabrtvi”, “Zaradiš napad”); power-play English framing",
+      "hrQuotes": [
+        "rotira jednog igrača kasno iz sredine",
+        "Pivot zatvara bližnjeg braniča",
+        "dok osovina ne zabrtvi dublje",
+        "Zaradiš napad ili nahranite zapečaćenog Pivota",
+        "Driblati uz bočnu liniju"
+      ]
+    },
+    {
+      "familyKey": "lw_tied_game_wing_finish",
+      "titleEn": "Left Wing — Tied Game Wing Finish",
+      "count": 3,
+      "ids": [
+        "scn_bank_080",
+        "scn_bank_091",
+        "scn_bank_102"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_080",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Expert",
+      "teachingObjective": "Late pressure finish with one GK read",
+      "realism": "WEAK — score says 22–21 but title “tied”; coach signals calm finish",
+      "lwSpecific": "WEAK — generic late finish; hand “right-hand bias” sticker",
+      "geometry": "THIN — playable angle asserted",
+      "gkLogic": "QUESTIONABLE — shade strong side ⇒ opposite / change height without concrete feet/arms",
+      "abQuality": "WEAK",
+      "questionQuality": "OK",
+      "difficultyAssessed": "Intermediate/Advanced",
+      "difficultyLabelOk": false,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "REMOVE / MERGE",
+      "risk": 9,
+      "mainRisk": "Expert label from clock; contradictory score/title; fake hand shade",
+      "hrQuotes": [
+        "zasjenjuje tvoju snažnu sklonost ka desnoj ruci",
+        "Trener signalizira mirnu završnicu, a ne junaštvo",
+        "zaradiš slabu stranu",
+        "sjene tvoju jaku stranu"
+      ]
+    },
+    {
+      "familyKey": "lw_keeper_first_step_read",
+      "titleEn": "Left Wing — Keeper First-Step Read",
+      "count": 4,
+      "ids": [
+        "scn_bank_081",
+        "scn_bank_092",
+        "scn_bank_103",
+        "scn_bank_114"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_081",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Intermediate",
+      "teachingObjective": "Fake → read GK first step → finish abandoned corner",
+      "realism": "BORDERLINE textbook",
+      "lwSpecific": "WEAK — generic wing GK timing drill",
+      "geometry": "THIN",
+      "gkLogic": "SIMPLISTIC — upright keeper + one fake formula",
+      "abQuality": "MEDIOCRE",
+      "questionQuality": "BAD HR — “čuvara”, “krivotvorenje”, “puštanja”",
+      "difficultyAssessed": "Intermediate",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 8,
+      "mainRisk": "Football/keeper vocabulary; formulaic GK read",
+      "hrQuotes": [
+        "Koje informacije uzimate od čuvara prije puštanja?",
+        "Jedno kratko krivotvorenje",
+        "zaradiš napušteni kut",
+        "Visoki uspravni čuvari"
+      ]
+    },
+    {
+      "familyKey": "lw_transition_cover_priority",
+      "titleEn": "Left Wing — Transition Cover Priority",
+      "count": 3,
+      "ids": [
+        "scn_bank_082",
+        "scn_bank_093",
+        "scn_bank_104"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_082",
+      "attackOrDefence": "Defence",
+      "labeledDifficulty": "Advanced",
+      "teachingObjective": "After LW turnover, cut far-wing skip lane first",
+      "realism": "QUESTIONABLE — “Zagreb outlet to right wing”; responsibility may be wrong without teammate positions",
+      "lwSpecific": "PARTIAL — transition defence from left side, but universal rule without  geometry of partners",
+      "geometry": "INCOMPLETE — no second defender location; far-wing skip asserted",
+      "gkLogic": "N/A",
+      "abQuality": "B stay on own wing is a real alternative — A not proven without teammate map",
+      "questionQuality": "OK",
+      "difficultyAssessed": "Advanced",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 9,
+      "mainRisk": "Club sticker + incomplete  transition geometry; only defence family in bank",
+      "hrQuotes": [
+        "Zagrebački ispust odmah na desno krilo",
+        "presjekli stazu za preuzimanje dalekog krila",
+        "pritisnite najbližu utičnicu",
+        "signalizirate grešku"
+      ]
+    },
+    {
+      "familyKey": "lw_extreme_angle_finish",
+      "titleEn": "Left Wing — Extreme-Angle Finish",
+      "count": 3,
+      "ids": [
+        "scn_bank_083",
+        "scn_bank_094",
+        "scn_bank_105"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_083",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Expert",
+      "teachingObjective": "Extreme angle + GK shades strong hand → low near-post skim",
+      "realism": "BORDERLINE",
+      "lwSpecific": "PARTIAL — extreme wing angle is position-relevant",
+      "geometry": "THIN — “sliver of goal”; help one step from block",
+      "gkLogic": "QUESTIONABLE — right-hander shade ⇒ low near skim as fixed technique",
+      "abQuality": "WEAK distractors",
+      "questionQuality": "OK",
+      "difficultyAssessed": "Advanced",
+      "difficultyLabelOk": false,
+      "perceptionShouldBe": true,
+      "perceptionActual": false,
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "risk": 8,
+      "mainRisk": "Expert from angle adjective; hand→shot formula; weak HR",
+      "hrQuotes": [
+        "dešnjak koji završava i zasjeni to oslobađanje",
+        "Nisko pri stupu preletite po podu",
+        "pokrivenog polubranika",
+        "Centralna moć je dar čuvaru"
+      ]
+    },
+    {
+      "familyKey": "lw_simple_width_principle",
+      "titleEn": "Left Wing — Simple Width Principle",
+      "count": 3,
+      "ids": [
+        "scn_bank_084",
+        "scn_bank_095",
+        "scn_bank_106"
+      ],
+      "clonePadding": true,
+      "representativeId": "scn_bank_084",
+      "attackOrDefence": "Attack",
+      "labeledDifficulty": "Beginner",
+      "teachingObjective": "Hold true width on sideline in 6:0",
+      "realism": "YES — basic but real",
+      "lwSpecific": "YES — width principle is wing-native (not left-exclusive)",
+      "geometry": "OK for Beginner — standing 1m inside sideline",
+      "gkLogic": "N/A",
+      "abQuality": "OK (hold width vs early cut)",
+      "questionQuality": "OK",
+      "difficultyAssessed": "Beginner",
+      "difficultyLabelOk": true,
+      "perceptionShouldBe": false,
+      "perceptionActual": false,
+      "coachTest": "BORDERLINE",
+      "recommendation": "POLISH",
+      "risk": 6,
+      "mainRisk": "HR still machine-like; only thin positional teaching family that is salvageable",
+      "hrQuotes": [
+        "Držite pravu širinu",
+        "krenite prečicom",
+        "Spustite do pola",
+        "dugo ispuštanje"
+      ]
+    }
+  ],
+  "coverageMatrix": {
+    "6:0": {
+      "status": "TACTICALLY QUESTIONABLE",
+      "families": [
+        "lw_basic_near_post_read",
+        "lw_far_post_under_centred_keeper",
+        "lw_back_door_vs_ball_watching_6_0",
+        "lw_simple_width_principle"
+      ],
+      "ids": [
+        "scn_bank_074",
+        "scn_bank_085",
+        "scn_bank_096",
+        "scn_bank_107",
+        "scn_bank_075",
+        "scn_bank_086",
+        "scn_bank_097",
+        "scn_bank_108",
+        "scn_bank_078",
+        "scn_bank_089",
+        "scn_bank_100",
+        "scn_bank_111",
+        "scn_bank_084",
+        "scn_bank_095",
+        "scn_bank_106"
+      ]
+    },
+    "5:1": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "3:2:1": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "3:3": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "4:2": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "1:5": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "5+1": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "4+2": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "open / individual defence": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "1v1": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "Left Back cooperation": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_fast_break_arrival_timing",
+        "lw_back_door_vs_ball_watching_6_0"
+      ],
+      "ids": [
+        "scn_bank_077",
+        "scn_bank_088",
+        "scn_bank_099",
+        "scn_bank_110",
+        "scn_bank_078",
+        "scn_bank_089",
+        "scn_bank_100",
+        "scn_bank_111"
+      ]
+    },
+    "pivot cooperation": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_power_play_wing_overload"
+      ],
+      "ids": [
+        "scn_bank_079",
+        "scn_bank_090",
+        "scn_bank_101",
+        "scn_bank_112"
+      ]
+    },
+    "entry timing": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_back_door_vs_ball_watching_6_0"
+      ],
+      "ids": [
+        "scn_bank_078",
+        "scn_bank_089",
+        "scn_bank_100",
+        "scn_bank_111"
+      ]
+    },
+    "when NOT to enter": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "take off geometry": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "wing defender hip read": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "goalkeeper near-post movement": {
+      "status": "TACTICALLY QUESTIONABLE",
+      "families": [
+        "lw_basic_near_post_read"
+      ],
+      "ids": [
+        "scn_bank_074",
+        "scn_bank_085",
+        "scn_bank_096",
+        "scn_bank_107"
+      ]
+    },
+    "goalkeeper depth": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "goalkeeper step-out": {
+      "status": "TACTICALLY QUESTIONABLE",
+      "families": [
+        "lw_lob_vs_stepping_keeper",
+        "lw_keeper_first_step_read"
+      ],
+      "ids": [
+        "scn_bank_076",
+        "scn_bank_087",
+        "scn_bank_098",
+        "scn_bank_109",
+        "scn_bank_081",
+        "scn_bank_092",
+        "scn_bank_103",
+        "scn_bank_114"
+      ]
+    },
+    "goalkeeper patience / late finish": {
+      "status": "TACTICALLY QUESTIONABLE",
+      "families": [
+        "lw_tied_game_wing_finish",
+        "lw_keeper_first_step_read"
+      ],
+      "ids": [
+        "scn_bank_080",
+        "scn_bank_091",
+        "scn_bank_102",
+        "scn_bank_081",
+        "scn_bank_092",
+        "scn_bank_103",
+        "scn_bank_114"
+      ]
+    },
+    "first wave 2v1": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "first wave 3v2": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "second wave": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "partially set defence": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "6v5": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_power_play_wing_overload"
+      ],
+      "ids": [
+        "scn_bank_079",
+        "scn_bank_090",
+        "scn_bank_101",
+        "scn_bank_112"
+      ]
+    },
+    "5v6": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "7v6": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "own empty goal": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "opponent empty goal": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "after exclusion": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_power_play_wing_overload"
+      ],
+      "ids": [
+        "scn_bank_079",
+        "scn_bank_090",
+        "scn_bank_101",
+        "scn_bank_112"
+      ]
+    },
+    "passive play": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "lead late": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "trail late": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "tie final possession": {
+      "status": "DUPLICATED",
+      "families": [
+        "lw_tied_game_wing_finish"
+      ],
+      "ids": [
+        "scn_bank_080",
+        "scn_bank_091",
+        "scn_bank_102"
+      ]
+    },
+    "transition defence": {
+      "status": "TACTICALLY QUESTIONABLE",
+      "families": [
+        "lw_transition_cover_priority"
+      ],
+      "ids": [
+        "scn_bank_082",
+        "scn_bank_093",
+        "scn_bank_104"
+      ]
+    },
+    "set defence responsibility": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "handover": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "inside help": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "recovery to wing": {
+      "status": "MISSING",
+      "families": [],
+      "ids": []
+    },
+    "first wave attack timing": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_fast_break_arrival_timing"
+      ],
+      "ids": [
+        "scn_bank_077",
+        "scn_bank_088",
+        "scn_bank_099",
+        "scn_bank_110"
+      ]
+    },
+    "positional width": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_simple_width_principle"
+      ],
+      "ids": [
+        "scn_bank_084",
+        "scn_bank_095",
+        "scn_bank_106"
+      ]
+    },
+    "extreme angle finish": {
+      "status": "LANGUAGE QUESTIONABLE",
+      "families": [
+        "lw_extreme_angle_finish"
+      ],
+      "ids": [
+        "scn_bank_083",
+        "scn_bank_094",
+        "scn_bank_105"
+      ]
+    }
+  },
+  "humanReviewSelectionRule": "11 unique-family representatives + 4 high-risk clones (absurd sticker / defence / numerical / late-game)",
+  "existingInfrastructure": {
+    "lwGoldTaxonomy": false,
+    "lwGoldParts": false,
+    "lwGoldValidator": false,
+    "lwGoldBuildScript": false,
+    "categoryTargetInTypesTs": 60,
+    "note": "No LW gold pipeline exists. CATEGORY_TARGETS[\"Left Wing\"]=60 is aspirational only."
+  }
+}

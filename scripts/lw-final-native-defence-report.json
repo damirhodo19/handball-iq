@@ -1,0 +1,384 @@
+{
+  "pass": "FINAL LW PILOT NATIVE DEFENCE",
+  "phaseA": {
+    "strongCount": 2,
+    "strongIds": [
+      "C1",
+      "C2"
+    ],
+    "phaseBAllowed": true,
+    "assignment": {
+      "scn_bank_949": "C1 / lw_def_recover_wing_from_second_pivot_turnover",
+      "scn_bank_950": "C2 / lw_def_empty_own_fill_from_second_pivot_turnover"
+    }
+  },
+  "phaseBAllowed": true,
+  "replacements": {
+    "scn_bank_949": {
+      "oldFamilyKey": "lw_def_deny_backdoor_left",
+      "newFamilyKey": "lw_def_recover_wing_from_second_pivot_turnover"
+    },
+    "scn_bank_950": {
+      "oldFamilyKey": "lw_def_recovery_to_wing_after_help",
+      "newFamilyKey": "lw_def_empty_own_fill_from_second_pivot_turnover"
+    }
+  },
+  "mirrorTests": {
+    "scn_bank_949": {
+      "result": "PASS",
+      "rationale": "Abstract wing-recovery can flip, but the decision occurs only because LW was still in offensive second-pivot position after entry. Not a normal set-wing mirror."
+    },
+    "scn_bank_950": {
+      "result": "PASS",
+      "rationale": "Empty-goal fill can exist for RW, but body-priority inverts because LW entered as second pivot with GK out. No RW empty-own defence twin."
+    }
+  },
+  "perceptionHonesty": {
+    "scn_bank_949": {
+      "what": "See/hear turnover near left 9m and see opp right wing already sprinting into empty left wing lane while still on six",
+      "how": "Cue forces outward recovery to wing outlet instead of middle chase",
+      "whyB": "If a teammate already fills the wing lane by body/call, staying one beat inside becomes B",
+      "honest": true
+    },
+    "scn_bank_950": {
+      "what": "See own GK out, ball carrier chest opening to empty goal, and LB nearer to the wing than you are to empty-goal cover if you leave",
+      "how": "Cue prioritizes empty-goal fill from second-pivot start over automatic wing sprint",
+      "whyB": "If a teammate already fills empty-goal lane and calls it, wing sprint becomes B",
+      "honest": true
+    }
+  },
+  "scorecard": [
+    {
+      "id": "scn_bank_941",
+      "familyKey": "lw_width_hold_true_width",
+      "teachingObjective": "Hold left-sideline width before any defender is bound",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "perception": false,
+      "handedness": "none",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "closestRwGold": "scn_bank_871 / width hold families",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 2,
+      "note": "True-width hold; wing universal principle with LW/LB left-side framing",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_942",
+      "familyKey": "lw_lb_51_outlet_ask_now",
+      "teachingObjective": "LB cooperation under 5:1 — be the safe wide outlet",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "5-1",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "scn_bank_872 outlet ask families",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 2,
+      "note": "5:1 LW–LB outlet ask while WD faces LB",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_943",
+      "familyKey": "lw_wd_feet_decide_first_move",
+      "teachingObjective": "Feet/chest read before first off-ball move",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "closestRwGold": "RW wing-defender feet reads",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 3,
+      "note": "Feet/chest read before first move; left-side framed",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_944",
+      "familyKey": "lw_takeoff_321_half_steps",
+      "teachingObjective": "Left take-off geometry created by 3:2:1 half step-out",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "3-2-1",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "scn_bank_875 / 3:2:1 take-off",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 3,
+      "note": "3:2:1 take-off after half steps on LB drive",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_945",
+      "familyKey": "lw_second_pivot_release_to_width",
+      "teachingObjective": "Exit second-pivot stack and recover left width when LB drive dies",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "RW second-pivot enter families (attack)",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 3,
+      "note": "Exit second-pivot stack to left width when LB drive dies",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_946",
+      "familyKey": "lw_gk_stepout_hands_high_soft_inside",
+      "teachingObjective": "Anti-folklore GK read — step-out with high hands → soft inside",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "RW GK lob families",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 2,
+      "note": "GK step-out hands high → soft inside to free LB",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_947",
+      "familyKey": "lw_sw_left_wd_late_one_more",
+      "teachingObjective": "Second wave: one more left action while WD still late",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "transition",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "RW second-wave families",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 3,
+      "note": "Second wave one more left action while WD late",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_948",
+      "familyKey": "lw_6v5_stay_wide_vs_entry_pivot",
+      "teachingObjective": "In 6v5, read pivot corridor + WD narrowing before choosing stay-wide vs entry — not automatic entry",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "6v5",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "RW 6v5 entry families",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 2,
+      "note": "6v5 stay wide vs enter onto own pivot",
+      "mirrorPass": null
+    },
+    {
+      "id": "scn_bank_949",
+      "familyKey": "lw_def_recover_wing_from_second_pivot_turnover",
+      "teachingObjective": "After turnover while still second pivot, recover the abandoned left wing lane before chasing middle ball",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "6v6",
+      "gameState": "none",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "scn_bank_930 / scn_bank_927",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 3,
+      "note": "Defence starts from LW second-pivot offensive position after turnover",
+      "mirrorPass": true
+    },
+    {
+      "id": "scn_bank_950",
+      "familyKey": "lw_def_empty_own_fill_from_second_pivot_turnover",
+      "teachingObjective": "After second-pivot turnover with empty own goal, fill the goal lane before automatic wing recovery",
+      "difficulty": "Expert",
+      "attackOrDefence": "Defence",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "7v6",
+      "gameState": "empty_goal_own",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "closestRwGold": "scn_bank_931 (conceptual body-between-ball-goal; no empty-own twin)",
+      "duplicateStatus": "none",
+      "abClarity": "CLEAR",
+      "coachRisk": 4,
+      "note": "Empty-own fill from second-pivot start; no RW empty-own defence twin",
+      "mirrorPass": true
+    }
+  ],
+  "totals": {
+    "total": 10,
+    "attack": 8,
+    "defence": 2,
+    "difficulty": {
+      "Beginner": 1,
+      "Intermediate": 3,
+      "Advanced": 5,
+      "Expert": 1
+    },
+    "perceptionTrue": 9,
+    "perceptionPct": 90,
+    "handedness": {
+      "none": 10
+    },
+    "systems": {
+      "6-0": 4,
+      "5-1": 1,
+      "3-2-1": 1,
+      "Mixed": 4
+    },
+    "stronglyNative": 8,
+    "contextuallyNative": 2,
+    "universal": 0,
+    "semanticDuplicates": 0,
+    "abAmbiguous": 0,
+    "maxCoachRisk": 4,
+    "mainlyWidthEntry": false
+  },
+  "dupChecks": [
+    {
+      "lw": "scn_bank_949",
+      "rw": "scn_bank_927",
+      "rwTitle": "Right Wing — Deny the Opponent’s Fast Restart After Turnover",
+      "status": "related_not_duplicate",
+      "reason": "RW teaches normal transition lane denial; LW starts from offensive second-pivot position"
+    },
+    {
+      "lw": "scn_bank_949",
+      "rw": "scn_bank_930",
+      "rwTitle": "Right Wing — Defence: Return Through the Correct Lane",
+      "status": "related_not_duplicate",
+      "reason": "RW teaches normal transition lane denial; LW starts from offensive second-pivot position"
+    },
+    {
+      "lw": "scn_bank_949",
+      "rw": "scn_bank_931",
+      "rwTitle": "Right Wing — Defence: Stop the First Wave",
+      "status": "not_duplicate",
+      "reason": "different teaching family / start geometry"
+    },
+    {
+      "lw": "scn_bank_950",
+      "rw": "scn_bank_927",
+      "rwTitle": "Right Wing — Deny the Opponent’s Fast Restart After Turnover",
+      "status": "not_duplicate",
+      "reason": "different teaching family / start geometry"
+    },
+    {
+      "lw": "scn_bank_950",
+      "rw": "scn_bank_930",
+      "rwTitle": "Right Wing — Defence: Return Through the Correct Lane",
+      "status": "not_duplicate",
+      "reason": "different teaching family / start geometry"
+    },
+    {
+      "lw": "scn_bank_950",
+      "rw": "scn_bank_931",
+      "rwTitle": "Right Wing — Defence: Stop the First Wave",
+      "status": "related_not_duplicate",
+      "reason": "RW 931 is first-wave body between ball/goal without empty-own or second-pivot start"
+    }
+  ],
+  "locks": {
+    "LB": {
+      "count": 62,
+      "hash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "expectedCount": 62,
+      "expectedHash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "countOk": true,
+      "hashOk": true
+    },
+    "RB": {
+      "count": 63,
+      "hash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "expectedCount": 63,
+      "expectedHash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "countOk": true,
+      "hashOk": true
+    },
+    "CB": {
+      "count": 70,
+      "hash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "expectedCount": 70,
+      "expectedHash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "countOk": true,
+      "hashOk": true
+    },
+    "RW": {
+      "count": 65,
+      "hash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "expectedCount": 65,
+      "expectedHash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "countOk": true,
+      "hashOk": true
+    },
+    "allOk": true
+  },
+  "lockedPilotSeedsUnchanged": true,
+  "blockers": [],
+  "verdict": "LW GOLD PILOT APPROVED",
+  "validators": {
+    "typecheck": "PASS",
+    "terminology": "PASS",
+    "uniqueSession": "PASS",
+    "personalization": "PASS",
+    "matchDayTactics": "PASS",
+    "tacticalSystems": "PASS",
+    "noPositionFallback": "PASS",
+    "archetypes": "PASS",
+    "leftBackGold": "PASS (62)",
+    "rightBackGold": "PASS (63)",
+    "centreBackGold": "PASS (70)",
+    "rightWingGold": "PASS (65, lockedRefsUnchanged)",
+    "auditScenarioQuality": "SKIPPED (mutating)"
+  },
+  "filesChanged": [
+    "content/scenario-bank/scenarios.json",
+    "scripts/scenario-bank/data/lw-pilot-10.json",
+    "scripts/lw-final-native-defence-plan.json",
+    "scripts/lw-final-native-defence-plan.md",
+    "scripts/lw-final-native-defence-report.json",
+    "scripts/lw-final-native-defence-report.md",
+    "scripts/lw-gold-pilot-final-gate.json",
+    "scripts/lw-gold-pilot-final-gate.md",
+    "scripts/lw-gold-pilot-10-review.md",
+    "scripts/lw-gold-pilot-10-review.json",
+    "scripts/apply-lw-final-native-defence.mjs",
+    "scripts/audit-lw-final-native-defence-gate.mjs",
+    "scripts/lw-final-native-defence-apply.json",
+    "scripts/.lw-final-def-lock-before.json"
+  ]
+}

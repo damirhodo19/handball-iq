@@ -1,0 +1,94 @@
+{
+  "phase": "LW_BATCH_C_FINAL_REPAIR_PHASE_A",
+  "verdict": "TWO STRONG FINALISTS FOUND",
+  "abandoned": {
+    "lw_def_comm_half": "semantic duplicate of 961/973/974",
+    "lw_def_sys_33_switch": "3:3 decorative; B requires different rule; no replacement 3:3-native LW concept survived remove-label"
+  },
+  "finalists": [
+    {
+      "id": "scn_bank_975",
+      "candidateFamilyKey": "lw_def_backdoor_deny",
+      "teachingArea": "set_defence",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "6v6",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "geometry": {
+        "LW": "defending left wing with contact/feel on opp RW",
+        "ball": "opp RB driving into the half gap",
+        "oppRW": "starts back-door cut behind LW toward six",
+        "half": "engaged on the drive, no takeover of the wing runner",
+        "cue": "drive pulls LW eyes inside; contact on wing softens"
+      },
+      "cue": "Drive pulls eyes inside while opp RW cuts back-door behind",
+      "A_now": "Keep contact feel and deny the back-door path — do not fully chase the drive",
+      "B_when": "Half/teammate already has contact and has called ownership of the runner",
+      "whyABeatsB": "Eyes-to-drive without contact leaves the back-door free; takeover not established",
+      "closestLw": "scn_bank_976 (entry deny while ball-watch) / 974",
+      "closestRw": "scn_bank_932 / 934",
+      "closestOther": null,
+      "mirrorVerdict": "UNIVERSAL_ESSENTIAL — not identical to RW 932/934 cocktails; cue is drive-distraction contact",
+      "removeSystemLabel": "N/A",
+      "duplicateVs976": "RELATED_BUT_DISTINCT — 976=ball-watch/entry start; 975=drive pulls eyes/contact maintenance on back-door",
+      "coachRisk": 4,
+      "classification": "STRONG"
+    },
+    {
+      "id": "scn_bank_977",
+      "candidateFamilyKey": "lw_gk_extreme_angle_body",
+      "teachingArea": "goalkeeper",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "geometry": {
+        "LW": "extreme left corner angle, ball secured",
+        "WD": "late or not on shooting arm",
+        "GK": "shade covers remaining sliver OR body/hands block skim line",
+        "help": "inside help arriving or already late",
+        "LB": "free for short return when skim dies"
+      },
+      "cue": "Extreme angle skim sliver + GK shade/body + help distance together",
+      "A_now": "Soft skim finish when sliver + shade + late help make it playable",
+      "B_when": "Help arrives or GK shade covers the remaining skim — short return to LB",
+      "whyABeatsB": "Playable skim is live; recycling wastes a real finish",
+      "closestLw": "scn_bank_946 / 955 / 956",
+      "closestRw": "no extreme-angle skim-vs-recycle twin",
+      "closestOther": null,
+      "mirrorVerdict": "STRONGLY_LW_NATIVE — extreme left angle geometry",
+      "removeSystemLabel": "N/A",
+      "duplicateVsExistingGk": "RELATED_BUT_DISTINCT — not post-pick (955/956/875/900) and not lob-vs-pass (946); skim vs recycle under extreme angle + body/help",
+      "coachRisk": 4,
+      "classification": "STRONG",
+      "note": "GK allowed only because architecture differs from corner-shade folklore"
+    }
+  ],
+  "rejectedCandidates": [
+    { "familyKey": "lw_def_sys_33_switch", "class": "REJECT", "why": "no 3:3-native LW defence survived remove-label" },
+    { "familyKey": "lw_sys_33_pressure_release", "class": "REJECT", "why": "RW 936 twin" },
+    { "familyKey": "lw_def_comm_half", "class": "REJECT", "why": "961/973/974 duplicate" },
+    { "familyKey": "lw_def_protect_opp_wing", "class": "REJECT", "why": "880/962 DNA" },
+    { "familyKey": "lw_def_lb_wing_coop", "class": "REJECT", "why": "962 twin" },
+    { "familyKey": "lw_stay_wide_inside_help", "class": "REJECT", "why": "RW 895 semantic twin" },
+    { "familyKey": "lw_fw_3v2_hold_width", "class": "REJECT", "why": "RW 876 twin" },
+    { "familyKey": "lw_sw_advantage_gone", "class": "REJECT", "why": "RW 877 twin" },
+    { "familyKey": "lw_trans_lane_vs_recovery", "class": "REJECT", "why": "RW 905 twin" },
+    { "familyKey": "lw_6v5_free_finish", "class": "REJECT", "why": "RW 917 twin" },
+    { "familyKey": "lw_7v6_or_empty_opp", "class": "REJECT", "why": "RW 912/913/915" },
+    { "familyKey": "lw_empty_own_safe_return", "class": "REJECT", "why": "RW 879 twin" },
+    { "familyKey": "lw_late_trail_create", "class": "REJECT", "why": "RW 922 twin" },
+    { "familyKey": "lw_short_clock", "class": "REJECT", "why": "RW 925/926 twin" },
+    { "familyKey": "lw_sys_42_corridor", "class": "REJECT", "why": "RW 937 twin" },
+    { "familyKey": "lw_sys_15_outlet_width", "class": "REJECT", "why": "decorative 1:5" },
+    { "familyKey": "lw_gk_near_post_commit", "class": "REJECT", "why": "RW 875 / corner-pick architecture" },
+    { "familyKey": "lw_gk_late_movement_patience", "class": "REJECT", "why": "overlaps 955/956" }
+  ],
+  "questionable": [
+    { "familyKey": "lw_def_backdoor_deny", "note": "Must stay distinct from 976 in writing — drive-distraction contact vs ball-watch entry" }
+  ]
+}

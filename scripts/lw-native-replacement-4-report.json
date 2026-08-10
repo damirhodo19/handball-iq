@@ -1,0 +1,170 @@
+{
+  "status": "PHASE_B_APPLIED",
+  "changeLog": [
+    {
+      "id": "scn_bank_945",
+      "oldFamilyKey": "lw_entry_when_not",
+      "newFamilyKey": "lw_second_pivot_release_to_width",
+      "teachingArea": "second_pivot_exit",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none"
+    },
+    {
+      "id": "scn_bank_947",
+      "oldFamilyKey": "lw_fw_3v2_hold_left_width",
+      "newFamilyKey": "lw_sw_left_wd_late_one_more",
+      "teachingArea": "second_wave_left",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none"
+    },
+    {
+      "id": "scn_bank_949",
+      "oldFamilyKey": "lw_def_controlled_help_keep_wing",
+      "newFamilyKey": "lw_def_deny_backdoor_left",
+      "teachingArea": "set_defence_deny_entry",
+      "attackOrDefence": "Defence",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "handedness": "none"
+    },
+    {
+      "id": "scn_bank_950",
+      "oldFamilyKey": "lw_def_trans_3v2_own_side_lane",
+      "newFamilyKey": "lw_def_recovery_to_wing_after_help",
+      "teachingArea": "set_defence_recovery",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none"
+    }
+  ],
+  "lockOk": true,
+  "lwCount": 50,
+  "phaseA": [
+    {
+      "id": "scn_bank_945",
+      "candidateFamilyKey": "lw_second_pivot_release_to_width",
+      "teachingArea": "second_pivot_exit",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "difficulty": "Advanced",
+      "likelyPerception": true,
+      "likelyHandedness": "none",
+      "primaryTacticalProblem": "LW has already entered as second pivot on the left six; LB loses the drive; first pivot still occupies left half — stacked and useless",
+      "exactDecisionFork": "Sprint back to width to reopen left stretch vs stay fighting as crowded second pivot",
+      "whyLwNative": "Trains LW–LB–left-pivot congestion after an entry already happened — complementary to 948 (don't enter onto pivot), not the same lesson",
+      "closestRw": "scn_bank_918 (short return after jump when RB drew two) — different trigger and role",
+      "whyNotSame": "918 is airborne short return after RB bind; 945 is second-pivot exit when LB drive dies and left six is stacked",
+      "closestOther": "LW 948 (don't enter) — complementary before/after entry pair",
+      "coverageGap": "return from entry / second-pivot responsibility",
+      "semanticDuplicationRisk": 2,
+      "rank": "STRONG",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    },
+    {
+      "id": "scn_bank_947",
+      "candidateFamilyKey": "lw_sw_left_wd_late_one_more",
+      "teachingArea": "second_wave_left",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "Mixed",
+      "numerical": "transition",
+      "difficulty": "Advanced",
+      "likelyPerception": true,
+      "likelyHandedness": "none",
+      "primaryTacticalProblem": "First wave died through the middle/right; defence half-set; left wing defender still late on the left lane",
+      "exactDecisionFork": "One more timed left-side advantage action (ask/arrive) vs full positional reset",
+      "whyLwNative": "Second-wave exploitation specifically because LEFT WD is late after the first wave collapsed elsewhere — not generic 'hold width in 3v2'",
+      "closestRw": "scn_bank_877 (second wave: stop forcing when advantage gone)",
+      "whyNotSame": "877 teaches STOP when advantage is gone; 947 teaches CONTINUE one left action while WD is still late — opposite fork, left-lane cue",
+      "closestOther": "none in locked pilot",
+      "coverageGap": "second wave / partially set defence",
+      "semanticDuplicationRisk": 3,
+      "rank": "STRONG",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    },
+    {
+      "id": "scn_bank_949",
+      "candidateFamilyKey": "lw_def_deny_backdoor_left",
+      "teachingArea": "set_defence_deny_entry",
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "difficulty": "Intermediate",
+      "likelyPerception": true,
+      "likelyHandedness": "none",
+      "primaryTacticalProblem": "Opposing right back drives; you are tempted to ball-watch; opposing right wing starts back-door behind you on the left side",
+      "exactDecisionFork": "Feel/deny the back-door runner with contact vs chase the ball into the drive and lose the wing",
+      "whyLwNative": "Left-side wing defender vs opposing RB + RW geometry; teaches deny-entry, not handover/help (RW 880)",
+      "closestRw": "scn_bank_880 (protect pass until handover) — different responsibility",
+      "whyNotSame": "880 is pass-lane protect until handover call; 949 is denying the wing runner's back-door while ball-watching temptation",
+      "closestOther": "RW defence has no deny-backdoor family",
+      "coverageGap": "defend wing entry / deny back-door",
+      "semanticDuplicationRisk": 2,
+      "rank": "STRONG",
+      "lwNativeClass": "STRONGLY LW NATIVE",
+      "exceptionalNote": "Keeps a distinct defensive lesson in the pilot after removing handover-duplicate 949"
+    },
+    {
+      "id": "scn_bank_950",
+      "candidateFamilyKey": "lw_def_recovery_to_wing_after_help",
+      "teachingArea": "set_defence_recovery",
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "difficulty": "Advanced",
+      "likelyPerception": true,
+      "likelyHandedness": "none",
+      "primaryTacticalProblem": "You gave a controlled help step inside; ball reverses toward the opposing right wing; skip threat is live",
+      "exactDecisionFork": "Sprint recover to the wing before the skip arrives vs stay helping inside because the drive 'still looks dangerous'",
+      "whyLwNative": "Recovery timing after left-side help — distinct from handover (880), help-after-handover (928), and transition own-lane (929)",
+      "closestRw": "scn_bank_928 (help after handover) — requires handover already completed",
+      "whyNotSame": "950 has NO handover; ball reverses while you are still the wing; recovery race is the lesson",
+      "closestOther": "architecture lw_def_recovery_to_wing",
+      "coverageGap": "recovery to wing after inside help",
+      "semanticDuplicationRisk": 3,
+      "rank": "STRONG",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    }
+  ],
+  "finalGate": "GOLD PILOT APPROVED",
+  "nativity": {
+    "STRONGLY_LW_NATIVE": 8,
+    "LW_CONTEXTUAL": 0,
+    "GENERIC_WING_PRINCIPLE": 2
+  },
+  "mirrorTests": [
+    {
+      "id": "scn_bank_945",
+      "familyKey": "lw_second_pivot_release_to_width",
+      "mirrorSurvivesAsGenericWing": false,
+      "note": "Teaching depends on LW–LB / left-half / left-side opponent geometry and fills gaps absent from RW Gold as the same lesson",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    },
+    {
+      "id": "scn_bank_947",
+      "familyKey": "lw_sw_left_wd_late_one_more",
+      "mirrorSurvivesAsGenericWing": false,
+      "note": "Teaching depends on LW–LB / left-half / left-side opponent geometry and fills gaps absent from RW Gold as the same lesson",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    },
+    {
+      "id": "scn_bank_949",
+      "familyKey": "lw_def_deny_backdoor_left",
+      "mirrorSurvivesAsGenericWing": false,
+      "note": "Teaching depends on LW–LB / left-half / left-side opponent geometry and fills gaps absent from RW Gold as the same lesson",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    },
+    {
+      "id": "scn_bank_950",
+      "familyKey": "lw_def_recovery_to_wing_after_help",
+      "mirrorSurvivesAsGenericWing": false,
+      "note": "Teaching depends on LW–LB / left-half / left-side opponent geometry and fills gaps absent from RW Gold as the same lesson",
+      "lwNativeClass": "STRONGLY LW NATIVE"
+    }
+  ]
+}

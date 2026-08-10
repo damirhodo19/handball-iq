@@ -1,0 +1,321 @@
+{
+  "phase": "BATCH_C_AUDIT",
+  "verdict": "LW BATCH C APPROVED FOR HUMAN REVIEW",
+  "blockers": [],
+  "totals": {
+    "count": 7,
+    "attack": 2,
+    "defence": 5,
+    "perceptionTrue": 2,
+    "perceptionFalse": 5,
+    "difficulty": {
+      "Beginner": 2,
+      "Advanced": 3,
+      "Expert": 1,
+      "Intermediate": 1
+    },
+    "systems": {
+      "6-0": 3,
+      "3-3": 1,
+      "Mixed": 1,
+      "4+2": 1,
+      "Open": 1
+    },
+    "numerical": {
+      "6v6": 5,
+      "transition": 1,
+      "5v6": 1
+    },
+    "nativity": {
+      "CONTEXTUALLY_LW_NATIVE": 7
+    },
+    "maxCoachRisk": 4,
+    "temporaryLwTotal": 81
+  },
+  "locks": {
+    "LB": {
+      "hashOk": true,
+      "count": 62,
+      "countOk": true
+    },
+    "RB": {
+      "hashOk": true,
+      "count": 63,
+      "countOk": true
+    },
+    "CB": {
+      "hashOk": true,
+      "count": 70,
+      "countOk": true
+    },
+    "RW": {
+      "hashOk": true,
+      "count": 65,
+      "countOk": true
+    },
+    "allOk": true
+  },
+  "locked941to974Ok": true,
+  "selection": [
+    {
+      "id": "scn_bank_975",
+      "familyKey": "lw_def_comm_half",
+      "teachingArea": "communication",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_880 / 928",
+      "closestLw": "scn_bank_974 / 973",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "teachingArea": "set_defence",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_932 / 934 themes",
+      "closestLw": "scn_bank_966 / 974",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_977",
+      "familyKey": "lw_def_sys_33_switch",
+      "teachingArea": "system_defence",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "system": "3-3",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_936 is attack — no defence twin",
+      "closestLw": "scn_bank_974 / 961",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_978",
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "teachingArea": "transition_defence",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "system": "Mixed",
+      "numerical": "transition",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_931 / 933",
+      "closestLw": "scn_bank_972",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_979",
+      "familyKey": "lw_def_numerical_5v6",
+      "teachingArea": "numerical_defence",
+      "difficulty": "Expert",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "5v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 4,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_931 themes",
+      "closestLw": "scn_bank_959 / 950",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_980",
+      "familyKey": "lw_sys_4plus2_lane",
+      "teachingArea": "system",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "4+2",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "no clear 4+2 twin",
+      "closestLw": "scn_bank_968 / 963",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    },
+    {
+      "id": "scn_bank_981",
+      "familyKey": "lw_sys_open_man_help",
+      "teachingArea": "system",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "Open",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "sparse",
+      "closestLw": "scn_bank_968",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "recommendation": "KEEP"
+    }
+  ],
+  "strongest": [
+    {
+      "id": "scn_bank_975",
+      "familyKey": "lw_def_comm_half",
+      "coachRisk": 2
+    },
+    {
+      "id": "scn_bank_981",
+      "familyKey": "lw_sys_open_man_help",
+      "coachRisk": 2
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "coachRisk": 3
+    }
+  ],
+  "inspectClosely": [
+    {
+      "id": "scn_bank_979",
+      "familyKey": "lw_def_numerical_5v6",
+      "coachRisk": 4,
+      "reason": "coachRisk 4"
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "coachRisk": 3,
+      "reason": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_978",
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "coachRisk": 3,
+      "reason": "RELATED_BUT_DISTINCT"
+    }
+  ],
+  "remainingConcerns": [
+    "Human coach should read HR aloud for all Batch C, especially 977 (3:3 switch) and 979 (5v6 priority).",
+    "978 opposite-map of 972 — confirm far-wing side geometry holds in review.",
+    "981 opposite of 968 — confirm Open system relevance holds.",
+    "Legacy 40 still present; temporary LW=81 until later cleanup."
+  ],
+  "remainingUnusedFamilyCount": 18,
+  "rejectedFamilies": [
+    {
+      "familyKey": "lw_sw_advantage_gone",
+      "reason": "Semantic twin of RW 877 — already failed Batch B"
+    },
+    {
+      "familyKey": "lw_fw_3v2_hold_width",
+      "reason": "Semantic twin of RW 876"
+    },
+    {
+      "familyKey": "lw_trans_lane_vs_recovery",
+      "reason": "Semantic twin of RW 905"
+    },
+    {
+      "familyKey": "lw_empty_own_safe_return",
+      "reason": "Semantic twin of RW 879 — already failed Batch B"
+    },
+    {
+      "familyKey": "lw_7v6_or_empty_opp",
+      "reason": "Compresses RW 912/913/915"
+    },
+    {
+      "familyKey": "lw_short_clock",
+      "reason": "Semantic twin of RW 925/926"
+    },
+    {
+      "familyKey": "lw_sys_42_corridor",
+      "reason": "Semantic twin of RW 937"
+    },
+    {
+      "familyKey": "lw_sys_15_outlet_width",
+      "reason": "Decorative 1:5 — already failed Batch B coach audit"
+    },
+    {
+      "familyKey": "lw_sys_33_pressure_release",
+      "reason": "Semantic twin of RW 936"
+    },
+    {
+      "familyKey": "lw_6v5_free_finish",
+      "reason": "Semantic twin of RW 917 (LB/RB drew two → finish)"
+    },
+    {
+      "familyKey": "lw_def_lb_wing_coop",
+      "reason": "Same decision as LW 962 — already failed Batch B"
+    },
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "reason": "GK X→Y corner architecture; overlaps RW 875 / LW GK set"
+    },
+    {
+      "familyKey": "lw_gk_late_movement_patience",
+      "reason": "Overlaps 955/956 second-cue patience architecture"
+    }
+  ],
+  "questionableFamilies": [
+    {
+      "familyKey": "lw_stay_wide_inside_help",
+      "reason": "Real beginner fork but entry/width DNA already dense (941/943/964/967); perception=true worsens 76% share"
+    },
+    {
+      "familyKey": "lw_def_backdoor_deny",
+      "reason": "Matrix risk 5; overlaps lw_def_wing_entry and RW 932/934 themes — select wing_entry instead"
+    },
+    {
+      "familyKey": "lw_def_protect_opp_wing",
+      "reason": "Risk 5; largely owned by 961/962/974 protect/handover DNA and RW 880"
+    },
+    {
+      "familyKey": "lw_gk_extreme_angle_body",
+      "reason": "Possibly distinct skim-vs-recycle architecture, but GK bank already has 946/955/956 — skip under GK conservatism"
+    },
+    {
+      "familyKey": "lw_late_trail_create",
+      "reason": "Borderline RW 922; game-state risk without enough LW-native geometry"
+    }
+  ]
+}

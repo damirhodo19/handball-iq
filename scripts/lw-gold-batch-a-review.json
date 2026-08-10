@@ -1,0 +1,1207 @@
+{
+  "phase": "BATCH_A",
+  "verdict": "LW BATCH A APPROVED FOR HUMAN REVIEW",
+  "rows": [
+    {
+      "id": "scn_bank_951",
+      "familyKey": "lw_lb_delay_ask_lane_blocked",
+      "teachingArea": "lb_cooperation",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_872 (opposite fork)",
+      "distinctReason": "Opposite decision to 942/872 — unique.",
+      "lwNativity": "STRONGLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Delay the Ask When the Pass Lane Is Cut",
+        "hr": "Lijevo krilo — ne traži loptu dok je pas zatvoren",
+        "de": "Linksaußen — den Ball erst fordern wenn die Passlinie frei ist"
+      },
+      "situation": {
+        "en": "You lead 8:7 at 14' against 6:0. The left back has the ball facing your side at nine metres. You are wide on the left sideline. Your wing defender has both feet and his chest turned into the passing lane between the left back and you — if the ball comes now, he can steal or tip it. The left back is not doubled yet. Asking hard for the ball looks eager, but the lane is closed.",
+        "hr": "Vodite 8:7 u 14. minuti protiv 6:0. Lijevi vanjski ima loptu i gleda tvoju stranu na devet metara. Ti si široko uz lijevu aut-liniju. Krilni branič je oba stopala i prsa okrenuo u liniju pasa između lijevog vanjskog i tebe — ako lopta sada krene, može je uzeti ili odbiti. Lijevi vanjski još nije udvojen. Glasno tražiti loptu izgleda poželjno, ali put je zatvoren.",
+        "de": "Ihr führt 8:7 in Minute 14 gegen 6:0. Der linke Rückraum hat den Ball und schaut zu deiner Seite auf neun Metern. Du stehst breit an der linken Seitenlinie. Dein Außenverteidiger hat beide Füße und die Brust in die Passlinie zwischen Rückraum und dir gedreht — kommt der Ball jetzt, kann er ihn abfangen oder tippen. Der Rückraum ist noch nicht gedoppelt. Laut fordern wirkt eifrig, aber der Weg ist zu."
+      },
+      "question": {
+        "en": "The pass lane to you is cut — what is first?",
+        "hr": "Linija pasa do tebe je zatvorena — što je prvo?",
+        "de": "Die Passlinie zu dir ist zu — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Stay wide and delay the ask until the lane opens again",
+            "hr": "Ostani široko i ne traži loptu dok se put opet ne otvori",
+            "de": "Breit bleiben und den Ball erst fordern wenn der Weg wieder offen ist"
+          },
+          "feedback": {
+            "en": "Correct — a forced ask into a closed lane gifts the steal.",
+            "hr": "Točno — forsiranje lopte u zatvoren put poklanja krađu.",
+            "de": "Richtig — erzwungenes Fordern in die geschlossene Linie schenkt den Ballgewinn."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Ask now only if his hips reopen the lane before the left back is doubled",
+            "hr": "Traži sada samo ako mu se kukovi opet otvore prema tebi prije nego lijevog vanjskog udvoje",
+            "de": "Jetzt nur fordern wenn seine Hüften die Linie wieder öffnen bevor der Rückraum gedoppelt wird"
+          },
+          "feedback": {
+            "en": "Valid when the lane reopens; here his body still cuts it.",
+            "hr": "Valja kad se put ponovo otvori; ovdje ga tijelo još reže.",
+            "de": "Gültig wenn die Linie wieder aufgeht; hier schneidet sein Körper sie noch."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Call loudly and step toward the ball to force the pass through his arms",
+            "hr": "Glasno zovi i kreni prema lopti da forsiraš pas kroz njegove ruke",
+            "de": "Laut rufen und zum Ball gehen um den Pass durch seine Arme zu erzwingen"
+          },
+          "feedback": {
+            "en": "Risky — you walk into the steal.",
+            "hr": "Rizično — ideš u krađu.",
+            "de": "Riskant — du läufst in den Ballgewinn."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Leave the sideline and cut in front of the left back for a short hand-off while the lane is blocked",
+            "hr": "Napusti aut-liniju i sijeci ispred lijevog vanjskog za kratku predaju dok je put blokiran",
+            "de": "Die Seitenlinie verlassen und vor dem Rückraum für eine kurze Übergabe einschneiden während die Linie blockiert ist"
+          },
+          "feedback": {
+            "en": "Poor — you kill width and still give no clean receive.",
+            "hr": "Loše — gasiš širinu i i dalje nemaš čist prijem.",
+            "de": "Schlecht — du löschst Breite und hast trotzdem keinen sauberen Fang."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue: wing defender’s feet and chest cut the LB→LW lane. First job is hold width and wait. Asking is right only after the hips reopen.",
+        "hr": "Čitaj: stopala i prsa krilnog braniča režu pas od lijevog vanjskog do tebe. Prvi je posao ostati široko i čekati. Tražiti loptu ima smisla tek kad se kukovi opet otvore.",
+        "de": "Lesen: Füße und Brust des Außenverteidigers schneiden die Passlinie. Erste Aufgabe: breit bleiben und warten. Fordern erst wenn die Hüften wieder öffnen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A respects the closed lane now; B needs hips that reopen, which are not stated.",
+        "hr": "A poštuje zatvoren put sada; B treba kukove koji se otvaraju, a to nije navedeno.",
+        "de": "A respektiert die geschlossene Linie jetzt; B braucht wieder öffnende Hüften die nicht genannt sind."
+      }
+    },
+    {
+      "id": "scn_bank_952",
+      "familyKey": "lw_width_stretch_when_lb_binds",
+      "teachingArea": "positional_width",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_887 / 884",
+      "distinctReason": "Related RW width-for-drive; distinct as post-bind stretch after 941.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Stretch Wider After the Left Back Binds the Wing Defender",
+        "hr": "Lijevo krilo — još se više rastegni kad lijevi vanjski veže krilnog braniča",
+        "de": "Linksaußen — noch breiter werden wenn der linke Rückraum den Außenverteidiger bindet"
+      },
+      "situation": {
+        "en": "Tied 9:9 at 17' against 6:0. The left back has already engaged your wing defender — contact is on, and the defender’s hips stay on the left back. You are standing about a metre inside the sideline. The pass lane to you is still open. Drifting further inside toward the fight looks supportive, but the left back needs you wider so the next pass still stretches the defence.",
+        "hr": "Neriješeno je 9:9 u 17. minuti protiv 6:0. Lijevi vanjski je već vezao tvog krilnog braniča — kontakt je tu, a kukovi braniča ostaju na lijevom vanjskom. Ti stojiš oko metra unutra od aut-linije. Pas do tebe još je otvoren. Još više ići unutra prema borbi izgleda kao pomoć, ali lijevi vanjski treba te šire da sljedeći pas i dalje rastegne obranu.",
+        "de": "Unentschieden 9:9 in Minute 17 gegen 6:0. Der linke Rückraum hat deinen Außenverteidiger schon gebunden — Kontakt ist da und die Hüften bleiben am Rückraum. Du stehst etwa einen Meter innen von der Seitenlinie. Der Pass zu dir ist noch offen. Weiter nach innen zur Bindung zu gehen wirkt hilfreich, aber der Rückraum braucht dich breiter damit der nächste Pass die Abwehr weiter streckt."
+      },
+      "question": {
+        "en": "The left back has bound the wing defender — where do you belong?",
+        "hr": "Lijevi vanjski je vezao krilnog braniča — gdje pripadaš?",
+        "de": "Der linke Rückraum hat den Außenverteidiger gebunden — wo gehörst du hin?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Push back to the sideline and stay available wide",
+            "hr": "Vrati se na aut-liniju i ostani dostupan široko",
+            "de": "Zurück an die Seitenlinie und breit verfügbar bleiben"
+          },
+          "feedback": {
+            "en": "Correct — after the bind, your value is the stretch, not a third body in the contact.",
+            "hr": "Točno — nakon veza tvoja je vrijednost rastezanje, ne treće tijelo u kontaktu.",
+            "de": "Richtig — nach der Bindung ist dein Wert die Dehnung nicht ein dritter Körper im Kontakt."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Step one metre inside only if the left back asks for a short angle because the wide lane is body-blocked",
+            "hr": "Uđi metar unutra samo ako lijevi vanjski traži kraći kut jer je široki pas tijelom zatvoren",
+            "de": "Einen Meter nach innen nur wenn der Rückraum einen kurzen Winkel fordert weil die breite Linie körperlich zu ist"
+          },
+          "feedback": {
+            "en": "Valid with a blocked wide lane and a call; here the lane is open.",
+            "hr": "Valja uz zatvoren široki pas i poziv; ovdje je pas otvoren.",
+            "de": "Gültig bei blockierter breiter Linie und Ruf; hier ist die Linie offen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Walk into the contact to “help” the left back win the duel",
+            "hr": "Uđi u kontakt da “pomogneš” lijevom vanjskom da dobije duel",
+            "de": "In den Kontakt gehen um dem Rückraum im Duell zu “helfen”"
+          },
+          "feedback": {
+            "en": "Risky — you remove the wide outlet he just created.",
+            "hr": "Rizično — skidaš široki izlaz koji je upravo stvorio.",
+            "de": "Riskant — du nimmst den breiten Outlet den er gerade geschaffen hat."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Turn your back to the ball and jog toward the centre to reset early",
+            "hr": "Okreni leđa lopti i kreni prema sredini da se prerano resetiraš",
+            "de": "Dem Ball den Rücken drehen und zur Mitte joggen um früh neu aufzubauen"
+          },
+          "feedback": {
+            "en": "Poor — the action is live; you abandon the stretch.",
+            "hr": "Loše — akcija je živa; napuštaš rastezanje.",
+            "de": "Schlecht — die Aktion lebt; du verlässt die Dehnung."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "After LB binds the wing defender with the wide lane still open, maximize sideline stretch. An inside step is only for a blocked lane plus a clear call.",
+        "hr": "Kad lijevi vanjski veže krilnog braniča a široki pas još je otvoren, rastegni se uz aut-liniju. Korak unutra samo uz zatvoren pas i jasan poziv.",
+        "de": "Hat der Rückraum den Außenverteidiger gebunden und die breite Linie ist noch offen, maximal an die Seitenlinie. Schritt nach innen nur bei blockierter Linie plus klarem Ruf."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A keeps the stretch after a live bind; B needs a blocked wide lane and a call that are absent.",
+        "hr": "A drži rastezanje nakon živog veza; B treba zatvoren široki pas i poziv kojih nema.",
+        "de": "A hält die Dehnung nach lebendiger Bindung; B braucht blockierte breite Linie und Ruf die fehlen."
+      }
+    },
+    {
+      "id": "scn_bank_953",
+      "familyKey": "lw_pivot_block_opens_takeoff",
+      "teachingArea": "pivot",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_874",
+      "distinctReason": "Related RW 874; distinct from 944 (no pivot seal / 3:2:1).",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Take Off When the Pivot Seals the Recovery",
+        "hr": "Lijevo krilo — idi u odraz kad pivot drži blok na povratku braniča",
+        "de": "Linksaußen — abspringen wenn der Kreisläufer die Rückkehr blockt"
+      },
+      "situation": {
+        "en": "You lead 12:11 at 22' against 6:0. You catch on the left wing with a playable angle. Your pivot has sealed on the left half of the six and is holding the wing defender’s recovery path — the defender is still a full step late returning to you. The take-off lane toward the middle is free for this beat. The goalkeeper has not yet committed. The left back is covered.",
+        "hr": "Vodite 12:11 u 22. minuti protiv 6:0. Hvataš na lijevom krilu s kutom za šut. Pivot je zapečatio na lijevoj polovici šestice i drži put povratka krilnog braniča — branič kasni još cijeli korak do tebe. Put za odraz prema sredini sada je slobodan. Vratar se još nije opredijelio. Lijevi vanjski je pokriven.",
+        "de": "Ihr führt 12:11 in Minute 22 gegen 6:0. Du fängst am Linksaußen mit schussfähigem Winkel. Dein Kreisläufer hat auf der linken Sechs-Hälfte abgedichtet und hält den Rückweg des Außenverteidigers — der Verteidiger ist noch einen vollen Schritt spät zu dir. Die Absprunglinie zur Mitte ist in diesem Moment frei. Der Torhüter hat sich noch nicht festgelegt. Der linke Rückraum ist gedeckt."
+      },
+      "question": {
+        "en": "The pivot is holding the recovery and your take-off lane is free — what is first?",
+        "hr": "Pivot drži povratak braniča a put za odraz je slobodan — što je prvo?",
+        "de": "Der Kreisläufer hält die Rückkehr und deine Absprunglinie ist frei — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Take off toward the middle now while the lane is free — then finish from the goalkeeper’s next move",
+            "hr": "Idi u odraz prema sredini sada dok je put slobodan — pa završi prema sljedećem pokretu vratara",
+            "de": "Jetzt zur Mitte abspringen solange die Linie frei ist — dann aus der nächsten Torhüterbewegung abschließen"
+          },
+          "feedback": {
+            "en": "Correct — the seal bought you the take-off; do not waste the beat.",
+            "hr": "Točno — blok ti je kupio odraz; ne gubi taj trenutak.",
+            "de": "Richtig — der Block hat dir den Absprung gekauft; verliere den Moment nicht."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Feed the pivot only if the seal breaks and a soft short pass into him opens before you jump",
+            "hr": "Uigraj pivota samo ako se blok raspada i otvori se mekan kratki pas u njega prije odraza",
+            "de": "Den Kreisläufer nur bedienen wenn der Block bricht und ein weicher kurzer Pass auf ihn vor dem Absprung aufgeht"
+          },
+          "feedback": {
+            "en": "Valid if the seal breaks; here it is holding and the take-off is free.",
+            "hr": "Valja ako se blok raspada; ovdje drži i odraz je slobodan.",
+            "de": "Gültig wenn der Block bricht; hier hält er und der Absprung ist frei."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Hold the ball and wait for a clearer goalkeeper shade before leaving the ground",
+            "hr": "Drži loptu i čekaj jasniji pomak vratara prije nego digneš noge",
+            "de": "Den Ball halten und auf eine klarere Torhüterverschiebung warten bevor du abspringst"
+          },
+          "feedback": {
+            "en": "Risky — the recovering defender will close while you wait.",
+            "hr": "Rizično — branič će se vratiti dok čekaš.",
+            "de": "Riskant — der Verteidiger kommt zurück während du wartest."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Bounce the ball once and look for a high lob before the take-off lane is used",
+            "hr": "Odbij loptu jednom i traži visoki lob prije nego iskoristiš put za odraz",
+            "de": "Den Ball einmal aufsetzen und einen hohen Lob suchen bevor du die Absprunglinie nutzt"
+          },
+          "feedback": {
+            "en": "Poor — you waste the free lane the pivot created.",
+            "hr": "Loše — propuštaš slobodan put koji je pivot stvorio.",
+            "de": "Schlecht — du verschenkst die freie Linie die der Kreisläufer geschaffen hat."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue: pivot seal holds the wing defender’s recovery and the middle take-off is free. Jump now; finish later from the goalkeeper. Feed the pivot only if the seal breaks.",
+        "hr": "Čitaj: pivot drži povratak krilnog braniča i odraz prema sredini je slobodan. Skoči sada; završetak kasnije prema vrataru. Uigraj pivota samo ako se blok raspada.",
+        "de": "Lesen: Kreisläufer hält die Rückkehr und der Absprung zur Mitte ist frei. Jetzt springen; Abschluss später am Torhüter. Kreisläufer nur wenn der Block bricht."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the free take-off the seal creates; B needs a broken seal that is not there.",
+        "hr": "A koristi slobodan odraz koji blok otvara; B treba raspad bloka kojeg nema.",
+        "de": "A nutzt den freien Absprung den der Block öffnet; B braucht einen gebrochenen Block den es nicht gibt."
+      }
+    },
+    {
+      "id": "scn_bank_954",
+      "familyKey": "lw_takeoff_lane_closed",
+      "teachingArea": "takeoff",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_883",
+      "distinctReason": "Related RW 883; pair with 944 open vs closed.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Recycle When the Take-Off Lane Is Closed",
+        "hr": "Lijevo krilo — vrati loptu kad je put za odraz zatvoren",
+        "de": "Linksaußen — den Ball zurückspielen wenn die Absprunglinie zu ist"
+      },
+      "situation": {
+        "en": "Tied 13:13 at 26' against 6:0. You catch on the left wing. The half defender is already recovering into your take-off line toward the middle — less than a stride from contact if you jump now. The left back has stepped free after his drive and shows a short return angle. The wing defender is late, but the half has closed the jump path.",
+        "hr": "Neriješeno je 13:13 u 26. minuti protiv 6:0. Hvataš na lijevom krilu. Polubranitelj se već vraća u tvoj put za odraz prema sredini — manje od koraka od kontakta ako sada skočiš. Lijevi vanjski se nakon prodora oslobodio i pokazuje kratki kut za povratak. Krilni branič kasni, ali polubranitelj je zatvorio put za skok.",
+        "de": "Unentschieden 13:13 in Minute 26 gegen 6:0. Du fängst am Linksaußen. Der Halbe kommt schon in deine Absprunglinie zur Mitte — weniger als ein Schritt vom Kontakt wenn du jetzt springst. Der linke Rückraum ist nach seinem Zug frei und zeigt einen kurzen Rückpasswinkel. Der Außenverteidiger ist spät, aber der Halbe hat den Sprungweg geschlossen."
+      },
+      "question": {
+        "en": "The half is in your take-off line and the left back is free — what is first?",
+        "hr": "Polubranitelj je u tvom putu za odraz a lijevi vanjski je slobodan — što je prvo?",
+        "de": "Der Halbe steht in deiner Absprunglinie und der Rückraum ist frei — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Play the short return to the free left back and keep your width for the next action",
+            "hr": "Vrati kratku loptu slobodnom lijevom vanjskom i zadrži širinu za sljedeću akciju",
+            "de": "Kurzen Rückpass auf den freien linken Rückraum und Breite für die nächste Aktion halten"
+          },
+          "feedback": {
+            "en": "Correct — do not jump into a body that is already in the line.",
+            "hr": "Točno — ne skači u tijelo koje je već u putu.",
+            "de": "Richtig — spring nicht in einen Körper der schon in der Linie steht."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Take off only if that recovering body is still more than a full stride outside your jump line",
+            "hr": "Idi u odraz samo ako je to tijelo još više od cijelog koraka izvan tvoje linije skoka",
+            "de": "Nur abspringen wenn dieser Körper noch mehr als einen vollen Schritt außerhalb deiner Sprunglinie ist"
+          },
+          "feedback": {
+            "en": "Valid with distance; here he is already in the line.",
+            "hr": "Valja uz udaljenost; ovdje je već u putu.",
+            "de": "Gültig mit Distanz; hier ist er schon in der Linie."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Force the jump into his recovering arm hoping for a seven-metre",
+            "hr": "Forsiraj skok u njegovu ruku u povratku nadajući se sedmercu",
+            "de": "Den Sprung in seinen zurückkommenden Arm erzwingen in der Hoffnung auf Siebenmeter"
+          },
+          "feedback": {
+            "en": "Risky — you often give a turnover or a soft foul, not a clean seven.",
+            "hr": "Rizično — češće dobiješ izgubljenu loptu ili mekan prekršaj, ne čist sedmerac.",
+            "de": "Riskant — oft Ballverlust oder weiches Foul, kein sauberer Siebenmeter."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Turn and throw a long cross-court pass toward the far wing under pressure",
+            "hr": "Okreni se i baci dugačku loptu na drugo krilo pod pritiskom",
+            "de": "Drehen und unter Druck einen langen Pass auf den anderen Flügel werfen"
+          },
+          "feedback": {
+            "en": "Poor — the short free return is there; the long ball is a gift.",
+            "hr": "Loše — kratki slobodan povratak je tu; duga lopta je poklon.",
+            "de": "Schlecht — der kurze freie Rückpass ist da; der lange Ball ist ein Geschenk."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue: recovering half is already in the take-off line; LB is free. Recycle short. Jump only if the body is still more than a stride out.",
+        "hr": "Čitaj: polubranitelj je već u putu za odraz; lijevi vanjski je slobodan. Vrati kratko. Skači samo ako je tijelo još više od koraka vani.",
+        "de": "Lesen: Halber schon in der Absprunglinie; Rückraum frei. Kurz zurück. Springen nur wenn der Körper noch mehr als einen Schritt draußen ist."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A avoids the closed jump into a free short return; B needs distance that the situation removes.",
+        "hr": "A izbjegava zatvoren skok uz slobodan kratki povratak; B treba udaljenost koju situacija briše.",
+        "de": "A vermeidet den geschlossenen Sprung zugunsten des kurzen Rückpasses; B braucht Distanz die die Situation löscht."
+      }
+    },
+    {
+      "id": "scn_bank_955",
+      "familyKey": "lw_gk_far_side_commit",
+      "teachingArea": "goalkeeper",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_900 / 875 / 901",
+      "distinctReason": "Not near-commit; not 946 step-out.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Do Not Trust the First Goalkeeper Shade in the Air",
+        "hr": "Lijevo krilo — ne vjeruj prvom zatvaranju vratara dok si u zraku",
+        "de": "Linksaußen — dem ersten Torhüterzuschieben in der Luft nicht glauben"
+      },
+      "situation": {
+        "en": "Tied 14:14 at 29' against 6:0. You leave the ground clean from the left wing — the wing defender is late and cannot reach your shooting arm. Early in the jump the goalkeeper’s far foot and weight start toward the far post. Before you release, he plants the near foot back toward the near post and the near hand comes with that recovery to cover the near high corner. The far hand is still late coming back across.",
+        "hr": "Neriješeno je 14:14 u 29. minuti protiv 6:0. Čisto ideš u skok s lijevog krila — krilni branič kasni i ne stiže na tvoju ruku. Na početku skoka vratar dalekim stopalom i težinom kreće prema daljoj stativi. Prije nego baciš, vraća bliže stopalo prema bližoj stativi i bliža ruka ide s tim povratkom da zatvori bliži gornji kut. Daleka ruka još kasni s povratkom preko.",
+        "de": "Unentschieden 14:14 in Minute 29 gegen 6:0. Du gehst sauber vom Linksaußen in die Luft — der Außenverteidiger ist spät und kommt nicht an deinen Schussarm. Früh im Sprung gehen ferner Fuß und Gewicht zur fernen Stange. Bevor du abgibst, setzt er den nahen Fuß zur nahen Stange zurück und die nahe Hand geht mit dieser Rückkehr und deckt die nahe hohe Ecke. Die ferne Hand kommt noch spät zurück über die Mitte."
+      },
+      "question": {
+        "en": "He started far, then recovered near — what do you do with the ball?",
+        "hr": "Krenuo je dalje, pa se vratio bliže — što radiš s loptom?",
+        "de": "Er ist fern gestartet und dann nah zurückgekommen — was machst du mit dem Ball?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Wait one beat for that recovery, then finish far and low — he is late getting back across after planting near",
+            "hr": "Pričekaj taj povratak jedan trenutak, pa završi daleko i nisko — nakon bližeg oslonca kasni s povratkom preko",
+            "de": "Einen Moment auf diese Rückkehr warten, dann fern und tief abschließen — nach dem nahen Aufsetzen kommt er spät zurück über die Mitte"
+          },
+          "feedback": {
+            "en": "Correct — the second action cancels the first shade; finish where he is late returning.",
+            "hr": "Točno — drugi pokret briše prvo zatvaranje; završi gdje kasni s povratkom.",
+            "de": "Richtig — die zweite Bewegung löscht die erste Verschiebung; dorthin abschließen wo er bei der Rückkehr spät ist."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Early near finish only if he keeps going far and never plants the near foot back",
+            "hr": "Rani bliži završetak samo ako nastavi dalje i ne vrati bliže stopalo",
+            "de": "Früher naher Abschluss nur wenn er fern weitergeht und den nahen Fuß nicht zurücksetzt"
+          },
+          "feedback": {
+            "en": "Valid on a full far commit; here he planted back near.",
+            "hr": "Valja uz potpuno zatvaranje daleko; ovdje se vratio bliže.",
+            "de": "Gültig bei voller ferner Festlegung; hier ist er nah zurückgekommen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Release immediately far on the first shade without waiting for his next foot",
+            "hr": "Odmah baci daleko na prvo zatvaranje bez čekanja sljedećeg stopala",
+            "de": "Sofort fern auf die erste Verschiebung abgeben ohne den nächsten Fuß abzuwarten"
+          },
+          "feedback": {
+            "en": "Risky — you throw into the recovery he is already making.",
+            "hr": "Rizično — bacaš u povratak koji već radi.",
+            "de": "Riskant — du wirfst in die Rückkehr die er schon macht."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Smash near-high into the hand that just came with the recovery",
+            "hr": "Lupaj bliže gore u ruku koja je upravo došla s povratkom",
+            "de": "Nah-hoch in die Hand hämmern die gerade mit der Rückkehr gekommen ist"
+          },
+          "feedback": {
+            "en": "Poor — that is exactly the recovery he completed.",
+            "hr": "Loše — to je baš povratak koji je napravio.",
+            "de": "Schlecht — genau das ist die Rückkehr die er fertiggemacht hat."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "First shade far is not the decision. The later near plant and near hand with that recovery show he came back. Finish far-low where he is late returning. Early near only if the far commit never comes back.",
+        "hr": "Prvo zatvaranje daleko nije odluka. Kasniji bliži oslonac i bliža ruka s tim povratkom pokazuju da se vratio. Završi daleko i nisko gdje kasni s povratkom. Rano bliže samo ako se daleko zatvaranje ne vrati.",
+        "de": "Erste ferne Verschiebung ist nicht die Entscheidung. Späteres nahes Aufsetzen und nahe Hand mit der Rückkehr zeigen dass er zurückkommt. Fern-tief abschließen wo er bei der Rückkehr spät ist. Früh nah nur wenn die ferne Festlegung nicht zurückkommt."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the second cue (near plant + near hand with the recovery). B needs a continued far commit without that recovery.",
+        "hr": "A čita drugi pokret (bliži oslonac + bliža ruka s povratkom). B treba nastavljeno zatvaranje daleko bez tog povratka.",
+        "de": "A nutzt das zweite Zeichen (nahes Aufsetzen + nahe Hand mit Rückkehr). B braucht anhaltende ferne Festlegung ohne diese Rückkehr."
+      }
+    },
+    {
+      "id": "scn_bank_956",
+      "familyKey": "lw_gk_depth_read",
+      "teachingArea": "goalkeeper",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 4,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_898 (continuous attack→lift) and 900 (near commit→far); not 897",
+      "distinctReason": "Must not teach deep=lob. Multi-cue timing family.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Read the Brake After the Goalkeeper Leaves Deep",
+        "hr": "Lijevo krilo — pročitaj kočenje vratara nakon što izađe iz dubine",
+        "de": "Linksaußen — das Abbremsen lesen nachdem der Torhüter die Tiefe verlässt"
+      },
+      "situation": {
+        "en": "You lead 16:15 at 33' against 6:0. You leave the ground clean from the left wing — the wing defender is still outside your shooting arm. At jump start the goalkeeper is deep on the line. Mid-jump he attacks forward toward you. Then he brakes: the near foot plants wider, his weight dumps onto that near leg, and the near hand drops to cover the near low corner. The far hand is still late coming across. He is not continuing into your body.",
+        "hr": "Vodite 16:15 u 33. minuti protiv 6:0. Čisto ideš u skok s lijevog krila — krilni branič još je van tvoje ruke. Na startu skoka vratar je duboko na crti. Usred skoka kreće naprijed prema tebi. Onda koči: bliže stopalo ide šire, težina pada na tu bližu nogu, a bliža ruka ide dolje da zatvori bliži donji kut. Daleka ruka još kasni s dolaskom preko. Ne nastavlja u tvoje tijelo.",
+        "de": "Ihr führt 16:15 in Minute 33 gegen 6:0. Du gehst sauber vom Linksaußen in die Luft — der Außenverteidiger ist noch außerhalb deines Schussarms. Zu Sprungbeginn steht der Torhüter tief auf der Linie. Mitten im Sprung kommt er nach vorne auf dich zu. Dann bremst er ab: der nahe Fuß setzt breiter, das Gewicht fällt auf dieses nahe Bein und die nahe Hand fällt und deckt die nahe tiefe Ecke. Die ferne Hand kommt noch spät über die Mitte. Er kommt nicht weiter in deinen Körper."
+      },
+      "question": {
+        "en": "He left deep, then braked loaded near with the near hand down — where do you finish?",
+        "hr": "Izašao je iz dubine, pa kočio s težinom bliže i bližom rukom dolje — gdje završavaš?",
+        "de": "Er hat die Tiefe verlassen und dann nah belastet mit naher Hand unten abgebremst — wohin schließt du ab?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Finish far and high — he is stuck on the near plant with the near hand down and cannot recover across in time",
+            "hr": "Završi daleko i gore — zaglavljen je na bližem osloncu s bližom rukom dolje i ne stiže se vratiti preko",
+            "de": "Fern und hoch abschließen — er hängt am nahen Aufsetzen mit naher Hand unten und kommt nicht rechtzeitig zurück über die Mitte"
+          },
+          "feedback": {
+            "en": "Correct — depth change plus the brake body cue: near load and near hand down leave him late to the far-high side.",
+            "hr": "Točno — promjena dubine plus kočenje: težina bliže i bliža ruka dolje ostavljaju ga kasnog za daleko i gore.",
+            "de": "Richtig — Tiefenwechsel plus Abbrems-Körperzeichen: nahe Last und nahe Hand unten machen ihn spät zur fern-hohen Seite."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Soft lift over only if he keeps driving into your body with both hands rising and never plants that near foot wide",
+            "hr": "Meko podigni preko samo ako nastavi ići u tvoje tijelo s obje ruke gore i ne stavi bliže stopalo šire",
+            "de": "Weich darüber heben nur wenn er mit beiden Händen oben weiter in deinen Körper kommt und den nahen Fuß nicht breit setzt"
+          },
+          "feedback": {
+            "en": "Valid on a continuous step-out; here he braked with near load and near hand down.",
+            "hr": "Valja uz kontinuirani izlazak; ovdje je kočio s težinom bliže i bližom rukom dolje.",
+            "de": "Gültig bei durchgehendem Herauskommen; hier hat er nah belastet mit naher Hand unten abgebremst."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Keep carrying late as if he is still deep on the line after he has already stepped and braked",
+            "hr": "Nastavi nositi kasno kao da je još duboko na crti iako je već izašao i kočio",
+            "de": "Weiter spät tragen als stünde er noch tief auf der Linie obwohl er schon herausgekommen und abgebremst hat"
+          },
+          "feedback": {
+            "en": "Risky — that is the deep-line timing after the depth and body cue have already changed.",
+            "hr": "Rizično — to je čekanje kao na dubokoj crti nakon što su se dubina i tijelo već promijenili.",
+            "de": "Riskant — das ist Timing für die tiefe Linie nachdem Tiefe und Körper schon gewechselt haben."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Smash hard through mid-height into the body he just brought forward",
+            "hr": "Lupaj jako kroz sredinu u tijelo koje je upravo doveo naprijed",
+            "de": "Hart durch die Mitte in den Körper hämmern den er gerade nach vorne gebracht hat"
+          },
+          "feedback": {
+            "en": "Poor — the forward brake reduced that central path; you attack his body.",
+            "hr": "Loše — kočenjem naprijed smanjio je taj središnji put; udaraš u tijelo.",
+            "de": "Schlecht — durch das Abbremsen vorne ist dieser Mittelweg kleiner; du greifst seinen Körper an."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Read two cues: he leaves deep, then brakes with weight on the near plant and near hand down. Finish far-high where recovery across is late. Soft lift only if the attack never brakes. Do not keep waiting as if he stayed deep.",
+        "hr": "Čitaj dva pokreta: izlazi iz dubine, pa koči s težinom na bližem osloncu i bližom rukom dolje. Završi daleko i gore gdje kasni s povratkom. Meko podigni samo ako izlazak ne koči. Nemoj čekati kao da je ostao duboko.",
+        "de": "Zwei Zeichen lesen: er verlässt die Tiefe, dann bremst er mit Last auf dem nahen Aufsetzen und naher Hand unten. Fern-hoch abschließen wo die Rückkehr spät ist. Weich heben nur wenn der Angriff nicht bremst. Nicht warten als wäre er tief geblieben."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses depth change plus the brake body cue (near plant + near hand down). B needs a continuous drive into the body without that brake.",
+        "hr": "A čita promjenu dubine plus kočenje (bliži oslonac + bliža ruka dolje). B treba kontinuirani ulazak u tijelo bez tog kočenja.",
+        "de": "A nutzt Tiefenwechsel plus Abbremsen (nahes Aufsetzen + nahe Hand unten). B braucht durchgehenden Druck in den Körper ohne dieses Abbremsen."
+      }
+    },
+    {
+      "id": "scn_bank_957",
+      "familyKey": "lw_fw_2v1_finish_or_pass",
+      "teachingArea": "transition_first",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "Mixed",
+      "numerical": "2v1",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_902 (different fork — stay as pass option)",
+      "distinctReason": "Different fork from RW 902.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — First Wave 2v1: Finish When the Defender Takes Your Teammate",
+        "hr": "Lijevo krilo — prvi val 2v1: završi kad branič ide na suigrača",
+        "de": "Linksaußen — erste Welle 2v1: abschließen wenn der Verteidiger deinen Mitspieler nimmt"
+      },
+      "situation": {
+        "en": "Tied 10:10 at 19' in a first-wave 2v1. Your centre back has the ball in the middle. You are sprinting wide on the left toward six metres. One recovering defender is between you. His chest and first steps turn fully onto the centre back — he has committed to the ball. Your path to six is free for the pass and a quick finish.",
+        "hr": "Neriješeno je 10:10 u 19. minuti u prvom valu 2v1. Srednji vanjski ima loptu u sredini. Ti sprintaš široko lijevo prema šestici. Jedan branič u povratku je između vas. Prsa i prvi koraci potpuno su na srednjeg vanjskog — opredijelio se na loptu. Tvoj put do šestice slobodan je za pas i brz završetak.",
+        "de": "Unentschieden 10:10 in Minute 19 in einer ersten Welle 2v1. Euer Rückraum Mitte hat den Ball in der Mitte. Du sprintest breit links zur Sechs. Ein zurückkommender Verteidiger steht dazwischen. Brust und erste Schritte gehen voll auf den Rückraum Mitte — er hat sich auf den Ball festgelegt. Dein Weg zur Sechs ist frei für Pass und schnellen Abschluss."
+      },
+      "question": {
+        "en": "The defender has committed to your teammate — what is your job?",
+        "hr": "Branič se opredijelio na suigrača — što je tvoj posao?",
+        "de": "Der Verteidiger hat sich auf deinen Mitspieler festgelegt — was ist dein Job?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Demand the ball and finish — he has left you",
+            "hr": "Traži loptu i završi — ostavio te je",
+            "de": "Den Ball fordern und abschließen — er hat dich verlassen"
+          },
+          "feedback": {
+            "en": "Correct — when he takes the ball carrier, the extra pass ends with your finish.",
+            "hr": "Točno — kad uzme vodiča lopte, dodatni pas završava tvojim šutom.",
+            "de": "Richtig — nimmt er den Ballführer, endet der Extra-Pass mit deinem Abschluss."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Give the extra pass back / stay as decoy only if he switches and commits onto you before the pass arrives",
+            "hr": "Vrati dodatni pas / ostani mamac samo ako prebaci i krene na tebe prije nego pas stigne",
+            "de": "Den Extra-Pass zurück / als Köder bleiben nur wenn er vor dem Pass auf dich umschaltet"
+          },
+          "feedback": {
+            "en": "Valid if he switches onto you; here he is committed to the centre back.",
+            "hr": "Valja ako prebaci na tebe; ovdje je na srednjem vanjskom.",
+            "de": "Gültig wenn er auf dich umschaltet; hier ist er am Rückraum Mitte."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Stop your run and wait at nine metres for a set attack to form",
+            "hr": "Zaustavi trčanje i čekaj na devet metara da se složi pozicijski napad",
+            "de": "Den Lauf stoppen und auf neun Metern warten bis der Positionsangriff entsteht"
+          },
+          "feedback": {
+            "en": "Risky — you kill a live 2v1.",
+            "hr": "Rizično — gasiš živ 2v1.",
+            "de": "Riskant — du löschst ein lebendiges 2v1."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Cut into the middle and ask for the ball in the same space as the centre back",
+            "hr": "Sijeci u sredinu i traži loptu u istom prostoru sa srednjim vanjskim",
+            "de": "In die Mitte schneiden und den Ball im selben Raum wie der Rückraum Mitte fordern"
+          },
+          "feedback": {
+            "en": "Poor — you crowd the carrier he already chose to stop.",
+            "hr": "Loše — gužvaš vodiča kojeg je branič već izabrao zaustaviti.",
+            "de": "Schlecht — du verdichtest den Ballführer den der Verteidiger schon stoppen will."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue: the lone recovering defender commits to the ball carrier. Your job is finish after the pass. Extra pass / decoy only if he switches onto you.",
+        "hr": "Čitaj: jedini branič u povratku ide na vodiča lopte. Tvoj je posao završiti nakon pasa. Dodatni pas / mamac samo ako prebaci na tebe.",
+        "de": "Lesen: der einzige zurückkommende Verteidiger geht auf den Ballführer. Dein Job ist Abschluss nach dem Pass. Extra-Pass / Köder nur wenn er auf dich umschaltet."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A finishes the 2v1 after his commit to the teammate; B needs a switch onto you that has not happened.",
+        "hr": "A završava 2v1 nakon što je otišao na suigrača; B treba prebacivanje na tebe koje se nije dogodilo.",
+        "de": "A schließt das 2v1 ab nachdem er zum Mitspieler gegangen ist; B braucht einen Switch auf dich der nicht passiert ist."
+      }
+    },
+    {
+      "id": "scn_bank_958",
+      "familyKey": "lw_fw_arrival_timing",
+      "teachingArea": "transition_first",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "Mixed",
+      "numerical": "transition",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "related transition timing; not 902/876",
+      "distinctReason": "Not 876/902 width or 2v1 pass-option families.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Arrive With the Catch on the Six",
+        "hr": "Lijevo krilo — stigni s hvatanjem na šesticu",
+        "de": "Linksaußen — mit dem Fang auf der Sechs ankommen"
+      },
+      "situation": {
+        "en": "Tied 3:3 at 8' after a steal. The outlet is coming to your left wing lane. One recovering defender is between you and the six-metre line, but he is not yet pressing your hands. If you stop at nine metres and wait for the ball, you catch too early. If you sprint past the catch spot, the ball arrives behind you.",
+        "hr": "Neriješeno je 3:3 u 8. minuti nakon krađe. Prva lopta ide u tvoju lijevu krilnu stazu. Jedan branič u povratku je između tebe i šestice, ali još ne pritišće tvoje ruke. Ako staneš na devet metara i čekaš loptu, hvataš prerano. Ako sprintaš preko mjesta hvatanja, lopta stiže iza tebe.",
+        "de": "Unentschieden 3:3 in Minute 8 nach einem Ballgewinn. Der erste Pass kommt in deine linke Flügelbahn. Ein zurückkommender Verteidiger steht zwischen dir und der Sechs, drückt aber noch nicht auf deine Hände. Stoppst du auf neun Metern und wartest auf den Ball, fängst du zu früh. Sprintest du über den Fangpunkt hinaus, kommt der Ball hinter dir an."
+      },
+      "question": {
+        "en": "How do you time the first-wave run?",
+        "hr": "Kako podesiš tempo trčanja u prvom valu?",
+        "de": "Wie taktest du den Lauf in der ersten Welle?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Sprint so the catch and your arrival at six metres happen together",
+            "hr": "Sprintaj tako da hvatanje i dolazak na šesticu budu u istom trenutku",
+            "de": "So sprinten dass Fang und Ankunft auf der Sechs zusammenfallen"
+          },
+          "feedback": {
+            "en": "Correct — first-wave value is arrival with the ball, not early waiting.",
+            "hr": "Točno — vrijednost prvog vala je dolazak s loptom, ne rano čekanje.",
+            "de": "Richtig — Wert der ersten Welle ist Ankunft mit Ball nicht frühes Warten."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Secure an early catch and short return only if a defender is already on your hands before six",
+            "hr": "Rano uhvati i kratko vrati samo ako ti je branič već na rukama prije šestice",
+            "de": "Früh sichern und kurz zurück nur wenn vor der Sechs schon ein Verteidiger an deinen Händen ist"
+          },
+          "feedback": {
+            "en": "Valid under hand pressure; here he is not pressing your hands yet.",
+            "hr": "Valja pod pritiskom na rukama; ovdje još ne pritišće ruke.",
+            "de": "Gültig unter Handdruck; hier drückt er deine Hände noch nicht."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Stop at the nine and call for the ball early so you can set your feet",
+            "hr": "Stani na devetku i rano zovi loptu da namjestiš stopala",
+            "de": "Auf der Neun stoppen und den Ball früh rufen um die Füße zu setzen"
+          },
+          "feedback": {
+            "en": "Risky — you catch too high and lose the six-metre finish.",
+            "hr": "Rizično — hvataš previsoko i gubiš završetak sa šestice.",
+            "de": "Riskant — du fängst zu hoch und verlierst den Sechs-Meter-Abschluss."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Jog and let the ball bounce first so you can judge the bounce",
+            "hr": "Trči polako i pusti da lopta prvo odskoči da procijeniš odskok",
+            "de": "Joggen und den Ball erst aufkommen lassen um den Absprung zu lesen"
+          },
+          "feedback": {
+            "en": "Poor — the first wave dies in your hands.",
+            "hr": "Loše — prvi val umire u tvojim rukama.",
+            "de": "Schlecht — die erste Welle stirbt in deinen Händen."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "First-wave timing principle: catch and six-metre arrival together. Early secure-and-return only if hands are already pressured.",
+        "hr": "Princip tempa u prvom valu: hvatanje i dolazak na šesticu zajedno. Rano uhvatiti i vratiti samo ako su ruke već pod pritiskom.",
+        "de": "Taktprinzip erste Welle: Fang und Sechs-Ankunft zusammen. Früh sichern und zurück nur bei Handdruck."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A times arrival with the catch; B needs hand pressure before six that is not stated.",
+        "hr": "A usklađuje dolazak s hvatanjem; B treba pritisak na rukama prije šestice koji nije naveden.",
+        "de": "A taktet Ankunft mit dem Fang; B braucht Handdruck vor der Sechs der nicht genannt ist."
+      }
+    },
+    {
+      "id": "scn_bank_959",
+      "familyKey": "lw_5v6_safe_possession",
+      "teachingArea": "numerical",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "5v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_910",
+      "distinctReason": "Related RW 910; essential 5v6 possession.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — 5v6: Hold Width, Do Not Force the Corner",
+        "hr": "Lijevo krilo — 5v6: drži širinu, ne forsiraj kut",
+        "de": "Linksaußen — 5v6: Breite halten, die Ecke nicht erzwingen"
+      },
+      "situation": {
+        "en": "You trail 18:19 at 41' while short-handed after your own exclusion — 5v6 attack. You are on the left wing. The defence is set. Your wing defender is home on you and the take-off toward the middle is covered. The left back can still use you as a safe release. Forcing a corner shot or a speculative entry would gift an easy counter while you are already down a player.",
+        "hr": "Gubite 18:19 u 41. minuti u igraču manje nakon vlastitog isključenja — napad 5v6. Ti si na lijevom krilu. Obrana je složena. Krilni branič je na tebi a odraz prema sredini je pokriven. Lijevi vanjski te još može koristiti kao siguran izlaz. Forsirati šut iz kuta ili ulazak napamet poklonilo bi lak kontranapad dok ste već u igraču manje.",
+        "de": "Ihr liegt 18:19 in Minute 41 in Unterzahl nach eigener Zeitstrafe — Angriff 5v6. Du bist Linksaußen. Die Abwehr steht. Dein Außenverteidiger ist bei dir und der Absprung zur Mitte ist zugestellt. Der linke Rückraum kann dich noch als sicheren Outlet nutzen. Einen Eckenwurf oder spekulativen Einlauf zu erzwingen schenkt einen leichten Gegenstoß während ihr schon einen Mann weniger habt."
+      },
+      "question": {
+        "en": "Short-handed, covered on the wing — what is first?",
+        "hr": "U igraču manje, pokriven na krilu — što je prvo?",
+        "de": "In Unterzahl, auf dem Flügel zugestellt — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Stay wide as the safe release and refuse the forced corner action",
+            "hr": "Ostani široko kao siguran izlaz i odbij forsiranu akciju iz kuta",
+            "de": "Breit als sicherer Outlet bleiben und die erzwungene Eckenaktion ablehnen"
+          },
+          "feedback": {
+            "en": "Correct — in 5v6 the wing’s first job is not to donate the next counter.",
+            "hr": "Točno — u 5v6 prvi posao krila nije pokloniti sljedeći kontranapad.",
+            "de": "Richtig — in 5v6 ist die erste Flügelaufgabe nicht den nächsten Gegenstoß zu schenken."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Finish only if the take-off is clearly free with no recovering contest at all",
+            "hr": "Završi samo ako je odraz jasno slobodan bez ikakvog povratka braniča",
+            "de": "Nur abschließen wenn der Absprung klar frei ist ohne jede Rückkehr"
+          },
+          "feedback": {
+            "en": "Valid with a truly free finish; here the take-off is covered.",
+            "hr": "Valja uz stvarno slobodan završetak; ovdje je odraz pokriven.",
+            "de": "Gültig bei wirklich freiem Abschluss; hier ist der Absprung zugestellt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Force the wing shot through the recovering body to “create” something",
+            "hr": "Forsiraj krilni šut kroz tijelo u povratku da “stvoriš” nešto",
+            "de": "Den Flügelwurf durch den zurückkommenden Körper erzwingen um etwas zu “kreieren”"
+          },
+          "feedback": {
+            "en": "Risky — short-handed turnovers become easy goals the other way.",
+            "hr": "Rizično — izgubljene lopte u igraču manje postaju laki golovi u drugu stranu.",
+            "de": "Riskant — Ballverluste in Unterzahl werden leichte Tore andersherum."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Enter as a second pivot into a crowded left six while short-handed",
+            "hr": "Uđi kao drugi pivot u zbijenu lijevu šesticu dok ste u igraču manje",
+            "de": "Als zweiter Kreisläufer in die verdichtete linke Sechs einlaufen während Unterzahl herrscht"
+          },
+          "feedback": {
+            "en": "Poor — you remove the release and add traffic with no extra attacker.",
+            "hr": "Loše — skidaš izlaz i dodaješ gužvu bez igrača više.",
+            "de": "Schlecht — du nimmst den Outlet und verdichtest ohne Überzahl."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "5v6 risk principle: covered wing means hold width as safe release. Finish only if the take-off is truly free.",
+        "hr": "Princip rizika u 5v6: pokriveno krilo znači držati širinu kao siguran izlaz. Završiti samo ako je odraz stvarno slobodan.",
+        "de": "Risikoprinzip 5v6: zugestellter Flügel heißt Breite als sicherer Outlet. Abschluss nur bei wirklich freiem Absprung."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A protects possession while covered; B needs a free take-off the situation removes.",
+        "hr": "A čuva posjed dok si pokriven; B treba slobodan odraz koji situacija briše.",
+        "de": "A schützt den Ballbesitz solange du zugestellt bist; B braucht einen freien Absprung den die Situation löscht."
+      }
+    },
+    {
+      "id": "scn_bank_960",
+      "familyKey": "lw_passive_warning",
+      "teachingArea": "passive",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_923 / 924",
+      "distinctReason": "Combines RW 923/924 via clear-vs-closed cue split.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Passive Warning: Finish the Clear Wing Lane",
+        "hr": "Lijevo krilo — upozorenje na pasivnu: završi dok je krilo otvoreno",
+        "de": "Linksaußen — Passiv-Warnung: abschließen solange der Flügel offen ist"
+      },
+      "situation": {
+        "en": "Tied 17:17 at 37' with a passive-play warning. You catch on the left wing. Your wing defender is a full step late returning — the take-off toward the middle is clear and the left back has no better free man inside. There is still time on the warning for one clean end. Swinging the ball again would waste the open wing.",
+        "hr": "Neriješeno je 17:17 u 37. minuti uz upozorenje na pasivnu igru. Hvataš na lijevom krilu. Krilni branič kasni cijeli korak u povratku — odraz prema sredini je čist i lijevi vanjski nema boljeg slobodnog čovjeka unutra. Na upozorenju još ima vremena za jedan čist kraj. Ponovno vrtjeti loptu potrošilo bi otvoreno krilo.",
+        "de": "Unentschieden 17:17 in Minute 37 mit Passiv-Warnung. Du fängst am Linksaußen. Dein Außenverteidiger ist einen vollen Schritt spät — der Absprung zur Mitte ist klar und der linke Rückraum hat innen keinen besseren freien Mann. Auf der Warnung bleibt Zeit für ein sauberes Ende. Nochmal zirkulieren verschwendet den offenen Flügel."
+      },
+      "question": {
+        "en": "Passive warning and a clear wing lane — what is first?",
+        "hr": "Upozorenje na pasivnu i otvoreno krilo — što je prvo?",
+        "de": "Passiv-Warnung und offener Flügel — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Take off and finish now through the clear wing lane",
+            "hr": "Idi u odraz i završi sada dok je krilo otvoreno",
+            "de": "Abspringen und jetzt durch den offenen Flügel abschließen"
+          },
+          "feedback": {
+            "en": "Correct — passive needs a real end; the clear lane is that end.",
+            "hr": "Točno — pasivna traži pravi kraj; otvoreno krilo je taj kraj.",
+            "de": "Richtig — Passiv braucht ein echtes Ende; der offene Flügel ist dieses Ende."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Immediate short return only if the wing lane is closed and there is still time for one inside action",
+            "hr": "Odmah kratko vrati samo ako je krilo zatvoreno i još ima vremena za jednu unutarnju akciju",
+            "de": "Sofort kurz zurück nur wenn der Flügel zu ist und noch Zeit für eine Innenaktion bleibt"
+          },
+          "feedback": {
+            "en": "Valid when the lane is closed; here it is clear.",
+            "hr": "Valja kad je krilo zatvoreno; ovdje je otvoreno.",
+            "de": "Gültig wenn der Flügel zu ist; hier ist er offen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Swing one more full circuit looking for a prettier shot",
+            "hr": "Odigraj još jedan puni krug tražeći ljepši šut",
+            "de": "Noch einen vollen Kreis spielen und einen schöneren Wurf suchen"
+          },
+          "feedback": {
+            "en": "Risky — the warning ends while you decorate.",
+            "hr": "Rizično — upozorenje istječe dok ukrašavaš.",
+            "de": "Riskant — die Warnung endet während du verzierst."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Hold the ball in the corner until the referee calls passive",
+            "hr": "Drži loptu u kutu dok sudac ne dosudi pasivnu",
+            "de": "Den Ball in der Ecke halten bis der Schiedsrichter Passiv gibt"
+          },
+          "feedback": {
+            "en": "Poor — you waste a clear finish on purpose.",
+            "hr": "Loše — namjerno propuštaš čist završetak.",
+            "de": "Schlecht — du verschenkst absichtlich einen klaren Abschluss."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue under passive: wing lane/take-off clear. Finish now. Short return only if the lane is closed with time for one more inside action.",
+        "hr": "Čitaj uz pasivnu: krilo/odraz otvoren. Završi sada. Kratko vrati samo ako je zatvoreno uz vrijeme za još jednu unutarnju akciju.",
+        "de": "Lesen unter Passiv: Flügel/Absprung offen. Jetzt abschließen. Kurz zurück nur wenn zu, mit Zeit für eine Innenaktion."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A ends the warning through the clear lane; B needs a closed lane that is not stated.",
+        "hr": "A zatvara upozorenje kroz otvoreno krilo; B treba zatvoreno krilo koje nije navedeno.",
+        "de": "A beendet die Warnung durch den offenen Flügel; B braucht einen geschlossenen Flügel der nicht genannt ist."
+      }
+    },
+    {
+      "id": "scn_bank_961",
+      "familyKey": "lw_def_sys_60_wing_job",
+      "teachingArea": "system_defence",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "foundation behind 880, not same expert protect",
+      "distinctReason": "Not RW 880 live protect-until-handover.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Defence: Your First Job Is Their Wing",
+        "hr": "Lijevo krilo — obrana: prvi ti je posao njihovo krilo",
+        "de": "Linksaußen — Abwehr: dein erster Job ist ihr Flügel"
+      },
+      "situation": {
+        "en": "You lead 7:6 at 12' in your 6:0. You defend the left-side wing. The ball is on the far right backcourt. Their right wing — your man — is still wide near the sideline. Nobody has called a handover. Chasing toward the far ball looks busy, but your first responsibility has not moved.",
+        "hr": "Vodite 7:6 u 12. minuti u vašoj 6:0. Braniš lijevo krilo. Lopta je na desnoj vanjskoj strani. Njihovo desno krilo — tvoj čovjek — još je široko uz aut-liniju. Nitko nije zvao preuzimanje. Trčati prema dalekoj lopti izgleda radno, ali tvoja prva odgovornost se nije pomaknula.",
+        "de": "Ihr führt 7:6 in Minute 12 in eurer 6:0. Du verteidigst Linksaußen. Der Ball ist im rechten Rückraum. Ihr Rechtsaußen — dein Mann — steht noch breit an der Seitenlinie. Niemand hat eine Übergabe gerufen. Zum fernen Ball zu sprinten wirkt fleißig, aber deine erste Verantwortung hat sich nicht bewegt."
+      },
+      "question": {
+        "en": "Ball is far and your wing is still wide — what is first?",
+        "hr": "Lopta je daleko a tvoje krilo još je široko — što je prvo?",
+        "de": "Ball ist fern und dein Flügel noch breit — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Stay with their wing — that is your first job in 6:0",
+            "hr": "Ostani na njihovom krilu — to ti je prvi posao u 6:0",
+            "de": "Beim gegnerischen Flügel bleiben — das ist dein erster Job in der 6:0"
+          },
+          "feedback": {
+            "en": "Correct — freelancing to a far ball leaves your man.",
+            "hr": "Točno — trčanje na daleku loptu ostavlja tvog čovjeka.",
+            "de": "Richtig — Freilaufen zum fernen Ball lässt deinen Mann."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Help inside only after your half clearly takes their wing by contact and call",
+            "hr": "Pomogni unutra samo kad polubranitelj jasno preuzme njihovo krilo kontaktom i glasom",
+            "de": "Nur innen helfen wenn dein Halber ihren Flügel klar per Kontakt und Ruf übernimmt"
+          },
+          "feedback": {
+            "en": "Valid after a real takeover; none is stated.",
+            "hr": "Valja nakon pravog preuzimanja; ništa takvo nije navedeno.",
+            "de": "Gültig nach echter Übernahme; nichts dergleichen ist genannt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Sprint toward the far ball to show effort while their wing stays free behind you",
+            "hr": "Sprintaj prema dalekoj lopti da pokažeš trud dok njihovo krilo ostaje slobodno iza tebe",
+            "de": "Zum fernen Ball sprinten um Einsatz zu zeigen während ihr Flügel hinter dir frei bleibt"
+          },
+          "feedback": {
+            "en": "Risky — the skip to your man becomes easy.",
+            "hr": "Rizično — duga lopta na tvog čovjeka postaje laka.",
+            "de": "Riskant — der Skip auf deinen Mann wird leicht."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Drop two metres toward the corner with no one to mark and watch the game",
+            "hr": "Ispusti se dva metra prema kutu bez čovjeka na sebi i gledaj utakmicu",
+            "de": "Zwei Meter zur Ecke ohne Gegenspieler fallen und zuschauen"
+          },
+          "feedback": {
+            "en": "Poor — you defend nobody and help nobody.",
+            "hr": "Loše — ne braniš nikoga i ne pomažeš nikome.",
+            "de": "Schlecht — du verteidigst niemanden und hilfst niemandem."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "6:0 wing responsibility principle: primary job is their wing until a real handover exists. Far-ball chasing is freelancing.",
+        "hr": "Princip odgovornosti krila u 6:0: prvi je posao njihovo krilo dok nema pravog preuzimanja. Trčanje na daleku loptu je samostalan izlet.",
+        "de": "Prinzip Flügelverantwortung in der 6:0: erster Job ist ihr Flügel bis eine echte Übergabe da ist. Sprint zum fernen Ball ist Freilaufen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A keeps the basic wing job; B needs a half takeover that is absent.",
+        "hr": "A drži osnovni posao na krilu; B treba preuzimanje polubranitelja kojeg nema.",
+        "de": "A hält den Grundjob am Flügel; B braucht eine Halb-Übernahme die fehlt."
+      }
+    },
+    {
+      "id": "scn_bank_962",
+      "familyKey": "lw_def_inside_help_controlled",
+      "teachingArea": "set_defence",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "hrFlags": [],
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_880",
+      "distinctReason": "Distinct from 949 and when_not_abandon.",
+      "lwNativity": "CONTEXTUALLY LW NATIVE",
+      "title": {
+        "en": "Left Wing — Defence: Close the Wing Pass When Your Half Is Removed",
+        "hr": "Lijevo krilo — obrana: zatvori dodavanje na krilo kad ti polubranitelj nestane",
+        "de": "Linksaußen — Abwehr: den Flügelpass schließen wenn dein Halber weg ist"
+      },
+      "situation": {
+        "en": "Tied 11:11 at 24' in your 6:0. You defend left wing. Their right back has the ball and has already pulled your half defender inside — the half is stuck on that drive and cannot come to your wing. Their right wing is still wide. The right back turns his chest and shoulders toward the sideline and looks at that wing. If you jump into the drive, the pass to the wing is free.",
+        "hr": "Neriješeno je 11:11 u 24. minuti u vašoj 6:0. Braniš lijevo krilo. Njihov desni vanjski ima loptu i već je povukao tvog polubranitelja unutra — polubranitelj je zaglavio na tom prodoru i ne može doći na tvoje krilo. Njihovo desno krilo još je široko. Desni vanjski okreće prsa i ramena prema aut-liniji i gleda to krilo. Ako skočiš na prodor, dodavanje na krilo je slobodno.",
+        "de": "Unentschieden 11:11 in Minute 24 in eurer 6:0. Du verteidigst Linksaußen. Ihr rechter Rückraum hat den Ball und hat deinen Halben schon nach innen gezogen — der Halbe hängt an diesem Durchbruch und kommt nicht zu deinem Flügel. Ihr Rechtsaußen steht noch breit. Der rechte Rückraum dreht Brust und Schultern zur Seitenlinie und schaut auf diesen Flügel. Springst du in den Durchbruch ist der Pass auf den Flügel frei."
+      },
+      "question": {
+        "en": "Your half is stuck inside and the right back looks wing — what is first?",
+        "hr": "Polubranitelj je zaglavio unutra a desni vanjski gleda krilo — što je prvo?",
+        "de": "Dein Halber hängt innen und der rechte Rückraum schaut Flügel — was ist zuerst?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set yourself in the passing lane to their right wing and close that pass with body position and arms",
+            "hr": "Postavi se u liniju dodavanja prema njihovom desnom krilu i zatvori dodavanje položajem tijela i rukama",
+            "de": "Stell dich in die Passlinie zu ihrem Rechtsaußen und schließe den Pass mit Körperposition und Armen"
+          },
+          "feedback": {
+            "en": "Correct — with the half removed, your first job is the wing pass he is looking for.",
+            "hr": "Točno — kad polubranitelja nema, prvi ti je posao dodavanje na krilo koje on traži.",
+            "de": "Richtig — ist der Halbe weg ist dein erster Job der Flügelpass den er sucht."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Jump the drive only if his chest stays toward the middle and the wing does not present for the pass",
+            "hr": "Skoči na prodor samo ako mu prsa ostanu prema sredini a krilo se ne nudi za dodavanje",
+            "de": "Nur in den Durchbruch springen wenn die Brust zur Mitte bleibt und der Flügel sich nicht für den Pass anbietet"
+          },
+          "feedback": {
+            "en": "Valid when the wing pass is not live; here he turns to the wing.",
+            "hr": "Valja kad krilo ne traži loptu; ovdje se okreće na krilo.",
+            "de": "Gültig wenn der Flügelpass nicht lebt; hier dreht er zum Flügel."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Chase the right back into the middle because the drive looks more dangerous",
+            "hr": "Juri desnog vanjskog u sredinu jer prodor izgleda opasnije",
+            "de": "Den rechten Rückraum in die Mitte jagen weil der Durchbruch gefährlicher wirkt"
+          },
+          "feedback": {
+            "en": "Risky — you gift the pass he is already looking for.",
+            "hr": "Rizično — poklanjaš dodavanje koje već traži.",
+            "de": "Riskant — du schenkst den Pass den er schon sucht."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Drop to the corner and wait to see who receives after the pass is gone",
+            "hr": "Padni u kut i čekaj tko će primiti nakon što dodavanje ode",
+            "de": "Zur Ecke fallen und warten wer fängt nachdem der Pass weg ist"
+          },
+          "feedback": {
+            "en": "Poor — you defend after the damage.",
+            "hr": "Loše — braniš nakon štete.",
+            "de": "Schlecht — du verteidigst nach dem Schaden."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Cue: half stuck inside + RB chest/shoulders to the wing. First action is close that pass with body and arms. Jump the drive only if the wing is not presenting for the pass.",
+        "hr": "Čitaj: polubranitelj zaglavljen unutra + prsa i ramena desnog vanjskog prema krilu. Prva akcija je zatvoriti to dodavanje tijelom i rukama. Skoči na prodor samo ako se krilo ne nudi za dodavanje.",
+        "de": "Lesen: Halber innen fest + Brust/Schultern des Rückraums zum Flügel. Erste Aktion: diesen Pass mit Körper und Armen schließen. In den Durchbruch nur wenn der Flügel sich nicht für den Pass anbietet."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A closes the live wing pass after the half is removed; B needs a middle-facing drive with a wing that does not present for the pass.",
+        "hr": "A zatvara dodavanje na krilo kad polubranitelja nema; B treba prodor prema sredini uz krilo koje se ne nudi za dodavanje.",
+        "de": "A schließt den lebenden Flügelpass wenn der Halbe weg ist; B braucht einen mittigen Durchbruch mit Flügel der sich nicht für den Pass anbietet."
+      }
+    }
+  ],
+  "totals": {
+    "count": 12,
+    "attack": 10,
+    "defence": 2,
+    "perceptionTrue": 8,
+    "perceptionFalse": 4,
+    "difficulty": {
+      "Beginner": 4,
+      "Intermediate": 6,
+      "Advanced": 1,
+      "Expert": 1
+    },
+    "maxCoachRisk": 4,
+    "temporaryLwTotal": 62
+  },
+  "strongest": [
+    "scn_bank_951",
+    "scn_bank_952",
+    "scn_bank_958"
+  ],
+  "inspectClosely": [
+    "scn_bank_951",
+    "scn_bank_952",
+    "scn_bank_953"
+  ]
+}

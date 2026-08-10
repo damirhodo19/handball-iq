@@ -1,3 +1,8 @@
+/**
+ * Wing archetype templates for the HISTORICAL generate-scenario-bank.mjs tool.
+ * Production Left Wing Gold is locked at scn_bank_941–981 (41) and must not be
+ * regenerated from these clones. generate-scenario-bank.mjs refuses overwrite by default.
+ */
 import { defineArchetype, answer, COMMON_SLOTS } from '../archetype-builder.mjs';
 
 const { minute, score, opponent, handedness } = COMMON_SLOTS;

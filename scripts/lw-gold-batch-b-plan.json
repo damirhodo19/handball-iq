@@ -1,0 +1,256 @@
+{
+  "phase": "LW_BATCH_B_PHASE_1_FAMILY_SELECTION",
+  "status": "SELECTED_12_SURVIVED_DUPLICATE_GATE",
+  "lockedPilot": [
+    "scn_bank_941",
+    "scn_bank_950"
+  ],
+  "lockedBatchA": [
+    "scn_bank_951",
+    "scn_bank_962"
+  ],
+  "skippedForDuplicateRisk": [
+    {
+      "familyKey": "lw_fw_3v2_hold_width",
+      "reason": "Semantic side-flip of RW 876 (hold width in 3v2 as pass option). Batch A already covers first-wave 2v1 (957) and arrival (958)."
+    },
+    {
+      "familyKey": "lw_6v5_free_finish",
+      "reason": "Semantic side-flip of RW 917 (back draws two → wing finishes). Pilot 948 already covers 6v5 stay-wide vs entry."
+    },
+    {
+      "familyKey": "lw_trans_lane_vs_recovery",
+      "reason": "Too close to RW 905 (hold wide until fixer, then cut) without a non-mirror critical difference."
+    },
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "reason": "Goalkeeper second-cue architecture already represented by 955/956/946. Batch B must not be GK-heavy."
+    },
+    {
+      "familyKey": "lw_gk_late_movement_patience",
+      "reason": "Same — GK cue-1 / cue-2 patience family. Excluded from Batch B by priority."
+    },
+    {
+      "familyKey": "lw_gk_extreme_angle_body",
+      "reason": "Goalkeeper batch deferred; Batch B curriculum gaps are elsewhere."
+    },
+    {
+      "familyKey": "lw_sys_33_pressure_release",
+      "reason": "Near-duplicate of RW 936 fast-wide-under-3:3. Prefer 1-5 outlet (no attack twin)."
+    },
+    {
+      "familyKey": "lw_def_handover_timing",
+      "reason": "Too close to RW 880 handover cocktail and Batch A 962 protect-pass themes."
+    }
+  ],
+  "selected": [
+    {
+      "id": "scn_bank_963",
+      "familyKey": "lw_sys_15_outlet_width",
+      "teachingArea": "system",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "defensiveSystem": "1-5",
+      "numericalState": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Sparse-system gap: 1:5 outlet width not covered by pilot/Batch A (5:1 ask is different).",
+      "closestLw941to962": "scn_bank_942",
+      "closestRwGold": "scn_bank_940",
+      "expectedSemanticDistinction": "Attack outlet width vs defence chase (940); vs 942 5:1 ask-now"
+    },
+    {
+      "id": "scn_bank_964",
+      "familyKey": "lw_sw_advantage_gone",
+      "teachingArea": "transition_second",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "Mixed",
+      "numericalState": "transition",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Second-wave opposite of pilot 947 — stop forcing when left advantage is gone.",
+      "closestLw941to962": "scn_bank_947",
+      "closestRwGold": "scn_bank_877",
+      "expectedSemanticDistinction": "Opposite fork of LW 947; WD inside 2m + second filler on left lane"
+    },
+    {
+      "id": "scn_bank_965",
+      "familyKey": "lw_recovering_defender_race",
+      "teachingArea": "finish_pressure",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Closed take-off / race-to-finish gap — finish before recovery; do not wait for a perfect GK micro-read.",
+      "closestLw941to962": "scn_bank_954",
+      "closestRwGold": "scn_bank_882",
+      "expectedSemanticDistinction": "Stated temptation is waiting for unread GK; race-over-GK-patience, not pure recovery race alone"
+    },
+    {
+      "id": "scn_bank_966",
+      "familyKey": "lw_backdoor_ball_watch",
+      "teachingArea": "backdoor",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Attack back-door missing from pilot/Batch A (943 is feet-before-first-move, not live back-door).",
+      "closestLw941to962": "scn_bank_943",
+      "closestRwGold": "scn_bank_891",
+      "expectedSemanticDistinction": "Requires LB about to catch with deliverable angle; B = feet reopen before catch (943 is pre-move feet read)"
+    },
+    {
+      "id": "scn_bank_967",
+      "familyKey": "lw_entry_when_not",
+      "teachingArea": "entry",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Entry discipline — reject early corner entry when LB still needs width.",
+      "closestLw941to962": "scn_bank_941",
+      "closestRwGold": "no identical entry-reject twin",
+      "expectedSemanticDistinction": "Explicit do-not-enter while LB still needs width + WD recovering; not 948 6v5 pivot corridor"
+    },
+    {
+      "id": "scn_bank_968",
+      "familyKey": "lw_1v1_wing_space",
+      "teachingArea": "one_v_one",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "defensiveSystem": "Open",
+      "numericalState": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Open-defence 1v1 isolation — system changes decision vs 6:0 recycle habits.",
+      "closestLw941to962": "scn_bank_944",
+      "closestRwGold": "no clear RW attack twin",
+      "expectedSemanticDistinction": "Open defence + help-distance cue; system changes decision vs 6:0 recycle habit"
+    },
+    {
+      "id": "scn_bank_969",
+      "familyKey": "lw_pivot_feed_vs_finish",
+      "teachingArea": "pivot",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "STRONGLY_LW_NATIVE",
+      "reasonBatchB": "Pivot cooperation gap — feed sealed pivot when WD recovers onto LW body.",
+      "closestLw941to962": "scn_bank_946",
+      "closestRwGold": "scn_bank_888",
+      "expectedSemanticDistinction": "WD on LW body + sealed pivot (not free LB vs lob as in 946); not pivot-block take-off 953"
+    },
+    {
+      "id": "scn_bank_970",
+      "familyKey": "lw_empty_own_safe_return",
+      "teachingArea": "empty_goal",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "defensiveSystem": "Mixed",
+      "numericalState": "7v6",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Empty-own-goal attack risk — distinct phase from defence 950.",
+      "closestLw941to962": "scn_bank_950",
+      "closestRwGold": "scn_bank_879",
+      "expectedSemanticDistinction": "Attack phase with dirty catch needing settle (not defence fill 950); left-side LB return under closing WD"
+    },
+    {
+      "id": "scn_bank_971",
+      "familyKey": "lw_late_lead_risk",
+      "teachingArea": "late_game",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Game-state lead protection — Batch A has passive/5v6 but not late-lead wing risk.",
+      "closestLw941to962": "scn_bank_959",
+      "closestRwGold": "scn_bank_921",
+      "expectedSemanticDistinction": "Dirty left-wing angle under one-goal lead; not 5v6 possession (959) and not short-clock family"
+    },
+    {
+      "id": "scn_bank_972",
+      "familyKey": "lw_def_trans_own_side_lane",
+      "teachingArea": "transition_defence",
+      "attackOrDefence": "Defence",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "Mixed",
+      "numericalState": "transition",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "First-wave transition defence from normal start — distinct from 949 second-pivot recovery start.",
+      "closestLw941to962": "scn_bank_949",
+      "closestRwGold": "scn_bank_929",
+      "expectedSemanticDistinction": "Normal-start first-wave recovery (not second-pivot continuity 949); own-side sideline priority"
+    },
+    {
+      "id": "scn_bank_973",
+      "familyKey": "lw_def_when_not_abandon",
+      "teachingArea": "set_defence",
+      "attackOrDefence": "Defence",
+      "difficulty": "Intermediate",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE",
+      "reasonBatchB": "Set defence: do not abandon wing when ball reverses and inside help is already present — opposite temptation to 962 chase.",
+      "closestLw941to962": "scn_bank_962",
+      "closestRwGold": "scn_bank_934",
+      "expectedSemanticDistinction": "Ball reverse + inside help already present (opposite temptation to over-help); not half-removed close-pass 962"
+    },
+    {
+      "id": "scn_bank_974",
+      "familyKey": "lw_def_lb_wing_coop",
+      "teachingArea": "set_defence",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "defensiveSystem": "6-0",
+      "numericalState": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "lwNativity": "STRONGLY_LW_NATIVE",
+      "reasonBatchB": "Left-side defensive LB–wing cooperation: bind-then-look-to-wing pattern.",
+      "closestLw941to962": "scn_bank_962",
+      "closestRwGold": "scn_bank_932",
+      "expectedSemanticDistinction": "Opp RB bind-then-look-to-RW on left defensive side + call half; not half-already-stuck (962); not generic stay-with-wing (932)"
+    }
+  ],
+  "batchBDifficulty": {
+    "Beginner": 1,
+    "Intermediate": 6,
+    "Advanced": 3,
+    "Expert": 2
+  },
+  "batchBAttackDefence": {
+    "attack": 9,
+    "defence": 3
+  },
+  "batchBPerception": {
+    "true": 6,
+    "false": 6
+  },
+  "noGkSecondCueArchitecture": true,
+  "duplicateGateVerdict": "12 families survive with UNIQUE or RELATED_BUT_DISTINCT (non side-flip) distinctions"
+}

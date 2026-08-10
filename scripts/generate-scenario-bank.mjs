@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 /**
- * Generates content/scenario-bank/scenarios.json from scenario archetypes.
+ * HISTORICAL archetype generator.
+ *
+ * DO NOT use this to overwrite production Gold banks.
+ * Positional Gold is content-locked:
+ *   LB 62 · RB 63 · CB 70 · RW 65 · LW 41 (scn_bank_941–981)
+ *
+ * Left Wing target 40 below is obsolete legacy volume — not an approved production count.
+ * Run only with --force-historical-regen (disaster recovery / research); never for deploy.
  */
 import fs from 'fs';
 import path from 'path';
@@ -13,10 +20,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const OUT_PATH = path.join(ROOT, 'content/scenario-bank/scenarios.json');
 
-/** Targets prefer depth over padding — do not force clones to hit old volume. */
+/** Historical archetype volume targets — NOT production Gold counts. */
 const CATEGORY_TARGETS = {
   Goalkeeper: 55,
-  'Left Wing': 40,
+  // OBSOLETE: legacy LW volume. Approved LW Gold = 41 (941–981). Do not recreate 40 clones.
+  'Left Wing': 0,
   'Right Wing': 40,
   'Left Back': 45,
   'Centre Back': 45,
@@ -197,6 +205,14 @@ async function generateScenarios() {
 }
 
 async function main() {
+  const force = process.argv.includes('--force-historical-regen');
+  if (!force) {
+    console.error('REFUSED: generate-scenario-bank.mjs is historical and must not overwrite production Gold.');
+    console.error('Approved LW Gold is scn_bank_941–981 (41). Legacy LW volume 40 is retired.');
+    console.error('If you truly need a research regen, pass --force-historical-regen (never for deploy).');
+    process.exit(1);
+  }
+
   const scenarios = await generateScenarios();
   const total = scenarios.length;
 

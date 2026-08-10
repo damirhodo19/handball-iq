@@ -1,0 +1,235 @@
+{
+  "phase": "LW_BATCH_C_HUMAN_COACH_GOLD_GATE_FIRST_PASS",
+  "mode": "READ_ONLY_NO_EDITS",
+  "verdict": "LW BATCH C GOLD BLOCKED",
+  "contentEdited": false,
+  "lockedGoldUnchanged": "941-974",
+  "no982": true,
+  "noBatchD": true,
+  "rows": [
+    {
+      "id": "scn_bank_975",
+      "familyKey": "lw_def_comm_half",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "CLEAR",
+      "situationSpoilsA": false,
+      "difficultyCurrent": "Beginner",
+      "difficultyRecommended": "Beginner",
+      "perceptionCurrent": false,
+      "perceptionJustified": "YES",
+      "systemRelevance": "N/A",
+      "numericalRelevance": "N/A",
+      "closestLw": "scn_bank_961 / 973 / 974",
+      "closestRw": "scn_bank_880 / 928",
+      "duplicate": "SEMANTIC_DUPLICATE",
+      "nativity": "UNIVERSAL_ESSENTIAL already owned",
+      "coachRisk": 7,
+      "languageFlags": [],
+      "verdict": "REMOVE / MERGE",
+      "why": "Coach explanation collapses into locked 961/973/974: do not leave the wing until the half has cover (contact/call/confirm). Near-drive framing does not create a new decision — only restates the already-owned leave-after-cover principle as 'call first'."
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "CLEAR",
+      "situationSpoilsA": false,
+      "difficultyCurrent": "Beginner",
+      "difficultyRecommended": "Beginner",
+      "perceptionCurrent": false,
+      "perceptionJustified": "NO",
+      "perceptionNote": "Decision depends on reading the runner starting behind while ball-watching — live cue; should be true if kept.",
+      "systemRelevance": "N/A",
+      "numericalRelevance": "N/A",
+      "closestLw": "scn_bank_974 / 966",
+      "closestRw": "scn_bank_932 / 934",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "coachRisk": 3,
+      "languageFlags": [
+        {
+          "phrase": "liniju ulaska",
+          "why": "acceptable but slightly abstract",
+          "alternative": "put ulaska / ulazak"
+        }
+      ],
+      "verdict": "POLISH",
+      "why": "Genuine deny-entry teaching distinct from 974 release-timing. Perception false is mislabeled. Not Gold-blocking alone."
+    },
+    {
+      "id": "scn_bank_977",
+      "familyKey": "lw_def_sys_33_switch",
+      "geometry": "RECONSTRUCTABLE WITH GAP",
+      "geometryGap": "Other 3:3 defenders and ball location under-specified; 'open left-side attacker' identity vague (LB? CB?).",
+      "ab": "AMBIGUOUS",
+      "abFailure": "B becomes correct only if the team rule is rewritten to stay — that is a different scenario, not one cue change.",
+      "situationSpoilsA": true,
+      "spoilDetail": "Situation states the full switch rule, then describes the exact matching picture.",
+      "difficultyCurrent": "Advanced",
+      "difficultyRecommended": "Beginner",
+      "perceptionCurrent": false,
+      "perceptionJustified": "YES",
+      "systemRelevance": "FAIL",
+      "systemRemoveLabelDetail": "Same agreed switch/stay rule works unchanged in 6:0 or any defence with a switch agreement. 3:3 label is decorative.",
+      "numericalRelevance": "N/A",
+      "closestLw": "scn_bank_974 / 961",
+      "closestRw": "scn_bank_932 (2v2/switch call themes)",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "nativity": "UNIVERSAL rule-recall, not system-earned",
+      "coachRisk": 8,
+      "languageFlags": [
+        {
+          "phrase": "dogovor zamjene",
+          "why": "ok",
+          "alternative": null
+        }
+      ],
+      "verdict": "TACTICAL REWRITE",
+      "why": "Fails system remove-label, fails A/B (B needs different rule/scenario), spoils A by narrating the rule then the matching geometry, Advanced not earned."
+    },
+    {
+      "id": "scn_bank_978",
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "CLEAR",
+      "situationSpoilsA": true,
+      "spoilDetail": "Question states 'sideline already covered and far outlet live' — nearly narrates A.",
+      "difficultyCurrent": "Advanced",
+      "difficultyRecommended": "Intermediate",
+      "perceptionCurrent": true,
+      "perceptionJustified": "BORDERLINE",
+      "perceptionNote": "Teammate cover map is partly stated fact; live reading is thin.",
+      "systemRelevance": "N/A (Mixed transition)",
+      "numericalRelevance": "PASS as transition",
+      "closestLw": "scn_bank_972",
+      "closestRw": "scn_bank_931 / 933",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "duplicateNote": "Opposite map of 972 under same meta-rule (cover the uncovered outlet). Acceptable pair only if spoil fixed and difficulty honest; currently soft.",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "coachRisk": 4,
+      "languageFlags": [
+        {
+          "phrase": "skip",
+          "why": "English loan in HR coaching text",
+          "alternative": "dugo dodavanje / dugi izlazak"
+        },
+        {
+          "phrase": "daleki izlazak je živ",
+          "why": "slightly abstract 'živ'",
+          "alternative": "daleki izlazak je otvoren / u igri"
+        }
+      ],
+      "verdict": "POLISH",
+      "why": "Survives as opposite-map pair to 972 if spoil/language polished. Not independently strong enough to force REMOVE while 977/975 already block."
+    },
+    {
+      "id": "scn_bank_979",
+      "familyKey": "lw_def_numerical_5v6",
+      "geometry": "RECONSTRUCTABLE WITH GAP",
+      "geometryGap": "Which player is excluded / which side is short is not stated — only 'down a player'.",
+      "ab": "CLEAR",
+      "situationSpoilsA": true,
+      "spoilDetail": "Situation labels 'clearest free pass' and states consequence of jumping near wing.",
+      "difficultyCurrent": "Expert",
+      "difficultyRecommended": "Advanced",
+      "perceptionCurrent": false,
+      "perceptionJustified": "YES",
+      "systemRelevance": "N/A",
+      "numericalRelevance": "BORDERLINE→PASS",
+      "numericalNote": "5v6 strengthens priority over near-wing habit (961), but exclusion location unspecified weakens the earn.",
+      "closestLw": "scn_bank_961 / 978 / 959",
+      "closestRw": "scn_bank_931 themes",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "coachRisk": 5,
+      "languageFlags": [
+        {
+          "phrase": "skip",
+          "why": "English loan",
+          "alternative": "dugo dodavanje"
+        }
+      ],
+      "verdict": "POLISH",
+      "why": "Concept usable but Expert unjustified; exclusion geometry gap; mild spoil. Risk 5 — meaningful weakness, not automatic REMOVE."
+    },
+    {
+      "id": "scn_bank_980",
+      "familyKey": "lw_sys_4plus2_lane",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "CLEAR",
+      "situationSpoilsA": false,
+      "difficultyCurrent": "Advanced",
+      "difficultyRecommended": "Advanced",
+      "perceptionCurrent": true,
+      "perceptionJustified": "YES",
+      "systemRelevance": "PASS",
+      "systemRemoveLabelDetail": "Without two advanced creating the gap/closed-wide pair, the fork disappears (not a 5:1 single-advanced wait like 963).",
+      "numericalRelevance": "N/A",
+      "closestLw": "scn_bank_963 / 968",
+      "closestRw": "none direct",
+      "duplicate": "UNIQUE",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "coachRisk": 3,
+      "languageFlags": [
+        {
+          "phrase": "prolaz",
+          "why": "natural enough",
+          "alternative": null
+        }
+      ],
+      "verdict": "KEEP",
+      "why": "Strongest Batch C attack system scenario. 4+2 causally required."
+    },
+    {
+      "id": "scn_bank_981",
+      "familyKey": "lw_sys_open_man_help",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "CLEAR",
+      "situationSpoilsA": false,
+      "difficultyCurrent": "Intermediate",
+      "difficultyRecommended": "Intermediate",
+      "perceptionCurrent": false,
+      "perceptionJustified": "BORDERLINE",
+      "perceptionNote": "Help distance inside 2m is a live cue; false acceptable only as system-responsibility pair with 968.",
+      "systemRelevance": "PASS as opposite of locked 968",
+      "systemRemoveLabelDetail": "Open makes isolation the base; help-arrival recycle is the interrupt. In flat 6:0 isolation is not the expected base.",
+      "numericalRelevance": "N/A",
+      "closestLw": "scn_bank_968",
+      "closestRw": "sparse",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "coachRisk": 2,
+      "languageFlags": [],
+      "verdict": "KEEP",
+      "why": "Clean opposite fork to 968. Coachable and natural."
+    }
+  ],
+  "blockingFailures": [
+    {
+      "id": "scn_bank_975",
+      "verdict": "REMOVE / MERGE",
+      "reason": "Semantic duplicate of locked wing-leave-after-cover teaching (961/973/974). Not a new LW decision."
+    },
+    {
+      "id": "scn_bank_977",
+      "verdict": "TACTICAL REWRITE",
+      "reason": "3:3 decorative (switch rule works in any system); B requires different team rule/scenario; Situation spoils A; Advanced not earned."
+    }
+  ],
+  "nonBlockingConcerns": [
+    {
+      "id": "scn_bank_976",
+      "issue": "perception should be true if retained"
+    },
+    {
+      "id": "scn_bank_978",
+      "issue": "Question spoils A; HR 'skip'/'živ'; Intermediate more honest than Advanced"
+    },
+    {
+      "id": "scn_bank_979",
+      "issue": "Expert → Advanced; specify who is excluded; reduce spoil; HR 'skip'"
+    }
+  ],
+  "keepOrPolishOnlyWouldProceedToSecondPass": false,
+  "nextAction": "STOP — no polish, no metadata edits, no 982, no Batch D. Repair/replace 975 and 977 before any Gold attempt."
+}

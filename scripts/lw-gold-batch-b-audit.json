@@ -1,0 +1,339 @@
+{
+  "phase": "BATCH_B_AUDIT",
+  "verdict": "LW BATCH B GOLD APPROVED",
+  "blockers": [],
+  "totals": {
+    "count": 12,
+    "attack": 8,
+    "defence": 4,
+    "perceptionTrue": 9,
+    "perceptionFalse": 3,
+    "difficulty": {
+      "Advanced": 4,
+      "Intermediate": 7,
+      "Expert": 1
+    },
+    "maxCoachRisk": 3,
+    "temporaryLwTotal": 74
+  },
+  "locks": {
+    "LB": {
+      "hashOk": true,
+      "count": 62,
+      "countOk": true
+    },
+    "RB": {
+      "hashOk": true,
+      "count": 63,
+      "countOk": true
+    },
+    "CB": {
+      "hashOk": true,
+      "count": 70,
+      "countOk": true
+    },
+    "RW": {
+      "hashOk": true,
+      "count": 65,
+      "countOk": true
+    },
+    "allOk": true
+  },
+  "locked941to962Ok": true,
+  "selection": [
+    {
+      "id": "scn_bank_963",
+      "familyKey": "lw_sys_5plus1_trap",
+      "teachingArea": "system",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "5+1",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "no direct RW 5+1 twin",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_964",
+      "familyKey": "lw_entry_when_space_opens",
+      "teachingArea": "entry",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_890 / 893",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_965",
+      "familyKey": "lw_recovering_defender_race",
+      "teachingArea": "finish_pressure",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_882",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_966",
+      "familyKey": "lw_backdoor_ball_watch",
+      "teachingArea": "backdoor",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_891",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_967",
+      "familyKey": "lw_entry_when_not",
+      "teachingArea": "entry",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "no identical entry-reject twin",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_968",
+      "familyKey": "lw_1v1_wing_space",
+      "teachingArea": "one_v_one",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "Open",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "no clear RW attack twin",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_969",
+      "familyKey": "lw_pivot_feed_vs_finish",
+      "teachingArea": "pivot",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_888",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "STRONGLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_970",
+      "familyKey": "lw_def_sys_51_vs_advance",
+      "teachingArea": "system_defence",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "system": "5-1",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_940 (different system)",
+      "duplicateVerdict": "UNIQUE",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_971",
+      "familyKey": "lw_late_lead_risk",
+      "teachingArea": "late_game",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_921",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_972",
+      "familyKey": "lw_def_trans_own_side_lane",
+      "teachingArea": "transition_defence",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "system": "Mixed",
+      "numerical": "transition",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_929",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_973",
+      "familyKey": "lw_def_when_not_abandon",
+      "teachingArea": "set_defence",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_934",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    },
+    {
+      "id": "scn_bank_974",
+      "familyKey": "lw_def_handover_timing",
+      "teachingArea": "handover",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS",
+      "closestRw": "scn_bank_880 / 928",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "lwNativity": "CONTEXTUALLY_LW_NATIVE"
+    }
+  ],
+  "strongest": [
+    {
+      "id": "scn_bank_963",
+      "familyKey": "lw_sys_5plus1_trap",
+      "coachRisk": 3
+    },
+    {
+      "id": "scn_bank_964",
+      "familyKey": "lw_entry_when_space_opens",
+      "coachRisk": 3
+    },
+    {
+      "id": "scn_bank_965",
+      "familyKey": "lw_recovering_defender_race",
+      "coachRisk": 3
+    }
+  ],
+  "inspectClosely": [
+    {
+      "id": "scn_bank_964",
+      "familyKey": "lw_entry_when_space_opens",
+      "coachRisk": 3,
+      "reason": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_965",
+      "familyKey": "lw_recovering_defender_race",
+      "coachRisk": 3,
+      "reason": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_966",
+      "familyKey": "lw_backdoor_ball_watch",
+      "coachRisk": 3,
+      "reason": "RELATED_BUT_DISTINCT"
+    }
+  ],
+  "remainingConcerns": [
+    "Human coach should read HR aloud for surgically repaired 963/964/970/974 first.",
+    "964 RELATED to RW 890/893 — confirm LB free-arm co-cue holds in review.",
+    "974 RELATED to RW 880 / LW 962 — confirm ownership-transfer timing stays isolated.",
+    "Legacy 40 still present; temporary LW=74 until later cleanup."
+  ],
+  "remainingUnusedFamilyCount": 25,
+  "skippedFamilies": [
+    {
+      "familyKey": "lw_fw_3v2_hold_width",
+      "reason": "Semantic side-flip of RW 876 (hold width in 3v2 as pass option). Batch A already covers first-wave 2v1 (957) and arrival (958)."
+    },
+    {
+      "familyKey": "lw_6v5_free_finish",
+      "reason": "Semantic side-flip of RW 917 (back draws two → wing finishes). Pilot 948 already covers 6v5 stay-wide vs entry."
+    },
+    {
+      "familyKey": "lw_trans_lane_vs_recovery",
+      "reason": "Too close to RW 905 (hold wide until fixer, then cut) without a non-mirror critical difference."
+    },
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "reason": "Goalkeeper second-cue architecture already represented by 955/956/946. Batch B must not be GK-heavy."
+    },
+    {
+      "familyKey": "lw_gk_late_movement_patience",
+      "reason": "Same — GK cue-1 / cue-2 patience family. Excluded from Batch B by priority."
+    },
+    {
+      "familyKey": "lw_gk_extreme_angle_body",
+      "reason": "Goalkeeper batch deferred; Batch B curriculum gaps are elsewhere."
+    },
+    {
+      "familyKey": "lw_sys_33_pressure_release",
+      "reason": "Near-duplicate of RW 936 fast-wide-under-3:3. Prefer 1-5 outlet (no attack twin)."
+    },
+    {
+      "familyKey": "lw_def_handover_timing",
+      "reason": "Too close to RW 880 handover cocktail and Batch A 962 protect-pass themes."
+    }
+  ]
+}

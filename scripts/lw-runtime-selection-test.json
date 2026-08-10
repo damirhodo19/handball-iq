@@ -1,0 +1,606 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "positions": {
+    "Left Back": {
+      "primaryCount": 62,
+      "eligibleCount": 236
+    },
+    "Right Back": {
+      "primaryCount": 63,
+      "eligibleCount": 232
+    },
+    "Centre Back": {
+      "primaryCount": 70,
+      "eligibleCount": 294
+    },
+    "Right Wing": {
+      "primaryCount": 65,
+      "eligibleCount": 130
+    },
+    "Left Wing": {
+      "primaryCount": 41,
+      "eligibleCount": 106
+    }
+  },
+  "lwTrials": [
+    {
+      "t": 0,
+      "ids": [
+        "scn_bank_945",
+        "scn_bank_952",
+        "scn_bank_980",
+        "scn_bank_958",
+        "scn_bank_955"
+      ],
+      "bad": []
+    },
+    {
+      "t": 1,
+      "ids": [
+        "scn_bank_964",
+        "scn_bank_979",
+        "scn_bank_973",
+        "scn_bank_981",
+        "scn_bank_975"
+      ],
+      "bad": []
+    },
+    {
+      "t": 2,
+      "ids": [
+        "scn_bank_981",
+        "scn_bank_957",
+        "scn_bank_972",
+        "scn_bank_962",
+        "scn_bank_979"
+      ],
+      "bad": []
+    },
+    {
+      "t": 3,
+      "ids": [
+        "scn_bank_967",
+        "scn_bank_970",
+        "scn_bank_961",
+        "scn_bank_965",
+        "scn_bank_946"
+      ],
+      "bad": []
+    },
+    {
+      "t": 4,
+      "ids": [
+        "scn_bank_948",
+        "scn_bank_962",
+        "scn_bank_965",
+        "scn_bank_958",
+        "scn_bank_963"
+      ],
+      "bad": []
+    },
+    {
+      "t": 5,
+      "ids": [
+        "scn_bank_958",
+        "scn_bank_951",
+        "scn_bank_979",
+        "scn_bank_976",
+        "scn_bank_980"
+      ],
+      "bad": []
+    },
+    {
+      "t": 6,
+      "ids": [
+        "scn_bank_980",
+        "scn_bank_977",
+        "scn_bank_962",
+        "scn_bank_979",
+        "scn_bank_965"
+      ],
+      "bad": []
+    },
+    {
+      "t": 7,
+      "ids": [
+        "scn_bank_948",
+        "scn_bank_941",
+        "scn_bank_967",
+        "scn_bank_942",
+        "scn_bank_981"
+      ],
+      "bad": []
+    },
+    {
+      "t": 8,
+      "ids": [
+        "scn_bank_976",
+        "scn_bank_954",
+        "scn_bank_978",
+        "scn_bank_967",
+        "scn_bank_957"
+      ],
+      "bad": []
+    },
+    {
+      "t": 9,
+      "ids": [
+        "scn_bank_978",
+        "scn_bank_955",
+        "scn_bank_949",
+        "scn_bank_972",
+        "scn_bank_950"
+      ],
+      "bad": []
+    },
+    {
+      "t": 10,
+      "ids": [
+        "scn_bank_942",
+        "scn_bank_955",
+        "scn_bank_980",
+        "scn_bank_958",
+        "scn_bank_972"
+      ],
+      "bad": []
+    },
+    {
+      "t": 11,
+      "ids": [
+        "scn_bank_944",
+        "scn_bank_977",
+        "scn_bank_959",
+        "scn_bank_980",
+        "scn_bank_976"
+      ],
+      "bad": []
+    },
+    {
+      "t": 12,
+      "ids": [
+        "scn_bank_956",
+        "scn_bank_965",
+        "scn_bank_951",
+        "scn_bank_976",
+        "scn_bank_943"
+      ],
+      "bad": []
+    },
+    {
+      "t": 13,
+      "ids": [
+        "scn_bank_945",
+        "scn_bank_981",
+        "scn_bank_948",
+        "scn_bank_973",
+        "scn_bank_969"
+      ],
+      "bad": []
+    },
+    {
+      "t": 14,
+      "ids": [
+        "scn_bank_969",
+        "scn_bank_958",
+        "scn_bank_961",
+        "scn_bank_948",
+        "scn_bank_945"
+      ],
+      "bad": []
+    },
+    {
+      "t": 15,
+      "ids": [
+        "scn_bank_949",
+        "scn_bank_977",
+        "scn_bank_978",
+        "scn_bank_959",
+        "scn_bank_958"
+      ],
+      "bad": []
+    },
+    {
+      "t": 16,
+      "ids": [
+        "scn_bank_955",
+        "scn_bank_974",
+        "scn_bank_978",
+        "scn_bank_970",
+        "scn_bank_963"
+      ],
+      "bad": []
+    },
+    {
+      "t": 17,
+      "ids": [
+        "scn_bank_969",
+        "scn_bank_955",
+        "scn_bank_945",
+        "scn_bank_954",
+        "scn_bank_950"
+      ],
+      "bad": []
+    },
+    {
+      "t": 18,
+      "ids": [
+        "scn_bank_941",
+        "scn_bank_979",
+        "scn_bank_972",
+        "scn_bank_962",
+        "scn_bank_966"
+      ],
+      "bad": []
+    },
+    {
+      "t": 19,
+      "ids": [
+        "scn_bank_978",
+        "scn_bank_944",
+        "scn_bank_941",
+        "scn_bank_969",
+        "scn_bank_955"
+      ],
+      "bad": []
+    },
+    {
+      "t": 20,
+      "ids": [
+        "scn_bank_949",
+        "scn_bank_969",
+        "scn_bank_977",
+        "scn_bank_959",
+        "scn_bank_952"
+      ],
+      "bad": []
+    },
+    {
+      "t": 21,
+      "ids": [
+        "scn_bank_953",
+        "scn_bank_946",
+        "scn_bank_978",
+        "scn_bank_944",
+        "scn_bank_981"
+      ],
+      "bad": []
+    },
+    {
+      "t": 22,
+      "ids": [
+        "scn_bank_956",
+        "scn_bank_963",
+        "scn_bank_975",
+        "scn_bank_958",
+        "scn_bank_949"
+      ],
+      "bad": []
+    },
+    {
+      "t": 23,
+      "ids": [
+        "scn_bank_947",
+        "scn_bank_952",
+        "scn_bank_953",
+        "scn_bank_975",
+        "scn_bank_956"
+      ],
+      "bad": []
+    },
+    {
+      "t": 24,
+      "ids": [
+        "scn_bank_955",
+        "scn_bank_979",
+        "scn_bank_981",
+        "scn_bank_980",
+        "scn_bank_968"
+      ],
+      "bad": []
+    },
+    {
+      "t": 25,
+      "ids": [
+        "scn_bank_967",
+        "scn_bank_974",
+        "scn_bank_956",
+        "scn_bank_979",
+        "scn_bank_966"
+      ],
+      "bad": []
+    },
+    {
+      "t": 26,
+      "ids": [
+        "scn_bank_956",
+        "scn_bank_967",
+        "scn_bank_951",
+        "scn_bank_942",
+        "scn_bank_954"
+      ],
+      "bad": []
+    },
+    {
+      "t": 27,
+      "ids": [
+        "scn_bank_952",
+        "scn_bank_945",
+        "scn_bank_979",
+        "scn_bank_954",
+        "scn_bank_974"
+      ],
+      "bad": []
+    },
+    {
+      "t": 28,
+      "ids": [
+        "scn_bank_946",
+        "scn_bank_980",
+        "scn_bank_947",
+        "scn_bank_942",
+        "scn_bank_970"
+      ],
+      "bad": []
+    },
+    {
+      "t": 29,
+      "ids": [
+        "scn_bank_954",
+        "scn_bank_952",
+        "scn_bank_957",
+        "scn_bank_946",
+        "scn_bank_978"
+      ],
+      "bad": []
+    },
+    {
+      "t": 30,
+      "ids": [
+        "scn_bank_981",
+        "scn_bank_942",
+        "scn_bank_971",
+        "scn_bank_950",
+        "scn_bank_975"
+      ],
+      "bad": []
+    },
+    {
+      "t": 31,
+      "ids": [
+        "scn_bank_980",
+        "scn_bank_947",
+        "scn_bank_954",
+        "scn_bank_944",
+        "scn_bank_952"
+      ],
+      "bad": []
+    },
+    {
+      "t": 32,
+      "ids": [
+        "scn_bank_964",
+        "scn_bank_981",
+        "scn_bank_958",
+        "scn_bank_980",
+        "scn_bank_965"
+      ],
+      "bad": []
+    },
+    {
+      "t": 33,
+      "ids": [
+        "scn_bank_972",
+        "scn_bank_945",
+        "scn_bank_951",
+        "scn_bank_960",
+        "scn_bank_976"
+      ],
+      "bad": []
+    },
+    {
+      "t": 34,
+      "ids": [
+        "scn_bank_974",
+        "scn_bank_965",
+        "scn_bank_969",
+        "scn_bank_954",
+        "scn_bank_966"
+      ],
+      "bad": []
+    },
+    {
+      "t": 35,
+      "ids": [
+        "scn_bank_952",
+        "scn_bank_976",
+        "scn_bank_944",
+        "scn_bank_961",
+        "scn_bank_981"
+      ],
+      "bad": []
+    },
+    {
+      "t": 36,
+      "ids": [
+        "scn_bank_964",
+        "scn_bank_981",
+        "scn_bank_975",
+        "scn_bank_951",
+        "scn_bank_969"
+      ],
+      "bad": []
+    },
+    {
+      "t": 37,
+      "ids": [
+        "scn_bank_945",
+        "scn_bank_964",
+        "scn_bank_977",
+        "scn_bank_954",
+        "scn_bank_973"
+      ],
+      "bad": []
+    },
+    {
+      "t": 38,
+      "ids": [
+        "scn_bank_971",
+        "scn_bank_965",
+        "scn_bank_969",
+        "scn_bank_954",
+        "scn_bank_944"
+      ],
+      "bad": []
+    },
+    {
+      "t": 39,
+      "ids": [
+        "scn_bank_959",
+        "scn_bank_969",
+        "scn_bank_960",
+        "scn_bank_963",
+        "scn_bank_954"
+      ],
+      "bad": []
+    },
+    {
+      "t": 40,
+      "ids": [
+        "scn_bank_943",
+        "scn_bank_971",
+        "scn_bank_946",
+        "scn_bank_954",
+        "scn_bank_959"
+      ],
+      "bad": []
+    },
+    {
+      "t": 41,
+      "ids": [
+        "scn_bank_959",
+        "scn_bank_978",
+        "scn_bank_977",
+        "scn_bank_948",
+        "scn_bank_963"
+      ],
+      "bad": []
+    },
+    {
+      "t": 42,
+      "ids": [
+        "scn_bank_942",
+        "scn_bank_978",
+        "scn_bank_979",
+        "scn_bank_950",
+        "scn_bank_980"
+      ],
+      "bad": []
+    },
+    {
+      "t": 43,
+      "ids": [
+        "scn_bank_954",
+        "scn_bank_976",
+        "scn_bank_946",
+        "scn_bank_947",
+        "scn_bank_973"
+      ],
+      "bad": []
+    },
+    {
+      "t": 44,
+      "ids": [
+        "scn_bank_966",
+        "scn_bank_967",
+        "scn_bank_981",
+        "scn_bank_978",
+        "scn_bank_964"
+      ],
+      "bad": []
+    },
+    {
+      "t": 45,
+      "ids": [
+        "scn_bank_968",
+        "scn_bank_980",
+        "scn_bank_958",
+        "scn_bank_943",
+        "scn_bank_972"
+      ],
+      "bad": []
+    },
+    {
+      "t": 46,
+      "ids": [
+        "scn_bank_961",
+        "scn_bank_963",
+        "scn_bank_960",
+        "scn_bank_950",
+        "scn_bank_945"
+      ],
+      "bad": []
+    },
+    {
+      "t": 47,
+      "ids": [
+        "scn_bank_964",
+        "scn_bank_951",
+        "scn_bank_952",
+        "scn_bank_960",
+        "scn_bank_971"
+      ],
+      "bad": []
+    },
+    {
+      "t": 48,
+      "ids": [
+        "scn_bank_944",
+        "scn_bank_962",
+        "scn_bank_971",
+        "scn_bank_979",
+        "scn_bank_941"
+      ],
+      "bad": []
+    },
+    {
+      "t": 49,
+      "ids": [
+        "scn_bank_956",
+        "scn_bank_945",
+        "scn_bank_973",
+        "scn_bank_952",
+        "scn_bank_948"
+      ],
+      "bad": []
+    }
+  ],
+  "staleResolve": {
+    "requested": [
+      "scn_bank_074",
+      "scn_bank_075",
+      "scn_bank_076",
+      "scn_bank_941",
+      "scn_bank_942",
+      "scn_bank_943"
+    ],
+    "resolved": [
+      "scn_bank_941",
+      "scn_bank_942",
+      "scn_bank_943"
+    ],
+    "droppedLegacy": [
+      "scn_bank_074",
+      "scn_bank_075",
+      "scn_bank_076"
+    ]
+  },
+  "counts": {
+    "LB": 62,
+    "RB": 63,
+    "CB": 70,
+    "RW": 65,
+    "LW": 41,
+    "totalGold": 301
+  }
+}

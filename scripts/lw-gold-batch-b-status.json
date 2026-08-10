@@ -1,0 +1,38 @@
+{
+  "phase": "BATCH_B",
+  "verdict": "LW BATCH B GOLD APPROVED",
+  "insertedIds": [
+    "scn_bank_963",
+    "scn_bank_964",
+    "scn_bank_965",
+    "scn_bank_966",
+    "scn_bank_967",
+    "scn_bank_968",
+    "scn_bank_969",
+    "scn_bank_970",
+    "scn_bank_971",
+    "scn_bank_972",
+    "scn_bank_973",
+    "scn_bank_974"
+  ],
+  "temporaryLwTotal": 74,
+  "locksOk": true,
+  "locked941to962Ok": true,
+  "blockers": [],
+  "remainingUnusedFamilyCount": 25,
+  "goldClosure": {
+    "status": "LW BATCH B GOLD APPROVED",
+    "goldLockedRange": "941-974",
+    "pilot": "941-950",
+    "batchA": "951-962",
+    "batchB": "963-974",
+    "repairedIds": [
+      "scn_bank_963",
+      "scn_bank_964",
+      "scn_bank_970",
+      "scn_bank_974"
+    ],
+    "lockArtifact": "scripts/.lw-batch-b-gold-lock.json",
+    "finalAudit": "scripts/lw-batch-b-gold-final-audit.json"
+  }
+}

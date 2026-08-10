@@ -1,0 +1,340 @@
+{
+  "phase": "LW_BATCH_B_SURGICAL_REPAIR_PHASE_B",
+  "status": "LW BATCH B SURGICAL REPAIR READY FOR HUMAN REVIEW",
+  "contentEdited": true,
+  "onlyTargetsModified": [
+    "scn_bank_963",
+    "scn_bank_964",
+    "scn_bank_970",
+    "scn_bank_974"
+  ],
+  "noScenario975": true,
+  "noBatchC": true,
+  "noCommit": true,
+  "repairs": [
+    {
+      "id": "scn_bank_963",
+      "oldFamilyKey": "lw_sys_15_outlet_width",
+      "newFamilyKey": "lw_sys_5plus1_trap",
+      "oldTeaching": "Keep outlet width against deep 1:5 pressure",
+      "newTeaching": "Against 5+1 the advanced defender on your side changes the wide finish.",
+      "difficulty": "Advanced",
+      "perception": false,
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "5+1",
+      "numerical": "6v6",
+      "handedness": "none",
+      "ab": {
+        "A": "Refuse the wide finish now — recycle with the left back and keep left structure while the advanced defender is still on your side",
+        "B": "Take the wide finish only if the advanced defender has already left your side toward the middle or the pivot"
+      },
+      "geometry": {
+        "ball": "LB left side ~9–10m",
+        "LW": "wide left corner / sideline",
+        "LB": "has ball, looking to play LW wide",
+        "advanced": "high between LW and LB on left side",
+        "wingDefender": "covering wide finish angle on sideline",
+        "pivot": "n/a",
+        "currentOwnership": "attack left side",
+        "availableLane": "recycle / keep left structure",
+        "blockedLane": "baited wide finish into advanced + WD",
+        "trigger": "LB looks to play LW for wide finish while advanced still high on left",
+        "aToBChange": "advanced leaves left side toward middle/pivot"
+      },
+      "systemRelevance": "Remove advanced from left side → refuse-finish fork disappears; normal wing finish may become live.",
+      "closestLw": "scn_bank_942",
+      "closestRw": "no direct RW 5+1 twin",
+      "duplicate": "UNIQUE",
+      "coachRisk": 3,
+      "verdict": "READY_FOR_HUMAN_REVIEW",
+      "whyANow": "Wide finish feeds the 5+1 advanced and the wing defender together.",
+      "whenB": "Advanced has left LW side toward middle or pivot.",
+      "whyBPlausible": "Corner looks empty; good LW wants to punish a high defence.",
+      "duplicateDefence": "UNIQUE vs 942 (ask-now under 5:1). No RW 5+1 attack twin.",
+      "hr": {
+        "title": "Lijevo krilo — odbij namamljeni široki završetak protiv 5+1",
+        "situation": "Neriješeno je 12:12 u 23. minuti protiv 5+1. Njihov istureni branič već je visoko između tebe i lijevog vanjskog na lijevoj strani. Njihov krilni branič također pokriva kut širokog završetka uz aut. Lijevi vanjski ima loptu i gleda da te igra za široki završetak. Iz kuta izgleda dovoljno prazno za napad.",
+        "question": "Lijevi vanjski te gleda za široku loptu dok im je istureni još visoko na tvojoj strani — što prvo?",
+        "A": "Odbij široki završetak sada — vrati loptu s lijevim vanjskim i drži lijevu strukturu dok je istureni još na tvojoj strani",
+        "B": "Uzmi široki završetak samo ako je istureni već napustio tvoju stranu prema sredini ili pivotu",
+        "C": "Forsiraj široki završetak sada jer kut izgleda prazan",
+        "D": "Siječi unutra u isturenog braniča da otvoriš prostor lijevom vanjskom",
+        "correctFeedback": "Točno — taj široki završetak hrani isturenog u 5+1 i krilnog braniča zajedno.",
+        "explanation": "Protiv 5+1 istureni na tvojoj strani mijenja široki završetak. Ako je još visoko između tebe i lijevog vanjskog, a krilni branič također pokriva kut završetka, odbij tu akciju i vrati loptu. Široko napadaj tek kad istureni napusti tvoju stranu.",
+        "whyCorrectOverSecondBest": "A odbija široki završetak dok je istureni još visoko na tvojoj strani. B postaje točan tek kad je taj istureni napustio tvoju stranu prema sredini ili pivotu."
+      },
+      "en": {
+        "title": "Left Wing — Refuse the Baited Wide Finish Against 5+1",
+        "situation": "Tied 12:12 at 23' against 5+1. Their advanced defender is already high between you and the left back on the left side. Their wing defender also covers the wide finish angle on the sideline. The left back has the ball and looks to play you for a wide finish. From the corner it looks empty enough to attack.",
+        "question": "The left back looks to play you wide while their advanced defender is still high on your side — what first?"
+      },
+      "contentHash": "686173df9e80710278a48dcf357b66860c31787178cc8ef97ef1807691cac671"
+    },
+    {
+      "id": "scn_bank_964",
+      "oldFamilyKey": "lw_sw_advantage_gone",
+      "newFamilyKey": "lw_entry_when_space_opens",
+      "oldTeaching": "Stop forcing second wave when numbers are back",
+      "newTeaching": "Enter only when both are true: the wing defender’s overcommit empties a real path behind him, and the left back still has a free arm to feed that cut.",
+      "difficulty": "Advanced",
+      "perception": true,
+      "attackOrDefence": "Attack",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "handedness": "none",
+      "ab": {
+        "A": "Start the entry behind him now — while the left back can still feed that cut",
+        "B": "Stay wide if the left back is already under a double and has no free arm to deliver the cut"
+      },
+      "geometry": {
+        "ball": "LB driving left side",
+        "LW": "corner, ready to enter",
+        "WD": "left corner, hips/chest turned inside toward LB drive",
+        "LB": "free arm, body open to feed cut",
+        "half": "n/a",
+        "pivot": "n/a",
+        "availableLane": "path behind WD toward six",
+        "blockedLane": "n/a for A; entry undeliverable if LB doubled",
+        "trigger": "WD overcommit inside + LB free arm",
+        "aToBChange": "LB under double / no free arm"
+      },
+      "systemRelevance": "N/A — 6:0 perception entry.",
+      "closestLw": "scn_bank_967",
+      "closestRw": "scn_bank_890 / 893",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "coachRisk": 4,
+      "verdict": "READY_FOR_HUMAN_REVIEW",
+      "whyANow": "Emptied path behind WD and LB can still deliver.",
+      "whenB": "LB doubled with no free arm.",
+      "whyBPlausible": "Intelligent LW checks delivery before committing the cut.",
+      "duplicateDefence": "RELATED_BUT_DISTINCT vs 967 (opposite), RW 890 (second help), RW 893 (pivot return).",
+      "hr": {
+        "title": "Lijevo krilo — uđi samo kad se prostor otvori i lijevi vanjski te još može nahraniti",
+        "situation": "Neriješeno je 14:14 u 27. minuti protiv 6:0. Lijevi vanjski s loptom prodire na tvoju stranu. Tvoj krilni branič napušta kut i ide unutra prema tom prodoru — bokovi i prsa mu se okreću od tebe. Iza njega se otvara put prema šest za tvoj ulazak. Lijevi vanjski još ima slobodnu ruku i tijelo dovoljno otvoreno da doda u taj ulazak.",
+        "question": "On napušta kut da pomogne unutra a lijevi vanjski još ima slobodnu ruku — što radiš?",
+        "A": "Kreni u ulazak iza njega sada — dok te lijevi vanjski još može nahraniti u taj ulazak",
+        "B": "Ostani široko ako je lijevi vanjski već pod dvojicom i nema slobodnu ruku za dodavanje u ulazak",
+        "C": "Ostani široko iz navike iako je on napustio kut a lijevi vanjski te još može nahraniti",
+        "D": "Uđi rano prije nego napusti kut, dok lijevi vanjski još treba tvoju širinu",
+        "correctFeedback": "Točno — ispražnjen put plus dodavanje koje lijevi vanjski još može izvesti čine ulazak živim.",
+        "explanation": "Uđi samo kad vrijede obje stvari: krilni branič odlaskom unutra isprazni pravi put iza sebe, i lijevi vanjski još ima slobodnu ruku za dodavanje u taj ulazak. Ako je lijevi vanjski pod dvojicom bez slobodne ruke, ostani široko. Ne ulazi rano dok još treba tvoju širinu.",
+        "whyCorrectOverSecondBest": "A ulazi jer je put ispražnjen i lijevi vanjski još može dodati. B postaje točan kad je lijevi vanjski pod dvojicom i nema slobodnu ruku za taj ulazak."
+      },
+      "en": {
+        "title": "Left Wing — Enter Only When Space Opens and the Left Back Can Still Feed You",
+        "situation": "Tied 14:14 at 27' against 6:0. The left back drives your side with the ball. Your wing defender leaves the corner and steps inside toward that drive — his hips and chest turn away from you. Behind him a path toward six opens for your cut. The left back still has a free arm and his body is open enough to pass into that cut.",
+        "question": "He leaves the corner to help inside and the left back still has a free arm — what do you do?"
+      },
+      "contentHash": "f76246da87b159c6ec7ac5b3ad8fd8ea4cfee52b2b64c4a6a0452f899cb27080"
+    },
+    {
+      "id": "scn_bank_970",
+      "oldFamilyKey": "lw_empty_own_safe_return",
+      "newFamilyKey": "lw_def_sys_51_vs_advance",
+      "oldTeaching": "Empty own goal dirty catch → safe return",
+      "newTeaching": "In 5:1 the advanced defender owns the left channel when he is already high there.",
+      "difficulty": "Advanced",
+      "perception": false,
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "5-1",
+      "numerical": "6v6",
+      "handedness": "none",
+      "ab": {
+        "A": "Stay on their right wing and deny that pass — do not chase into the channel the advanced already owns",
+        "B": "Help inside on that channel only if the advanced defender has already left your side completely"
+      },
+      "geometry": {
+        "ball": "Opp RB left channel ~10m",
+        "LW": "defending left wing",
+        "advanced": "already high on same left drive lane",
+        "oppRW": "still wide, pass-ready (LW man)",
+        "half": "behind/coordinating with advanced",
+        "availableLane": "wing pass if LW chases advanced job",
+        "blockedLane": "drive lane already owned by advanced",
+        "trigger": "dangerous-looking drive while advanced already high on that lane",
+        "aToBChange": "advanced leaves LW side completely"
+      },
+      "systemRelevance": "Remove advanced ownership → stay-vs-help fork changes to standard wing help problem.",
+      "closestLw": "scn_bank_961 / 942",
+      "closestRw": "scn_bank_940 (1:5 defence — different system)",
+      "duplicate": "UNIQUE",
+      "coachRisk": 3,
+      "verdict": "READY_FOR_HUMAN_REVIEW",
+      "whyANow": "Advanced already owns the drive lane; LW job remains the wing.",
+      "whenB": "Advanced has left LW side completely.",
+      "whyBPlausible": "Drive looks dangerous; 6:0 habit says help inside.",
+      "duplicateDefence": "UNIQUE vs 961/942/940.",
+      "hr": {
+        "title": "Lijevo krilo — obrana: u 5:1 ne juri liniju prodora koju istureni već drži",
+        "situation": "Vodite 16:15 u 31. minuti u vašoj 5:1. Braniš lijevo krilo. Njihov desni vanjski ima loptu u lijevom prostoru na oko deset metara. Vaš istureni branič već je visoko na tom istom lijevom prostoru i drži liniju prodora. Njihovo desno krilo — tvoj čovjek — još je široko uz aut spremno za dodavanje. Prodor izgleda dovoljno opasno da bi te 6:0 navika vukla unutra.",
+        "question": "Vaš istureni već je visoko na lijevoj liniji prodora a njihovo krilo je još široko — što je tvoj posao?",
+        "A": "Ostani na njihovom desnom krilu i zatvori to dodavanje — ne juri u prostor koji istureni već drži",
+        "B": "Pomagni unutra na tom prostoru samo ako je istureni već potpuno napustio tvoju stranu",
+        "C": "Napusti njihovo krilo i skoči na prodor desnog vanjskog jer izgleda opasno",
+        "D": "Zanemari i krilo i prostor i padni duboko pod šest",
+        "correctFeedback": "Točno — u 5:1 taj je prostor njegov posao; tvoj je i dalje krilo.",
+        "explanation": "U 5:1 istureni drži lijevi prostor kad je već visoko tamo. Tvoj prvi posao ostaje njihovo desno krilo. Ne juri taj prostor iz 6:0 navike pomaganja. Unutra pomaži samo ako je istureni potpuno napustio tvoju stranu.",
+        "whyCorrectOverSecondBest": "A drži krilo jer istureni već drži lijevi prostor. B postaje točan samo kad je istureni potpuno napustio tvoju stranu."
+      },
+      "en": {
+        "title": "Left Wing — Defence: In 5:1 Do Not Chase the Drive Lane the Advanced Already Owns",
+        "situation": "You lead 16:15 at 31' in your team’s 5:1. You defend left wing. Their right back has the ball in the left channel at about ten metres. Your advanced defender is already high on that same left channel and owns the drive lane. Their right wing — your man — is still wide near the sideline ready for the pass. The drive looks dangerous enough that a 6:0 habit would pull you inside.",
+        "question": "Your advanced is already high on the left drive lane and their wing is still wide — what is your job?"
+      },
+      "contentHash": "ee7bcfd9c6e1664d37285797bd80d4496fb8261dd48bf1f9088c08454172c85f"
+    },
+    {
+      "id": "scn_bank_974",
+      "oldFamilyKey": "lw_def_lb_wing_coop",
+      "newFamilyKey": "lw_def_handover_timing",
+      "oldTeaching": "After RB binds you then looks wing, keep pass + call half",
+      "newTeaching": "You start as owner of their right wing.",
+      "difficulty": "Advanced",
+      "perception": true,
+      "attackOrDefence": "Defence",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "handedness": "none",
+      "ab": {
+        "A": "Stay with the runner — release him only after the half has contact and calls ownership",
+        "B": "Release immediately only if the half already has body contact and has called that he has him"
+      },
+      "geometry": {
+        "ball": "Opp RB still has ball",
+        "LW": "owns opp RW",
+        "oppRW": "starts inside run toward half zone",
+        "half": "close enough, no contact, no call",
+        "availableLane": "if LW releases early, runner free",
+        "blockedLane": "n/a",
+        "trigger": "runner enters half zone before contact+call",
+        "aToBChange": "half contact + ownership call",
+        "frames": [
+          "LW owns",
+          "runner to half zone",
+          "half capable without ownership",
+          "contact+call"
+        ]
+      },
+      "systemRelevance": "Ownership transfer timing — not pass-lane close (962), not controlled-help cocktail (880).",
+      "closestLw": "scn_bank_962 / 973",
+      "closestRw": "scn_bank_880 / 928",
+      "duplicate": "RELATED_BUT_DISTINCT",
+      "coachRisk": 4,
+      "verdict": "READY_FOR_HUMAN_REVIEW",
+      "whyANow": "Zone entry is not handover; contact and call missing.",
+      "whenB": "Half has body contact and has called ownership.",
+      "whyBPlausible": "Runner entered half area; temptation to jump the ball.",
+      "duplicateDefence": "RELATED_BUT_DISTINCT vs 962/973/880/928.",
+      "hr": {
+        "title": "Lijevo krilo — obrana: pusti trkača tek nakon pravog preuzimanja",
+        "situation": "Neriješeno je 17:17 u 34. minuti u vašoj 6:0. Braniš lijevo krilo i čuvaš njihovo desno krilo. To krilo kreće unutra prema zoni tvog polubranitelja. Polubranitelj je dovoljno blizu da ga preuzme, ali još nije napravio kontakt i nije javio da ga drži. Njihov desni vanjski još ima loptu. Mamac je rano napustiti trkača i skočiti na loptu.",
+        "question": "Njihovo krilo trči prema polubranitelju, a polubranitelj nema kontakt i nije javio — što radiš?",
+        "A": "Ostani s trkačem — pusti ga tek kad polubranitelj ima kontakt i javi da ga drži",
+        "B": "Pusti odmah samo ako polubranitelj već ima kontakt tijelom i javio je da ga drži",
+        "C": "Napusti trkača sada jer je ušao u prostor polubranitelja i skoči na desnog vanjskog",
+        "D": "Nikad ne puštaj trkača čak ni nakon jasnog kontakta i jasne dojave preuzimanja",
+        "correctFeedback": "Točno — ulazak u zonu polubranitelja još nije preuzimanje.",
+        "explanation": "Ti počinješ kao vlasnik njihovog desnog krila. Kad trči u zonu polubranitelja, čekaj pravo preuzimanje: kontakt plus dojava. Ne puštaj samo zato što je ušao u tu zonu. Pusti odmah samo kad su i kontakt i dojava tu.",
+        "whyCorrectOverSecondBest": "A drži trkača jer kontakta i dojave još nema. B postaje točan tek kad polubranitelj već ima kontakt i javio je preuzimanje."
+      },
+      "en": {
+        "title": "Left Wing — Defence: Release the Runner Only After Real Handover",
+        "situation": "Tied 17:17 at 34' in your 6:0. You defend left wing and own their right wing. That wing starts an inside run toward your half defender’s zone. Your half is close enough to take him, but he has not made contact yet and has not called ownership. Their right back still has the ball. The temptation is to leave the runner early and jump the ball.",
+        "question": "Their wing runs toward the half, and the half has no contact and has not called — what do you do?"
+      },
+      "contentHash": "bd478709690382b0acadf30d00b48b94d8167e20eb8c0231be957aa37a721949"
+    }
+  ],
+  "batchBAfter": {
+    "count": 12,
+    "attack": 8,
+    "defence": 4,
+    "difficulty": {
+      "Advanced": 6,
+      "Intermediate": 5,
+      "Expert": 1
+    },
+    "perception": {
+      "true": 7,
+      "false": 5
+    }
+  },
+  "gold941to974": {
+    "count": 34,
+    "attack": 26,
+    "defence": 8,
+    "difficulty": {
+      "Beginner": 5,
+      "Intermediate": 14,
+      "Advanced": 12,
+      "Expert": 3
+    },
+    "perception": {
+      "true": 24,
+      "false": 10,
+      "pct": 71
+    }
+  },
+  "validators": {
+    "typecheck": "PASS",
+    "terminology": "PASS",
+    "uniqueSession": "PASS",
+    "personalization": "PASS",
+    "matchDayTactics": "PASS",
+    "tacticalSystems": "PASS",
+    "noPositionFallback": "PASS",
+    "archetypes": "PASS",
+    "lbGold": "PASS",
+    "rbGold": "PASS",
+    "cbGold": "PASS",
+    "rwGold": "PASS",
+    "mutatingScenarioQualityAudit": "NOT_RUN"
+  },
+  "lockVerification": {
+    "LB": {
+      "count": 62,
+      "hashOk": true
+    },
+    "RB": {
+      "count": 63,
+      "hashOk": true
+    },
+    "CB": {
+      "count": 70,
+      "hashOk": true
+    },
+    "RW": {
+      "count": 65,
+      "hashOk": true
+    },
+    "protected941to962AndUntouchedBatchB": true,
+    "onlyChanged": [
+      "scn_bank_963",
+      "scn_bank_964",
+      "scn_bank_970",
+      "scn_bank_974"
+    ],
+    "lwCount": 74
+  },
+  "filesChanged": [
+    "content/scenario-bank/scenarios.json",
+    "scripts/scenario-bank/data/lw-parts/lw-families-b.json",
+    "scripts/apply-lw-batch-b-surgical-repair.mjs",
+    "scripts/audit-lw-batch-b.mjs",
+    "scripts/.lw-batch-b-surgical-lock-before.json",
+    "scripts/lw-gold-batch-b-review.json",
+    "scripts/lw-gold-batch-b-review.md",
+    "scripts/lw-gold-batch-b-audit.json",
+    "scripts/lw-gold-batch-b-audit.md",
+    "scripts/lw-gold-batch-b-duplicate-audit.json",
+    "scripts/lw-gold-batch-b-status.json",
+    "scripts/lw-batch-b-surgical-repair-report.json",
+    "scripts/lw-batch-b-surgical-repair-report.md"
+  ],
+  "remainingRisks": [
+    "964 RELATED to RW 890/893 — human must confirm LB free-arm co-cue is decisive",
+    "974 RELATED to RW 880 / LW 962 — human must confirm ownership-transfer timing stays isolated",
+    "963 first LW 5+1 attack scenario — confirm Advanced difficulty feels earned",
+    "Do not Gold-approve Batch B until human coach review of the four HR texts"
+  ]
+}

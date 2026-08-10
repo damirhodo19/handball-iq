@@ -1,0 +1,132 @@
+{
+  "phase": "LW_GOLD_BATCH_C_PHASE_A",
+  "status": "PHASE_A_COMPLETE_PROCEED_PHASE_B",
+  "lockedGold": "941-974",
+  "unusedMatrixFamilies": 25,
+  "classificationCounts": {
+    "STRONG": 7,
+    "QUESTIONABLE": 5,
+    "REJECT": 13
+  },
+  "selectedForBatchC": [
+    {
+      "id": "scn_bank_975",
+      "familyKey": "lw_def_comm_half",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": false,
+      "system": "6-0",
+      "numerical": "6v6",
+      "why": "Missing communication fundamental: call/confirm before leaving the wing. Distinct from 974 runner-release timing and 973 reverse stay."
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": false,
+      "system": "6-0",
+      "numerical": "6v6",
+      "why": "Deny opposing wing entry path — defence counterpart to attack backdoor, not owned by 966/974."
+    },
+    {
+      "id": "scn_bank_977",
+      "familyKey": "lw_def_sys_33_switch",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": false,
+      "system": "3-3",
+      "numerical": "6v6",
+      "why": "True system defence: stated 3:3 switch/stay rule changes the fork; remove-label collapses it."
+    },
+    {
+      "id": "scn_bank_978",
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "system": "Mixed",
+      "numerical": "transition",
+      "why": "Opposite map to locked 972: take far skip only when own-side lane is already covered."
+    },
+    {
+      "id": "scn_bank_979",
+      "familyKey": "lw_def_numerical_5v6",
+      "attackOrDefence": "Defence",
+      "difficulty": "Expert",
+      "perception": false,
+      "system": "6-0",
+      "numerical": "5v6",
+      "why": "5v6 defensive priority not owned; numerical state materially forces priority protection over wing chase."
+    },
+    {
+      "id": "scn_bank_980",
+      "familyKey": "lw_sys_4plus2_lane",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "system": "4+2",
+      "numerical": "6v6",
+      "why": "Sparse system attack; dual-advanced lane choice dies without 4+2 geometry; no RW twin."
+    },
+    {
+      "id": "scn_bank_981",
+      "familyKey": "lw_sys_open_man_help",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": false,
+      "system": "Open",
+      "numerical": "6v6",
+      "why": "Opposite fork to locked 968: help arrives into open isolation → recycle. System base isolation matters."
+    }
+  ],
+  "notSelectedStrongEnough": [],
+  "questionable": [
+    {
+      "familyKey": "lw_stay_wide_inside_help",
+      "reason": "Real beginner fork but entry/width DNA already dense (941/943/964/967); perception=true worsens 76% share"
+    },
+    {
+      "familyKey": "lw_def_backdoor_deny",
+      "reason": "Matrix risk 5; overlaps lw_def_wing_entry and RW 932/934 themes — select wing_entry instead"
+    },
+    {
+      "familyKey": "lw_def_protect_opp_wing",
+      "reason": "Risk 5; largely owned by 961/962/974 protect/handover DNA and RW 880"
+    },
+    {
+      "familyKey": "lw_gk_extreme_angle_body",
+      "reason": "Possibly distinct skim-vs-recycle architecture, but GK bank already has 946/955/956 — skip under GK conservatism"
+    },
+    {
+      "familyKey": "lw_late_trail_create",
+      "reason": "Borderline RW 922; game-state risk without enough LW-native geometry"
+    }
+  ],
+  "rejected": [
+    { "familyKey": "lw_sw_advantage_gone", "reason": "Semantic twin of RW 877 — already failed Batch B" },
+    { "familyKey": "lw_fw_3v2_hold_width", "reason": "Semantic twin of RW 876" },
+    { "familyKey": "lw_trans_lane_vs_recovery", "reason": "Semantic twin of RW 905" },
+    { "familyKey": "lw_empty_own_safe_return", "reason": "Semantic twin of RW 879 — already failed Batch B" },
+    { "familyKey": "lw_7v6_or_empty_opp", "reason": "Compresses RW 912/913/915" },
+    { "familyKey": "lw_short_clock", "reason": "Semantic twin of RW 925/926" },
+    { "familyKey": "lw_sys_42_corridor", "reason": "Semantic twin of RW 937" },
+    { "familyKey": "lw_sys_15_outlet_width", "reason": "Decorative 1:5 — already failed Batch B coach audit" },
+    { "familyKey": "lw_sys_33_pressure_release", "reason": "Semantic twin of RW 936" },
+    { "familyKey": "lw_6v5_free_finish", "reason": "Semantic twin of RW 917 (LB/RB drew two → finish)" },
+    { "familyKey": "lw_def_lb_wing_coop", "reason": "Same decision as LW 962 — already failed Batch B" },
+    { "familyKey": "lw_gk_near_post_commit", "reason": "GK X→Y corner architecture; overlaps RW 875 / LW GK set" },
+    { "familyKey": "lw_gk_late_movement_patience", "reason": "Overlaps 955/956 second-cue patience architecture" }
+  ],
+  "batchSize": 7,
+  "idRange": "975-981",
+  "no987": true,
+  "defenceHeavy": { "defence": 5, "attack": 2 },
+  "perceptionBias": "5 of 7 perception=false — principle/system/numerical/communication",
+  "exhaustedAreas": [
+    "Second-wave stop / first-wave 3v2 / transition lane (RW twins)",
+    "Empty-own / 7v6 / short-clock / late-trail (RW twins)",
+    "GK corner/patience families (already dense)",
+    "Width/entry ladder (already dense in 941–974)"
+  ]
+}

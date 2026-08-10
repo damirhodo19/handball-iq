@@ -89,7 +89,11 @@ export function generateDailyChallenge(
 export function getOrCreateDailyChallenge(position: HandballPosition): DailyChallenge {
   const state = loadDevelopmentState();
   const today = todayStr();
-  if (state.dailyChallenge?.date === today) return state.dailyChallenge;
+  if (state.dailyChallenge?.date === today) {
+    // Stale IDs (e.g. removed legacy LW) must not lock the day to an empty pool.
+    const resolved = getDailyChallengeScenarios(state.dailyChallenge, position);
+    if (resolved.length >= 3) return state.dailyChallenge;
+  }
   const challenge = generateDailyChallenge(position, state);
   state.dailyChallenge = challenge;
   saveDevelopmentState(state);

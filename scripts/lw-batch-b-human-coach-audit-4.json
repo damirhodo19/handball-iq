@@ -1,0 +1,394 @@
+{
+  "phase": "LW_BATCH_B_HUMAN_COACH_AUDIT_4",
+  "mode": "READ_ONLY_ADVERSARIAL",
+  "auditedIds": ["scn_bank_963", "scn_bank_964", "scn_bank_970", "scn_bank_974"],
+  "contentEdited": false,
+  "gate": "BATCH B NEEDS SURGICAL REPAIR",
+  "counts": {
+    "KEEP": 0,
+    "POLISH": 0,
+    "TACTICAL_REWRITE": 3,
+    "REMOVE_MERGE": 1
+  },
+  "lockVerification": {
+    "LB": { "count": 62, "hashOk": true },
+    "RB": { "count": 63, "hashOk": true },
+    "CB": { "count": 70, "hashOk": true },
+    "RW": { "count": 65, "hashOk": true },
+    "seeds941to962Ok": true,
+    "auditedContentUnchanged": true,
+    "has975": false
+  },
+  "table": [
+    {
+      "id": "scn_bank_963",
+      "mainTeaching": "Stay wide as outlet when LB is pressed; do not step into the pressure pocket",
+      "geometry": "RECONSTRUCTABLE_WITH_GAP",
+      "ab": "SOFT",
+      "hr": "FLAGS",
+      "systemRelevance": "DECORATIVE_OR_WEAK",
+      "closestLw": "scn_bank_942 / 941 / 967",
+      "closestRw": "scn_bank_940 (different phase — defence)",
+      "duplicateVerdict": "RELATED_BUT_DISTINCT",
+      "nativity": "UNIVERSAL_ESSENTIAL",
+      "difficultyVerdict": "Beginner OK",
+      "perceptionVerdict": "false OK (role/principle)",
+      "coachRisk": 6,
+      "recommendation": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_964",
+      "mainTeaching": "When second-wave advantage is gone, stop forcing and reset wide into set attack",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "SOFT",
+      "hr": "FLAGS_SPOILED",
+      "systemRelevance": "N/A (Mixed transition)",
+      "closestLw": "scn_bank_947",
+      "closestRw": "scn_bank_877",
+      "duplicateVerdict": "SEMANTIC_DUPLICATE",
+      "nativity": "MIRRORED_ARTIFICIAL",
+      "difficultyVerdict": "Intermediate OK; perception should likely be true",
+      "perceptionVerdict": "false QUESTIONABLE — WD distance is a live cue",
+      "coachRisk": 7,
+      "recommendation": "TACTICAL_REWRITE"
+    },
+    {
+      "id": "scn_bank_970",
+      "mainTeaching": "Empty own goal + dirty catch needing settle + WD closing → safe return",
+      "geometry": "RECONSTRUCTABLE",
+      "ab": "SOFT",
+      "hr": "FLAGS",
+      "systemRelevance": "N/A (empty-own risk)",
+      "closestLw": "scn_bank_950 (different phase — defence)",
+      "closestRw": "scn_bank_879",
+      "duplicateVerdict": "SEMANTIC_DUPLICATE",
+      "nativity": "MIRRORED_ARTIFICIAL",
+      "difficultyVerdict": "Expert OVERSTATED → Advanced or Intermediate",
+      "perceptionVerdict": "false OK as stated principle, but situation spoils cues",
+      "coachRisk": 8,
+      "recommendation": "REMOVE_MERGE"
+    },
+    {
+      "id": "scn_bank_974",
+      "mainTeaching": "After opp RB binds you then looks wing, keep body on wing pass and call half",
+      "geometry": "RECONSTRUCTABLE_WITH_GAP",
+      "ab": "CLEAR",
+      "hr": "FLAGS",
+      "systemRelevance": "6-0 OK",
+      "closestLw": "scn_bank_962",
+      "closestRw": "scn_bank_932",
+      "duplicateVerdict": "SEMANTIC_DUPLICATE",
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "difficultyVerdict": "Advanced OVERSTATED → Intermediate",
+      "perceptionVerdict": "true OK",
+      "coachRisk": 7,
+      "recommendation": "TACTICAL_REWRITE"
+    }
+  ],
+  "scenarios": {
+    "scn_bank_963": {
+      "recommendation": "TACTICAL_REWRITE",
+      "coachRisk": 6,
+      "systemClass": "VALID_UNIVERSAL_WIDTH_WITH_WEAK_SYSTEM_LABEL",
+      "wouldSeriousCoachUseExactScenario": false,
+      "whyNot": "Same stay-wide outlet decision survives without the 1:5 label; teaching already covered by LW width families 941/942/967.",
+      "reconstruction": {
+        "advancedDefender": "Stated as front defender pressing LB at nine metres — presumed the '1' of 1:5",
+        "fiveRemaining": "Not placed. Only 'next defender stepping up into left channel' — which of the five, and who marks LW, unspecified",
+        "LW": "Left sideline",
+        "LB": "Nine metres, under deep pressure",
+        "ball": "With LB",
+        "outletCreatedBy": "Implied: LB still has reverse/wide time if LW stays outside",
+        "defenderResponsibleForLW": "AMBIGUOUS — never stated",
+        "passingLane": "Wide outlet to LW if LW stays outside; short pocket closes if LW steps in",
+        "whyWidthMattersSpecificallyIn15": "NOT PROVEN — width matters under any deep press creating a trap pocket"
+      },
+      "removeLabelTest": {
+        "sameCueSameActionVs60": true,
+        "sameCueSameActionVs51": true,
+        "sameCueSameActionVsOpen": true,
+        "verdict": "System label is decorative for the stated decision"
+      },
+      "vsRw940": {
+        "940rule": "In 1:5 defence, when opposing wing stays high and ball is far side, hold middle depth — do not chase the decoy.",
+        "963rule": "When LB is pressed and a second defender steps into the channel, stay wide as outlet — do not step into the pocket.",
+        "distinctionWithoutSideOrLabel": "Different phase and problem (defence chase-depth vs attack outlet under press). Not a duplicate of 940."
+      },
+      "abGate": {
+        "ANow": "LB still has reverse/wide time; stepping inside removes the outlet and tightens the trap.",
+        "BWhen": "LB is already trapped with no reverse and needs a short escape angle.",
+        "BRealistic": true,
+        "situationSpoilsA": true,
+        "spoilNote": "Situation narrates the consequence: if you step inside, outlet lost and trap closes.",
+        "verdict": "SOFT"
+      },
+      "duplicate": {
+        "verdict": "RELATED_BUT_DISTINCT",
+        "closestLw": "scn_bank_967 / 942 / 941",
+        "cue": "LB pressed + temptation to step inside",
+        "decision": "Stay wide / do not enter pocket — same abstract decision as other width families",
+        "consequence": "Preserve outlet for LB",
+        "note": "Not a side-flip of 940; uniqueness fails against LW width curriculum and remove-label test"
+      },
+      "nativity": "UNIVERSAL_ESSENTIAL",
+      "difficultyVerdict": "Beginner acceptable for a true system-specific lesson; currently over-labeled as 1:5 system teaching",
+      "perceptionVerdict": "false appropriate if pure role discipline; not a live micro-cue read",
+      "hrProblems": [
+        {
+          "quote": "širina za izlazak",
+          "issue": "Translated 'outlet width'",
+          "naturalAlternative": "ostani vani da ima kuda / drži širinu kao izlaznu opciju"
+        },
+        {
+          "quote": "džep pritiska",
+          "issue": "Literal 'pressure pocket'",
+          "naturalAlternative": "unutra u pritisak / u gužvu oko vanjskog"
+        },
+        {
+          "quote": "ne još jedno tijelo u zamci",
+          "issue": "Abstract AI coaching",
+          "naturalAlternative": "nemoj mu još i ti ući u pritisak"
+        }
+      ],
+      "geometryVerdict": "RECONSTRUCTABLE_WITH_GAP",
+      "geometryGap": "Positions of the five deep defenders and who owns LW are missing"
+    },
+    "scn_bank_964": {
+      "recommendation": "TACTICAL_REWRITE",
+      "coachRisk": 7,
+      "wouldSeriousCoachUseExactScenario": false,
+      "whyNot": "Teaching sentence matches RW 877; question spoils the conclusion; only survival claim is being the inverse of 947.",
+      "chronology": {
+        "1_firstWaveEnds": "Implied after own save; not reconstructed in detail",
+        "2_secondWaveBegins": "LW stayed wide for one more advantage",
+        "3_advantageThatExisted": "Left WD late; free left run previously available",
+        "4_whoRecovered": "WD inside two metres; second defender filled left lane",
+        "5_whatLWSees": "No free run to six; LB slowing into set",
+        "6_decisionNow": "Force one more left action vs reset wide into set attack",
+        "7_riskIfContinue": "Run into recovered numbers / dead left lane"
+      },
+      "teachingObjectivesOneSentence": {
+        "rw877": "When the transition finish is gone and defence is set, stay wide into set attack instead of forcing the cut.",
+        "lw945": "When already second pivot and the LB drive dies in a stacked left six, sprint back to width.",
+        "lw947": "When middle is closed but left WD is still more than two metres late, demand one more left second-wave action.",
+        "lw964": "When the second-wave left advantage is gone, stop forcing and reset wide into set attack."
+      },
+      "advantageFork": {
+        "teachesAdvantageStillExistsVsGone": true,
+        "exactCueAdvantageGone": "WD recovered inside two metres AND second defender filled left lane",
+        "note": "Fork is real versus 947, but 964 alone collapses to 877"
+      },
+      "abGate": {
+        "ANow": "WD inside 2m and left lane filled — numbers restored.",
+        "BWhen": "WD still more than two metres late (947 condition).",
+        "BRealistic": true,
+        "situationSpoilsA": true,
+        "spoilNote": "Question states 'The left second-wave advantage is gone'.",
+        "verdict": "SOFT"
+      },
+      "duplicate": {
+        "verdict": "SEMANTIC_DUPLICATE",
+        "closestRw": "scn_bank_877",
+        "closestLw": "scn_bank_947",
+        "cue": "Recovered numbers / advantage gone",
+        "decision": "Stay wide into set attack; do not force",
+        "consequence": "Avoid late traffic in recovered defence",
+        "vs947": "Opposite fork — related curriculum pair, not unique standalone teaching",
+        "vs945": "Different — 945 is second-pivot exit to width after dead drive"
+      },
+      "nativity": "MIRRORED_ARTIFICIAL",
+      "difficultyVerdict": "Intermediate OK",
+      "perceptionVerdict": "false QUESTIONABLE — correct answer depends on reading WD distance and lane fill",
+      "hrProblems": [
+        {
+          "quote": "Lijeva prednost drugog vala je nestala — što sada?",
+          "issue": "Answer leakage / spoiled premise",
+          "naturalAlternative": "Krilni branič je unutar dva metra i kanal je pun — što radiš?"
+        },
+        {
+          "quote": "resetiraj široko",
+          "issue": "Anglicism 'reset'",
+          "naturalAlternative": "vrati se u širinu / prijeđi u pozicijski napad"
+        },
+        {
+          "quote": "mrtvog lijevog kanala",
+          "issue": "Slightly abstract",
+          "naturalAlternative": "zatvorenog lijevog prostora / gužve lijevo"
+        }
+      ],
+      "geometryVerdict": "RECONSTRUCTABLE",
+      "geometryGap": "Identity of the 'second defender' only lightly specified"
+    },
+    "scn_bank_970": {
+      "recommendation": "REMOVE_MERGE",
+      "coachRisk": 8,
+      "wouldSeriousCoachUseExactScenario": false,
+      "whyNot": "Abstract decision structure is RW 879 with side/position cosmetics; Expert not earned.",
+      "reconstruction": {
+        "whyOwnGoalEmpty": "Own GK out as seventh attacker (7v6)",
+        "LW": "Receiving on left wing",
+        "ball": "From LB; first touch needs settle; not on clean shooting hand",
+        "nearestOpponent": "WD already closing take-off foot",
+        "gkSubSituation": "GK out as court player — empty net behind",
+        "afterPossessionLoss": "Counter into empty net (stated as risk; opponent break geometry thinner than 879)",
+        "whySafer": "Short return removes forced dirty finish",
+        "advantageSacrificed": "Possible wing finish while WD is only closing, not yet there"
+      },
+      "abstractRules": {
+        "970": "Empty own goal + catch still needs settle + defender closing → safe short return; finish only if catch already clean with free take-off.",
+        "879": "Empty own goal + catch behind body needing extra step + defender recovering → safe short return; finish only if catch already clean with immediate take-off."
+      },
+      "stripTest": {
+        "removed": ["LW/RW", "left/right", "names", "score/minute"],
+        "bothReduceTo": "With empty own goal, avoid risky finish from messy catch and recycle safely",
+        "materiallyDifferentMechanism": null,
+        "verdict": "SEMANTIC_DUPLICATE of RW 879"
+      },
+      "vsOther": {
+        "lw948": "Different — 6v5 stay-wide vs entry onto own pivot",
+        "lw950": "Different phase — defence fill empty-goal lane after second-pivot turnover",
+        "rw912": "Related empty-own 7v6 family; clean vs messy branch already covered by 879/914 pair"
+      },
+      "difficultyAudit": {
+        "stated": "Expert",
+        "independentVariables": [
+          "own GK out",
+          "catch needs settle",
+          "WD closing",
+          "LB free for return"
+        ],
+        "layeredDecisionMaking": false,
+        "recommendedDifficulty": "Advanced",
+        "note": "Dramatic empty goal ≠ Expert. 879 is richer (opponent wing already high for empty-goal shot) and is the reference Expert."
+      },
+      "abGate": {
+        "ANow": "Catch dirty + WD closing + empty own goal → return.",
+        "BWhen": "Catch already clean in one step and take-off free before WD arrives.",
+        "BRealistic": true,
+        "BAttractive": true,
+        "situationSpoilsA": true,
+        "spoilNote": "Situation states dirty catch, closing defender, and that forced finish risks empty-net counter.",
+        "verdict": "SOFT"
+      },
+      "duplicate": {
+        "verdict": "SEMANTIC_DUPLICATE",
+        "closestRw": "scn_bank_879",
+        "cue": "Empty own + messy catch + recovering WD",
+        "decision": "Safe return vs finish only if already clean",
+        "consequence": "Avoid counter into empty net"
+      },
+      "nativity": "MIRRORED_ARTIFICIAL",
+      "perceptionVerdict": "false acceptable as risk principle; cues are fully pre-narrated",
+      "hrProblems": [
+        {
+          "quote": "ulov još treba smirivanje",
+          "issue": "Acceptable but slightly mechanical",
+          "naturalAlternative": "lopta ti još nije mirna / još moraš uhvatiti pod kontrolu"
+        },
+        {
+          "quote": "nesmirenom loptom",
+          "issue": "Unnatural adjective",
+          "naturalAlternative": "loptom koja ti još nije mirna"
+        },
+        {
+          "quote": "poklon za kontru",
+          "issue": "OK coach speak — minor",
+          "naturalAlternative": "tražiš kontru u praznu mrežu"
+        }
+      ],
+      "geometryVerdict": "RECONSTRUCTABLE",
+      "enDeNotes": "EN mirrors 879 structure closely; DE not separately broken but inherits the twin problem"
+    },
+    "scn_bank_974": {
+      "recommendation": "TACTICAL_REWRITE",
+      "coachRisk": 7,
+      "wouldSeriousCoachUseExactScenario": false,
+      "whyNot": "Final LW decision and reason match 962 (deny wing pass because half cannot own the wing). Starting one action earlier is not a new decision.",
+      "reconstruction": {
+        "oppRB": "Drives into LW, binds LW chest, then turns shoulders/eyes to wing",
+        "oppRW": "Wide, starts to show for short pass",
+        "LWdefender": "Being bound; must choose pass denial vs jump ball",
+        "half": "Has NOT taken the wing runner — position during the bind not stated",
+        "pivot": "Not relevant / not stated",
+        "ball": "With opp RB during bind",
+        "passingLane": "RB → RW short pass becoming live",
+        "drivingLane": "RB already into LW body",
+        "handoverOwnership": "Half has not taken RW; no call stated",
+        "whoOwnsRB": "AMBIGUOUS during bind — normally half, but bind is on LW",
+        "whoOwnsRW": "Still LW until half takes runner"
+      },
+      "tacticalRules": {
+        "974": "When opp RB binds the wing defender then looks to the wing, LW must keep body on the wing pass and call half because half has not taken the wing runner.",
+        "962": "When half is already stuck inside and RB looks to the wing, LW must close the RB→RW pass because half cannot recover to the wing.",
+        "932": "When the wing has the ball in a 2v2 and half has not called switch after the back cuts, wing defender must stay with the wing on the ball until switch.",
+        "973": "When ball reverses and inside help is already present, stay on your open wing rather than chasing middle."
+      },
+      "semanticComparison": {
+        "vs962": {
+          "sameDecision": true,
+          "sameReason": true,
+          "claimedDifference": "974 starts with bind-on-you then look; 962 starts with half already removed",
+          "adversarialVerdict": "Starting earlier is not a different decision — both are deny wing pass because half unavailable",
+          "classification": "SEMANTIC_DUPLICATE"
+        },
+        "vs932": {
+          "sameDecision": false,
+          "note": "932 ball already with wing; ownership rule for on-ball wing. Different.",
+          "classification": "RELATED_BUT_DISTINCT"
+        },
+        "vs973": {
+          "sameDecision": false,
+          "note": "973 is reverse-ball stay-home; not bind-then-look.",
+          "classification": "RELATED_BUT_DISTINCT"
+        }
+      },
+      "cooperationTest": {
+        "genuineTwoDefenderProblem": "PARTIAL",
+        "whatHalfOwns": "Should own RB or take wing runner — not shown owning either during bind",
+        "whatLWOwns": "Wing runner / wing pass",
+        "responsibilityChangeTrigger": "Half takes wing runner (B condition)",
+        "mistakeCreatingDanger": "Jump RB ball → free pass to wing",
+        "note": "Cooperation is asserted ('call the half') but half's live geometry during the bind is underspecified — weakens the claimed distinct family"
+      },
+      "abGate": {
+        "ANow": "Bound then look; wing presenting; half has not taken runner → keep body on pass and call half.",
+        "BWhen": "Half has already taken the wing runner.",
+        "BRealistic": true,
+        "situationSpoilsA": true,
+        "spoilNote": "Situation states: if you jump the RB ball, pass to wing is free.",
+        "verdict": "CLEAR"
+      },
+      "duplicate": {
+        "verdict": "SEMANTIC_DUPLICATE",
+        "closestLw": "scn_bank_962",
+        "closestRw": "scn_bank_932",
+        "cue": "RB oriented to wing + half unavailable for wing",
+        "decision": "Deny/close wing pass; do not jump the back",
+        "consequence": "Prevent free wing reception"
+      },
+      "nativity": "CONTEXTUALLY_LW_NATIVE",
+      "difficultyVerdict": "Advanced overstated → Intermediate",
+      "perceptionVerdict": "true OK (shoulder/eyes + wing present + half ownership)",
+      "hrProblems": [
+        {
+          "quote": "veži pa gledaj",
+          "issue": "Slogan / translated pattern name",
+          "naturalAlternative": "veže te i gleda krilo"
+        },
+        {
+          "quote": "Drži tijelo i prsa na dodavanju prema njihovom krilu",
+          "issue": "Heavy / overexplained",
+          "naturalAlternative": "Zatvori pas na krilo i zovi polua"
+        },
+        {
+          "quote": "prava prijetnja",
+          "issue": "Slightly abstract",
+          "naturalAlternative": "tu ide lopta / to je opasnost"
+        }
+      ],
+      "geometryVerdict": "RECONSTRUCTABLE_WITH_GAP",
+      "geometryGap": "Half defender's exact position and responsibility while RB is binding LW are ambiguous",
+      "familyKeyNote": "familyKey says lb_wing_coop but content correctly uses opp RB/RW for LW defence — naming mismatch in architecture label"
+    }
+  }
+}

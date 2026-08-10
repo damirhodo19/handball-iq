@@ -1,0 +1,35 @@
+{
+  "status": "948_REPLACED",
+  "id": "scn_bank_948",
+  "oldFamilyKey": "lw_6v5_finish_help_late",
+  "newFamilyKey": "lw_6v5_stay_wide_vs_entry_pivot",
+  "geometry": {
+    "LW": "wide left corner / sideline",
+    "LB": "ball at nine metres, left channel",
+    "pivot": "left half of six, sealing left half defender, still in left corridor",
+    "pivotOccupies": "opposing left half defender",
+    "defenderOnLW": "opposing left wing defender",
+    "rotatingDefender": "wing defender narrows inside (hips/chest turn inside)",
+    "apparentSpace": "gap behind WD toward six",
+    "whyEntryBadNow": "pivot still occupies that corridor; entry crowds pivot, removes width, closes LB wide pass",
+    "exactCue": "WD hips/chest inside (tempting cut) + pivot body still on left-half six corridor → stay wide",
+    "whenEntryBecomesGood": "pivot clears toward middle AND WD remains fully inside"
+  },
+  "teachingDecision": {
+    "optimal": "Stay wide and ask — pivot still occupies entry corridor",
+    "good": "Enter only after pivot clears toward middle",
+    "notTaught": [
+      "always stay wide in 6v5",
+      "always enter when WD helps",
+      "seal automatically means entry"
+    ]
+  },
+  "distinctFrom": {
+    "rw_878": "RW 878 = free wing + help >2m ⇒ finish. New 948 = stay-wide vs entry from pivot corridor in 6v5.",
+    "lw_945": "945 is 6v6 when-not-enter during LB drive. 948 is 6v5 with pivot seal corridor + WD narrow."
+  },
+  "perception": true,
+  "handedness": "none",
+  "difficulty": "Advanced",
+  "lockOk": true
+}

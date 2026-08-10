@@ -1,0 +1,69 @@
+{
+  "phase": "BATCH_A_DUPLICATE_AUDIT",
+  "vsPilot": "no shared familyKeys with 941-950",
+  "internalPairsChecked": [],
+  "unresolvedInternalOrPilot": 0,
+  "unresolvedRwSemanticDuplicates": 0,
+  "relatedRwNotes": [
+    {
+      "id": "scn_bank_951",
+      "closestRw": "scn_bank_872 (opposite fork)",
+      "distinctReason": "Opposite decision to 942/872 — unique."
+    },
+    {
+      "id": "scn_bank_952",
+      "closestRw": "scn_bank_887 / 884",
+      "distinctReason": "Related RW width-for-drive; distinct as post-bind stretch after 941."
+    },
+    {
+      "id": "scn_bank_953",
+      "closestRw": "scn_bank_874",
+      "distinctReason": "Related RW 874; distinct from 944 (no pivot seal / 3:2:1)."
+    },
+    {
+      "id": "scn_bank_954",
+      "closestRw": "scn_bank_883",
+      "distinctReason": "Related RW 883; pair with 944 open vs closed."
+    },
+    {
+      "id": "scn_bank_955",
+      "closestRw": "scn_bank_900 / 875 / 901",
+      "distinctReason": "Not near-commit; not 946 step-out."
+    },
+    {
+      "id": "scn_bank_956",
+      "closestRw": "scn_bank_898 (continuous attack→lift) and 900 (near commit→far); not 897",
+      "distinctReason": "Must not teach deep=lob. Multi-cue timing family."
+    },
+    {
+      "id": "scn_bank_957",
+      "closestRw": "scn_bank_902 (different fork — stay as pass option)",
+      "distinctReason": "Different fork from RW 902."
+    },
+    {
+      "id": "scn_bank_958",
+      "closestRw": "related transition timing; not 902/876",
+      "distinctReason": "Not 876/902 width or 2v1 pass-option families."
+    },
+    {
+      "id": "scn_bank_959",
+      "closestRw": "scn_bank_910",
+      "distinctReason": "Related RW 910; essential 5v6 possession."
+    },
+    {
+      "id": "scn_bank_960",
+      "closestRw": "scn_bank_923 / 924",
+      "distinctReason": "Combines RW 923/924 via clear-vs-closed cue split."
+    },
+    {
+      "id": "scn_bank_961",
+      "closestRw": "foundation behind 880, not same expert protect",
+      "distinctReason": "Not RW 880 live protect-until-handover."
+    },
+    {
+      "id": "scn_bank_962",
+      "closestRw": "scn_bank_880",
+      "distinctReason": "Distinct from 949 and when_not_abandon."
+    }
+  ]
+}

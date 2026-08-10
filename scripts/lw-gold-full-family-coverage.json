@@ -1,0 +1,227 @@
+{
+  "phase": "PHASE_2_COVERAGE",
+  "projectedFinalTotal": 59,
+  "attackDefence": {
+    "attack": 43,
+    "defence": 16
+  },
+  "difficulty": {
+    "Beginner": 10,
+    "Intermediate": 21,
+    "Advanced": 20,
+    "Expert": 8
+  },
+  "perception": {
+    "true": 35,
+    "pct": 59,
+    "target": [
+      55,
+      65
+    ]
+  },
+  "coverage": {
+    "positionalAttack": {
+      "trueWidth": [
+        "pilot_941",
+        "lw_width_stretch_when_lb_binds"
+      ],
+      "stayWide": [
+        "lw_stay_wide_inside_help"
+      ],
+      "entry": [
+        "lw_entry_when_space_opens",
+        "lw_entry_when_not"
+      ],
+      "backdoor": [
+        "lw_backdoor_ball_watch"
+      ],
+      "takeoff": [
+        "pilot_944",
+        "lw_takeoff_lane_closed",
+        "lw_pivot_block_opens_takeoff"
+      ],
+      "lbCoop": [
+        "pilot_942",
+        "lw_lb_delay_ask_lane_blocked"
+      ],
+      "pivot": [
+        "lw_pivot_block_opens_takeoff",
+        "lw_pivot_feed_vs_finish"
+      ],
+      "oneVone": [
+        "lw_1v1_wing_space"
+      ],
+      "secondPivot": [
+        "pilot_945",
+        "pilot_949",
+        "pilot_950"
+      ]
+    },
+    "goalkeeper": {
+      "stepOutHands": [
+        "pilot_946"
+      ],
+      "nearCommit": [
+        "lw_gk_near_post_commit"
+      ],
+      "farCommit": [
+        "lw_gk_far_side_commit"
+      ],
+      "depth": [
+        "lw_gk_depth_read"
+      ],
+      "lateMovement": [
+        "lw_gk_late_movement_patience"
+      ],
+      "extremeAngle": [
+        "lw_gk_extreme_angle_body"
+      ]
+    },
+    "transitionAttack": {
+      "arrival": [
+        "lw_fw_arrival_timing"
+      ],
+      "twoV1": [
+        "lw_fw_2v1_finish_or_pass"
+      ],
+      "threeV2": [
+        "lw_fw_3v2_hold_width"
+      ],
+      "secondWaveKeep": [
+        "pilot_947"
+      ],
+      "secondWaveStop": [
+        "lw_sw_advantage_gone"
+      ],
+      "laneVsRecovery": [
+        "lw_trans_lane_vs_recovery"
+      ],
+      "recoveringRace": [
+        "lw_recovering_defender_race"
+      ]
+    },
+    "numericalGameState": {
+      "sixV5": [
+        "pilot_948",
+        "lw_6v5_free_finish"
+      ],
+      "fiveV6Attack": [
+        "lw_5v6_safe_possession"
+      ],
+      "sevenV6EmptyOpp": [
+        "lw_7v6_or_empty_opp"
+      ],
+      "emptyOwnAttack": [
+        "lw_empty_own_safe_return"
+      ],
+      "emptyOwnDefence": [
+        "pilot_950"
+      ],
+      "passive": [
+        "lw_passive_warning"
+      ],
+      "lateLead": [
+        "lw_late_lead_risk"
+      ],
+      "lateTrail": [
+        "lw_late_trail_create"
+      ],
+      "shortClock": [
+        "lw_short_clock"
+      ]
+    },
+    "systemsAttack": {
+      "6-0": "core many",
+      "5-1": [
+        "pilot_942"
+      ],
+      "3-2-1": [
+        "pilot_944"
+      ],
+      "3-3": [
+        "lw_sys_33_pressure_release"
+      ],
+      "4-2": [
+        "lw_sys_42_corridor"
+      ],
+      "1-5": [
+        "lw_sys_15_outlet_width"
+      ],
+      "5+1": [
+        "lw_sys_5plus1_trap"
+      ],
+      "4+2": [
+        "lw_sys_4plus2_lane"
+      ],
+      "Open": [
+        "lw_1v1_wing_space",
+        "lw_sys_open_man_help"
+      ]
+    },
+    "defence": {
+      "set60Job": [
+        "lw_def_sys_60_wing_job"
+      ],
+      "protectWing": [
+        "lw_def_protect_opp_wing"
+      ],
+      "controlledHelp": [
+        "lw_def_inside_help_controlled"
+      ],
+      "handover": [
+        "lw_def_handover_timing"
+      ],
+      "doNotAbandon": [
+        "lw_def_when_not_abandon"
+      ],
+      "lbWingCoop": [
+        "lw_def_lb_wing_coop"
+      ],
+      "wingEntry": [
+        "lw_def_wing_entry"
+      ],
+      "backdoorDeny": [
+        "lw_def_backdoor_deny"
+      ],
+      "commHalf": [
+        "lw_def_comm_half"
+      ],
+      "transOwnSide": [
+        "lw_def_trans_own_side_lane"
+      ],
+      "transFarSkip": [
+        "lw_def_trans_far_skip_with_map"
+      ],
+      "sys51": [
+        "lw_def_sys_51_vs_advance"
+      ],
+      "sys33": [
+        "lw_def_sys_33_switch"
+      ],
+      "numerical5v6": [
+        "lw_def_numerical_5v6"
+      ],
+      "secondPivotRecover": [
+        "pilot_949"
+      ],
+      "emptyOwnFill": [
+        "pilot_950"
+      ]
+    },
+    "notes": [
+      "No dedicated 3:2:1 defence family — attack 944 already earns 3:2:1 decision change; forcing defence sticker rejected.",
+      "No dedicated open-defence defensive 1v1 family — attack open pair + set defence depth preferred over RW938 mirror.",
+      "4:2 / 1:5 / 5+1 / 4+2 attack only where system changes LW decision."
+    ]
+  },
+  "remainingArchitectureGaps": [
+    "No late-tie-specific family (late lead/trail/short-clock cover game-state needs without score decoration).",
+    "No dedicated block+GK cooperation defence family beyond GK attack curriculum — acceptable; block is pivot/attack-side.",
+    "3:2:1 defence intentionally omitted (quality over system checklist)."
+  ],
+  "systemCoverageNotes": [
+    "No dedicated 3:2:1 defence family — attack 944 already earns 3:2:1 decision change; forcing defence sticker rejected.",
+    "No dedicated open-defence defensive 1v1 family — attack open pair + set defence depth preferred over RW938 mirror.",
+    "4:2 / 1:5 / 5+1 / 4+2 attack only where system changes LW decision."
+  ]
+}

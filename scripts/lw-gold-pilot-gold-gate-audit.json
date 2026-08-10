@@ -1,0 +1,232 @@
+{
+  "auditType": "FINAL_GOLD_GATE_READ_ONLY",
+  "generatedAt": "2026-08-10T09:20:00.000Z",
+  "scope": [
+    "scn_bank_941",
+    "scn_bank_942",
+    "scn_bank_943",
+    "scn_bank_944",
+    "scn_bank_945",
+    "scn_bank_946",
+    "scn_bank_947",
+    "scn_bank_948",
+    "scn_bank_949",
+    "scn_bank_950"
+  ],
+  "bankMutated": false,
+  "verdict": "NOT GOLD-APPROVED AS REFERENCE STANDARD",
+  "verdictSummary": "Individually, most scenarios are coachable with CLEAR A vs B and no hard geometric contradictions. As a GOLD REFERENCE for the remaining LW rebuild, the pilot is too RW-mirrored and not position-native enough. Approving it would bias the next 50 toward side-flipped wing content.",
+  "blockingIssues": [
+    "Semantic near-duplicates of approved RW Gold: 947≈876, 949≈880, 950≈929, 945≈873",
+    "Pilot composition leans GENERIC WING / LW CONTEXTUAL rather than STRONGLY LW NATIVE",
+    "Perception over-tag: honest justified perception ≈ 8/10 (949 should be false); not a hard block alone",
+    "950 Expert label TOO HIGH for the stated cognitive load"
+  ],
+  "nonBlockingStrengths": [
+    "No AMBIGUOUS A vs B rankings from stated cues",
+    "948 successfully escapes RW 878 finish-distance duplication",
+    "949 geometry orientation is correct after correction (opp right back / right wing)",
+    "946 anti-folklore GK read with free LB is strong LW-native content",
+    "944 3:2:1 take-off and 942 5:1 outlet are good system-native seeds"
+  ],
+  "lockCheck": {
+    "leftBack": { "count": 62, "unchanged": true },
+    "rightBack": { "count": 63, "unchanged": true },
+    "centreBack": { "count": 70, "unchanged": true },
+    "rightWing": { "count": 65, "unchanged": true }
+  },
+  "scenarios": [
+    {
+      "id": "scn_bank_941",
+      "avsb": "CLEAR",
+      "perceptionHonest": "SHOULD BE FALSE",
+      "perceptionTagged": false,
+      "perceptionNote": "Solved from positional principle and current stand location, not a changing external cue.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "GENERIC WING PRINCIPLE",
+      "lwNativeNote": "Universal hold-width idea with LB partner; flips cleanly to RW.",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Related to RW 887 width-for-drive; not the same cue stack.",
+      "distractors": "OK — early crowd LB is realistic; cut and early approach are distinct mistakes.",
+      "tacticalNotes": "Geometry clean. OPTIMAL does not rely on unstated assumptions."
+    },
+    {
+      "id": "scn_bank_942",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Must read advanced-defender pressure plus WD hips/feet and open sideline pass.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "STRONGLY LW NATIVE",
+      "lwNativeNote": "5:1 advanced pressure on LB as left-side outlet partner is a left-wing cooperation problem.",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Related to RW 872 hip-ask, but 5:1 advanced defender is the decision driver.",
+      "distractors": "OK",
+      "tacticalNotes": "Strong. B requires a beat that has not happened."
+    },
+    {
+      "id": "scn_bank_943",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Feet/chest read before ball arrives drives the first movement.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "GENERIC WING PRINCIPLE",
+      "lwNativeNote": "Same first-move feet read works on either wing.",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Distinct from 941 (no cue read) and 942 (ask-now with LB ball).",
+      "distractors": "OK",
+      "tacticalNotes": "Clean. Early deep entry is correctly risky while ball is still far."
+    },
+    {
+      "id": "scn_bank_944",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Half step-out + WD still pulled + open jump lane are live cues.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "STRONGLY LW NATIVE",
+      "lwNativeNote": "3:2:1 left-seam take-off with LB; finish explicitly deferred to GK next movement (no folklore).",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Related to RW 871 take-off-while-WD-inside; creator cue is 3:2:1 half step-out.",
+      "distractors": "OK — standing extreme corner and return into stepped half are realistic.",
+      "tacticalNotes": "Complex geometry holds. First decision is take-off; GK finish remains conditional. No unstated assumption required for A over B."
+    },
+    {
+      "id": "scn_bank_945",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Must integrate WD help step, live LB drive, and pivot occupancy.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "LW CONTEXTUAL",
+      "lwNativeNote": "Left geometry with LB/pivot, but teaching is classic wing when-not-enter.",
+      "duplication": "DUPLICATE RISK",
+      "duplicationNote": "Very close to RW 873 when-not-enter (WD helping, back needs width, stay wide). Extra pivot-stack detail reduces but does not erase the overlap.",
+      "distractors": "OK",
+      "tacticalNotes": "Strong teaching scenario on its own; weak as a uniqueness pillar versus RW Gold."
+    },
+    {
+      "id": "scn_bank_946",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "GK hands + free LB + late WD + open lane must be combined.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "STRONGLY LW NATIVE",
+      "lwNativeNote": "Inside release partner is LB from left wing; anti-automatic-lob is the teaching point.",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Not RW finish-folklore; free-teammate fork is the difference.",
+      "distractors": "OK — body shot and full reset are realistic.",
+      "tacticalNotes": "Question restates cues (slight quiz smell) but A vs B ranking is still forced by the situation. Minor non-blocking concern."
+    },
+    {
+      "id": "scn_bank_947",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Recovering defender covering middle is the decisive cue.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "GENERIC WING PRINCIPLE",
+      "lwNativeNote": "Side-flipped first-wave 3v2 width hold.",
+      "duplication": "DUPLICATE",
+      "duplicationNote": "Teaching decision matches RW 876: first-wave 3v2, middle covered, hold wing width to six. Left/right flip does not create a new concept.",
+      "distractors": "OK",
+      "tacticalNotes": "Good scenario quality; fails uniqueness as LW gold reference seed."
+    },
+    {
+      "id": "scn_bank_948",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "WD narrow + pivot still in left corridor is a genuine multi-player read.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "STRONGLY LW NATIVE",
+      "lwNativeNote": "6v5 left-corridor pivot seal vs entry is a left-wing numerical cooperation problem.",
+      "duplication": "RELATED BUT DISTINCT",
+      "duplicationNote": "Not RW 878. Versus 945: both reject attractive entry, but 948 is 6v5 stretch + pivot-corridor cue; 945 is 6v6 LB-drive outlet. Distinct enough.",
+      "distractors": "OK",
+      "tacticalNotes": "948 special recheck PASS vs 945 and vs RW 878."
+    },
+    {
+      "id": "scn_bank_949",
+      "avsb": "CLEAR",
+      "perceptionHonest": "SHOULD BE FALSE",
+      "perceptionTagged": true,
+      "perceptionNote": "Primary skill is applying an explicitly stated team rule plus a controlled-help principle; absence of handover call is not a rich perceptual discrimination.",
+      "difficultyJudge": "JUSTIFIED",
+      "handedness": "none OK",
+      "lwNative": "LW CONTEXTUAL",
+      "lwNativeNote": "Correct left-side opponent labels, but same defensive curriculum as RW wing help/handover.",
+      "duplication": "DUPLICATE",
+      "duplicationNote": "Teaching matches RW 880: protect wing pass until handover, controlled help, do not fully leave. Side-correct mirror.",
+      "distractors": "OK — full abandon vs zero help are distinct mistakes.",
+      "tacticalNotes": "Geometry orientation CORRECT (opp right back + right wing). Quality fine; uniqueness fails for gold reference."
+    },
+    {
+      "id": "scn_bank_950",
+      "avsb": "CLEAR",
+      "perceptionHonest": "PERCEPTION TRUE JUSTIFIED",
+      "perceptionTagged": true,
+      "perceptionNote": "Teammate map + own-side runner + ball middle-left require a live priority read.",
+      "difficultyJudge": "TOO HIGH",
+      "difficultyNote": "Two clear cues and a stated teammate assignment fit Advanced more than Expert.",
+      "handedness": "none OK",
+      "lwNative": "GENERIC WING PRINCIPLE",
+      "lwNativeNote": "Same own-side lane priority as RW transition-defence 3v2 family (929).",
+      "duplication": "DUPLICATE",
+      "duplicationNote": "Matches RW 929 decision: own sideline pass is yours when teammate already covers far wing.",
+      "distractors": "OK — far-chase myth and stop-to-signal are realistic.",
+      "tacticalNotes": "Strong transition teaching; not LW-unique enough as a gold seed."
+    }
+  ],
+  "aggregates": {
+    "avsb": { "CLEAR": 10, "SLIGHTLY_AMBIGUOUS": 0, "AMBIGUOUS": 0 },
+    "perceptionTaggedTrue": 9,
+    "perceptionHonestTrue": 8,
+    "perceptionHonestFalse": 2,
+    "perceptionHonestFalseIds": ["scn_bank_941", "scn_bank_949"],
+    "difficulty": {
+      "JUSTIFIED": 9,
+      "TOO_HIGH": 1,
+      "TOO_LOW": 0,
+      "tooHighIds": ["scn_bank_950"]
+    },
+    "handednessIssues": [],
+    "lwNative": {
+      "STRONGLY_LW_NATIVE": ["scn_bank_942", "scn_bank_944", "scn_bank_946", "scn_bank_948"],
+      "LW_CONTEXTUAL": ["scn_bank_945", "scn_bank_949"],
+      "GENERIC_WING_PRINCIPLE": ["scn_bank_941", "scn_bank_943", "scn_bank_947", "scn_bank_950"]
+    },
+    "duplication": {
+      "NONE": [],
+      "RELATED_BUT_DISTINCT": ["scn_bank_941", "scn_bank_942", "scn_bank_943", "scn_bank_944", "scn_bank_946", "scn_bank_948"],
+      "DUPLICATE_RISK": ["scn_bank_945"],
+      "DUPLICATE": ["scn_bank_947", "scn_bank_949", "scn_bank_950"]
+    }
+  },
+  "special948": {
+    "vsRw878": "DISTINCT — no finish-when-help>2m teaching",
+    "vs945": "DISTINCT — 6v5 + pivot corridor vs 6v6 LB drive outlet; related family of ideas but different decision fork",
+    "verdict": "KEEP as LW-native numerical seed"
+  },
+  "pilotAsGoldReference": {
+    "strongEnough": false,
+    "why": "4/10 strongly LW-native is not enough to authorize a 50-scenario expansion without inheriting RW mirror patterns. Three hard DUPLICATE links to RW Gold (947/949/950) block reference approval.",
+    "whatWouldBeNeededBeforeApproval": [
+      "Replace or deeply re-native 947, 949, 950 with left-unique forks (not side flips)",
+      "Either accept 945 as universal wing principle explicitly or rework its cue away from RW 873",
+      "Retag perception honesty on 949 (report only noted; not edited)",
+      "Retag 950 difficulty to Advanced (report only noted; not edited)",
+      "Re-audit after those content changes"
+    ]
+  }
+}

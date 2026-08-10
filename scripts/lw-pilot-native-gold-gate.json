@@ -1,0 +1,134 @@
+{
+  "verdict": "PASS WITH REMAINING GAPS",
+  "generatedAt": "2026-08-10T09:35:00.000Z",
+  "verdictReason": [
+    "Hard RW duplicates removed (873/876/880/929 cluster)",
+    "Nativity improved from 4 strongly LW native to 6 strongly + 2 contextual defence",
+    "949/950 remain LW CONTEXTUAL under strict mirror test — not RW duplicates, but still universal wing-defence DNA",
+    "941/943 remain generic wing principles (locked seeds this pass)",
+    "No hard DUPLICATE, no A/B AMBIGUOUS, max coach risk 3",
+    "Not issuing GOLD PILOT APPROVED until defence pair is further specialized or explicitly accepted as contextual"
+  ],
+  "nativity": {
+    "STRONGLY_LW_NATIVE": 6,
+    "LW_CONTEXTUAL": 2,
+    "GENERIC_WING_PRINCIPLE": 2
+  },
+  "nativityPrevious": {
+    "STRONGLY_LW_NATIVE": 4,
+    "LW_CONTEXTUAL": 2,
+    "GENERIC_WING_PRINCIPLE": 4
+  },
+  "maxCoachRisk": 3,
+  "replacements": {
+    "scn_bank_945": {
+      "old": "lw_entry_when_not",
+      "new": "lw_second_pivot_release_to_width",
+      "fork": "Exit second-pivot stack and recover width when LB drive dies",
+      "native": "STRONGLY LW NATIVE",
+      "mirror": "FAILS pure-generic test better than old 945 — LB/left-six second-pivot exit complementary to 948",
+      "closestRw": "918 short return — different role/trigger",
+      "duplication": "RELATED BUT DISTINCT",
+      "perception": true,
+      "difficulty": "Advanced",
+      "handedness": "none",
+      "avsb": "CLEAR",
+      "coachRisk": 3
+    },
+    "scn_bank_947": {
+      "old": "lw_fw_3v2_hold_left_width",
+      "new": "lw_sw_left_wd_late_one_more",
+      "fork": "Second wave: one more left action while WD still >2m late",
+      "native": "STRONGLY LW NATIVE",
+      "mirror": "Opposite fork from RW 877 (stop forcing)",
+      "closestRw": "877",
+      "duplication": "RELATED BUT DISTINCT",
+      "perception": true,
+      "difficulty": "Advanced",
+      "handedness": "none",
+      "avsb": "CLEAR",
+      "coachRisk": 3
+    },
+    "scn_bank_949": {
+      "old": "lw_def_controlled_help_keep_wing",
+      "new": "lw_def_deny_backdoor_left",
+      "fork": "Deny opp wing back-door vs ball-watch the RB drive",
+      "native": "LW CONTEXTUAL",
+      "mirror": "Strict mirror still yields generic wing deny-entry defence — kept because absent as RW Gold duplicate and needed for pilot defence DNA",
+      "closestRw": "880 handover — different lesson",
+      "duplication": "NONE",
+      "perception": true,
+      "difficulty": "Intermediate",
+      "handedness": "none",
+      "avsb": "CLEAR",
+      "coachRisk": 3
+    },
+    "scn_bank_950": {
+      "old": "lw_def_trans_3v2_own_side_lane",
+      "new": "lw_def_recovery_to_wing_after_help",
+      "fork": "Sprint recover to wing after help when ball reverses (no handover)",
+      "native": "LW CONTEXTUAL",
+      "mirror": "Strict mirror still yields generic recovery-after-help — distinct from RW 880/928/929",
+      "closestRw": "928 help after handover — requires handover",
+      "duplication": "RELATED BUT DISTINCT",
+      "perception": true,
+      "difficulty": "Advanced",
+      "handedness": "none",
+      "avsb": "CLEAR",
+      "coachRisk": 3
+    }
+  },
+  "pilot10": [
+    { "id": "scn_bank_941", "familyKey": "lw_width_hold_true_width", "class": "KEEP", "avsb": "CLEAR", "perception": "SHOULD BE FALSE (tagged false)", "difficulty": "JUSTIFIED", "native": "GENERIC WING PRINCIPLE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 },
+    { "id": "scn_bank_942", "familyKey": "lw_lb_51_outlet_ask_now", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 2 },
+    { "id": "scn_bank_943", "familyKey": "lw_wd_feet_decide_first_move", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "GENERIC WING PRINCIPLE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 },
+    { "id": "scn_bank_944", "familyKey": "lw_takeoff_321_half_steps", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 2 },
+    { "id": "scn_bank_945", "familyKey": "lw_second_pivot_release_to_width", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 },
+    { "id": "scn_bank_946", "familyKey": "lw_gk_stepout_hands_high_soft_inside", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 },
+    { "id": "scn_bank_947", "familyKey": "lw_sw_left_wd_late_one_more", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 },
+    { "id": "scn_bank_948", "familyKey": "lw_6v5_stay_wide_vs_entry_pivot", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "STRONGLY LW NATIVE", "duplication": "RELATED BUT DISTINCT", "coachRisk": 2 },
+    { "id": "scn_bank_949", "familyKey": "lw_def_deny_backdoor_left", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "LW CONTEXTUAL", "duplication": "NONE", "coachRisk": 3 },
+    { "id": "scn_bank_950", "familyKey": "lw_def_recovery_to_wing_after_help", "class": "KEEP", "avsb": "CLEAR", "perception": "TRUE JUSTIFIED", "difficulty": "JUSTIFIED", "native": "LW CONTEXTUAL", "duplication": "RELATED BUT DISTINCT", "coachRisk": 3 }
+  ],
+  "teachingDiversity": {
+    "spacing": ["941", "945"],
+    "lbCooperation": ["942", "945", "948"],
+    "defenderReading": ["943", "949"],
+    "systemReading": ["942", "944"],
+    "takeOff": ["944"],
+    "goalkeeper": ["946"],
+    "numerical": ["948"],
+    "secondWaveTransition": ["947"],
+    "defence": ["949", "950"],
+    "timing": ["942", "947", "950"],
+    "risk": ["946", "948"]
+  },
+  "remainingGaps": [
+    "949/950: further left-unique defensive specialization if absolute Gold approval required",
+    "941/943: optional later native upgrades (locked this pass)"
+  ],
+  "validators": {
+    "typecheck": "PASS",
+    "terminology": "PASS",
+    "lbGold": "PASS",
+    "rbGold": "PASS",
+    "cbGold": "PASS",
+    "rwGold": "PASS",
+    "uniqueSession": "PASS",
+    "personalization": "PASS",
+    "matchDayTactics": "PASS",
+    "tacticalSystems": "PASS",
+    "noPositionFallback": "PASS",
+    "archetypes": "PASS",
+    "skipped": ["audit:scenario-quality — mutates qualityScore/tags"]
+  },
+  "lockCheck": {
+    "LB": 62,
+    "RB": 63,
+    "CB": 70,
+    "RW": 65,
+    "unchanged": true
+  },
+  "lwCount": 50,
+  "diffScope": ["scn_bank_945", "scn_bank_947", "scn_bank_949", "scn_bank_950"]
+}

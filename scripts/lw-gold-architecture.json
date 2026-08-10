@@ -1,0 +1,344 @@
+{
+  "phase": 1,
+  "status": "ARCHITECTURE_ONLY",
+  "generatedAt": "2026-08-10T07:05:00.000Z",
+  "lockedBaseline": {
+    "commit": "26f59996c114a8c3fbc3d127e6b31dc140811aad",
+    "tag": "rw-gold-approved-2026-08-09",
+    "leftBack": 62,
+    "rightBack": 63,
+    "centreBack": 70,
+    "rightWing": 65,
+    "leftWingCurrent": 40,
+    "doNotModify": ["Left Back", "Right Back", "Centre Back", "Right Wing"]
+  },
+  "preAuditSource": {
+    "report": "scripts/lw-pre-audit-report.json",
+    "verdict": "CURRENT LW BANK NEEDS GOLD REBUILD",
+    "trueFamilies": 11,
+    "cloneFamilies": 11,
+    "bankSha256": "4b07b5588a8ca8085269fd9952f6c8b2bd1508c37f7c122a4fb84eaa8cad7df0"
+  },
+  "identity": {
+    "position": "Left Wing",
+    "principle": "Position-native left-corner curriculum. Not a mirrored Right Wing bank. Not Left Back content with a wing label.",
+    "mustTeach": [
+      "positional width on the left sideline",
+      "left-side take-off geometry (toward middle / along six)",
+      "relationship with Left Back (timing, bind, pass lane)",
+      "relationship with pivot on the left half",
+      "wing-defender hips, feet, chest orientation",
+      "when to ask for the ball",
+      "when to stay wide",
+      "when to enter",
+      "when NOT to enter",
+      "back-door timing",
+      "open vs closed take-off lane",
+      "goalkeeper feet/hands/depth/commitment as perception cues",
+      "late goalkeeper reads with patience",
+      "transition running lane from left wing",
+      "first-wave and second-wave decisions",
+      "numerical situations that change the wing job",
+      "late-game and empty-own-goal risk",
+      "passive-play decisions",
+      "defensive responsibility as left-side wing defender",
+      "transition defence, handover, controlled help",
+      "system-specific wing perception only when the system changes the cue"
+    ],
+    "forbiddenFolklore": [
+      "GK moves X = always shoot Y",
+      "GK deep = automatic solution",
+      "GK steps out = automatic lob",
+      "throwing hand = fixed shot side",
+      "Expert because minute 59",
+      "unique because score/minute changed",
+      "mechanical L/R swap from Right Wing text"
+    ],
+    "leftNativeGeometryNotes": [
+      "Left corner, left sideline, six-metre arc approach from left",
+      "Primary backcourt partner is Left Back, not Right Back",
+      "Wing defender and half on the left create the local picture",
+      "Near post / far post must be reconstructed from LEFT wing angle",
+      "Take-off direction is a decision, not a decoration",
+      "Many elite LWs are right-handed; that changes execution more often than first tactical decision — tag handedness only when the decision itself changes"
+    ]
+  },
+  "recommendedFinalCount": 60,
+  "countRationale": [
+    "Coverage-driven, not copied from RW=65.",
+    "44 attack + 16 defence covers every required teaching family once, plus sparse system-specific extras that create a genuinely different LW cue.",
+    "Below CB/RW scale on purpose: quality and uniqueness over matching another position.",
+    "Above current 40 because the current bank is 11 clone families, not 40 teachings.",
+    "If a later pilot proves two families collapse into one, reduce; do not pad to 65."
+  ],
+  "attackDefenceSplit": {
+    "attack": 44,
+    "defence": 16,
+    "attackPct": 73.3,
+    "defencePct": 26.7,
+    "note": "Current bank is ~92/8 with one defensive idea. Target restores a real left-wing defensive curriculum without forcing defence parity."
+  },
+  "difficultyTarget": {
+    "Beginner": 10,
+    "Intermediate": 22,
+    "Advanced": 20,
+    "Expert": 8,
+    "rule": "Difficulty = cognitive complexity of cues and interacting players. Minute/score never create Expert."
+  },
+  "perceptionTarget": {
+    "minPct": 55,
+    "maxPct": 65,
+    "targetCount": "33-39 of 60",
+    "justification": "Wing decisions are heavily cue-driven (hips, feet, GK hands/feet, recovery distance, pass lane, handover call). A healthy majority should be true perception scenarios. Remaining scenarios are principle/rule/risk cases (hold width, late-lead safety, some numerical possession rules) where ordinary game context is enough. Do not chase validator percentages; if a scenario has no observable cue that changes the decision, perception=false."
+  },
+  "handednessStrategy": {
+    "default": "none",
+    "tagOnlyWhen": "Throwing hand materially changes the FIRST tactical decision (not only finishing technique).",
+    "expectedTaggedCount": "0-4",
+    "examplesWhereTagMayApply": [
+      "Extreme-angle finish where strong-hand path is blocked and weak-hand / opposite-height decision is the tactical choice",
+      "Take-off geometry where throwing hand forces a different first step vs a covered near-post lane"
+    ],
+    "examplesWhereTagMustNotApply": [
+      "Stay wide vs enter",
+      "Ask for ball when hips open",
+      "Empty own goal risk",
+      "Handover timing",
+      "GK near-foot commitment without a hand-dependent decision fork"
+    ],
+    "separate": {
+      "positionGeometry": "Where to stand, when to move, who to read",
+      "throwingHandExecution": "How the shot/pass is executed after the decision"
+    },
+    "removeFromArchitecture": "Artificial right-hand shade stickers from current scn_bank_080/091/102/083/094/105 lineage"
+  },
+  "answerQualityStandard": {
+    "optimal": "Best decision from the stated cues",
+    "good": "Reasonable conditional alternative whose condition is explicit or clearly implied",
+    "risky": "Plausible but tactically dangerous",
+    "poor": "Clearly inferior; ignores the core picture",
+    "avoid": [
+      "A and B both equally optimal",
+      "good secretly wrong without stated condition",
+      "answers differing only by style/timing wording",
+      "cartoon distractors",
+      "correct answer introducing unstated new information",
+      "unstated team rule required to prefer A over B — if a team rule is needed, state it in the situation"
+    ]
+  },
+  "languageRules": {
+    "locales": ["hr", "en", "de"],
+    "hr": {
+      "require": "Native-quality Croatian handball coaching language (ti-form preferred for direct coaching; consistent address)",
+      "banExactOrClass": [
+        "Primate",
+        "Hvatate",
+        "završni sloj",
+        "krivotvorenje",
+        "čuvara",
+        "utičnicu",
+        "lob lane",
+        "pokojnog braniča",
+        "vi-form machine coaching",
+        "football/basketball calques",
+        "club names as decoration"
+      ],
+      "preferTerms": [
+        "primi / primi loptu",
+        "odraz / zalet",
+        "bliža / dalja stativa",
+        "krilni branič",
+        "lijevi vanjski",
+        "vratar (not čuvar)",
+        "fejk / varanje (natural), not krivotvorenje",
+        "ulaz iza leđa / rez",
+        "prijelaz / kontra"
+      ]
+    },
+    "en": "Actual coaching language; concrete geometry; no quiz prose",
+    "de": "Natural Handball terminology (Flügel, Kreisläufer, Abwehrhilfe, Absprung, Nah-/Ferneck) — not literal EN calques",
+    "noClubDecoration": true
+  },
+  "clonePrevention": {
+    "notUniqueIfOnlyDiffersBy": [
+      "score",
+      "minute",
+      "difficulty label",
+      "club name",
+      "word order",
+      "goalkeeper adjective",
+      "synonym swap",
+      "cosmetic handedness sticker"
+    ],
+    "mustDifferInAtLeastOne": [
+      "observable cue",
+      "decision",
+      "player relationship",
+      "defensive structure",
+      "timing",
+      "risk",
+      "numerical situation",
+      "transition state",
+      "stated team rule",
+      "goalkeeper behaviour that changes the fork"
+    ],
+    "duplicateRiskFamiliesToWatch": [
+      "stay_wide_because_help_inside vs stay_wide_because_lb_drives vs stay_wide_because_pass_lane — must keep distinct cues or merge",
+      "gk_near_commit vs gk_far_commit vs gk_late_hands — must not collapse into folklore shot maps",
+      "6v5_free_finish vs 6v5_pivot_seal — distinct decisions or merge",
+      "late_lead vs short_clock vs empty_own — risk must differ",
+      "transition_cover_own_lane vs far_skip — require teammate map uniqueness",
+      "backdoor vs entry_when — different cue and timing"
+    ]
+  },
+  "existingBankDisposition": {
+    "keepAsProductionText": 0,
+    "polishTeachingIdea": 3,
+    "tacticalRewriteSourceIdeas": 9,
+    "removeMergeIds": 3,
+    "cloneSurplusToDiscard": 25,
+    "note": "No existing ID is sacred. Preserve teaching ideas, not IDs. Phase 2 may allocate new IDs after locked banks.",
+    "byFamily": [
+      {
+        "familyKey": "lw_simple_width_principle",
+        "ids": ["scn_bank_084", "scn_bank_095", "scn_bank_106"],
+        "disposition": "POLISH",
+        "preserveIdea": "Hold true width on left sideline vs early cut",
+        "actionInRebuild": "One Beginner native rewrite; discard two clones"
+      },
+      {
+        "familyKey": "lw_tied_game_wing_finish",
+        "ids": ["scn_bank_080", "scn_bank_091", "scn_bank_102"],
+        "disposition": "REMOVE/MERGE",
+        "preserveIdea": "none as Expert clock sticker",
+        "actionInRebuild": "Replace only if a real late-game RISK family is designed separately"
+      },
+      {
+        "familyKey": "lw_basic_near_post_read",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "GK commitment cue — rebuild as perception of feet/hands, not far-drift folklore"
+      },
+      {
+        "familyKey": "lw_far_post_under_centred_keeper",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Centred/deep GK + recovering defender race — rebuild with geometry"
+      },
+      {
+        "familyKey": "lw_lob_vs_stepping_keeper",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Step-out creates a fork (lob OR soft inside) — never automatic lob"
+      },
+      {
+        "familyKey": "lw_fast_break_arrival_timing",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "First-wave arrival timing on left lane"
+      },
+      {
+        "familyKey": "lw_back_door_vs_ball_watching_6_0",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Back-door when wing defender ball-watches"
+      },
+      {
+        "familyKey": "lw_power_play_wing_overload",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "6v5 late help — finish or feed sealed pivot"
+      },
+      {
+        "familyKey": "lw_keeper_first_step_read",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Patience / first movement read — rebuild without football vocabulary"
+      },
+      {
+        "familyKey": "lw_transition_cover_priority",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Transition defence priority — rebuild with teammate map; expand into full defence curriculum"
+      },
+      {
+        "familyKey": "lw_extreme_angle_finish",
+        "disposition": "TACTICAL REWRITE",
+        "preserveIdea": "Extreme left angle with real body/GK cue; handedness only if decision fork is real"
+      }
+    ]
+  },
+  "assumptionFlags": [
+    {
+      "assumption": "Force equal scenario counts across all defensive systems",
+      "verdict": "REJECT",
+      "strongerSolution": "Sparse system matrix: include a system only when it creates a different LW perception problem than 6:0."
+    },
+    {
+      "assumption": "LW Gold should match RW=65",
+      "verdict": "REJECT",
+      "strongerSolution": "Target 60 from earned families; pad nothing."
+    },
+    {
+      "assumption": "Most LW scenarios need handedness tags because many LWs are right-handed",
+      "verdict": "REJECT",
+      "strongerSolution": "Default none; tag 0–4 only when throwing hand changes the first decision."
+    },
+    {
+      "assumption": "Opponent empty goal is a required large LW cluster",
+      "verdict": "SOFTEN",
+      "strongerSolution": "At most 1 scenario, only if the empty opponent goal uniquely changes the left-wing risk/finish decision."
+    },
+    {
+      "assumption": "Preserve current LW IDs to reduce migration cost",
+      "verdict": "REJECT",
+      "strongerSolution": "Preserve teaching ideas; allocate clean IDs in Phase 2 without touching locked banks."
+    },
+    {
+      "assumption": "Mirror RW familyKeys with Left/Right substitution",
+      "verdict": "REJECT",
+      "strongerSolution": "Reuse quality architecture (cue honesty, answer ladder, clone rules), write left-native families with LB as primary partner."
+    }
+  ],
+  "generationOrder": [
+    "Pilot 10 left-native core scenarios (architecture families only; no bank write yet in Phase 1)",
+    "Human coach review of pilot",
+    "Expand attack core: width/entry/take-off/LB/pivot/hips",
+    "Expand GK perception set (no folklore)",
+    "Expand transition first/second wave",
+    "Sparse defensive-system layer",
+    "Full defence curriculum",
+    "Numerical + empty-goal + passive + late-game",
+    "Uniqueness + language + perception honesty validation",
+    "Surgical polish + 15 human review",
+    "Lock LW gold only after human approval — still no deploy unless explicitly requested"
+  ],
+  "validationStrategy": {
+    "doNotRunMutatingAuditsOnLockedBanks": true,
+    "requiredChecks": [
+      "exact primary LW count == 60",
+      "LB/RB/CB/RW counts and content hashes unchanged",
+      "no L/R mirrored RW titles or near-duplicate familyKeys",
+      "family uniqueness: one teaching objective per familyKey",
+      "semantic clone scan across score/minute variants",
+      "defensiveSystem present whenever system is part of the cue",
+      "perception=true only with stated observable cue that drives answer",
+      "handedness=none unless decision fork depends on throwing hand",
+      "HR language gate against known machine-translation blacklist",
+      "DE natural handball terminology gate",
+      "answer ladder: optimal≠good≠risky≠poor as distinct decisions",
+      "difficulty distribution within tolerance of target",
+      "attack/defence within tolerance of 44/16",
+      "coverage matrix: no required topic left MISSING without explicit deferral note",
+      "coach-risk sample of 15 high-risk scenarios"
+    ],
+    "tolerance": {
+      "finalCount": "58-62 if two families merge/split after pilot; prefer 60",
+      "perceptionPct": "55-65",
+      "expertMax": 10,
+      "defenceMin": 14
+    }
+  },
+  "stopCondition": {
+    "phase1": "STOP after architecture artifacts. Do not generate scenarios. Do not mutate scenarios.json. Do not deploy."
+  },
+  "artifacts": [
+    "scripts/lw-gold-architecture.md",
+    "scripts/lw-gold-architecture.json",
+    "scripts/lw-gold-family-matrix.json",
+    "scripts/lw-gold-coverage-target.json",
+    "scripts/lw-gold-rebuild-plan.md"
+  ]
+}

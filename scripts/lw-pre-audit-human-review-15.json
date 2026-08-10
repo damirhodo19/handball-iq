@@ -1,0 +1,3223 @@
+{
+  "generatedAt": "2026-08-10T07:01:46.552Z",
+  "count": 15,
+  "scenarios": [
+    {
+      "id": "scn_bank_074",
+      "familyKey": "lw_basic_near_post_read",
+      "titleEn": "Left Wing — Basic Near-Post Read",
+      "difficulty": "Beginner",
+      "assessedDifficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": false,
+      "risk": 9,
+      "mainRisk": "Machine HR + simplistic GK formula + clone padding",
+      "hrLanguageConcerns": [
+        "Primate",
+        "završavate",
+        "vašeg",
+        "Vozite",
+        "Primate",
+        "set 6:0",
+        "oporavljao",
+        "resetiranje",
+        "pokojnog",
+        "Vozite unutra"
+      ],
+      "geometryConcerns": "QUESTIONABLE — no sideline/take-off/body orientation; “near/far” from LW not reconstructed",
+      "aVsBConcern": "WEAK — B lob without dropped-hands cue; C/D cartoon",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "ordinary context — perception false is ok",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "GK drifts far → finish near post",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Basic Near-Post Read",
+          "situation": "You receive on the left wing against a set 6:0 at 28 min. Score 14–13. The goalkeeper has drifted half a step toward the far post. Your defender is a step late and cannot block.",
+          "question": "What do you finish to first?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "When the keeper over-shifts far, the near post opens. A quick low finish there beats waiting for a better angle that never comes."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Osnovno očitavanje krajnje stative",
+          "situation": "Primate na lijevom krilu protiv set 6:0 u 28 min. Rezultat 14–13. Vratar je odlutao pola koraka prema daljnjoj vratnici. Tvoj branič kasni korak i ne može blokirati.",
+          "question": "Što prvo završavate?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "Kada se vratar prebaci daleko, otvara se bliža vratnica. Brza niska završnica tu je bolja od čekanja boljeg kuta koji nikad ne dolazi."
+        },
+        "de": {
+          "title": "Linker Flügel – Grundlegendes Near-Post-Lesen",
+          "situation": "Sie erhalten auf dem linken Flügel gegen einen Satz 6:0 in der 28. Minute. Ergebnis 14–13. Der Torwart ist einen halben Schritt in Richtung des langen Pfostens abgedriftet. Dein Verteidiger ist einen Schritt zu spät und kann nicht Block.",
+          "question": "Was machst du zuerst zu Ende?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "Wenn der Torwart weit zu weit geht, öffnet sich der kurze Pfosten. Ein schneller, flacher Abschluss dort ist besser als das Warten auf einen besseren Winkel, der nie kommt."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_075",
+      "familyKey": "lw_far_post_under_centred_keeper",
+      "titleEn": "Left Wing — Far-Post Under Centred Keeper",
+      "difficulty": "Intermediate",
+      "assessedDifficulty": "Beginner/Intermediate",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Broken HR terminology + automatic far-post rule",
+      "hrLanguageConcerns": [
+        "Zaustavite",
+        "hvatate",
+        "preskok",
+        "završni sloj",
+        "Odskočno",
+        "hvatate preskok na lijevom krilu",
+        "Gdje postavljaš završni sloj",
+        "lijevi bočni branič",
+        "Snaga u bližu stativu igra na njihovoj snazi"
+      ],
+      "geometryConcerns": "QUESTIONABLE — “vratar ostaje na sredini od šest metara”; “završni sloj”; take-off not stated",
+      "aVsBConcern": "WEAK — B near-post vs centred GK poorly motivated",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "Centred GK → far-post finish before recovering defender",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Far-Post Under Centred Keeper",
+          "situation": "At 28 min (28–27) you catch a skip pass on the left wing. The goalkeeper stays centred on the six-metre line. Your left wing defender is recovering from behind and will arrive in one stride.",
+          "question": "Where do you place the finish before contact arrives?",
+          "answers": [
+            {
+              "text": {
+                "en": "Controlled cross-court finish to the far post before the defender arrives",
+                "hr": "Kontrolirani završetak preko igrališta do daljnje vratnice prije dolaska braniča",
+                "de": "Kontrollierter Cross-Court-Abschluss zum langen Pfosten, bevor der Verteidiger eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — far post maximises keeper travel from a centred stance under recovery pressure.",
+                "hr": "Ispravno — dalja vratnica maksimizira kretanje vratara iz središnjeg stava pod pritiskom za oporavak.",
+                "de": "Richtig – der entfernte Pfosten maximiert die Bewegungsfreiheit des Torwarts aus einer zentrierten Haltung unter Erholungsdruck."
+              }
+            },
+            {
+              "text": {
+                "en": "Power finish to the near post against the centred keeper",
+                "hr": "Snažni završetak na bližu stativu protiv središnjeg vratara",
+                "de": "Power-Finish zum kurzen Pfosten gegen den Torwart in der Mitte"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — executable but the centred keeper already shades near post well.",
+                "hr": "Dobro — izvršno, ali centrirani vratar već zasjenjuje blizu stative.",
+                "de": "Gut – ausführbar, aber der zentrierte Torwart schattiert den Pfosten bereits gut."
+              }
+            },
+            {
+              "text": {
+                "en": "Bounce pass inside to the pivot through the recovering defender",
+                "hr": "Odskočno dodavanje unutar do pivota kroz braniča koji se oporavlja",
+                "de": "Bounce-Pass nach innen zum Kreisläufer durch den sich erholenden Verteidiger"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — the recovering wing defender can cut the inside lane.",
+                "hr": "Riskantno — krilni branič koji se oporavlja može presjeći unutrašnju traku.",
+                "de": "Riskant – der sich erholende Flügelverteidiger kann die Innenbahn unterbrechen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop, face up, and wait for the left back to arrive for a hand-off",
+                "hr": "Zaustavite se licem prema gore i pričekajte da lijevi vanjski stigne za predaju",
+                "de": "Halten Sie an, schauen Sie nach oben und warten Sie, bis der linke Verteidiger zur Übergabe eintrifft"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — hesitation lets both defender and structure set; the skip pass already created the chance.",
+                "hr": "Loše — oklijevanje dopušta postavljanje i braniču i strukturi; preuzimanje je već stvorilo šansu.",
+                "de": "Schlecht – Zögern lässt sowohl den Verteidiger als auch die Struktur fest werden; Der Skippass eröffnete bereits die Chance."
+              }
+            }
+          ],
+          "explanation": "A centred keeper must cover maximum distance on a far-post wrist shot. Power into the near post plays into their strength while the recovering defender closes."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Dalja vratnica ispod središnjeg vratara",
+          "situation": "U 28. minuti (28–27) hvatate preskok na lijevom krilu. Vratar ostaje na sredini od šest metara. Tvoj lijevi bočni branič se oporavlja odostraga i stići će u jednom koraku.",
+          "question": "Gdje postavljaš završni sloj prije nego što stigne kontakt?",
+          "answers": [
+            {
+              "text": {
+                "en": "Controlled cross-court finish to the far post before the defender arrives",
+                "hr": "Kontrolirani završetak preko igrališta do daljnje vratnice prije dolaska braniča",
+                "de": "Kontrollierter Cross-Court-Abschluss zum langen Pfosten, bevor der Verteidiger eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — far post maximises keeper travel from a centred stance under recovery pressure.",
+                "hr": "Ispravno — dalja vratnica maksimizira kretanje vratara iz središnjeg stava pod pritiskom za oporavak.",
+                "de": "Richtig – der entfernte Pfosten maximiert die Bewegungsfreiheit des Torwarts aus einer zentrierten Haltung unter Erholungsdruck."
+              }
+            },
+            {
+              "text": {
+                "en": "Power finish to the near post against the centred keeper",
+                "hr": "Snažni završetak na bližu stativu protiv središnjeg vratara",
+                "de": "Power-Finish zum kurzen Pfosten gegen den Torwart in der Mitte"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — executable but the centred keeper already shades near post well.",
+                "hr": "Dobro — izvršno, ali centrirani vratar već zasjenjuje blizu stative.",
+                "de": "Gut – ausführbar, aber der zentrierte Torwart schattiert den Pfosten bereits gut."
+              }
+            },
+            {
+              "text": {
+                "en": "Bounce pass inside to the pivot through the recovering defender",
+                "hr": "Odskočno dodavanje unutar do pivota kroz braniča koji se oporavlja",
+                "de": "Bounce-Pass nach innen zum Kreisläufer durch den sich erholenden Verteidiger"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — the recovering wing defender can cut the inside lane.",
+                "hr": "Riskantno — krilni branič koji se oporavlja može presjeći unutrašnju traku.",
+                "de": "Riskant – der sich erholende Flügelverteidiger kann die Innenbahn unterbrechen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop, face up, and wait for the left back to arrive for a hand-off",
+                "hr": "Zaustavite se licem prema gore i pričekajte da lijevi vanjski stigne za predaju",
+                "de": "Halten Sie an, schauen Sie nach oben und warten Sie, bis der linke Verteidiger zur Übergabe eintrifft"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — hesitation lets both defender and structure set; the skip pass already created the chance.",
+                "hr": "Loše — oklijevanje dopušta postavljanje i braniču i strukturi; preuzimanje je već stvorilo šansu.",
+                "de": "Schlecht – Zögern lässt sowohl den Verteidiger als auch die Struktur fest werden; Der Skippass eröffnete bereits die Chance."
+              }
+            }
+          ],
+          "explanation": "Centrirani vratar mora pokriti maksimalnu udaljenost pri udarcu zgloba od daljine. Snaga u bližu stativu igra na njihovoj snazi ​​dok se branič koji se oporavlja zatvara."
+        },
+        "de": {
+          "title": "Linker Flügel – Fernpfosten unter zentriertem Torwart",
+          "situation": "In der 28. Minute (28–27) fängst du einen Skippass auf dem linken Flügel. Der Torwart bleibt mittig auf der 6-Meter-Linie. Ihr linker Verteidiger erholt sich von hinten und wird mit einem Schritt eintreffen.",
+          "question": "Wo platzieren Sie das Finish, bevor der Kontakt eintrifft?",
+          "answers": [
+            {
+              "text": {
+                "en": "Controlled cross-court finish to the far post before the defender arrives",
+                "hr": "Kontrolirani završetak preko igrališta do daljnje vratnice prije dolaska braniča",
+                "de": "Kontrollierter Cross-Court-Abschluss zum langen Pfosten, bevor der Verteidiger eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — far post maximises keeper travel from a centred stance under recovery pressure.",
+                "hr": "Ispravno — dalja vratnica maksimizira kretanje vratara iz središnjeg stava pod pritiskom za oporavak.",
+                "de": "Richtig – der entfernte Pfosten maximiert die Bewegungsfreiheit des Torwarts aus einer zentrierten Haltung unter Erholungsdruck."
+              }
+            },
+            {
+              "text": {
+                "en": "Power finish to the near post against the centred keeper",
+                "hr": "Snažni završetak na bližu stativu protiv središnjeg vratara",
+                "de": "Power-Finish zum kurzen Pfosten gegen den Torwart in der Mitte"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — executable but the centred keeper already shades near post well.",
+                "hr": "Dobro — izvršno, ali centrirani vratar već zasjenjuje blizu stative.",
+                "de": "Gut – ausführbar, aber der zentrierte Torwart schattiert den Pfosten bereits gut."
+              }
+            },
+            {
+              "text": {
+                "en": "Bounce pass inside to the pivot through the recovering defender",
+                "hr": "Odskočno dodavanje unutar do pivota kroz braniča koji se oporavlja",
+                "de": "Bounce-Pass nach innen zum Kreisläufer durch den sich erholenden Verteidiger"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — the recovering wing defender can cut the inside lane.",
+                "hr": "Riskantno — krilni branič koji se oporavlja može presjeći unutrašnju traku.",
+                "de": "Riskant – der sich erholende Flügelverteidiger kann die Innenbahn unterbrechen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop, face up, and wait for the left back to arrive for a hand-off",
+                "hr": "Zaustavite se licem prema gore i pričekajte da lijevi vanjski stigne za predaju",
+                "de": "Halten Sie an, schauen Sie nach oben und warten Sie, bis der linke Verteidiger zur Übergabe eintrifft"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — hesitation lets both defender and structure set; the skip pass already created the chance.",
+                "hr": "Loše — oklijevanje dopušta postavljanje i braniču i strukturi; preuzimanje je već stvorilo šansu.",
+                "de": "Schlecht – Zögern lässt sowohl den Verteidiger als auch die Struktur fest werden; Der Skippass eröffnete bereits die Chance."
+              }
+            }
+          ],
+          "explanation": "Ein zentraler Torwart muss bei einem Handgelenksschuss am langen Pfosten die maximale Distanz zurücklegen. Power in den kurzen Pfosten spielt ihre Stärke aus, während der sich erholende Verteidiger abschließt."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_076",
+      "familyKey": "lw_lob_vs_stepping_keeper",
+      "titleEn": "Left Wing — Lob vs Stepping Keeper",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Club name + automatic lob formula + HR corruption",
+      "hrLanguageConcerns": [
+        "Povucite",
+        "Keeper",
+        "Kiel",
+        "lob lane",
+        "Kiel igra visoko",
+        "lob lane preko bližeg ramena",
+        "Snažan snažan šut",
+        "Povucite se izvan"
+      ],
+      "geometryConcerns": "QUESTIONABLE — narrow angle asserted without take-off path",
+      "aVsBConcern": "MEDIOCRE",
+      "difficultyConcern": "labeled Advanced but assessed Intermediate",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "GK steps out early → lob",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Lob vs Stepping Keeper",
+          "situation": "Kiel play a high line. At 51 min (22–21) their goalkeeper steps out aggressively toward you on the left wing. You have a narrow angle; the left back is open one pass inside but under a trailing defender.",
+          "question": "How do you punish the early step?",
+          "answers": [
+            {
+              "text": {
+                "en": "High lob over the advanced keeper toward the far corner",
+                "hr": "Visoki lob preko naprednog vratara prema daljem kutu",
+                "de": "Hoher Lupfer über den vorgeschobenen Torwart ins lange Eck"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the early step gifts the lob; delay lets them recover depth.",
+                "hr": "Točno — rani korak daruje lob; kašnjenje im omogućuje oporavak dubine.",
+                "de": "Richtig – der frühe Schritt gibt den Lob; Durch die Verzögerung können sie die Tiefe wiederherstellen."
+              }
+            },
+            {
+              "text": {
+                "en": "One fake then soft pass inside to the left back",
+                "hr": "Jedan lažni pa meki pas unutra na lijevog vanjskog",
+                "de": "Ein Fake und dann ein Softpass nach innen zum linken Verteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — works if the trailing defender is late; still slower than the open lob.",
+                "hr": "Dobro — radi ako zaostali branič kasni; još uvijek sporije od otvorenog loba.",
+                "de": "Gut – funktioniert, wenn der nachfolgende Verteidiger zu spät kommt; immer noch langsamer als der offene Lob."
+              }
+            },
+            {
+              "text": {
+                "en": "Hard near-post power shot into the stepped keeper",
+                "hr": "Snažan snažan šut pored vratnice u iskoračenog vratara",
+                "de": "Harter Schuss in Pfostennähe in den getretenen Torwart"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — an advanced keeper covers near post with their body line.",
+                "hr": "Rizično — napredni vratar svojom linijom tijela pokriva bližu stativu.",
+                "de": "Riskant – ein fortgeschrittener Torwart deckt den nahen Pfosten mit seiner Körperlinie ab."
+              }
+            },
+            {
+              "text": {
+                "en": "Retreat outside nine metres and restart the positional attack",
+                "hr": "Povucite se izvan devet metara i ponovno započnite pozicijski napad",
+                "de": "Ziehen Sie sich außerhalb von neun Metern zurück und starten Sie den Positionsangriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — the keeper already committed; retreating throws away the advantage.",
+                "hr": "Jadno — čuvar je već predan; povlačeći se odbacuje prednost.",
+                "de": "Schlecht – der Torwart hat sich bereits verpflichtet; Ein Rückzug macht den Vorteil zunichte."
+              }
+            }
+          ],
+          "explanation": "An early step opens the lob lane over the near shoulder. Passing inside is viable only if the trailing defender cannot cut — here the lob is cleaner and faster."
+        },
+        "hr": {
+          "title": "Lijevo krilo — lob vs Stepping Keeper",
+          "situation": "Kiel igra visoko. U 51. minuti (22–21) njihov vratar agresivno izlazi prema vama na lijevom krilu. Imate uzak kut; lijevi vanjski je otvoren jedno dodavanje unutra ali ispod zaostalog braniča.",
+          "question": "Kako kažnjavate rani korak?",
+          "answers": [
+            {
+              "text": {
+                "en": "High lob over the advanced keeper toward the far corner",
+                "hr": "Visoki lob preko naprednog vratara prema daljem kutu",
+                "de": "Hoher Lupfer über den vorgeschobenen Torwart ins lange Eck"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the early step gifts the lob; delay lets them recover depth.",
+                "hr": "Točno — rani korak daruje lob; kašnjenje im omogućuje oporavak dubine.",
+                "de": "Richtig – der frühe Schritt gibt den Lob; Durch die Verzögerung können sie die Tiefe wiederherstellen."
+              }
+            },
+            {
+              "text": {
+                "en": "One fake then soft pass inside to the left back",
+                "hr": "Jedan lažni pa meki pas unutra na lijevog vanjskog",
+                "de": "Ein Fake und dann ein Softpass nach innen zum linken Verteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — works if the trailing defender is late; still slower than the open lob.",
+                "hr": "Dobro — radi ako zaostali branič kasni; još uvijek sporije od otvorenog loba.",
+                "de": "Gut – funktioniert, wenn der nachfolgende Verteidiger zu spät kommt; immer noch langsamer als der offene Lob."
+              }
+            },
+            {
+              "text": {
+                "en": "Hard near-post power shot into the stepped keeper",
+                "hr": "Snažan snažan šut pored vratnice u iskoračenog vratara",
+                "de": "Harter Schuss in Pfostennähe in den getretenen Torwart"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — an advanced keeper covers near post with their body line.",
+                "hr": "Rizično — napredni vratar svojom linijom tijela pokriva bližu stativu.",
+                "de": "Riskant – ein fortgeschrittener Torwart deckt den nahen Pfosten mit seiner Körperlinie ab."
+              }
+            },
+            {
+              "text": {
+                "en": "Retreat outside nine metres and restart the positional attack",
+                "hr": "Povucite se izvan devet metara i ponovno započnite pozicijski napad",
+                "de": "Ziehen Sie sich außerhalb von neun Metern zurück und starten Sie den Positionsangriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — the keeper already committed; retreating throws away the advantage.",
+                "hr": "Jadno — čuvar je već predan; povlačeći se odbacuje prednost.",
+                "de": "Schlecht – der Torwart hat sich bereits verpflichtet; Ein Rückzug macht den Vorteil zunichte."
+              }
+            }
+          ],
+          "explanation": "Rani korak otvara lob lane preko bližeg ramena. Prolazak unutra moguć je samo ako se branič ne može smanjiti — ovdje je lob čišći i brži."
+        },
+        "de": {
+          "title": "Linker Flügel – Lob vs. Stepping Keeper",
+          "situation": "Kiel spielt eine hohe Linie. In der 51. Minute (22–21) tritt ihr Torwart auf dem linken Flügel aggressiv auf Sie zu. Sie haben einen engen Winkel; Der linke Verteidiger hat einen Pass nach innen offen, aber unter einem hinteren Verteidiger.",
+          "question": "Wie bestraft man den frühen Schritt?",
+          "answers": [
+            {
+              "text": {
+                "en": "High lob over the advanced keeper toward the far corner",
+                "hr": "Visoki lob preko naprednog vratara prema daljem kutu",
+                "de": "Hoher Lupfer über den vorgeschobenen Torwart ins lange Eck"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the early step gifts the lob; delay lets them recover depth.",
+                "hr": "Točno — rani korak daruje lob; kašnjenje im omogućuje oporavak dubine.",
+                "de": "Richtig – der frühe Schritt gibt den Lob; Durch die Verzögerung können sie die Tiefe wiederherstellen."
+              }
+            },
+            {
+              "text": {
+                "en": "One fake then soft pass inside to the left back",
+                "hr": "Jedan lažni pa meki pas unutra na lijevog vanjskog",
+                "de": "Ein Fake und dann ein Softpass nach innen zum linken Verteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — works if the trailing defender is late; still slower than the open lob.",
+                "hr": "Dobro — radi ako zaostali branič kasni; još uvijek sporije od otvorenog loba.",
+                "de": "Gut – funktioniert, wenn der nachfolgende Verteidiger zu spät kommt; immer noch langsamer als der offene Lob."
+              }
+            },
+            {
+              "text": {
+                "en": "Hard near-post power shot into the stepped keeper",
+                "hr": "Snažan snažan šut pored vratnice u iskoračenog vratara",
+                "de": "Harter Schuss in Pfostennähe in den getretenen Torwart"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — an advanced keeper covers near post with their body line.",
+                "hr": "Rizično — napredni vratar svojom linijom tijela pokriva bližu stativu.",
+                "de": "Riskant – ein fortgeschrittener Torwart deckt den nahen Pfosten mit seiner Körperlinie ab."
+              }
+            },
+            {
+              "text": {
+                "en": "Retreat outside nine metres and restart the positional attack",
+                "hr": "Povucite se izvan devet metara i ponovno započnite pozicijski napad",
+                "de": "Ziehen Sie sich außerhalb von neun Metern zurück und starten Sie den Positionsangriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — the keeper already committed; retreating throws away the advantage.",
+                "hr": "Jadno — čuvar je već predan; povlačeći se odbacuje prednost.",
+                "de": "Schlecht – der Torwart hat sich bereits verpflichtet; Ein Rückzug macht den Vorteil zunichte."
+              }
+            }
+          ],
+          "explanation": "Ein früher Schritt öffnet die Lob-Lane über die nahe Schulter. Ein Pass nach innen ist nur möglich, wenn der hintere Verteidiger nicht abschneiden kann – hier ist der Lupfer sauberer und schneller."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_077",
+      "familyKey": "lw_fast_break_arrival_timing",
+      "titleEn": "Left Wing — Fast-Break Arrival Timing",
+      "difficulty": "Intermediate",
+      "assessedDifficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "Machine HR; incomplete first-wave geometry; not LB-cooperation native",
+      "hrLanguageConcerns": [
+        "Sprintajte",
+        "ispust",
+        "Desna poleđina oslobađa dugački otvor",
+        "Sprintajte na izlazu",
+        "prije nego što se ispust pusti",
+        "cilj ostane"
+      ],
+      "geometryConcerns": "THIN — one recovering defender between player and 6m; lane unclear",
+      "aVsBConcern": "OK concept; distractors weak",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "Sprint on outlet so you arrive at 6m with the catch",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Fast-Break Arrival Timing",
+          "situation": "Your team wins the ball at 9 min (14–13). The right back releases a long outlet. You are level with halfway; one recovering defender is between you and the six-metre line.",
+          "question": "When do you start the sprint so the finish stays on?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint on the outlet release and arrive at six metres as you catch",
+                "hr": "Sprintajte na izlazu i stignite na šest metara dok uhvatite",
+                "de": "Sprinten Sie am Auslass und kommen Sie beim Fangen auf sechs Meter"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — timed arrival keeps speed and finishing angle against one recoverer.",
+                "hr": "Ispravan — vremenski određen dolazak održava brzinu i završni kut protiv jednog povratnika.",
+                "de": "Richtig – die zeitgesteuerte Ankunft hält die Geschwindigkeit und den Zielwinkel gegen einen Rückholer aufrecht."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold until the ball crosses halfway, then sprint past the defender",
+                "hr": "Zadržite dok lopta ne prijeđe pola puta, a zatim projurite pored braniča",
+                "de": "Halten Sie gedrückt, bis der Ball auf halbem Weg überquert, und sprinten Sie dann am Verteidiger vorbei"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — safer timing, but the late start often loses the finishing lane.",
+                "hr": "Dobro — sigurnije mjerenje vremena, ali kasni start često gubi ciljnu stazu.",
+                "de": "Gut – sichereres Timing, aber durch den späten Start geht oft die Zielspur verloren."
+              }
+            },
+            {
+              "text": {
+                "en": "Sprint before the outlet is released to get ahead of the ball",
+                "hr": "Sprintajte prije nego što se ispust pusti kako biste pretekli loptu",
+                "de": "Sprinten Sie, bevor der Ausgang freigegeben wird, um dem Ball voraus zu sein"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early runs often force a bounce or a held pass and kill tempo.",
+                "hr": "Riskantno — rana trčanja često forsiraju odskok ili zadržano dodavanje i ubija tempo.",
+                "de": "Riskant – frühe Läufe erzAußenen oft einen Sprung oder einen gehaltenen Pass und bringen das Tempo zum Erliegen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stay connected to the back line to keep defensive balance",
+                "hr": "Ostanite povezani sa zadnjom linijom kako biste održali obrambenu ravnotežu",
+                "de": "Bleiben Sie mit der Abwehrlinie verbunden, um das defensive Gleichgewicht zu wahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — with a clear 2-on-1 developing the wing must commit to the break.",
+                "hr": "Loše — s jasnim 2 na 1 razvojem krila mora se posvetiti prekidu.",
+                "de": "Schlecht – bei einer klaren 2-gegen-1-Entwicklung muss sich der Flügelspieler auf die Pause konzentrieren."
+              }
+            }
+          ],
+          "explanation": "Sprint with the pass release so you arrive at six metres as the ball arrives. Starting after the halfway catch gives the recovery defender the angle."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Vrijeme dolaska brzog prodora",
+          "situation": "Tvoj tim osvaja loptu nakon 9 minuta (14–13). Desna poleđina oslobađa dugački otvor. Na pola ste puta; jedan branič koji se oporavlja je između vas i linije od šest metara.",
+          "question": "Kada započinjete sprint tako da cilj ostane?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint on the outlet release and arrive at six metres as you catch",
+                "hr": "Sprintajte na izlazu i stignite na šest metara dok uhvatite",
+                "de": "Sprinten Sie am Auslass und kommen Sie beim Fangen auf sechs Meter"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — timed arrival keeps speed and finishing angle against one recoverer.",
+                "hr": "Ispravan — vremenski određen dolazak održava brzinu i završni kut protiv jednog povratnika.",
+                "de": "Richtig – die zeitgesteuerte Ankunft hält die Geschwindigkeit und den Zielwinkel gegen einen Rückholer aufrecht."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold until the ball crosses halfway, then sprint past the defender",
+                "hr": "Zadržite dok lopta ne prijeđe pola puta, a zatim projurite pored braniča",
+                "de": "Halten Sie gedrückt, bis der Ball auf halbem Weg überquert, und sprinten Sie dann am Verteidiger vorbei"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — safer timing, but the late start often loses the finishing lane.",
+                "hr": "Dobro — sigurnije mjerenje vremena, ali kasni start često gubi ciljnu stazu.",
+                "de": "Gut – sichereres Timing, aber durch den späten Start geht oft die Zielspur verloren."
+              }
+            },
+            {
+              "text": {
+                "en": "Sprint before the outlet is released to get ahead of the ball",
+                "hr": "Sprintajte prije nego što se ispust pusti kako biste pretekli loptu",
+                "de": "Sprinten Sie, bevor der Ausgang freigegeben wird, um dem Ball voraus zu sein"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early runs often force a bounce or a held pass and kill tempo.",
+                "hr": "Riskantno — rana trčanja često forsiraju odskok ili zadržano dodavanje i ubija tempo.",
+                "de": "Riskant – frühe Läufe erzAußenen oft einen Sprung oder einen gehaltenen Pass und bringen das Tempo zum Erliegen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stay connected to the back line to keep defensive balance",
+                "hr": "Ostanite povezani sa zadnjom linijom kako biste održali obrambenu ravnotežu",
+                "de": "Bleiben Sie mit der Abwehrlinie verbunden, um das defensive Gleichgewicht zu wahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — with a clear 2-on-1 developing the wing must commit to the break.",
+                "hr": "Loše — s jasnim 2 na 1 razvojem krila mora se posvetiti prekidu.",
+                "de": "Schlecht – bei einer klaren 2-gegen-1-Entwicklung muss sich der Flügelspieler auf die Pause konzentrieren."
+              }
+            }
+          ],
+          "explanation": "Sprintajte s otpuštanjem dodavanja tako da stignete na šest metara dok lopta stiže. Pokretanje nakon hvatanja na pola puta daje braniču koji se vraća u kut."
+        },
+        "de": {
+          "title": "Linker Flügel – Fast-Break-Ankunftszeitpunkt",
+          "situation": "Ihr Team gewinnt den Ball nach 9 Minuten (14–13). Der Rechtsverteidiger gibt einen langen Abzug frei. Du bist auf halber Höhe; Ein sich erholender Verteidiger steht zwischen Ihnen und der 6-Meter-Linie.",
+          "question": "Wann beginnt man mit dem Sprint, damit das Ziel anhält?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint on the outlet release and arrive at six metres as you catch",
+                "hr": "Sprintajte na izlazu i stignite na šest metara dok uhvatite",
+                "de": "Sprinten Sie am Auslass und kommen Sie beim Fangen auf sechs Meter"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — timed arrival keeps speed and finishing angle against one recoverer.",
+                "hr": "Ispravan — vremenski određen dolazak održava brzinu i završni kut protiv jednog povratnika.",
+                "de": "Richtig – die zeitgesteuerte Ankunft hält die Geschwindigkeit und den Zielwinkel gegen einen Rückholer aufrecht."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold until the ball crosses halfway, then sprint past the defender",
+                "hr": "Zadržite dok lopta ne prijeđe pola puta, a zatim projurite pored braniča",
+                "de": "Halten Sie gedrückt, bis der Ball auf halbem Weg überquert, und sprinten Sie dann am Verteidiger vorbei"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — safer timing, but the late start often loses the finishing lane.",
+                "hr": "Dobro — sigurnije mjerenje vremena, ali kasni start često gubi ciljnu stazu.",
+                "de": "Gut – sichereres Timing, aber durch den späten Start geht oft die Zielspur verloren."
+              }
+            },
+            {
+              "text": {
+                "en": "Sprint before the outlet is released to get ahead of the ball",
+                "hr": "Sprintajte prije nego što se ispust pusti kako biste pretekli loptu",
+                "de": "Sprinten Sie, bevor der Ausgang freigegeben wird, um dem Ball voraus zu sein"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early runs often force a bounce or a held pass and kill tempo.",
+                "hr": "Riskantno — rana trčanja često forsiraju odskok ili zadržano dodavanje i ubija tempo.",
+                "de": "Riskant – frühe Läufe erzAußenen oft einen Sprung oder einen gehaltenen Pass und bringen das Tempo zum Erliegen."
+              }
+            },
+            {
+              "text": {
+                "en": "Stay connected to the back line to keep defensive balance",
+                "hr": "Ostanite povezani sa zadnjom linijom kako biste održali obrambenu ravnotežu",
+                "de": "Bleiben Sie mit der Abwehrlinie verbunden, um das defensive Gleichgewicht zu wahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — with a clear 2-on-1 developing the wing must commit to the break.",
+                "hr": "Loše — s jasnim 2 na 1 razvojem krila mora se posvetiti prekidu.",
+                "de": "Schlecht – bei einer klaren 2-gegen-1-Entwicklung muss sich der Flügelspieler auf die Pause konzentrieren."
+              }
+            }
+          ],
+          "explanation": "Sprinten Sie mit der Passfreigabe, sodass Sie beim Eintreffen des Balls auf sechs Meter kommen. Der Start nach dem Fang auf halber Strecke gibt dem sich erholenden Verteidiger den Winkel."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_078",
+      "familyKey": "lw_back_door_vs_ball_watching_6_0",
+      "titleEn": "Left Wing — Back-Door vs Ball-Watching 6:0",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "Useful family buried under machine translation",
+      "hrLanguageConcerns": [
+        "Držite",
+        "poluzaštit",
+        "dalekometn",
+        "Sjecanje iza braniča",
+        "ulaz iza leđa srezana na šest metara",
+        "opciju najveće vrijednosti",
+        "poluzaštitnu stazu"
+      ],
+      "geometryConcerns": "PARTIAL — defender head to ball and pinches; LB about to receive stated",
+      "aVsBConcern": "OK structure (cut vs hold width)",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "Ball-watching wing defender → cut behind to 6m",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Back-Door vs Ball-Watching 6:0",
+          "situation": "Positional 6:0 at 9 min (28–27). Ball is on the opposite wing. Your defender turns their head to the ball and narrows toward the middle. The left back is about to receive.",
+          "question": "What off-ball action creates the highest-value option?",
+          "answers": [
+            {
+              "text": {
+                "en": "Cut behind the ball-watching defender toward six metres on the next pass",
+                "hr": "Sjecanje iza braniča koji je promatrao loptu prema šest metara pri sljedećem dodavanju",
+                "de": "Schneiden Sie sich beim nächsten Pass sechs Meter hinter den ballbeobachtenden Verteidiger zurück"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the pinch creates a back-door lane the left back can hit.",
+                "hr": "Točno — štipanje stvara stražnju traku koju lijevi vanjski može pogoditi.",
+                "de": "Richtig – durch das Kneifen entsteht eine Hintertürlinie, die der Linksverteidiger treffen kann."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width on the wing line to stretch the defence",
+                "hr": "Držite širinu na liniji krila kako biste rastegli obranu",
+                "de": "Halten Sie die Flügellinie weit auseinander, um die Verteidigung zu dehnen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — maintains spacing but does not punish the ball-watch.",
+                "hr": "Dobro — održava razmak, ali ne kažnjava gledanje lopte.",
+                "de": "Gut – hält den Abstand aufrecht, bestraft aber nicht die Ballbeobachtung."
+              }
+            },
+            {
+              "text": {
+                "en": "Drift into the half-back lane to ask for a hand-off",
+                "hr": "Odlutajte u poluzaštitnu stazu i zatražite predaju",
+                "de": "Gehen Sie in die Halbverteidiger-Lane und bitten Sie um eine Übergabe"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — congests traffic and invites help onto the ball.",
+                "hr": "Rizično — zagušuje promet i poziva pomoć na loptu.",
+                "de": "Riskant – Staus im Verkehr und Einladung von Helfern zum Ball."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to nine metres preparing a long-range shot",
+                "hr": "Spustite se na devet metara pripremajući dalekometni hitac",
+                "de": "Lassen Sie sich auf neun Meter fallen, um einen Fernschuss vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — wings rarely create value from nine metres in a set 6:0.",
+                "hr": "Jadno — krila rijetko stvaraju vrijednost s devet metara u setu 6:0.",
+                "de": "Schlecht – Flügel schaffen aus neun Metern in einem Satz selten Wert 6:0."
+              }
+            }
+          ],
+          "explanation": "When the wing defender ball-watches and pinches, the back-door cut to six metres opens for a skip or bounce pass. Standing still keeps you covered."
+        },
+        "hr": {
+          "title": "Lijevo krilo — zadnja vrata protiv promatranja lopte 6:0",
+          "situation": "Pozicijski 6:0 na 9 min (28–27). Lopta je na suprotnom krilu. Tvoj branič okreće glavu prema lopti i sužava prema sredini. lijevi vanjski je pred primanjem.",
+          "question": "Koja akcija izvan lopte stvara opciju najveće vrijednosti?",
+          "answers": [
+            {
+              "text": {
+                "en": "Cut behind the ball-watching defender toward six metres on the next pass",
+                "hr": "Sjecanje iza braniča koji je promatrao loptu prema šest metara pri sljedećem dodavanju",
+                "de": "Schneiden Sie sich beim nächsten Pass sechs Meter hinter den ballbeobachtenden Verteidiger zurück"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the pinch creates a back-door lane the left back can hit.",
+                "hr": "Točno — štipanje stvara stražnju traku koju lijevi vanjski može pogoditi.",
+                "de": "Richtig – durch das Kneifen entsteht eine Hintertürlinie, die der Linksverteidiger treffen kann."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width on the wing line to stretch the defence",
+                "hr": "Držite širinu na liniji krila kako biste rastegli obranu",
+                "de": "Halten Sie die Flügellinie weit auseinander, um die Verteidigung zu dehnen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — maintains spacing but does not punish the ball-watch.",
+                "hr": "Dobro — održava razmak, ali ne kažnjava gledanje lopte.",
+                "de": "Gut – hält den Abstand aufrecht, bestraft aber nicht die Ballbeobachtung."
+              }
+            },
+            {
+              "text": {
+                "en": "Drift into the half-back lane to ask for a hand-off",
+                "hr": "Odlutajte u poluzaštitnu stazu i zatražite predaju",
+                "de": "Gehen Sie in die Halbverteidiger-Lane und bitten Sie um eine Übergabe"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — congests traffic and invites help onto the ball.",
+                "hr": "Rizično — zagušuje promet i poziva pomoć na loptu.",
+                "de": "Riskant – Staus im Verkehr und Einladung von Helfern zum Ball."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to nine metres preparing a long-range shot",
+                "hr": "Spustite se na devet metara pripremajući dalekometni hitac",
+                "de": "Lassen Sie sich auf neun Meter fallen, um einen Fernschuss vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — wings rarely create value from nine metres in a set 6:0.",
+                "hr": "Jadno — krila rijetko stvaraju vrijednost s devet metara u setu 6:0.",
+                "de": "Schlecht – Flügel schaffen aus neun Metern in einem Satz selten Wert 6:0."
+              }
+            }
+          ],
+          "explanation": "Kada krilni branič promatra i štipa loptu, ulaz iza leđa srezana na šest metara otvaraju se za preuzimanje ili odbijanje. Mirno stajanje vas pokriva."
+        },
+        "de": {
+          "title": "Linker Flügel – Hintertür vs. Ballbeobachtung 6:0",
+          "situation": "Position 6:0 nach 9 Minuten (28–27). Der Ball liegt auf dem gegenüberliegenden Flügel. Ihr Verteidiger dreht seinen Kopf zum Ball und verengt sich zur Mitte hin. Der linke Verteidiger steht kurz vor dem Empfang.",
+          "question": "Welche Aktion außerhalb des Balls schafft die Option mit dem höchsten Wert?",
+          "answers": [
+            {
+              "text": {
+                "en": "Cut behind the ball-watching defender toward six metres on the next pass",
+                "hr": "Sjecanje iza braniča koji je promatrao loptu prema šest metara pri sljedećem dodavanju",
+                "de": "Schneiden Sie sich beim nächsten Pass sechs Meter hinter den ballbeobachtenden Verteidiger zurück"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the pinch creates a back-door lane the left back can hit.",
+                "hr": "Točno — štipanje stvara stražnju traku koju lijevi vanjski može pogoditi.",
+                "de": "Richtig – durch das Kneifen entsteht eine Hintertürlinie, die der Linksverteidiger treffen kann."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width on the wing line to stretch the defence",
+                "hr": "Držite širinu na liniji krila kako biste rastegli obranu",
+                "de": "Halten Sie die Flügellinie weit auseinander, um die Verteidigung zu dehnen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — maintains spacing but does not punish the ball-watch.",
+                "hr": "Dobro — održava razmak, ali ne kažnjava gledanje lopte.",
+                "de": "Gut – hält den Abstand aufrecht, bestraft aber nicht die Ballbeobachtung."
+              }
+            },
+            {
+              "text": {
+                "en": "Drift into the half-back lane to ask for a hand-off",
+                "hr": "Odlutajte u poluzaštitnu stazu i zatražite predaju",
+                "de": "Gehen Sie in die Halbverteidiger-Lane und bitten Sie um eine Übergabe"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — congests traffic and invites help onto the ball.",
+                "hr": "Rizično — zagušuje promet i poziva pomoć na loptu.",
+                "de": "Riskant – Staus im Verkehr und Einladung von Helfern zum Ball."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to nine metres preparing a long-range shot",
+                "hr": "Spustite se na devet metara pripremajući dalekometni hitac",
+                "de": "Lassen Sie sich auf neun Meter fallen, um einen Fernschuss vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — wings rarely create value from nine metres in a set 6:0.",
+                "hr": "Jadno — krila rijetko stvaraju vrijednost s devet metara u setu 6:0.",
+                "de": "Schlecht – Flügel schaffen aus neun Metern in einem Satz selten Wert 6:0."
+              }
+            }
+          ],
+          "explanation": "Wenn der Flügelverteidiger den Ball beobachtet und kneift, öffnet sich die auf sechs Meter geschnittene Hintertür für einen Sprung- oder Sprungpass. Stillstand schützt Sie."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_079",
+      "familyKey": "lw_power_play_wing_overload",
+      "titleEn": "Left Wing — Power-Play Wing Overload",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "HR nonsense (“bližnjeg”, “zabrtvi”, “Zaradiš napad”); power-play English framing",
+      "hrLanguageConcerns": [
+        "Primate",
+        "Držite",
+        "Power-Play",
+        "Primate",
+        "bližnjeg",
+        "zabrtvi",
+        "rotira jednog igrača kasno iz sredine",
+        "Pivot zatvara bližnjeg braniča",
+        "dok osovina ne zabrtvi dublje",
+        "Zaradiš napad ili nahranite zapečaćenog Pivota"
+      ],
+      "geometryConcerns": "THIN — “rotates one player late from middle”; pivot seal vague",
+      "aVsBConcern": "OK",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "6v5 late rotation → finish or feed sealed pivot",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Power-Play Wing Overload",
+          "situation": "6-on-5 after an exclusion at 28 min (22–21). You receive on the left wing. The short-handed defence rotates one player late from the middle; the pivot is sealing the near defender.",
+          "question": "What do you read first before the rotation closes?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "In power play the temporary gap is the value. Attack finish or feed the sealed pivot before the late rotator arrives — holding for perfection returns them to 6:0."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Power-Play opterećenje krila",
+          "situation": "6 na 5 nakon isključenja na 28 minuta (22-21). Primate na lijevom krilu. Obrana s kratkim igračima rotira jednog igrača kasno iz sredine; Pivot zatvara bližnjeg braniča.",
+          "question": "Što prvo pročitaš prije zatvaranja rotacije?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "U igri s igračem više privremeni jaz je vrijednost. Zaradiš napad ili nahranite zapečaćenog Pivota prije nego što kasni rotator stigne — držanje za savršenstvo vraća ih na 6:0."
+        },
+        "de": {
+          "title": "Linker Flügel – Powerplay-Flügelüberlastung",
+          "situation": "6 gegen 5 nach einem Ausschluss in der 28. Minute (22–21). Sie erhalten auf dem linken Flügel. Die unterbesetzte Verteidigung rotiert einen Spieler spät aus der Mitte; Der Kreisläufer dichtet den nahen Verteidiger ab.",
+          "question": "Was lesen Sie zuerst, bevor die Rotation endet?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "Im Powerplay kommt es auf die temporäre Lücke an. Greifen Sie den Abschluss an oder füttern Sie den versiegelten Kreisläufer, bevor der späte Rotator eintrifft – halten Sie ihn für Perfektion, bringen Sie ihn auf 6:0 zurück."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_080",
+      "familyKey": "lw_tied_game_wing_finish",
+      "titleEn": "Left Wing — Tied Game Wing Finish",
+      "difficulty": "Expert",
+      "assessedDifficulty": "Intermediate/Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": true,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Expert label from clock; contradictory score/title; fake hand shade",
+      "hrLanguageConcerns": [
+        "Primate",
+        "imate",
+        "Primate",
+        "sjene",
+        "resetiranje",
+        "sjenila",
+        "zasjenjuje tvoju snažnu sklonost ka desnoj ruci",
+        "Trener signalizira mirnu završnicu, a ne junaštvo",
+        "zaradiš slabu stranu",
+        "sjene tvoju jaku stranu"
+      ],
+      "geometryConcerns": "THIN — playable angle asserted",
+      "aVsBConcern": "WEAK",
+      "difficultyConcern": "labeled Expert but assessed Intermediate/Advanced",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "REMOVE / MERGE",
+      "teachingObjective": "Late pressure finish with one GK read",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Tied Game Wing Finish",
+          "situation": "Final 90 seconds, score 22–21. You receive on the left wing with a playable angle. The goalkeeper shades your strong right-handed tendency. Coach signals calm finish, not heroics.",
+          "question": "How do you decide the finish under this pressure?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Under late pressure, one clear keeper read beats creativity. If they shade your strong side, finish weak-side or change height — do not invent a third option."
+        },
+        "hr": {
+          "title": "Lijevo krilo — neriješena igra, završnica krila",
+          "situation": "Posljednjih 90 sekundi, rezultat 22–21. Primate na lijevom krilu s kutom koji se može igrati. Vratar zasjenjuje tvoju snažnu sklonost ka desnoj ruci. Trener signalizira mirnu završnicu, a ne junaštvo.",
+          "question": "Kako odlučujete o završnici pod ovim pritiskom?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Pod kasnim pritiskom, jedno jasno čitanje pobjeđuje kreativnost. Ako zasjene tvoju jaku stranu, zaradiš slabu stranu ili promijenite visinu — nemojte izmišljati treću opciju."
+        },
+        "de": {
+          "title": "Linker Flügel – Unentschiedenes Spiel auf dem Flügel",
+          "situation": "Letzte 90 Sekunden, Punktestand 22–21. Sie erhalten auf dem linken Flügel einen spielbaren Winkel. Der Torwart überschattet Ihre ausgeprägte Rechtshänder-Tendenz. Trainer signalisiert ruhiges Ende, keine Heldentaten.",
+          "question": "Wie entscheiden Sie unter diesem Druck über das Ziel?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Unter spätem Druck schlägt ein klarer Keeper die Kreativität. Wenn sie Ihre starke Seite beschatten, die schwache Seite beenden oder die Höhe ändern – erfinden Sie keine dritte Option."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_081",
+      "familyKey": "lw_keeper_first_step_read",
+      "titleEn": "Left Wing — Keeper First-Step Read",
+      "difficulty": "Intermediate",
+      "assessedDifficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "Football/keeper vocabulary; formulaic GK read",
+      "hrLanguageConcerns": [
+        "Hvatate",
+        "Hvatate",
+        "krivotvoren",
+        "Koje informacije uzimate od čuvara prije puštanja?",
+        "Jedno kratko krivotvorenje",
+        "zaradiš napušteni kut",
+        "Visoki uspravni čuvari"
+      ],
+      "geometryConcerns": "THIN",
+      "aVsBConcern": "MEDIOCRE",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "Fake → read GK first step → finish abandoned corner",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Keeper First-Step Read",
+          "situation": "You catch on the left wing at 51 min (28–27). The goalkeeper is tall and upright. Your defender gives half a step of space. You have time for one fake before contact.",
+          "question": "What information do you take from the keeper before releasing?",
+          "answers": [
+            {
+              "text": {
+                "en": "One short fake, read the keeper first step, finish the abandoned corner",
+                "hr": "Jedno kratko krivotvorenje, pročitajte prvi korak vratara, zaradiš napušteni kut",
+                "de": "Ein kurzer Fake, lies den ersten Schritt des Torwarts, schließe die verlassene Ecke ab"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the first step reveals priority; that is the finish lane.",
+                "hr": "Ispravno — prvi korak otkriva prioritet; to je ciljna staza.",
+                "de": "Richtig – der erste Schritt verrät die Priorität; das ist die Zielspur."
+              }
+            },
+            {
+              "text": {
+                "en": "Immediate release without a fake to beat the defender",
+                "hr": "Trenutačno puštanje bez lažnjaka za prebijanje braniča",
+                "de": "Sofortige Freilassung ohne Fake, um den Verteidiger zu schlagen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — quick release can work, but you leave keeper information unused.",
+                "hr": "Dobro — brzo otpuštanje može funkcionirati, ali ostavljate podatke čuvara neiskorištene.",
+                "de": "Gut – ein Schnellverschluss kann funktionieren, aber Sie lassen die Halterinformationen ungenutzt."
+              }
+            },
+            {
+              "text": {
+                "en": "Pre-commit to the far post before seeing the first step",
+                "hr": "Unaprijed se posvetite udaljenom stupu prije nego što vidite prvi korak",
+                "de": "Befestigen Sie sich vorab am anderen Pfosten, bevor Sie den ersten Schritt sehen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — fixed patterns are what upright keepers prepare for.",
+                "hr": "Rizično — fiksni obrasci su ono na što se uspravni čuvari pripremaju.",
+                "de": "Riskant – feste Muster sind das, worauf sich aufrechte Torhüter vorbereiten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass to the pivot even when they are already doubled",
+                "hr": "Pas do Pivota čak i kada su već udvostručeni",
+                "de": "Passen Sie zum Kreisläufer, auch wenn sie bereits verdoppelt sind"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — if the wing is open and the pivot is doubled, the finish is yours.",
+                "hr": "Jadno — ako je krilo otvoreno i Pivot udvostručen, završnica je vaša.",
+                "de": "Schlecht – wenn der Flügel geöffnet und der Drehpunkt verdoppelt ist, gehört das Ziel Ihnen."
+              }
+            }
+          ],
+          "explanation": "One fake extracts the keeper first step. Tall upright keepers often protect the lob; their first step shows which low corner they abandon."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Čitanje prvog koraka vratara",
+          "situation": "Hvatate na lijevom krilu na 51. minuti (28–27). Vratar je visok i uspravan. Tvoj branič daje pola koraka prostora. Imate vremena za jedan fejk prije kontakta.",
+          "question": "Koje informacije uzimate od čuvara prije puštanja?",
+          "answers": [
+            {
+              "text": {
+                "en": "One short fake, read the keeper first step, finish the abandoned corner",
+                "hr": "Jedno kratko krivotvorenje, pročitajte prvi korak vratara, zaradiš napušteni kut",
+                "de": "Ein kurzer Fake, lies den ersten Schritt des Torwarts, schließe die verlassene Ecke ab"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the first step reveals priority; that is the finish lane.",
+                "hr": "Ispravno — prvi korak otkriva prioritet; to je ciljna staza.",
+                "de": "Richtig – der erste Schritt verrät die Priorität; das ist die Zielspur."
+              }
+            },
+            {
+              "text": {
+                "en": "Immediate release without a fake to beat the defender",
+                "hr": "Trenutačno puštanje bez lažnjaka za prebijanje braniča",
+                "de": "Sofortige Freilassung ohne Fake, um den Verteidiger zu schlagen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — quick release can work, but you leave keeper information unused.",
+                "hr": "Dobro — brzo otpuštanje može funkcionirati, ali ostavljate podatke čuvara neiskorištene.",
+                "de": "Gut – ein Schnellverschluss kann funktionieren, aber Sie lassen die Halterinformationen ungenutzt."
+              }
+            },
+            {
+              "text": {
+                "en": "Pre-commit to the far post before seeing the first step",
+                "hr": "Unaprijed se posvetite udaljenom stupu prije nego što vidite prvi korak",
+                "de": "Befestigen Sie sich vorab am anderen Pfosten, bevor Sie den ersten Schritt sehen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — fixed patterns are what upright keepers prepare for.",
+                "hr": "Rizično — fiksni obrasci su ono na što se uspravni čuvari pripremaju.",
+                "de": "Riskant – feste Muster sind das, worauf sich aufrechte Torhüter vorbereiten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass to the pivot even when they are already doubled",
+                "hr": "Pas do Pivota čak i kada su već udvostručeni",
+                "de": "Passen Sie zum Kreisläufer, auch wenn sie bereits verdoppelt sind"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — if the wing is open and the pivot is doubled, the finish is yours.",
+                "hr": "Jadno — ako je krilo otvoreno i Pivot udvostručen, završnica je vaša.",
+                "de": "Schlecht – wenn der Flügel geöffnet und der Drehpunkt verdoppelt ist, gehört das Ziel Ihnen."
+              }
+            }
+          ],
+          "explanation": "Jedan lažnjak izdvaja vratara prvi korak. Visoki uspravni čuvari često štite lob; njihov prvi korak pokazuje koji niski kut napuštaju."
+        },
+        "de": {
+          "title": "Linker Flügel – Keeper First Step Read",
+          "situation": "Sie fangen in der 51. Minute (28–27) auf dem linken Flügel. Der Torwart ist groß und aufrecht. Dein Verteidiger gibt einen halben Schritt Raum. Sie haben vor der Kontaktaufnahme Zeit für eine Fälschung.",
+          "question": "Welche Informationen nehmen Sie vom Torwart vor der Freigabe ein?",
+          "answers": [
+            {
+              "text": {
+                "en": "One short fake, read the keeper first step, finish the abandoned corner",
+                "hr": "Jedno kratko krivotvorenje, pročitajte prvi korak vratara, zaradiš napušteni kut",
+                "de": "Ein kurzer Fake, lies den ersten Schritt des Torwarts, schließe die verlassene Ecke ab"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the first step reveals priority; that is the finish lane.",
+                "hr": "Ispravno — prvi korak otkriva prioritet; to je ciljna staza.",
+                "de": "Richtig – der erste Schritt verrät die Priorität; das ist die Zielspur."
+              }
+            },
+            {
+              "text": {
+                "en": "Immediate release without a fake to beat the defender",
+                "hr": "Trenutačno puštanje bez lažnjaka za prebijanje braniča",
+                "de": "Sofortige Freilassung ohne Fake, um den Verteidiger zu schlagen"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — quick release can work, but you leave keeper information unused.",
+                "hr": "Dobro — brzo otpuštanje može funkcionirati, ali ostavljate podatke čuvara neiskorištene.",
+                "de": "Gut – ein Schnellverschluss kann funktionieren, aber Sie lassen die Halterinformationen ungenutzt."
+              }
+            },
+            {
+              "text": {
+                "en": "Pre-commit to the far post before seeing the first step",
+                "hr": "Unaprijed se posvetite udaljenom stupu prije nego što vidite prvi korak",
+                "de": "Befestigen Sie sich vorab am anderen Pfosten, bevor Sie den ersten Schritt sehen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — fixed patterns are what upright keepers prepare for.",
+                "hr": "Rizično — fiksni obrasci su ono na što se uspravni čuvari pripremaju.",
+                "de": "Riskant – feste Muster sind das, worauf sich aufrechte Torhüter vorbereiten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass to the pivot even when they are already doubled",
+                "hr": "Pas do Pivota čak i kada su već udvostručeni",
+                "de": "Passen Sie zum Kreisläufer, auch wenn sie bereits verdoppelt sind"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — if the wing is open and the pivot is doubled, the finish is yours.",
+                "hr": "Jadno — ako je krilo otvoreno i Pivot udvostručen, završnica je vaša.",
+                "de": "Schlecht – wenn der Flügel geöffnet und der Drehpunkt verdoppelt ist, gehört das Ziel Ihnen."
+              }
+            }
+          ],
+          "explanation": "Eine Fälschung entzieht dem Keeper den ersten Schritt. Große, aufrechte Torhüter Werfern oft den Lob; Ihr erster Schritt zeigt, welche niedrige Ecke sie verlassen."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_082",
+      "familyKey": "lw_transition_cover_priority",
+      "titleEn": "Left Wing — Transition Cover Priority",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Club sticker + incomplete  transition geometry; only defence family in bank",
+      "hrLanguageConcerns": [
+        "Sprintajte",
+        "Zaustavite",
+        "Zagreb",
+        "ispust",
+        "utičnic",
+        "preskok",
+        "Zagrebački ispust odmah na desno krilo",
+        "presjekli stazu za preuzimanje dalekog krila",
+        "pritisnite najbližu utičnicu",
+        "signalizirate grešku"
+      ],
+      "geometryConcerns": "INCOMPLETE — no second defender location; far-wing skip asserted",
+      "aVsBConcern": "B stay on own wing is a real alternative — A not proven without teammate map",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "After LW turnover, cut far-wing skip lane first",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Transition Cover Priority",
+          "situation": "You lose the ball high on the left side at 9 min (22–21). Zagreb outlet immediately to the right wing. You are still above the nine-metre line.",
+          "question": "What is your first defensive job in this transition?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "The dangerous pass is the skip to the far wing. Sprint to cut that lane first; pressing the outlet alone is beaten by one pass."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Prioritet prijelaza",
+          "situation": "Izgubite loptu visoko na lijevoj strani nakon 9 minuta (22–21). Zagrebački ispust odmah na desno krilo. Još uvijek ste iznad linije od devet metara.",
+          "question": "Koji je tvoj prvi obrambeni posao u ovoj tranziciji?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "Opasno dodavanje je preuzimanje na dalje krilo. Sprintajte da prvo presječete tu traku; samo pritiskanje izlaza pobjeđuje se jednim prolazom."
+        },
+        "de": {
+          "title": "Linker Flügel – Priorität der Übergangsdeckung",
+          "situation": "Du verlierst den Ball hoch auf der linken Seite in der 9. Minute (22–21). Zagreb mündet sofort auf den rechten Flügel. Sie befinden sich immer noch über der 9-Meter-Grenze.",
+          "question": "Was ist Ihr erster defensiver Job in diesem Übergang?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "Der gefährliche Pass ist der Sprung auf den entfernten Flügel. Sprinten Sie, um diese Spur als Erster zu durchtrennen. Das alleinige Drücken des Auslasses wird um einen Durchgang geschlagen."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_083",
+      "familyKey": "lw_extreme_angle_finish",
+      "titleEn": "Left Wing — Extreme-Angle Finish",
+      "difficulty": "Expert",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": true,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "Expert from angle adjective; hand→shot formula; weak HR",
+      "hrLanguageConcerns": [
+        "Hvatate",
+        "imate",
+        "Hvatate",
+        "dešnjak koji završava i zasjeni to oslobađanje",
+        "Nisko pri stupu preletite po podu",
+        "pokrivenog polubranika",
+        "Centralna moć je dar čuvaru"
+      ],
+      "geometryConcerns": "THIN — “sliver of goal”; help one step from block",
+      "aVsBConcern": "WEAK distractors",
+      "difficultyConcern": "labeled Expert but assessed Advanced",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "Extreme angle + GK shades strong hand → low near-post skim",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Extreme-Angle Finish",
+          "situation": "You catch at the sideline with only a sliver of goal visible at 9 min (22–21). The goalkeeper knows you are a right-handed finisher and shades that release. Help defence is one stride from a block.",
+          "question": "Which technique keeps this finish alive?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post skim along the floor before help arrives",
+                "hr": "Nisko pri stupu preletite po podu prije nego što pomoć stigne",
+                "de": "Tief in der Nähe des Pfostens gleiten Sie über den Boden, bevor Hilfe eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the skim is hardest to reach from extreme angles against a shaded keeper.",
+                "hr": "Točno — najteže je dosegnuti klizač iz ekstremnih kutova protiv zasjenjenog čuvara.",
+                "de": "Richtig – der Skim ist aus extremem Winkel gegen einen schattigen Torwart am schwersten zu erreichen."
+              }
+            },
+            {
+              "text": {
+                "en": "Soft pass inside to a covered half-back",
+                "hr": "Mekano dodavanje unutra na pokrivenog polubranika",
+                "de": "Weicher Pass nach innen zu einem gedeckten Innenverteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — valid if the angle dies, but you still have a legal skim lane.",
+                "hr": "Dobro — vrijedi ako kut umre, ali još uvijek imate legalnu stazu za klizanje.",
+                "de": "Gut – gültig, wenn der Winkel verschwindet, Sie aber immer noch eine legale Skim-Lane haben."
+              }
+            },
+            {
+              "text": {
+                "en": "High power shot into the middle of the visible goal",
+                "hr": "Snažan šut u sredinu vidljivog gola",
+                "de": "Kraftvoller Schuss in die Mitte des sichtbaren Tores"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — from this angle the middle is the keeper strongest save zone.",
+                "hr": "Riskantno — iz ovog kuta sredina je vratareva najjača zona spašavanja.",
+                "de": "Riskant – aus dieser Perspektive ist die Mitte die stärkste Schutzzone des Torwarts."
+              }
+            },
+            {
+              "text": {
+                "en": "Step out beyond the sideline and restart the attack",
+                "hr": "Izađite izvan bočne linije i ponovno započnite napad",
+                "de": "Treten Sie über die Seitenlinie hinaus und starten Sie den Angriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — you already have a legal finishing catch; restarting throws it away.",
+                "hr": "Loše — već imate legalan završni ulov; ponovno pokretanje ga baca.",
+                "de": "Schlecht – Sie haben bereits einen legalen Schlussfang; Ein Neustart wirft es weg."
+              }
+            }
+          ],
+          "explanation": "From extreme angles the high-percentage options are a low near-post skim or a disguised change of height. Central power is a gift to the keeper."
+        },
+        "hr": {
+          "title": "Lijevo krilo — krajnji kut",
+          "situation": "Hvatate na bočnoj liniji s vidljivim samo djelićem gola nakon 9 minuta (22–21). Vratar zna da ste dešnjak koji završava i zasjeni to oslobađanje. Obrana pomoći je jedan korak od bloka.",
+          "question": "Koja tehnika održava ovu završnicu na životu?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post skim along the floor before help arrives",
+                "hr": "Nisko pri stupu preletite po podu prije nego što pomoć stigne",
+                "de": "Tief in der Nähe des Pfostens gleiten Sie über den Boden, bevor Hilfe eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the skim is hardest to reach from extreme angles against a shaded keeper.",
+                "hr": "Točno — najteže je dosegnuti klizač iz ekstremnih kutova protiv zasjenjenog čuvara.",
+                "de": "Richtig – der Skim ist aus extremem Winkel gegen einen schattigen Torwart am schwersten zu erreichen."
+              }
+            },
+            {
+              "text": {
+                "en": "Soft pass inside to a covered half-back",
+                "hr": "Mekano dodavanje unutra na pokrivenog polubranika",
+                "de": "Weicher Pass nach innen zu einem gedeckten Innenverteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — valid if the angle dies, but you still have a legal skim lane.",
+                "hr": "Dobro — vrijedi ako kut umre, ali još uvijek imate legalnu stazu za klizanje.",
+                "de": "Gut – gültig, wenn der Winkel verschwindet, Sie aber immer noch eine legale Skim-Lane haben."
+              }
+            },
+            {
+              "text": {
+                "en": "High power shot into the middle of the visible goal",
+                "hr": "Snažan šut u sredinu vidljivog gola",
+                "de": "Kraftvoller Schuss in die Mitte des sichtbaren Tores"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — from this angle the middle is the keeper strongest save zone.",
+                "hr": "Riskantno — iz ovog kuta sredina je vratareva najjača zona spašavanja.",
+                "de": "Riskant – aus dieser Perspektive ist die Mitte die stärkste Schutzzone des Torwarts."
+              }
+            },
+            {
+              "text": {
+                "en": "Step out beyond the sideline and restart the attack",
+                "hr": "Izađite izvan bočne linije i ponovno započnite napad",
+                "de": "Treten Sie über die Seitenlinie hinaus und starten Sie den Angriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — you already have a legal finishing catch; restarting throws it away.",
+                "hr": "Loše — već imate legalan završni ulov; ponovno pokretanje ga baca.",
+                "de": "Schlecht – Sie haben bereits einen legalen Schlussfang; Ein Neustart wirft es weg."
+              }
+            }
+          ],
+          "explanation": "Gledano iz ekstremnih kutova, opcije s visokim postotkom su nisko prevlačenje u blizini ili prikrivena promjena visine. Centralna moć je dar čuvaru."
+        },
+        "de": {
+          "title": "Linker Flügel – Extremwinkel-Finish",
+          "situation": "Du fängst an der Seitenlinie, in der 9. Minute (22–21) ist nur noch ein Hauch vom Tor zu sehen. Der Torwart weiß, dass Sie ein rechtshändiger Finisher sind, und er hat eine Sonnenbrille, die freigibt. Die Hilfeverteidigung ist nur einen Schritt von einem Block entfernt.",
+          "question": "Welche Technik hält dieses Finish am Leben?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post skim along the floor before help arrives",
+                "hr": "Nisko pri stupu preletite po podu prije nego što pomoć stigne",
+                "de": "Tief in der Nähe des Pfostens gleiten Sie über den Boden, bevor Hilfe eintrifft"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the skim is hardest to reach from extreme angles against a shaded keeper.",
+                "hr": "Točno — najteže je dosegnuti klizač iz ekstremnih kutova protiv zasjenjenog čuvara.",
+                "de": "Richtig – der Skim ist aus extremem Winkel gegen einen schattigen Torwart am schwersten zu erreichen."
+              }
+            },
+            {
+              "text": {
+                "en": "Soft pass inside to a covered half-back",
+                "hr": "Mekano dodavanje unutra na pokrivenog polubranika",
+                "de": "Weicher Pass nach innen zu einem gedeckten Innenverteidiger"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — valid if the angle dies, but you still have a legal skim lane.",
+                "hr": "Dobro — vrijedi ako kut umre, ali još uvijek imate legalnu stazu za klizanje.",
+                "de": "Gut – gültig, wenn der Winkel verschwindet, Sie aber immer noch eine legale Skim-Lane haben."
+              }
+            },
+            {
+              "text": {
+                "en": "High power shot into the middle of the visible goal",
+                "hr": "Snažan šut u sredinu vidljivog gola",
+                "de": "Kraftvoller Schuss in die Mitte des sichtbaren Tores"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — from this angle the middle is the keeper strongest save zone.",
+                "hr": "Riskantno — iz ovog kuta sredina je vratareva najjača zona spašavanja.",
+                "de": "Riskant – aus dieser Perspektive ist die Mitte die stärkste Schutzzone des Torwarts."
+              }
+            },
+            {
+              "text": {
+                "en": "Step out beyond the sideline and restart the attack",
+                "hr": "Izađite izvan bočne linije i ponovno započnite napad",
+                "de": "Treten Sie über die Seitenlinie hinaus und starten Sie den Angriff erneut"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — you already have a legal finishing catch; restarting throws it away.",
+                "hr": "Loše — već imate legalan završni ulov; ponovno pokretanje ga baca.",
+                "de": "Schlecht – Sie haben bereits einen legalen Schlussfang; Ein Neustart wirft es weg."
+              }
+            }
+          ],
+          "explanation": "Aus extremen Winkeln sind die hochprozentigen Optionen ein geringer Überflug in der Nähe des Pfostens oder eine verdeckte Höhenänderung. Die zentrale Macht ist ein Geschenk an den Bewahrer."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_084",
+      "familyKey": "lw_simple_width_principle",
+      "titleEn": "Left Wing — Simple Width Principle",
+      "difficulty": "Beginner",
+      "assessedDifficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": false,
+      "risk": 6,
+      "mainRisk": "HR still machine-like; only thin positional teaching family that is salvageable",
+      "hrLanguageConcerns": [
+        "Držite",
+        "Držite pravu širinu",
+        "krenite prečicom",
+        "Spustite do pola",
+        "dugo ispuštanje"
+      ],
+      "geometryConcerns": "OK for Beginner — standing 1m inside sideline",
+      "aVsBConcern": "OK (hold width vs early cut)",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "ordinary context — perception false is ok",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "POLISH",
+      "teachingObjective": "Hold true width on sideline in 6:0",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Simple Width Principle",
+          "situation": "Your team attacks a flat 6:0 at 28 min (28–27). Ball is with the centre back. You are on the left wing standing a metre inside the sideline while your defender stays comfortable.",
+          "question": "How should you use width to help the attack?",
+          "answers": [
+            {
+              "text": {
+                "en": "Hold true width on the sideline to stretch the wing defender",
+                "hr": "Držite pravu širinu na bočnoj liniji da rastegnete krilnog braniča",
+                "de": "Halten Sie an der Seitenlinie die volle Breite, um den Flügelverteidiger zu strecken"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — width creates skip lanes and stops the wing defender helping early.",
+                "hr": "Ispravno — širina stvara staze za preuzimanje i zaustavlja krilnog braniča koji pomaže rano.",
+                "de": "Richtig – die Breite schafft Überspringspuren und verhindert, dass der Außenverteidiger früh hilft."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width, then time a short cut when the centre back looks your way",
+                "hr": "Držite širinu, a zatim krenite prečicom kada središnji dio leđa gleda u tvom smjeru",
+                "de": "Halten Sie die Breite gedrückt und führen Sie dann eine Abkürzung aus, wenn die hintere Mitte in Ihre Richtung schaut"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — still uses width, with a delayed cut once the passer is ready.",
+                "hr": "Dobro — još uvijek koristi širinu, s odgođenim rezom nakon što je dodavač spreman.",
+                "de": "Gut – nutzt immer noch die Breite, mit einem verzögerten Schnitt, sobald der Passgeber bereit ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Come inside to the half-back to ask for the ball",
+                "hr": "Uđite do polubranika i zatražite loptu",
+                "de": "Kommen Sie zum Innenverteidiger und bitten Sie ihn um den Ball"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early pinch crowds the backcourt and invites help defence.",
+                "hr": "Riskantno — rano štipanje gužva zaleđe i poziva obranu u pomoć.",
+                "de": "Riskant – der frühe Pinch drängt sich in den Rückraum und lädt zur Unterstützung der Verteidigung ein."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to halfway to prepare for a long outlet",
+                "hr": "Spustite do pola kako biste se pripremili za dugo ispuštanje",
+                "de": "Lassen Sie es auf die Hälfte fallen, um sich auf einen langen Auslass vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — in a set 6:0 attack your value is width and finishing, not deep outlets.",
+                "hr": "Loše — u napadu 6:0 u setovima tvoja je vrijednost širina i završetak, a ne duboki otvori.",
+                "de": "Schlecht – bei einem 6:0-Satzangriff liegt Ihr Wert auf Breite und Abschluss, nicht auf tiefen Ausgängen."
+              }
+            }
+          ],
+          "explanation": "Wings stretch 6:0 by holding true width. Standing narrow lets the wing defender help inside and kills skip-pass options."
+        },
+        "hr": {
+          "title": "Lijevo krilo — jednostavno načelo širine",
+          "situation": "Tvoj tim napada jednakih 6:0 u 28. minuti (28–27). Lopta je sa srednjim vanjskim. Vi ste na lijevom krilu i stojite metar unutar bočne linije dok se branič nalazi udobno.",
+          "question": "Kako trebaš koristiti širinu da pomognete napadu?",
+          "answers": [
+            {
+              "text": {
+                "en": "Hold true width on the sideline to stretch the wing defender",
+                "hr": "Držite pravu širinu na bočnoj liniji da rastegnete krilnog braniča",
+                "de": "Halten Sie an der Seitenlinie die volle Breite, um den Flügelverteidiger zu strecken"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — width creates skip lanes and stops the wing defender helping early.",
+                "hr": "Ispravno — širina stvara staze za preuzimanje i zaustavlja krilnog braniča koji pomaže rano.",
+                "de": "Richtig – die Breite schafft Überspringspuren und verhindert, dass der Außenverteidiger früh hilft."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width, then time a short cut when the centre back looks your way",
+                "hr": "Držite širinu, a zatim krenite prečicom kada središnji dio leđa gleda u tvom smjeru",
+                "de": "Halten Sie die Breite gedrückt und führen Sie dann eine Abkürzung aus, wenn die hintere Mitte in Ihre Richtung schaut"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — still uses width, with a delayed cut once the passer is ready.",
+                "hr": "Dobro — još uvijek koristi širinu, s odgođenim rezom nakon što je dodavač spreman.",
+                "de": "Gut – nutzt immer noch die Breite, mit einem verzögerten Schnitt, sobald der Passgeber bereit ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Come inside to the half-back to ask for the ball",
+                "hr": "Uđite do polubranika i zatražite loptu",
+                "de": "Kommen Sie zum Innenverteidiger und bitten Sie ihn um den Ball"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early pinch crowds the backcourt and invites help defence.",
+                "hr": "Riskantno — rano štipanje gužva zaleđe i poziva obranu u pomoć.",
+                "de": "Riskant – der frühe Pinch drängt sich in den Rückraum und lädt zur Unterstützung der Verteidigung ein."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to halfway to prepare for a long outlet",
+                "hr": "Spustite do pola kako biste se pripremili za dugo ispuštanje",
+                "de": "Lassen Sie es auf die Hälfte fallen, um sich auf einen langen Auslass vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — in a set 6:0 attack your value is width and finishing, not deep outlets.",
+                "hr": "Loše — u napadu 6:0 u setovima tvoja je vrijednost širina i završetak, a ne duboki otvori.",
+                "de": "Schlecht – bei einem 6:0-Satzangriff liegt Ihr Wert auf Breite und Abschluss, nicht auf tiefen Ausgängen."
+              }
+            }
+          ],
+          "explanation": "Krila se rastežu 6:0 držeći pravu širinu. Usko stajanje omogućuje krilnom braniču pomoć unutra i ubija mogućnosti preuzimanja."
+        },
+        "de": {
+          "title": "Linker Flügel – Einfaches Breitenprinzip",
+          "situation": "Ihr Team greift nach 28 Minuten (28–27) mit einem glatten 6:0 an. Der Ball liegt beim Innenverteidiger. Sie befinden sich auf dem linken Flügel und stehen einen Meter innerhalb der Seitenlinie, während Ihr Verteidiger bequem sitzt.",
+          "question": "Wie sollten Sie die Breite nutzen, um den Angriff zu unterstützen?",
+          "answers": [
+            {
+              "text": {
+                "en": "Hold true width on the sideline to stretch the wing defender",
+                "hr": "Držite pravu širinu na bočnoj liniji da rastegnete krilnog braniča",
+                "de": "Halten Sie an der Seitenlinie die volle Breite, um den Flügelverteidiger zu strecken"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — width creates skip lanes and stops the wing defender helping early.",
+                "hr": "Ispravno — širina stvara staze za preuzimanje i zaustavlja krilnog braniča koji pomaže rano.",
+                "de": "Richtig – die Breite schafft Überspringspuren und verhindert, dass der Außenverteidiger früh hilft."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold width, then time a short cut when the centre back looks your way",
+                "hr": "Držite širinu, a zatim krenite prečicom kada središnji dio leđa gleda u tvom smjeru",
+                "de": "Halten Sie die Breite gedrückt und führen Sie dann eine Abkürzung aus, wenn die hintere Mitte in Ihre Richtung schaut"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — still uses width, with a delayed cut once the passer is ready.",
+                "hr": "Dobro — još uvijek koristi širinu, s odgođenim rezom nakon što je dodavač spreman.",
+                "de": "Gut – nutzt immer noch die Breite, mit einem verzögerten Schnitt, sobald der Passgeber bereit ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Come inside to the half-back to ask for the ball",
+                "hr": "Uđite do polubranika i zatražite loptu",
+                "de": "Kommen Sie zum Innenverteidiger und bitten Sie ihn um den Ball"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — early pinch crowds the backcourt and invites help defence.",
+                "hr": "Riskantno — rano štipanje gužva zaleđe i poziva obranu u pomoć.",
+                "de": "Riskant – der frühe Pinch drängt sich in den Rückraum und lädt zur Unterstützung der Verteidigung ein."
+              }
+            },
+            {
+              "text": {
+                "en": "Drop to halfway to prepare for a long outlet",
+                "hr": "Spustite do pola kako biste se pripremili za dugo ispuštanje",
+                "de": "Lassen Sie es auf die Hälfte fallen, um sich auf einen langen Auslass vorzubereiten"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — in a set 6:0 attack your value is width and finishing, not deep outlets.",
+                "hr": "Loše — u napadu 6:0 u setovima tvoja je vrijednost širina i završetak, a ne duboki otvori.",
+                "de": "Schlecht – bei einem 6:0-Satzangriff liegt Ihr Wert auf Breite und Abschluss, nicht auf tiefen Ausgängen."
+              }
+            }
+          ],
+          "explanation": "Die Flügel werden 6:0 gedehnt, indem die wahre Breite beibehalten wird. Wenn du eng stehst, kann der Außenverteidiger nach innen helfen und verhindert Skip-Pass-Möglichkeiten."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_096",
+      "familyKey": "lw_basic_near_post_read",
+      "titleEn": "Left Wing — Basic Near-Post Read",
+      "difficulty": "Beginner",
+      "assessedDifficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": false,
+      "risk": 9,
+      "mainRisk": "Machine HR + simplistic GK formula + clone padding",
+      "hrLanguageConcerns": [
+        "Primate",
+        "završavate",
+        "vašeg",
+        "Vozite",
+        "Primate",
+        "set 6:0",
+        "oporavljao",
+        "resetiranje",
+        "pokojnog",
+        "Vozite unutra"
+      ],
+      "geometryConcerns": "QUESTIONABLE — no sideline/take-off/body orientation; “near/far” from LW not reconstructed",
+      "aVsBConcern": "WEAK — B lob without dropped-hands cue; C/D cartoon",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "ordinary context — perception false is ok",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "GK drifts far → finish near post",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Basic Near-Post Read",
+          "situation": "You receive on the left wing against a set 6:0 at 9 min. Score 28–27. The goalkeeper has drifted half a step toward the far post. Your defender is a step late and cannot block.",
+          "question": "What do you finish to first?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "When the keeper over-shifts far, the near post opens. A quick low finish there beats waiting for a better angle that never comes."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Osnovno očitavanje krajnje stative",
+          "situation": "Primate na lijevom krilu protiv set 6:0 u 9 min. Rezultat 28–27. Vratar je odlutao pola koraka prema daljnjoj vratnici. Tvoj branič kasni korak i ne može blokirati.",
+          "question": "Što prvo završavate?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "Kada se vratar prebaci daleko, otvara se bliža vratnica. Brza niska završnica tu je bolja od čekanja boljeg kuta koji nikad ne dolazi."
+        },
+        "de": {
+          "title": "Linker Flügel – Grundlegendes Near-Post-Lesen",
+          "situation": "Sie erhalten auf dem linken Flügel gegen einen Satz 6:0 in der 9. Minute. Ergebnis 28–27. Der Torwart ist einen halben Schritt in Richtung des langen Pfostens abgedriftet. Dein Verteidiger ist einen Schritt zu spät und kann nicht Block.",
+          "question": "Was machst du zuerst zu Ende?",
+          "answers": [
+            {
+              "text": {
+                "en": "Low near-post finish before the goalkeeper recovers centre",
+                "hr": "Niska završnica blizu stative prije nego što se vratar vrati u centar",
+                "de": "Tiefer Abschluss in der Nähe des Pfostens, bevor der Torwart die Mitte wiedererlangt"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the far-post drift leaves near post open for a quick release.",
+                "hr": "Ispravno — pomicanje daljeg stupića ostavlja otvorenim blizu stupića za brzo otpuštanje.",
+                "de": "Richtig – der Drift am fernen Pfosten lässt den nahen Pfosten für eine schnelle Freigabe offen."
+              }
+            },
+            {
+              "text": {
+                "en": "High far-post lob over a recovering keeper",
+                "hr": "Visoki lob dalekom stativom preko vratara koji se oporavljao",
+                "de": "Hoher Lupfer am langen Pfosten über einen sich erholenden Torwart"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — possible if the keeper stays tall, but slower than the open near post.",
+                "hr": "Dobro — moguće ako vratar ostane visok, ali sporije od otvorene pored vratnice.",
+                "de": "Gut – möglich, wenn der Torwart groß bleibt, aber langsamer als der offene Pfosten."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back to the left back to reset the attack",
+                "hr": "Dodavanje unatrag lijevom vanjskom za resetiranje napada",
+                "de": "Pass zurück nach links, um den Angriff zurückzusetzen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — resetting gives the defence time to recover your late defender.",
+                "hr": "Riskantno — resetiranje daje obrani vremena za oporavak vašeg pokojnog braniča.",
+                "de": "Riskant – das Zurücksetzen gibt der Verteidigung Zeit, Ihren verstorbenen Verteidiger zu erholen."
+              }
+            },
+            {
+              "text": {
+                "en": "Drive inside toward the middle against recovering help",
+                "hr": "Vozite unutra prema sredini protiv pomoći za oporavak",
+                "de": "Gegen heranholende Hilfe nach innen in Richtung Mitte fahren"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — from a sharp wing angle the drive rarely creates a clean foul or shot.",
+                "hr": "Loše — iz oštrog kuta krila pogon rijetko stvara čisti prekršaj ili šut.",
+                "de": "Schlecht – aus einem scharfen Flügelwinkel führt der Drive selten zu einem sauberen Foul oder Schuss."
+              }
+            }
+          ],
+          "explanation": "Wenn der Torwart weit zu weit geht, öffnet sich der kurze Pfosten. Ein schneller, flacher Abschluss dort ist besser als das Warten auf einen besseren Winkel, der nie kommt."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_091",
+      "familyKey": "lw_tied_game_wing_finish",
+      "titleEn": "Left Wing — Tied Game Wing Finish",
+      "difficulty": "Expert",
+      "assessedDifficulty": "Intermediate/Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": true,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Expert label from clock; contradictory score/title; fake hand shade",
+      "hrLanguageConcerns": [
+        "Primate",
+        "imate",
+        "Primate",
+        "sjene",
+        "resetiranje",
+        "sjenila",
+        "zasjenjuje tvoju snažnu sklonost ka desnoj ruci",
+        "Trener signalizira mirnu završnicu, a ne junaštvo",
+        "zaradiš slabu stranu",
+        "sjene tvoju jaku stranu"
+      ],
+      "geometryConcerns": "THIN — playable angle asserted",
+      "aVsBConcern": "WEAK",
+      "difficultyConcern": "labeled Expert but assessed Intermediate/Advanced",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "REMOVE / MERGE",
+      "teachingObjective": "Late pressure finish with one GK read",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Tied Game Wing Finish",
+          "situation": "Final 90 seconds, score 14–13. You receive on the left wing with a playable angle. The goalkeeper shades your strong right-handed tendency. Coach signals calm finish, not heroics.",
+          "question": "How do you decide the finish under this pressure?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Under late pressure, one clear keeper read beats creativity. If they shade your strong side, finish weak-side or change height — do not invent a third option."
+        },
+        "hr": {
+          "title": "Lijevo krilo — neriješena igra, završnica krila",
+          "situation": "Posljednjih 90 sekundi, rezultat 14–13. Primate na lijevom krilu s kutom koji se može igrati. Vratar zasjenjuje tvoju snažnu sklonost ka desnoj ruci. Trener signalizira mirnu završnicu, a ne junaštvo.",
+          "question": "Kako odlučujete o završnici pod ovim pritiskom?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Pod kasnim pritiskom, jedno jasno čitanje pobjeđuje kreativnost. Ako zasjene tvoju jaku stranu, zaradiš slabu stranu ili promijenite visinu — nemojte izmišljati treću opciju."
+        },
+        "de": {
+          "title": "Linker Flügel – Unentschiedenes Spiel auf dem Flügel",
+          "situation": "Letzte 90 Sekunden, Punktestand 14–13. Sie erhalten auf dem linken Flügel einen spielbaren Winkel. Der Torwart überschattet Ihre ausgeprägte Rechtshänder-Tendenz. Trainer signalisiert ruhiges Ende, keine Heldentaten.",
+          "question": "Wie entscheiden Sie unter diesem Druck über das Ziel?",
+          "answers": [
+            {
+              "text": {
+                "en": "One keeper read, then finish opposite their shade or change shot height",
+                "hr": "Jedan vratar čita, zatim završava nasuprot svoje sjene ili mijenja visinu udarca",
+                "de": "Ein Torwart liest, schließt dann gegenüber seinem Schatten ab oder ändert die Schlaghöhe"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — tendency shade is information; one adjustment, clean execution.",
+                "hr": "Ispravno — tendencija nijansa je informacija; jedno podešavanje, čista izvedba.",
+                "de": "Richtig – Tendenzfarbe ist Information; eine Anpassung, saubere Ausführung."
+              }
+            },
+            {
+              "text": {
+                "en": "Pass back for a full reset despite the playable angle",
+                "hr": "Vratite loptu za potpuno resetiranje unatoč kutu koji se može igrati",
+                "de": "Geben Sie trotz des spielbaren Winkels einen vollständigen Reset zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — protects possession, but you already have a finishable catch.",
+                "hr": "Dobro — štiti posjed, ali već imate hvatanje koje možete završiti.",
+                "de": "Gut – schützt den Ballbesitz, aber Sie haben bereits einen fertigen Fang."
+              }
+            },
+            {
+              "text": {
+                "en": "Attempt a reverse spin finish to surprise the defence",
+                "hr": "Pokušajte obrnuti završetak vrtnje kako biste iznenadili obranu",
+                "de": "Versuchen Sie einen Reverse-Spin-Finish, um die Verteidigung zu überraschen"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — low-percentage creativity under late-game pressure.",
+                "hr": "Riskantno — kreativnost s niskim postotkom pod pritiskom kasne utakmice.",
+                "de": "Riskant – geringer Kreativitätsanteil unter Druck im späten Spielverlauf."
+              }
+            },
+            {
+              "text": {
+                "en": "Rush a power shot without checking the keeper shade",
+                "hr": "Udarite snažan šut bez provjere sjenila vratara",
+                "de": "Führen Sie einen kraftvollen Schuss aus, ohne den Schatten des Torwarts zu überprüfen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — ignoring the shade turns a controlled chance into a saveable ball.",
+                "hr": "Loše — ignoriranje sjene pretvara kontroliranu priliku u loptu koju je moguće spasiti.",
+                "de": "Schlecht – das Ignorieren des Schattens verwandelt eine kontrollierte Chance in einen rettebaren Ball."
+              }
+            }
+          ],
+          "explanation": "Unter spätem Druck schlägt ein klarer Keeper die Kreativität. Wenn sie Ihre starke Seite beschatten, die schwache Seite beenden oder die Höhe ändern – erfinden Sie keine dritte Option."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_104",
+      "familyKey": "lw_transition_cover_priority",
+      "titleEn": "Left Wing — Transition Cover Priority",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Defence",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 9,
+      "mainRisk": "Club sticker + incomplete  transition geometry; only defence family in bank",
+      "hrLanguageConcerns": [
+        "Sprintajte",
+        "Zaustavite",
+        "utičnic",
+        "preskok",
+        "Zagrebački ispust odmah na desno krilo",
+        "presjekli stazu za preuzimanje dalekog krila",
+        "pritisnite najbližu utičnicu",
+        "signalizirate grešku"
+      ],
+      "geometryConcerns": "INCOMPLETE — no second defender location; far-wing skip asserted",
+      "aVsBConcern": "B stay on own wing is a real alternative — A not proven without teammate map",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "3-way clone family (score/minute stickers)",
+      "coachTest": "NO",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "After LW turnover, cut far-wing skip lane first",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Transition Cover Priority",
+          "situation": "You lose the ball high on the left side at 9 min (14–13). Hamburg outlet immediately to the right wing. You are still above the nine-metre line.",
+          "question": "What is your first defensive job in this transition?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "The dangerous pass is the skip to the far wing. Sprint to cut that lane first; pressing the outlet alone is beaten by one pass."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Prioritet prijelaza",
+          "situation": "Izgubite loptu visoko na lijevoj strani nakon 9 minuta (14–13). Hamburški izlaz odmah na desno krilo. Još uvijek ste iznad linije od devet metara.",
+          "question": "Koji je tvoj prvi obrambeni posao u ovoj tranziciji?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "Opasno dodavanje je preuzimanje na dalje krilo. Sprintajte da prvo presječete tu traku; samo pritiskanje izlaza pobjeđuje se jednim prolazom."
+        },
+        "de": {
+          "title": "Linker Flügel – Priorität der Übergangsdeckung",
+          "situation": "Du verlierst den Ball hoch auf der linken Seite in der 9. Minute (14–13). Hamburger Abgang sofort zum rechten Flügel. Sie befinden sich immer noch über der 9-Meter-Grenze.",
+          "question": "Was ist Ihr erster defensiver Job in diesem Übergang?",
+          "answers": [
+            {
+              "text": {
+                "en": "Sprint to cut the far-wing skip lane, then recover goal-side",
+                "hr": "Sprintajte kako biste presjekli stazu za preuzimanje dalekog krila, a zatim se vratite na stranu gola",
+                "de": "Sprinten Sie, um die Skip-Lane am äußersten Flügel zu unterbrechen, und erholen Sie sich dann auf der Torseite"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — denying the cross-court outlet stops the highest-value break.",
+                "hr": "Točno — uskraćivanje izlaza preko terena zaustavlja break najveće vrijednosti.",
+                "de": "Richtig – das Verweigern des Cross-Court-Auslasses stoppt den Break mit dem höchsten Wert."
+              }
+            },
+            {
+              "text": {
+                "en": "Recover to your own wing spot and wait for the set defence",
+                "hr": "Vratite se na vlastito krilo i pričekajte postavljenu obranu",
+                "de": "Kehren Sie zu Ihrem eigenen Flügelplatz zurück und warten Sie auf die festgelegte Verteidigung"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — gets you organised, but may concede the first skip if you delay the sprint.",
+                "hr": "Dobro — organizira vas, ali može dopustiti prvo preuzimanje ako odgodite sprint.",
+                "de": "Gut – sorgt für Ordnung, kann aber den ersten Fehler zulassen, wenn Sie den Sprint verzögern."
+              }
+            },
+            {
+              "text": {
+                "en": "Press the nearest outlet passer immediately",
+                "hr": "Odmah pritisnite najbližu utičnicu",
+                "de": "Drücken Sie sofort den nächstgelegenen Steckdosenpasser"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — solo press is beaten by one skip if the far wing is free.",
+                "hr": "Rizično — solo press se pobjeđuje jednim preskokom ako je daleko krilo slobodno.",
+                "de": "Riskant – Solo-Press wird um einen Sprung geschlagen, wenn der entfernte Flügel frei ist."
+              }
+            },
+            {
+              "text": {
+                "en": "Stop to signal for a foul call before recovering",
+                "hr": "Zaustavite se da signalizirate grešku prije oporavka",
+                "de": "Halten Sie an, um ein Foul zu signalisieren, bevor Sie sich erholen"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — transition defence starts on the loss of possession, not after the argument.",
+                "hr": "Loše — tranzicijska obrana počinje gubitkom posjeda lopte, a ne nakon svađe.",
+                "de": "Schlecht – die Übergangsverteidigung beginnt beim Ballverlust, nicht nach dem Streit."
+              }
+            }
+          ],
+          "explanation": "Der gefährliche Pass ist der Sprung auf den entfernten Flügel. Sprinten Sie, um diese Spur als Erster zu durchtrennen. Das alleinige Drücken des Auslasses wird um einen Durchgang geschlagen."
+        }
+      }
+    },
+    {
+      "id": "scn_bank_112",
+      "familyKey": "lw_power_play_wing_overload",
+      "titleEn": "Left Wing — Power-Play Wing Overload",
+      "difficulty": "Advanced",
+      "assessedDifficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "handedness": "none",
+      "handednessInText": false,
+      "perception": false,
+      "perceptionShouldBe": true,
+      "risk": 8,
+      "mainRisk": "HR nonsense (“bližnjeg”, “zabrtvi”, “Zaradiš napad”); power-play English framing",
+      "hrLanguageConcerns": [
+        "Primate",
+        "Držite",
+        "Power-Play",
+        "Primate",
+        "bližnjeg",
+        "zabrtvi",
+        "rotira jednog igrača kasno iz sredine",
+        "Pivot zatvara bližnjeg braniča",
+        "dok osovina ne zabrtvi dublje",
+        "Zaradiš napad ili nahranite zapečaćenog Pivota"
+      ],
+      "geometryConcerns": "THIN — “rotates one player late from middle”; pivot seal vague",
+      "aVsBConcern": "OK",
+      "difficultyConcern": "label roughly ok",
+      "perceptionConcern": "should likely be perception but untagged / or cue too thin",
+      "duplicationConcern": "4-way clone family (score/minute stickers)",
+      "coachTest": "BORDERLINE",
+      "recommendation": "TACTICAL REWRITE",
+      "teachingObjective": "6v5 late rotation → finish or feed sealed pivot",
+      "complete": {
+        "en": {
+          "title": "Left Wing — Power-Play Wing Overload",
+          "situation": "6-on-5 after an exclusion at 51 min (22–21). You receive on the left wing. The short-handed defence rotates one player late from the middle; the pivot is sealing the near defender.",
+          "question": "What do you read first before the rotation closes?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "In power play the temporary gap is the value. Attack finish or feed the sealed pivot before the late rotator arrives — holding for perfection returns them to 6:0."
+        },
+        "hr": {
+          "title": "Lijevo krilo — Power-Play opterećenje krila",
+          "situation": "6 na 5 nakon isključenja nakon 51 minute (22-21). Primate na lijevom krilu. Obrana s kratkim igračima rotira jednog igrača kasno iz sredine; Pivot zatvara bližnjeg braniča.",
+          "question": "Što prvo pročitaš prije zatvaranja rotacije?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "U igri s igračem više privremeni jaz je vrijednost. Zaradiš napad ili nahranite zapečaćenog Pivota prije nego što kasni rotator stigne — držanje za savršenstvo vraća ih na 6:0."
+        },
+        "de": {
+          "title": "Linker Flügel – Powerplay-Flügelüberlastung",
+          "situation": "6 gegen 5 nach einem Ausschluss in der 51. Minute (22–21). Sie erhalten auf dem linken Flügel. Die unterbesetzte Verteidigung rotiert einen Spieler spät aus der Mitte; Der Kreisläufer dichtet den nahen Verteidiger ab.",
+          "question": "Was lesen Sie zuerst, bevor die Rotation endet?",
+          "answers": [
+            {
+              "text": {
+                "en": "Attack the late rotation immediately — finish or feed the sealed pivot",
+                "hr": "Odmah napadnite kasnu rotaciju — doradiš ili nahranite zapečaćeni pivot",
+                "de": "Greifen Sie die späte Rotation sofort an – beenden Sie den versiegelten Kreisläufer oder füttern Sie ihn"
+              },
+              "quality": "optimal",
+              "feedback": {
+                "en": "Correct — the gap exists only until the rotator recovers.",
+                "hr": "Ispravno — razmak postoji samo dok se rotator ne oporavi.",
+                "de": "Richtig – die Lücke besteht nur, bis sich der Rotator erholt."
+              }
+            },
+            {
+              "text": {
+                "en": "Swing the ball back around the full perimeter once more",
+                "hr": "Još jednom zamahnite loptom natrag oko cijelog perimetra",
+                "de": "SchAußenen Sie den Ball noch einmal über den gesamten Umfang zurück"
+              },
+              "quality": "good",
+              "feedback": {
+                "en": "Good — can create a better angle, but burns the temporary overload.",
+                "hr": "Dobro — može stvoriti bolji kut, ali spaljuje privremeno opterećenje.",
+                "de": "Gut – kann einen besseren Winkel erzeugen, verbrennt aber die vorübergehende Überlastung."
+              }
+            },
+            {
+              "text": {
+                "en": "Hold on the wing until the pivot seals deeper",
+                "hr": "Držite krilo dok osovina ne zabrtvi dublje",
+                "de": "Halten Sie den Flügel fest, bis der Drehzapfen tiefer einrastet"
+              },
+              "quality": "risky",
+              "feedback": {
+                "en": "Risky — holding invites the short-handed defence to recover structure.",
+                "hr": "Riskantno — držanje poziva obranu s kratkim rukama da povrati strukturu.",
+                "de": "Riskant – das Halten lädt die unterbesetzte Verteidigung dazu ein, die Struktur wiederherzustellen."
+              }
+            },
+            {
+              "text": {
+                "en": "Dribble along the sideline to protect possession",
+                "hr": "Driblati uz bočnu liniju kako bi zaštitili posjed",
+                "de": "Dribbeln Sie entlang der Seitenlinie, um den Ballbesitz zu Werfern"
+              },
+              "quality": "poor",
+              "feedback": {
+                "en": "Poor — power play is for scoring pressure, not clock management.",
+                "hr": "Loše — igra snage služi za postizanje pritiska, a ne za upravljanje satom.",
+                "de": "Schlecht – Powerplay dient dem Druck auf Punkte, nicht dem Taktmanagement."
+              }
+            }
+          ],
+          "explanation": "Im Powerplay kommt es auf die temporäre Lücke an. Greifen Sie den Abschluss an oder füttern Sie den versiegelten Kreisläufer, bevor der späte Rotator eintrifft – halten Sie ihn für Perfektion, bringen Sie ihn auf 6:0 zurück."
+        }
+      }
+    }
+  ]
+}

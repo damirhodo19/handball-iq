@@ -1,0 +1,47 @@
+{
+  "status": "LW GOLD RUNTIME CUTOVER READY",
+  "generatedAt": "2026-08-10T14:58:28.866Z",
+  "canonicalDefinition": "After cleanup, primaryPosition === 'Left Wing' equals approved Gold IDs 941–981 (41). Same mechanism as LB/RB/CB/RW (entire primary set is Gold).",
+  "runtimeSelection": {
+    "lwPrimaryCount": 41,
+    "minId": 941,
+    "maxId": 981,
+    "legacyServable": false
+  },
+  "persistedDataCompatibility": {
+    "status": "HISTORICAL SAFE",
+    "notes": [
+      "Active training sessions store bankIds; resolveFromBankIds skips missing IDs and clears stale session when < MIN length",
+      "Daily challenge regenerates when resolved scenarios < 3",
+      "getDailyChallengeScenarios already filtered nulls",
+      "Assigned sessions store scenario_count, not legacy bank IDs",
+      "No blind mapping of 40 legacy → Gold"
+    ]
+  },
+  "offlineCompatibility": {
+    "status": "SAFE",
+    "notes": [
+      "Missing cached IDs are skipped; session regenerates from current bank",
+      "Stale resolve test drops scn_bank_074–076 and keeps 941–943"
+    ]
+  },
+  "admin": {
+    "status": "SAFE",
+    "notes": [
+      "Admin published scenarios are separate storage; bank primary LW now only Gold",
+      "No admin code hardcodes legacy LW bank IDs 074–114"
+    ]
+  },
+  "generator": {
+    "status": "DISABLED_DEFAULT",
+    "file": "scripts/generate-scenario-bank.mjs",
+    "leftWingTarget": 0,
+    "requiresForceFlag": "--force-historical-regen"
+  },
+  "codeChanges": [
+    "scripts/generate-scenario-bank.mjs — refuse overwrite; LW target 0",
+    "lib/development/daily-challenge.ts — regenerate when stale IDs do not resolve",
+    "context/SessionContext.tsx — clear active session when restored bankIds missing",
+    "scripts/scenario-bank/data/wings.mjs — historical note"
+  ]
+}

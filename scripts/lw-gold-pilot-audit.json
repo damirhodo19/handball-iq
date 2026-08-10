@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-08-10T09:15:23.336Z",
+  "pilotCount": 10,
+  "ids": [
+    "scn_bank_941",
+    "scn_bank_942",
+    "scn_bank_943",
+    "scn_bank_944",
+    "scn_bank_945",
+    "scn_bank_946",
+    "scn_bank_947",
+    "scn_bank_948",
+    "scn_bank_949",
+    "scn_bank_950"
+  ],
+  "teachingFamilies": [
+    "lw_width_hold_true_width",
+    "lw_lb_51_outlet_ask_now",
+    "lw_wd_feet_decide_first_move",
+    "lw_takeoff_321_half_steps",
+    "lw_entry_when_not",
+    "lw_gk_stepout_hands_high_soft_inside",
+    "lw_fw_3v2_hold_left_width",
+    "lw_6v5_stay_wide_vs_entry_pivot",
+    "lw_def_controlled_help_keep_wing",
+    "lw_def_trans_3v2_own_side_lane"
+  ],
+  "teachingAreas": [
+    "positional_width_set_defence",
+    "left_back_cooperation",
+    "wing_defender_hips_feet",
+    "takeoff_geometry",
+    "when_not_to_enter",
+    "goalkeeper_perception",
+    "first_wave_transition",
+    "numerical_attack",
+    "set_defence_wing_responsibility",
+    "transition_defence"
+  ],
+  "attack": 8,
+  "defence": 2,
+  "difficulty": {
+    "Beginner": 2,
+    "Intermediate": 4,
+    "Advanced": 3,
+    "Expert": 1
+  },
+  "perceptionCount": 9,
+  "perceptionPct": 90,
+  "handednessCount": 0,
+  "defensiveSystems": {
+    "6-0": 5,
+    "5-1": 1,
+    "3-2-1": 1,
+    "Mixed": 3
+  },
+  "cloneRisks": [],
+  "rwSimilarityRisks": [],
+  "errors": [],
+  "warnings": [],
+  "lockCheck": {
+    "LB": {
+      "count": 62,
+      "hash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "unchanged": true
+    },
+    "RB": {
+      "count": 63,
+      "hash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "unchanged": true
+    },
+    "CB": {
+      "count": 70,
+      "hash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "unchanged": true
+    },
+    "RW": {
+      "count": 65,
+      "hash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "unchanged": true
+    }
+  },
+  "bankSha256": "06d52f92224ef17c0d8f0063486fe92c2b986697295445e81bd02beebaa7a607",
+  "bankSha256Before": "4b07b5588a8ca8085269fd9952f6c8b2bd1508c37f7c122a4fb84eaa8cad7df0",
+  "tacticalUncertainties": [
+    "Pilot_08 shares thematic DNA with RW 6v5 help-distance family — wording/geometry are left-native but human should confirm distinctness.",
+    "Pilot_09 beginner defence assumes a stated team handover rule — correct for answer ladder; confirm club-agnostic clarity."
+  ],
+  "languageUncertainties": [
+    "HR uses natural ti-form coaching; human native coach should still review rhythm of longer situations (esp. pilot_05, pilot_10).",
+    "DE uses Absprung / Halber / Kreisläufer consistently with project terms — confirm Halber vs Halbverteidiger preference in full bank later."
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "phase": "BATCH_A_AUDIT",
+  "verdict": "LW BATCH A APPROVED FOR HUMAN REVIEW",
+  "blockers": [],
+  "totals": {
+    "count": 12,
+    "attack": 10,
+    "defence": 2,
+    "perceptionTrue": 8,
+    "perceptionFalse": 4,
+    "difficulty": {
+      "Beginner": 4,
+      "Intermediate": 6,
+      "Advanced": 1,
+      "Expert": 1
+    },
+    "maxCoachRisk": 4,
+    "temporaryLwTotal": 62
+  },
+  "locks": {
+    "LB": {
+      "hashOk": true,
+      "count": 62,
+      "countOk": true
+    },
+    "RB": {
+      "hashOk": true,
+      "count": 63,
+      "countOk": true
+    },
+    "CB": {
+      "hashOk": true,
+      "count": 70,
+      "countOk": true
+    },
+    "RW": {
+      "hashOk": true,
+      "count": 65,
+      "countOk": true
+    },
+    "allOk": true
+  },
+  "pilotOk": true,
+  "selection": [
+    {
+      "id": "scn_bank_951",
+      "familyKey": "lw_lb_delay_ask_lane_blocked",
+      "teachingArea": "lb_cooperation",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_952",
+      "familyKey": "lw_width_stretch_when_lb_binds",
+      "teachingArea": "positional_width",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_953",
+      "familyKey": "lw_pivot_block_opens_takeoff",
+      "teachingArea": "pivot",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_954",
+      "familyKey": "lw_takeoff_lane_closed",
+      "teachingArea": "takeoff",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_955",
+      "familyKey": "lw_gk_far_side_commit",
+      "teachingArea": "goalkeeper",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_956",
+      "familyKey": "lw_gk_depth_read",
+      "teachingArea": "goalkeeper",
+      "difficulty": "Advanced",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 4,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_957",
+      "familyKey": "lw_fw_2v1_finish_or_pass",
+      "teachingArea": "transition_first",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "Mixed",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_958",
+      "familyKey": "lw_fw_arrival_timing",
+      "teachingArea": "transition_first",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Attack",
+      "system": "Mixed",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_959",
+      "familyKey": "lw_5v6_safe_possession",
+      "teachingArea": "numerical",
+      "difficulty": "Expert",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_960",
+      "familyKey": "lw_passive_warning",
+      "teachingArea": "passive",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Attack",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_961",
+      "familyKey": "lw_def_sys_60_wing_job",
+      "teachingArea": "system_defence",
+      "difficulty": "Beginner",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "perception": false,
+      "handedness": "none",
+      "coachRisk": 2,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    },
+    {
+      "id": "scn_bank_962",
+      "familyKey": "lw_def_inside_help_controlled",
+      "teachingArea": "set_defence",
+      "difficulty": "Intermediate",
+      "attackOrDefence": "Defence",
+      "system": "6-0",
+      "perception": true,
+      "handedness": "none",
+      "coachRisk": 3,
+      "abVerdict": "CLEAR",
+      "hrVerdict": "PASS",
+      "geometryVerdict": "PASS"
+    }
+  ],
+  "strongest": [
+    {
+      "id": "scn_bank_951",
+      "familyKey": "lw_lb_delay_ask_lane_blocked",
+      "coachRisk": 2
+    },
+    {
+      "id": "scn_bank_952",
+      "familyKey": "lw_width_stretch_when_lb_binds",
+      "coachRisk": 2
+    },
+    {
+      "id": "scn_bank_958",
+      "familyKey": "lw_fw_arrival_timing",
+      "coachRisk": 2
+    }
+  ],
+  "inspectClosely": [
+    {
+      "id": "scn_bank_951",
+      "familyKey": "lw_lb_delay_ask_lane_blocked",
+      "coachRisk": 2,
+      "reason": "coachRisk 2 / RW proximity"
+    },
+    {
+      "id": "scn_bank_952",
+      "familyKey": "lw_width_stretch_when_lb_binds",
+      "coachRisk": 2,
+      "reason": "coachRisk 2 / RW proximity"
+    },
+    {
+      "id": "scn_bank_953",
+      "familyKey": "lw_pivot_block_opens_takeoff",
+      "coachRisk": 3,
+      "reason": "coachRisk 3 / RW proximity"
+    }
+  ],
+  "remainingConcerns": [
+    "Final surgical pass on 955/956/962 — human coach must re-read those three HR versions aloud.",
+    "956 now uses depth-change + brake body cue (near plant / near hand down → far-high); confirm distinct from RW 897/898 and LW 955.",
+    "962 language polished only; concept remains half-removed + close RB→RW pass.",
+    "Legacy 40 still present; temporary LW=62 until later cleanup."
+  ]
+}

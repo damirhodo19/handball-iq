@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-09T23:26:16.187Z",
+  "date": "2026-08-10T15:04:51.903Z",
   "verdict": "PASS",
   "FAIL": [],
   "report": {
@@ -38,32 +38,32 @@
       "Left Wing": {
         "trainingTop": [
           {
-            "id": "scn_bank_074",
+            "id": "scn_bank_963",
             "primary": "Left Wing",
-            "title": "Left Wing — Basic Near-Post Read"
+            "title": "Left Wing — In 5+1 Wait Until the Left Back Moves the Advanced Defender"
           },
           {
-            "id": "scn_bank_075",
+            "id": "scn_bank_964",
             "primary": "Left Wing",
-            "title": "Left Wing — Far-Post Under Centred Keeper"
+            "title": "Left Wing — Enter When the Path Opens and the Ball Can Still Arrive"
           },
           {
-            "id": "scn_bank_076",
+            "id": "scn_bank_970",
             "primary": "Left Wing",
-            "title": "Left Wing — Lob vs Stepping Keeper"
+            "title": "Left Wing — Defence: In 5:1 Do Not Extra-Chase While the Advanced Still Pressures"
           },
           {
-            "id": "scn_bank_077",
+            "id": "scn_bank_974",
             "primary": "Left Wing",
-            "title": "Left Wing — Fast-Break Arrival Timing"
+            "title": "Left Wing — Defence: Release the Runner Only After the Agreed Takeover"
           },
           {
-            "id": "scn_bank_078",
+            "id": "scn_bank_975",
             "primary": "Left Wing",
-            "title": "Left Wing — Back-Door vs Ball-Watching 6:0"
+            "title": "Left Wing — Defence: Do Not Let the Drive Pull You Off the Back-Door"
           }
         ],
-        "matchPoolSize": 105,
+        "matchPoolSize": 106,
         "gkInMatchPool": 0
       },
       "Pivot": {

@@ -1,0 +1,70 @@
+{
+  "phase": "BATCH_C_DUPLICATE_AUDIT",
+  "vsLocked941to974": "no shared familyKeys with locked Gold",
+  "rows": [
+    {
+      "id": "scn_bank_975",
+      "familyKey": "lw_def_comm_half",
+      "closestLw": "scn_bank_974 / 973",
+      "closestRw": "scn_bank_880 / 928",
+      "sharedConcept": "Wing/half coordination before leaving responsibility",
+      "criticalDifference": "Call-before-leave when YOU want to help — not runner-release timing (974) or reverse stay (973)",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_976",
+      "familyKey": "lw_def_wing_entry",
+      "closestLw": "scn_bank_966 / 974",
+      "closestRw": "scn_bank_932 / 934 themes",
+      "sharedConcept": "Deny wing runner path",
+      "criticalDifference": "Defence deny entry behind you (not attack backdoor 966; not handover release timing 974)",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_977",
+      "familyKey": "lw_def_sys_33_switch",
+      "closestLw": "scn_bank_974 / 961",
+      "closestRw": "scn_bank_936 is attack — no defence twin",
+      "sharedConcept": "Wing/half runner responsibility",
+      "criticalDifference": "3:3 stated switch rule creates the fork — remove-label fails without system switch agreement",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_978",
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "closestLw": "scn_bank_972",
+      "closestRw": "scn_bank_931 / 933",
+      "sharedConcept": "Transition defence pass-lane priority",
+      "criticalDifference": "Opposite map to 972 — far skip only when own side covered",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_979",
+      "familyKey": "lw_def_numerical_5v6",
+      "closestLw": "scn_bank_959 / 950",
+      "closestRw": "scn_bank_931 themes",
+      "sharedConcept": "Priority protection under numerical disadvantage",
+      "criticalDifference": "5v6 defence: concrete far-skip priority vs near-wing habit — not attack 5v6 (959) or empty-own fill (950)",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_980",
+      "familyKey": "lw_sys_4plus2_lane",
+      "closestLw": "scn_bank_968 / 963",
+      "closestRw": "no clear 4+2 twin",
+      "sharedConcept": "Lane choice under advanced defence",
+      "criticalDifference": "4+2 dual-advanced gap vs Open 1v1 (968) vs 5+1 wait-for-move (963)",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_981",
+      "familyKey": "lw_sys_open_man_help",
+      "closestLw": "scn_bank_968",
+      "closestRw": "sparse",
+      "sharedConcept": "Open defence isolation vs help distance",
+      "criticalDifference": "Opposite of 968 — help arrived → recycle; not help late → attack 1v1",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    }
+  ],
+  "unresolvedDuplicates": 0
+}

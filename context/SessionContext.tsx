@@ -175,7 +175,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         return false;
       }
       const restored = resolveFromBankIds(active.bankIds, position);
-      if (restored.length < MIN_SESSION_LENGTH) return false;
+      // Missing bank rows (removed legacy IDs / stale offline cache) → clear and regenerate.
+      if (restored.length < MIN_SESSION_LENGTH) {
+        clearActiveTrainingSession();
+        return false;
+      }
       const gk = bankToSessionScenarios(restored, position);
       logSessionIds('resume', gk);
       if (!cancelled) setScenarios(gk);

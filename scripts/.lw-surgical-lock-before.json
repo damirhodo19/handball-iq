@@ -1,0 +1,18 @@
+{
+  "LB": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+  "RB": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+  "CB": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+  "RW": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+  "pilots": {
+    "scn_bank_941": "28d5f565f53e71f9",
+    "scn_bank_942": "085b4d959b919283",
+    "scn_bank_943": "bab6042ae52a6c45",
+    "scn_bank_944": "bd14a5273b8967a2",
+    "scn_bank_945": "7af29c20f703f9dd",
+    "scn_bank_946": "909bd33f2614f80e",
+    "scn_bank_947": "f7968dd08e6e461e",
+    "scn_bank_948": "061fbb4aea28fb5b",
+    "scn_bank_949": "2be2f8030e33d037",
+    "scn_bank_950": "87149078d89dc64b"
+  }
+}

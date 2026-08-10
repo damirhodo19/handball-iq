@@ -1,0 +1,22 @@
+{
+  "phase": "BATCH_A",
+  "verdict": "LW BATCH A APPROVED FOR HUMAN REVIEW",
+  "insertedIds": [
+    "scn_bank_951",
+    "scn_bank_952",
+    "scn_bank_953",
+    "scn_bank_954",
+    "scn_bank_955",
+    "scn_bank_956",
+    "scn_bank_957",
+    "scn_bank_958",
+    "scn_bank_959",
+    "scn_bank_960",
+    "scn_bank_961",
+    "scn_bank_962"
+  ],
+  "temporaryLwTotal": 62,
+  "locksOk": true,
+  "pilotOk": true,
+  "blockers": []
+}

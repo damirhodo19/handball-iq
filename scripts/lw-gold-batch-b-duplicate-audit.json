@@ -1,0 +1,116 @@
+{
+  "phase": "BATCH_B_DUPLICATE_AUDIT",
+  "vsLocked941to962": "no shared familyKeys",
+  "internalFamilyCollisions": 0,
+  "rows": [
+    {
+      "id": "scn_bank_963",
+      "familyKey": "lw_sys_5plus1_trap",
+      "closestLw": "scn_bank_942 / 967",
+      "closestRw": "no direct RW 5+1 twin",
+      "sharedConcept": "Advanced defender on left changes wing timing",
+      "criticalDifference": "Patient width until LB moves the 5+1 advanced off the left connection, then enter behind — not 942 ask-now under 5:1, not 967 early-entry reject without advanced geometry",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_964",
+      "familyKey": "lw_entry_when_space_opens",
+      "closestLw": "scn_bank_967",
+      "closestRw": "scn_bank_890 / 893",
+      "sharedConcept": "Wing entry after defender leaves corner / helps inside",
+      "criticalDifference": "Requires simultaneous LB free-arm delivery; opposite of 967; not RW 890 second-help or 893 pivot-return entry",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_965",
+      "familyKey": "lw_recovering_defender_race",
+      "closestLw": "scn_bank_954",
+      "closestRw": "scn_bank_882",
+      "sharedConcept": "Finish before late recovery reaches take-off",
+      "criticalDifference": "Stated temptation is waiting for unread GK; race-over-GK-patience, not pure recovery race alone",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_966",
+      "familyKey": "lw_backdoor_ball_watch",
+      "closestLw": "scn_bank_943",
+      "closestRw": "scn_bank_891",
+      "sharedConcept": "Back-door cut when WD loses vision",
+      "criticalDifference": "Requires LB about to catch with deliverable angle; B = feet reopen before catch (943 is pre-move feet read)",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_967",
+      "familyKey": "lw_entry_when_not",
+      "closestLw": "scn_bank_941",
+      "closestRw": "no identical entry-reject twin",
+      "sharedConcept": "Stay wide rather than leave early",
+      "criticalDifference": "Explicit do-not-enter while LB still needs width + WD recovering; not 948 6v5 pivot corridor",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_968",
+      "familyKey": "lw_1v1_wing_space",
+      "closestLw": "scn_bank_944",
+      "closestRw": "no clear RW attack twin",
+      "sharedConcept": "Wing isolation take-off",
+      "criticalDifference": "Open defence + help-distance cue; system changes decision vs 6:0 recycle habit",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_969",
+      "familyKey": "lw_pivot_feed_vs_finish",
+      "closestLw": "scn_bank_946",
+      "closestRw": "scn_bank_888",
+      "sharedConcept": "Short release to pivot instead of dirty wing shot",
+      "criticalDifference": "WD on LW body + sealed pivot (not free LB vs lob as in 946); not pivot-block take-off 953",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_970",
+      "familyKey": "lw_def_sys_51_vs_advance",
+      "closestLw": "scn_bank_961 / 942",
+      "closestRw": "scn_bank_940 (different system)",
+      "sharedConcept": "Wing responsibility under advanced/high defence",
+      "criticalDifference": "5:1: keep wing while advanced still pressures RB; help only if advanced beaten/out — geometry shown, ownership not narrated",
+      "duplicateClassification": "UNIQUE"
+    },
+    {
+      "id": "scn_bank_971",
+      "familyKey": "lw_late_lead_risk",
+      "closestLw": "scn_bank_959",
+      "closestRw": "scn_bank_921",
+      "sharedConcept": "Protect late lead — safe return vs force",
+      "criticalDifference": "Dirty left-wing angle under one-goal lead; not 5v6 possession (959) and not short-clock family",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_972",
+      "familyKey": "lw_def_trans_own_side_lane",
+      "closestLw": "scn_bank_949",
+      "closestRw": "scn_bank_929",
+      "sharedConcept": "Transition defence — protect wing pass lane",
+      "criticalDifference": "Normal-start first-wave recovery (not second-pivot continuity 949); own-side sideline priority",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_973",
+      "familyKey": "lw_def_when_not_abandon",
+      "closestLw": "scn_bank_962",
+      "closestRw": "scn_bank_934",
+      "sharedConcept": "Do not abandon wing responsibility",
+      "criticalDifference": "Ball reverse + inside help already present (opposite temptation to over-help); not half-removed close-pass 962",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "id": "scn_bank_974",
+      "familyKey": "lw_def_handover_timing",
+      "closestLw": "scn_bank_962 / 973",
+      "closestRw": "scn_bank_880 / 928",
+      "sharedConcept": "Wing/half responsibility around a moving attacker",
+      "criticalDifference": "Team-agreed takeover timing (contact+call) for releasing a runner — not close wing pass when half stuck (962), not abandon-wing reverse (973), not protect-pass + controlled help (880)",
+      "duplicateClassification": "RELATED_BUT_DISTINCT"
+    }
+  ],
+  "unresolvedDuplicates": 0
+}

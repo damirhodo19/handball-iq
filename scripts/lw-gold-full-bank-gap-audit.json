@@ -1,0 +1,1757 @@
+{
+  "phase": "FULL_LW_GOLD_BANK_BUILD / PHASE_1_GAP_AUDIT",
+  "status": "READ_ONLY_COMPLETE",
+  "generatedAt": "2026-08-10T10:01:08.360Z",
+  "locks": {
+    "LB": {
+      "count": 62,
+      "countOk": true,
+      "hashOk": true,
+      "hash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522"
+    },
+    "RB": {
+      "count": 63,
+      "countOk": true,
+      "hashOk": true,
+      "hash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0"
+    },
+    "CB": {
+      "count": 70,
+      "countOk": true,
+      "hashOk": true,
+      "hash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97"
+    },
+    "RW": {
+      "count": 65,
+      "countOk": true,
+      "hashOk": true,
+      "hash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21"
+    },
+    "allOk": true
+  },
+  "pilotLocked": {
+    "ids": [
+      "scn_bank_941",
+      "scn_bank_942",
+      "scn_bank_943",
+      "scn_bank_944",
+      "scn_bank_945",
+      "scn_bank_946",
+      "scn_bank_947",
+      "scn_bank_948",
+      "scn_bank_949",
+      "scn_bank_950"
+    ],
+    "hashes": {
+      "scn_bank_941": "70cbfbc93878d310467fedac74ccb996bd11f72aa0b0b9cb443a2118122e0fc1",
+      "scn_bank_942": "a0b5fa2371321a576ffa4fda7d74c0625ffe8b280265e582b10db00c47d7c958",
+      "scn_bank_943": "cb412006db2468c522b303290b65e058ef1adbcc90b8caffa50c89322842cbe5",
+      "scn_bank_944": "033d76db242e7fa59713344acd6a76e1bc105ac4050f7d6e44cd1047c4e7cda7",
+      "scn_bank_945": "b550b907cfdb99e377abd8013a6a5d298182a233f3b7dbaf0c721b079cfcfe1e",
+      "scn_bank_946": "ed270d771e9f360bd7e826060cd39385af27b4cab36bc4abcae3a17b91b593f7",
+      "scn_bank_947": "d5a68a47a9d0c932aa971c86313615f9a5d415f977f4ef7c5922de40e598a381",
+      "scn_bank_948": "919da75127986eb8067fdd395b4f4570648481a29b132786f39d8bde0a5b2fba",
+      "scn_bank_949": "02a994cb0ae9345585f8deb5713f0ce3979169b5e5a9deff4e3c61591fcd0576",
+      "scn_bank_950": "e569031cac08714e6bd7b739d228bb53d804859273bfc114e5103130b337179e"
+    },
+    "rule": "byte-identical — do not rewrite/polish/regenerate",
+    "attack": 8,
+    "defence": 2,
+    "difficulty": {
+      "Beginner": 1,
+      "Intermediate": 3,
+      "Advanced": 5,
+      "Expert": 1
+    },
+    "perceptionTrue": 9
+  },
+  "architectureTarget": {
+    "total": 60,
+    "attack": 44,
+    "defence": 16,
+    "difficulty": {
+      "Beginner": 10,
+      "Intermediate": 22,
+      "Advanced": 20,
+      "Expert": 8
+    },
+    "perceptionPct": [
+      55,
+      65
+    ]
+  },
+  "reconciliationSummary": {
+    "matrixFamilies": 60,
+    "lockedPilotExactOrNative": 10,
+    "supersededDoNotBuild": 10,
+    "remainingToBuild": 49,
+    "projectedFinalTotal": 59,
+    "projectedAttack": 43,
+    "projectedDefence": 16,
+    "projectedDifficulty": {
+      "Beginner": 11,
+      "Intermediate": 15,
+      "Advanced": 25,
+      "Expert": 8
+    },
+    "projectedPerceptionTrue": 50,
+    "projectedPerceptionPct": 85,
+    "note": "Pilot evolved beyond original matrix. Superseded matrix slots are NOT rebuilt. Pilot-native families count toward 60. Target remains ~60; small deviation OK if quality demands.",
+    "projectedTotalWithOptionalPlusOne": {
+      "note": "If quality needs one more attack family to hit 60/44, preferred add: lw_second_pivot_enter_when_lane_opens (distinct from entry_when_space_opens) OR restore a dedicated 6:0 takeoff sibling only if 944 is judged too system-specific. Prefer 59 over padding.",
+      "optionalFamily": null
+    }
+  },
+  "legacyBank": {
+    "count": 40,
+    "disposition": "REMOVE in later insert phase — none are Gold-ready (architecture)",
+    "doNotPolishInPlace": true
+  },
+  "lockedPilotFamilies": [
+    {
+      "id": "scn_bank_941",
+      "familyKey": "lw_width_hold_true_width",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": false
+    },
+    {
+      "id": "scn_bank_942",
+      "familyKey": "lw_lb_51_outlet_ask_now",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_943",
+      "familyKey": "lw_wd_feet_decide_first_move",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_944",
+      "familyKey": "lw_takeoff_321_half_steps",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_945",
+      "familyKey": "lw_second_pivot_release_to_width",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_946",
+      "familyKey": "lw_gk_stepout_hands_high_soft_inside",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_947",
+      "familyKey": "lw_sw_left_wd_late_one_more",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_948",
+      "familyKey": "lw_6v5_stay_wide_vs_entry_pivot",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_949",
+      "familyKey": "lw_def_recover_wing_from_second_pivot_turnover",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true
+    },
+    {
+      "id": "scn_bank_950",
+      "familyKey": "lw_def_empty_own_fill_from_second_pivot_turnover",
+      "attackOrDefence": "Defence",
+      "difficulty": "Expert",
+      "perception": true
+    }
+  ],
+  "supersededFamilies": [
+    {
+      "familyKey": "lw_takeoff_after_lb_pull",
+      "parent": "takeoff",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Intermediate",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — Take Off After Left Back Pulls the Wing Defender Inside",
+      "primaryCue": "WD still inside on LB; take-off lane toward middle free",
+      "decision": "Take off now; finish from GK read, not from folklore",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_944",
+      "note": "944 is the earned take-off family (3:2:1 half-step picture)"
+    },
+    {
+      "familyKey": "lw_lb_ask_when_hips_open",
+      "parent": "lb_cooperation",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Intermediate",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — Ask for the Ball When the Wing Defender’s Hips Open the Lane",
+      "primaryCue": "WD hips face LB; pass lane from LB to LW open",
+      "decision": "Demand the ball now",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_942",
+      "note": "942 earns LB ask + 5:1 advance width in one native family"
+    },
+    {
+      "familyKey": "lw_wd_feet_chest_before_move",
+      "parent": "wing_defender_read",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Intermediate",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — Read Feet and Chest Before Your First Movement",
+      "primaryCue": "WD feet point inside or chest opens to ball",
+      "decision": "Choose stay-wide / ask / prepare back-door from that cue",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_943",
+      "note": null
+    },
+    {
+      "familyKey": "lw_gk_stepout_conditional",
+      "parent": "goalkeeper",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Advanced",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — Early Step-Out: Lob Only If Hands Drop and Inside Is Covered",
+      "primaryCue": "GK steps out; hands/height and LB availability stated",
+      "decision": "Conditional lob OR soft inside — never automatic lob",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_946",
+      "note": null
+    },
+    {
+      "familyKey": "lw_partially_set_defence",
+      "parent": "transition_second",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Advanced",
+      "plannedPerception": true,
+      "plannedSystem": "transition",
+      "titleEn": "Left Wing — Partially Set Defence: One More Advantage Action",
+      "primaryCue": "Defence half-set; WD late on left",
+      "decision": "One more advantage action vs full reset",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_947",
+      "note": "947 teaches one-more left action while WD late"
+    },
+    {
+      "familyKey": "lw_6v5_pivot_seal",
+      "parent": "numerical",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Advanced",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — 6v5: Feed the Sealed Pivot Before Rotation Closes",
+      "primaryCue": "Pivot sealed; late middle rotation coming",
+      "decision": "Feed pivot / attack rotation — distinct from free finish",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_948",
+      "note": "948 is stay-wide vs enter onto own pivot in 6v5"
+    },
+    {
+      "familyKey": "lw_sys_51_advance_width",
+      "parent": "system",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Intermediate",
+      "plannedPerception": true,
+      "plannedSystem": "5:1",
+      "titleEn": "Left Wing — 5:1: Time Width Against the Advanced Defender",
+      "primaryCue": "Advanced defender position relative to LB/LW lane",
+      "decision": "Ask/hold width vs premature entry — would differ in 6:0",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_942",
+      "note": null
+    },
+    {
+      "familyKey": "lw_sys_321_wing_vs_half",
+      "parent": "system",
+      "attackOrDefence": "Attack",
+      "plannedDifficulty": "Advanced",
+      "plannedPerception": true,
+      "plannedSystem": "3:2:1",
+      "titleEn": "Left Wing — 3:2:1: Wing vs Half Responsibility Window",
+      "primaryCue": "Half steps out; wing responsibility lag stated",
+      "decision": "Exploit lag / hold for LB — system-specific",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_944",
+      "note": null
+    },
+    {
+      "familyKey": "lw_def_recovery_to_wing",
+      "parent": "recovery",
+      "attackOrDefence": "Defence",
+      "plannedDifficulty": "Intermediate",
+      "plannedPerception": true,
+      "plannedSystem": "6:0",
+      "titleEn": "Left Wing — Recover Back to the Wing After Inside Help",
+      "primaryCue": "Help done; ball reversing to opp wing",
+      "decision": "Sprint recover to wing before skip arrives",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_949",
+      "note": "949 is stronger sequence-native version; do not also build generic recover-after-help"
+    },
+    {
+      "familyKey": "lw_def_empty_own_after_turnover",
+      "parent": "empty_goal_defence",
+      "attackOrDefence": "Defence",
+      "plannedDifficulty": "Expert",
+      "plannedPerception": true,
+      "plannedSystem": "transition",
+      "titleEn": "Left Wing — After Turnover With Empty Own Goal: First Sprint Priority",
+      "primaryCue": "Own GK out; turnover; opp numbers/lane stated",
+      "decision": "First defensive sprint priority (lane/body) — not hero foul folklore",
+      "status": "SUPERSEDED",
+      "action": "DO_NOT_BUILD",
+      "pilot": "scn_bank_950",
+      "note": null
+    }
+  ],
+  "remainingBuildList": [
+    {
+      "familyKey": "lw_width_stretch_when_lb_binds",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Stretch Wider When Left Back Binds the Wing Defender",
+      "primaryCue": "LB engages WD; WD hips still on LB",
+      "decision": "Stay/maximize width to keep the pass alive",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_stay_wide_inside_help",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Stay Wide When the Wing Defender Helps Inside",
+      "primaryCue": "WD chest/hips turn inside to help on LB",
+      "decision": "Stay wide; do not follow into the crowded half",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_entry_when_space_opens",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Enter Only When the Left Lane Actually Opens",
+      "primaryCue": "WD overcommits to ball side; path to six opens",
+      "decision": "Timed entry toward six",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_entry_when_not",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — When NOT to Leave the Corner for an Entry",
+      "primaryCue": "WD already helping / lane closing; LB still needs width",
+      "decision": "Stay wide; early entry kills LB space",
+      "note": "945 is exit second pivot; 948 is 6v5. Still need set-play when-NOT-to-enter from corner.",
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_backdoor_ball_watch",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Back-Door When the Wing Defender Ball-Watches",
+      "primaryCue": "WD head/chest to far ball; LB about to receive",
+      "decision": "Cut behind WD to six on next pass",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_takeoff_lane_closed",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Closed Take-Off Lane: Do Not Force the Jump",
+      "primaryCue": "Half/WD recover into take-off line; contact imminent",
+      "decision": "Delay / recycle / soft inside — do not jump into block",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_lb_delay_ask_lane_blocked",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Delay the Ask When the Pass Lane Is Covered",
+      "primaryCue": "WD feet/chest cut the LB→LW lane",
+      "decision": "Hold width; do not force the ask into a steal",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_pivot_block_opens_takeoff",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Pivot Block Opens Take-Off Toward the Middle",
+      "primaryCue": "Pivot seals WD recovery path",
+      "decision": "Take off into freed lane; then read GK",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_pivot_feed_vs_finish",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Feed the Sealed Pivot Instead of Forcing the Extreme Angle",
+      "primaryCue": "Pivot sealed; WD recovers on LW body; soft inside lane open",
+      "decision": "Feed pivot vs forced wing shot",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_1v1_wing_space",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "open/man",
+      "titleEn": "Left Wing — 1v1 When You Own the Sideline Space",
+      "primaryCue": "WD isolated; help distance >2m; feet flat",
+      "decision": "Attack 1v1 take-off / beat vs recycle",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Goalkeeper Commits Early to the Near Post",
+      "primaryCue": "Before take-off: GK near foot and near arm move to near post",
+      "decision": "Available target is far side — contextual, not folklore",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_gk_far_side_commit",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Goalkeeper Shades the Far Side Early",
+      "primaryCue": "GK far foot/weight committed far; near window opens",
+      "decision": "Near-side finish if lane and body allow — cue-based",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_gk_depth_read",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Goalkeeper Depth Changes the Finish Window",
+      "primaryCue": "GK deep on line vs stepped; arms high/low stated",
+      "decision": "Finish choice from depth + hands, not automatic lob/power",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_gk_late_movement_patience",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Wait Through the Goalkeeper’s Late Movement",
+      "primaryCue": "GK late first step during take-off; contact not yet forcing release",
+      "decision": "Patience to abandoned corner vs early release into hands",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_gk_extreme_angle_body",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Extreme Angle: Body and Goalkeeper Cue Before Release",
+      "primaryCue": "Sliver of goal + GK shade + help distance",
+      "decision": "Playable skim / recycle — hand tag only if fork is hand-dependent",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_fw_2v1_finish_or_pass",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — First Wave 2v1: Finish or Extra Pass",
+      "primaryCue": "Numbers 2v1; recovering defender commits to ball or LW",
+      "decision": "Shoot vs give the extra pass",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_fw_3v2_hold_width",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — First Wave 3v2: Hold the Left Width",
+      "primaryCue": "Middle covered by recovering defender; left lane free",
+      "decision": "Stay wide to six as pass option — do not crowd middle",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_fw_arrival_timing",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": false,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — First Wave: Arrive With the Catch on the Six",
+      "primaryCue": "Outlet released; one recovering body between LW and six",
+      "decision": "Sprint timing so catch and six arrive together",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sw_advantage_gone",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — Second Wave: Stop Forcing When Advantage Is Gone",
+      "primaryCue": "Recovering defenders restore numbers; no free lane",
+      "decision": "Hold width into positional attack",
+      "note": "947 is keep-one-more when WD late. Need opposite: stop when advantage gone.",
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_trans_lane_vs_recovery",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — Choose the Left Running Lane Against Recovery",
+      "primaryCue": "Recovery path of nearest defender stated",
+      "decision": "Wide lane vs inside lane to keep the advantage",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_6v5_free_finish",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — 6v5: Finish When Free and Help Is Late",
+      "primaryCue": "Nearest help >2m from take-off; LW free at width",
+      "decision": "Finish now",
+      "note": "948 is stay-wide vs entry. Still need free-finish when help is late.",
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_5v6_safe_possession",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — 5v6: Do Not Donate a Counter From the Corner",
+      "primaryCue": "Down a player; WD closing; risky extreme angle",
+      "decision": "Safe recycle / high-percentage only",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": true
+    },
+    {
+      "familyKey": "lw_7v6_or_empty_opp",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Extra Attacker / Empty Opponent Goal: Only If the Left Picture Is Clean",
+      "primaryCue": "Extra attacker or empty opp goal PLUS concrete LW freedom/risk",
+      "decision": "Finish vs keep possession discipline",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": true
+    },
+    {
+      "familyKey": "lw_empty_own_safe_return",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Empty Own Goal: Safe Finish or Safe Return",
+      "primaryCue": "Own goal empty; catch quality / body orientation / opp wing threat stated",
+      "decision": "High-percentage finish vs safe return",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": true
+    },
+    {
+      "familyKey": "lw_passive_warning",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Passive Warning: Create a Real End, Not a Panic Shot",
+      "primaryCue": "Passive signal; WD distance; LB/pivot options",
+      "decision": "Best real end from width vs panic extreme",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_late_lead_risk",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Late Lead: Do Not Gift the Counter From a Marginal Angle",
+      "primaryCue": "Lead late + marginal angle + turnover risk stated",
+      "decision": "Safe recycle / clear high-% only — risk changes the decision",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_late_trail_create",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Late Trail: Take the Clean Chance You Are Given",
+      "primaryCue": "Trail late + free take-off / clear cue",
+      "decision": "Take the clean chance vs over-reset",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": true
+    },
+    {
+      "familyKey": "lw_short_clock",
+      "attackOrDefence": "Attack",
+      "difficulty": "Expert",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Short Clock: One Decision From the Stated Picture",
+      "primaryCue": "Clock + concrete freedom or blocked lane",
+      "decision": "Immediate end vs impossible force",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": true
+    },
+    {
+      "familyKey": "lw_sys_33_pressure_release",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "3:3",
+      "titleEn": "Left Wing — 3:3: Release From Man Pressure Without Crowding LB",
+      "primaryCue": "Man pressure on LW; help/switch picture",
+      "decision": "Width release / back-door / recycle",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sys_42_corridor",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "4:2",
+      "titleEn": "Left Wing — 4:2: Attack the Left Corridor Timing",
+      "primaryCue": "Front line vs back line gap on left",
+      "decision": "Entry/take-off timing unique to 4:2",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sys_15_outlet_width",
+      "attackOrDefence": "Attack",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "1:5",
+      "titleEn": "Left Wing — 1:5: Keep Outlet Width Under Deep Pressure",
+      "primaryCue": "Deep press / high chase on left outlet",
+      "decision": "Safe width outlet vs trapped ask",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sys_5plus1_trap",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "5+1",
+      "titleEn": "Left Wing — 5+1: Do Not Walk Into the Long-Range Trap",
+      "primaryCue": "Advanced chaser + base wall on left",
+      "decision": "Width/timing that differs from plain 6:0",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sys_4plus2_lane",
+      "attackOrDefence": "Attack",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "4+2",
+      "titleEn": "Left Wing — 4+2: Choose the Open Left Lane",
+      "primaryCue": "Two advanced defenders create a specific left gap",
+      "decision": "Lane choice / ask timing",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_sys_open_man_help",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "open/man",
+      "titleEn": "Left Wing — Open Defence: Attack Isolation or Reject Crowding Help",
+      "primaryCue": "Man orientation + help distance",
+      "decision": "1v1 attack vs reset — distinct from structured 6:0 entry",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_recovering_defender_race",
+      "attackOrDefence": "Attack",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Finish Before the Recovering Defender Closes",
+      "primaryCue": "Recovering body one step away; GK position concrete",
+      "decision": "Immediate controlled finish vs wait for contact",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_protect_opp_wing",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Protect the Pass to the Opposing Wing",
+      "primaryCue": "Ball on opposite/backcourt moving to opp RW",
+      "decision": "Deny wing pass / body on lane",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_inside_help_controlled",
+      "attackOrDefence": "Defence",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Controlled Inside Help Without Abandoning the Wing",
+      "primaryCue": "LB threat inside; opp wing still a pass threat",
+      "decision": "Help distance vs full abandon",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_handover_timing",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Handover Timing With the Half Defender",
+      "primaryCue": "Handover call / half arrives; ball side stated",
+      "decision": "Release only after handover is real",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_when_not_abandon",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — When NOT to Abandon the Wing",
+      "primaryCue": "Opp wing free / ball reversing; help already present inside",
+      "decision": "Stay; do not chase middle",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_lb_wing_coop",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Defend Left Back / Wing Cooperation on Your Side",
+      "primaryCue": "Opp LB binds you then looks wing",
+      "decision": "Body/chest on pass + communicate half",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_wing_entry",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Defend the Opposing Wing Entry",
+      "primaryCue": "Opp wing starts entry behind you",
+      "decision": "Contact/deny path vs ball-watch",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_backdoor_deny",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Deny Back-Door When You Ball-Watch",
+      "primaryCue": "Temptation to watch far ball; opp wing behind",
+      "decision": "Chest/feel contact; do not lose the runner",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_trans_own_side_lane",
+      "attackOrDefence": "Defence",
+      "difficulty": "Intermediate",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — Transition Defence: Close Your Own-Side Passing Lane",
+      "primaryCue": "Turnover; opp outlet toward your former wing side",
+      "decision": "Sprint cut own-side lane first",
+      "note": "949 starts from second-pivot. Still need a normal transition own-side lane from wing-start (distinct geometry).",
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_trans_far_skip_with_map",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "transition",
+      "titleEn": "Left Wing — Transition Defence: Far Skip Only With a Teammate Map",
+      "primaryCue": "Teammate locations stated; far-wing skip is real threat",
+      "decision": "Cut far skip vs protect own wing — A/B must not both be correct",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_comm_half",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — Communicate With the Half Before You Leave",
+      "primaryCue": "Half position + call/no-call",
+      "decision": "Help only after communication / confirmed cover",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_sys_60_wing_job",
+      "attackOrDefence": "Defence",
+      "difficulty": "Beginner",
+      "perception": false,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — 6:0: Basic Wing Responsibility",
+      "primaryCue": "Set 6:0; ball far; opp wing width",
+      "decision": "Primary wing job before freelancing",
+      "note": null,
+      "rebalanced": true,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_sys_51_vs_advance",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "5:1",
+      "titleEn": "Left Wing — 5:1: Wing Job Against the Advanced Pair",
+      "primaryCue": "Advanced defender interactions with your side",
+      "decision": "System-specific stay/help — differs from 6:0",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_sys_33_switch",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "defensiveSystem": "3:3",
+      "titleEn": "Left Wing — 3:3: Switch / Stay on Man Pressure",
+      "primaryCue": "Stated team switch rule + runner",
+      "decision": "Switch vs stay — rule must be in situation text",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    },
+    {
+      "familyKey": "lw_def_numerical_5v6",
+      "attackOrDefence": "Defence",
+      "difficulty": "Expert",
+      "perception": true,
+      "defensiveSystem": "6:0",
+      "titleEn": "Left Wing — 5v6 Defence: Protect the Most Dangerous Pass First",
+      "primaryCue": "Down a defender; most dangerous pass stated",
+      "decision": "Priority cover without gambling the wing randomly",
+      "note": null,
+      "rebalanced": false,
+      "perceptionAdjusted": false
+    }
+  ],
+  "topicChecklist": [
+    {
+      "area": "true width",
+      "coveredBy": [
+        "lw_width_hold_true_width"
+      ],
+      "gap": [
+        "lw_width_stretch_when_lb_binds"
+      ]
+    },
+    {
+      "area": "corner positioning",
+      "coveredBy": [
+        "lw_width_hold_true_width"
+      ],
+      "gap": [
+        "lw_stay_wide_inside_help",
+        "lw_lb_delay_ask_lane_blocked"
+      ]
+    },
+    {
+      "area": "take off timing",
+      "coveredBy": [
+        "lw_takeoff_321_half_steps"
+      ],
+      "gap": [
+        "lw_pivot_block_opens_takeoff",
+        "lw_recovering_defender_race"
+      ]
+    },
+    {
+      "area": "take off angle / closed take-off",
+      "coveredBy": [],
+      "gap": [
+        "lw_takeoff_lane_closed",
+        "lw_gk_extreme_angle_body"
+      ]
+    },
+    {
+      "area": "when to stay wide",
+      "coveredBy": [
+        "lw_6v5_stay_wide_vs_entry_pivot"
+      ],
+      "gap": [
+        "lw_stay_wide_inside_help",
+        "lw_width_stretch_when_lb_binds"
+      ]
+    },
+    {
+      "area": "when to enter",
+      "coveredBy": [],
+      "gap": [
+        "lw_entry_when_space_opens",
+        "lw_backdoor_ball_watch"
+      ]
+    },
+    {
+      "area": "when not to enter",
+      "coveredBy": [
+        "lw_6v5_stay_wide_vs_entry_pivot"
+      ],
+      "gap": [
+        "lw_entry_when_not"
+      ]
+    },
+    {
+      "area": "second pivot use",
+      "coveredBy": [
+        "lw_second_pivot_release_to_width"
+      ],
+      "gap": [],
+      "note": "945 covers release; still need when-to-enter-as-second-pivot via entry_when_space_opens"
+    },
+    {
+      "area": "return from second pivot",
+      "coveredBy": [
+        "lw_second_pivot_release_to_width",
+        "lw_def_recover_wing_from_second_pivot_turnover"
+      ],
+      "gap": []
+    },
+    {
+      "area": "LB cooperation",
+      "coveredBy": [
+        "lw_lb_51_outlet_ask_now"
+      ],
+      "gap": [
+        "lw_lb_delay_ask_lane_blocked",
+        "lw_width_stretch_when_lb_binds"
+      ]
+    },
+    {
+      "area": "pivot cooperation",
+      "coveredBy": [
+        "lw_6v5_stay_wide_vs_entry_pivot"
+      ],
+      "gap": [
+        "lw_pivot_block_opens_takeoff",
+        "lw_pivot_feed_vs_finish"
+      ]
+    },
+    {
+      "area": "timing after ball reversal",
+      "coveredBy": [],
+      "gap": [
+        "lw_stay_wide_inside_help",
+        "lw_lb_delay_ask_lane_blocked"
+      ],
+      "note": "no dedicated family — embed in WD/LB reads"
+    },
+    {
+      "area": "playing after defender recovery",
+      "coveredBy": [],
+      "gap": [
+        "lw_recovering_defender_race",
+        "lw_takeoff_lane_closed"
+      ]
+    },
+    {
+      "area": "1v1 from wing",
+      "coveredBy": [],
+      "gap": [
+        "lw_1v1_wing_space"
+      ]
+    },
+    {
+      "area": "late pass",
+      "coveredBy": [],
+      "gap": [
+        "lw_fw_arrival_timing",
+        "lw_fw_2v1_finish_or_pass"
+      ]
+    },
+    {
+      "area": "second action after failed wing release",
+      "coveredBy": [
+        "lw_sw_left_wd_late_one_more"
+      ],
+      "gap": [
+        "lw_sw_advantage_gone"
+      ]
+    },
+    {
+      "area": "system 6:0",
+      "coveredBy": [
+        "lw_width_hold_true_width",
+        "lw_wd_feet_decide_first_move",
+        "lw_second_pivot_release_to_width",
+        "lw_gk_stepout_hands_high_soft_inside"
+      ],
+      "gap": [
+        "many set attack/defence under 6:0"
+      ]
+    },
+    {
+      "area": "system 5:1",
+      "coveredBy": [
+        "lw_lb_51_outlet_ask_now"
+      ],
+      "gap": [
+        "lw_def_sys_51_vs_advance"
+      ]
+    },
+    {
+      "area": "system 3:2:1",
+      "coveredBy": [
+        "lw_takeoff_321_half_steps"
+      ],
+      "gap": []
+    },
+    {
+      "area": "system 3:3",
+      "coveredBy": [],
+      "gap": [
+        "lw_sys_33_pressure_release",
+        "lw_def_sys_33_switch"
+      ]
+    },
+    {
+      "area": "system 4:2",
+      "coveredBy": [],
+      "gap": [
+        "lw_sys_42_corridor"
+      ]
+    },
+    {
+      "area": "system 1:5",
+      "coveredBy": [],
+      "gap": [
+        "lw_sys_15_outlet_width"
+      ]
+    },
+    {
+      "area": "system 5+1",
+      "coveredBy": [],
+      "gap": [
+        "lw_sys_5plus1_trap"
+      ]
+    },
+    {
+      "area": "system 4+2",
+      "coveredBy": [],
+      "gap": [
+        "lw_sys_4plus2_lane"
+      ]
+    },
+    {
+      "area": "open / individual defence",
+      "coveredBy": [],
+      "gap": [
+        "lw_1v1_wing_space",
+        "lw_sys_open_man_help"
+      ]
+    },
+    {
+      "area": "first wave / 2v1 / 3v2",
+      "coveredBy": [],
+      "gap": [
+        "lw_fw_2v1_finish_or_pass",
+        "lw_fw_3v2_hold_width",
+        "lw_fw_arrival_timing"
+      ]
+    },
+    {
+      "area": "wide lane / late defender",
+      "coveredBy": [],
+      "gap": [
+        "lw_trans_lane_vs_recovery",
+        "lw_recovering_defender_race"
+      ]
+    },
+    {
+      "area": "second wave keep/stop",
+      "coveredBy": [
+        "lw_sw_left_wd_late_one_more"
+      ],
+      "gap": [
+        "lw_sw_advantage_gone"
+      ]
+    },
+    {
+      "area": "wing entry in transition",
+      "coveredBy": [],
+      "gap": [
+        "lw_trans_lane_vs_recovery"
+      ],
+      "note": "no separate family — fold into lane choice"
+    },
+    {
+      "area": "6v5",
+      "coveredBy": [
+        "lw_6v5_stay_wide_vs_entry_pivot"
+      ],
+      "gap": [
+        "lw_6v5_free_finish"
+      ]
+    },
+    {
+      "area": "5v6",
+      "coveredBy": [],
+      "gap": [
+        "lw_5v6_safe_possession",
+        "lw_def_numerical_5v6"
+      ]
+    },
+    {
+      "area": "7v6 / opp empty",
+      "coveredBy": [],
+      "gap": [
+        "lw_7v6_or_empty_opp"
+      ]
+    },
+    {
+      "area": "own empty goal attack",
+      "coveredBy": [],
+      "gap": [
+        "lw_empty_own_safe_return"
+      ]
+    },
+    {
+      "area": "own empty goal defence",
+      "coveredBy": [
+        "lw_def_empty_own_fill_from_second_pivot_turnover"
+      ],
+      "gap": []
+    },
+    {
+      "area": "passive / late / clock",
+      "coveredBy": [],
+      "gap": [
+        "lw_passive_warning",
+        "lw_late_lead_risk",
+        "lw_late_trail_create",
+        "lw_short_clock"
+      ]
+    },
+    {
+      "area": "GK depth / step / hands / commit / late",
+      "coveredBy": [
+        "lw_gk_stepout_hands_high_soft_inside"
+      ],
+      "gap": [
+        "lw_gk_near_post_commit",
+        "lw_gk_far_side_commit",
+        "lw_gk_depth_read",
+        "lw_gk_late_movement_patience",
+        "lw_gk_extreme_angle_body"
+      ]
+    },
+    {
+      "area": "set defence protect/help/handover/backdoor",
+      "coveredBy": [],
+      "gap": [
+        "lw_def_protect_opp_wing",
+        "lw_def_inside_help_controlled",
+        "lw_def_handover_timing",
+        "lw_def_when_not_abandon",
+        "lw_def_lb_wing_coop",
+        "lw_def_wing_entry",
+        "lw_def_backdoor_deny",
+        "lw_def_comm_half",
+        "lw_def_sys_60_wing_job"
+      ]
+    },
+    {
+      "area": "transition defence",
+      "coveredBy": [
+        "lw_def_recover_wing_from_second_pivot_turnover"
+      ],
+      "gap": [
+        "lw_def_trans_own_side_lane",
+        "lw_def_trans_far_skip_with_map"
+      ]
+    },
+    {
+      "area": "system defence sparse",
+      "coveredBy": [],
+      "gap": [
+        "lw_def_sys_51_vs_advance",
+        "lw_def_sys_33_switch"
+      ]
+    }
+  ],
+  "undercoveredAreas": [
+    {
+      "area": "true width",
+      "gaps": [
+        "lw_width_stretch_when_lb_binds"
+      ],
+      "note": null
+    },
+    {
+      "area": "corner positioning",
+      "gaps": [
+        "lw_stay_wide_inside_help",
+        "lw_lb_delay_ask_lane_blocked"
+      ],
+      "note": null
+    },
+    {
+      "area": "take off timing",
+      "gaps": [
+        "lw_pivot_block_opens_takeoff",
+        "lw_recovering_defender_race"
+      ],
+      "note": null
+    },
+    {
+      "area": "take off angle / closed take-off",
+      "gaps": [
+        "lw_takeoff_lane_closed",
+        "lw_gk_extreme_angle_body"
+      ],
+      "note": null
+    },
+    {
+      "area": "when to stay wide",
+      "gaps": [
+        "lw_stay_wide_inside_help",
+        "lw_width_stretch_when_lb_binds"
+      ],
+      "note": null
+    },
+    {
+      "area": "when to enter",
+      "gaps": [
+        "lw_entry_when_space_opens",
+        "lw_backdoor_ball_watch"
+      ],
+      "note": null
+    },
+    {
+      "area": "when not to enter",
+      "gaps": [
+        "lw_entry_when_not"
+      ],
+      "note": null
+    },
+    {
+      "area": "LB cooperation",
+      "gaps": [
+        "lw_lb_delay_ask_lane_blocked",
+        "lw_width_stretch_when_lb_binds"
+      ],
+      "note": null
+    },
+    {
+      "area": "pivot cooperation",
+      "gaps": [
+        "lw_pivot_block_opens_takeoff",
+        "lw_pivot_feed_vs_finish"
+      ],
+      "note": null
+    },
+    {
+      "area": "timing after ball reversal",
+      "gaps": [
+        "lw_stay_wide_inside_help",
+        "lw_lb_delay_ask_lane_blocked"
+      ],
+      "note": "no dedicated family — embed in WD/LB reads"
+    },
+    {
+      "area": "playing after defender recovery",
+      "gaps": [
+        "lw_recovering_defender_race",
+        "lw_takeoff_lane_closed"
+      ],
+      "note": null
+    },
+    {
+      "area": "1v1 from wing",
+      "gaps": [
+        "lw_1v1_wing_space"
+      ],
+      "note": null
+    },
+    {
+      "area": "late pass",
+      "gaps": [
+        "lw_fw_arrival_timing",
+        "lw_fw_2v1_finish_or_pass"
+      ],
+      "note": null
+    },
+    {
+      "area": "second action after failed wing release",
+      "gaps": [
+        "lw_sw_advantage_gone"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 6:0",
+      "gaps": [
+        "many set attack/defence under 6:0"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 5:1",
+      "gaps": [
+        "lw_def_sys_51_vs_advance"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 3:3",
+      "gaps": [
+        "lw_sys_33_pressure_release",
+        "lw_def_sys_33_switch"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 4:2",
+      "gaps": [
+        "lw_sys_42_corridor"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 1:5",
+      "gaps": [
+        "lw_sys_15_outlet_width"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 5+1",
+      "gaps": [
+        "lw_sys_5plus1_trap"
+      ],
+      "note": null
+    },
+    {
+      "area": "system 4+2",
+      "gaps": [
+        "lw_sys_4plus2_lane"
+      ],
+      "note": null
+    },
+    {
+      "area": "open / individual defence",
+      "gaps": [
+        "lw_1v1_wing_space",
+        "lw_sys_open_man_help"
+      ],
+      "note": null
+    },
+    {
+      "area": "first wave / 2v1 / 3v2",
+      "gaps": [
+        "lw_fw_2v1_finish_or_pass",
+        "lw_fw_3v2_hold_width",
+        "lw_fw_arrival_timing"
+      ],
+      "note": null
+    },
+    {
+      "area": "wide lane / late defender",
+      "gaps": [
+        "lw_trans_lane_vs_recovery",
+        "lw_recovering_defender_race"
+      ],
+      "note": null
+    },
+    {
+      "area": "second wave keep/stop",
+      "gaps": [
+        "lw_sw_advantage_gone"
+      ],
+      "note": null
+    },
+    {
+      "area": "wing entry in transition",
+      "gaps": [
+        "lw_trans_lane_vs_recovery"
+      ],
+      "note": "no separate family — fold into lane choice"
+    },
+    {
+      "area": "6v5",
+      "gaps": [
+        "lw_6v5_free_finish"
+      ],
+      "note": null
+    },
+    {
+      "area": "5v6",
+      "gaps": [
+        "lw_5v6_safe_possession",
+        "lw_def_numerical_5v6"
+      ],
+      "note": null
+    },
+    {
+      "area": "7v6 / opp empty",
+      "gaps": [
+        "lw_7v6_or_empty_opp"
+      ],
+      "note": null
+    },
+    {
+      "area": "own empty goal attack",
+      "gaps": [
+        "lw_empty_own_safe_return"
+      ],
+      "note": null
+    },
+    {
+      "area": "passive / late / clock",
+      "gaps": [
+        "lw_passive_warning",
+        "lw_late_lead_risk",
+        "lw_late_trail_create",
+        "lw_short_clock"
+      ],
+      "note": null
+    },
+    {
+      "area": "GK depth / step / hands / commit / late",
+      "gaps": [
+        "lw_gk_near_post_commit",
+        "lw_gk_far_side_commit",
+        "lw_gk_depth_read",
+        "lw_gk_late_movement_patience",
+        "lw_gk_extreme_angle_body"
+      ],
+      "note": null
+    },
+    {
+      "area": "set defence protect/help/handover/backdoor",
+      "gaps": [
+        "lw_def_protect_opp_wing",
+        "lw_def_inside_help_controlled",
+        "lw_def_handover_timing",
+        "lw_def_when_not_abandon",
+        "lw_def_lb_wing_coop",
+        "lw_def_wing_entry",
+        "lw_def_backdoor_deny",
+        "lw_def_comm_half",
+        "lw_def_sys_60_wing_job"
+      ],
+      "note": null
+    },
+    {
+      "area": "transition defence",
+      "gaps": [
+        "lw_def_trans_own_side_lane",
+        "lw_def_trans_far_skip_with_map"
+      ],
+      "note": null
+    },
+    {
+      "area": "system defence sparse",
+      "gaps": [
+        "lw_def_sys_51_vs_advance",
+        "lw_def_sys_33_switch"
+      ],
+      "note": null
+    }
+  ],
+  "coveredAreas": [
+    "second pivot use",
+    "return from second pivot",
+    "system 3:2:1",
+    "own empty goal defence"
+  ],
+  "duplicateRiskWatchlist": [
+    "stay_wide_inside_help vs entry_when_not vs width_stretch_when_lb_binds",
+    "gk_near vs gk_far vs gk_late vs recovering_defender_race",
+    "6v5_free_finish vs 6v5_pivot_seal",
+    "late_lead vs short_clock vs empty_own",
+    "def_trans_own_side vs def_trans_far_skip",
+    "backdoor vs entry_when_space_opens"
+  ],
+  "rwSemanticWatch": {
+    "note": "When generating, compare each family against full RW Gold for same cue/decision/optimal/B — not wording.",
+    "highRiskPairs": [
+      "stay-wide / ask / entry vs RW width/outlet families",
+      "GK set vs RW GK families (near/far/step/late)",
+      "6v5 finish vs RW 878 lineage",
+      "transition defence own-side vs RW 929/930",
+      "empty own vs RW 879/912 attack",
+      "handover/help vs RW 880/928"
+    ]
+  },
+  "generationRules": {
+    "doNotMirrorRW": true,
+    "doNotTemplateFarmPilot": true,
+    "doNotTouchLockedBanks": true,
+    "doNotTouchPilot941to950": true,
+    "perceptionHonesty": true,
+    "handednessDefaultNone": true,
+    "systemScenariosMustChangeDecision": true
+  },
+  "nextPhase": {
+    "name": "PHASE_2_GENERATE_REMAINING",
+    "buildCount": 49,
+    "proposedIdRange": "scn_bank_951 onward (or clean ID plan that preserves 941-950)",
+    "stopUntilExplicit": false,
+    "note": "User asked for full bank build; Phase 1 forbids generation in this step. Await continuation into generation after this audit."
+  },
+  "verdict": "GAP_AUDIT_COMPLETE — READY TO GENERATE REMAINING FAMILIES",
+  "recommendedDifficultyRebalance": {
+    "target": {
+      "Beginner": 10,
+      "Intermediate": 22,
+      "Advanced": 20,
+      "Expert": 8
+    },
+    "beforeProjection": {
+      "Beginner": 3,
+      "Intermediate": 18,
+      "Advanced": 30,
+      "Expert": 8
+    },
+    "afterProjection": {
+      "Beginner": 11,
+      "Intermediate": 15,
+      "Advanced": 25,
+      "Expert": 8
+    },
+    "changes": [
+      {
+        "familyKey": "lw_fw_arrival_timing",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "single timing principle"
+      },
+      {
+        "familyKey": "lw_width_stretch_when_lb_binds",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "one cue stretch"
+      },
+      {
+        "familyKey": "lw_sys_15_outlet_width",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "simple width under pressure"
+      },
+      {
+        "familyKey": "lw_stay_wide_inside_help",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "one hip/chest cue"
+      },
+      {
+        "familyKey": "lw_lb_delay_ask_lane_blocked",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "one lane cue"
+      },
+      {
+        "familyKey": "lw_gk_near_post_commit",
+        "from": "Intermediate",
+        "to": "Beginner",
+        "note": "one GK cue if kept simple"
+      },
+      {
+        "familyKey": "lw_entry_when_not",
+        "from": "Advanced",
+        "to": "Intermediate"
+      },
+      {
+        "familyKey": "lw_takeoff_lane_closed",
+        "from": "Advanced",
+        "to": "Intermediate"
+      },
+      {
+        "familyKey": "lw_passive_warning",
+        "from": "Advanced",
+        "to": "Intermediate"
+      },
+      {
+        "familyKey": "lw_sys_open_man_help",
+        "from": "Advanced",
+        "to": "Intermediate"
+      },
+      {
+        "familyKey": "lw_sys_42_corridor",
+        "from": "Advanced",
+        "to": "Intermediate"
+      },
+      {
+        "familyKey": "lw_def_wing_entry",
+        "from": "Intermediate",
+        "to": "Beginner"
+      },
+      {
+        "familyKey": "lw_def_comm_half",
+        "from": "Intermediate",
+        "to": "Beginner"
+      }
+    ],
+    "note": "Apply during generation; do not force if cue complexity disagrees."
+  },
+  "perceptionPlan": {
+    "problem": "Matrix defaults almost all remaining to perception=true; with pilot 9/10 that projects ~93%, above 55-65% target.",
+    "forcePerceptionFalse": [
+      "lw_fw_arrival_timing",
+      "lw_5v6_safe_possession",
+      "lw_empty_own_safe_return",
+      "lw_late_lead_risk",
+      "lw_late_trail_create",
+      "lw_short_clock",
+      "lw_def_sys_60_wing_job",
+      "lw_7v6_or_empty_opp"
+    ],
+    "considerPerceptionFalse": [
+      "lw_passive_warning",
+      "lw_sys_5plus1_trap",
+      "lw_def_numerical_5v6",
+      "lw_width_stretch_when_lb_binds"
+    ],
+    "projectedAfterForceFalse": {
+      "true": 50,
+      "total": 59,
+      "pct": 85
+    },
+    "rule": "Only keep perception=true when an observable cue changes A vs B."
+  }
+}

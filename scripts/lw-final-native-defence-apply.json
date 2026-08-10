@@ -1,0 +1,34 @@
+{
+  "status": "PHASE_B_APPLIED",
+  "changeLog": [
+    {
+      "id": "scn_bank_949",
+      "oldFamilyKey": "lw_def_deny_backdoor_left",
+      "newFamilyKey": "lw_def_recover_wing_from_second_pivot_turnover",
+      "teachingArea": "transition_defence_from_second_pivot",
+      "attackOrDefence": "Defence",
+      "difficulty": "Advanced",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "6v6",
+      "gameState": "none"
+    },
+    {
+      "id": "scn_bank_950",
+      "oldFamilyKey": "lw_def_recovery_to_wing_after_help",
+      "newFamilyKey": "lw_def_empty_own_fill_from_second_pivot_turnover",
+      "teachingArea": "empty_own_defence_from_second_pivot",
+      "attackOrDefence": "Defence",
+      "difficulty": "Expert",
+      "perception": true,
+      "handedness": "none",
+      "defensiveSystem": "Mixed",
+      "numerical": "7v6",
+      "gameState": "empty_goal_own"
+    }
+  ],
+  "lockOk": true,
+  "lwCount": 50,
+  "pilotCount": 10
+}

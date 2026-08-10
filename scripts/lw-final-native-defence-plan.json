@@ -1,0 +1,157 @@
+{
+  "pass": "FINAL LW PILOT NATIVE DEFENCE",
+  "scope": {
+    "replaceOnly": ["scn_bank_949", "scn_bank_950"],
+    "lockedPilot": [
+      "scn_bank_941",
+      "scn_bank_942",
+      "scn_bank_943",
+      "scn_bank_944",
+      "scn_bank_945",
+      "scn_bank_946",
+      "scn_bank_947",
+      "scn_bank_948"
+    ],
+    "lockedBanks": ["LB", "RB", "CB", "RW"]
+  },
+  "problem": {
+    "949": {
+      "familyKey": "lw_def_deny_backdoor_left",
+      "failure": "Universal wing deny-entry / back-door rule. Side flip preserves teaching."
+    },
+    "950": {
+      "familyKey": "lw_def_recovery_to_wing_after_help",
+      "failure": "Universal recover-after-help rule. Side flip preserves teaching."
+    }
+  },
+  "searchNotes": {
+    "preferredDirection": "OFFENSIVE LW ACTION → TURNOVER → LW-SPECIFIC DEFENSIVE PROBLEM",
+    "continuityAnchors": [
+      "scn_bank_945 lw_second_pivot_release_to_width",
+      "scn_bank_948 lw_6v5_stay_wide_vs_entry_pivot"
+    ],
+    "rwDefenceCompared": [
+      "scn_bank_880",
+      "scn_bank_927",
+      "scn_bank_928",
+      "scn_bank_929",
+      "scn_bank_930",
+      "scn_bank_931",
+      "scn_bank_932",
+      "scn_bank_933",
+      "scn_bank_934",
+      "scn_bank_938",
+      "scn_bank_940"
+    ],
+    "missingArchitectureDefenceFamilies": [
+      "lw_def_empty_own_after_turnover",
+      "recovery from offensive second-pivot starting geometry (not in RW Gold)"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "C1",
+      "proposedFamilyKey": "lw_def_recover_wing_from_second_pivot_turnover",
+      "teachingObjective": "After losing the ball while still standing as second pivot on the left six, first recover out to the left wing lane to deny the same-side outlet — do not stay wrestling on six or chase the middle ball.",
+      "startingGeometry": "LW already deep as second pivot on left half of six; first pivot still left; LB high after failed drive; ball just lost near left 9m; opposing right wing already sprinting into the empty left wing lane.",
+      "whyBecauseLW": "This defensive problem only exists because the LW entered as second pivot in the preceding attack (pilot continuity with 945). Normal wing defence never starts from that body position.",
+      "primaryCue": "Possession lost + opp right wing sprinting into the empty left wing lane while you are still on the six.",
+      "decisionFork": "Sprint out to cut the same-side wing outlet vs chase central ball vs stay wrestling on six vs wait.",
+      "optimal": "Sprint out to the left wing lane and close the first outlet path to their right wing.",
+      "goodConditional": "Stay one beat inside only if a teammate already owns the wing lane by body and call.",
+      "risky": "Chase the central ball carrier because the steal looks more urgent.",
+      "poor": "Keep wrestling on the six as if the attack is still alive.",
+      "closestRwGold": "scn_bank_930 (return through correct lane after missed shot — normal recovery start, not second-pivot start)",
+      "closestOtherGold": "scn_bank_927 (deny fast restart from sideline nearest position)",
+      "duplicateAssessment": "Not duplicate. Same broad transition theme as 930/927, but cue/decision/start geometry differ: offensive second-pivot start → reopen defensive wing lane.",
+      "mirrorTest": "PASS under sequence clause: abstract wing-recovery principle can flip, but the reason the decision occurs is LW second-pivot preceding position. Fails only if judged as pure side-label wing defence; it is not — start is inside after LW entry.",
+      "coachRisk": 3,
+      "perception": true,
+      "handedness": "none",
+      "difficulty": "Advanced",
+      "defensiveSystem": "Mixed",
+      "numerical": "6v6",
+      "classification": "STRONG"
+    },
+    {
+      "id": "C2",
+      "proposedFamilyKey": "lw_def_empty_own_fill_from_second_pivot_turnover",
+      "teachingObjective": "After a second-pivot entry with own goalkeeper out, a turnover makes empty-own-goal cover the first job when you are already the nearest body on the six — do not automatic-sprint to the wing.",
+      "startingGeometry": "Own GK out (empty own). LW already second pivot on left half of six from the 7v6 entry. Turnover. Opp centre has the ball ~12–14m looking at the empty goal. Opp right wing is also wide, but a teammate is closer to that wing than you are to empty-goal cover if you leave.",
+      "whyBecauseLW": "Only the LW who entered as second pivot is already inside near the empty-goal lane. A wing who stayed wide faces the opposite recovery geometry. This is the defensive consequence of the LW offensive empty-own/second-pivot action.",
+      "primaryCue": "Empty own goal live + ball carrier looking at goal + you are nearest body from second-pivot spot; wing is secondary because a teammate is nearer that lane.",
+      "decisionFork": "Fill empty-goal lane now vs sprint to wing vs chase ball carrier from behind vs freeze.",
+      "optimal": "Sprint between ball and empty goal immediately and force a later decision.",
+      "goodConditional": "Sprint to the wing only if a teammate already fills the empty-goal lane and calls that cover.",
+      "risky": "Sprint to the wing because ‘that is my job’ while the empty goal is still open.",
+      "poor": "Stand near the six and protest the turnover.",
+      "closestRwGold": "None for empty-own defence. Nearest attack empty-own: scn_bank_879 / 912. Transition defence nearest: scn_bank_931 (stop first wave between ball and goal — not empty-own, not second-pivot start).",
+      "closestOtherGold": "Architecture family lw_def_empty_own_after_turnover (missing in RW Gold defence).",
+      "duplicateAssessment": "Not duplicate of RW Gold. 931 shares ‘body between ball and goal’ language but lacks empty-own game state and second-pivot preceding position.",
+      "mirrorTest": "PASS under sequence clause: empty-goal fill can flip for RW, but occurrence and body-priority invert because LW entered as second pivot with GK out. Not a normal wing-lane set-defence mirror.",
+      "coachRisk": 4,
+      "perception": true,
+      "handedness": "none",
+      "difficulty": "Expert",
+      "defensiveSystem": "Mixed",
+      "numerical": "7v6",
+      "gameState": "empty_goal_own",
+      "classification": "STRONG"
+    },
+    {
+      "id": "C3",
+      "proposedFamilyKey": "lw_def_cover_seam_for_late_lb_after_left_entry",
+      "teachingObjective": "After joint left attack fails, temporarily cover the half-space seam until late LB recovers.",
+      "startingGeometry": "LW inside after entry; LB still above 9m; seam open.",
+      "whyBecauseLW": "LW-LB left-side attack continuity.",
+      "primaryCue": "LB late + seam live",
+      "decisionFork": "Hold seam one pass vs sprint only to wing",
+      "optimal": "Hold seam until LB arrives",
+      "goodConditional": "Release to wing when LB takes seam",
+      "risky": "Both abandon seam for wing",
+      "poor": "Stay wrestling on six",
+      "closestRwGold": "scn_bank_928 / 932",
+      "closestOtherGold": "lw_def_lb_wing_coop",
+      "duplicateAssessment": "Low RW semantic duplicate risk, but teaching is generic late-back cover.",
+      "mirrorTest": "FAIL strict: RW covering for late RB is the same teaching.",
+      "coachRisk": 5,
+      "classification": "QUESTIONABLE"
+    },
+    {
+      "id": "C4",
+      "proposedFamilyKey": "lw_def_deny_backdoor_left",
+      "teachingObjective": "Deny back-door while ball-watching in set defence.",
+      "mirrorTest": "FAIL — universal wing rule",
+      "coachRisk": 2,
+      "classification": "REJECT",
+      "reason": "Current 949. Side flip unchanged."
+    },
+    {
+      "id": "C5",
+      "proposedFamilyKey": "lw_def_recovery_to_wing_after_help",
+      "teachingObjective": "Recover to wing after inside help when ball reverses.",
+      "mirrorTest": "FAIL — universal wing rule",
+      "coachRisk": 2,
+      "classification": "REJECT",
+      "reason": "Current 950. Side flip unchanged."
+    },
+    {
+      "id": "C6",
+      "proposedFamilyKey": "lw_def_protect_opp_wing",
+      "teachingObjective": "Protect pass to opposing wing in set 6:0.",
+      "mirrorTest": "FAIL — mirrors RW 880 family",
+      "coachRisk": 3,
+      "classification": "REJECT",
+      "reason": "Set-defence wing job; not sequence-native."
+    }
+  ],
+  "phaseAVerdict": {
+    "strongCount": 2,
+    "strongIds": ["C1", "C2"],
+    "phaseBAllowed": true,
+    "assignment": {
+      "scn_bank_949": "C1 / lw_def_recover_wing_from_second_pivot_turnover",
+      "scn_bank_950": "C2 / lw_def_empty_own_fill_from_second_pivot_turnover"
+    }
+  }
+}

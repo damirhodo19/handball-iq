@@ -1,0 +1,227 @@
+{
+  "phase": "PHASE_2_DUPLICATE_AUDIT",
+  "vsPilot": [
+    {
+      "a": "lw_sw_advantage_gone",
+      "b": "pilot_947",
+      "status": "distinct",
+      "reason": "opposite keep/stop second-wave forks"
+    },
+    {
+      "a": "lw_6v5_free_finish",
+      "b": "pilot_948",
+      "status": "distinct",
+      "reason": "free finish vs stay-wide/entry-onto-pivot"
+    },
+    {
+      "a": "lw_def_trans_own_side_lane",
+      "b": "pilot_949",
+      "status": "distinct",
+      "reason": "normal start vs second-pivot start"
+    }
+  ],
+  "internalPairs": [
+    {
+      "a": "lw_stay_wide_inside_help",
+      "b": "lw_entry_when_not",
+      "status": "distinct",
+      "reason": "follow-inside temptation vs enter-to-six temptation"
+    },
+    {
+      "a": "lw_1v1_wing_space",
+      "b": "lw_sys_open_man_help",
+      "status": "distinct",
+      "reason": "opposite help-distance conditions"
+    },
+    {
+      "a": "lw_sw_advantage_gone",
+      "b": "pilot_947",
+      "status": "distinct",
+      "reason": "opposite keep/stop second-wave forks"
+    },
+    {
+      "a": "lw_6v5_free_finish",
+      "b": "pilot_948",
+      "status": "distinct",
+      "reason": "free finish vs stay-wide/entry-onto-pivot"
+    },
+    {
+      "a": "lw_def_inside_help_controlled",
+      "b": "lw_def_when_not_abandon",
+      "status": "distinct",
+      "reason": "help distance vs do-not-leave on reverse"
+    },
+    {
+      "a": "lw_def_wing_entry",
+      "b": "lw_def_backdoor_deny",
+      "status": "distinct",
+      "reason": "entry path start vs ball-watch during drive"
+    },
+    {
+      "a": "lw_def_trans_own_side_lane",
+      "b": "pilot_949",
+      "status": "distinct",
+      "reason": "normal start vs second-pivot start"
+    },
+    {
+      "a": "lw_def_trans_own_side_lane",
+      "b": "lw_def_trans_far_skip_with_map",
+      "status": "distinct",
+      "reason": "opposite teammate-map conditions"
+    },
+    {
+      "a": "lw_gk_near_post_commit",
+      "b": "lw_gk_far_side_commit",
+      "status": "distinct",
+      "reason": "opposite commit → opposite finish side"
+    },
+    {
+      "a": "lw_late_lead_risk",
+      "b": "lw_late_trail_create",
+      "status": "distinct",
+      "reason": "opposite score-risk postures"
+    },
+    {
+      "a": "lw_fw_3v2_hold_width",
+      "b": "lw_fw_2v1_finish_or_pass",
+      "status": "distinct",
+      "reason": "3v2 width vs 2v1 finish/pass"
+    },
+    {
+      "a": "lw_recovering_defender_race",
+      "b": "lw_6v5_free_finish",
+      "status": "distinct",
+      "reason": "6v6 recovery race vs 6v5 LB-drew-two"
+    }
+  ],
+  "unresolvedInternalDuplicates": 0,
+  "rwRelatedButNotDuplicate": [
+    {
+      "familyKey": "lw_entry_when_not",
+      "closestRwGold": "scn_bank_873",
+      "assessment": "Closest RW 873. Differentiated by LB-still-driving width need. Essential anti-entry.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_entry_when_space_opens",
+      "closestRwGold": "scn_bank_890 / 893",
+      "assessment": "Related RW enter-after-help; requires LB delivery co-cue.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_backdoor_ball_watch",
+      "closestRwGold": "scn_bank_891",
+      "assessment": "Related RW 891; LB-delivery timing required.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_takeoff_lane_closed",
+      "closestRwGold": "scn_bank_883",
+      "assessment": "Related RW 883; pair with 944 open vs closed.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_pivot_block_opens_takeoff",
+      "closestRwGold": "scn_bank_874",
+      "assessment": "Related RW 874; distinct from 944 (no pivot seal / 3:2:1).",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "closestRwGold": "scn_bank_875",
+      "assessment": "Related RW 875; take-off-first + B=LB pass differentiates.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_fw_3v2_hold_width",
+      "closestRwGold": "scn_bank_876",
+      "assessment": "Closest RW 876; essential first-wave family.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_sw_advantage_gone",
+      "closestRwGold": "scn_bank_877",
+      "assessment": "Opposite of 947; related RW 877.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_recovering_defender_race",
+      "closestRwGold": "scn_bank_882 / 878",
+      "assessment": "Related RW 882; distinct from numerical 6v5_free_finish.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_6v5_free_finish",
+      "closestRwGold": "scn_bank_878 / 917",
+      "assessment": "Not 948; LB-drew-two left picture differentiates from RW 878.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_empty_own_safe_return",
+      "closestRwGold": "scn_bank_879 / 914",
+      "assessment": "Related RW 879; distinct phase from 950.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_def_protect_opp_wing",
+      "closestRwGold": "scn_bank_880",
+      "assessment": "Related RW 880. Beginner lane-deny focus; B=handover release. Coach risk noted.",
+      "unresolvedDuplicate": false
+    },
+    {
+      "familyKey": "lw_def_handover_timing",
+      "closestRwGold": "scn_bank_880 / 928",
+      "assessment": "Focus is release timing, not protect-first.",
+      "unresolvedDuplicate": false
+    }
+  ],
+  "unresolvedRwSemanticDuplicates": 0,
+  "lbRbCbNotes": [
+    "LB gold contains empty-own attack and second-pivot themes — LW empty-own attack/defence kept phase-distinct.",
+    "CB 5v6 collapse families related to lw_def_numerical_5v6 only at priority principle level; wing-specific framing kept.",
+    "No RB semantic twins required for LW–LB partner families."
+  ],
+  "mirrorUniversalCountRemaining": 1,
+  "highestCoachRisk": [
+    {
+      "familyKey": "lw_gk_near_post_commit",
+      "coachRisk": 5,
+      "closestRwGold": "scn_bank_875"
+    },
+    {
+      "familyKey": "lw_def_protect_opp_wing",
+      "coachRisk": 5,
+      "closestRwGold": "scn_bank_880"
+    },
+    {
+      "familyKey": "lw_def_backdoor_deny",
+      "coachRisk": 5,
+      "closestRwGold": "scn_bank_932 / 934 themes"
+    },
+    {
+      "familyKey": "lw_entry_when_not",
+      "coachRisk": 4,
+      "closestRwGold": "scn_bank_873"
+    },
+    {
+      "familyKey": "lw_entry_when_space_opens",
+      "coachRisk": 4,
+      "closestRwGold": "scn_bank_890 / 893"
+    },
+    {
+      "familyKey": "lw_backdoor_ball_watch",
+      "coachRisk": 4,
+      "closestRwGold": "scn_bank_891"
+    },
+    {
+      "familyKey": "lw_gk_far_side_commit",
+      "coachRisk": 4,
+      "closestRwGold": "scn_bank_901 (related cluster, different cue)"
+    },
+    {
+      "familyKey": "lw_gk_depth_read",
+      "coachRisk": 4,
+      "closestRwGold": "scn_bank_897 / 898"
+    }
+  ]
+}

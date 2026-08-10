@@ -1,0 +1,376 @@
+[
+  {
+    "topic": "6:0",
+    "status": "TACTICALLY QUESTIONABLE",
+    "familyKeys": [
+      "lw_basic_near_post_read",
+      "lw_far_post_under_centred_keeper",
+      "lw_back_door_vs_ball_watching_6_0",
+      "lw_simple_width_principle"
+    ],
+    "scenarioIds": [
+      "scn_bank_074",
+      "scn_bank_085",
+      "scn_bank_096",
+      "scn_bank_107",
+      "scn_bank_075",
+      "scn_bank_086",
+      "scn_bank_097",
+      "scn_bank_108",
+      "scn_bank_078",
+      "scn_bank_089",
+      "scn_bank_100",
+      "scn_bank_111",
+      "scn_bank_084",
+      "scn_bank_095",
+      "scn_bank_106"
+    ]
+  },
+  {
+    "topic": "5:1",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "3:2:1",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "3:3",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "4:2",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "1:5",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "5+1",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "4+2",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "open / individual defence",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "1v1",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "Left Back cooperation",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_fast_break_arrival_timing",
+      "lw_back_door_vs_ball_watching_6_0"
+    ],
+    "scenarioIds": [
+      "scn_bank_077",
+      "scn_bank_088",
+      "scn_bank_099",
+      "scn_bank_110",
+      "scn_bank_078",
+      "scn_bank_089",
+      "scn_bank_100",
+      "scn_bank_111"
+    ]
+  },
+  {
+    "topic": "pivot cooperation",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_power_play_wing_overload"
+    ],
+    "scenarioIds": [
+      "scn_bank_079",
+      "scn_bank_090",
+      "scn_bank_101",
+      "scn_bank_112"
+    ]
+  },
+  {
+    "topic": "entry timing",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_back_door_vs_ball_watching_6_0"
+    ],
+    "scenarioIds": [
+      "scn_bank_078",
+      "scn_bank_089",
+      "scn_bank_100",
+      "scn_bank_111"
+    ]
+  },
+  {
+    "topic": "when NOT to enter",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "take off geometry",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "wing defender hip read",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "goalkeeper near-post movement",
+    "status": "TACTICALLY QUESTIONABLE",
+    "familyKeys": [
+      "lw_basic_near_post_read"
+    ],
+    "scenarioIds": [
+      "scn_bank_074",
+      "scn_bank_085",
+      "scn_bank_096",
+      "scn_bank_107"
+    ]
+  },
+  {
+    "topic": "goalkeeper depth",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "goalkeeper step-out",
+    "status": "TACTICALLY QUESTIONABLE",
+    "familyKeys": [
+      "lw_lob_vs_stepping_keeper",
+      "lw_keeper_first_step_read"
+    ],
+    "scenarioIds": [
+      "scn_bank_076",
+      "scn_bank_087",
+      "scn_bank_098",
+      "scn_bank_109",
+      "scn_bank_081",
+      "scn_bank_092",
+      "scn_bank_103",
+      "scn_bank_114"
+    ]
+  },
+  {
+    "topic": "goalkeeper patience / late finish",
+    "status": "TACTICALLY QUESTIONABLE",
+    "familyKeys": [
+      "lw_tied_game_wing_finish",
+      "lw_keeper_first_step_read"
+    ],
+    "scenarioIds": [
+      "scn_bank_080",
+      "scn_bank_091",
+      "scn_bank_102",
+      "scn_bank_081",
+      "scn_bank_092",
+      "scn_bank_103",
+      "scn_bank_114"
+    ]
+  },
+  {
+    "topic": "first wave 2v1",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "first wave 3v2",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "second wave",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "partially set defence",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "6v5",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_power_play_wing_overload"
+    ],
+    "scenarioIds": [
+      "scn_bank_079",
+      "scn_bank_090",
+      "scn_bank_101",
+      "scn_bank_112"
+    ]
+  },
+  {
+    "topic": "5v6",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "7v6",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "own empty goal",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "opponent empty goal",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "after exclusion",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_power_play_wing_overload"
+    ],
+    "scenarioIds": [
+      "scn_bank_079",
+      "scn_bank_090",
+      "scn_bank_101",
+      "scn_bank_112"
+    ]
+  },
+  {
+    "topic": "passive play",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "lead late",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "trail late",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "tie final possession",
+    "status": "DUPLICATED",
+    "familyKeys": [
+      "lw_tied_game_wing_finish"
+    ],
+    "scenarioIds": [
+      "scn_bank_080",
+      "scn_bank_091",
+      "scn_bank_102"
+    ]
+  },
+  {
+    "topic": "transition defence",
+    "status": "TACTICALLY QUESTIONABLE",
+    "familyKeys": [
+      "lw_transition_cover_priority"
+    ],
+    "scenarioIds": [
+      "scn_bank_082",
+      "scn_bank_093",
+      "scn_bank_104"
+    ]
+  },
+  {
+    "topic": "set defence responsibility",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "handover",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "inside help",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "recovery to wing",
+    "status": "MISSING",
+    "familyKeys": [],
+    "scenarioIds": []
+  },
+  {
+    "topic": "first wave attack timing",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_fast_break_arrival_timing"
+    ],
+    "scenarioIds": [
+      "scn_bank_077",
+      "scn_bank_088",
+      "scn_bank_099",
+      "scn_bank_110"
+    ]
+  },
+  {
+    "topic": "positional width",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_simple_width_principle"
+    ],
+    "scenarioIds": [
+      "scn_bank_084",
+      "scn_bank_095",
+      "scn_bank_106"
+    ]
+  },
+  {
+    "topic": "extreme angle finish",
+    "status": "LANGUAGE QUESTIONABLE",
+    "familyKeys": [
+      "lw_extreme_angle_finish"
+    ],
+    "scenarioIds": [
+      "scn_bank_083",
+      "scn_bank_094",
+      "scn_bank_105"
+    ]
+  }
+]

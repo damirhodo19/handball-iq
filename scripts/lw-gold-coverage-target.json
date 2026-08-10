@@ -1,0 +1,152 @@
+{
+  "position": "Left Wing",
+  "recommendedFinalCount": 60,
+  "attack": 44,
+  "defence": 16,
+  "difficulty": {
+    "Beginner": 10,
+    "Intermediate": 22,
+    "Advanced": 20,
+    "Expert": 8
+  },
+  "perception": {
+    "targetPctRange": [55, 65],
+    "targetCountRange": [33, 39],
+    "rule": "perception=true only if an observable cue drives the correct decision"
+  },
+  "handedness": {
+    "default": "none",
+    "expectedTagged": [0, 4]
+  },
+  "defensiveSystemMatrix": [
+    {
+      "system": "6:0",
+      "status": "CORE",
+      "targetScenarios": "18-22",
+      "why": "Primary set picture for LW width, entry, take-off, GK, many defence basics",
+      "mustTeachDifferentCue": false
+    },
+    {
+      "system": "5:1",
+      "status": "SPARSE",
+      "targetScenarios": 2,
+      "why": "Advanced defender changes ask/width timing and wing defensive job",
+      "families": ["lw_sys_51_advance_width", "lw_def_sys_51_vs_advance"]
+    },
+    {
+      "system": "3:2:1",
+      "status": "SPARSE",
+      "targetScenarios": 1,
+      "why": "Half step-out creates a left-side responsibility lag unique to 3:2:1",
+      "families": ["lw_sys_321_wing_vs_half"]
+    },
+    {
+      "system": "3:3",
+      "status": "SPARSE",
+      "targetScenarios": 2,
+      "why": "Man pressure / switch rules change stay-wide and defence decisions",
+      "families": ["lw_sys_33_pressure_release", "lw_def_sys_33_switch"]
+    },
+    {
+      "system": "4:2",
+      "status": "SPARSE",
+      "targetScenarios": 1,
+      "why": "Front/back gap creates a left corridor timing problem",
+      "families": ["lw_sys_42_corridor"]
+    },
+    {
+      "system": "1:5",
+      "status": "SPARSE",
+      "targetScenarios": 1,
+      "why": "Deep pressure outlet width is a different LW problem",
+      "families": ["lw_sys_15_outlet_width"]
+    },
+    {
+      "system": "5+1",
+      "status": "SPARSE",
+      "targetScenarios": 1,
+      "why": "Long-range trap vs base wall",
+      "families": ["lw_sys_5plus1_trap"]
+    },
+    {
+      "system": "4+2",
+      "status": "SPARSE",
+      "targetScenarios": 1,
+      "why": "Two advanced defenders create a specific left lane choice",
+      "families": ["lw_sys_4plus2_lane"]
+    },
+    {
+      "system": "open/man",
+      "status": "SPARSE",
+      "targetScenarios": 2,
+      "why": "Isolation 1v1 and open-defence help distance",
+      "families": ["lw_1v1_wing_space", "lw_sys_open_man_help"]
+    },
+    {
+      "system": "transition",
+      "status": "CORE",
+      "targetScenarios": "8-10",
+      "why": "First wave, second wave, transition defence are core LW jobs",
+      "mustTeachDifferentCue": false
+    }
+  ],
+  "topicCoverageTargets": [
+    { "topic": "LW positional width", "target": "GOOD", "minScenarios": 2, "families": ["lw_width_hold_true_width", "lw_width_stretch_when_lb_binds"] },
+    { "topic": "LB cooperation", "target": "GOOD", "minScenarios": 4, "families": ["lw_width_stretch_when_lb_binds", "lw_takeoff_after_lb_pull", "lw_lb_ask_when_hips_open", "lw_lb_delay_ask_lane_blocked"] },
+    { "topic": "pivot cooperation", "target": "GOOD", "minScenarios": 2, "families": ["lw_pivot_block_opens_takeoff", "lw_pivot_feed_vs_finish"] },
+    { "topic": "wing-defender hips/feet", "target": "GOOD", "minScenarios": 3, "families": ["lw_stay_wide_inside_help", "lw_lb_ask_when_hips_open", "lw_wd_feet_chest_before_move"] },
+    { "topic": "take-off geometry", "target": "GOOD", "minScenarios": 2, "families": ["lw_takeoff_after_lb_pull", "lw_takeoff_lane_closed"] },
+    { "topic": "when to stay wide", "target": "GOOD", "minScenarios": 2, "families": ["lw_stay_wide_inside_help", "lw_width_stretch_when_lb_binds"] },
+    { "topic": "when to enter", "target": "GOOD", "minScenarios": 1, "families": ["lw_entry_when_space_opens"] },
+    { "topic": "when NOT to enter", "target": "GOOD", "minScenarios": 1, "families": ["lw_entry_when_not"] },
+    { "topic": "back-door timing", "target": "GOOD", "minScenarios": 1, "families": ["lw_backdoor_ball_watch"] },
+    { "topic": "1v1 from wing", "target": "GOOD", "minScenarios": 1, "families": ["lw_1v1_wing_space"] },
+    { "topic": "GK near-post commitment", "target": "GOOD", "minScenarios": 1, "families": ["lw_gk_near_post_commit"] },
+    { "topic": "GK far-side commitment", "target": "GOOD", "minScenarios": 1, "families": ["lw_gk_far_side_commit"] },
+    { "topic": "GK depth", "target": "GOOD", "minScenarios": 1, "families": ["lw_gk_depth_read"] },
+    { "topic": "GK step-out", "target": "GOOD", "minScenarios": 1, "families": ["lw_gk_stepout_conditional"] },
+    { "topic": "late GK movement", "target": "GOOD", "minScenarios": 1, "families": ["lw_gk_late_movement_patience"] },
+    { "topic": "first-wave 2v1", "target": "GOOD", "minScenarios": 1, "families": ["lw_fw_2v1_finish_or_pass"] },
+    { "topic": "first-wave 3v2", "target": "GOOD", "minScenarios": 1, "families": ["lw_fw_3v2_hold_width"] },
+    { "topic": "transition lane timing", "target": "GOOD", "minScenarios": 2, "families": ["lw_fw_arrival_timing", "lw_trans_lane_vs_recovery"] },
+    { "topic": "second wave", "target": "GOOD", "minScenarios": 2, "families": ["lw_sw_advantage_gone", "lw_partially_set_defence"] },
+    { "topic": "6v5", "target": "GOOD", "minScenarios": 2, "families": ["lw_6v5_free_finish", "lw_6v5_pivot_seal"] },
+    { "topic": "5v6", "target": "GOOD", "minScenarios": 1, "families": ["lw_5v6_safe_possession"] },
+    { "topic": "7v6 / empty opp", "target": "THIN_OK", "minScenarios": 1, "families": ["lw_7v6_or_empty_opp"], "note": "One only; do not expand into a farm" },
+    { "topic": "own empty goal", "target": "GOOD", "minScenarios": 2, "families": ["lw_empty_own_safe_return", "lw_def_empty_own_after_turnover"] },
+    { "topic": "passive warning", "target": "GOOD", "minScenarios": 1, "families": ["lw_passive_warning"] },
+    { "topic": "late-game leading", "target": "GOOD", "minScenarios": 1, "families": ["lw_late_lead_risk"] },
+    { "topic": "late-game trailing", "target": "GOOD", "minScenarios": 1, "families": ["lw_late_trail_create"] },
+    { "topic": "short-clock", "target": "GOOD", "minScenarios": 1, "families": ["lw_short_clock"] },
+    { "topic": "protect opposing wing", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_protect_opp_wing"] },
+    { "topic": "controlled inside help", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_inside_help_controlled"] },
+    { "topic": "handover timing", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_handover_timing"] },
+    { "topic": "when NOT to abandon wing", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_when_not_abandon"] },
+    { "topic": "defend LB/wing cooperation", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_lb_wing_coop"] },
+    { "topic": "defend wing entry", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_wing_entry"] },
+    { "topic": "defend back-door", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_backdoor_deny"] },
+    { "topic": "transition defence", "target": "GOOD", "minScenarios": 2, "families": ["lw_def_trans_own_side_lane", "lw_def_trans_far_skip_with_map"] },
+    { "topic": "communication with half", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_comm_half"] },
+    { "topic": "system-specific wing responsibility", "target": "GOOD", "minScenarios": 3, "families": ["lw_def_sys_60_wing_job", "lw_def_sys_51_vs_advance", "lw_def_sys_33_switch"] },
+    { "topic": "numerical defence", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_numerical_5v6"] },
+    { "topic": "recovery to wing", "target": "GOOD", "minScenarios": 1, "families": ["lw_def_recovery_to_wing"] }
+  ],
+  "largestCurrentGapsToClose": [
+    "Genuine defence curriculum (currently 1 cloned idea)",
+    "Defensive system coverage beyond unspecified 6:0",
+    "Take-off geometry and when-NOT-to-enter",
+    "Wing-defender hip/feet perception",
+    "Honest GK perception (replace folklore)",
+    "First/second wave structure",
+    "5v6, empty own goal, passive, late-game risk",
+    "Native HR/DE coaching language"
+  ],
+  "duplicateRiskWatchlist": [
+    "stay_wide_inside_help vs entry_when_not vs width_stretch_when_lb_binds",
+    "gk_near vs gk_far vs gk_late vs recovering_defender_race",
+    "6v5_free_finish vs 6v5_pivot_seal",
+    "late_lead vs short_clock vs empty_own",
+    "def_trans_own_side vs def_trans_far_skip",
+    "backdoor vs entry_when_space_opens"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": "BATCH_A_INSERTED",
+  "added": [
+    {
+      "id": "scn_bank_951",
+      "familyKey": "lw_lb_delay_ask_lane_blocked"
+    },
+    {
+      "id": "scn_bank_952",
+      "familyKey": "lw_width_stretch_when_lb_binds"
+    },
+    {
+      "id": "scn_bank_953",
+      "familyKey": "lw_pivot_block_opens_takeoff"
+    },
+    {
+      "id": "scn_bank_954",
+      "familyKey": "lw_takeoff_lane_closed"
+    },
+    {
+      "id": "scn_bank_955",
+      "familyKey": "lw_gk_far_side_commit"
+    },
+    {
+      "id": "scn_bank_956",
+      "familyKey": "lw_gk_depth_read"
+    },
+    {
+      "id": "scn_bank_957",
+      "familyKey": "lw_fw_2v1_finish_or_pass"
+    },
+    {
+      "id": "scn_bank_958",
+      "familyKey": "lw_fw_arrival_timing"
+    },
+    {
+      "id": "scn_bank_959",
+      "familyKey": "lw_5v6_safe_possession"
+    },
+    {
+      "id": "scn_bank_960",
+      "familyKey": "lw_passive_warning"
+    },
+    {
+      "id": "scn_bank_961",
+      "familyKey": "lw_def_sys_60_wing_job"
+    },
+    {
+      "id": "scn_bank_962",
+      "familyKey": "lw_def_inside_help_controlled"
+    }
+  ],
+  "lwCount": 62,
+  "lockOk": true
+}
