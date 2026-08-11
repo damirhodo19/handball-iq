@@ -62,12 +62,37 @@ export interface TeamMemberRecord {
   created_at: string;
   // Enriched fields (local/mock)
   display_name?: string;
+  email?: string;
   position?: string;
+  secondary_position?: string;
   decision_score?: number;
   total_xp?: number;
   streak?: number;
   weekly_activity?: number;
   improvement?: number;
+}
+
+export type TeamJoinRequestStatus = 'pending' | 'approved' | 'rejected' | 'cancelled';
+
+export interface TeamJoinRequest {
+  request_id: string;
+  team_id: string;
+  player_id: string;
+  display_name: string;
+  email: string | null;
+  primary_position: string | null;
+  secondary_position: string | null;
+  request_status: TeamJoinRequestStatus;
+  requested_at: string;
+}
+
+export interface MyTeamJoinRequest {
+  request_id: string;
+  team_id: string;
+  team_name: string;
+  request_status: TeamJoinRequestStatus;
+  requested_at: string;
+  decided_at: string | null;
 }
 
 export interface TeamInvitation {

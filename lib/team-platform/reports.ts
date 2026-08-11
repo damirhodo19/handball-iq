@@ -9,7 +9,11 @@ import type {
 import { localFetchMembers } from './storage';
 
 export function computeTeamDashboard(teamId: string): TeamDashboardStats {
-  const members = localFetchMembers(teamId);
+  return computeTeamDashboardFromMembers(localFetchMembers(teamId));
+}
+
+export function computeTeamDashboardFromMembers(allMembers: TeamMemberRecord[]): TeamDashboardStats {
+  const members = allMembers.filter((member) => member.member_role === 'player');
   if (members.length === 0) {
     return {
       rosterCount: 0,

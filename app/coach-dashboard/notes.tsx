@@ -12,10 +12,10 @@ import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   addCoachWorkspaceNote,
-  loadCoachRoster,
-  loadCoachWorkspaceNotes,
+  loadCoachRosterForTeam,
+  loadCoachWorkspaceNotesForTeam,
   removeCoachWorkspaceNote,
-  syncCoachWorkspace,
+  syncCoachWorkspaceForTeam,
   type CoachRosterPlayer,
   type CoachWorkspaceNote,
 } from '@/lib/coach-workspace';
@@ -40,15 +40,15 @@ export default function CoachNotesScreen() {
   const [message, setMessage] = useState('');
 
   const refresh = useCallback(() => {
-    setPlayers(loadCoachRoster(coachId, teamKey));
-    setNotes(loadCoachWorkspaceNotes(coachId, teamKey, selectedPlayerId));
+    setPlayers(loadCoachRosterForTeam(coachId, teamKey));
+    setNotes(loadCoachWorkspaceNotesForTeam(coachId, teamKey, selectedPlayerId));
   }, [coachId, teamKey, selectedPlayerId]);
 
   useFocusEffect(useCallback(() => {
     let active = true;
     refresh();
     (async () => {
-      const error = await syncCoachWorkspace(coachId, teamKey);
+      const error = await syncCoachWorkspaceForTeam(coachId, teamKey);
       if (!active) return;
       if (error) setMessage(t('team.workspaceSyncError'));
       refresh();
@@ -59,9 +59,10 @@ export default function CoachNotesScreen() {
   const handleSave = async () => {
     if (!content.trim()) return;
     setSaving(true);
+    const selectedPlayer = players.find((player) => player.id === selectedPlayerId);
     const { cloudError } = await addCoachWorkspaceNote({
       coachId,
-      teamKey,
+      teamKey: selectedPlayer?.team_key ?? teamKey,
       rosterPlayerId: selectedPlayerId,
       noteType,
       content,

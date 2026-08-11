@@ -4,9 +4,10 @@ import {
   getActiveTeam,
   setActiveTeam,
   initCoachPlatform,
+  fetchTeams,
+  fetchTeamMembers,
 } from '@/lib/team-platform/platform';
-import { localFetchTeams, localFetchMembers } from '@/lib/team-platform/storage';
-import { computeTeamDashboard } from '@/lib/team-platform/reports';
+import { computeTeamDashboardFromMembers } from '@/lib/team-platform/reports';
 import { getCoachPlatformRole, isCoachRole } from '@/lib/team-platform/permissions';
 
 export function useTeamPlatform(userId?: string, userName?: string) {
@@ -14,20 +15,25 @@ export function useTeamPlatform(userId?: string, userName?: string) {
   const [teams, setTeams] = useState<TeamRecord[]>([]);
   const [members, setMembers] = useState<TeamMemberRecord[]>([]);
   const [stats, setStats] = useState<TeamDashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
   const role: PlatformRole = getCoachPlatformRole();
 
-  const refresh = useCallback(() => {
-    const active = getActiveTeam();
+  const refresh = useCallback(async () => {
+    setLoading(true);
+    const availableTeams = await fetchTeams();
+    const active = getActiveTeam() ?? availableTeams[0] ?? null;
     setTeam(active);
-    setTeams(localFetchTeams());
-    if (active) {
-      const m = localFetchMembers(active.id);
-      setMembers(m);
-      setStats(computeTeamDashboard(active.id));
-    } else {
+    setTeams(availableTeams);
+    if (!active) {
       setMembers([]);
       setStats(null);
+      setLoading(false);
+      return;
     }
+    const loadedMembers = await fetchTeamMembers(active.id);
+    setMembers(loadedMembers);
+    setStats(computeTeamDashboardFromMembers(loadedMembers));
+    setLoading(false);
   }, []);
 
   useEffect(() => { refresh(); }, [refresh]);
@@ -35,13 +41,13 @@ export function useTeamPlatform(userId?: string, userName?: string) {
   const init = useCallback(async () => {
     if (!userId) return null;
     const t = await initCoachPlatform(userId, userName ?? 'Coach');
-    refresh();
+    await refresh();
     return t;
   }, [userId, userName, refresh]);
 
-  const selectTeam = useCallback((teamId: string) => {
+  const selectTeam = useCallback(async (teamId: string) => {
     setActiveTeam(teamId);
-    refresh();
+    await refresh();
   }, [refresh]);
 
   return {
@@ -49,6 +55,7 @@ export function useTeamPlatform(userId?: string, userName?: string) {
     teams,
     members,
     stats,
+    loading,
     role,
     isCoach: isCoachRole(role),
     refresh,

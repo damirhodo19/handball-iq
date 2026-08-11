@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-nati
 import { router, useFocusEffect, Redirect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  Users, Activity, Target, Brain, TrendingUp, TrendingDown, ChevronRight, Calendar, ClipboardList, BarChart3, Bell, UserCircle, Shield, AlertCircle, Plus
+  Users, Activity, Target, Brain, TrendingUp, TrendingDown, ChevronRight, Calendar, ClipboardList, BarChart3, Bell, UserCircle, Shield, AlertCircle, Plus, UserPlus
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
@@ -17,7 +17,7 @@ import { useTeamPlatform } from '@/hooks/useTeamPlatform';
 import { renderCoachMessage } from '@/lib/coach-i18n';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateRole } from '@/lib/translations';
-import { loadCoachAttendance, loadCoachRoster } from '@/lib/coach-workspace';
+import { loadCoachAttendanceForTeam, loadCoachRosterForTeam } from '@/lib/coach-workspace';
 import { getActiveTeam } from '@/lib/team-platform/platform';
 
 const INIT_TIMEOUT_MS = 8000;
@@ -33,7 +33,7 @@ export default function CoachDashboardHome() {
   const [dataError, setDataError] = useState(false);
   const [workspaceOverview, setWorkspaceOverview] = useState({ rosterCount: 0, attendanceRate: 0, hasAttendance: false });
   const coachId = user?.id ?? (isDevAuthenticated ? 'dev_coach' : undefined);
-  const { team: platformTeam, stats: platformStats, init, refresh: refreshTeam } = useTeamPlatform(coachId, coach?.name);
+  const { team: platformTeam, stats: platformStats, refresh: refreshTeam } = useTeamPlatform(coachId, coach?.name);
 
   useEffect(() => {
     if (authLoading && !isDevAuthenticated) {
@@ -50,10 +50,10 @@ export default function CoachDashboardHome() {
       setTopRecs(generateTeamRecommendations().slice(0, 3));
       if (coachId) {
         const teamKey = getActiveTeam()?.id ?? 'default';
-        const roster = loadCoachRoster(coachId, teamKey);
+        const roster = loadCoachRosterForTeam(coachId, teamKey);
         const now = new Date();
         const today = `${now.getFullYear()}-${`${now.getMonth() + 1}`.padStart(2, '0')}-${`${now.getDate()}`.padStart(2, '0')}`;
-        const attendance = loadCoachAttendance(coachId, teamKey, today);
+        const attendance = loadCoachAttendanceForTeam(coachId, teamKey, today);
         const present = attendance.filter((entry) => entry.status === 'present').length;
         setWorkspaceOverview({
           rosterCount: roster.length,
@@ -61,13 +61,12 @@ export default function CoachDashboardHome() {
           hasAttendance: attendance.length > 0,
         });
       }
-      if (coachId && !platformTeam) init();
       refreshTeam();
       setDataError(false);
     } catch {
       setDataError(true);
     }
-  }, [coachId, platformTeam, init, refreshTeam]));
+  }, [coachId, refreshTeam]));
 
   // State: auth still loading (with 8s timeout)
   if (authLoading && !isDevAuthenticated && !timedOut) {
@@ -256,6 +255,7 @@ export default function CoachDashboardHome() {
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('coachDashboard.teamAnalysis')} subtitle={t('coachDashboard.teamAnalysisSub')} onPress={() => router.push('/coach-dashboard/team-analysis')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('coachDashboard.sessionAssignment')} subtitle={t('coachDashboard.sessionAssignmentSub')} onPress={() => router.push('/coach-dashboard/assign')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.invitePlayers')} subtitle={t('team.inviteSub')} onPress={() => router.push('/coach-dashboard/invite')} />
+            <MenuItem icon={<UserPlus size={20} color={Colors.gold} />} title={t('team.joinRequests')} subtitle={t('team.joinRequestsSub')} onPress={() => router.push('/coach-dashboard/join-requests' as never)} />
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('team.leaderboards')} subtitle={t('team.leaderboardsSub')} onPress={() => router.push('/coach-dashboard/leaderboards')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('team.reports')} subtitle={t('team.reportsSub')} onPress={() => router.push('/coach-dashboard/reports')} />
             <MenuItem icon={<Shield size={20} color={Colors.gold} />} title={t('team.clubs')} subtitle={t('team.clubsSub')} onPress={() => router.push('/coach-dashboard/clubs')} />

@@ -10,6 +10,7 @@ export interface CoachRosterPlayer {
   team_key: string;
   display_name: string;
   position: string | null;
+  linked_user_id: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -48,7 +49,9 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-
 function loadState(): CoachWorkspaceState {
   const stored = readStorageJson<Partial<CoachWorkspaceState>>(STORAGE_KEY, {});
   return {
-    players: Array.isArray(stored.players) ? stored.players : [],
+    players: Array.isArray(stored.players)
+      ? stored.players.map((player) => ({ ...player, linked_user_id: player.linked_user_id ?? null }))
+      : [],
     attendance: Array.isArray(stored.attendance) ? stored.attendance : [],
     notes: Array.isArray(stored.notes) ? stored.notes : [],
   };
@@ -90,9 +93,28 @@ export function loadCoachRoster(coachId: string, teamKey: string): CoachRosterPl
     .sort((a, b) => a.display_name.localeCompare(b.display_name));
 }
 
+export function loadCoachRosterForTeam(coachId: string, teamKey: string): CoachRosterPlayer[] {
+  const keys = teamKey === 'default' ? ['default'] : [teamKey, 'default'];
+  return keys
+    .flatMap((key) => loadCoachRoster(coachId, key))
+    .filter((player, index, all) => all.findIndex((item) => item.id === player.id) === index)
+    .sort((a, b) => a.display_name.localeCompare(b.display_name));
+}
+
 export function loadCoachAttendance(coachId: string, teamKey: string, trainingDate: string): CoachAttendanceEntry[] {
   return scoped(loadState().attendance, coachId, teamKey)
     .filter((entry) => entry.training_date === trainingDate);
+}
+
+export function loadCoachAttendanceForTeam(
+  coachId: string,
+  teamKey: string,
+  trainingDate: string,
+): CoachAttendanceEntry[] {
+  const keys = teamKey === 'default' ? ['default'] : [teamKey, 'default'];
+  return keys
+    .flatMap((key) => loadCoachAttendance(coachId, key, trainingDate))
+    .filter((entry, index, all) => all.findIndex((item) => item.id === entry.id) === index);
 }
 
 export function loadCoachWorkspaceNotes(
@@ -105,6 +127,18 @@ export function loadCoachWorkspaceNotes(
     ? notes
     : notes.filter((note) => note.roster_player_id === rosterPlayerId);
   return filtered.sort((a, b) => b.created_at.localeCompare(a.created_at));
+}
+
+export function loadCoachWorkspaceNotesForTeam(
+  coachId: string,
+  teamKey: string,
+  rosterPlayerId?: string | null,
+): CoachWorkspaceNote[] {
+  const keys = teamKey === 'default' ? ['default'] : [teamKey, 'default'];
+  return keys
+    .flatMap((key) => loadCoachWorkspaceNotes(coachId, key, rosterPlayerId))
+    .filter((note, index, all) => all.findIndex((item) => item.id === note.id) === index)
+    .sort((a, b) => b.created_at.localeCompare(a.created_at));
 }
 
 export async function addCoachRosterPlayer(input: {
@@ -120,6 +154,7 @@ export async function addCoachRosterPlayer(input: {
     team_key: input.teamKey,
     display_name: input.displayName.trim(),
     position: input.position ?? null,
+    linked_user_id: null,
     created_at: now,
     updated_at: now,
   };
@@ -130,6 +165,12 @@ export async function addCoachRosterPlayer(input: {
   if (!canUseCloud(input.coachId) || !supabase) return { player, cloudError: null };
   const { error } = await supabase.from('coach_roster_players').upsert(player, { onConflict: 'id' });
   return { player, cloudError: error?.message ?? null };
+}
+
+export function cacheLinkedCoachRosterPlayer(player: CoachRosterPlayer): void {
+  const state = loadState();
+  state.players = mergeById(state.players, [player]);
+  saveState(state);
 }
 
 export async function removeCoachRosterPlayer(
@@ -232,9 +273,31 @@ export async function removeCoachWorkspaceNote(coachId: string, noteId: string):
 export async function syncCoachWorkspace(coachId: string, teamKey: string): Promise<string | null> {
   if (!canUseCloud(coachId) || !supabase) return null;
   const state = loadState();
-  const localPlayers = scoped(state.players, coachId, teamKey);
+  let localPlayers = scoped(state.players, coachId, teamKey);
   const localAttendance = scoped(state.attendance, coachId, teamKey);
   const localNotes = scoped(state.notes, coachId, teamKey);
+
+  // A verified account link created by a coach approval must never be erased by
+  // stale offline data from another device. Non-null cloud links win before the
+  // regular local-first workspace sync continues.
+  const cloudLinksResult = await supabase
+    .from('coach_roster_players')
+    .select('id, linked_user_id')
+    .eq('coach_id', coachId)
+    .eq('team_key', teamKey)
+    .not('linked_user_id', 'is', null);
+  if (cloudLinksResult.error) return cloudLinksResult.error.message;
+  const cloudLinks = new Map(
+    (cloudLinksResult.data ?? []).map((player) => [player.id, player.linked_user_id as string]),
+  );
+  if (cloudLinks.size > 0) {
+    localPlayers = localPlayers.map((player) => {
+      const linkedUserId = cloudLinks.get(player.id);
+      return linkedUserId ? { ...player, linked_user_id: linkedUserId } : player;
+    });
+    state.players = mergeById(state.players, localPlayers);
+    saveState(state);
+  }
 
   if (localPlayers.length) {
     const { error } = await supabase.from('coach_roster_players').upsert(localPlayers, { onConflict: 'id' });
@@ -263,5 +326,14 @@ export async function syncCoachWorkspace(coachId: string, teamKey: string): Prom
   state.attendance = mergeById(state.attendance, (attendanceResult.data ?? []) as CoachAttendanceEntry[]);
   state.notes = mergeById(state.notes, (notesResult.data ?? []) as CoachWorkspaceNote[]);
   saveState(state);
+  return null;
+}
+
+export async function syncCoachWorkspaceForTeam(coachId: string, teamKey: string): Promise<string | null> {
+  const keys = teamKey === 'default' ? ['default'] : [teamKey, 'default'];
+  for (const key of keys) {
+    const error = await syncCoachWorkspace(coachId, key);
+    if (error) return error;
+  }
   return null;
 }

@@ -5,7 +5,7 @@ import { useTheme } from '@/context/ThemeContext';
 
 export default function CoachDashboardLayout() {
   const pathname = usePathname();
-  const isPublic = pathname?.includes('login') || pathname?.includes('join');
+  const isPublic = pathname === '/coach-dashboard/login' || pathname === '/coach-dashboard/join';
   const { themeVersion } = useTheme();
   void themeVersion;
 
@@ -17,6 +17,7 @@ export default function CoachDashboardLayout() {
       <Stack.Screen name="create-team" />
       <Stack.Screen name="invite" />
       <Stack.Screen name="join" />
+      <Stack.Screen name="join-requests" />
       <Stack.Screen name="players" />
       <Stack.Screen name="attendance" />
       <Stack.Screen name="player-report" />

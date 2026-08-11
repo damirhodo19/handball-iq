@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useFocusEffect, router } from 'expo-router';
-import { Check, ChevronLeft, ChevronRight, Plus, Trash2, UserRound, Users, X } from 'lucide-react-native';
+import { Check, ChevronLeft, ChevronRight, Link2, Plus, Trash2, UserRound, Users, X } from 'lucide-react-native';
 
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
@@ -12,11 +12,11 @@ import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import {
   addCoachRosterPlayer,
-  loadCoachAttendance,
-  loadCoachRoster,
+  loadCoachAttendanceForTeam,
+  loadCoachRosterForTeam,
   removeCoachRosterPlayer,
   setCoachAttendance,
-  syncCoachWorkspace,
+  syncCoachWorkspaceForTeam,
   type CoachAttendanceEntry,
   type CoachAttendanceStatus,
   type CoachRosterPlayer,
@@ -56,15 +56,15 @@ export default function CoachAttendanceScreen() {
   const [message, setMessage] = useState('');
 
   const refresh = useCallback(() => {
-    setPlayers(loadCoachRoster(coachId, teamKey));
-    setAttendance(loadCoachAttendance(coachId, teamKey, date));
+    setPlayers(loadCoachRosterForTeam(coachId, teamKey));
+    setAttendance(loadCoachAttendanceForTeam(coachId, teamKey, date));
   }, [coachId, teamKey, date]);
 
   useFocusEffect(useCallback(() => {
     let active = true;
     refresh();
     (async () => {
-      const error = await syncCoachWorkspace(coachId, teamKey);
+      const error = await syncCoachWorkspaceForTeam(coachId, teamKey);
       if (!active) return;
       if (error) setMessage(t('team.workspaceSyncError'));
       refresh();
@@ -99,11 +99,11 @@ export default function CoachAttendanceScreen() {
     setSaving(false);
   };
 
-  const markAttendance = async (playerId: string, status: CoachAttendanceStatus) => {
+  const markAttendance = async (player: CoachRosterPlayer, status: CoachAttendanceStatus) => {
     const { cloudError } = await setCoachAttendance({
       coachId,
-      teamKey,
-      rosterPlayerId: playerId,
+      teamKey: player.team_key,
+      rosterPlayerId: player.id,
       trainingDate: date,
       status,
     });
@@ -121,7 +121,7 @@ export default function CoachAttendanceScreen() {
           text: t('common.delete'),
           style: 'destructive',
           onPress: async () => {
-            const error = await removeCoachRosterPlayer(coachId, teamKey, player.id);
+            const error = await removeCoachRosterPlayer(coachId, player.team_key, player.id);
             setMessage(error ? t('team.savedLocally') : '');
             refresh();
           },
@@ -219,6 +219,12 @@ export default function CoachAttendanceScreen() {
                     <Text style={styles.playerPosition}>
                       {player.position ? translatePosition(player.position, t) : t('common.notSet')}
                     </Text>
+                    {player.linked_user_id ? (
+                      <View style={styles.linkedRow}>
+                        <Link2 size={11} color={Colors.success} />
+                        <Text style={styles.linkedText}>{t('team.linkedAccount')}</Text>
+                      </View>
+                    ) : null}
                   </View>
                   <TouchableOpacity style={styles.deleteButton} onPress={() => confirmRemove(player)} accessibilityLabel={t('team.removePlayer')}>
                     <Trash2 size={17} color={Colors.textQuaternary} />
@@ -230,14 +236,14 @@ export default function CoachAttendanceScreen() {
                     icon={<Check size={17} color={status === 'present' ? Colors.background : Colors.success} />}
                     active={status === 'present'}
                     tone="present"
-                    onPress={() => markAttendance(player.id, 'present')}
+                    onPress={() => markAttendance(player, 'present')}
                   />
                   <AttendanceButton
                     label={t('team.absent')}
                     icon={<X size={17} color={status === 'absent' ? Colors.background : Colors.error} />}
                     active={status === 'absent'}
                     tone="absent"
-                    onPress={() => markAttendance(player.id, 'absent')}
+                    onPress={() => markAttendance(player, 'absent')}
                   />
                 </View>
                 {!status ? <Text style={styles.unmarked}>{t('team.notMarked')}</Text> : null}
@@ -328,6 +334,8 @@ const styles = StyleSheet.create({
   playerCopy: { flex: 1 },
   playerName: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary },
   playerPosition: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, marginTop: 2 },
+  linkedRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 3 },
+  linkedText: { fontFamily: 'Inter-SemiBold', fontSize: 10, color: Colors.success },
   deleteButton: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   attendanceRow: { flexDirection: 'row', gap: Spacing.sm },
   attendanceButton: { flex: 1, minHeight: 44, borderRadius: Radius.md, borderWidth: 1.5, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6 },

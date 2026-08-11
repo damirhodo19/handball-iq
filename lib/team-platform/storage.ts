@@ -139,6 +139,22 @@ export function localFetchTeams(clubId?: string): TeamRecord[] {
   return state.teams;
 }
 
+export function localCacheTeams(teams: TeamRecord[]): void {
+  const state = loadPlatformState();
+  state.teams = teams;
+  if (!state.activeTeamId || !teams.some((team) => team.id === state.activeTeamId)) {
+    state.activeTeamId = teams[0]?.id ?? null;
+  }
+  savePlatformState(state);
+}
+
+export function localCacheTeam(team: TeamRecord, makeActive = false): void {
+  const state = loadPlatformState();
+  state.teams = [team, ...state.teams.filter((item) => item.id !== team.id)];
+  if (makeActive || !state.activeTeamId) state.activeTeamId = team.id;
+  savePlatformState(state);
+}
+
 export function localSetActiveTeam(teamId: string): void {
   const state = loadPlatformState();
   state.activeTeamId = teamId;
@@ -213,6 +229,12 @@ export function localJoinTeamByToken(
 export function localFetchMembers(teamId: string): TeamMemberRecord[] {
   const state = loadPlatformState();
   return state.members[teamId] ?? [];
+}
+
+export function localCacheMembers(teamId: string, members: TeamMemberRecord[]): void {
+  const state = loadPlatformState();
+  state.members[teamId] = members;
+  savePlatformState(state);
 }
 
 export function localRemoveMember(teamId: string, userId: string): void {

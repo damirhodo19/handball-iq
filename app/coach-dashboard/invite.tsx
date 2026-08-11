@@ -9,22 +9,25 @@ import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useAuth } from '@/context/AuthContext';
-import { getActiveTeam, createInvitation, getInviteLink, getTeamQrPayload } from '@/lib/team-platform/platform';
+import { createInvitation, getInviteLink, getTeamQrPayload } from '@/lib/team-platform/platform';
+import { useTeamPlatform } from '@/hooks/useTeamPlatform';
 
 export default function InviteScreen() {
   const { t } = useTranslation();
   const { user } = useAuth();
+  const { team, refresh } = useTeamPlatform(user?.id, user?.email);
   const [email, setEmail] = useState('');
-  const [team, setTeam] = useState(getActiveTeam());
   const [inviteLink, setInviteLink] = useState('');
   const [qrPayload, setQrPayload] = useState('');
   const [message, setMessage] = useState('');
 
   useFocusEffect(useCallback(() => {
-    const t = getActiveTeam();
-    setTeam(t);
-    if (t) setQrPayload(getTeamQrPayload(t));
-  }, []));
+    refresh();
+  }, [refresh]));
+
+  useFocusEffect(useCallback(() => {
+    if (team) setQrPayload(getTeamQrPayload(team));
+  }, [team]));
 
   const handleEmailInvite = async () => {
     if (!team || !email.trim()) return;
@@ -88,6 +91,12 @@ export default function InviteScreen() {
 
         <Text style={styles.section}>{t('team.inviteByLink')}</Text>
         <Button label={t('team.generateLink')} onPress={handleLinkInvite} iconRight={<Link size={18} color={Colors.background} />} />
+
+        <Button
+          label={t('team.joinRequests')}
+          onPress={() => router.push('/coach-dashboard/join-requests' as never)}
+          variant="outline"
+        />
 
         <Text style={styles.section}>{t('team.inviteByQr')}</Text>
         <Card variant="gradient" shadow="card" style={styles.qrCard}>

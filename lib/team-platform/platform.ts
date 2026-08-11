@@ -15,6 +15,8 @@ import type {
   TeamLeaderboards,
   ReportPeriod,
   PlatformRole,
+  TeamJoinRequest,
+  MyTeamJoinRequest,
 } from './types';
 import {
   localCreateClub,
@@ -38,6 +40,9 @@ import {
   localFetchCalendar,
   localAddCalendarEvent,
   ensureDemoTeam,
+  localCacheTeams,
+  localCacheTeam,
+  localCacheMembers,
 } from './storage';
 import { computeTeamDashboard, computeLeaderboards, generateTeamReport, exportReportCsv, exportReportPdf } from './reports';
 import type { TeamReport } from './reports';
@@ -102,7 +107,9 @@ export async function createTeam(input: {
     user_id: input.created_by,
     member_role: 'head_coach',
   });
-  return { error: null, team: data as TeamRecord };
+  const createdTeam = data as TeamRecord;
+  localCacheTeam(createdTeam, true);
+  return { error: null, team: createdTeam };
 }
 
 export async function fetchTeams(clubId?: string): Promise<TeamRecord[]> {
@@ -110,8 +117,11 @@ export async function fetchTeams(clubId?: string): Promise<TeamRecord[]> {
   if (!supabase) return [];
   let q = supabase.from('teams').select('*').order('created_at', { ascending: false });
   if (clubId) q = q.eq('club_id', clubId);
-  const { data } = await q;
-  return (data ?? []) as TeamRecord[];
+  const { data, error } = await q;
+  if (error) return [];
+  const teams = (data ?? []) as TeamRecord[];
+  localCacheTeams(teams);
+  return teams;
 }
 
 export function getActiveTeam(): TeamRecord | null {
@@ -122,8 +132,12 @@ export function setActiveTeam(teamId: string): void {
   localSetActiveTeam(teamId);
 }
 
-export async function initCoachPlatform(coachId: string, coachName: string): Promise<TeamRecord> {
-  return ensureDemoTeam(coachId, coachName);
+export async function initCoachPlatform(coachId: string, coachName: string): Promise<TeamRecord | null> {
+  if (USE_LOCAL) return ensureDemoTeam(coachId, coachName);
+  const teams = await fetchTeams();
+  const active = getActiveTeam() ?? teams[0] ?? null;
+  if (active) setActiveTeam(active.id);
+  return active;
 }
 
 // ─── Members ─────────────────────────────────────────────────────────────────
@@ -132,70 +146,135 @@ export async function joinTeamByCode(
   code: string,
   userId: string,
   displayName?: string,
-): Promise<{ error: string | null; team: TeamRecord | null }> {
-  if (USE_LOCAL) return localJoinTeamByCode(code, userId, displayName);
+): Promise<{ error: string | null; team: TeamRecord | null; requestStatus?: 'pending' | 'approved' }> {
+  if (USE_LOCAL) {
+    const result = localJoinTeamByCode(code, userId, displayName);
+    return { ...result, requestStatus: result.team ? 'approved' : undefined };
+  }
   if (!supabase) return { error: 'Supabase not configured.', team: null };
-  const { data: team, error: teamError } = await supabase
-    .from('teams')
-    .select('*')
-    .eq('invitation_code', code.toUpperCase())
-    .maybeSingle();
-  if (teamError || !team) return { error: 'Invalid invitation code.', team: null };
-  const { error: memberError } = await supabase.from('team_members').insert({
-    team_id: team.id,
-    user_id: userId,
-    member_role: 'player',
+  const { data, error } = await supabase.rpc('request_team_join', {
+    p_code: code.trim(),
+    p_token: null,
   });
-  if (memberError?.code === '23505') return { error: 'Already a member.', team: null };
-  if (memberError) return { error: memberError.message, team: null };
-  await supabase.from('profiles').update({ team_id: team.id }).eq('id', userId);
-  return { error: null, team: team as TeamRecord };
+  if (error) return { error: error.message, team: null };
+  const result = Array.isArray(data) ? data[0] : data;
+  if (!result) return { error: 'Invalid invitation code.', team: null };
+  return {
+    error: result.already_member ? 'Already a member.' : null,
+    requestStatus: result.request_status,
+    team: {
+      id: result.team_id,
+      name: result.team_name,
+      club_id: null,
+      club_name: null,
+      country: null,
+      age_group: null,
+      team_category: null,
+      playing_level: null,
+      season: null,
+      logo_url: null,
+      description: null,
+      invitation_code: null,
+      created_by: '',
+      created_at: new Date().toISOString(),
+    },
+  };
 }
 
 export async function joinTeamByInviteToken(
   token: string,
   userId: string,
   displayName?: string,
-): Promise<{ error: string | null; team: TeamRecord | null }> {
-  if (USE_LOCAL) return localJoinTeamByToken(token, userId, displayName);
+): Promise<{ error: string | null; team: TeamRecord | null; requestStatus?: 'pending' | 'approved' }> {
+  if (USE_LOCAL) {
+    const result = localJoinTeamByToken(token, userId, displayName);
+    return { ...result, requestStatus: result.team ? 'approved' : undefined };
+  }
   if (!supabase) return { error: 'Supabase not configured.', team: null };
-  const { data: invite } = await supabase
-    .from('team_invitations')
-    .select('*')
-    .eq('invite_token', token)
-    .eq('status', 'pending')
-    .maybeSingle();
-  if (!invite) return { error: 'Invalid or expired invite.', team: null };
-  const { data: team } = await supabase.from('teams').select('*').eq('id', invite.team_id).single();
-  if (!team) return { error: 'Team not found.', team: null };
-  await supabase.from('team_invitations').update({ status: 'accepted', accepted_by: userId }).eq('id', invite.id);
-  return joinTeamByCode(team.invitation_code!, userId, displayName);
+  const { data, error } = await supabase.rpc('request_team_join', {
+    p_code: null,
+    p_token: token.trim(),
+  });
+  if (error) return { error: error.message, team: null };
+  const result = Array.isArray(data) ? data[0] : data;
+  if (!result) return { error: 'Invalid or expired invite.', team: null };
+  return {
+    error: result.already_member ? 'Already a member.' : null,
+    requestStatus: result.request_status,
+    team: {
+      id: result.team_id,
+      name: result.team_name,
+      club_id: null,
+      club_name: null,
+      country: null,
+      age_group: null,
+      team_category: null,
+      playing_level: null,
+      season: null,
+      logo_url: null,
+      description: null,
+      invitation_code: null,
+      created_by: '',
+      created_at: new Date().toISOString(),
+    },
+  };
 }
 
 export async function fetchTeamMembers(teamId: string): Promise<TeamMemberRecord[]> {
   if (USE_LOCAL) return localFetchMembers(teamId);
   if (!supabase) return [];
-  const { data: members } = await supabase.from('team_members').select('*').eq('team_id', teamId);
-  if (!members?.length) return [];
-  const userIds = members.map((m: any) => m.user_id);
-  const { data: profiles } = await supabase.from('profiles').select('*').in('id', userIds);
-  const { data: devData } = await supabase.from('player_development').select('total_xp, statistics').in('user_id', userIds);
-  const profileMap = new Map((profiles ?? []).map((p: any) => [p.id, p]));
-  const devMap = new Map((devData ?? []).map((d: any) => [d.user_id, d]));
-  return members.map((m: any) => {
-    const p = profileMap.get(m.user_id);
-    const d = devMap.get(m.user_id);
-    return {
-      ...m,
-      display_name: p?.display_name ?? (`${p?.first_name ?? ''} ${p?.last_name ?? ''}`.trim() || 'Player'),
-      position: p?.primary_position ?? p?.position,
-      decision_score: d?.statistics?.decisionAccuracy ?? p?.handball_iq_score ?? 0,
-      total_xp: d?.total_xp ?? 0,
-      streak: p?.streak ?? 0,
-      weekly_activity: 0,
-      improvement: d?.statistics?.improvementTrend ?? 0,
-    };
+  const { data, error } = await supabase.rpc('team_list_members', { p_team_id: teamId });
+  if (error) return [];
+  const members = ((data ?? []) as any[]).map((member) => ({
+    ...member,
+    id: member.member_id,
+    position: member.primary_position,
+  })) as TeamMemberRecord[];
+  localCacheMembers(teamId, members);
+  return members;
+}
+
+export async function fetchTeamJoinRequests(teamId: string): Promise<{ error: string | null; requests: TeamJoinRequest[] }> {
+  if (USE_LOCAL) return { error: null, requests: [] };
+  if (!supabase) return { error: 'Supabase not configured.', requests: [] };
+  const { data, error } = await supabase.rpc('list_team_join_requests', {
+    p_team_id: teamId,
+    p_status: 'pending',
   });
+  return { error: error?.message ?? null, requests: (data ?? []) as TeamJoinRequest[] };
+}
+
+export async function fetchMyTeamJoinRequests(): Promise<{ error: string | null; requests: MyTeamJoinRequest[] }> {
+  if (USE_LOCAL) return { error: null, requests: [] };
+  if (!supabase) return { error: 'Supabase not configured.', requests: [] };
+  const { data, error } = await supabase.rpc('list_my_team_join_requests');
+  return { error: error?.message ?? null, requests: (data ?? []) as MyTeamJoinRequest[] };
+}
+
+export async function decideTeamJoinRequest(input: {
+  requestId: string;
+  approve: boolean;
+  rosterPlayerId?: string | null;
+}): Promise<{ error: string | null; rosterPlayer: import('@/lib/coach-workspace').CoachRosterPlayer | null }> {
+  if (USE_LOCAL) return { error: null, rosterPlayer: null };
+  if (!supabase) return { error: 'Supabase not configured.', rosterPlayer: null };
+  const { data, error } = await supabase.rpc('decide_team_join_request', {
+    p_request_id: input.requestId,
+    p_approve: input.approve,
+    p_roster_player_id: input.rosterPlayerId ?? null,
+  });
+  if (error) return { error: error.message, rosterPlayer: null };
+  const result = Array.isArray(data) ? data[0] : data;
+  if (!input.approve || !result?.roster_player_id) return { error: null, rosterPlayer: null };
+  const { data: roster, error: rosterError } = await supabase
+    .from('coach_roster_players')
+    .select('*')
+    .eq('id', result.roster_player_id)
+    .maybeSingle();
+  return {
+    error: rosterError?.message ?? null,
+    rosterPlayer: (roster ?? null) as import('@/lib/coach-workspace').CoachRosterPlayer | null,
+  };
 }
 
 export async function removeTeamMember(teamId: string, userId: string): Promise<{ error: string | null }> {

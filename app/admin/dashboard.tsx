@@ -152,6 +152,7 @@ export default function AdminDashboardScreen() {
         {/* Navigation */}
         <Animated.View entering={FadeInDown.delay(450).duration(500)} style={{ marginTop: Spacing.lg, gap: Spacing.sm }}>
           <Button label={t('admin.manageUsers')} onPress={() => router.push('/admin/users' as never)} variant="dark" icon={<Users size={20} color={Colors.gold} />} iconRight={<ChevronRight size={20} color={Colors.gold} />} />
+          <Button label={t('admin.manageTeams')} onPress={() => router.push('/admin/teams' as never)} variant="dark" icon={<Users size={20} color={Colors.gold} />} iconRight={<ChevronRight size={20} color={Colors.gold} />} />
           <Button label={t('admin.manageScenarios')} onPress={() => router.push('/admin/scenarios')} variant="gold" iconRight={<ChevronRight size={20} color={Colors.background} />} />
           <Button label={t('admin.contentStatistics')} onPress={() => router.push('/admin/statistics')} variant="outline" iconRight={<ChevronRight size={20} color={Colors.gold} />} />
         </Animated.View>

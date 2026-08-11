@@ -8,7 +8,7 @@ import { ScreenBackground } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { useTranslation } from '@/hooks/useTranslation';
-import { localFetchClubs, localFetchTeams } from '@/lib/team-platform/storage';
+import { fetchClubs, fetchTeams, setActiveTeam } from '@/lib/team-platform/platform';
 import type { Club, TeamRecord } from '@/lib/team-platform/types';
 
 export default function ClubsScreen() {
@@ -17,8 +17,14 @@ export default function ClubsScreen() {
   const [teams, setTeams] = useState<TeamRecord[]>([]);
 
   useFocusEffect(useCallback(() => {
-    setClubs(localFetchClubs());
-    setTeams(localFetchTeams());
+    let active = true;
+    (async () => {
+      const [loadedClubs, loadedTeams] = await Promise.all([fetchClubs(), fetchTeams()]);
+      if (!active) return;
+      setClubs(loadedClubs);
+      setTeams(loadedTeams);
+    })();
+    return () => { active = false; };
   }, []));
 
   return (
@@ -46,7 +52,7 @@ export default function ClubsScreen() {
             </View>
             <Text style={styles.teamsLabel}>{t('team.teams')}</Text>
             {teams.filter((tm) => tm.club_id === club.id).map((team) => (
-              <PressableCard key={team.id} onPress={() => router.push('/coach-dashboard')} variant="gradient" shadow="card" style={styles.teamRow}>
+              <PressableCard key={team.id} onPress={() => { setActiveTeam(team.id); router.push('/coach-dashboard'); }} variant="gradient" shadow="card" style={styles.teamRow}>
                 <Text style={styles.teamName}>{team.name}</Text>
                 <Text style={styles.teamCat}>{team.team_category ?? team.age_group ?? '—'}</Text>
                 <ChevronRight size={16} color={Colors.gold} />
