@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Alert } from 'rea
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
-  FileText, CheckCircle2, Archive, PlusCircle, Download, Upload, BarChart3, Layers, TrendingUp, AlertTriangle, LogOut, ChevronRight, Clock
+  FileText, CheckCircle2, Archive, PlusCircle, Download, Upload, BarChart3, Layers, TrendingUp, AlertTriangle, LogOut, ChevronRight, Clock, Users
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius, Typography } from '@/lib/theme';
 import { Card } from '@/components/Card';
@@ -151,6 +151,7 @@ export default function AdminDashboardScreen() {
 
         {/* Navigation */}
         <Animated.View entering={FadeInDown.delay(450).duration(500)} style={{ marginTop: Spacing.lg, gap: Spacing.sm }}>
+          <Button label={t('admin.manageUsers')} onPress={() => router.push('/admin/users' as never)} variant="dark" icon={<Users size={20} color={Colors.gold} />} iconRight={<ChevronRight size={20} color={Colors.gold} />} />
           <Button label={t('admin.manageScenarios')} onPress={() => router.push('/admin/scenarios')} variant="gold" iconRight={<ChevronRight size={20} color={Colors.background} />} />
           <Button label={t('admin.contentStatistics')} onPress={() => router.push('/admin/statistics')} variant="outline" iconRight={<ChevronRight size={20} color={Colors.gold} />} />
         </Animated.View>
