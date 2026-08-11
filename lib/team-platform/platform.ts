@@ -33,7 +33,9 @@ import {
   localRemoveMember,
   localCreateInvitation,
   localFetchInvitations,
+  localRevokeInvitation,
   localGetInviteLink,
+  localGetTeamCodeLink,
   localCreateAssignment,
   localFetchAssignments,
   localCompleteAssignment,
@@ -165,7 +167,7 @@ export async function joinTeamByCode(
   const result = Array.isArray(data) ? data[0] : data;
   if (!result) return { error: 'Invalid invitation code.', team: null };
   return {
-    error: result.already_member ? 'Already a member.' : null,
+    error: null,
     requestStatus: result.request_status,
     team: {
       id: result.team_id,
@@ -204,7 +206,7 @@ export async function joinTeamByInviteToken(
   const result = Array.isArray(data) ? data[0] : data;
   if (!result) return { error: 'Invalid or expired invite.', team: null };
   return {
-    error: result.already_member ? 'Already a member.' : null,
+    error: null,
     requestStatus: result.request_status,
     team: {
       id: result.team_id,
@@ -308,8 +310,26 @@ export async function createInvitation(input: {
 export async function fetchInvitations(teamId: string): Promise<TeamInvitation[]> {
   if (USE_LOCAL) return localFetchInvitations(teamId);
   if (!supabase) return [];
-  const { data } = await supabase.from('team_invitations').select('*').eq('team_id', teamId);
+  const { data } = await supabase
+    .from('team_invitations')
+    .select('*')
+    .eq('team_id', teamId)
+    .order('created_at', { ascending: false });
   return (data ?? []) as TeamInvitation[];
+}
+
+export async function revokeInvitation(invitationId: string): Promise<{ error: string | null }> {
+  if (USE_LOCAL) {
+    localRevokeInvitation(invitationId);
+    return { error: null };
+  }
+  if (!supabase) return { error: 'Supabase not configured.' };
+  const { error } = await supabase
+    .from('team_invitations')
+    .update({ status: 'revoked' })
+    .eq('id', invitationId)
+    .eq('status', 'pending');
+  return { error: error?.message ?? null };
 }
 
 export function getInviteLink(token: string): string {
@@ -317,12 +337,7 @@ export function getInviteLink(token: string): string {
 }
 
 export function getTeamQrPayload(team: TeamRecord): string {
-  return JSON.stringify({
-    type: 'handball_iq_team',
-    code: team.invitation_code,
-    teamId: team.id,
-    teamName: team.name,
-  });
+  return team.invitation_code ? localGetTeamCodeLink(team.invitation_code) : '';
 }
 
 // ─── Assignments ─────────────────────────────────────────────────────────────

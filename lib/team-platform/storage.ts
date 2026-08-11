@@ -201,7 +201,7 @@ export function localJoinTeamByCode(
 
   const members = state.members[team.id] ?? [];
   if (members.some((m) => m.user_id === userId)) {
-    return { error: 'Already a member.', team: null };
+    return { error: null, team };
   }
 
   members.push({
@@ -287,11 +287,38 @@ export function localCreateInvitation(input: {
 }
 
 export function localFetchInvitations(teamId: string): TeamInvitation[] {
-  return loadPlatformState().invitations[teamId] ?? [];
+  return [...(loadPlatformState().invitations[teamId] ?? [])]
+    .sort((a, b) => b.created_at.localeCompare(a.created_at));
+}
+
+export function localRevokeInvitation(invitationId: string): void {
+  const state = loadPlatformState();
+  for (const invitations of Object.values(state.invitations)) {
+    const invitation = invitations.find((item) => item.id === invitationId);
+    if (invitation?.status === 'pending') {
+      invitation.status = 'revoked';
+      savePlatformState(state);
+      return;
+    }
+  }
 }
 
 export function localGetInviteLink(token: string): string {
-  return `handballiq://join/${token}`;
+  const configuredUrl = process.env.EXPO_PUBLIC_APP_URL?.trim().replace(/\/$/, '');
+  const browserOrigin = typeof window !== 'undefined' && window.location?.origin
+    ? window.location.origin
+    : null;
+  const appUrl = configuredUrl || browserOrigin || 'https://handball-iq.vercel.app';
+  return `${appUrl}/coach-dashboard/join?token=${encodeURIComponent(token)}`;
+}
+
+export function localGetTeamCodeLink(code: string): string {
+  const configuredUrl = process.env.EXPO_PUBLIC_APP_URL?.trim().replace(/\/$/, '');
+  const browserOrigin = typeof window !== 'undefined' && window.location?.origin
+    ? window.location.origin
+    : null;
+  const appUrl = configuredUrl || browserOrigin || 'https://handball-iq.vercel.app';
+  return `${appUrl}/coach-dashboard/join?code=${encodeURIComponent(code)}`;
 }
 
 // ─── Assignments ─────────────────────────────────────────────────────────────

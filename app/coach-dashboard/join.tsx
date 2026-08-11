@@ -1,13 +1,17 @@
-import { useCallback, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TextInput } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { Users } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { ScreenBackground } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
-import { isValidInviteCode, isValidInviteToken } from '@/lib/form-validation';
+import { extractInviteToken, isValidInviteCode, isValidInviteToken } from '@/lib/form-validation';
 import { mapServiceError } from '@/lib/map-error';
+import {
+  clearPendingTeamJoin,
+  rememberPendingTeamJoin,
+} from '@/lib/team-platform/pending-join';
 import { fetchMyTeamJoinRequests, joinTeamByCode, joinTeamByInviteToken } from '@/lib/team-platform/platform';
 import type { MyTeamJoinRequest } from '@/lib/team-platform/types';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -15,7 +19,11 @@ import { useAuth } from '@/context/AuthContext';
 
 export default function JoinTeamScreen() {
   const { t } = useTranslation();
-  const { user } = useAuth();
+  const { token: routeToken, code: routeCode } = useLocalSearchParams<{
+    token?: string;
+    code?: string;
+  }>();
+  const { user, loading: authLoading } = useAuth();
   const [code, setCode] = useState('');
   const [token, setToken] = useState('');
   const [error, setError] = useState('');
@@ -23,7 +31,19 @@ export default function JoinTeamScreen() {
   const [loading, setLoading] = useState(false);
   const [requests, setRequests] = useState<MyTeamJoinRequest[]>([]);
 
-  const userId = user?.id ?? `player_${Date.now()}`;
+  useEffect(() => {
+    if (typeof routeToken === 'string' && routeToken.trim()) {
+      const parsedToken = extractInviteToken(routeToken);
+      setToken(parsedToken);
+      rememberPendingTeamJoin({ token: parsedToken });
+      return;
+    }
+    if (typeof routeCode === 'string' && routeCode.trim()) {
+      const normalizedCode = routeCode.trim().toUpperCase();
+      setCode(normalizedCode);
+      rememberPendingTeamJoin({ code: normalizedCode });
+    }
+  }, [routeCode, routeToken]);
 
   const loadRequests = useCallback(async () => {
     if (!user?.id) return;
@@ -39,29 +59,62 @@ export default function JoinTeamScreen() {
     setError('');
     setSuccess('');
     if (!isValidInviteCode(code)) { setError(t('team.errorEmptyCode')); return; }
+    if (!user?.id) {
+      rememberPendingTeamJoin({ code });
+      router.push('/(auth)/login');
+      return;
+    }
     setLoading(true);
-    const { error: err, team, requestStatus } = await joinTeamByCode(code.trim(), userId, user?.email ?? t('role.player'));
+    const { error: err, team, requestStatus } = await joinTeamByCode(code.trim(), user.id, user.email ?? t('role.player'));
     setLoading(false);
-    if (err) setError(mapServiceError(err, t));
-    else setSuccess(requestStatus === 'pending'
-      ? t('team.joinRequestSent', { name: team?.name ?? '' })
-      : t('team.joinSuccess', { name: team?.name ?? '' }));
-    if (!err) loadRequests();
+    if (err) {
+      if (/invalid|expired/i.test(err)) clearPendingTeamJoin();
+      setError(mapServiceError(err, t));
+    } else {
+      setSuccess(requestStatus === 'pending'
+        ? t('team.joinRequestSent', { name: team?.name ?? '' })
+        : t('team.joinSuccess', { name: team?.name ?? '' }));
+    }
+    if (!err) {
+      clearPendingTeamJoin();
+      loadRequests();
+    }
   };
 
   const handleJoinLink = async () => {
     setError('');
     setSuccess('');
     if (!isValidInviteToken(token)) { setError(t('team.errorEmptyLink')); return; }
-    const linkToken = token.includes('/') ? token.split('/').pop()! : token.trim();
+    const linkToken = extractInviteToken(token);
+    if (!user?.id) {
+      rememberPendingTeamJoin({ token: linkToken });
+      router.push('/(auth)/login');
+      return;
+    }
     setLoading(true);
-    const { error: err, team, requestStatus } = await joinTeamByInviteToken(linkToken, userId, user?.email ?? t('role.player'));
+    const { error: err, team, requestStatus } = await joinTeamByInviteToken(linkToken, user.id, user.email ?? t('role.player'));
     setLoading(false);
-    if (err) setError(mapServiceError(err, t));
-    else setSuccess(requestStatus === 'pending'
-      ? t('team.joinRequestSent', { name: team?.name ?? '' })
-      : t('team.joinSuccess', { name: team?.name ?? '' }));
-    if (!err) loadRequests();
+    if (err) {
+      if (/invalid|expired/i.test(err)) clearPendingTeamJoin();
+      setError(mapServiceError(err, t));
+    } else {
+      setSuccess(requestStatus === 'pending'
+        ? t('team.joinRequestSent', { name: team?.name ?? '' })
+        : t('team.joinSuccess', { name: team?.name ?? '' }));
+    }
+    if (!err) {
+      clearPendingTeamJoin();
+      loadRequests();
+    }
+  };
+
+  const continueToLogin = () => {
+    const linkToken = extractInviteToken(token);
+    rememberPendingTeamJoin({
+      token: linkToken || null,
+      code: linkToken ? null : code,
+    });
+    router.push('/(auth)/login');
   };
 
   return (
@@ -76,36 +129,48 @@ export default function JoinTeamScreen() {
           <Users size={24} color={Colors.gold} />
         </View>
 
-        <Text style={styles.label}>{t('team.enterCode')}</Text>
-        <TextInput style={styles.input} value={code} onChangeText={setCode} placeholder={t('team.codePlaceholder')} placeholderTextColor={Colors.textQuaternary} autoCapitalize="characters" />
-        <Button label={t('team.joinByCode')} onPress={handleJoinCode} loading={loading} />
-
-        <Text style={styles.divider}>{t('common.or')}</Text>
-
-        <Text style={styles.label}>{t('team.enterLink')}</Text>
-        <TextInput style={styles.input} value={token} onChangeText={setToken} placeholder={t('team.linkPlaceholder')} placeholderTextColor={Colors.textQuaternary} autoCapitalize="none" />
-        <Button label={t('team.joinByLink')} onPress={handleJoinLink} variant="outline" loading={loading} />
-
-        {error ? <Text style={styles.error}>{error}</Text> : null}
-        {success ? <Text style={styles.success}>{success}</Text> : null}
-
-        {requests.length > 0 ? (
-          <View style={styles.requestList}>
-            <Text style={styles.requestTitle}>{t('team.myJoinRequests')}</Text>
-            {requests.map((request) => (
-              <View key={request.request_id} style={styles.requestRow}>
-                <Text style={styles.requestTeam}>{request.team_name}</Text>
-                <Text style={[
-                  styles.requestStatus,
-                  request.request_status === 'approved' && { color: Colors.success },
-                  request.request_status === 'rejected' && { color: Colors.error },
-                ]}>
-                  {t(`team.requestStatus.${request.request_status}`)}
-                </Text>
-              </View>
-            ))}
+        {authLoading ? (
+          <Text style={styles.loadingText}>{t('common.loading')}</Text>
+        ) : !user ? (
+          <View style={styles.authCard}>
+            <Text style={styles.authTitle}>{t('team.loginToJoin')}</Text>
+            <Text style={styles.authText}>{t('team.loginToJoinSub')}</Text>
+            <Button label={t('team.signInToContinue')} onPress={continueToLogin} />
           </View>
-        ) : null}
+        ) : (
+          <Fragment>
+            <Text style={styles.label}>{t('team.enterCode')}</Text>
+            <TextInput style={styles.input} value={code} onChangeText={setCode} placeholder={t('team.codePlaceholder')} placeholderTextColor={Colors.textQuaternary} autoCapitalize="characters" />
+            <Button label={t('team.joinByCode')} onPress={handleJoinCode} loading={loading} />
+
+            <Text style={styles.divider}>{t('common.or')}</Text>
+
+            <Text style={styles.label}>{t('team.enterLink')}</Text>
+            <TextInput style={styles.input} value={token} onChangeText={setToken} placeholder={t('team.linkPlaceholder')} placeholderTextColor={Colors.textQuaternary} autoCapitalize="none" />
+            <Button label={t('team.joinByLink')} onPress={handleJoinLink} variant="outline" loading={loading} />
+
+            {error ? <Text style={styles.error}>{error}</Text> : null}
+            {success ? <Text style={styles.success}>{success}</Text> : null}
+
+            {requests.length > 0 ? (
+              <View style={styles.requestList}>
+                <Text style={styles.requestTitle}>{t('team.myJoinRequests')}</Text>
+                {requests.map((request) => (
+                  <View key={request.request_id} style={styles.requestRow}>
+                    <Text style={styles.requestTeam}>{request.team_name}</Text>
+                    <Text style={[
+                      styles.requestStatus,
+                      request.request_status === 'approved' && { color: Colors.success },
+                      request.request_status === 'rejected' && { color: Colors.error },
+                    ]}>
+                      {t(`team.requestStatus.${request.request_status}`)}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+            ) : null}
+          </Fragment>
+        )}
       </ScrollView>
     </ScreenBackground>
   );
@@ -116,6 +181,10 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
   headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13 },
+  loadingText: { color: Colors.textSecondary, fontFamily: 'Inter-Medium', textAlign: 'center', paddingVertical: Spacing.xl },
+  authCard: { gap: Spacing.md, padding: Spacing.lg, borderRadius: Radius.lg, borderWidth: 1, borderColor: Colors.border, backgroundColor: Colors.surface },
+  authTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 18, color: Colors.textPrimary, textAlign: 'center' },
+  authText: { fontFamily: 'Inter-Regular', fontSize: 14, lineHeight: 20, color: Colors.textSecondary, textAlign: 'center' },
   label: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textSecondary },
   input: { backgroundColor: Colors.surfaceRaised, borderRadius: Radius.md, borderWidth: 1.5, borderColor: Colors.border, color: Colors.textPrimary, fontFamily: 'Inter-Medium', fontSize: 16, paddingHorizontal: Spacing.md, paddingVertical: 14 },
   divider: { textAlign: 'center', color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', marginVertical: Spacing.sm },

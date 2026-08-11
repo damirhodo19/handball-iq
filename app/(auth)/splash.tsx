@@ -16,6 +16,7 @@ import { useDevAuth } from '@/context/DevAuthContext';
 import { Button } from '@/components/Button';
 import { useTranslation } from '@/hooks/useTranslation';
 import { supabase } from '@/lib/supabase';
+import { getPendingTeamJoinPath } from '@/lib/team-platform/pending-join';
 import { translations, SupportedLanguage } from '@/locales';
 
 function splashCopy(lang: SupportedLanguage) {
@@ -108,7 +109,8 @@ export default function SplashScreen() {
     if (loading) return;
 
     if (session && profile?.onboarded) {
-      router.replace('/(tabs)');
+      const pendingJoinPath = getPendingTeamJoinPath();
+      router.replace((pendingJoinPath ?? '/(tabs)') as never);
       return;
     }
     if (session) {

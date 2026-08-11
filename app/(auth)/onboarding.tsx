@@ -36,6 +36,7 @@ import {
   CoachGoalId,
 } from '@/lib/platform/types';
 import { normalizeHandballPosition } from '@/lib/platform/resolve-position';
+import { getPendingTeamJoinPath } from '@/lib/team-platform/pending-join';
 
 const LANGUAGES: { code: SupportedLanguage; labelKey: string; flag: string }[] = [
   { code: 'en', labelKey: 'settings.languageEn', flag: '🇬🇧' },
@@ -285,7 +286,8 @@ export default function OnboardingScreen() {
     if (role === 'coach') {
       router.replace('/coach-dashboard');
     } else {
-      router.replace('/(tabs)/home');
+      const pendingJoinPath = getPendingTeamJoinPath();
+      router.replace((pendingJoinPath ?? '/(tabs)/home') as never);
     }
   }, [
     role, country, position, secondaryPosition, dominantHand, playingLevel, developmentGoals,
