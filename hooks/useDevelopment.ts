@@ -101,7 +101,7 @@ export function useDevelopment() {
     const todayProgramSession = getTodayProgramSession(snapshot.state);
     const recommendedPrograms = recommendPrograms(
       position,
-      profile.developmentGoal,
+      profile.developmentGoals.length ? profile.developmentGoals : profile.developmentGoal,
       weaknesses.weakCategories[0]?.name,
     );
 
@@ -121,7 +121,7 @@ export function useDevelopment() {
       todayProgramSession,
       recommendedPrograms,
     };
-  }, [tick, position, profile.developmentGoal]);
+  }, [tick, position, profile.developmentGoal, profile.developmentGoals.join('|')]);
 
   const recordActivity = useCallback((payload: ActivityPayload): ProcessResult => {
     const result = processActivity(payload);

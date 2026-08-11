@@ -212,22 +212,22 @@ export function isProgramEligible(programId: ProgramId | string, position: Handb
 /** Rank eligible programs for recommendation (core first, then goal match, then secondary) */
 export function recommendPrograms(
   position: HandballPosition,
-  developmentGoal: string | null | undefined,
+  developmentGoal: string | string[] | null | undefined,
   weakestCategory?: string | null,
 ): DevelopmentProgramDef[] {
   const core = getCoreProgramForPosition(position);
   const eligible = getEligiblePrograms(position);
-  const goal = developmentGoal as PlayerGoalId | undefined;
+  const goals = (Array.isArray(developmentGoal) ? developmentGoal : developmentGoal ? [developmentGoal] : []) as PlayerGoalId[];
 
   return [...eligible].sort((a, b) => {
     const score = (p: DevelopmentProgramDef) => {
       let s = 0;
       if (p.id === core.id) s += 100;
-      if (goal && p.goalTags.includes(goal)) s += 40;
+      s += goals.filter((goal) => p.goalTags.includes(goal)).length * 40;
       if (weakestCategory && p.weeks.some((w) => w.categories.includes(weakestCategory as ScenarioCategory))) s += 25;
-      if (p.id === 'defensive_specialist' && goal === 'Defence') s += 30;
-      if (p.id === 'fast_break_mastery' && (goal === 'Attack' || goal === 'Game Intelligence')) s += 15;
-      if (p.id === 'pressure_decisions' && (goal === 'Mental Preparation' || goal === 'Match Preparation')) s += 20;
+      if (p.id === 'defensive_specialist' && goals.includes('Defence')) s += 30;
+      if (p.id === 'fast_break_mastery' && goals.some((goal) => goal === 'Attack' || goal === 'Game Intelligence')) s += 15;
+      if (p.id === 'pressure_decisions' && goals.some((goal) => goal === 'Mental Preparation' || goal === 'Match Preparation')) s += 20;
       return s;
     };
     return score(b) - score(a);

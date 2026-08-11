@@ -20,10 +20,11 @@ import { clearActiveTrainingSession } from '@/lib/development/active-session';
 import { localizeContent } from '@/lib/content-localize';
 import { resolveContent, filterResolvedScenarios, resolveRecommendedScenarios } from '@/lib/platform/content-resolver';
 import { getActiveMode } from '@/lib/platform/active-mode';
-import { getPositionModule } from '@/lib/platform/position-modules';
+import { getPositionModule, isHandballPosition } from '@/lib/platform/position-modules';
 import { loadProfile } from '@/lib/storage';
 import type { ScenarioCategory } from '@/content/scenario-bank/types';
 import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
+import type { HandballPosition } from '@/lib/positions';
 
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Zap, ArrowRight, Target, Shield, Crosshair, Users, Clock,
@@ -43,8 +44,21 @@ const SESSION_DURATION_MIN = 10;
 export default function TrainingScreen() {
   const { t, lang } = useTranslation();
   const profile = loadProfile();
-  const position = resolvePlayerPosition(profile);
-  const resolved = useMemo(() => resolveContent({ profile, activeMode: getActiveMode() }), [profile]);
+  const primaryPosition = resolvePlayerPosition(profile);
+  const availablePositions = [profile.position, profile.secondaryPosition]
+    .filter((value): value is HandballPosition => isHandballPosition(value));
+  const [selectedPosition, setSelectedPosition] = useState<HandballPosition | null>(primaryPosition);
+  const position = selectedPosition && availablePositions.includes(selectedPosition)
+    ? selectedPosition
+    : primaryPosition;
+  const effectiveProfile = useMemo(
+    () => ({ ...profile, position: position ?? profile.position }),
+    [profile, position],
+  );
+  const resolved = useMemo(
+    () => resolveContent({ profile: effectiveProfile, activeMode: getActiveMode() }),
+    [effectiveProfile],
+  );
   const categories = resolved.training.categories;
   const dailySession = resolved.training.dailySession;
   const sessions = loadSessions();
@@ -61,8 +75,8 @@ export default function TrainingScreen() {
 
   const recommendedPool = useMemo(() => {
     if (!position) return [];
-    return resolveRecommendedScenarios(position, profile, 12);
-  }, [position, profile]);
+    return resolveRecommendedScenarios(position, effectiveProfile, 12);
+  }, [position, effectiveProfile]);
 
   const filteredCount = useMemo(() => {
     return filterResolvedScenarios(recommendedPool, {
@@ -112,6 +126,26 @@ export default function TrainingScreen() {
             <Text style={styles.featuredTitle}>{t('home.setupProfileCta')}</Text>
           </PressableCard>
         </View>
+
+        {availablePositions.length > 1 ? (
+          <Animated.View entering={FadeInDown.delay(20).duration(500)}>
+            <Text style={styles.sectionLabel}>{t('training.position')}</Text>
+            <View style={styles.filterRow}>
+              {availablePositions.map((playerPosition) => (
+                <FilterChip
+                  key={playerPosition}
+                  label={translatePosition(playerPosition, t)}
+                  active={position === playerPosition}
+                  onPress={() => {
+                    setSelectedPosition(playerPosition);
+                    setFilterCategory(null);
+                    setFilterDifficulty(null);
+                  }}
+                />
+              ))}
+            </View>
+          </Animated.View>
+        ) : null}
       </ScreenBackground>
     );
   }

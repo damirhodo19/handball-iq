@@ -11,6 +11,7 @@ import { getProgramDef, isProgramEligible, type ProgramId } from '@/lib/developm
 import { enrollInProgram } from '@/lib/development/program-progress';
 import { loadProfile } from '@/lib/storage';
 import { isHandballPosition } from '@/lib/platform/position-modules';
+import type { HandballPosition } from '@/lib/positions';
 import { useDevelopment } from '@/hooks/useDevelopment';
 
 export default function ProgramDetail() {
@@ -18,7 +19,8 @@ export default function ProgramDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const def = getProgramDef(id as ProgramId);
   const profile = loadProfile();
-  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const positions = [profile.position, profile.secondaryPosition]
+    .filter((value): value is HandballPosition => isHandballPosition(value));
   const { activeProgram, refresh } = useDevelopment();
 
   if (!def) {
@@ -29,16 +31,17 @@ export default function ProgramDetail() {
     );
   }
 
-  const eligible = position ? isProgramEligible(def.id, position) : false;
+  const programPosition = positions.find((position) => isProgramEligible(def.id, position)) ?? null;
+  const eligible = programPosition !== null;
   const isCurrent = activeProgram?.programId === def.id && !activeProgram.completed;
 
   const onEnroll = () => {
-    if (!position) {
+    if (!programPosition) {
       Alert.alert(t('sprint5.programs.title'), t('home.completeProfileTitle'));
       return;
     }
     try {
-      enrollInProgram(def.id, position);
+      enrollInProgram(def.id, programPosition);
       refresh();
       router.replace('/programs');
     } catch (e) {

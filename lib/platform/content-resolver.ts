@@ -76,7 +76,7 @@ function levelToDifficulty(level: string | null | undefined): Difficulty {
 function scoreScenario(
   s: BankScenario,
   position: HandballPosition,
-  goal: string | null,
+  goals: string[],
   weakCategories: string[],
   preferredDifficulty: Difficulty,
   incorrectTypes: string[],
@@ -101,9 +101,11 @@ function scoreScenario(
     score += 5;
   }
 
-  if (goal && mod) {
-    const boost = mod.goalCategoryBoost[goal as PlayerGoalId];
-    if (boost?.includes(s.category)) score += 20;
+  if (mod) {
+    for (const goal of goals) {
+      const boost = mod.goalCategoryBoost[goal as PlayerGoalId];
+      if (boost?.includes(s.category)) score += 20;
+    }
   }
 
   if (weakCategories.some((w) => w.toLowerCase() === s.category.toLowerCase())) {
@@ -151,6 +153,9 @@ export function resolveRecommendedScenarios(
   const load = computeDevelopmentLoad();
   const targetCount = count ?? load.scenarioCount;
   const preferredDifficulty = levelToDifficulty(profile.playingLevel);
+  const developmentGoals = profile.developmentGoals.length
+    ? profile.developmentGoals
+    : profile.developmentGoal ? [profile.developmentGoal] : [];
   const state = loadDevelopmentState();
   const weakCategories = Object.entries(state.statistics.byCategory)
     .filter(([, v]) => v.total >= 3 && v.total > 0 && v.correct / v.total < 0.65)
@@ -210,7 +215,7 @@ export function resolveRecommendedScenarios(
         scoreScenario(
           s,
           position,
-          profile.developmentGoal,
+          developmentGoals,
           weakCategories,
           preferredDifficulty,
           incorrectTypes,

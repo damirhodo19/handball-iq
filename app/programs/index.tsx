@@ -29,7 +29,11 @@ export default function ProgramsIndex() {
   const pausedPrograms = state.pausedPrograms ?? [];
   const statistics = state.statistics;
   const profile = loadProfile();
-  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const positions = [profile.position, profile.secondaryPosition]
+    .filter((value): value is HandballPosition => isHandballPosition(value));
+  const developmentGoals = profile.developmentGoals.length
+    ? profile.developmentGoals
+    : profile.developmentGoal ? [profile.developmentGoal] : [];
   const [filterGoal, setFilterGoal] = useState<string | null>(null);
 
   const goalLabel = (g: string) => {
@@ -53,14 +57,29 @@ export default function ProgramsIndex() {
   };
 
   const recommended = useMemo(() => {
-    if (!position) return [];
-    return recommendPrograms(position, profile.developmentGoal, getWeakestSkillId(statistics));
-  }, [position, profile.developmentGoal, statistics]);
+    const rankedByPosition = positions.map((position) =>
+      recommendPrograms(position, developmentGoals, getWeakestSkillId(statistics)),
+    );
+    const programs: DevelopmentProgramDef[] = [];
+    const longestRanking = Math.max(0, ...rankedByPosition.map((ranking) => ranking.length));
+    for (let rank = 0; rank < longestRanking; rank += 1) {
+      for (const ranking of rankedByPosition) {
+        const program = ranking[rank];
+        if (program) programs.push(program);
+      }
+    }
+    return programs.filter((program, index) =>
+      programs.findIndex((candidate) => candidate.id === program.id) === index,
+    );
+  }, [profile.position, profile.secondaryPosition, developmentGoals.join('|'), statistics]);
 
-  const eligible = useMemo(
-    () => (position ? getEligiblePrograms(position) : DEVELOPMENT_PROGRAMS),
-    [position],
-  );
+  const eligible = useMemo(() => {
+    if (!positions.length) return DEVELOPMENT_PROGRAMS;
+    const programs = positions.flatMap((position) => getEligiblePrograms(position));
+    return programs.filter((program, index) =>
+      programs.findIndex((candidate) => candidate.id === program.id) === index,
+    );
+  }, [profile.position, profile.secondaryPosition]);
 
   const filteredAll = useMemo(() => {
     let list = eligible;
@@ -107,7 +126,7 @@ export default function ProgramsIndex() {
           </View>
         ) : null}
 
-        {position ? (
+        {positions.length ? (
           <View style={styles.section}>
             <Text style={styles.sectionLabel}>{t('sprint5.programs.recommended')}</Text>
             {recommended.slice(0, 3).map((p) => renderProgram(p))}
