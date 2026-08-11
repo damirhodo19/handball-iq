@@ -1,7 +1,7 @@
 {
   "verdict": "PASS",
   "FAIL": [],
-  "date": "2026-08-10T15:04:51.667Z",
+  "date": "2026-08-11T09:42:07.658Z",
   "leftBackAudit": {
     "totalLeftBackScenarios": 62,
     "exactDuplicateQuestionCount": 0,
@@ -17,30 +17,30 @@
       "families": [
         "left back - basic gap between defenders",
         "left back - late possession decision",
-        "power play - pivot isolation window",
-        "power play - clean entry shape",
-        "short handed - ball-side rotation rule"
+        "left back - attack the wrong-foot hip",
+        "left back - draw two, then wing",
+        "left back - passive warning, shoot the gap"
       ],
       "ids": [
         "scn_bank_156",
         "scn_bank_166",
-        "scn_bank_466",
-        "scn_bank_476",
-        "scn_bank_516"
+        "scn_bank_666",
+        "scn_bank_676",
+        "scn_bank_686"
       ],
       "categories": [
         "Left Back",
         "Left Back",
-        "Power Play",
-        "Power Play",
-        "Short Handed"
+        "Left Back",
+        "Left Back",
+        "Left Back"
       ],
       "titles": [
         "Left Back — Basic Gap Between Defenders",
         "Left Back — Late Possession Decision",
-        "Power Play — Pivot Isolation Window",
-        "Power Play — Clean Entry Shape",
-        "Short Handed — Ball-Side Rotation Rule"
+        "Left Back — Attack the Wrong-Foot Hip",
+        "Left Back — Draw Two, Then Wing",
+        "Left Back — Passive Warning, Shoot the Gap"
       ]
     },
     {
@@ -50,30 +50,30 @@
       "families": [
         "left back - feeding the sealed pivot",
         "left back - ball speed vs 3:3 spaces",
-        "defence - 5:1 high press trigger",
-        "fast break - deny the first outlet",
-        "short handed - final ten seconds of the kill"
+        "left back - lateral step around the block",
+        "left back - double crossing timing",
+        "left back - tie, final possession"
       ],
       "ids": [
         "scn_bank_159",
         "scn_bank_659",
-        "scn_bank_359",
-        "scn_bank_419",
-        "scn_bank_519"
+        "scn_bank_669",
+        "scn_bank_679",
+        "scn_bank_689"
       ],
       "categories": [
         "Left Back",
         "Left Back",
-        "Defence",
-        "Fast Break",
-        "Short Handed"
+        "Left Back",
+        "Left Back",
+        "Left Back"
       ],
       "titles": [
         "Left Back — Feeding the Sealed Pivot",
         "Left Back — Ball Speed vs 3:3 Spaces",
-        "Defence — 5:1 High Press Trigger",
-        "Fast Break — Deny the First Outlet",
-        "Short Handed — Final Ten Seconds of the Kill"
+        "Left Back — Lateral Step Around the Block",
+        "Left Back — Double Crossing Timing",
+        "Left Back — Tie, Final Possession"
       ]
     },
     {
@@ -83,30 +83,30 @@
       "families": [
         "left back - feeding the sealed pivot",
         "left back - ball speed vs 3:3 spaces",
-        "defence - 5:1 high press trigger",
-        "fast break - deny the first outlet",
-        "short handed - final ten seconds of the kill"
+        "left back - lateral step around the block",
+        "left back - double crossing timing",
+        "left back - tie, final possession"
       ],
       "ids": [
         "scn_bank_159",
         "scn_bank_659",
-        "scn_bank_359",
-        "scn_bank_419",
-        "scn_bank_519"
+        "scn_bank_669",
+        "scn_bank_679",
+        "scn_bank_689"
       ],
       "categories": [
         "Left Back",
         "Left Back",
-        "Defence",
-        "Fast Break",
-        "Short Handed"
+        "Left Back",
+        "Left Back",
+        "Left Back"
       ],
       "titles": [
         "Left Back — Feeding the Sealed Pivot",
         "Left Back — Ball Speed vs 3:3 Spaces",
-        "Defence — 5:1 High Press Trigger",
-        "Fast Break — Deny the First Outlet",
-        "Short Handed — Final Ten Seconds of the Kill"
+        "Left Back — Lateral Step Around the Block",
+        "Left Back — Double Crossing Timing",
+        "Left Back — Tie, Final Possession"
       ]
     },
     {
@@ -116,30 +116,30 @@
       "families": [
         "left back - crossing after late switch",
         "left back - free zone vs 5+1 marked pivot",
-        "defence - help timing on beaten teammate",
-        "short handed - final ten seconds of the kill",
-        "short handed - immediate reorganisation"
+        "left back - shot after contact, still balanced",
+        "left back - parallel opens centre back",
+        "left back - first-wave support receive"
       ],
       "ids": [
         "scn_bank_161",
         "scn_bank_661",
-        "scn_bank_361",
-        "scn_bank_511",
-        "scn_bank_521"
+        "scn_bank_671",
+        "scn_bank_681",
+        "scn_bank_691"
       ],
       "categories": [
         "Left Back",
         "Left Back",
-        "Defence",
-        "Short Handed",
-        "Short Handed"
+        "Left Back",
+        "Left Back",
+        "Left Back"
       ],
       "titles": [
         "Left Back — Crossing After Late Switch",
         "Left Back — Free Zone vs 5+1 Marked Pivot",
-        "Defence — Help Timing on Beaten Teammate",
-        "Short Handed — Final Ten Seconds of the Kill",
-        "Short Handed — Immediate Reorganisation"
+        "Left Back — Shot After Contact, Still Balanced",
+        "Left Back — Parallel Opens Centre Back",
+        "Left Back — First-Wave Support Receive"
       ]
     },
     {
@@ -149,30 +149,30 @@
       "families": [
         "left back - breaking the goalkeeper pattern",
         "left back - defender too deep, shoot or freeze-fake",
-        "short handed - immediate reorganisation",
-        "short handed - final ten seconds of the kill",
-        "decision making - passive warning under lead"
+        "left back - 2v2 read with pivot",
+        "left back - opponent empty goal risk",
+        "left back - deny far-wing skip lane"
       ],
       "ids": [
         "scn_bank_165",
         "scn_bank_665",
-        "scn_bank_505",
-        "scn_bank_535",
-        "scn_bank_615"
+        "scn_bank_675",
+        "scn_bank_685",
+        "scn_bank_695"
       ],
       "categories": [
         "Left Back",
         "Left Back",
-        "Short Handed",
-        "Short Handed",
-        "Decision Making"
+        "Left Back",
+        "Left Back",
+        "Left Back"
       ],
       "titles": [
         "Left Back — Breaking the Goalkeeper Pattern",
         "Left Back — Defender Too Deep, Shoot or Freeze-Fake",
-        "Short Handed — Immediate Reorganisation",
-        "Short Handed — Final Ten Seconds of the Kill",
-        "Decision Making — Passive Warning Under Lead"
+        "Left Back — 2v2 Read with Pivot",
+        "Left Back — Opponent Empty Goal Risk",
+        "Left Back — Deny Far-Wing Skip Lane"
       ]
     }
   ],
@@ -218,71 +218,64 @@
       "situationSignature": "Opponent defends a true 3:3 at 24'. You lead 16:15. Large gaps sit between their three high and three low defenders. You"
     },
     {
-      "id": "scn_bank_359",
-      "title": "Defence — 5:1 High Press Trigger",
-      "question": "When do you pressure the centre back without wrecking the line?",
-      "category": "Defence",
-      "subCategory": "5:1 high press trigger",
+      "id": "scn_bank_669",
+      "title": "Left Back — Lateral Step Around the Block",
+      "question": "How do you create the angle when one block sits in your strong hand?",
+      "category": "Left Back",
+      "subCategory": "lateral step around the block",
       "positionTags": [
-        "All",
-        "Centre Back",
-        "Left Back",
-        "Right Back"
-      ],
-      "goalTags": [
-        "defensiveReading"
-      ],
-      "difficulty": "Intermediate",
-      "correctAnswer": "Press the facing catch to force an early pass, recover if they reverse",
-      "decisionArchetype": "5:1 high press trigger",
-      "formation": "5-1",
-      "scenarioFamilyId": "defence - 5:1 high press trigger",
-      "situationSignature": "You play the high point in a 5:1 at 9' (28–27). The centre back catches facing you with time. Wings are held; the pivot "
-    },
-    {
-      "id": "scn_bank_419",
-      "title": "Fast Break — Deny the First Outlet",
-      "question": "How do you disrupt the outlet without fouling the keeper?",
-      "category": "Fast Break",
-      "subCategory": "deny the first outlet",
-      "positionTags": [
-        "All",
-        "Left Back",
-        "Right Back",
-        "Centre Back"
-      ],
-      "goalTags": [
-        "fastBreakTiming"
-      ],
-      "difficulty": "Intermediate",
-      "correctAnswer": "Take the outlet lane with arms high and no contact on the keeper",
-      "decisionArchetype": "deny the first outlet",
-      "formation": "unknown",
-      "scenarioFamilyId": "fast break - deny the first outlet",
-      "situationSignature": "After a save at 28' (22–21), their goalkeeper looks for the first outlet. You are the nearest presser above the nine-met"
-    },
-    {
-      "id": "scn_bank_519",
-      "title": "Short Handed — Final Ten Seconds of the Kill",
-      "question": "How do you close the last ten seconds without extending the kill?",
-      "category": "Short Handed",
-      "subCategory": "final ten seconds of the kill",
-      "positionTags": [
-        "All",
-        "Left Back",
-        "Right Back",
-        "Centre Back"
+        "Left Back"
       ],
       "goalTags": [
         "shotReading",
+        "screening",
+        "pressureDecisions",
+        "angleSelection"
+      ],
+      "difficulty": "Intermediate",
+      "correctAnswer": "Lateral step around the block edge and shoot the opened far corner",
+      "decisionArchetype": "lateral step around the block",
+      "formation": "6-0",
+      "scenarioFamilyId": "left back - lateral step around the block",
+      "situationSignature": "Late set 6:0 at 48'. You lead 27:26. One defender raises a single block into your strong hand. A half-step lateral opens"
+    },
+    {
+      "id": "scn_bank_679",
+      "title": "Left Back — Double Crossing Timing",
+      "question": "When must the second cross be attacked?",
+      "category": "Left Back",
+      "subCategory": "double crossing timing",
+      "positionTags": [
+        "Left Back"
+      ],
+      "goalTags": [
+        "shotReading"
+      ],
+      "difficulty": "Expert",
+      "correctAnswer": "Attack on the catch of the second cross before the half-turned defender squares",
+      "decisionArchetype": "double crossing timing",
+      "formation": "6-0",
+      "scenarioFamilyId": "left back - double crossing timing",
+      "situationSignature": "You run the first cross with the centre back against a compact 6:0 at 48'. You lead 26:25. The first switch is clean — d"
+    },
+    {
+      "id": "scn_bank_689",
+      "title": "Left Back — Tie, Final Possession",
+      "question": "On the final tied possession, where is the best finish?",
+      "category": "Left Back",
+      "subCategory": "tie, final possession",
+      "positionTags": [
+        "Left Back"
+      ],
+      "goalTags": [
         "pressureDecisions"
       ],
       "difficulty": "Expert",
-      "correctAnswer": "No fouls, force a perimeter shot, prepare the counter as the penalty expires",
-      "decisionArchetype": "final ten seconds of the kill",
-      "formation": "unknown",
-      "scenarioFamilyId": "short handed - final ten seconds of the kill",
-      "situationSignature": "5-on-6 with ten seconds left on the exclusion at 28' (22–21). Attack has one final swing. Your returning teammate is at "
+      "correctAnswer": "Play the clean wing cut — highest-percentage finish on the last attack",
+      "decisionArchetype": "tie, final possession",
+      "formation": "6-0",
+      "scenarioFamilyId": "left back - tie, final possession",
+      "situationSignature": "Final possession at 59'. Score is 30:30. You receive on the left against a packed 6:0. The left wing has a clean cut ope"
     }
   ]
 }

@@ -1,0 +1,138 @@
+{
+  "status": "PIVOT BATCH B READY FOR HUMAN COACH REVIEW",
+  "generatedAt": "2026-08-10T20:26:31.770Z",
+  "sourceGoldCount": 45,
+  "fullTarget": 60,
+  "batchBCount": 20,
+  "families": [
+    "pv_60_opposite_ball_seal",
+    "pv_clear_drive_lane_then_reseal",
+    "pv_bounce_target_behind_front",
+    "pv_legal_screen_stationary_base",
+    "pv_51_live_behind_advanced",
+    "pv_321_pocket_behind_high_half",
+    "pv_7v6_first_pivot_spacing",
+    "pv_finish_read_goalkeeper_depth",
+    "pv_turnover_middle_recovery",
+    "pv_def_60_control_opposing_pivot",
+    "pv_60_reseal_after_reversal",
+    "pv_fronted_escape_to_soft_side",
+    "pv_show_not_hide_behind_middle",
+    "pv_low_high_seal_from_defender_hips",
+    "pv_choose_gap_between_two_middles",
+    "pv_halfspace_spacing_with_wing_entry",
+    "pv_cross_screen_set_before_contact",
+    "pv_high_feed_secure_above_contact",
+    "pv_catch_under_back_contact",
+    "pv_turn_from_defender_hip",
+    "pv_finish_through_legal_contact",
+    "pv_draw_seven_not_force_balance",
+    "pv_secure_before_help_arrives",
+    "pv_release_out_of_double_team",
+    "pv_endgame_one_action_finish",
+    "pv_51_screen_advanced_recovery_lane",
+    "pv_33_short_roll_after_pressure",
+    "pv_42_screen_marking_defender",
+    "pv_5plus1_free_marked_back_legally",
+    "pv_4plus2_middle_outlet_timing",
+    "pv_open_defence_slip_not_wrestle",
+    "pv_man_to_man_screen_then_slip",
+    "pv_7v6_second_pivot_weak_side",
+    "pv_7v6_do_not_force_inside",
+    "pv_6v5_seal_late_rotator",
+    "pv_5v6_safe_release_no_inside_force",
+    "pv_passive_play_quick_reseal",
+    "pv_cb_direct_feed_window",
+    "pv_lb_drive_clear_then_return",
+    "pv_rb_cross_screen_timing",
+    "pv_wing_entry_exchange",
+    "pv_step_out_handoff_only_on_call",
+    "pv_double_pivot_same_line_avoidance",
+    "pv_screen_goalkeeper_sightline_legally",
+    "pv_fake_screen_and_slip"
+  ],
+  "coverage": {
+    "difficulty": {
+      "Beginner": 2,
+      "Intermediate": 15,
+      "Advanced": 26,
+      "Expert": 2
+    },
+    "attackDefence": {
+      "Attack": 43,
+      "Defence": 2
+    },
+    "systems": {
+      "6-0": 27,
+      "5-1": 2,
+      "3-2-1": 1,
+      "Final Minutes": 2,
+      "Fast Break": 1,
+      "Open Play": 5,
+      "3-3": 1,
+      "4-2": 1,
+      "5+1": 1,
+      "4+2": 1,
+      "Individual": 2,
+      "5-0": 1
+    },
+    "areas": {
+      "positioning_and_seals": 8,
+      "drive_lane_cooperation": 1,
+      "receiving_behind_front": 1,
+      "legal_screen_geometry": 1,
+      "five_one_between_lines": 1,
+      "three_two_one_pocket": 1,
+      "seven_vs_six_spacing": 1,
+      "goalkeeper_finish_read": 1,
+      "transition_defence": 1,
+      "central_defence": 1,
+      "receiving_and_finishing": 8,
+      "defensive_systems_and_numbers": 12,
+      "cooperation": 8
+    },
+    "perception": 29
+  },
+  "semanticRisks": [],
+  "lockCheck": {
+    "LB": {
+      "expected": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "actual": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "ok": true
+    },
+    "RB": {
+      "expected": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "actual": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "ok": true
+    },
+    "CB": {
+      "expected": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "actual": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "ok": true
+    },
+    "RW": {
+      "expected": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "actual": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "ok": true
+    },
+    "LW": {
+      "expected": "e22fe6cb3e429e98e392a6b7c2ca6bb2b6f73874c27e9f0a09af03dfa912002b",
+      "actual": "e22fe6cb3e429e98e392a6b7c2ca6bb2b6f73874c27e9f0a09af03dfa912002b",
+      "ok": true
+    }
+  },
+  "legacyCheck": {
+    "pivot": {
+      "expected": "777a81c3af3dea64aa5130798ca6750e1c6795ed7de968b20ad2a118114f24a1",
+      "actual": "777a81c3af3dea64aa5130798ca6750e1c6795ed7de968b20ad2a118114f24a1",
+      "ok": true
+    },
+    "goalkeeper": {
+      "expected": "e06abb4dd22739074bf1dd04dc8f6b063d61c80799cee2d1ebf61c1cf1821af4",
+      "actual": "e06abb4dd22739074bf1dd04dc8f6b063d61c80799cee2d1ebf61c1cf1821af4",
+      "ok": true
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

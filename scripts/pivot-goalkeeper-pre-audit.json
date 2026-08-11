@@ -1,0 +1,552 @@
+{
+  "status": "PIVOT_GK_PRE_AUDIT_READY",
+  "generatedAt": "2026-08-10T19:48:35.348Z",
+  "lockedGold": {
+    "LB": {
+      "count": 62,
+      "expectedCount": 62,
+      "contentHash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "expectedHash": "057e027a506ff707abc80db346d06409b0f8696c6fcf90c857b515b17548d522",
+      "countOk": true,
+      "hashOk": true
+    },
+    "RB": {
+      "count": 63,
+      "expectedCount": 63,
+      "contentHash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "expectedHash": "502abe41fdb03b499038291edb9ba0133b12a37cdd57bc316178b5062e9212e0",
+      "countOk": true,
+      "hashOk": true
+    },
+    "CB": {
+      "count": 70,
+      "expectedCount": 70,
+      "contentHash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "expectedHash": "8a0e250a1e9c5ea30c3d699c644c7d72ef80427c4046bcc42f1fcf45f4aa5c97",
+      "countOk": true,
+      "hashOk": true
+    },
+    "RW": {
+      "count": 65,
+      "expectedCount": 65,
+      "contentHash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "expectedHash": "28da60b5fd9d03268d8268fd824cf4ea2eeb68f982efa38eca56f40f2af07c21",
+      "countOk": true,
+      "hashOk": true
+    },
+    "LW": {
+      "count": 41,
+      "expectedCount": 41,
+      "contentHash": "e22fe6cb3e429e98e392a6b7c2ca6bb2b6f73874c27e9f0a09af03dfa912002b",
+      "expectedHash": "e22fe6cb3e429e98e392a6b7c2ca6bb2b6f73874c27e9f0a09af03dfa912002b",
+      "countOk": true,
+      "hashOk": true
+    }
+  },
+  "pivot": {
+    "count": 50,
+    "contentHash": "777a81c3af3dea64aa5130798ca6750e1c6795ed7de968b20ad2a118114f24a1",
+    "ids": [
+      "scn_bank_305",
+      "scn_bank_306",
+      "scn_bank_307",
+      "scn_bank_308",
+      "scn_bank_309",
+      "scn_bank_310",
+      "scn_bank_311",
+      "scn_bank_312",
+      "scn_bank_313",
+      "scn_bank_314",
+      "scn_bank_315",
+      "scn_bank_316",
+      "scn_bank_317",
+      "scn_bank_318",
+      "scn_bank_319",
+      "scn_bank_320",
+      "scn_bank_321",
+      "scn_bank_322",
+      "scn_bank_323",
+      "scn_bank_324",
+      "scn_bank_325",
+      "scn_bank_326",
+      "scn_bank_327",
+      "scn_bank_328",
+      "scn_bank_329",
+      "scn_bank_330",
+      "scn_bank_331",
+      "scn_bank_332",
+      "scn_bank_333",
+      "scn_bank_334",
+      "scn_bank_335",
+      "scn_bank_336",
+      "scn_bank_337",
+      "scn_bank_338",
+      "scn_bank_339",
+      "scn_bank_340",
+      "scn_bank_341",
+      "scn_bank_343",
+      "scn_bank_344",
+      "scn_bank_345",
+      "scn_bank_346",
+      "scn_bank_347",
+      "scn_bank_348",
+      "scn_bank_349",
+      "scn_bank_350",
+      "scn_bank_351",
+      "scn_bank_353",
+      "scn_bank_354",
+      "scn_bank_355",
+      "scn_bank_356"
+    ],
+    "uniqueEnglishTitles": 10,
+    "duplicateTitleGroupCount": 10,
+    "duplicateRows": 50,
+    "duplicateTitleGroups": [
+      {
+        "title": "pivot — seal side vs flat line",
+        "ids": [
+          "scn_bank_305",
+          "scn_bank_315",
+          "scn_bank_325",
+          "scn_bank_335",
+          "scn_bank_345",
+          "scn_bank_355"
+        ],
+        "count": 6
+      },
+      {
+        "title": "pivot — clearing the drive lane",
+        "ids": [
+          "scn_bank_306",
+          "scn_bank_316",
+          "scn_bank_326",
+          "scn_bank_336",
+          "scn_bank_346",
+          "scn_bank_356"
+        ],
+        "count": 6
+      },
+      {
+        "title": "pivot — secure under back contact",
+        "ids": [
+          "scn_bank_307",
+          "scn_bank_317",
+          "scn_bank_327",
+          "scn_bank_337",
+          "scn_bank_347"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — legal goalkeeper screen",
+        "ids": [
+          "scn_bank_308",
+          "scn_bank_318",
+          "scn_bank_328",
+          "scn_bank_338",
+          "scn_bank_348"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — finish before recovery",
+        "ids": [
+          "scn_bank_309",
+          "scn_bank_319",
+          "scn_bank_329",
+          "scn_bank_339",
+          "scn_bank_349"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — reading rotation gaps",
+        "ids": [
+          "scn_bank_310",
+          "scn_bank_320",
+          "scn_bank_330",
+          "scn_bank_340",
+          "scn_bank_350"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — bounce-pass catch angle",
+        "ids": [
+          "scn_bank_311",
+          "scn_bank_321",
+          "scn_bank_331",
+          "scn_bank_341",
+          "scn_bank_351"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — clutch six-metre read",
+        "ids": [
+          "scn_bank_312",
+          "scn_bank_322",
+          "scn_bank_332"
+        ],
+        "count": 3
+      },
+      {
+        "title": "pivot — empty-goal 7v6 timing",
+        "ids": [
+          "scn_bank_313",
+          "scn_bank_323",
+          "scn_bank_333",
+          "scn_bank_343",
+          "scn_bank_353"
+        ],
+        "count": 5
+      },
+      {
+        "title": "pivot — transition recovery duty",
+        "ids": [
+          "scn_bank_314",
+          "scn_bank_324",
+          "scn_bank_334",
+          "scn_bank_344",
+          "scn_bank_354"
+        ],
+        "count": 5
+      }
+    ],
+    "difficulty": {
+      "Beginner": 6,
+      "Intermediate": 16,
+      "Advanced": 20,
+      "Expert": 8
+    },
+    "attackDefence": {
+      "Attack": 45,
+      "Defence": 5
+    },
+    "familyTagCount": 0
+  },
+  "goalkeeper": {
+    "count": 84,
+    "contentHash": "e06abb4dd22739074bf1dd04dc8f6b063d61c80799cee2d1ebf61c1cf1821af4",
+    "ids": [
+      "scn_bank_001",
+      "scn_bank_002",
+      "scn_bank_003",
+      "scn_bank_004",
+      "scn_bank_005",
+      "scn_bank_006",
+      "scn_bank_007",
+      "scn_bank_008",
+      "scn_bank_009",
+      "scn_bank_010",
+      "scn_bank_011",
+      "scn_bank_012",
+      "scn_bank_013",
+      "scn_bank_014",
+      "scn_bank_015",
+      "scn_bank_016",
+      "scn_bank_017",
+      "scn_bank_018",
+      "scn_bank_019",
+      "scn_bank_020",
+      "scn_bank_021",
+      "scn_bank_022",
+      "scn_bank_023",
+      "scn_bank_024",
+      "scn_bank_025",
+      "scn_bank_026",
+      "scn_bank_027",
+      "scn_bank_028",
+      "scn_bank_029",
+      "scn_bank_030",
+      "scn_bank_031",
+      "scn_bank_032",
+      "scn_bank_033",
+      "scn_bank_034",
+      "scn_bank_035",
+      "scn_bank_036",
+      "scn_bank_037",
+      "scn_bank_038",
+      "scn_bank_039",
+      "scn_bank_040",
+      "scn_bank_041",
+      "scn_bank_042",
+      "scn_bank_043",
+      "scn_bank_044",
+      "scn_bank_045",
+      "scn_bank_048",
+      "scn_bank_052",
+      "scn_bank_055",
+      "scn_bank_057",
+      "scn_bank_058",
+      "scn_bank_063",
+      "scn_bank_067",
+      "scn_bank_070",
+      "scn_bank_072",
+      "scn_bank_073",
+      "scn_bank_416",
+      "scn_bank_426",
+      "scn_bank_436",
+      "scn_bank_446",
+      "scn_bank_456",
+      "scn_bank_509",
+      "scn_bank_517",
+      "scn_bank_525",
+      "scn_bank_533",
+      "scn_bank_541",
+      "scn_bank_550",
+      "scn_bank_551",
+      "scn_bank_560",
+      "scn_bank_561",
+      "scn_bank_570",
+      "scn_bank_571",
+      "scn_bank_580",
+      "scn_bank_590",
+      "scn_bank_600",
+      "scn_bank_613",
+      "scn_bank_614",
+      "scn_bank_623",
+      "scn_bank_624",
+      "scn_bank_633",
+      "scn_bank_634",
+      "scn_bank_643",
+      "scn_bank_644",
+      "scn_bank_653",
+      "scn_bank_654"
+    ],
+    "uniqueEnglishTitles": 21,
+    "duplicateTitleGroupCount": 21,
+    "duplicateRows": 84,
+    "duplicateTitleGroups": [
+      {
+        "title": "wing shot — narrow-angle cover",
+        "ids": [
+          "scn_bank_001",
+          "scn_bank_016",
+          "scn_bank_031"
+        ],
+        "count": 3
+      },
+      {
+        "title": "jump shot — basic shoulder cue",
+        "ids": [
+          "scn_bank_002",
+          "scn_bank_017",
+          "scn_bank_032"
+        ],
+        "count": 3
+      },
+      {
+        "title": "wing finish — release height read",
+        "ids": [
+          "scn_bank_003",
+          "scn_bank_018",
+          "scn_bank_033",
+          "scn_bank_048",
+          "scn_bank_063"
+        ],
+        "count": 5
+      },
+      {
+        "title": "backcourt — tendency without dive",
+        "ids": [
+          "scn_bank_004",
+          "scn_bank_019",
+          "scn_bank_034"
+        ],
+        "count": 3
+      },
+      {
+        "title": "pivot spin — low-zone close",
+        "ids": [
+          "scn_bank_005",
+          "scn_bank_020",
+          "scn_bank_035"
+        ],
+        "count": 3
+      },
+      {
+        "title": "hip shot — confirm the fake",
+        "ids": [
+          "scn_bank_006",
+          "scn_bank_021",
+          "scn_bank_036"
+        ],
+        "count": 3
+      },
+      {
+        "title": "fast break — 2v1 eyes",
+        "ids": [
+          "scn_bank_007",
+          "scn_bank_022",
+          "scn_bank_037",
+          "scn_bank_052",
+          "scn_bank_067"
+        ],
+        "count": 5
+      },
+      {
+        "title": "breakaway — controlled advance",
+        "ids": [
+          "scn_bank_008",
+          "scn_bank_023",
+          "scn_bank_038"
+        ],
+        "count": 3
+      },
+      {
+        "title": "seven-metre — shade the pattern",
+        "ids": [
+          "scn_bank_009",
+          "scn_bank_024",
+          "scn_bank_039"
+        ],
+        "count": 3
+      },
+      {
+        "title": "screened jump — sight line through block",
+        "ids": [
+          "scn_bank_010",
+          "scn_bank_025",
+          "scn_bank_040",
+          "scn_bank_055",
+          "scn_bank_070"
+        ],
+        "count": 5
+      },
+      {
+        "title": "lob threat — height over early step",
+        "ids": [
+          "scn_bank_011",
+          "scn_bank_026",
+          "scn_bank_041"
+        ],
+        "count": 3
+      },
+      {
+        "title": "off-balance pivot — late react",
+        "ids": [
+          "scn_bank_012",
+          "scn_bank_027",
+          "scn_bank_042",
+          "scn_bank_057",
+          "scn_bank_072"
+        ],
+        "count": 5
+      },
+      {
+        "title": "empty goal — 7v6 overload organise",
+        "ids": [
+          "scn_bank_013",
+          "scn_bank_028",
+          "scn_bank_043",
+          "scn_bank_058",
+          "scn_bank_073"
+        ],
+        "count": 5
+      },
+      {
+        "title": "double pivot — arm through the gap",
+        "ids": [
+          "scn_bank_014",
+          "scn_bank_029",
+          "scn_bank_044"
+        ],
+        "count": 3
+      },
+      {
+        "title": "tied late — wing patience",
+        "ids": [
+          "scn_bank_015",
+          "scn_bank_030",
+          "scn_bank_045"
+        ],
+        "count": 3
+      },
+      {
+        "title": "fast break — goalkeeper outlet window",
+        "ids": [
+          "scn_bank_416",
+          "scn_bank_426",
+          "scn_bank_436",
+          "scn_bank_446",
+          "scn_bank_456"
+        ],
+        "count": 5
+      },
+      {
+        "title": "short handed — keeper overload calls",
+        "ids": [
+          "scn_bank_509",
+          "scn_bank_517",
+          "scn_bank_525",
+          "scn_bank_533",
+          "scn_bank_541"
+        ],
+        "count": 5
+      },
+      {
+        "title": "match ending — level-game shot read",
+        "ids": [
+          "scn_bank_550",
+          "scn_bank_560",
+          "scn_bank_570",
+          "scn_bank_580",
+          "scn_bank_590",
+          "scn_bank_600"
+        ],
+        "count": 6
+      },
+      {
+        "title": "match ending — empty-goal last push",
+        "ids": [
+          "scn_bank_551",
+          "scn_bank_561",
+          "scn_bank_571"
+        ],
+        "count": 3
+      },
+      {
+        "title": "decision making — pattern shade vs live release",
+        "ids": [
+          "scn_bank_613",
+          "scn_bank_623",
+          "scn_bank_633",
+          "scn_bank_643",
+          "scn_bank_653"
+        ],
+        "count": 5
+      },
+      {
+        "title": "decision making — patience on a late close-out",
+        "ids": [
+          "scn_bank_614",
+          "scn_bank_624",
+          "scn_bank_634",
+          "scn_bank_644",
+          "scn_bank_654"
+        ],
+        "count": 5
+      }
+    ],
+    "difficulty": {
+      "Beginner": 6,
+      "Intermediate": 14,
+      "Advanced": 39,
+      "Expert": 25
+    },
+    "attackDefence": {
+      "Defence": 76,
+      "Attack": 8
+    },
+    "familyTagCount": 0
+  },
+  "findings": [
+    "Pivot has 50 rows but only 10 title families.",
+    "Goalkeeper has 84 rows but only 21 title families.",
+    "Both legacy banks are variation-heavy and need one-decision-per-family Gold rebuilds.",
+    "Pivot rebuild starts first; Goalkeeper remains untouched until Pivot Gold approval.",
+    "Existing LB/RB/CB/RW/LW Gold content remains immutable throughout both rebuilds."
+  ],
+  "errors": []
+}

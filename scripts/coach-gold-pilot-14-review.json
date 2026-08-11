@@ -1,0 +1,1286 @@
+{
+  "status": "COACH GOLD PILOT 14 — HUMAN COACH REVIEW",
+  "pilotCount": 14,
+  "fullTarget": 70,
+  "runtimeCutoverPerformed": false,
+  "scenarios": [
+    {
+      "id": "coach_gold_001",
+      "familyKey": "timeout_trailing_vs_5_1_first_pass_trap",
+      "category": "timeout",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "At 55:40 you trail 26–28. The advanced defender in a 5:1 has intercepted the centre-back-to-left-back pass twice, and your attack has stopped moving.",
+        "hr": "U 55:40 gubite 26:28. Istureni branič u 5:1 dvaput je presjekao dodavanje srednjeg prema lijevom vanjskom, a vaš se napad prestao kretati.",
+        "de": "Bei 55:40 liegt ihr 26:28 zurück. Der Vorgezogene im 5:1 hat zweimal den Pass von Rückraummitte zu Rückraum links abgefangen; euer Angriff steht."
+      },
+      "question": {
+        "en": "What must the timeout establish?",
+        "hr": "Što mora donijeti minuta odmora?",
+        "de": "Was muss die Auszeit festlegen?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Use the pivot behind the advanced defender as the safe first option, attack the freed opposite side, and name the first two players responsible for retreat",
+            "hr": "Postavi pivota iza isturenoga kao prvo sigurno rješenje, napadni oslobođenu suprotnu stranu i odredi prva dva igrača za povratak",
+            "de": "Kreisläufer hinter dem Vorgezogenen als erste sichere Option nutzen, die freie Gegenseite angreifen und die ersten zwei Rückzugsspieler benennen"
+          },
+          "feedback": {
+            "en": "It solves the first-pass trap and protects the next transition.",
+            "hr": "Rješava zamku na prvom dodavanju i štiti sljedeći povratak.",
+            "de": "Löst die Falle beim ersten Pass und sichert den Rückzug."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Send the wing behind the advanced defender on the next attack, without changing the rest of the structure",
+            "hr": "U sljedećem napadu pošalji krilo iza isturenoga, bez promjene ostatka strukture",
+            "de": "Im nächsten Angriff den Flügel hinter dem Vorgezogenen einlaufen lassen, ohne die restliche Struktur zu ändern"
+          },
+          "feedback": {
+            "en": "This can free the first pass, but the team still lacks a retreat assignment.",
+            "hr": "Može osloboditi prvo dodavanje, ali povratne uloge ostaju nejasne.",
+            "de": "Kann den ersten Pass öffnen, lässt aber den Rückzug ungeklärt."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Install a new three-crossing combination during the timeout",
+            "hr": "Tijekom minute odmora uvedi novu kombinaciju s tri križanja",
+            "de": "In der Auszeit eine neue Kombination mit drei Kreuzungen einführen"
+          },
+          "feedback": {
+            "en": "A new multi-step pattern is difficult to execute under late pressure.",
+            "hr": "Nova višedijelna akcija teško se izvodi pod završnim pritiskom.",
+            "de": "Eine neue mehrteilige Folge ist unter Schlussdruck schwer ausführbar."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Tell the left back to stop losing the ball and repeat the same first pass",
+            "hr": "Reci lijevom vanjskom da prestane gubiti loptu i ponovi isto prvo dodavanje",
+            "de": "Rückraum links auffordern, den Ball nicht mehr zu verlieren, und denselben ersten Pass wiederholen"
+          },
+          "feedback": {
+            "en": "It blames the receiver and leaves the interception cue unchanged.",
+            "hr": "Okrivljuje primatelja, a ne mijenja uvjet koji obrana čita.",
+            "de": "Gibt dem Empfänger die Schuld und verändert den gelesenen Pass nicht."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "A late timeout needs one executable answer to the visible trap and one clear safeguard after the shot.",
+        "hr": "Kasna minuta odmora treba dati jedno izvedivo rješenje za vidljivu zamku i jasnu zaštitu nakon završetka napada.",
+        "de": "Eine späte Auszeit braucht eine ausführbare Antwort auf die erkennbare Falle und eine klare Absicherung nach dem Abschluss."
+      }
+    },
+    {
+      "id": "coach_gold_002",
+      "familyKey": "timeout_stop_7v6_double_pivot_run",
+      "category": "timeout",
+      "difficulty": "Expert",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "With 6:10 left and the score tied, the opponent has scored three straight 7v6 goals by feeding the second pivot between your two central defenders.",
+        "hr": "Šest minuta prije kraja rezultat je izjednačen, a protivnik je u igri 7 na 6 triput zaredom pronašao drugog pivota između vaša dva središnja braniča.",
+        "de": "Bei Gleichstand und 6:10 Restzeit hat der Gegner im 7 gegen 6 dreimal in Folge den zweiten Kreisläufer zwischen euren beiden Innenblockspielern gefunden."
+      },
+      "question": {
+        "en": "Which timeout instruction is most useful?",
+        "hr": "Koja je uputa na minuti odmora najkorisnija?",
+        "de": "Welche Auszeit-Anweisung hilft am meisten?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Keep the central pair connected, assign each pivot before the pass, and have the nearest half-defender pressure the passer without abandoning the far wing",
+            "hr": "Zadrži povezan središnji par, prije dodavanja jasno odredi tko čuva kojeg pivota, a najbliži polubranitelj neka pritisne dodavača bez napuštanja dalekog krila",
+            "de": "Innenblock verbunden halten, beide Kreisläufer vor dem Pass klar zuordnen und den Passgeber mit dem nahen Halbverteidiger stören, ohne den fernen Flügel aufzugeben"
+          },
+          "feedback": {
+            "en": "Every defender receives a precise responsibility in the route that is beating you.",
+            "hr": "Svaki branič dobiva jasnu odgovornost u akciji kojom vas protivnik kažnjava.",
+            "de": "Jeder Verteidiger erhält eine klare Aufgabe gegen den erfolgreichen Angriffsweg."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Stay in 6:0 and hand the second pivot over earlier between the central defenders",
+            "hr": "Ostani u 6:0 i ranije predaj drugog pivota između središnjih braniča",
+            "de": "Im 6:0 bleiben und den zweiten Kreisläufer früher zwischen den Innenblockspielern übergeben"
+          },
+          "feedback": {
+            "en": "Earlier handover helps, but the passer still operates without pressure.",
+            "hr": "Ranija predaja pomaže, ali dodavač i dalje ostaje bez pritiska.",
+            "de": "Die frühere Übergabe hilft, der Passgeber bleibt jedoch ungestört."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Send both central defenders high as soon as the centre back receives",
+            "hr": "Pošalji oba središnja braniča visoko čim srednji vanjski primi loptu",
+            "de": "Beide Innenblockspieler hochschicken, sobald Rückraummitte den Ball erhält"
+          },
+          "feedback": {
+            "en": "Both pivots can then seal the empty centre.",
+            "hr": "Oba pivota tada mogu zatvoriti prazan središnji prostor.",
+            "de": "Beide Kreisläufer können dann die leere Mitte sperren."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Keep the same assignments and demand that the goalkeeper save the next close-range shot",
+            "hr": "Zadrži iste uloge i traži od vratara da obrani sljedeći šut iz blizine",
+            "de": "Gleiche Zuordnung beibehalten und vom Torwart die nächste Nahwurf-Parade verlangen"
+          },
+          "feedback": {
+            "en": "The defence is conceding an unopposed pivot finish before the goalkeeper can influence it.",
+            "hr": "Obrana dopušta čist šut pivota prije nego što vratar može utjecati.",
+            "de": "Die Abwehr erlaubt einen freien Kreisläuferwurf, bevor der Torwart eingreifen kann."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Against 7v6, the timeout must define pivot ownership, ball pressure, and far-wing protection as one connected rule.",
+        "hr": "Protiv igre 7 na 6 minuta odmora mora povezati podjelu pivota, pritisak na loptu i zaštitu dalekog krila.",
+        "de": "Gegen 7 gegen 6 muss die Auszeit Kreisläufer-Zuordnung, Balldruck und Schutz des fernen Flügels in einer Regel verbinden."
+      }
+    },
+    {
+      "id": "coach_gold_011",
+      "familyKey": "defence_block_goalkeeper_long_range_cooperation",
+      "category": "defensive_adjustment",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "The opponent left back has scored four times from nine metres. Your central block jumps late and opens both sides, while the goalkeeper stays centred.",
+        "hr": "Protivnički lijevi vanjski zabio je četiri puta s devet metara. Vaš središnji blok kasni u izlasku i otvara obje strane, dok vratar ostaje u sredini.",
+        "de": "Der gegnerische Rückraum links hat viermal aus neun Metern getroffen. Euer Innenblock kommt spät und öffnet beide Seiten, der Torwart bleibt mittig."
+      },
+      "question": {
+        "en": "What adjustment creates real block–goalkeeper cooperation?",
+        "hr": "Koja prilagodba stvara stvarnu suradnju bloka i vratara?",
+        "de": "Welche Anpassung schafft echte Block-Torwart-Zusammenarbeit?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "The nearest defender closes early and the block removes the agreed near side; the goalkeeper sets for the far-side lane",
+            "hr": "Najbliži branič izlazi ranije, blok zatvara dogovorenu bližu stranu, a vratar se postavlja za dalju putanju",
+            "de": "Der nächste Verteidiger tritt früher heraus, der Block nimmt die vereinbarte kurze Seite, der Torwart stellt sich auf die lange Wurfbahn ein"
+          },
+          "feedback": {
+            "en": "The block and goalkeeper divide the goal instead of reacting to the same lane.",
+            "hr": "Blok i vratar dijele prostor vrata umjesto da obojica reagiraju na istu putanju.",
+            "de": "Block und Torwart teilen das Tor, statt auf dieselbe Wurfbahn zu reagieren."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Move the goalkeeper half a step toward the shooter before release",
+            "hr": "Pomakni vratara pola koraka prema šuteru prije izbačaja",
+            "de": "Torwart vor der Ballabgabe einen halben Schritt zum Werfer verschieben"
+          },
+          "feedback": {
+            "en": "The angle improves, but the late split block still gives the shooter two exits.",
+            "hr": "Kut je bolji, ali razdvojeni blok i dalje šuteru ostavlja obje strane.",
+            "de": "Der Winkel wird besser, doch der geteilte Block lässt zwei Wurfwege."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Have both blockers jump at every arm fake",
+            "hr": "Neka oba braniča u bloku skaču na svaku varku rukom",
+            "de": "Beide Blockspieler sollen auf jede Armfinte springen"
+          },
+          "feedback": {
+            "en": "The shooter can wait for the block to descend or pass through the opened centre.",
+            "hr": "Šuter može pričekati spuštanje bloka ili dodati kroz otvorenu sredinu.",
+            "de": "Der Werfer kann den sinkenden Block abwarten oder durch die offene Mitte passen."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Let the goalkeeper choose a corner without a block agreement",
+            "hr": "Prepusti vrataru da bira kut bez dogovora s blokom",
+            "de": "Torwart ohne Blockabstimmung eine Ecke wählen lassen"
+          },
+          "feedback": {
+            "en": "Guessing does not correct the repeated structural error.",
+            "hr": "Pogađanje ne ispravlja ponavljajuću strukturnu pogrešku.",
+            "de": "Raten korrigiert den wiederkehrenden Strukturfehler nicht."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Long-range defence improves when the block removes one defined lane and the goalkeeper owns the other.",
+        "hr": "Obrana šuta izvana napreduje kada blok zatvara jednu dogovorenu putanju, a vratar preuzima drugu.",
+        "de": "Die Abwehr gegen Distanzwürfe wird besser, wenn der Block eine vereinbarte Bahn nimmt und der Torwart die andere."
+      }
+    },
+    {
+      "id": "coach_gold_012",
+      "familyKey": "defence_7v6_weak_side_wing_protection",
+      "category": "defensive_adjustment",
+      "difficulty": "Expert",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "In 7v6 the opponent places two pivots centrally. Your far wing defender keeps stepping inside, and the centre back skips the ball to an unmarked wing.",
+        "hr": "U igri 7 na 6 protivnik postavlja dva pivota u sredini. Vaš branič na dalekom krilu stalno ulazi prema sredini, pa srednji vanjski dugim dodavanjem pronalazi slobodno krilo.",
+        "de": "Im 7 gegen 6 stehen zwei Kreisläufer zentral. Euer ferner Außenverteidiger rückt ständig ein, sodass Rückraummitte den freien Flügel mit einem Überspiel erreicht."
+      },
+      "question": {
+        "en": "How should the defence correct the weak side?",
+        "hr": "Kako obrana treba ispraviti daleku stranu?",
+        "de": "Wie korrigiert die Abwehr die ballferne Seite?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Keep the far wing defender outside, split the two pivots between the central pair, and bring help from the near half-space only after the ball moves to that side",
+            "hr": "Zadrži braniča na dalekom krilu izvana, podijeli dva pivota između središnjeg para, a pomoć iz bližeg poluprostora uključi tek kada lopta krene na tu stranu",
+            "de": "Fernen Außenverteidiger außen halten, beide Kreisläufer dem Innenblock zuordnen und Hilfe aus dem nahen Halbraum erst bringen, wenn der Ball dorthin gespielt wird"
+          },
+          "feedback": {
+            "en": "It protects the direct skip while keeping central ownership intact.",
+            "hr": "Štiti izravno dugo dodavanje, a središnje uloge ostaju jasne.",
+            "de": "Schützt den Überspielpass und hält die zentralen Zuordnungen klar."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Tell the central pair to hand the second pivot over earlier",
+            "hr": "Traži od središnjeg para da ranije preda drugog pivota",
+            "de": "Innenblock soll den zweiten Kreisläufer früher übergeben"
+          },
+          "feedback": {
+            "en": "This improves the centre but does not stop the far wing defender from leaving early.",
+            "hr": "Poboljšava sredinu, ali ne sprječava prerani ulazak dalekog krilnog braniča.",
+            "de": "Verbessert die Mitte, verhindert aber nicht das frühe Einrücken außen."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Have the far wing defender jump the centre-back pass before it leaves the hand",
+            "hr": "Neka branič s dalekog krila krene presjeći dodavanje prije nego što lopta napusti ruku srednjega",
+            "de": "Fernen Außenverteidiger schon vor der Ballabgabe auf den Pass von Rückraummitte springen lassen"
+          },
+          "feedback": {
+            "en": "An early gamble exposes both the wing and the passing lane behind the defender.",
+            "hr": "Rano kockanje otvara i krilo i prostor iza braniča.",
+            "de": "Das frühe Risiko öffnet Flügel und Raum hinter dem Verteidiger."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Collapse all six defenders around the two pivots",
+            "hr": "Skupi svih šest braniča oko dva pivota",
+            "de": "Alle sechs Verteidiger um die beiden Kreisläufer zusammenziehen"
+          },
+          "feedback": {
+            "en": "The attack receives uncontested wing finishes on both sides.",
+            "hr": "Napad dobiva neometane završnice s oba krila.",
+            "de": "Der Angriff erhält auf beiden Flügeln freie Abschlüsse."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Weak-side protection in 7v6 starts with clear central ownership; the far wing cannot be the first helper.",
+        "hr": "Zaštita daleke strane u igri 7 na 6 počinje jasnom podjelom u sredini; daleki krilni branič ne smije prvi pomagati.",
+        "de": "Ballferner Schutz im 7 gegen 6 beginnt mit klarer zentraler Zuordnung; der ferne Außenverteidiger darf nicht zuerst helfen."
+      }
+    },
+    {
+      "id": "coach_gold_021",
+      "familyKey": "substitution_attack_defence_late_exchange",
+      "category": "substitution",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "You lead 30–29 with 1:20 left. Your attacking specialist finishes the play, but the defensive substitute is still at the line as the opponent prepares a quick throw-off.",
+        "hr": "Vodite 30:29, a do kraja je 1:20. Napadački specijalist završava akciju, ali obrambeni igrač još je kod prostora za zamjenu dok protivnik priprema brzo početno bacanje.",
+        "de": "Ihr führt 30:29 bei 1:20 Restzeit. Der Angriffsspezialist schließt ab, der Abwehrspieler steht noch im Wechselraum, während der Gegner den schnellen Anwurf vorbereitet."
+      },
+      "question": {
+        "en": "What is the correct substitution decision?",
+        "hr": "Koja je ispravna odluka o zamjeni?",
+        "de": "Welche Wechselentscheidung ist richtig?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "If the exchange is not clearly complete before the restart, keep the attacker on, sprint him to the assigned defensive lane, and wait for the next safe window",
+            "hr": "Ako zamjena nije sigurno završena prije nastavka, ostavi napadača u igri, pošalji ga u dogovoreni obrambeni prostor i pričekaj sljedeću sigurnu priliku",
+            "de": "Ist der Wechsel vor dem Anwurf nicht sicher abgeschlossen, bleibt der Angreifer auf dem Feld, sprintet in den vereinbarten Abwehrraum und wartet auf das nächste sichere Fenster"
+          },
+          "feedback": {
+            "en": "It protects the centre and avoids a rushed or illegal exchange.",
+            "hr": "Štiti sredinu i izbjegava zakašnjelu ili neispravnu zamjenu.",
+            "de": "Schützt die Mitte und vermeidet einen verspäteten oder fehlerhaften Wechsel."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Complete the exchange only if the outgoing player is already at the substitution line and the route is clear",
+            "hr": "Dovrši zamjenu samo ako je izlazni igrač već kod crte za zamjenu i put je potpuno slobodan",
+            "de": "Wechsel nur abschließen, wenn der auswechselnde Spieler bereits an der Wechsellinie und der Weg frei ist"
+          },
+          "feedback": {
+            "en": "This is safe, but it requires both players to recognize the same moment under pressure.",
+            "hr": "Sigurno je, ali traži da oba igrača pod pritiskom prepoznaju isti trenutak.",
+            "de": "Ist sicher, verlangt unter Druck aber, dass beide Spieler denselben Moment erkennen."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Force the planned exchange even if the opponent has already restarted",
+            "hr": "Provedi planiranu zamjenu iako je protivnik već nastavio igru",
+            "de": "Geplanten Wechsel erzwingen, obwohl der Gegner bereits fortgesetzt hat"
+          },
+          "feedback": {
+            "en": "The centre can be empty during the most dangerous transition moment.",
+            "hr": "Sredina može ostati prazna u najopasnijem trenutku tranzicije.",
+            "de": "Die Mitte kann im gefährlichsten Umschaltmoment leer bleiben."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Send the defender on before the attacker reaches the substitution line",
+            "hr": "Pošalji obrambenog igrača u teren prije nego što napadač dođe do crte za zamjenu",
+            "de": "Abwehrspieler aufs Feld schicken, bevor der Angreifer die Wechselzone erreicht"
+          },
+          "feedback": {
+            "en": "That creates a faulty substitution and can lead to a suspension.",
+            "hr": "To stvara pogrešnu zamjenu i može donijeti isključenje.",
+            "de": "Das verursacht einen Wechselfehler und kann eine Zeitstrafe bringen."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Late attack–defence exchanges are secondary to protecting the first defensive lane and completing a legal substitution.",
+        "hr": "Kasna izmjena napad–obrana manje je važna od zaštite prvoga obrambenog prostora i pravilno izvedene zamjene.",
+        "de": "Späte Angriff-Abwehr-Wechsel sind dem Schutz des ersten Abwehrraums und einem regelgerechten Wechsel untergeordnet."
+      }
+    },
+    {
+      "id": "coach_gold_022",
+      "familyKey": "substitution_youth_learning_error",
+      "category": "substitution",
+      "difficulty": "Intermediate",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "0-2",
+        "3-5",
+        "6-10"
+      ],
+      "situation": {
+        "en": "A U15 centre back has twice seen the correct weak-side pass but released it late, causing two turnovers. The player now avoids looking across the court.",
+        "hr": "Srednji vanjski u U15 dvaput je vidio ispravno dodavanje na daleku stranu, ali ga je odigrao prekasno i izgubio loptu. Sada više ni ne gleda preko igrališta.",
+        "de": "Ein U15-Rückraummitte hat zweimal den richtigen ballfernen Pass gesehen, aber zu spät gespielt und den Ball verloren. Jetzt schaut der Spieler nicht mehr quer über das Feld."
+      },
+      "question": {
+        "en": "How should you use the next substitution?",
+        "hr": "Kako treba iskoristiti sljedeću zamjenu?",
+        "de": "Wie sollte der nächste Wechsel genutzt werden?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Give one cue — scan before the catch — allow one planned possession, then substitute and reinforce whether the read was early",
+            "hr": "Daj jednu uputu — pogled prije primanja — ostavi ga za jedan dogovoreni napad, zatim ga zamijeni i potvrdi je li prostor pročitao na vrijeme",
+            "de": "Eine Anweisung geben — vor dem Fangen schauen — einen geplanten Angriff lassen, dann wechseln und die frühe Wahrnehmung bestätigen"
+          },
+          "feedback": {
+            "en": "The player gets a focused learning repetition without carrying the whole match burden.",
+            "hr": "Igrač dobiva usmjereno ponavljanje bez tereta da mora odmah riješiti cijelu utakmicu.",
+            "de": "Der Spieler erhält eine gezielte Lernwiederholung ohne die gesamte Spielbelastung zu tragen."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Substitute now, explain the timing privately, and return the player later with the same single task",
+            "hr": "Zamijeni ga sada, nasamo objasni trenutak dodavanja i kasnije ga vrati s istim jednim zadatkom",
+            "de": "Jetzt wechseln, das Passtiming persönlich erklären und später mit derselben Einzelaufgabe zurückbringen"
+          },
+          "feedback": {
+            "en": "This protects the team and can still teach, but it removes the immediate corrective repetition.",
+            "hr": "Štiti ekipu i još može poučiti, ali uklanja neposredno popravno ponavljanje.",
+            "de": "Schützt das Team und kann lehren, nimmt aber die direkte Korrekturwiederholung."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Leave the player on without instruction so confidence is not disturbed",
+            "hr": "Ostavi ga u igri bez upute kako mu ne bi narušio samopouzdanje",
+            "de": "Ohne Anweisung weiterspielen lassen, um das Selbstvertrauen nicht zu stören"
+          },
+          "feedback": {
+            "en": "Without a concrete task, avoidance can become the new decision habit.",
+            "hr": "Bez jasnog zadatka izbjegavanje može postati nova navika odlučivanja.",
+            "de": "Ohne klare Aufgabe kann Vermeidung zur neuen Entscheidungsgewohnheit werden."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Remove the player for the rest of the match and discuss both turnovers in front of the team",
+            "hr": "Izvadi ga do kraja utakmice i pred ekipom analiziraj oba gubitka lopte",
+            "de": "Für den Rest des Spiels herausnehmen und beide Ballverluste vor dem Team besprechen"
+          },
+          "feedback": {
+            "en": "Public punishment teaches fear of the pass rather than earlier scanning.",
+            "hr": "Javna kazna uči strahu od dodavanja, a ne ranijem pregledu igre.",
+            "de": "Öffentliche Bestrafung lehrt Angst vor dem Pass statt früher Wahrnehmung."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Youth substitutions should manage match risk while preserving one clear learning objective.",
+        "hr": "Zamjena mladog igrača treba smanjiti rizik za ekipu i istodobno sačuvati jedan jasan cilj učenja.",
+        "de": "Jugendwechsel sollen das Spielrisiko steuern und zugleich ein klares Lernziel erhalten."
+      }
+    },
+    {
+      "id": "coach_gold_031",
+      "familyKey": "training_transition_defence_after_missed_shot",
+      "category": "training_plan",
+      "difficulty": "Intermediate",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "0-2",
+        "3-5",
+        "6-10"
+      ],
+      "situation": {
+        "en": "You have 75 minutes with 14 players. Video shows that after a missed backcourt shot, all three first-line attackers watch the ball and the opponent runs through the centre.",
+        "hr": "Imaš 75 minuta i 14 igrača. Snimka pokazuje da nakon promašenog šuta izvana sva tri igrača prve linije gledaju loptu, a protivnik trči kroz sredinu.",
+        "de": "Du hast 75 Minuten mit 14 Spielern. Das Video zeigt: Nach einem Fehlwurf aus dem Rückraum schauen alle drei Spieler der ersten Linie zum Ball, der Gegner läuft durch die Mitte."
+      },
+      "question": {
+        "en": "Which training structure best transfers to the match?",
+        "hr": "Koja struktura treninga najbolje prenosi rješenje u utakmicu?",
+        "de": "Welche Trainingsstruktur überträgt die Lösung am besten ins Spiel?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Brief activation, a 3v2 retreat drill triggered by a shot, then a conditioned 6v6 game that rewards the first player protecting the centre",
+            "hr": "Kratka aktivacija, vježba povratka 3 na 2 koja počinje šutom, zatim uvjetovana igra 6 na 6 koja nagrađuje prvog igrača u zaštiti sredine",
+            "de": "Kurze Aktivierung, eine durch den Wurf ausgelöste 3-gegen-2-Rückzugsübung, danach ein 6 gegen 6 mit Belohnung für den ersten Schutz der Mitte"
+          },
+          "feedback": {
+            "en": "The same visual trigger and first responsibility appear from simple practice to full play.",
+            "hr": "Isti vidljivi okidač i prva odgovornost prenose se od jednostavne vježbe do cijele igre.",
+            "de": "Derselbe sichtbare Auslöser und die erste Aufgabe reichen von der einfachen Übung bis zum Spiel."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Run repeated 3v2 transition defence for most of the session",
+            "hr": "Veći dio treninga ponavljaj tranzicijsku obranu 3 na 2",
+            "de": "Den größten Teil der Einheit wiederholt 3 gegen 2 im Rückzug spielen"
+          },
+          "feedback": {
+            "en": "It gives repetitions, but transfer to full team spacing remains untested.",
+            "hr": "Daje ponavljanja, ali prijenos na raspored cijele ekipe ostaje neprovjeren.",
+            "de": "Bringt Wiederholungen, prüft aber nicht den Transfer in die Mannschaftsordnung."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Use only six-second sprint intervals, then explain the retreat roles at the end",
+            "hr": "Radi samo sprinteve od šest sekundi, a uloge u povratku objasni na kraju",
+            "de": "Nur Sechs-Sekunden-Sprints durchführen und die Rückzugsrollen am Ende erklären"
+          },
+          "feedback": {
+            "en": "Running speed improves, but the players still do not practise the shot-to-retreat decision.",
+            "hr": "Brzina trčanja može napredovati, ali igrači ne vježbaju odluku nakon šuta.",
+            "de": "Die Laufgeschwindigkeit kann steigen, die Entscheidung nach dem Wurf wird aber nicht trainiert."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Spend the session on stationary shooting because missed shots caused the problem",
+            "hr": "Provedi trening u šutu bez obrane jer su promašaji uzrokovali problem",
+            "de": "Die Einheit mit Würfen ohne Abwehr verbringen, weil Fehlwürfe das Problem ausgelöst haben"
+          },
+          "feedback": {
+            "en": "Even good shots can be saved or blocked; the missing behaviour is the immediate retreat.",
+            "hr": "I dobar šut može biti obranjen ili blokiran; nedostaje trenutačni povratak.",
+            "de": "Auch gute Würfe können gehalten oder geblockt werden; es fehlt der sofortige Rückzug."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "A training plan should reproduce the match trigger, teach the first role, and then test it in full play.",
+        "hr": "Plan treninga treba ponoviti okidač iz utakmice, naučiti prvu ulogu i zatim je provjeriti u cijeloj igri.",
+        "de": "Ein Trainingsplan soll den Spielauslöser nachbilden, die erste Aufgabe lehren und sie anschließend im freien Spiel prüfen."
+      }
+    },
+    {
+      "id": "coach_gold_032",
+      "familyKey": "training_match_in_48_hours_freshness",
+      "category": "training_plan",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "The next match is in 48 hours after a dense week. Players move slowly, but the opponent’s 5:1 requires one prepared first-pass solution. You have 70 minutes.",
+        "hr": "Sljedeća utakmica je za 48 sati nakon zgusnutog tjedna. Igrači se kreću usporeno, ali protivnički 5:1 traži jedno pripremljeno rješenje za prvo dodavanje. Imaš 70 minuta.",
+        "de": "Das nächste Spiel ist nach einer dichten Woche in 48 Stunden. Die Spieler wirken langsam, doch gegen das gegnerische 5:1 braucht ihr eine vorbereitete Lösung für den ersten Pass. Du hast 70 Minuten."
+      },
+      "question": {
+        "en": "What should today’s session prioritize?",
+        "hr": "Čemu današnji trening treba dati prednost?",
+        "de": "Was hat heute Vorrang?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Short activation, rehearse the first-pass solution at controlled intensity, test it in brief 6v6 blocks, and finish with set throws",
+            "hr": "Kratka aktivacija, uvježbavanje rješenja za prvo dodavanje kontroliranim intenzitetom, kratki blokovi 6 na 6 i završetak prekidima",
+            "de": "Kurze Aktivierung, Lösung für den ersten Pass bei kontrollierter Intensität einüben, in kurzen 6-gegen-6-Blöcken prüfen und mit Standards abschließen"
+          },
+          "feedback": {
+            "en": "It preserves freshness while securing the one decision needed for the match.",
+            "hr": "Čuva svježinu i učvršćuje jednu odluku potrebnu za utakmicu.",
+            "de": "Erhält die Frische und sichert die eine nötige Spielentscheidung."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Use a short tactical walk-through and end after 45 minutes",
+            "hr": "Prođi taktičko rješenje smanjenim intenzitetom i završi nakon 45 minuta",
+            "de": "Taktische Lösung in reduziertem Tempo durchgehen und nach 45 Minuten beenden"
+          },
+          "feedback": {
+            "en": "The load is appropriate, but the solution receives little live pressure.",
+            "hr": "Opterećenje je primjereno, ali rješenje dobiva malo stvarnog pritiska.",
+            "de": "Die Belastung passt, doch die Lösung erhält wenig echten Druck."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Install a new 5:1 defence and condition heavily in the same session",
+            "hr": "Na istom treningu uvedi novu obranu 5:1 i provedi zahtjevan kondicijski blok",
+            "de": "In derselben Einheit eine neue 5:1-Abwehr einführen und intensiv konditionieren"
+          },
+          "feedback": {
+            "en": "New information and heavy load compete with match readiness.",
+            "hr": "Nove informacije i veliko opterećenje ugrožavaju spremnost za utakmicu.",
+            "de": "Neue Informationen und hohe Belastung gefährden die Spielbereitschaft."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Run a full-intensity 70-minute practice match to make the team feel sharp",
+            "hr": "Odigraj 70 minuta trening-utakmice punim intenzitetom kako bi se ekipa osjećala oštro",
+            "de": "Ein 70-minütiges Trainingsspiel mit voller Intensität durchführen, damit sich die Mannschaft scharf fühlt"
+          },
+          "feedback": {
+            "en": "It adds unnecessary fatigue and does not isolate the required first-pass decision.",
+            "hr": "Dodaje nepotreban umor i ne izdvaja potrebnu odluku prvog dodavanja.",
+            "de": "Erzeugt unnötige Ermüdung und isoliert die nötige Erstpassentscheidung nicht."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Forty-eight hours before a match, clarity and controlled exposure matter more than volume.",
+        "hr": "Četrdeset osam sati prije utakmice jasnoća i kontrolirano opterećenje važniji su od količine rada.",
+        "de": "Achtundvierzig Stunden vor dem Spiel sind Klarheit und kontrollierte Belastung wichtiger als Umfang."
+      }
+    },
+    {
+      "id": "coach_gold_041",
+      "familyKey": "development_pivot_receive_under_contact",
+      "category": "player_development",
+      "difficulty": "Intermediate",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "0-2",
+        "3-5",
+        "6-10"
+      ],
+      "situation": {
+        "en": "A U16 pivot reaches the correct space but turns the chest away from contact and loses low passes when the defender fronts from the side.",
+        "hr": "Pivot u U16 dolazi u pravi prostor, ali okreće prsa od kontakta i gubi niska dodavanja kada mu branič bočno uđe ispred putanje lopte.",
+        "de": "Ein U16-Kreisläufer erreicht den richtigen Raum, dreht aber die Brust vom Kontakt weg und verliert tiefe Pässe, wenn der Verteidiger seitlich vor ihm arbeitet."
+      },
+      "question": {
+        "en": "What is the best first development step?",
+        "hr": "Koji je najbolji prvi razvojni korak?",
+        "de": "Was ist der beste erste Entwicklungsschritt?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Teach a wide base and chest toward the ball, then give repeated low feeds with controlled side contact before adding the finish",
+            "hr": "Postavi stopala šire i prsa prema lopti, zatim ponavljaj niska dodavanja uz kontrolirani bočni kontakt prije nego što dodaš završnicu",
+            "de": "Breiten Stand und Brust zum Ball lehren, dann tiefe Zuspiele mit kontrolliertem Seitenkontakt wiederholen, bevor der Abschluss folgt"
+          },
+          "feedback": {
+            "en": "It isolates the body position that protects the catch before increasing complexity.",
+            "hr": "Izdvaja položaj tijela koji štiti primanje prije povećanja složenosti.",
+            "de": "Isoliert die Körperposition, die den Fang schützt, bevor die Aufgabe komplexer wird."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Start with uncontested low catches, then add a passive defender",
+            "hr": "Počni niskim primanjima bez obrane, zatim dodaj pasivnog braniča",
+            "de": "Mit freien tiefen Fängen beginnen, dann einen passiven Verteidiger hinzufügen"
+          },
+          "feedback": {
+            "en": "Useful for confidence, but the key side-contact problem appears later.",
+            "hr": "Korisno je za sigurnost, ali se ključni problem bočnog kontakta pojavljuje tek poslije.",
+            "de": "Hilft der Sicherheit, das zentrale Seitenkontaktproblem kommt jedoch erst später."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Move the player to wing until catching confidence improves",
+            "hr": "Premjesti igrača na krilo dok mu se sigurnost primanja ne popravi",
+            "de": "Spieler auf den Flügel versetzen, bis die Fangsicherheit steigt"
+          },
+          "feedback": {
+            "en": "The new role removes the exact contact skill the pivot needs to learn.",
+            "hr": "Nova uloga uklanja upravo kontakt koji pivot treba naučiti svladati.",
+            "de": "Die neue Rolle entfernt genau den Kontakt, den der Kreisläufer lernen muss."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Increase pass speed and tell the player to hold the ball more firmly",
+            "hr": "Povećaj brzinu dodavanja i reci igraču da jače drži loptu",
+            "de": "Passgeschwindigkeit erhöhen und den Spieler auffordern, den Ball fester zu halten"
+          },
+          "feedback": {
+            "en": "More speed magnifies the body-position error without teaching a solution.",
+            "hr": "Veća brzina pojačava pogrešku položaja tijela bez poučavanja rješenja.",
+            "de": "Mehr Tempo vergrößert den Körperpositionsfehler, ohne eine Lösung zu lehren."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Pivot receiving under contact starts with stable feet, visible hands, and the chest protecting the ball line.",
+        "hr": "Primanje pivota pod kontaktom počinje stabilnim osloncem, vidljivim rukama i prsima koja štite putanju lopte.",
+        "de": "Fangen unter Kontakt beginnt mit stabilem Stand, sichtbaren Händen und einer Brustposition, die die Ballbahn schützt."
+      }
+    },
+    {
+      "id": "coach_gold_042",
+      "familyKey": "development_goalkeeper_wing_angle",
+      "category": "player_development",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "Your goalkeeper saves well from nine metres but concedes four wing shots by stepping toward the post before the shooter leaves the floor.",
+        "hr": "Vaš vratar dobro brani šuteve s devet metara, ali prima četiri pogotka s krila jer kreće prema stativi prije nego što se šuter odrazi.",
+        "de": "Euer Torwart hält gut aus neun Metern, kassiert aber vier Flügelwürfe, weil er schon vor dem Absprung des Werfers zum Pfosten zieht."
+      },
+      "question": {
+        "en": "Which coaching intervention is most precise?",
+        "hr": "Koja je trenerska intervencija najpreciznija?",
+        "de": "Welche Trainermaßnahme ist am präzisesten?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Keep the starting line until take-off, read the airborne body and ball height, then make one committed movement",
+            "hr": "Zadrži početnu liniju do odraza, pročitaj tijelo u zraku i visinu lopte, zatim napravi jedan odlučan pokret",
+            "de": "Ausgangslinie bis zum Absprung halten, Körper in der Luft und Ballhöhe lesen, dann eine entschlossene Bewegung ausführen"
+          },
+          "feedback": {
+            "en": "It delays commitment until the shooter reveals usable information.",
+            "hr": "Odgađa odluku dok šuter ne pokaže korisnu informaciju.",
+            "de": "Verzögert die Festlegung, bis der Werfer verwertbare Informationen zeigt."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Begin half a step farther from the post and keep the same reading sequence",
+            "hr": "Počni pola koraka dalje od stative i zadrži isti redoslijed čitanja",
+            "de": "Einen halben Schritt weiter vom Pfosten beginnen und dieselbe Lesefolge beibehalten"
+          },
+          "feedback": {
+            "en": "The position may help, but early commitment can still reopen the angle.",
+            "hr": "Položaj može pomoći, ali prerana odluka ponovno otvara kut.",
+            "de": "Die Position kann helfen, doch frühe Festlegung öffnet den Winkel erneut."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Alternate the starting position on every wing shot so the shooter cannot predict it",
+            "hr": "Mijenjaj početni položaj pri svakom šutu s krila kako ga šuter ne bi predvidio",
+            "de": "Bei jedem Flügelwurf die Ausgangsposition wechseln, damit der Werfer sie nicht vorhersieht"
+          },
+          "feedback": {
+            "en": "Variation without a stable read makes the goalkeeper less repeatable.",
+            "hr": "Promjena bez stabilnog čitanja čini vratara manje pouzdanim.",
+            "de": "Variation ohne stabiles Lesen macht den Torwart weniger wiederholbar."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Ask the goalkeeper to choose the corner in advance from where this shooter usually scores",
+            "hr": "Traži od vratara da unaprijed odabere kut prema tome gdje taj šuter obično zabija",
+            "de": "Torwart soll die Ecke im Voraus danach wählen, wo dieser Werfer gewöhnlich trifft"
+          },
+          "feedback": {
+            "en": "Past tendency cannot replace the live take-off and ball cues.",
+            "hr": "Ranija navika šutera ne može zamijeniti čitanje odraza i položaja lopte.",
+            "de": "Eine frühere Tendenz ersetzt nicht die Hinweise aus Absprung und Ballposition."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Wing-shot development should train the goalkeeper to hold the angle and commit from live information, not from an early guess.",
+        "hr": "Razvoj obrane krilnog šuta treba učiti vratara da zadrži kut i reagira na ono što vidi u trenutku šuta, a ne da prerano pogađa.",
+        "de": "Die Entwicklung gegen Flügelwürfe soll das Halten des Winkels und die Reaktion auf aktuelle Informationen lehren, nicht frühes Raten."
+      }
+    },
+    {
+      "id": "coach_gold_051",
+      "familyKey": "analysis_defence_switch_trigger",
+      "category": "opponent_analysis",
+      "difficulty": "Intermediate",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "0-2",
+        "3-5",
+        "6-10"
+      ],
+      "situation": {
+        "en": "Across three matches, the opponent starts in 5:1 after scoring but drops into 6:0 after a save or technical error. You have 90 seconds for the pre-match briefing.",
+        "hr": "U tri utakmice protivnik nakon postignutog pogotka postavlja 5:1, a nakon obrane vratara ili tehničke pogreške povlači se u 6:0. Za uputu prije utakmice imaš 90 sekundi.",
+        "de": "In drei Spielen stellt der Gegner nach eigenem Tor auf 5:1, nach Parade oder technischem Fehler fällt er ins 6:0 zurück. Du hast 90 Sekunden für die Spielbesprechung."
+      },
+      "question": {
+        "en": "What should the briefing contain?",
+        "hr": "Što treba sadržavati uputa?",
+        "de": "Was gehört in die Besprechung?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Name the trigger, give one first-pass solution against 5:1, and one spacing rule against 6:0",
+            "hr": "Imenuj okidač, daj jedno rješenje prvog dodavanja protiv 5:1 i jedno pravilo rasporeda protiv 6:0",
+            "de": "Auslöser benennen, eine Erstpasslösung gegen 5:1 und eine Abstandsregel gegen 6:0 geben"
+          },
+          "feedback": {
+            "en": "Players can identify the defence before the first pass and apply a prepared rule.",
+            "hr": "Igrači mogu prepoznati obranu prije prvog dodavanja i primijeniti pripremljeno pravilo.",
+            "de": "Die Spieler erkennen die Abwehr vor dem ersten Pass und wenden eine vorbereitete Regel an."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Prepare one set play for each defence without naming when the switch occurs",
+            "hr": "Pripremi jednu akciju za svaku obranu, ali bez objašnjenja kada se obrana mijenja",
+            "de": "Je eine Aktion gegen beide Abwehrformen vorbereiten, ohne den Wechselzeitpunkt zu benennen"
+          },
+          "feedback": {
+            "en": "The actions help only if players recognize which one is active.",
+            "hr": "Akcije pomažu samo ako igrači prepoznaju koju trebaju koristiti.",
+            "de": "Die Aktionen helfen nur, wenn die Spieler erkennen, welche gerade gilt."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "List every observed defender tendency from the three videos",
+            "hr": "Nabroji svaku uočenu naviku braniča iz sve tri snimke",
+            "de": "Jede beobachtete Verteidigergewohnheit aus allen drei Videos aufzählen"
+          },
+          "feedback": {
+            "en": "Too much detail hides the reliable team-level trigger.",
+            "hr": "Previše detalja skriva pouzdan okidač na razini cijele ekipe.",
+            "de": "Zu viele Details verdecken den verlässlichen Mannschaftsauslöser."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Describe the opponent simply as aggressive and let the players adapt",
+            "hr": "Opiši protivnika samo kao agresivnog i prepusti igračima prilagodbu",
+            "de": "Gegner nur als aggressiv beschreiben und die Spieler selbst anpassen lassen"
+          },
+          "feedback": {
+            "en": "The description gives no observable rule for the first decision.",
+            "hr": "Opis ne daje vidljivo pravilo za prvu odluku.",
+            "de": "Die Beschreibung liefert keine beobachtbare Regel für die erste Entscheidung."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Useful opponent analysis converts a repeated trigger into one immediate action for each expected structure.",
+        "hr": "Korisna analiza protivnika pretvara ponavljajući okidač u jednu trenutačnu radnju za svaku očekivanu strukturu.",
+        "de": "Nützliche Gegneranalyse übersetzt einen wiederkehrenden Auslöser in eine sofortige Handlung für jede erwartete Struktur."
+      }
+    },
+    {
+      "id": "coach_gold_052",
+      "familyKey": "analysis_left_handed_right_back_pattern",
+      "category": "opponent_analysis",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "The opponent’s left-handed right back scores mainly after a parallel run with the centre back. The shot comes when your left half-defender turns the chest toward the pivot.",
+        "hr": "Protivnički ljevoruki desni vanjski najčešće zabija nakon paralelnog kretanja sa srednjim vanjskim. Šut dolazi kada vaš lijevi polubranitelj okrene prsa prema pivotu.",
+        "de": "Der linkshändige Rückraum rechts trifft meist nach parallelem Lauf mit Rückraummitte. Der Wurf kommt, sobald euer linker Halbverteidiger die Brust zum Kreisläufer dreht."
+      },
+      "question": {
+        "en": "What is the most useful analytical conclusion?",
+        "hr": "Koji je najkorisniji zaključak analize?",
+        "de": "Welche Analysefolgerung ist am nützlichsten?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "The trigger is the half-defender’s inward turn: keep the chest on the back, pass pivot responsibility inside, and contest before the left-hand release",
+            "hr": "Okidač je unutarnje okretanje polubranitelja: zadrži prsa prema vanjskom, predaj pivota središnjem braniču i izađi prije izbačaja lijevom rukom",
+            "de": "Auslöser ist das Einwärtsdrehen des Halbverteidigers: Brust zum Rückraum halten, Kreisläufer innen übergeben und vor der linkshändigen Abgabe stören"
+          },
+          "feedback": {
+            "en": "It links the repeated scoring action to one visible defensive error and one response.",
+            "hr": "Povezuje ponavljajuću akciju s jednom vidljivom obrambenom pogreškom i odgovorom.",
+            "de": "Verbindet die wiederkehrende Toraktion mit einem sichtbaren Abwehrfehler und einer Antwort."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Tell the goalkeeper that the shooter prefers the far corner after the parallel run",
+            "hr": "Reci vrataru da šuter nakon paralelnog kretanja najčešće gađa dalji kut",
+            "de": "Torwart mitteilen, dass der Werfer nach dem parallelen Lauf die lange Ecke bevorzugt"
+          },
+          "feedback": {
+            "en": "The tendency can help, but the defence still allows an uncontested release.",
+            "hr": "Navika može pomoći, ali obrana i dalje dopušta neometan izbačaj.",
+            "de": "Die Tendenz kann helfen, doch die Abwehr erlaubt weiter eine freie Abgabe."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Change the entire defence to man-to-man coverage on the right back",
+            "hr": "Promijeni cijelu obranu u igru čovjek-na-čovjeka na desnom vanjskom",
+            "de": "Gesamte Abwehr auf Manndeckung gegen Rückraum rechts umstellen"
+          },
+          "feedback": {
+            "en": "A full structural change is larger than the identified half-defender error.",
+            "hr": "Potpuna promjena sustava veća je od utvrđene pogreške polubranitelja.",
+            "de": "Eine vollständige Systemänderung ist größer als der erkannte Fehler des Halbverteidigers."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Treat the action like the same movement by a right-handed right back",
+            "hr": "Tretiraj akciju jednako kao kretanje desnorukog desnog vanjskog",
+            "de": "Aktion genauso behandeln wie bei einem rechtshändigen Rückraum rechts"
+          },
+          "feedback": {
+            "en": "The release side and angle are central to why the current body orientation fails.",
+            "hr": "Strana izbačaja i kut ključni su zašto sadašnji položaj tijela ne uspijeva.",
+            "de": "Abgabeseite und Winkel erklären gerade, warum die aktuelle Körperstellung scheitert."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Opponent analysis is valuable when it identifies the repeatable cue that precedes the action, not only the final shot location.",
+        "hr": "Analiza protivnika vrijedi kada prepozna ponovljivi znak prije akcije, a ne samo mjesto završnog šuta.",
+        "de": "Gegneranalyse ist wertvoll, wenn sie den wiederkehrenden Hinweis vor der Aktion erkennt, nicht nur die spätere Wurfposition."
+      }
+    },
+    {
+      "id": "coach_gold_061",
+      "familyKey": "leadership_bench_argument",
+      "category": "leadership",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Youth Coach",
+        "Senior Coach",
+        "Professional Coach",
+        "Goalkeeper Coach",
+        "Assistant Coach",
+        "Head Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "Two starters argue loudly on the bench after a substitution. One blames the other for a missed switch, and younger players are watching.",
+        "hr": "Dva igrača početne postave glasno se svađaju na klupi nakon zamjene. Međusobno se okrivljuju za propušteno preuzimanje, a mlađi igrači sve gledaju.",
+        "de": "Zwei Stammspieler streiten nach einem Wechsel laut auf der Bank. Einer gibt dem anderen die Schuld für eine verpasste Übergabe, jüngere Spieler schauen zu."
+      },
+      "question": {
+        "en": "What is the best immediate leadership response?",
+        "hr": "Koji je najbolji neposredni odgovor trenera?",
+        "de": "Was ist die beste unmittelbare Führungsreaktion?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Stop the argument, restate the bench standard in one sentence, separate the players, and schedule a private tactical review after the match",
+            "hr": "Zaustavi svađu, jednom rečenicom ponovi pravilo ponašanja na klupi, razdvoji igrače i dogovori nasamo taktički razgovor nakon utakmice",
+            "de": "Streit stoppen, den Bankstandard in einem Satz benennen, Spieler trennen und nach dem Spiel eine persönliche taktische Klärung ansetzen"
+          },
+          "feedback": {
+            "en": "It protects the team publicly and reserves the detailed disagreement for a calmer setting.",
+            "hr": "Javno štiti ekipu, a detaljan spor ostavlja za mirniji razgovor.",
+            "de": "Schützt die Mannschaft öffentlich und verlegt die Detailklärung in einen ruhigeren Rahmen."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Separate the players now and address the standard with each one individually at half-time",
+            "hr": "Sada razdvoji igrače i na poluvremenu svakome pojedinačno objasni pravilo ponašanja",
+            "de": "Spieler jetzt trennen und den Standard in der Halbzeit mit jedem einzeln klären"
+          },
+          "feedback": {
+            "en": "The conflict stops, but the rest of the bench does not hear the shared standard.",
+            "hr": "Sukob prestaje, ali ostatak klupe ne čuje zajedničko pravilo.",
+            "de": "Der Streit endet, doch die Bank hört den gemeinsamen Standard nicht."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Let the captain decide which player is right so play can continue",
+            "hr": "Prepusti kapetanu da odluči koji je igrač u pravu kako bi se igra nastavila",
+            "de": "Kapitän entscheiden lassen, welcher Spieler recht hat, damit das Spiel weitergeht"
+          },
+          "feedback": {
+            "en": "It turns a behaviour standard into a public contest over status.",
+            "hr": "Pretvara pravilo ponašanja u javno nadmetanje za status.",
+            "de": "Macht aus einem Verhaltensstandard einen öffentlichen Statuskampf."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Join the tactical argument and correct one player in front of the whole bench",
+            "hr": "Uključi se u taktičku svađu i pred cijelom klupom ispravljaj jednog igrača",
+            "de": "In den Taktikstreit einsteigen und einen Spieler vor der gesamten Bank korrigieren"
+          },
+          "feedback": {
+            "en": "The coach escalates the spectacle instead of restoring the team standard.",
+            "hr": "Trener pojačava predstavu umjesto da vrati pravilo ekipe.",
+            "de": "Der Trainer verschärft die Szene, statt den Mannschaftsstandard wiederherzustellen."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "Leadership under match pressure protects the shared standard immediately and resolves personal or tactical conflict in private.",
+        "hr": "Vodstvo pod pritiskom utakmice odmah štiti zajedničko pravilo, a osobni ili taktički sukob rješava nasamo.",
+        "de": "Führung unter Spieldruck schützt sofort den gemeinsamen Standard und klärt persönliche oder taktische Konflikte vertraulich."
+      }
+    },
+    {
+      "id": "coach_gold_062",
+      "familyKey": "leadership_align_assistant_message",
+      "category": "leadership",
+      "difficulty": "Advanced",
+      "coachTypeTags": [
+        "Assistant Coach",
+        "Head Coach",
+        "Senior Coach",
+        "Professional Coach"
+      ],
+      "experienceTags": [
+        "3-5",
+        "6-10",
+        "10+"
+      ],
+      "situation": {
+        "en": "During a timeout, the assistant tells the left back to attack immediately while the head coach asks the team to hold the ball for the final shot. Players look between both coaches.",
+        "hr": "Tijekom minute odmora pomoćni trener traži od lijevog vanjskog da odmah napadne, dok glavni trener traži da ekipa čuva loptu za posljednji šut. Igrači gledaju čas jednoga, čas drugoga.",
+        "de": "Während der Auszeit fordert der Assistenztrainer Rückraum links zum sofortigen Angriff auf, während der Cheftrainer den letzten Wurf ausspielen lassen will. Die Spieler schauen zwischen beiden Trainern hin und her."
+      },
+      "question": {
+        "en": "How should the coaching staff respond?",
+        "hr": "Kako treba reagirati stručni stožer?",
+        "de": "Wie sollte das Trainerteam reagieren?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "The head coach names the final decision immediately; the assistant reinforces it, and both review the disagreement privately after the match",
+            "hr": "Glavni trener odmah jasno kaže konačnu odluku, pomoćni je potvrdi, a neslaganje poslije utakmice razjasne nasamo",
+            "de": "Cheftrainer nennt sofort die endgültige Entscheidung, der Assistent verstärkt sie, und beide klären die Abweichung nach dem Spiel vertraulich"
+          },
+          "feedback": {
+            "en": "Players receive one message now without silencing later staff learning.",
+            "hr": "Igrači odmah dobivaju jednu poruku, a stožer poslije može učiti iz neslaganja.",
+            "de": "Die Spieler erhalten jetzt eine Botschaft, ohne die spätere gemeinsame Auswertung zu verhindern."
+          },
+          "id": "a"
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "The assistant steps back and lets the head coach finish, then asks for a short clarification before the next timeout",
+            "hr": "Pomoćni trener se povuče i pusti glavnog da završi, zatim prije sljedeće minute odmora zatraži kratko pojašnjenje",
+            "de": "Assistent tritt zurück, lässt den Cheftrainer abschließen und bittet vor der nächsten Auszeit um kurze Klärung"
+          },
+          "feedback": {
+            "en": "This restores one voice, though the players do not hear explicit alignment.",
+            "hr": "Vraća jednu poruku, ali igrači ne čuju izričitu potvrdu zajedništva.",
+            "de": "Stellt eine Stimme her, doch die Spieler hören keine ausdrückliche Abstimmung."
+          },
+          "id": "b"
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Pause the timeout so both coaches can debate which option is tactically stronger",
+            "hr": "Zaustavi uputu kako bi oba trenera raspravila koja je mogućnost taktički bolja",
+            "de": "Auszeit unterbrechen, damit beide Trainer diskutieren, welche Option taktisch besser ist"
+          },
+          "feedback": {
+            "en": "The team loses time and confidence while the staff solves its own process.",
+            "hr": "Ekipa gubi vrijeme i sigurnost dok stožer rješava vlastiti postupak.",
+            "de": "Die Mannschaft verliert Zeit und Sicherheit, während der Stab seinen Prozess klärt."
+          },
+          "id": "c"
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Have each coach instruct a different side of the attack and let the players choose",
+            "hr": "Neka svaki trener vodi jednu stranu napada, a igrači neka sami izaberu uputu",
+            "de": "Jeder Trainer weist eine Angriffsseite an, die Spieler sollen selbst wählen"
+          },
+          "feedback": {
+            "en": "Competing commands make the final possession slower and less accountable.",
+            "hr": "Suprotne upute usporavaju posljednji napad i brišu odgovornost.",
+            "de": "Widersprüchliche Anweisungen verlangsamen den letzten Angriff und verwischen Verantwortung."
+          },
+          "id": "d"
+        }
+      ],
+      "explanation": {
+        "en": "A coaching staff can disagree, but players need one accountable decision in the moment and a private staff review later.",
+        "hr": "Stručni stožer može imati različita mišljenja, ali igrači u tom trenutku trebaju jednu jasnu odluku, a stožer poslije razgovor nasamo.",
+        "de": "Ein Trainerteam darf unterschiedlicher Meinung sein, doch die Spieler brauchen im Moment eine verantwortete Entscheidung und der Stab später eine vertrauliche Klärung."
+      }
+    }
+  ]
+}

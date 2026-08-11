@@ -64,13 +64,13 @@ console.log('\n=== Stats / weakness skills ===');
 console.log('\n=== Coach depth ===');
 {
   const ch = readFileSync(join(root, 'lib/coach-platform/challenges.ts'), 'utf8');
-  const extra = readFileSync(join(root, 'lib/coach-platform/challenges-extra.ts'), 'utf8');
+  const gold = JSON.parse(readFileSync(join(root, 'lib/coach-platform/challenges-gold.json'), 'utf8'));
   const tracks = readFileSync(join(root, 'lib/coach-platform/tracks.ts'), 'utf8');
-  assert('extra challenges', extra.includes('COACH_CHALLENGES_EXTRA'));
-  assert('youth tagged challenges', extra.includes('Youth Coach'));
-  assert('gk coach tagged', extra.includes('Goalkeeper Coach'));
+  assert('Gold 70 challenges', gold.length === 70, `found ${gold.length}`);
+  assert('youth tagged challenges', gold.some((challenge) => challenge.coachTypeTags.includes('Youth Coach')));
+  assert('gk coach tagged', gold.some((challenge) => challenge.coachTypeTags.includes('Goalkeeper Coach')));
   assert('track finalAssessment', tracks.includes('finalAssessment'));
-  assert('challenges merged', ch.includes('COACH_CHALLENGES_EXTRA'));
+  assert('legacy Coach not merged', ch.includes('challenges-gold.json') && !ch.includes('COACH_CHALLENGES_EXTRA'));
 }
 
 console.log('\n=== Locales ===');

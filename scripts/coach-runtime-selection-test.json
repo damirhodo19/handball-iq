@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "coachCount": 70,
+  "profileCombinations": 120,
+  "trials": 1200,
+  "emptyPools": 0,
+  "returnedLegacy": false,
+  "staleResolve": {
+    "requested": [
+      "coach-timeout-1",
+      "coach-defence-1",
+      "coach-sub-1",
+      "coach-plan-1",
+      "coach-pdev-1",
+      "coach-opp-1",
+      "coach-lead-1",
+      "coach-youth-teach-1",
+      "coach-head-tactic-1",
+      "coach-gk-dev-1",
+      "coach-assist-analysis-1",
+      "coach-lead-comm-1"
+    ],
+    "resolved": [],
+    "droppedLegacy": [
+      "coach-timeout-1",
+      "coach-defence-1",
+      "coach-sub-1",
+      "coach-plan-1",
+      "coach-pdev-1",
+      "coach-opp-1",
+      "coach-lead-1",
+      "coach-youth-teach-1",
+      "coach-head-tactic-1",
+      "coach-gk-dev-1",
+      "coach-assist-analysis-1",
+      "coach-lead-comm-1"
+    ]
+  },
+  "errors": []
+}

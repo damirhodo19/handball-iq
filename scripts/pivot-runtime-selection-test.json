@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "pivotPrimaryCount": 60,
+  "trials": 100,
+  "returnedLegacy": false,
+  "staleResolve": {
+    "requested": [
+      "scn_bank_305",
+      "scn_bank_306",
+      "scn_bank_307",
+      "scn_bank_308",
+      "scn_bank_309",
+      "scn_bank_1001",
+      "scn_bank_1002"
+    ],
+    "resolved": [
+      "scn_bank_1001",
+      "scn_bank_1002"
+    ],
+    "droppedLegacy": [
+      "scn_bank_305",
+      "scn_bank_306",
+      "scn_bank_307",
+      "scn_bank_308",
+      "scn_bank_309"
+    ]
+  },
+  "errors": []
+}

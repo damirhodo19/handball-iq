@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-10T15:04:51.903Z",
+  "date": "2026-08-11T09:42:07.893Z",
   "verdict": "PASS",
   "FAIL": [],
   "report": {
@@ -69,32 +69,32 @@
       "Pivot": {
         "trainingTop": [
           {
-            "id": "scn_bank_305",
+            "id": "scn_bank_1001",
             "primary": "Pivot",
-            "title": "Pivot — Seal Side vs Flat Line"
+            "title": "Pivot — Seal the Far Hip and Leave the Feed Window Open"
           },
           {
-            "id": "scn_bank_306",
+            "id": "scn_bank_1002",
             "primary": "Pivot",
-            "title": "Pivot — Clearing the Drive Lane"
+            "title": "Pivot — Clear the Drive Lane, Then Reseal the Help Defender"
           },
           {
-            "id": "scn_bank_307",
+            "id": "scn_bank_1003",
             "primary": "Pivot",
-            "title": "Pivot — Secure Under Back Contact"
+            "title": "Pivot — Show the Bounce Target Behind the Fronting Defender"
           },
           {
-            "id": "scn_bank_308",
+            "id": "scn_bank_1004",
             "primary": "Pivot",
-            "title": "Pivot — Legal Goalkeeper Screen"
+            "title": "Pivot — Arrive, Set, Then Let the Defender Hit the Screen"
           },
           {
-            "id": "scn_bank_309",
+            "id": "scn_bank_1005",
             "primary": "Pivot",
-            "title": "Pivot — Finish Before Recovery"
+            "title": "Pivot — Stay Behind the Advanced Defender as the Central Outlet"
           }
         ],
-        "matchPoolSize": 99,
+        "matchPoolSize": 109,
         "gkInMatchPool": 0
       },
       "Centre Back": {

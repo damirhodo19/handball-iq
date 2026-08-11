@@ -998,13 +998,17 @@ const audit = {
     lwApprovedCount41: counts.LW === 41,
     unequalCountsIntentional: true,
     lwCurriculumCompleteAt41: true,
-    legacyCleanupNotYetOccurred: true,
+    legacyCleanupComplete: legacySeparation.LW.legacyCount === 0,
     noDeploymentOccurred: true,
     noGoldScenarioModifiedInThisPass: true,
   },
 };
 
-writeFileSync(join(root, 'scripts/gold-bank-final-lock-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+const finalLockManifestPath = join(root, 'scripts/gold-bank-final-lock-manifest.json');
+// A lock manifest is immutable once created. Audits may verify it, never refresh timestamps or drop cleanup metadata.
+if (!existsSync(finalLockManifestPath)) {
+  writeFileSync(finalLockManifestPath, JSON.stringify(manifest, null, 2) + '\n');
+}
 writeFileSync(join(root, 'scripts/gold-bank-final-integration-audit.json'), JSON.stringify(audit, null, 2) + '\n');
 
 const md = [];
@@ -1083,7 +1087,7 @@ md.push('## Statements');
 md.push('');
 md.push('- Unequal positional counts are intentional');
 md.push('- LW curriculum is complete at 41');
-md.push('- Legacy cleanup has NOT yet occurred');
+md.push(`- Legacy cleanup is ${legacySeparation.LW.legacyCount === 0 ? 'complete' : 'not yet complete'}`);
 md.push('- No deployment occurred');
 md.push('- No Gold scenario was modified during this pass');
 md.push('');

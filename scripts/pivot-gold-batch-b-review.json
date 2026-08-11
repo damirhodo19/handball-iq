@@ -1,0 +1,2171 @@
+{
+  "status": "PIVOT GOLD BATCH B — HUMAN COACH REVIEW",
+  "priorSourceCount": 25,
+  "batchCount": 20,
+  "sourceGoldAfterBatch": 45,
+  "runtimeBankModified": false,
+  "scenarios": [
+    {
+      "batchId": "pv_b_01",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_51_screen_advanced_recovery_lane",
+      "title": {
+        "en": "Pivot — Screen the Advanced Defender’s Recovery, Not His First Step",
+        "hr": "Pivot — blokiraj povratak isturenog, ne njegov prvi izlazak",
+        "de": "Kreisläufer — Rückweg des Vorgezogenen sperren, nicht seinen ersten Schritt"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 32,
+      "score": "16:15",
+      "defensiveSystem": "5-1",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "screening",
+        "timing",
+        "teamplay"
+      ],
+      "primaryTacticalCue": "Advanced defender has chased centre back wide and turns to recover through middle",
+      "fingerprint": {
+        "objective": "delay 5-1 front recovery legally",
+        "cue": "advanced defender turns back toward centre",
+        "relationship": "pivot–advanced defender–centre back",
+        "structure": "5-1",
+        "decision": "set stationary screen in recovery lane",
+        "timing": "after defender passes, before return step",
+        "risk": "screening first jump clogs ball side"
+      },
+      "situation": {
+        "en": "You lead 16:15 at 32' against 5:1. The advanced defender chases the centre back toward the right touchline and then turns to recover through the middle. You can arrive in his return lane before he does. Screening his first outward step would have crowded the ball; his recovery is now the useful moment.",
+        "hr": "Vodite 16:15 u 32. minuti protiv 5:1. Istureni branič prati srednjeg vanjskog prema desnoj aut-liniji pa se okreće vratiti kroz sredinu. Možeš stići u njegovu povratnu putanju prije njega. Blok na prvom izlasku stvorio bi gužvu uz loptu; njegov povratak sada je pravi trenutak.",
+        "de": "Ihr führt 16:15 in Minute 32 gegen 5:1. Der Vorgezogene jagt den Rückraum Mitte zur rechten Seitenlinie und dreht dann zur Rückkehr durch die Mitte. Du kannst vor ihm in seiner Rückspur stehen. Die erste Bewegung nach außen zu sperren hätte den Ballraum verstopft; jetzt ist der Rückweg entscheidend."
+      },
+      "question": {
+        "en": "Where and when do you set the useful screen?",
+        "hr": "Gdje i kada postavljaš koristan blok?",
+        "de": "Wo und wann stellst du die wirksame Sperre?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set stationary in his central recovery lane after he turns back",
+            "hr": "Postavi se mirno u njegovu središnju povratnu putanju nakon što se okrene",
+            "de": "Nach seiner Umkehr fest in der zentralen Rückspur stehen"
+          },
+          "feedback": {
+            "en": "Correct — the screen delays recovery without crowding the first attack.",
+            "hr": "Točno — blok usporava povratak bez gužve u prvoj akciji.",
+            "de": "Richtig — die Sperre verzögert die Rückkehr, ohne den ersten Angriff zu verstopfen."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip away if you cannot establish both feet before he returns",
+            "hr": "Otklizaj ako ne možeš postaviti obje noge prije njegova povratka",
+            "de": "Abrollen, wenn beide Füße vor seiner Rückkehr nicht stehen"
+          },
+          "feedback": {
+            "en": "Good late solution; do not chase contact.",
+            "hr": "Dobro kasno rješenje; ne lovi kontakt.",
+            "de": "Gute späte Lösung; keinen Kontakt jagen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Step into his first outward jump beside the centre back",
+            "hr": "Uđi u njegov prvi izlazak uz srednjeg vanjskog",
+            "de": "In seinen ersten Schritt neben dem Rückraum treten"
+          },
+          "feedback": {
+            "en": "Risky — you bring another body to the pressure side.",
+            "hr": "Rizično — dovodiš još jedno tijelo na stranu pritiska.",
+            "de": "Riskant — du bringst einen weiteren Körper auf die Druckseite."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Hold his shirt as he turns back",
+            "hr": "Drži mu dres dok se okreće natrag",
+            "de": "Beim Zurückdrehen sein Trikot halten"
+          },
+          "feedback": {
+            "en": "Poor — illegal holding removes the advantage.",
+            "hr": "Loše — nedopušteno držanje poništava prednost.",
+            "de": "Schlecht — illegales Halten nimmt den Vorteil."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Against 5:1, let the front defender leave and legally delay his recovery. Arrive early, become stationary and keep the central pocket open for the next pass.",
+        "hr": "Protiv 5:1 pusti isturenog da izađe pa legalno uspori povratak. Stigni rano, mirno se postavi i čuvaj središnji prostor za sljedeće dodavanje.",
+        "de": "Gegen 5:1 den Vorgezogenen gehen lassen und seine Rückkehr legal verzögern. Früh ankommen, fest stehen und den zentralen Raum für den nächsten Pass öffnen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A creates the intended screen; B is only the safe correction after the timing is lost.",
+        "hr": "A stvara planirani blok; B je sigurna korekcija tek kad se izgubi vrijeme.",
+        "de": "A schafft die geplante Sperre; B korrigiert nur verlorenes Timing."
+      }
+    },
+    {
+      "batchId": "pv_b_02",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_33_short_roll_after_pressure",
+      "title": {
+        "en": "Pivot — Against 3:3, Short-Roll Behind the First Pressure",
+        "hr": "Pivot — protiv 3:3 kratko otklizaj iza prvog pritiska",
+        "de": "Kreisläufer — gegen 3:3 kurz hinter den ersten Druck abrollen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 26,
+      "score": "13:14",
+      "defensiveSystem": "3-3",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "timing",
+        "positioning",
+        "perception"
+      ],
+      "primaryTacticalCue": "Two high defenders trap centre back; central back defender steps to intercept long release",
+      "fingerprint": {
+        "objective": "offer short outlet behind 3-3 trap",
+        "cue": "two high defenders commit and back defender steps forward",
+        "relationship": "pivot–centre back–three central defenders",
+        "structure": "3-3",
+        "decision": "short roll into seven-metre pocket",
+        "timing": "as trap closes",
+        "risk": "rolling to six makes pass too long"
+      },
+      "situation": {
+        "en": "You trail 13:14 at 26' against 3:3. Two high defenders trap the centre back. The central back defender steps forward to intercept a long pass toward six metres. A short pocket opens around seven metres directly behind the first pressure.",
+        "hr": "Gubite 13:14 u 26. minuti protiv 3:3. Dvojica visokih braniča udvajaju srednjeg vanjskog. Središnji stražnji branič izlazi presjeći dugo dodavanje prema šest metara. Kratki prostor otvara se oko sedam metara odmah iza prvog pritiska.",
+        "de": "Ihr liegt 13:14 in Minute 26 gegen 3:3 zurück. Zwei hohe Verteidiger doppeln den Rückraum Mitte. Der zentrale hintere Verteidiger tritt vor, um den langen Pass an den Kreis abzufangen. Direkt hinter dem ersten Druck öffnet sich bei sieben Metern ein kurzer Raum."
+      },
+      "question": {
+        "en": "What route gives the trapped passer a safe outlet?",
+        "hr": "Koja putanja daje udvojenom dodavaču siguran izlaz?",
+        "de": "Welcher Laufweg gibt dem gedoppelten Passgeber eine sichere Lösung?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Short-roll into the seven-metre pocket and show both hands immediately",
+            "hr": "Kratko otklizaj u prostor na sedam metara i odmah pokaži obje ruke",
+            "de": "Kurz in den Raum bei sieben Metern abrollen und sofort beide Hände zeigen"
+          },
+          "feedback": {
+            "en": "Correct — the short outlet splits the high trap from the back line.",
+            "hr": "Točno — kratki izlaz razdvaja visoko udvajanje od stražnje linije.",
+            "de": "Richtig — der kurze Pass trennt hohe Falle und hintere Linie."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Continue to six only if the back defender stays deep",
+            "hr": "Nastavi na šest samo ako stražnji branič ostane duboko",
+            "de": "Nur bis sechs Meter weiterlaufen, wenn der hintere Verteidiger tief bleibt"
+          },
+          "feedback": {
+            "en": "Good against deep cover; here he has stepped up.",
+            "hr": "Dobro protiv dubokog pokrivanja; ovdje je izašao.",
+            "de": "Gut gegen tiefe Deckung; hier ist er vorgetreten."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Run all the way behind the back line and demand a lob",
+            "hr": "Trči skroz iza stražnje linije i traži visoku loptu",
+            "de": "Ganz hinter die hintere Linie laufen und einen Lob fordern"
+          },
+          "feedback": {
+            "en": "Risky — the trapped passer cannot safely throw that distance.",
+            "hr": "Rizično — udvojeni dodavač ne može sigurno baciti tako daleko.",
+            "de": "Riskant — der gedoppelte Passgeber kann diese Distanz nicht sicher spielen."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Join the trap at nine metres for a hand-off",
+            "hr": "Uđi u udvajanje na devet metara po predaju",
+            "de": "Bei neun Metern in die Falle für eine Übergabe laufen"
+          },
+          "feedback": {
+            "en": "Poor — you add traffic to the pressure instead of escaping it.",
+            "hr": "Loše — dodaješ gužvu pritisku umjesto izlaza.",
+            "de": "Schlecht — du fügst der Falle Verkehr statt einer Lösung hinzu."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The answer to a high 3:3 trap is a short target behind it. Stop in the pocket the passer can reach, receive and then attack the separated back line.",
+        "hr": "Odgovor na visoko udvajanje u 3:3 je kratka meta iza njega. Zaustavi se u prostoru koji dodavač može dosegnuti, primi pa napadni odvojenu stražnju liniju.",
+        "de": "Die Antwort auf eine hohe 3:3-Falle ist ein kurzes Ziel dahinter. Im erreichbaren Raum stoppen, fangen und dann die getrennte hintere Linie angreifen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A matches the stepped back defender; B works only if that defender stays deep.",
+        "hr": "A odgovara izlasku stražnjeg braniča; B vrijedi samo ako ostane duboko.",
+        "de": "A passt zum vorgetretenen Hintermann; B gilt nur bei tiefer Position."
+      }
+    },
+    {
+      "batchId": "pv_b_03",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_42_screen_marking_defender",
+      "title": {
+        "en": "Pivot — Against 4:2, Screen the Marker Who Denies the Return Pass",
+        "hr": "Pivot — protiv 4:2 blokiraj čuvara koji zatvara povratno dodavanje",
+        "de": "Kreisläufer — gegen 4:2 den Verteidiger sperren, der den Rückpass verweigert"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 30,
+      "score": "15:16",
+      "defensiveSystem": "4-2",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "screening",
+        "perception",
+        "teamplay"
+      ],
+      "primaryTacticalCue": "Two high defenders split CB and LB; LB marker turns hips to deny return lane",
+      "fingerprint": {
+        "objective": "restore return pass against 4-2",
+        "cue": "high marker turns across return lane",
+        "relationship": "pivot–left back–high marker",
+        "structure": "4-2",
+        "decision": "screen marker outside line after pass leaves",
+        "timing": "between outgoing and return pass",
+        "risk": "screening deep defender does not solve denial"
+      },
+      "situation": {
+        "en": "You trail 15:16 at 30' against 4:2. The centre back passes to the left back. The high defender marking the left back turns across the return lane, ready to deny the ball coming back inside. A deep defender stays at six metres and does not affect that lane.",
+        "hr": "Gubite 15:16 u 30. minuti protiv 4:2. Srednji vanjski dodaje lijevom vanjskom. Visoki branič koji čuva lijevog vanjskog okreće se preko povratne linije i sprema zatvoriti loptu prema sredini. Duboki branič ostaje na šest metara i ne utječe na tu liniju.",
+        "de": "Ihr liegt 15:16 in Minute 30 gegen 4:2 zurück. Der Rückraum Mitte passt zum linken Rückraum. Dessen hoher Verteidiger dreht in die Rückpasslinie und will den Ball zurück zur Mitte verhindern. Ein tiefer Verteidiger bleibt am Kreis und beeinflusst diese Linie nicht."
+      },
+      "question": {
+        "en": "Which defender should your screen affect?",
+        "hr": "Na kojeg braniča mora djelovati tvoj blok?",
+        "de": "Welchen Verteidiger muss deine Sperre treffen?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set outside the high marker after the first pass so the return lane opens inside him",
+            "hr": "Postavi se s vanjske strane visokog čuvara nakon prvog dodavanja da se povratna linija otvori s njegove unutarnje strane",
+            "de": "Nach dem ersten Pass außen am hohen Verteidiger sperren, damit innen die Rückpasslinie aufgeht"
+          },
+          "feedback": {
+            "en": "Correct — the screen removes the defender who owns the denied lane.",
+            "hr": "Točno — blok uklanja braniča koji kontrolira zatvorenu liniju.",
+            "de": "Richtig — die Sperre betrifft den Verteidiger, der die verweigerte Linie besitzt."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip behind him if he avoids the screen by stepping higher",
+            "hr": "Otklizaj iza njega ako izbjegne blok izlaskom još više",
+            "de": "Hinter ihm abrollen, wenn er der Sperre durch höheres Treten ausweicht"
+          },
+          "feedback": {
+            "en": "Good reaction after he changes level.",
+            "hr": "Dobra reakcija nakon promjene dubine.",
+            "de": "Gute Reaktion nach seinem Höhenwechsel."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Screen the deep defender who is already away from the return pass",
+            "hr": "Blokiraj dubokog braniča koji je već daleko od povratne lopte",
+            "de": "Den tiefen Verteidiger sperren, der vom Rückpass entfernt steht"
+          },
+          "feedback": {
+            "en": "Risky — the actual denial remains untouched.",
+            "hr": "Rizično — stvarno zatvaranje ostaje netaknuto.",
+            "de": "Riskant — die tatsächliche Verweigerung bleibt bestehen."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Push the high marker into the centre back",
+            "hr": "Gurni visokog čuvara u srednjeg vanjskog",
+            "de": "Den hohen Verteidiger in den Rückraum Mitte schieben"
+          },
+          "feedback": {
+            "en": "Poor — illegal force replaces a clean tactical solution.",
+            "hr": "Loše — nedopuštena sila zamjenjuje čisto taktičko rješenje.",
+            "de": "Schlecht — illegale Kraft ersetzt eine saubere taktische Lösung."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Screen the defender who owns the pass problem. Against this 4:2, the high marker denies the return; an outside stationary screen reopens the inside lane.",
+        "hr": "Blokiraj braniča koji stvara problem dodavanju. U ovoj 4:2 visoki čuvar zatvara povratak; miran blok izvana ponovno otvara unutarnju liniju.",
+        "de": "Den Verteidiger sperren, der das Passproblem verursacht. Hier verweigert der hohe Mann den Rückpass; eine feste Außensperre öffnet innen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A opens the live lane; B is the next action only if the defender escapes higher.",
+        "hr": "A otvara živu liniju; B je sljedeća akcija samo ako branič pobjegne više.",
+        "de": "A öffnet die aktuelle Linie; B folgt nur, wenn der Verteidiger höher ausweicht."
+      }
+    },
+    {
+      "batchId": "pv_b_04",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_5plus1_free_marked_back_legally",
+      "title": {
+        "en": "Pivot — In 5+1, Free the Marked Back with a Legal Away-Side Screen",
+        "hr": "Pivot — u 5+1 oslobodi čuvanog vanjskog legalnim blokom s dalje strane",
+        "de": "Kreisläufer — im 5+1 den gedeckten Rückraum mit ballferner Sperre befreien"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 35,
+      "score": "18:17",
+      "defensiveSystem": "5+1",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "screening",
+        "teamplay",
+        "timing"
+      ],
+      "primaryTacticalCue": "Personal marker trails centre back’s left shoulder; ball is right and screen spot on marker’s blind side is free",
+      "fingerprint": {
+        "objective": "free personally marked centre back",
+        "cue": "marker trails away-side shoulder while ball opposite",
+        "relationship": "pivot–marked centre back–personal marker",
+        "structure": "5+1",
+        "decision": "stationary blind-side screen away from ball",
+        "timing": "before centre back cuts back to ball",
+        "risk": "screening ball side invites collision"
+      },
+      "situation": {
+        "en": "You lead 18:17 at 35' against 5+1. Their personal marker trails the centre back's left shoulder while the ball is on the right. The centre back will cut back toward the ball. The marker cannot see the free screen spot on his left, away from the ball.",
+        "hr": "Vodite 18:17 u 35. minuti protiv 5+1. Njihov osobni čuvar prati lijevo rame srednjeg vanjskog dok je lopta desno. Srednji vanjski krenut će natrag prema lopti. Čuvar ne vidi slobodno mjesto za blok s lijeve, dalje strane.",
+        "de": "Ihr führt 18:17 in Minute 35 gegen 5+1. Der persönliche Verteidiger folgt an der linken Schulter des Rückraum Mitte, während der Ball rechts ist. Der Rückraum wird zum Ball zurückschneiden. Der Verteidiger sieht den freien Sperrenplatz links, ballfern, nicht."
+      },
+      "question": {
+        "en": "How do you free the marked player without moving contact?",
+        "hr": "Kako oslobađaš čuvanog igrača bez kontakta u kretanju?",
+        "de": "Wie befreist du den Gedeckten ohne bewegten Kontakt?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set early on the marker’s blind away-side shoulder and let the centre back cut toward the ball",
+            "hr": "Rano se postavi na slijepo rame čuvara dalje od lopte i pusti srednjeg vanjskog da siječe prema lopti",
+            "de": "Früh an der blinden ballfernen Schulter stehen und den Rückraum zum Ball schneiden lassen"
+          },
+          "feedback": {
+            "en": "Correct — the cut uses a legal screen the marker never saw.",
+            "hr": "Točno — rez koristi legalan blok koji čuvar nije vidio.",
+            "de": "Richtig — der Schnitt nutzt eine legale, ungesehene Sperre."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip toward six metres if the marker stops before reaching the screen",
+            "hr": "Otklizaj prema šest metara ako se čuvar zaustavi prije bloka",
+            "de": "Zum Kreis abrollen, wenn der Verteidiger vor der Sperre stoppt"
+          },
+          "feedback": {
+            "en": "Good reaction; his stop has already freed the marked player.",
+            "hr": "Dobra reakcija; zaustavljanjem je već oslobodio čuvanog igrača.",
+            "de": "Gute Reaktion; sein Stopp hat den Gedeckten bereits befreit."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Chase the marker from behind and lean into him during the cut",
+            "hr": "Lovi čuvara s leđa i nasloni se u njega tijekom reza",
+            "de": "Dem Verteidiger nachjagen und sich während des Schnitts in ihn lehnen"
+          },
+          "feedback": {
+            "en": "Risky — late moving contact is an attacking foul.",
+            "hr": "Rizično — kasni kontakt u kretanju je prekršaj u napadu.",
+            "de": "Riskant — später bewegter Kontakt ist Stürmerfoul."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Hold his arm until the centre back is free",
+            "hr": "Drži mu ruku dok se srednji vanjski ne oslobodi",
+            "de": "Seinen Arm halten, bis der Rückraum frei ist"
+          },
+          "feedback": {
+            "en": "Poor — illegal holding cancels the action.",
+            "hr": "Loše — nedopušteno držanje poništava akciju.",
+            "de": "Schlecht — illegales Halten beendet die Aktion."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Against personal marking, screen where the marker cannot see and arrive before the cut. The marked player moves off your stationary body; if the marker stops, slip to six.",
+        "hr": "Protiv osobnog čuvanja blokiraj ondje gdje čuvar ne vidi i stigni prije reza. Čuvani igrač koristi tvoje mirno tijelo; ako se čuvar zaustavi, otklizaj na šest.",
+        "de": "Gegen persönliche Deckung dort sperren, wo der Verteidiger nicht sieht, und vor dem Schnitt ankommen. Der Gedeckte läuft an deinem stehenden Körper vorbei; stoppt der Verteidiger, zum Kreis abrollen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A frees the centre back as planned; B becomes valuable only after the marker stops.",
+        "hr": "A planski oslobađa srednjeg vanjskog; B vrijedi tek nakon zaustavljanja čuvara.",
+        "de": "A befreit den Rückraum wie geplant; B wird erst nach dem Stopp wertvoll."
+      }
+    },
+    {
+      "batchId": "pv_b_05",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_4plus2_middle_outlet_timing",
+      "title": {
+        "en": "Pivot — In 4+2, Show Between the Two Markers Before the Back Line Steps",
+        "hr": "Pivot — u 4+2 pokaži se između dvojice čuvara prije izlaska stražnje linije",
+        "de": "Kreisläufer — im 4+2 zwischen den beiden Manndeckern zeigen bevor die hintere Linie tritt"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 37,
+      "score": "18:19",
+      "defensiveSystem": "4+2",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "positioning",
+        "timing",
+        "perception"
+      ],
+      "primaryTacticalCue": "Two marked backs separate high defenders laterally; central lane behind them opens for one pass",
+      "fingerprint": {
+        "objective": "be central outlet behind two personal markers",
+        "cue": "high markers split laterally and back line has not stepped",
+        "relationship": "pivot–two marked backs–back line",
+        "structure": "4+2",
+        "decision": "step between high markers and show",
+        "timing": "before back line advances",
+        "risk": "waiting at six makes lane too long"
+      },
+      "situation": {
+        "en": "You trail 18:19 at 37' against 4+2. Two high defenders follow your centre and left back in opposite directions. A central lane opens between them, but the four-player back line is beginning to step forward. You are still at six metres, too far for the pressured pass.",
+        "hr": "Gubite 18:19 u 37. minuti protiv 4+2. Dvojica visokih braniča prate srednjeg i lijevog vanjskog u suprotnim smjerovima. Između njih se otvara središnja linija, ali stražnja linija od četvorice počinje izlaziti. Ti si još na šest metara, predaleko za dodavanje pod pritiskom.",
+        "de": "Ihr liegt 18:19 in Minute 37 gegen 4+2 zurück. Zwei hohe Verteidiger folgen Rückraum Mitte und links in entgegengesetzte Richtungen. Zwischen ihnen öffnet sich zentral eine Linie, doch die Viererlinie hinten tritt vor. Du bist noch am Kreis und für den Druckpass zu weit weg."
+      },
+      "question": {
+        "en": "How do you become the safe connector?",
+        "hr": "Kako postaješ sigurna veza?",
+        "de": "Wie wirst du zur sicheren Verbindung?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Step to seven metres between the two markers and show before the back line closes",
+            "hr": "Izađi na sedam metara između dvojice čuvara i pokaži se prije zatvaranja stražnje linije",
+            "de": "Auf sieben Meter zwischen beide Manndecker treten und vor dem Schließen der hinteren Linie zeigen"
+          },
+          "feedback": {
+            "en": "Correct — a reachable central pass breaks the two high matchups.",
+            "hr": "Točno — dostupno središnje dodavanje lomi dva visoka čuvanja.",
+            "de": "Richtig — ein erreichbarer zentraler Pass bricht beide hohen Deckungen."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Stay at six only if the passer is free enough for a direct lob",
+            "hr": "Ostani na šest samo ako dodavač ima dovoljno slobode za izravnu visoku loptu",
+            "de": "Nur am Kreis bleiben, wenn der Passgeber frei genug für den direkten Lob ist"
+          },
+          "feedback": {
+            "en": "Good with time; the current pass is pressured.",
+            "hr": "Dobro uz vrijeme; sada je dodavač pod pritiskom.",
+            "de": "Gut mit Zeit; aktuell steht der Passgeber unter Druck."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Run toward one marked back and add a third body to that duel",
+            "hr": "Trči prema jednom čuvanom vanjskom i dodaj treće tijelo tom duelu",
+            "de": "Zu einem gedeckten Rückraum laufen und einen dritten Körper ins Duell bringen"
+          },
+          "feedback": {
+            "en": "Risky — the other high defender keeps the central lane closed.",
+            "hr": "Rizično — drugi visoki branič i dalje zatvara sredinu.",
+            "de": "Riskant — der andere hohe Verteidiger hält die Mitte geschlossen."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Wait behind the back line until all six defenders recover",
+            "hr": "Čekaj iza stražnje linije dok se svih šest braniča ne vrati",
+            "de": "Hinter der hinteren Linie warten, bis alle sechs zurück sind"
+          },
+          "feedback": {
+            "en": "Poor — the temporary central outlet disappears.",
+            "hr": "Loše — privremena središnja veza nestaje.",
+            "de": "Schlecht — die vorübergehende zentrale Verbindung verschwindet."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The pivot connects a 4+2 attack by shortening the central pass. Step between the separated markers before the back line can own the pocket.",
+        "hr": "Pivot povezuje napad protiv 4+2 skraćivanjem središnjeg dodavanja. Uđi između razdvojenih čuvara prije nego stražnja linija preuzme prostor.",
+        "de": "Der Kreis verbindet gegen 4+2 durch einen kürzeren zentralen Pass. Zwischen die getrennten Manndecker treten, bevor die hintere Linie den Raum besitzt."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A is reachable under pressure; B requires passing time that is not available.",
+        "hr": "A je dostupan pod pritiskom; B traži vrijeme za dodavanje kojeg nema.",
+        "de": "A ist unter Druck erreichbar; B braucht nicht vorhandene Passzeit."
+      }
+    },
+    {
+      "batchId": "pv_b_06",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_open_defence_slip_not_wrestle",
+      "title": {
+        "en": "Pivot — Against Open Defence, Slip the Contact Instead of Wrestling",
+        "hr": "Pivot — protiv otvorene obrane otklizaj iz kontakta umjesto hrvanja",
+        "de": "Kreisläufer — gegen offene Deckung aus dem Kontakt lösen statt ringen"
+      },
+      "difficulty": "Intermediate",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 20,
+      "score": "10:9",
+      "defensiveSystem": "Individual",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "movement",
+        "timing",
+        "perception"
+      ],
+      "primaryTacticalCue": "Defender follows chest-to-chest outside nine; space behind is empty and passer has free arm",
+      "fingerprint": {
+        "objective": "reach depth against open defence",
+        "cue": "marker overplays high contact and leaves space behind",
+        "relationship": "pivot–personal marker–passer",
+        "structure": "open defence",
+        "decision": "slip behind on passer eye contact",
+        "timing": "as marker leans forward",
+        "risk": "wrestling high keeps both away from goal"
+      },
+      "situation": {
+        "en": "You lead 10:9 at 20' against an open individual defence. Your marker follows chest-to-chest outside nine metres and leans forward to deny a hand-off. The space behind him to six metres is empty, and the centre back has a free passing arm.",
+        "hr": "Vodite 10:9 u 20. minuti protiv otvorene individualne obrane. Tvoj čuvar prati te prsa o prsa izvan devet metara i naginje se naprijed zatvoriti predaju. Prostor iza njega prema šest metara je prazan, a srednji vanjski ima slobodnu ruku za dodavanje.",
+        "de": "Ihr führt 10:9 in Minute 20 gegen offene Manndeckung. Dein Verteidiger folgt Brust an Brust außerhalb neun Meter und lehnt vor, um die Übergabe zu verhindern. Hinter ihm bis zum Kreis ist frei, der Rückraum Mitte hat einen freien Passarm."
+      },
+      "question": {
+        "en": "How do you use his overplay?",
+        "hr": "Kako koristiš njegovo pretjerano izlaženje?",
+        "de": "Wie nutzt du sein Überdecken?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Break contact and slip behind him as the passer raises the free arm",
+            "hr": "Prekini kontakt i otklizaj iza njega kad dodavač podigne slobodnu ruku",
+            "de": "Kontakt lösen und hinter ihm abrollen, sobald der Passgeber den freien Arm hebt"
+          },
+          "feedback": {
+            "en": "Correct — his high pressure becomes your route to depth.",
+            "hr": "Točno — njegov visoki pritisak postaje tvoja putanja u dubinu.",
+            "de": "Richtig — sein hoher Druck wird zu deinem Weg in die Tiefe."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Hold for a hand-off only if he drops back and blocks the slip",
+            "hr": "Ostani za predaju samo ako se povuče i zatvori otklizavanje",
+            "de": "Nur für die Übergabe bleiben, wenn er zurückfällt und das Abrollen schließt"
+          },
+          "feedback": {
+            "en": "Good against a retreat; he is leaning high now.",
+            "hr": "Dobro protiv povlačenja; sada je visoko nagnut.",
+            "de": "Gut gegen Rückzug; aktuell lehnt er hoch."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Push chest-to-chest harder and keep wrestling at nine metres",
+            "hr": "Jače se guraj prsa o prsa i nastavi hrvanje na devet metara",
+            "de": "Brust an Brust stärker drücken und bei neun Metern weiter ringen"
+          },
+          "feedback": {
+            "en": "Risky — both players stay far from the scoring area.",
+            "hr": "Rizično — oba igrača ostaju daleko od prostora za pogodak.",
+            "de": "Riskant — beide bleiben weit vom Abschlussraum."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Pull him forward by the arm and run behind",
+            "hr": "Povuci ga za ruku naprijed pa trči iza",
+            "de": "Ihn am Arm nach vorn ziehen und dahinter laufen"
+          },
+          "feedback": {
+            "en": "Poor — illegal pulling creates the route.",
+            "hr": "Loše — nedopušteno povlačenje stvara put.",
+            "de": "Schlecht — illegales Ziehen schafft den Weg."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Open defence rewards release, not strength. When the marker leans high, break contact and slip into the empty depth on the passer’s cue.",
+        "hr": "Otvorena obrana nagrađuje oslobađanje, ne snagu. Kad se čuvar nagne visoko, prekini kontakt i na signal dodavača otklizaj u praznu dubinu.",
+        "de": "Offene Deckung belohnt Lösen statt Kraft. Lehnt der Verteidiger hoch, Kontakt brechen und auf das Passsignal in die freie Tiefe abrollen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the current high lean; B applies only if the defender retreats.",
+        "hr": "A koristi sadašnji visoki nagib; B vrijedi samo ako se branič povuče.",
+        "de": "A nutzt das aktuelle Vorlehnen; B gilt nur beim Rückzug."
+      }
+    },
+    {
+      "batchId": "pv_b_07",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_man_to_man_screen_then_slip",
+      "title": {
+        "en": "Pivot — In Man-to-Man, Screen the Chaser and Slip on the Switch",
+        "hr": "Pivot — u čovjek-na-čovjeka blokiraj pratitelja pa otklizaj na preuzimanje",
+        "de": "Kreisläufer — in Manndeckung den Verfolger sperren und beim Wechsel abrollen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 24,
+      "score": "12:13",
+      "defensiveSystem": "Individual",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "screening",
+        "perception",
+        "teamplay"
+      ],
+      "primaryTacticalCue": "CB marker chases over stationary screen; pivot marker steps to switch before ball carrier turns corner",
+      "fingerprint": {
+        "objective": "punish switch in man defence",
+        "cue": "pivot marker leaves early to take ball carrier",
+        "relationship": "pivot–two markers–centre back",
+        "structure": "man-to-man",
+        "decision": "slip behind switching marker",
+        "timing": "on switch call",
+        "risk": "holding screen leaves pivot double-covered"
+      },
+      "situation": {
+        "en": "You trail 12:13 at 24' against man-to-man. You set a legal stationary screen for the centre back. His marker chases over it, while your own marker steps early to switch onto the ball carrier. The space behind your marker opens before the centre back turns the corner.",
+        "hr": "Gubite 12:13 u 24. minuti protiv obrane čovjek-na-čovjeka. Postavljaš legalan miran blok za srednjeg vanjskog. Njegov čuvar prelazi preko bloka, a tvoj čuvar rano izlazi preuzeti igrača s loptom. Prostor iza tvog čuvara otvara se prije nego srednji vanjski zaobiđe blok.",
+        "de": "Ihr liegt 12:13 in Minute 24 gegen Manndeckung zurück. Du stellst eine legale feste Sperre für den Rückraum Mitte. Sein Verteidiger läuft darüber, dein eigener tritt früh zum Wechsel auf den Ballführer. Hinter deinem Verteidiger öffnet sich Raum, bevor der Rückraum um die Sperre kommt."
+      },
+      "question": {
+        "en": "What is your action on the switch?",
+        "hr": "Koja je tvoja akcija na preuzimanje?",
+        "de": "Was tust du beim Wechsel?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Release the screen and slip behind your switching marker with hands ready",
+            "hr": "Pusti blok i otklizaj iza svog čuvara koji preuzima, spremnih ruku",
+            "de": "Die Sperre lösen und hinter dem wechselnden eigenen Verteidiger mit bereiten Händen abrollen"
+          },
+          "feedback": {
+            "en": "Correct — the switch frees the screener if the slip is immediate.",
+            "hr": "Točno — preuzimanje oslobađa blokera ako odmah otklizne.",
+            "de": "Richtig — der Wechsel befreit den Sperrer bei sofortigem Abrollen."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Hold the screen if your marker stays home and no switch occurs",
+            "hr": "Zadrži blok ako tvoj čuvar ostane uz tebe i nema preuzimanja",
+            "de": "Die Sperre halten, wenn dein Verteidiger bleibt und kein Wechsel kommt"
+          },
+          "feedback": {
+            "en": "Good against no switch; here he has already left.",
+            "hr": "Dobro bez preuzimanja; ovdje je već otišao.",
+            "de": "Gut ohne Wechsel; hier ist er bereits gegangen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Stay planted after the switch and watch both defenders follow the centre back",
+            "hr": "Ostani ukopan nakon preuzimanja i gledaj kako oba braniča prate srednjeg vanjskog",
+            "de": "Nach dem Wechsel stehen bleiben und beide Verteidiger dem Rückraum folgen lassen"
+          },
+          "feedback": {
+            "en": "Risky — the free space behind the switch disappears.",
+            "hr": "Rizično — slobodan prostor iza preuzimanja nestaje.",
+            "de": "Riskant — der freie Raum hinter dem Wechsel verschwindet."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Move the screen sideways into the chasing defender",
+            "hr": "Pomakni blok bočno u braniča koji prati",
+            "de": "Die Sperre seitlich in den Verfolger bewegen"
+          },
+          "feedback": {
+            "en": "Poor — moving contact is an attacking foul.",
+            "hr": "Loše — kontakt u kretanju je prekršaj u napadu.",
+            "de": "Schlecht — bewegter Kontakt ist Stürmerfoul."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A screen in man defence has two reads: hold against chase, slip against switch. The instant your marker leaves, release into the space behind him.",
+        "hr": "Blok protiv čovjek-na-čovjeka ima dva čitanja: drži protiv praćenja, otklizaj protiv preuzimanja. Čim tvoj čuvar ode, uđi u prostor iza njega.",
+        "de": "Eine Sperre gegen Manndeckung hat zwei Bilder: halten gegen Verfolgung, abrollen gegen Wechsel. Sobald dein Verteidiger geht, in den Raum dahinter lösen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A answers the visible switch; B is correct only when the marker stays.",
+        "hr": "A odgovara vidljivom preuzimanju; B vrijedi samo kad čuvar ostane.",
+        "de": "A beantwortet den sichtbaren Wechsel; B gilt nur, wenn der Verteidiger bleibt."
+      }
+    },
+    {
+      "batchId": "pv_b_08",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_7v6_second_pivot_weak_side",
+      "title": {
+        "en": "Pivot — As the Second Pivot, Stay Weak-Side Until the Middle Turns",
+        "hr": "Pivot — kao drugi pivot ostani na slaboj strani dok se srednji ne okrene",
+        "de": "Kreisläufer — als zweiter Kreis ballfern bleiben bis der Mittelblock dreht"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 43,
+      "score": "21:23",
+      "defensiveSystem": "6-0",
+      "numerical": "7v6",
+      "perception": true,
+      "gameState": "ownEmptyGoal",
+      "skillTags": [
+        "numerical",
+        "spacing",
+        "perception"
+      ],
+      "primaryTacticalCue": "First pivot binds ball-side middle; far middle still sees second pivot; no turn toward ball yet",
+      "fingerprint": {
+        "objective": "hold weak-side 7v6 threat",
+        "cue": "far middle still square to second pivot",
+        "relationship": "two pivots–far middle–ball",
+        "structure": "7v6",
+        "decision": "stay weak-side until defender turns",
+        "timing": "before far middle commits to ball",
+        "risk": "early cross lets one defender take both"
+      },
+      "situation": {
+        "en": "You trail 21:23 at 43' in 7v6 with an empty goal. The first pivot binds the ball-side middle. You are the second pivot on the weak side, and the far middle defender is still square to you. He has not turned toward the ball. Crossing early would bring you next to the first pivot.",
+        "hr": "Gubite 21:23 u 43. minuti u 7 na 6 s praznim golom. Prvi pivot veže srednjeg na strani lopte. Ti si drugi pivot na slaboj strani, a dalji srednji branič još stoji ravno prema tebi. Nije se okrenuo prema lopti. Rani prijelaz doveo bi te uz prvog pivota.",
+        "de": "Ihr liegt 21:23 in Minute 43 im 7 gegen 6 mit leerem Tor zurück. Der erste Kreis bindet den ballnahen Mittelblock. Du bist zweiter Kreis auf der ballfernen Seite, der ferne Mittelblock steht noch zu dir. Er hat nicht zum Ball gedreht. Frühes Kreuzen bringt dich neben den ersten Kreis."
+      },
+      "question": {
+        "en": "When does the weak-side movement become live?",
+        "hr": "Kada kretanje sa slabe strane postaje aktivno?",
+        "de": "Wann wird die ballferne Bewegung aktiv?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Hold weak-side depth until the far middle turns to help, then step behind his blind shoulder",
+            "hr": "Drži dubinu na slaboj strani dok se dalji srednji ne okrene pomoći pa uđi iza njegova slijepog ramena",
+            "de": "Ballferne Tiefe halten, bis der ferne Mittelblock hilft, dann hinter seine blinde Schulter treten"
+          },
+          "feedback": {
+            "en": "Correct — make his help choice open your movement.",
+            "hr": "Točno — neka njegova odluka za pomoć otvori tvoje kretanje.",
+            "de": "Richtig — seine Hilfeentscheidung öffnet deine Bewegung."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Cross early only on a clear call for a same-side double screen",
+            "hr": "Prijeđi rano samo na jasan poziv za dvostruki blok na istoj strani",
+            "de": "Nur auf klaren Ruf für eine gleichseitige Doppelsperre früh kreuzen"
+          },
+          "feedback": {
+            "en": "Good for a called action; no call exists.",
+            "hr": "Dobro za dogovorenu akciju; poziva nema.",
+            "de": "Gut für eine angesagte Aktion; der Ruf fehlt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Move beside the first pivot while the far middle still watches you",
+            "hr": "Pomakni se uz prvog pivota dok te dalji srednji još prati",
+            "de": "Neben den ersten Kreis gehen, solange der ferne Mittelblock dich noch sieht"
+          },
+          "feedback": {
+            "en": "Risky — one defender can pass you on without losing vision.",
+            "hr": "Rizično — jedan branič može te predati bez gubitka pogleda.",
+            "de": "Riskant — ein Verteidiger kann dich ohne Sichtverlust übergeben."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Leave six metres and stand on the sideline",
+            "hr": "Napusti šest metara i stani uz aut-liniju",
+            "de": "Den Kreis verlassen und an der Seitenlinie stehen"
+          },
+          "feedback": {
+            "en": "Poor — the second-pivot overload disappears.",
+            "hr": "Loše — prednost drugog pivota nestaje.",
+            "de": "Schlecht — die Überzahl durch den zweiten Kreis verschwindet."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The second pivot moves after the weak-side middle commits, not before. Hold him wide, then use his blind shoulder the moment he helps.",
+        "hr": "Drugi pivot kreće nakon što se srednji sa slabe strane veže, ne prije. Drži ga široko pa iskoristi slijepo rame čim pomogne.",
+        "de": "Der zweite Kreis bewegt sich nach der Hilfeentscheidung, nicht davor. Den fernen Mittelblock breit halten und beim Helfen seine blinde Schulter nutzen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A reacts to the defender’s live turn; B requires a specific team call.",
+        "hr": "A reagira na stvarni okret braniča; B traži poseban dogovoreni poziv.",
+        "de": "A reagiert auf die echte Drehung; B braucht einen besonderen Teamruf."
+      }
+    },
+    {
+      "batchId": "pv_b_09",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_7v6_do_not_force_inside",
+      "title": {
+        "en": "Pivot — In 7v6, Do Not Demand the Feed Before the Lane Exists",
+        "hr": "Pivot — u 7 na 6 ne traži loptu prije nego se otvori linija",
+        "de": "Kreisläufer — im 7 gegen 6 das Anspiel nicht vor dem offenen Weg fordern"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 46,
+      "score": "23:24",
+      "defensiveSystem": "6-0",
+      "numerical": "7v6",
+      "perception": true,
+      "gameState": "ownEmptyGoal",
+      "skillTags": [
+        "numerical",
+        "decisionMaking",
+        "ballSecurity"
+      ],
+      "primaryTacticalCue": "Both middle defenders square to pivot; hands fill lane; wide overload is clean and own goal empty",
+      "fingerprint": {
+        "objective": "protect empty-goal possession",
+        "cue": "inside lane closed by two square middles",
+        "relationship": "pivot–two middles–wide overload",
+        "structure": "7v6",
+        "decision": "hold seal and let ball continue wide",
+        "timing": "until one middle turns",
+        "risk": "forced inside pass creates empty-goal turnover"
+      },
+      "situation": {
+        "en": "You trail 23:24 at 46' in 7v6 with your goal empty. Both middle defenders are square to you with hands in the inside lane. The ball-side wide pass is clean and will force one middle to turn. Calling for the ball now invites a turnover and an empty-goal shot.",
+        "hr": "Gubite 23:24 u 46. minuti u 7 na 6 s praznim vlastitim golom. Oba srednja braniča stoje ravno prema tebi s rukama u unutarnjoj liniji. Široko dodavanje na strani lopte je čisto i natjerat će jednog srednjeg na okret. Traženje lopte sada poziva izgubljenu loptu i šut na prazan gol.",
+        "de": "Ihr liegt 23:24 in Minute 46 im 7 gegen 6 mit leerem eigenen Tor zurück. Beide Mittelblockspieler stehen zu dir und füllen mit den Händen den inneren Passweg. Der breite Ballpass ist sauber und zwingt einen Mittelblock zur Drehung. Jetzt den Ball zu fordern lädt zum Ballverlust ins leere Tor ein."
+      },
+      "question": {
+        "en": "What is your role while the inside lane is closed?",
+        "hr": "Koja je tvoja uloga dok je unutarnja linija zatvorena?",
+        "de": "Was ist deine Aufgabe bei geschlossenem Innenweg?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Hold the seal, keep the defenders inside and let the ball continue wide until one turns",
+            "hr": "Drži zatvaranje, zadrži braniče unutra i pusti loptu široko dok se jedan ne okrene",
+            "de": "Die Sperre halten, beide innen binden und den Ball breit laufen lassen, bis einer dreht"
+          },
+          "feedback": {
+            "en": "Correct — patience creates the lane and protects the empty goal.",
+            "hr": "Točno — strpljenje stvara liniju i štiti prazan gol.",
+            "de": "Richtig — Geduld schafft den Weg und schützt das leere Tor."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Show for the feed only after one middle turns and your target hand is visible",
+            "hr": "Pokaži se za dodavanje tek kad se jedan srednji okrene i tvoja ruka postane vidljiva",
+            "de": "Erst nach der Drehung eines Mittelblocks und sichtbarer Zielhand das Anspiel zeigen"
+          },
+          "feedback": {
+            "en": "Good next action; the turn has not happened yet.",
+            "hr": "Dobra sljedeća akcija; okret se još nije dogodio.",
+            "de": "Gute Folgeaktion; die Drehung fehlt noch."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Call louder for a bounce pass through both defenders",
+            "hr": "Glasnije traži odbijenu loptu kroz oba braniča",
+            "de": "Lauter den Bodenpass durch beide Verteidiger fordern"
+          },
+          "feedback": {
+            "en": "Risky — the empty-goal cost makes the closed lane unacceptable.",
+            "hr": "Rizično — cijena praznog gola čini zatvorenu liniju neprihvatljivom.",
+            "de": "Riskant — das leere Tor macht den geschlossenen Weg unvertretbar."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Release the seal and chase the ball to the wing",
+            "hr": "Pusti zatvaranje i prati loptu prema krilu",
+            "de": "Die Sperre lösen und dem Ball zum Außen folgen"
+          },
+          "feedback": {
+            "en": "Poor — both middles can now recover without choosing.",
+            "hr": "Loše — oba srednja sada se mogu vratiti bez odluke.",
+            "de": "Schlecht — beide Mittelblockspieler können ohne Entscheidung zurückkehren."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A 7v6 pivot is not entitled to every feed. When two middles own the lane, keep them occupied and let width force the turn. Demand the ball only after the geometry changes.",
+        "hr": "Pivot u 7 na 6 nema pravo na svaku loptu. Kad dva srednja kontroliraju liniju, zadrži ih unutra i pusti da širina iznudi okret. Traži loptu tek nakon promjene geometrije.",
+        "de": "Ein Kreis im 7 gegen 6 bekommt nicht jedes Anspiel. Besitzen zwei Mittelblockspieler den Weg, binde sie und lass Breite die Drehung erzwingen. Erst nach Geometriewechsel fordern."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A protects the current possession; B becomes correct only after a defender turns.",
+        "hr": "A štiti trenutačni posjed; B postaje ispravan tek nakon okreta braniča.",
+        "de": "A schützt den aktuellen Ballbesitz; B wird erst nach der Drehung richtig."
+      }
+    },
+    {
+      "batchId": "pv_b_10",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_6v5_seal_late_rotator",
+      "title": {
+        "en": "Pivot — In 6v5, Seal the Late Rotator Before He Repairs the Gap",
+        "hr": "Pivot — u 6 na 5 zatvori kasnog rotatora prije nego popravi prostor",
+        "de": "Kreisläufer — im 6 gegen 5 den späten Rotierer sperren bevor er die Lücke schließt"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Power Play",
+      "minute": 40,
+      "score": "20:19",
+      "defensiveSystem": "5-0",
+      "numerical": "6v5",
+      "perception": true,
+      "skillTags": [
+        "numerical",
+        "screening",
+        "timing"
+      ],
+      "primaryTacticalCue": "Short-handed defence shifts left; far defender begins late two-gap rotation toward open centre",
+      "fingerprint": {
+        "objective": "preserve created 6v5 gap",
+        "cue": "far defender starts late repair rotation",
+        "relationship": "pivot–late rotator–ball-side back",
+        "structure": "6v5",
+        "decision": "stationary seal in repair lane",
+        "timing": "before rotator reaches centre",
+        "risk": "sealing nearest defender leaves repair free"
+      },
+      "situation": {
+        "en": "You lead 20:19 at 40' in 6v5. The short-handed defence shifts left with the ball and the central gap opens. The far defender starts a late two-gap rotation to repair it. You can reach his route before he arrives; the nearest defender is already occupied by the left back.",
+        "hr": "Vodite 20:19 u 40. minuti u 6 na 5. Obrana s igračem manje pomiče se ulijevo s loptom i otvara se središnji prostor. Dalji branič kasno kreće preko dva prostora popraviti sredinu. Možeš stići u njegovu putanju prije njega; bližeg braniča već je vezao lijevi vanjski.",
+        "de": "Ihr führt 20:19 in Minute 40 im 6 gegen 5. Die Unterzahlabwehr verschiebt mit dem Ball nach links und zentral öffnet sich eine Lücke. Der ferne Verteidiger startet spät über zwei Räume zur Reparatur. Du erreichst seine Spur vor ihm; der nahe Verteidiger ist bereits vom linken Rückraum gebunden."
+      },
+      "question": {
+        "en": "Which defender must your seal stop?",
+        "hr": "Kojeg braniča mora zaustaviti tvoje zatvaranje?",
+        "de": "Welchen Verteidiger muss deine Sperre stoppen?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set in the late rotator’s path before he reaches the centre",
+            "hr": "Postavi se u putanju kasnog rotatora prije nego stigne u sredinu",
+            "de": "Vor dem späten Rotierer in seiner Spur stehen, bevor er die Mitte erreicht"
+          },
+          "feedback": {
+            "en": "Correct — remove the defender who can repair the advantage.",
+            "hr": "Točno — ukloni braniča koji može popraviti stvorenu prednost.",
+            "de": "Richtig — den Verteidiger entfernen, der den Vorteil reparieren kann."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip to the open goal line if the rotator stops outside your screen",
+            "hr": "Otklizaj prema otvorenoj gol-liniji ako se rotator zaustavi izvan bloka",
+            "de": "Zur offenen Torraumlinie abrollen, wenn der Rotierer vor der Sperre stoppt"
+          },
+          "feedback": {
+            "en": "Good reaction; his stop keeps the gap open.",
+            "hr": "Dobra reakcija; njegovo zaustavljanje drži prostor otvorenim.",
+            "de": "Gute Reaktion; sein Stopp hält die Lücke offen."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Screen the nearest defender already occupied by the left back",
+            "hr": "Blokiraj bližeg braniča kojeg je lijevi vanjski već vezao",
+            "de": "Den nahen, bereits gebundenen Verteidiger sperren"
+          },
+          "feedback": {
+            "en": "Risky — the late rotator repairs the centre untouched.",
+            "hr": "Rizično — kasni rotator nesmetano popravlja sredinu.",
+            "de": "Riskant — der späte Rotierer repariert die Mitte ungestört."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Run into the rotator after he has reached the gap",
+            "hr": "Utrči u rotatora nakon što stigne u prostor",
+            "de": "In den Rotierer laufen, nachdem er die Lücke erreicht hat"
+          },
+          "feedback": {
+            "en": "Poor — late moving contact is illegal and the gap is already closed.",
+            "hr": "Loše — kasni kontakt u kretanju je nedopušten, a prostor već zatvoren.",
+            "de": "Schlecht — später bewegter Kontakt ist illegal und die Lücke bereits zu."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "In 6v5, identify the repair defender. The ball-side unit is already bound; your job is to legally delay the far rotator before he restores five-man shape.",
+        "hr": "U 6 na 5 prepoznaj braniča koji popravlja obranu. Strana lopte već je vezana; tvoj je posao legalno usporiti daljeg rotatora prije nego vrati oblik s petoricom.",
+        "de": "Im 6 gegen 5 den Reparaturverteidiger erkennen. Die Ballseite ist gebunden; deine Aufgabe ist, den fernen Rotierer legal zu verzögern, bevor die Fünferform zurückkehrt."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A preserves the open gap; B follows only if the rotator stops and concedes it.",
+        "hr": "A čuva otvoreni prostor; B slijedi samo ako se rotator zaustavi i prepusti ga.",
+        "de": "A erhält die offene Lücke; B folgt nur, wenn der Rotierer stoppt und sie aufgibt."
+      }
+    },
+    {
+      "batchId": "pv_b_11",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_5v6_safe_release_no_inside_force",
+      "title": {
+        "en": "Pivot — In 5v6, Hold the Middles and Protect the Safe Release",
+        "hr": "Pivot — u 5 na 6 zadrži srednje i čuvaj siguran izlaz",
+        "de": "Kreisläufer — im 5 gegen 6 die Mitte binden und den sicheren Rückpass schützen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Short Handed",
+      "minute": 38,
+      "score": "18:19",
+      "defensiveSystem": "6-0",
+      "numerical": "5v6",
+      "perception": true,
+      "skillTags": [
+        "shortHanded",
+        "spacing",
+        "ballSecurity"
+      ],
+      "primaryTacticalCue": "Both middles stay compact on pivot; backcourt has clean lateral release and no inside target hand",
+      "fingerprint": {
+        "objective": "retain safe outlet while short-handed",
+        "cue": "two middles own inside and lateral release is open",
+        "relationship": "pivot–two middles–backcourt",
+        "structure": "5v6",
+        "decision": "hold defenders inside and do not call for feed",
+        "timing": "until a middle leaves",
+        "risk": "forced inside turnover exposes transition"
+      },
+      "situation": {
+        "en": "You trail 18:19 at 38' while attacking 5v6. Both middle defenders stay compact on you and fill the inside lane. Your backcourt player has a clean lateral release to the opposite side. You have no visible target hand and a forced feed would expose your team to a counter.",
+        "hr": "Gubite 18:19 u 38. minuti dok napadate 5 na 6. Oba srednja braniča ostaju zbijena na tebi i zatvaraju unutarnju liniju. Vanjski igrač ima čisto bočno dodavanje na suprotnu stranu. Nemaš vidljivu ruku za prijem, a forsirana lopta otvorila bi protunapad.",
+        "de": "Ihr liegt 18:19 in Minute 38 im Angriff 5 gegen 6 zurück. Beide Mittelblockspieler bleiben kompakt an dir und schließen den Innenweg. Der Rückraum hat einen sauberen Querpass zur Gegenseite. Du hast keine sichtbare Zielhand; ein erzwungenes Anspiel öffnet den Gegenstoß."
+      },
+      "question": {
+        "en": "How do you help the short-handed possession?",
+        "hr": "Kako pomažeš posjedu s igračem manje?",
+        "de": "Wie hilfst du dem Unterzahlbesitz?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Keep both middles occupied and let the ball use the safe lateral release",
+            "hr": "Zadrži oba srednja braniča i pusti loptu na siguran bočni izlaz",
+            "de": "Beide Mittelblockspieler binden und den sicheren Querpass nutzen lassen"
+          },
+          "feedback": {
+            "en": "Correct — your value is the two defenders you hold, not a forced catch.",
+            "hr": "Točno — tvoja vrijednost su dvojica braniča koje držiš, ne forsirani prijem.",
+            "de": "Richtig — dein Wert sind zwei gebundene Verteidiger, nicht ein erzwungener Fang."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Show inside only after one middle leaves and a target hand becomes visible",
+            "hr": "Pokaži se unutra tek kad jedan srednji ode i pojavi se vidljiva ruka za prijem",
+            "de": "Innen erst zeigen, wenn ein Mittelblock löst und eine Zielhand sichtbar wird"
+          },
+          "feedback": {
+            "en": "Good next read; nobody has left yet.",
+            "hr": "Dobra sljedeća odluka; još nitko nije otišao.",
+            "de": "Guter nächster Blick; noch hat niemand gelöst."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Demand a bounce pass between both middles",
+            "hr": "Traži odbijenu loptu između oba srednja",
+            "de": "Einen Bodenpass zwischen beiden Mittelblockspielern fordern"
+          },
+          "feedback": {
+            "en": "Risky — short-handed transition cost makes the closed lane worse.",
+            "hr": "Rizično — cijena tranzicije s igračem manje čini zatvorenu liniju još gorom.",
+            "de": "Riskant — das Unterzahlrisiko macht den geschlossenen Weg noch teurer."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Leave the middle and follow the safe pass outside",
+            "hr": "Napusti sredinu i prati sigurno dodavanje prema van",
+            "de": "Die Mitte verlassen und dem sicheren Pass nach außen folgen"
+          },
+          "feedback": {
+            "en": "Poor — both middles are freed to pressure the ball.",
+            "hr": "Loše — oba srednja oslobađaš za pritisak na loptu.",
+            "de": "Schlecht — beide Mittelblockspieler werden für Balldruck frei."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "In 5v6, a pivot can create value without touching the ball. Hold two defenders inside and protect the safe circulation until the defence chooses to release one.",
+        "hr": "U 5 na 6 pivot može stvarati vrijednost bez dodira s loptom. Drži dvojicu unutra i čuvaj sigurnu cirkulaciju dok obrana ne odluči pustiti jednog.",
+        "de": "Im 5 gegen 6 schafft der Kreis auch ohne Ball Wert. Zwei innen binden und den sicheren Umlauf schützen, bis die Abwehr einen lösen muss."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A protects the live safe option; B begins only after one defender releases.",
+        "hr": "A čuva živu sigurnu opciju; B počinje tek nakon puštanja jednog braniča.",
+        "de": "A schützt die aktuelle sichere Option; B beginnt erst nach dem Lösen eines Verteidigers."
+      }
+    },
+    {
+      "batchId": "pv_b_12",
+      "teachingArea": "defensive_systems_and_numbers",
+      "familyKey": "pv_passive_play_quick_reseal",
+      "title": {
+        "en": "Pivot — Under Passive Play, Reseal on the First Reversal",
+        "hr": "Pivot — pod pasivnom igrom ponovno zatvori na prvoj promjeni strane",
+        "de": "Kreisläufer — bei Passivspiel mit der ersten Verlagerung neu sperren"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Passive Play",
+      "minute": 52,
+      "score": "25:25",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "passivePlay",
+        "timing",
+        "decisionMaking"
+      ],
+      "primaryTacticalCue": "Passive arm up; first reversal begins; far middle looks to ball and exposes hip for one action",
+      "fingerprint": {
+        "objective": "create immediate passive-play finish",
+        "cue": "passive signal and far middle turns on first reversal",
+        "relationship": "pivot–far middle–receiving back",
+        "structure": "passive play",
+        "decision": "reseal during first reversal",
+        "timing": "one pass, not second cycle",
+        "risk": "waiting consumes remaining actions"
+      },
+      "situation": {
+        "en": "Tied 25:25 at 52'. The referee raises the passive-play arm. The centre back starts the first reversal toward the right back. The far middle turns his head to the pass and exposes his inside hip. Waiting for another full circulation may leave no action after the next signal.",
+        "hr": "Neriješeno je 25:25 u 52. minuti. Sudac podiže ruku za pasivnu igru. Srednji vanjski kreće u prvu promjenu strane prema desnom vanjskom. Dalji srednji okreće glavu prema dodavanju i otvara unutarnji kuk. Čekanje još jednog punog kruga možda ne ostavlja akciju nakon sljedećeg signala.",
+        "de": "Unentschieden 25:25 in Minute 52. Der Schiedsrichter zeigt Passivspiel. Der Rückraum Mitte startet die erste Verlagerung zum rechten Rückraum. Der ferne Mittelblock dreht den Kopf zum Pass und öffnet die innere Hüfte. Eine weitere volle Runde lässt womöglich keine Aktion nach dem nächsten Zeichen."
+      },
+      "question": {
+        "en": "When do you create the final seal?",
+        "hr": "Kada stvaraš završno zatvaranje?",
+        "de": "Wann stellst du die Abschlusssperre?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Move during the first reversal and seal the far middle before the right back catches",
+            "hr": "Kreni tijekom prve promjene strane i zatvori daljeg srednjeg prije prijema desnog vanjskog",
+            "de": "Während der ersten Verlagerung laufen und den fernen Mittelblock vor dem Fang sperren"
+          },
+          "feedback": {
+            "en": "Correct — the next catch already has a finishing action.",
+            "hr": "Točno — sljedeći prijem već ima završnu akciju.",
+            "de": "Richtig — der nächste Fang besitzt bereits eine Abschlussaktion."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip behind him if he steps over the early seal",
+            "hr": "Otklizaj iza njega ako prijeđe preko ranog zatvaranja",
+            "de": "Hinter ihm abrollen, wenn er über die frühe Sperre tritt"
+          },
+          "feedback": {
+            "en": "Good immediate counter; it keeps the same action alive.",
+            "hr": "Dobar trenutačni odgovor; ista akcija ostaje živa.",
+            "de": "Gute direkte Antwort; dieselbe Aktion bleibt lebendig."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Wait for a second reversal to see the defence again",
+            "hr": "Čekaj drugu promjenu strane da još jednom vidiš obranu",
+            "de": "Auf eine zweite Verlagerung warten, um die Abwehr erneut zu lesen"
+          },
+          "feedback": {
+            "en": "Risky — passive-play actions are being consumed.",
+            "hr": "Rizično — troše se akcije pasivne igre.",
+            "de": "Riskant — die Passivspielaktionen werden verbraucht."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Stand still and ask the backs to shoot through the block",
+            "hr": "Ostani miran i traži od vanjskih da pucaju kroz blok",
+            "de": "Stehen bleiben und den Rückraum zum Wurf durch den Block auffordern"
+          },
+          "feedback": {
+            "en": "Poor — you contribute no final advantage.",
+            "hr": "Loše — ne stvaraš nikakvu završnu prednost.",
+            "de": "Schlecht — du schaffst keinen Abschlussvorteil."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Passive play compresses timing. Reseal on the first reversal so the receiving back can shoot, drive or feed immediately; do not spend another cycle waiting.",
+        "hr": "Pasivna igra sažima vrijeme. Ponovno zatvori na prvoj promjeni strane da primatelj odmah može pucati, prodrijeti ili dodati; ne troši novi krug na čekanje.",
+        "de": "Passivspiel verdichtet die Zeit. Mit der ersten Verlagerung neu sperren, damit der Empfänger sofort werfen, durchbrechen oder anspielen kann; keinen weiteren Umlauf warten."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A creates the action before the catch; B is the immediate response only if the defender steps over it.",
+        "hr": "A stvara akciju prije prijema; B je trenutačni odgovor samo ako branič prijeđe preko nje.",
+        "de": "A schafft die Aktion vor dem Fang; B folgt nur beim Übersteigen."
+      }
+    },
+    {
+      "batchId": "pv_b_13",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_cb_direct_feed_window",
+      "title": {
+        "en": "Pivot — Give the Centre Back a Direct Feed Window, Not Just a Seal",
+        "hr": "Pivot — srednjem vanjskom daj izravan prozor za dodavanje, ne samo zatvaranje",
+        "de": "Kreisläufer — dem Rückraum Mitte ein direktes Anspielfenster geben, nicht nur eine Sperre"
+      },
+      "difficulty": "Intermediate",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 19,
+      "score": "9:9",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "teamplay",
+        "receiving",
+        "positioning"
+      ],
+      "primaryTacticalCue": "CB has free arm; pivot seal exists but target hand is hidden behind defender shoulder",
+      "fingerprint": {
+        "objective": "convert seal into visible direct feed",
+        "cue": "passer free but target hidden",
+        "relationship": "pivot–centre back–middle defender",
+        "structure": "6-0",
+        "decision": "rotate upper body and show far hand without losing hip",
+        "timing": "before pass arm rises",
+        "risk": "abandoning seal to face passer"
+      },
+      "situation": {
+        "en": "Tied 9:9 at 19'. The centre back has a free passing arm. You hold a useful hip seal on the middle defender, but your target hand is hidden behind his shoulder. The seal is real; the direct feed window is not yet visible.",
+        "hr": "Neriješeno je 9:9 u 19. minuti. Srednji vanjski ima slobodnu ruku za dodavanje. Držiš dobar kontakt kukom na srednjem braniču, ali ruka za prijem skrivena je iza njegova ramena. Zatvaranje postoji; izravan prozor za dodavanje još nije vidljiv.",
+        "de": "Unentschieden 9:9 in Minute 19. Der Rückraum Mitte hat einen freien Passarm. Du hältst eine gute Hüftsperre am Mittelblock, doch deine Zielhand liegt hinter seiner Schulter. Die Sperre steht; das direkte Anspielfenster ist noch unsichtbar."
+      },
+      "question": {
+        "en": "How do you make the seal playable?",
+        "hr": "Kako zatvaranje činiš dostupnim za dodavanje?",
+        "de": "Wie machst du die Sperre anspielbar?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Keep the hip seal, rotate the upper body and show the far hand in the passer’s window",
+            "hr": "Zadrži zatvaranje kukom, okreni gornji dio tijela i pokaži dalju ruku u prozoru dodavača",
+            "de": "Hüftsperre halten, Oberkörper drehen und die ferne Hand im Sichtfenster zeigen"
+          },
+          "feedback": {
+            "en": "Correct — the defender stays controlled and the passer gains a target.",
+            "hr": "Točno — branič ostaje kontroliran, a dodavač dobiva metu.",
+            "de": "Richtig — der Verteidiger bleibt kontrolliert und der Passgeber bekommt ein Ziel."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Release the seal only if the defender turns fully to deny both hands",
+            "hr": "Pusti zatvaranje samo ako se branič potpuno okrene zatvoriti obje ruke",
+            "de": "Die Sperre nur lösen, wenn der Verteidiger beide Hände vollständig verweigert"
+          },
+          "feedback": {
+            "en": "Good after full denial; it has not happened yet.",
+            "hr": "Dobro nakon potpunog zatvaranja; još se nije dogodilo.",
+            "de": "Gut nach vollständiger Verweigerung; sie fehlt noch."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Turn completely toward the passer and lose hip contact",
+            "hr": "Potpuno se okreni prema dodavaču i izgubi kontakt kukom",
+            "de": "Sich ganz zum Passgeber drehen und den Hüftkontakt verlieren"
+          },
+          "feedback": {
+            "en": "Risky — the defender steps into the lane you just opened.",
+            "hr": "Rizično — branič ulazi u liniju koju si upravo otvorio.",
+            "de": "Riskant — der Verteidiger tritt in den geöffneten Weg."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Keep both hands hidden and call louder",
+            "hr": "Drži obje ruke skrivene i glasnije traži loptu",
+            "de": "Beide Hände versteckt halten und lauter rufen"
+          },
+          "feedback": {
+            "en": "Poor — sound is not a passing target.",
+            "hr": "Loše — zvuk nije meta za dodavanje.",
+            "de": "Schlecht — Lautstärke ist kein Passziel."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A seal and a feed window are separate jobs. Keep the defender on the hip while rotating enough to show a hand the centre back can hit.",
+        "hr": "Zatvaranje i prozor za dodavanje dva su odvojena posla. Drži braniča na kuku i okreni se dovoljno da srednji vanjski vidi ruku.",
+        "de": "Sperre und Anspielfenster sind getrennte Aufgaben. Den Verteidiger an der Hüfte halten und genug drehen, damit der Rückraum die Hand sieht."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A preserves both seal and target; B is needed only after full two-hand denial.",
+        "hr": "A čuva i zatvaranje i metu; B treba samo nakon potpunog zatvaranja obje ruke.",
+        "de": "A erhält Sperre und Ziel; B ist nur nach kompletter Verweigerung beider Hände nötig."
+      }
+    },
+    {
+      "batchId": "pv_b_14",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_lb_drive_clear_then_return",
+      "title": {
+        "en": "Pivot — After Clearing the Left-Back Drive, Return Only When He Stops",
+        "hr": "Pivot — nakon čišćenja prodora lijevog vanjskog vrati se tek kad se zaustavi",
+        "de": "Kreisläufer — nach dem Räumen für Links erst bei seinem Stopp zurückkehren"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 28,
+      "score": "14:13",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "timing",
+        "teamplay",
+        "positioning"
+      ],
+      "primaryTacticalCue": "Pivot has cleared lane; LB drive is stopped by far middle and ball carrier turns back with free pass arm",
+      "fingerprint": {
+        "objective": "become second option after stopped drive",
+        "cue": "left back stops and turns back after pivot cleared",
+        "relationship": "pivot–left back–far middle",
+        "structure": "6-0",
+        "decision": "return behind helping middle for feed",
+        "timing": "after drive stops, not during",
+        "risk": "early return reclogs lane"
+      },
+      "situation": {
+        "en": "You lead 14:13 at 28'. You cleared one gap to let the left back drive. The far middle stops him before six metres, and the left back turns back with a free passing arm. Your original gap is now behind the helping defender. Returning during the drive would have clogged it; the drive has now ended.",
+        "hr": "Vodite 14:13 u 28. minuti. Pomaknuo si se jedan prostor da lijevi vanjski može prodrijeti. Dalji srednji zaustavlja ga prije šest metara, a lijevi vanjski okreće se natrag sa slobodnom rukom za dodavanje. Tvoj početni prostor sada je iza braniča koji je pomogao. Povratak tijekom prodora stvorio bi gužvu; prodor je sada završio.",
+        "de": "Ihr führt 14:13 in Minute 28. Du hast eine Lücke geräumt, damit der linke Rückraum durchbricht. Der ferne Mittelblock stoppt ihn vor sechs Metern, der Rückraum dreht mit freiem Passarm zurück. Deine ursprüngliche Lücke liegt nun hinter dem Helfer. Während des Durchbruchs wäre die Rückkehr Verkehr gewesen; jetzt ist er beendet."
+      },
+      "question": {
+        "en": "When and where do you return?",
+        "hr": "Kada i kamo se vraćaš?",
+        "de": "Wann und wohin kehrst du zurück?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Return behind the helping middle as the left back stops and opens the pass arm",
+            "hr": "Vrati se iza srednjeg pomagača kad se lijevi vanjski zaustavi i otvori ruku za dodavanje",
+            "de": "Hinter den helfenden Mittelblock zurückkehren, sobald der Rückraum stoppt und den Passarm öffnet"
+          },
+          "feedback": {
+            "en": "Correct — the cleared lane becomes the return-feed lane after the stop.",
+            "hr": "Točno — očišćeni prostor nakon zaustavljanja postaje linija povratnog dodavanja.",
+            "de": "Richtig — der geräumte Raum wird nach dem Stopp zum Rückpassweg."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Stay away if the left back beats the help and continues to goal",
+            "hr": "Ostani dalje ako lijevi vanjski prođe pomoć i nastavi prema golu",
+            "de": "Wegbleiben, wenn der Rückraum die Hilfe schlägt und zum Tor weitergeht"
+          },
+          "feedback": {
+            "en": "Good — a live drive still owns the lane.",
+            "hr": "Dobro — živi prodor i dalje kontrolira prostor.",
+            "de": "Gut — ein laufender Durchbruch besitzt weiter die Spur."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Return while the left back is still accelerating through the gap",
+            "hr": "Vrati se dok lijevi vanjski još ubrzava kroz prostor",
+            "de": "Zurückkehren, während der Rückraum noch durch die Lücke beschleunigt"
+          },
+          "feedback": {
+            "en": "Risky — you reintroduce the traffic you first removed.",
+            "hr": "Rizično — vraćaš gužvu koju si prvo uklonio.",
+            "de": "Riskant — du bringst den zuerst entfernten Verkehr zurück."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Wait at the opposite wing after the drive stops",
+            "hr": "Čekaj na suprotnom krilu nakon zaustavljanja prodora",
+            "de": "Nach dem Stopp am gegenüberliegenden Außen warten"
+          },
+          "feedback": {
+            "en": "Poor — the helping defender has opened your best receiving lane.",
+            "hr": "Loše — pomagač je otvorio tvoju najbolju liniju za prijem.",
+            "de": "Schlecht — der Helfer hat deinen besten Anspielweg geöffnet."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Clear while the drive is alive; return when it dies. The helping middle’s step creates the feed behind him exactly as the left back turns back.",
+        "hr": "Makni se dok je prodor živ; vrati se kad se zaustavi. Korak srednjeg pomagača otvara dodavanje iza njega upravo kad se lijevi vanjski okrene.",
+        "de": "Räumen solange der Durchbruch lebt; zurückkehren wenn er endet. Der Schritt des Helfers öffnet genau beim Zurückdrehen den Pass hinter ihm."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A matches the visible stop; B is correct only if the drive remains live.",
+        "hr": "A odgovara vidljivom zaustavljanju; B vrijedi samo ako prodor ostane živ.",
+        "de": "A passt zum sichtbaren Stopp; B gilt nur bei weiterlaufendem Durchbruch."
+      }
+    },
+    {
+      "batchId": "pv_b_15",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_rb_cross_screen_timing",
+      "title": {
+        "en": "Pivot — Screen the Far Middle as the Right Back Crosses Inside",
+        "hr": "Pivot — zatvori daljeg srednjeg dok desni vanjski križa unutra",
+        "de": "Kreisläufer — den fernen Mittelblock sperren, während Rechts nach innen kreuzt"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 31,
+      "score": "15:15",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "screening",
+        "timing",
+        "teamplay"
+      ],
+      "primaryTacticalCue": "RB receives from CB and crosses inside; far middle prepares early takeover while near half trails",
+      "fingerprint": {
+        "objective": "prevent early takeover on right-back cross",
+        "cue": "far middle steps toward crossing lane before ball carrier arrives",
+        "relationship": "pivot–right back–far middle",
+        "structure": "6-0",
+        "decision": "set far-middle outside hip then slip",
+        "timing": "on RB catch",
+        "risk": "screening trailing half leaves takeover free"
+      },
+      "situation": {
+        "en": "Tied 15:15 at 31'. The right back receives from the centre and crosses inside. His half defender trails, while the far middle steps early toward the crossing lane to take over. You are at that middle defender's outside hip and can set before the right back arrives.",
+        "hr": "Neriješeno je 15:15 u 31. minuti. Desni vanjski prima od srednjeg i križa prema unutra. Njegov polubranitelj kasni, a dalji srednji rano izlazi u koridor križanja preuzeti. Ti si na vanjskom kuku tog srednjeg i možeš se postaviti prije dolaska desnog vanjskog.",
+        "de": "Unentschieden 15:15 in Minute 31. Der rechte Rückraum erhält den Ball von der Mitte und kreuzt nach innen. Sein Halbverteidiger hängt zurück, der ferne Mittelblock tritt früh zur Übernahme. Du bist an dessen äußerer Hüfte und kannst vor dem Ballführer stehen."
+      },
+      "question": {
+        "en": "Which defender does the cross-screen remove?",
+        "hr": "Kojeg braniča uklanja križni blok?",
+        "de": "Welchen Verteidiger nimmt die Kreuzsperre heraus?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Set on the far middle’s outside hip on the catch, then slip after the right back clears",
+            "hr": "Na prijemu se postavi na vanjski kuk daljeg srednjeg pa otklizaj nakon prolaska desnog vanjskog",
+            "de": "Beim Fang an der äußeren Hüfte des fernen Mittelblocks stehen und nach dem Durchgang abrollen"
+          },
+          "feedback": {
+            "en": "Correct — the takeover defender is removed and the trailing half cannot recover both.",
+            "hr": "Točno — branič za preuzimanje je uklonjen, a polubranitelj koji kasni ne može pokriti obojicu.",
+            "de": "Richtig — der Übernehmer ist weg und der hängende Halbe kann nicht beide decken."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Slip immediately if the far middle refuses the takeover and stays deep",
+            "hr": "Odmah otklizaj ako dalji srednji odbije preuzimanje i ostane duboko",
+            "de": "Sofort abrollen, wenn der ferne Mittelblock die Übernahme verweigert und tief bleibt"
+          },
+          "feedback": {
+            "en": "Good against no takeover; his early step shows takeover now.",
+            "hr": "Dobro bez preuzimanja; njegov rani korak sada pokazuje preuzimanje.",
+            "de": "Gut ohne Übernahme; sein früher Schritt zeigt sie jetzt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Screen the half defender who already trails behind the right back",
+            "hr": "Blokiraj polubranitelja koji već kasni iza desnog vanjskog",
+            "de": "Den Halbverteidiger sperren, der bereits hinter dem Rückraum hängt"
+          },
+          "feedback": {
+            "en": "Risky — the free middle takes the crossover cleanly.",
+            "hr": "Rizično — slobodan srednji čisto preuzima križanje.",
+            "de": "Riskant — der freie Mittelblock übernimmt sauber."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Move sideways with the far middle through the whole crossover",
+            "hr": "Pomiči se bočno s daljim srednjim kroz cijelo križanje",
+            "de": "Während des ganzen Kreuzens seitlich mit dem Mittelblock mitlaufen"
+          },
+          "feedback": {
+            "en": "Poor — a moving screen is illegal.",
+            "hr": "Loše — blok u kretanju je nedopušten.",
+            "de": "Schlecht — eine bewegte Sperre ist illegal."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "On this cross, the danger is the early middle takeover, not the beaten half. Set before contact on the takeover defender, then slip once the right back clears.",
+        "hr": "U ovom križanju opasnost je rano preuzimanje srednjeg, ne polubranitelj koji je prošao. Postavi se prije kontakta na braniča za preuzimanje pa otklizaj nakon prolaska desnog vanjskog.",
+        "de": "Bei diesem Kreuzen ist die frühe Übernahme des Mittelblocks die Gefahr, nicht der geschlagene Halbe. Vor Kontakt am Übernehmer stehen und nach dem Durchgang abrollen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A answers the active takeover; B follows only if the middle stays deep.",
+        "hr": "A odgovara aktivnom preuzimanju; B slijedi samo ako srednji ostane duboko.",
+        "de": "A beantwortet die aktive Übernahme; B folgt nur bei tiefer Mitte."
+      }
+    },
+    {
+      "batchId": "pv_b_16",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_wing_entry_exchange",
+      "title": {
+        "en": "Pivot — After the Wing Entry, Become the Return Outlet Behind the Handover",
+        "hr": "Pivot — nakon ulaska krila postani povratni izlaz iza predaje",
+        "de": "Kreisläufer — nach dem Außen-Einlauf Rückpassziel hinter der Übergabe werden"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 27,
+      "score": "14:14",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "teamplay",
+        "timing",
+        "passing"
+      ],
+      "primaryTacticalCue": "Wing entrant receives briefly at six; two defenders exchange responsibility and original pivot is free behind exchange",
+      "fingerprint": {
+        "objective": "offer return pass after wing entry",
+        "cue": "two defenders look and hand over entrant",
+        "relationship": "pivot–wing entrant–two defenders",
+        "structure": "6-0",
+        "decision": "circle behind handover and show short return",
+        "timing": "as entrant secures ball",
+        "risk": "standing beside entrant lets one defender take both"
+      },
+      "situation": {
+        "en": "Tied 14:14 at 27'. The left wing enters and receives briefly at six metres. The wing and half defenders both look at him and exchange responsibility. You shifted central before the entry and are now free behind that handover. Standing beside the wing would let one defender close both attackers.",
+        "hr": "Neriješeno je 14:14 u 27. minuti. Lijevo krilo ulazi i kratko prima na šest metara. Krilni branič i polubranitelj gledaju njega i predaju odgovornost. Ti si se prije ulaska pomaknuo prema sredini i sada si slobodan iza te predaje. Stajanje uz krilo omogućilo bi jednom braniču zatvaranje obojice.",
+        "de": "Unentschieden 14:14 in Minute 27. Der Linksaußen läuft ein und erhält kurz am Kreis. Außen- und Halbverteidiger schauen ihn an und übergeben. Du bist vor dem Einlauf zentral gerückt und nun hinter der Übergabe frei. Neben dem Außen könnte ein Verteidiger beide schließen."
+      },
+      "question": {
+        "en": "How do you continue the exchange?",
+        "hr": "Kako nastavljaš razmjenu?",
+        "de": "Wie setzt du den Wechsel fort?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Circle behind the handover and show a short return target away from the wing’s defender",
+            "hr": "Kruži iza predaje i pokaži kratku povratnu metu dalje od braniča krila",
+            "de": "Hinter der Übergabe kreisen und ballfern vom Außenverteidiger ein kurzes Rückpassziel zeigen"
+          },
+          "feedback": {
+            "en": "Correct — the wing’s catch binds two eyes and your return lane appears behind them.",
+            "hr": "Točno — prijem krila veže dva pogleda, a tvoja povratna linija otvara se iza njih.",
+            "de": "Richtig — der Fang bindet zwei Blicke und dein Rückpassweg öffnet dahinter."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Stay clear if the wing turns into a clean finish immediately",
+            "hr": "Ostani izvan puta ako se krilo odmah okrene u čistu završnicu",
+            "de": "Wegbleiben, wenn der Außen sofort in einen klaren Abschluss dreht"
+          },
+          "feedback": {
+            "en": "Good — do not interrupt a live finish.",
+            "hr": "Dobro — ne prekidaj živu završnicu.",
+            "de": "Gut — einen klaren Abschluss nicht stören."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Stand shoulder-to-shoulder with the wing and both call for the ball",
+            "hr": "Stani rame uz rame s krilom i obojica tražite loptu",
+            "de": "Schulter an Schulter mit dem Außen stehen und beide den Ball fordern"
+          },
+          "feedback": {
+            "en": "Risky — one defender can control the shared line.",
+            "hr": "Rizično — jedan branič može kontrolirati zajedničku liniju.",
+            "de": "Riskant — ein Verteidiger kontrolliert die gemeinsame Spur."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Run outside to replace the empty wing corner",
+            "hr": "Izađi van popuniti prazni kut krila",
+            "de": "Nach außen in die leere Ecke laufen"
+          },
+          "feedback": {
+            "en": "Poor — you abandon the six-metre handover advantage.",
+            "hr": "Loše — napuštaš prednost predaje na šest metara.",
+            "de": "Schlecht — du gibst den Vorteil der Übergabe am Kreis auf."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The exchange continues after the entry. When two defenders focus the receiving wing, circle behind their handover and become the short return option.",
+        "hr": "Razmjena se nastavlja nakon ulaska. Kad dvojica braniča gledaju krilo koje prima, kruži iza njihove predaje i postani kratka povratna opcija.",
+        "de": "Der Wechsel geht nach dem Einlauf weiter. Fokussieren zwei Verteidiger den empfangenden Außen, hinter ihrer Übergabe kreisen und kurze Rückpassoption werden."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the defensive handover; B is correct only if the wing already owns a clean finish.",
+        "hr": "A koristi obrambenu predaju; B vrijedi samo ako krilo već ima čistu završnicu.",
+        "de": "A nutzt die Abwehrübergabe; B gilt nur bei bereits klarem Abschluss des Außen."
+      }
+    },
+    {
+      "batchId": "pv_b_17",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_step_out_handoff_only_on_call",
+      "title": {
+        "en": "Pivot — Step Out for the Handoff Only on a Clear Call",
+        "hr": "Pivot — izađi na predaju samo nakon jasnog poziva",
+        "de": "Kreisläufer — nur auf klaren Ruf zur Übergabe heraustreten"
+      },
+      "difficulty": "Intermediate",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 16,
+      "score": "8:7",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "communication",
+        "spacing",
+        "teamplay"
+      ],
+      "primaryTacticalCue": "CB dribbles laterally without handoff call; pivot six-metre seal remains live and drive lane is open",
+      "fingerprint": {
+        "objective": "preserve six-metre threat unless handoff is called",
+        "cue": "lateral dribble with no verbal or eye call",
+        "relationship": "pivot–centre back–middle defender",
+        "structure": "6-0",
+        "decision": "hold depth and seal",
+        "timing": "until explicit call",
+        "risk": "automatic step-out clogs nine metres"
+      },
+      "situation": {
+        "en": "You lead 8:7 at 16'. The centre back dribbles laterally across nine metres but gives no handoff call or eye signal. Your six-metre seal remains live and the lane in front of him is open. Automatically stepping out would bring your defender into his path.",
+        "hr": "Vodite 8:7 u 16. minuti. Srednji vanjski bočno vodi loptu preko devet metara, ali ne daje poziv ni pogled za predaju. Tvoje zatvaranje na šest metara još je živo, a prostor ispred njega otvoren. Automatski izlazak doveo bi tvog braniča u njegovu putanju.",
+        "de": "Ihr führt 8:7 in Minute 16. Der Rückraum Mitte dribbelt seitlich über neun Meter, gibt aber weder Ruf noch Blick für eine Übergabe. Deine Sperre am Kreis lebt und der Weg vor ihm ist offen. Automatisches Heraustreten bringt deinen Verteidiger in seine Spur."
+      },
+      "question": {
+        "en": "Do you step out for the ball?",
+        "hr": "Izlaziš li po loptu?",
+        "de": "Trittst du für den Ball heraus?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Stay at six, hold the seal and wait for a clear handoff call",
+            "hr": "Ostani na šest, drži zatvaranje i čekaj jasan poziv za predaju",
+            "de": "Am Kreis bleiben, die Sperre halten und auf klaren Übergaberuf warten"
+          },
+          "feedback": {
+            "en": "Correct — depth and the open drive are more valuable without a call.",
+            "hr": "Točno — bez poziva dubina i otvoreni prodor vrijede više.",
+            "de": "Richtig — ohne Ruf sind Tiefe und offener Durchbruch wertvoller."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Step out immediately if the centre back calls your name and turns the ball-side shoulder",
+            "hr": "Odmah izađi ako srednji vanjski pozove tvoje ime i okrene rame prema lopti",
+            "de": "Sofort heraustreten, wenn der Rückraum deinen Namen ruft und die Ballseite dreht"
+          },
+          "feedback": {
+            "en": "Good trigger; it has not happened.",
+            "hr": "Dobar signal; još se nije dogodio.",
+            "de": "Guter Auslöser; er fehlt noch."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Walk to nine metres whenever the centre back dribbles sideways",
+            "hr": "Izađi na devet metara svaki put kad srednji vanjski vodi bočno",
+            "de": "Bei jedem Seitwärtsdribbling auf neun Meter gehen"
+          },
+          "feedback": {
+            "en": "Risky — a habit replaces communication and kills spacing.",
+            "hr": "Rizično — navika zamjenjuje komunikaciju i ubija razmak.",
+            "de": "Riskant — Gewohnheit ersetzt Kommunikation und zerstört Abstand."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Take the ball from his hands without a call",
+            "hr": "Uzmi mu loptu iz ruku bez poziva",
+            "de": "Den Ball ohne Ruf aus seinen Händen nehmen"
+          },
+          "feedback": {
+            "en": "Poor — both attackers and defenders collide.",
+            "hr": "Loše — sudaraju se oba napadača i braniči.",
+            "de": "Schlecht — Angreifer und Verteidiger kollidieren."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A handoff is coordinated, not automatic. Keep the six-metre seal until voice and body signal the exchange; otherwise preserve the ball carrier’s lane.",
+        "hr": "Predaja je dogovorena, ne automatska. Drži zatvaranje na šest metara dok glas i tijelo ne najave razmjenu; inače čuvaj putanju igrača s loptom.",
+        "de": "Eine Übergabe ist abgestimmt, nicht automatisch. Die Kreissperre halten, bis Stimme und Körper den Wechsel zeigen; sonst die Spur des Ballführers bewahren."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A matches the absent call; B becomes right only after the explicit trigger.",
+        "hr": "A odgovara izostanku poziva; B postaje ispravan tek nakon jasnog signala.",
+        "de": "A passt zum fehlenden Ruf; B wird erst nach klarem Auslöser richtig."
+      }
+    },
+    {
+      "batchId": "pv_b_18",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_double_pivot_same_line_avoidance",
+      "title": {
+        "en": "Pivot — With Two Pivots in 6v6, Stagger the Depths",
+        "hr": "Pivot — s dva pivota u 6 na 6 razdvoji dubine",
+        "de": "Kreisläufer — mit zwei Kreisen im 6 gegen 6 die Tiefen staffeln"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Moderate",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 36,
+      "score": "18:18",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "spacing",
+        "communication",
+        "positioning"
+      ],
+      "primaryTacticalCue": "Wing has entered as second pivot at six; both attackers stand same depth against same middle line",
+      "fingerprint": {
+        "objective": "separate two-pivot passing planes",
+        "cue": "both pivots same depth and same defender line",
+        "relationship": "original pivot–wing entrant–two middles",
+        "structure": "6v6 double pivot",
+        "decision": "one low, one half-step high",
+        "timing": "before ball reversal",
+        "risk": "same line lets defenders pass both"
+      },
+      "situation": {
+        "en": "Tied 18:18 at 36'. A wing has entered as a temporary second pivot. Both of you stand on the six-metre line at the same depth, so the two middle defenders can see and pass both attackers along one line. The ball is about to reverse.",
+        "hr": "Neriješeno je 18:18 u 36. minuti. Krilo je ušlo kao privremeni drugi pivot. Obojica stojite na liniji šest metara u istoj dubini pa dva srednja braniča vide i predaju oba napadača duž jedne linije. Lopta se sprema promijeniti stranu.",
+        "de": "Unentschieden 18:18 in Minute 36. Ein Außen ist als zweiter Kreis eingelaufen. Ihr steht beide auf gleicher Tiefe an sechs Metern, sodass beide Mittelblockspieler euch auf einer Linie sehen und übergeben können. Der Ball wird gleich verlagert."
+      },
+      "question": {
+        "en": "How do you separate the two-pivot threats?",
+        "hr": "Kako razdvajaš prijetnje dvojice pivota?",
+        "de": "Wie trennst du die Gefahren beider Kreisläufer?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Call one pivot low and let the other step half a metre high in the adjacent gap",
+            "hr": "Dogovori da jedan ostane nisko, a drugi izađe pola metra više u susjednom prostoru",
+            "de": "Einen Kreis tief halten und den anderen einen halben Meter höher in die Nachbarlücke stellen"
+          },
+          "feedback": {
+            "en": "Correct — different depth and gap force separate defensive decisions.",
+            "hr": "Točno — različita dubina i prostor traže odvojene obrambene odluke.",
+            "de": "Richtig — verschiedene Tiefe und Lücke erzwingen getrennte Entscheidungen."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Stay level only for a called same-line double screen",
+            "hr": "Ostanite u istoj dubini samo za dogovoreni dvostruki blok u liniji",
+            "de": "Nur für eine angesagte Doppelsperre auf gleicher Tiefe bleiben"
+          },
+          "feedback": {
+            "en": "Good for that specific action; none is called.",
+            "hr": "Dobro za tu posebnu akciju; sada nije dogovorena.",
+            "de": "Gut für diese spezielle Aktion; sie ist nicht angesagt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Both move into the same central gap and call together",
+            "hr": "Obojica uđite u isti središnji prostor i zajedno tražite loptu",
+            "de": "Beide in dieselbe zentrale Lücke gehen und gemeinsam fordern"
+          },
+          "feedback": {
+            "en": "Risky — one defender can control both targets.",
+            "hr": "Rizično — jedan branič može kontrolirati obje mete.",
+            "de": "Riskant — ein Verteidiger kontrolliert beide Ziele."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Both step out to nine metres",
+            "hr": "Obojica izađite na devet metara",
+            "de": "Beide auf neun Meter heraustreten"
+          },
+          "feedback": {
+            "en": "Poor — the double-pivot threat disappears.",
+            "hr": "Loše — prijetnja s dva pivota nestaje.",
+            "de": "Schlecht — die Zwei-Kreis-Gefahr verschwindet."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Two pivots need two planes. Stagger depth and adjacent gaps so each defender must own a separate body and pass lane.",
+        "hr": "Dva pivota trebaju dvije ravnine. Razdvoji dubinu i susjedne prostore da svaki branič mora kontrolirati zasebno tijelo i liniju dodavanja.",
+        "de": "Zwei Kreise brauchen zwei Ebenen. Tiefe und Nachbarlücken staffeln, damit jeder Verteidiger einen eigenen Körper und Passweg besitzt."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A creates the base spacing; B is reserved for a specifically called double screen.",
+        "hr": "A stvara osnovni razmak; B je samo za posebno dogovoreni dvostruki blok.",
+        "de": "A schafft den Grundabstand; B bleibt einer angesagten Doppelsperre vorbehalten."
+      }
+    },
+    {
+      "batchId": "pv_b_19",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_screen_goalkeeper_sightline_legally",
+      "title": {
+        "en": "Pivot — Block the Goalkeeper’s Sight Without Entering the Goal Area",
+        "hr": "Pivot — zakloni pogled vratara bez ulaska u vratarev prostor",
+        "de": "Kreisläufer — Torwartsicht nehmen ohne den Torraum zu betreten"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 45,
+      "score": "22:23",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": false,
+      "skillTags": [
+        "screening",
+        "positioning",
+        "discipline"
+      ],
+      "primaryTacticalCue": "Backcourt shooter has clean block line; pivot can stand stationary outside six with arms close before release",
+      "fingerprint": {
+        "objective": "legally reduce goalkeeper sightline",
+        "cue": "shooting lane clear and stationary screen spot outside goal area",
+        "relationship": "pivot–shooter–goalkeeper",
+        "structure": "backcourt shot",
+        "decision": "set outside line before release",
+        "timing": "before shooter jumps",
+        "risk": "entering goal area or moving late"
+      },
+      "situation": {
+        "en": "You trail 22:23 at 45'. The right back has a clean nine-metre shooting lane. You can stand outside the six-metre line between the release point and goalkeeper before the jump. Your arms can stay close and no defender needs to be pushed. Entering the goal area or moving after release would be illegal.",
+        "hr": "Gubite 22:23 u 45. minuti. Desni vanjski ima čistu liniju šuta s devet metara. Prije skoka možeš se postaviti izvan linije šest metara između mjesta izbačaja i vratara. Ruke mogu ostati uz tijelo i ne moraš gurati braniča. Ulazak u vratarev prostor ili pomicanje nakon izbačaja bilo bi nedopušteno.",
+        "de": "Ihr liegt 22:23 in Minute 45 zurück. Der rechte Rückraum hat eine klare Wurflinie aus neun Metern. Vor dem Sprung kannst du außerhalb der Torraumlinie zwischen Abwurfpunkt und Torwart stehen. Die Arme bleiben angelegt, kein Verteidiger muss geschoben werden. Betreten des Torraums oder spätes Bewegen wäre illegal."
+      },
+      "question": {
+        "en": "How do you create the legal sight screen?",
+        "hr": "Kako stvaraš legalan zaklon pogleda?",
+        "de": "Wie stellst du die legale Sichtblende?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Establish a stationary position outside six before the jump, arms close, and hold it through release",
+            "hr": "Prije skoka zauzmi miran položaj izvan šest metara, drži ruke uz tijelo i ostani do izbačaja",
+            "de": "Vor dem Sprung außerhalb sechs Meter fest stehen, Arme anlegen und bis zum Abwurf halten"
+          },
+          "feedback": {
+            "en": "Correct — legal position removes a beat of sight without interfering illegally.",
+            "hr": "Točno — legalan položaj oduzima trenutak pogleda bez nedopuštenog ometanja.",
+            "de": "Richtig — legale Position nimmt einen Sichtmoment ohne regelwidrige Behinderung."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Leave the sightline if your position would require stepping into the goal area",
+            "hr": "Napusti liniju ako bi položaj tražio ulazak u vratarev prostor",
+            "de": "Die Sichtlinie verlassen, wenn dafür der Torraum betreten werden müsste"
+          },
+          "feedback": {
+            "en": "Good discipline — no screen is worth an area violation.",
+            "hr": "Dobra disciplina — nijedan zaklon nije vrijedan ulaska u prostor.",
+            "de": "Gute Disziplin — keine Sichtblende ist einen Torraumfehler wert."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Slide sideways after the shot leaves to keep covering the goalkeeper",
+            "hr": "Klizi bočno nakon izbačaja da i dalje zaklanjaš vratara",
+            "de": "Nach dem Abwurf seitlich mitgleiten, um den Torwart weiter zu verdecken"
+          },
+          "feedback": {
+            "en": "Risky — late movement can become illegal interference.",
+            "hr": "Rizično — kasno pomicanje može postati nedopušteno ometanje.",
+            "de": "Riskant — spätes Bewegen kann regelwidrige Behinderung werden."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Step inside six metres and wave both arms",
+            "hr": "Uđi unutar šest metara i maši objema rukama",
+            "de": "In den Torraum treten und mit beiden Armen winken"
+          },
+          "feedback": {
+            "en": "Poor — goal-area entry and active obstruction are illegal.",
+            "hr": "Loše — ulazak u vratarev prostor i aktivno ometanje su nedopušteni.",
+            "de": "Schlecht — Torraumbetreten und aktive Behinderung sind illegal."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A legal sight screen is position, not contact: outside the goal area, established early, stationary, arms close. If those conditions fail, leave the lane.",
+        "hr": "Legalan zaklon pogleda je položaj, ne kontakt: izvan vratareva prostora, rano postavljen, miran, ruke uz tijelo. Ako uvjeti nisu ispunjeni, napusti liniju.",
+        "de": "Eine legale Sichtblende ist Position, nicht Kontakt: außerhalb des Torraums, früh gestellt, fest, Arme angelegt. Fehlen diese Bedingungen, die Linie verlassen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A creates the legal screen; B is the necessary safety choice only if legal space is unavailable.",
+        "hr": "A stvara legalan zaklon; B je nužan sigurnosni izbor samo ako legalnog prostora nema.",
+        "de": "A schafft die legale Sichtblende; B ist nur ohne legalen Raum nötig."
+      }
+    },
+    {
+      "batchId": "pv_b_20",
+      "teachingArea": "cooperation",
+      "familyKey": "pv_fake_screen_and_slip",
+      "title": {
+        "en": "Pivot — Show the Screen, Then Slip When the Defender Pre-Switches",
+        "hr": "Pivot — pokaži blok pa otklizaj kad branič rano preuzme",
+        "de": "Kreisläufer — Sperre zeigen und bei frühem Wechsel abrollen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Attack",
+      "matchPhase": "Open Play",
+      "minute": 48,
+      "score": "24:25",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "perception": true,
+      "skillTags": [
+        "deception",
+        "perception",
+        "timing"
+      ],
+      "primaryTacticalCue": "Pivot approaches legal screen spot; own defender leaves early to pre-switch onto back before contact",
+      "fingerprint": {
+        "objective": "punish defensive pre-switch",
+        "cue": "pivot defender leaves before screen contact",
+        "relationship": "pivot–own defender–ball carrier",
+        "structure": "6-0",
+        "decision": "abort contact and slip behind",
+        "timing": "on defender early step",
+        "risk": "completing empty screen wastes free lane"
+      },
+      "situation": {
+        "en": "You trail 24:25 at 48'. You approach a legal screen spot for the centre back. Before any contact, your defender leaves you and steps early onto the ball carrier to pre-switch. The lane behind him to six metres is open, while completing the screen would contact nobody useful.",
+        "hr": "Gubite 24:25 u 48. minuti. Prilaziš legalnom mjestu za blok srednjem vanjskom. Prije ikakvog kontakta tvoj branič te napušta i rano izlazi na igrača s loptom radi preuzimanja. Linija iza njega prema šest metara je otvorena, a dovršavanje bloka ne bi pogodilo korisnog braniča.",
+        "de": "Ihr liegt 24:25 in Minute 48 zurück. Du näherst dich einem legalen Sperrenplatz für den Rückraum Mitte. Vor jedem Kontakt verlässt dein Verteidiger dich und tritt früh zum Vorwechsel auf den Ballführer. Hinter ihm ist der Weg zum Kreis offen; die fertige Sperre würde keinen wichtigen Verteidiger treffen."
+      },
+      "question": {
+        "en": "How do you convert the pre-switch?",
+        "hr": "Kako koristiš rano preuzimanje?",
+        "de": "Wie nutzt du den Vorwechsel?"
+      },
+      "answers": [
+        {
+          "quality": "optimal",
+          "text": {
+            "en": "Abort the screen and slip immediately behind your defender with a visible target",
+            "hr": "Odustani od bloka i odmah otklizaj iza svog braniča s vidljivom metom",
+            "de": "Die Sperre abbrechen und sofort mit sichtbarem Ziel hinter dem Verteidiger abrollen"
+          },
+          "feedback": {
+            "en": "Correct — his early switch frees the screener before contact.",
+            "hr": "Točno — njegovo rano preuzimanje oslobađa blokera prije kontakta.",
+            "de": "Richtig — sein früher Wechsel befreit den Sperrer vor Kontakt."
+          }
+        },
+        {
+          "quality": "good",
+          "text": {
+            "en": "Set the screen only if your defender stays and the ball marker chases",
+            "hr": "Postavi blok samo ako tvoj branič ostane, a čuvar lopte prati",
+            "de": "Die Sperre nur stellen, wenn dein Verteidiger bleibt und der Ballverteidiger verfolgt"
+          },
+          "feedback": {
+            "en": "Good against the original coverage; it has changed.",
+            "hr": "Dobro protiv početnog pokrivanja; ono se promijenilo.",
+            "de": "Gut gegen die ursprüngliche Deckung; sie hat gewechselt."
+          }
+        },
+        {
+          "quality": "risky",
+          "text": {
+            "en": "Complete the screen at the empty spot and wait",
+            "hr": "Dovrši blok na praznom mjestu i čekaj",
+            "de": "Die Sperre am leeren Platz fertigstellen und warten"
+          },
+          "feedback": {
+            "en": "Risky — the defence gets the pre-switch for free.",
+            "hr": "Rizično — obrana dobiva rano preuzimanje bez cijene.",
+            "de": "Riskant — die Abwehr bekommt den Vorwechsel kostenlos."
+          }
+        },
+        {
+          "quality": "poor",
+          "text": {
+            "en": "Chase your defender and hit him from behind",
+            "hr": "Lovi svog braniča i udari ga s leđa",
+            "de": "Dem eigenen Verteidiger nachjagen und ihn von hinten treffen"
+          },
+          "feedback": {
+            "en": "Poor — late contact is illegal and misses the open lane.",
+            "hr": "Loše — kasni kontakt je nedopušten i propušta otvorenu liniju.",
+            "de": "Schlecht — später Kontakt ist illegal und verpasst den offenen Weg."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A screen is a read, not a destination. If your defender pre-switches before contact, the best screen is no contact: slip into the space he abandoned.",
+        "hr": "Blok je čitanje, ne odredište. Ako tvoj branič preuzme prije kontakta, najbolji blok je bez kontakta: otklizaj u prostor koji je napustio.",
+        "de": "Eine Sperre ist ein Lesen, kein Ziel. Wechselt dein Verteidiger vor Kontakt, ist die beste Sperre ohne Kontakt: in seinen verlassenen Raum abrollen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A answers the observed pre-switch; B applies only if the original coverage remains.",
+        "hr": "A odgovara viđenom ranom preuzimanju; B vrijedi samo ako početno pokrivanje ostane.",
+        "de": "A beantwortet den sichtbaren Vorwechsel; B gilt nur bei bleibender Ausgangsdeckung."
+      }
+    }
+  ]
+}

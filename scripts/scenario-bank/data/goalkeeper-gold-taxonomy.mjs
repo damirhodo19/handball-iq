@@ -1,0 +1,112 @@
+export const GOALKEEPER_GOLD_TARGET = 75;
+export const GOALKEEPER_LEGACY_BASELINE_HASH =
+  'e06abb4dd22739074bf1dd04dc8f6b063d61c80799cee2d1ebf61c1cf1821af4';
+
+const families = (area, keys) => keys.map((familyKey) => ({ area, familyKey }));
+
+export const GOALKEEPER_GOLD_FAMILIES = [
+  ...families('backcourt_positioning_and_release_cues', [
+    'gk_9m_lateral_shot_line',
+    'gk_9m_block_gap_sightline',
+    'gk_9m_near_hip_around_block',
+    'gk_9m_low_arm_sidearm',
+    'gk_9m_jump_height_timing',
+    'gk_9m_cross_step_delayed_release',
+    'gk_9m_wrong_foot_release',
+    'gk_9m_passive_arm_read',
+    'gk_9m_screen_late_view',
+    'gk_9m_rebound_control',
+    'gk_long_range_score_clock',
+    'gk_free_throw_wall_position',
+    'gk_post_contact_shooter_balance',
+    'gk_two_shooter_cross_read',
+    'gk_backcourt_tendency_live_cue',
+  ]),
+  ...families('wing_pivot_and_close_range', [
+    'gk_wing_near_post_base',
+    'gk_wing_release_height',
+    'gk_wing_takeoff_depth',
+    'gk_wing_lob_patience',
+    'gk_wing_short_corner_step',
+    'gk_wing_long_corner_extension',
+    'gk_pivot_controlled_angle_close',
+    'gk_pivot_catch_body_angle',
+    'gk_pivot_contact_balance',
+    'gk_pivot_lob_vs_drop',
+    'gk_pivot_two_hand_fake',
+    'gk_double_pivot_front_body',
+    'gk_six_metre_second_save',
+    'gk_line_breaker_delay',
+    'gk_close_range_spread_timing',
+  ]),
+  ...families('breakaway_and_seven_metre', [
+    'gk_breakaway_controlled_advance',
+    'gk_breakaway_ball_distance',
+    'gk_breakaway_lob_trigger',
+    'gk_breakaway_side_lane_force',
+    'gk_two_v_one_pass_or_shot',
+    'gk_three_v_two_second_pass',
+    'gk_7m_set_point',
+    'gk_7m_shooter_routine',
+    'gk_7m_history_vs_live_release',
+    'gk_7m_lob_patience',
+    'gk_7m_rebound_ready',
+    'gk_7m_endgame_no_early_gamble',
+    'gk_7m_repeated_shooter_adjust',
+    'gk_penalty_shootout_memory',
+    'gk_direct_free_throw_wall',
+  ]),
+  ...families('defence_cooperation_and_numbers', [
+    'gk_60_block_near_call',
+    'gk_60_block_far_call',
+    'gk_51_front_defender_channel',
+    'gk_321_lob_space_depth',
+    'gk_33_breakthrough_depth',
+    'gk_42_screen_handover',
+    'gk_open_defence_sweep_position',
+    'gk_block_contact_visibility',
+    'gk_deflection_read',
+    'gk_pivot_handover_call',
+    'gk_weak_side_wing_early_call',
+    'gk_transition_middle_organise',
+    'gk_7v6_two_pivot_ownership',
+    'gk_5v6_compact_priority',
+    'gk_empty_goal_substitution_call',
+  ]),
+  ...families('distribution_and_transition_attack', [
+    'gk_save_secure_before_outlet',
+    'gk_first_wave_wing_outlet',
+    'gk_second_wave_centre_outlet',
+    'gk_outlet_against_counterpress',
+    'gk_quick_centre_after_goal',
+    'gk_empty_goal_long_throw',
+    'gk_clock_control_distribution',
+    'gk_bad_outlet_abort',
+  ]),
+  ...families('mental_endgame_and_communication', [
+    'gk_reset_after_concede',
+    'gk_reset_after_error',
+    'gk_final_minute_lead_patience',
+    'gk_final_minute_tied_live_cue',
+    'gk_timeout_defence_call',
+    'gk_substitution_readiness',
+    'gk_rebound_endgame_control',
+  ]),
+];
+
+if (GOALKEEPER_GOLD_FAMILIES.length !== GOALKEEPER_GOLD_TARGET) {
+  throw new Error(`Goalkeeper taxonomy count ${GOALKEEPER_GOLD_FAMILIES.length} != ${GOALKEEPER_GOLD_TARGET}`);
+}
+
+export const GOALKEEPER_PILOT_FAMILY_KEYS = [
+  'gk_9m_lateral_shot_line',
+  'gk_9m_block_gap_sightline',
+  'gk_wing_near_post_base',
+  'gk_pivot_controlled_angle_close',
+  'gk_breakaway_controlled_advance',
+  'gk_7m_history_vs_live_release',
+  'gk_60_block_near_call',
+  'gk_7v6_two_pivot_ownership',
+  'gk_first_wave_wing_outlet',
+  'gk_final_minute_tied_live_cue',
+];

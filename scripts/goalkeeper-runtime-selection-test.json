@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "goalkeeperPrimaryCount": 75,
+  "goalkeeperCategoryCount": 75,
+  "trials": 100,
+  "returnedLegacy": false,
+  "staleResolve": {
+    "requested": [
+      "scn_bank_001",
+      "scn_bank_002",
+      "scn_bank_003",
+      "scn_bank_004",
+      "scn_bank_005",
+      "scn_bank_006",
+      "scn_bank_007",
+      "scn_bank_008",
+      "scn_bank_1061",
+      "scn_bank_1062"
+    ],
+    "resolved": [
+      "scn_bank_1061",
+      "scn_bank_1062"
+    ],
+    "droppedLegacy": [
+      "scn_bank_001",
+      "scn_bank_002",
+      "scn_bank_003",
+      "scn_bank_004",
+      "scn_bank_005",
+      "scn_bank_006",
+      "scn_bank_007",
+      "scn_bank_008"
+    ]
+  },
+  "errors": []
+}

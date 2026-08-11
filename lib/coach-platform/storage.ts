@@ -148,9 +148,9 @@ export function saveMatchAnalysis(record: MatchAnalysisRecord): void {
   })();
 }
 
-export function setDailyCoachChallenge(challengeId: string, date: string): void {
+export function setDailyCoachChallenge(challengeId: string, date: string, force = false): void {
   const state = loadCoachDevState();
-  if (state.dailyChallengeDate === date && state.dailyChallengeId) return;
+  if (!force && state.dailyChallengeDate === date && state.dailyChallengeId) return;
   state.dailyChallengeId = challengeId;
   state.dailyChallengeDate = date;
   state.dailyChallengeCompleted = false;

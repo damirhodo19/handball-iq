@@ -1,0 +1,74 @@
+{
+  "status": "GOALKEEPER GOLD PHASE COMPLETE — READY FOR COMMIT REVIEW",
+  "verifiedAt": "2026-08-11",
+  "source": {
+    "count": 75,
+    "taxonomyCount": 75,
+    "sourceHash": "39a65ad891058e7e78020a104368f5dd920a7186eba817667e546bc2e9476cc0",
+    "semanticRisks": 0,
+    "errors": 0,
+    "warnings": 0,
+    "coverage": {
+      "backcourtPositioningAndReleaseCues": 15,
+      "wingPivotAndCloseRange": 15,
+      "breakawayAndSevenMetre": 15,
+      "defenceCooperationAndNumbers": 15,
+      "distributionAndTransitionAttack": 8,
+      "mentalEndgameAndCommunication": 7
+    }
+  },
+  "runtime": {
+    "count": 75,
+    "idRange": "scn_bank_1061–scn_bank_1135",
+    "contentHash": "e8c0e5005f9ed3e8248645e0e916b15fefe8094d2fffa41170f17a3d36b1e593",
+    "legacyRemoved": 84,
+    "legacyRemaining": 0,
+    "bankTotal": 692,
+    "attack": 9,
+    "defence": 66,
+    "selectionTrials": 100,
+    "returnedLegacy": false,
+    "staleLegacyDropped": 8
+  },
+  "locks": {
+    "originalGoldCount": 301,
+    "originalGoldHashesStable": true,
+    "pivotCount": 60,
+    "pivotHashStable": true,
+    "pivotHash": "b2b1e2679b162301caf1657a64a7897757f91ecb144370e812dcae6db33aaac4",
+    "forbiddenId982Absent": true
+  },
+  "verification": {
+    "goalkeeperSource": "PASS",
+    "goalkeeperRuntime": "PASS",
+    "goalkeeperSelection": "PASS",
+    "uniqueSessions": "PASS",
+    "positionPersonalization": "PASS",
+    "noPositionFallback": "PASS",
+    "matchDayTactics": "PASS",
+    "tacticalSystems": "PASS",
+    "terminology": "PASS",
+    "archetypes": "PASS",
+    "typecheck": "PASS",
+    "productionWebBuild": "PASS",
+    "productionWebPatch": "PASS",
+    "goldIntegrationAudit": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "productionConfig": {
+    "repositoryConnected": true,
+    "framework": "Other",
+    "buildCommand": "npx expo export --platform web && node scripts/patch-web-index.mjs",
+    "outputDirectory": "dist",
+    "productionEnvironmentVariablesPresent": [
+      "EXPO_PUBLIC_SUPABASE_URL",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY"
+    ],
+    "environmentValuesInspected": false
+  },
+  "actions": {
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  }
+}

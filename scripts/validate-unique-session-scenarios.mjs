@@ -84,7 +84,13 @@ function pickDiverse(ranked, count, position) {
     const family = getScenarioFamilyId(s);
     if (seenFamilies.has(family)) continue;
     const cat = s.category;
-    if ((categoryCounts.get(cat) ?? 0) >= maxPerCategory) continue;
+    // Mirror the production selector: an exact position bank commonly uses the
+    // position itself as its category (Goalkeeper, Pivot, wing/back banks).
+    // Those rows may fill the session; the generic tactical-category cap only
+    // applies to supplemental categories.
+    const positionCategoryCap =
+      cat === position || s.primaryPosition === position ? count : maxPerCategory;
+    if ((categoryCounts.get(cat) ?? 0) >= positionCategoryCap) continue;
     if (picked.length > 0) {
       const prev = picked[picked.length - 1];
       if (
@@ -131,11 +137,17 @@ function buildSession(position, salt) {
   return pickDiverse(ranked, 5, position);
 }
 
-function hasThreeConsecutiveSameCategory(session) {
+function hasThreeConsecutiveSameCategory(session, position) {
   for (let i = 0; i < session.length - 2; i++) {
     if (
       session[i].category === session[i + 1].category &&
-      session[i + 1].category === session[i + 2].category
+      session[i + 1].category === session[i + 2].category &&
+      !(
+        session[i].category === position &&
+        session[i].primaryPosition === position &&
+        session[i + 1].primaryPosition === position &&
+        session[i + 2].primaryPosition === position
+      )
     ) {
       return true;
     }
@@ -220,11 +232,14 @@ for (let i = 0; i < 100; i++) {
   const ids = session.map((s) => s.id);
   const familyDup = families.length !== new Set(families).size;
   const idDup = ids.length !== new Set(ids).size;
-  const threeCat = hasThreeConsecutiveSameCategory(session);
+  const threeCat = hasThreeConsecutiveSameCategory(session, 'Left Back');
   const hasGk = session.some((s) => s.primaryPosition === 'Goalkeeper');
   const catOver = (() => {
     const c = new Map();
-    for (const s of session) c.set(s.category, (c.get(s.category) ?? 0) + 1);
+    for (const s of session) {
+      if (s.category === 'Left Back' && s.primaryPosition === 'Left Back') continue;
+      c.set(s.category, (c.get(s.category) ?? 0) + 1);
+    }
     return [...c.values()].some((n) => n > 2);
   })();
   const ok =

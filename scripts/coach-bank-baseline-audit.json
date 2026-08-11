@@ -1,0 +1,176 @@
+{
+  "status": "COACH LEGACY BASELINE AUDITED — REBUILD REQUIRED",
+  "generatedAt": "2026-08-11T08:50:52.787Z",
+  "count": 13,
+  "uniqueIds": 12,
+  "sourceHashes": {
+    "lib/coach-platform/challenges.ts": "33771da5ffb3c58356a6973429ffb50c038cf01f8cf65d29985499435e151e57",
+    "lib/coach-platform/challenges-extra.ts": "d0e0afd3728c6a36270874674468f67dda9e46c9b5860a1411d68da34c089308"
+  },
+  "categoryCounts": {
+    "timeout": 1,
+    "defensive_adjustment": 2,
+    "substitution": 1,
+    "training_plan": 2,
+    "player_development": 3,
+    "opponent_analysis": 2,
+    "leadership": 2
+  },
+  "difficultyCounts": {
+    "Intermediate": 4,
+    "Advanced": 6,
+    "Beginner": 2,
+    "Expert": 1
+  },
+  "coachTypeCounts": {
+    "Youth Coach": 9,
+    "Senior Coach": 10,
+    "Head Coach": 10,
+    "Assistant Coach": 9,
+    "Professional Coach": 5,
+    "Goalkeeper Coach": 3
+  },
+  "duplicateIds": [
+    {
+      "id": "coach-plan-1",
+      "categories": [
+        "training_plan",
+        "training_plan"
+      ]
+    }
+  ],
+  "duplicateDecisions": [],
+  "localeErrors": [],
+  "answerLadderErrors": [
+    {
+      "id": "coach-youth-teach-1",
+      "qualities": "optimal,risky,poor,good"
+    },
+    {
+      "id": "coach-head-tactic-1",
+      "qualities": "optimal,risky,poor,good"
+    },
+    {
+      "id": "coach-gk-dev-1",
+      "qualities": "optimal,poor,risky,good"
+    },
+    {
+      "id": "coach-assist-analysis-1",
+      "qualities": "optimal,poor,risky,good"
+    },
+    {
+      "id": "coach-plan-1",
+      "qualities": "optimal,poor,risky,good"
+    },
+    {
+      "id": "coach-lead-comm-1",
+      "qualities": "optimal,poor,risky,good"
+    }
+  ],
+  "languageFindings": [
+    {
+      "id": "coach-defence-1",
+      "field": "explanation",
+      "hits": [
+        "timing"
+      ]
+    },
+    {
+      "id": "coach-sub-1",
+      "field": "question",
+      "hits": [
+        "timing"
+      ]
+    },
+    {
+      "id": "coach-sub-1",
+      "field": "answers.1.feedback",
+      "hits": [
+        "reset"
+      ]
+    },
+    {
+      "id": "coach-youth-teach-1",
+      "field": "answers.0.text",
+      "hits": [
+        "cue"
+      ]
+    },
+    {
+      "id": "coach-head-tactic-1",
+      "field": "situation",
+      "hits": [
+        "lb"
+      ]
+    },
+    {
+      "id": "coach-head-tactic-1",
+      "field": "answers.0.text",
+      "hits": [
+        "lb"
+      ]
+    },
+    {
+      "id": "coach-head-tactic-1",
+      "field": "answers.1.text",
+      "hits": [
+        "lb"
+      ]
+    },
+    {
+      "id": "coach-gk-dev-1",
+      "field": "question",
+      "hits": [
+        "cue"
+      ]
+    },
+    {
+      "id": "coach-gk-dev-1",
+      "field": "answers.1.feedback",
+      "hits": [
+        "cue"
+      ]
+    },
+    {
+      "id": "coach-assist-analysis-1",
+      "field": "answers.0.text",
+      "hits": [
+        "outlet"
+      ]
+    },
+    {
+      "id": "coach-plan-1",
+      "field": "answers.0.text",
+      "hits": [
+        "constraint"
+      ]
+    },
+    {
+      "id": "coach-plan-1",
+      "field": "answers.2.feedback",
+      "hits": [
+        "match-specific"
+      ]
+    },
+    {
+      "id": "coach-lead-comm-1",
+      "field": "situation",
+      "hits": [
+        "startera"
+      ]
+    },
+    {
+      "id": "coach-lead-comm-1",
+      "field": "answers.0.text",
+      "hits": [
+        "reset"
+      ]
+    }
+  ],
+  "conclusion": {
+    "runtimeCutoverNow": false,
+    "target": 70,
+    "targetPerCategory": 10,
+    "reason": "The active bank is too small, has a duplicate runtime ID, inconsistent answer ordering, and non-native Croatian coaching language."
+  }
+}

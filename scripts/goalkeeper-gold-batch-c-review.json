@@ -1,0 +1,1542 @@
+{
+  "status": "GOALKEEPER GOLD BATCH C — HUMAN COACH REVIEW",
+  "priorSourceCount": 35,
+  "batchCount": 15,
+  "sourceGoldAfterBatch": 50,
+  "runtimeBankModified": false,
+  "scenarios": [
+    {
+      "batchId": "gk_c_01",
+      "teachingArea": "wing_pivot_and_close_range",
+      "familyKey": "gk_close_range_spread_timing",
+      "title": {
+        "en": "Goalkeeper — Widen the Barrier Only When the Low Release Appears",
+        "hr": "Vratar — raširi obrambenu površinu tek kada se pojavi niski izbačaj",
+        "de": "Torwart — die Abwehrfläche erst beim tiefen Abwurf verbreitern"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Open Play",
+      "minute": 26,
+      "score": "13:14",
+      "defensiveSystem": "3-2-1",
+      "numerical": "6v6",
+      "skillTags": [
+        "closeRange",
+        "spreadSave",
+        "timing"
+      ],
+      "primaryTacticalCue": "Breakthrough player draws the ball from high position toward the outside hip while entering six metres",
+      "fingerprint": {
+        "cue": "ball separates toward outside hip after close approach",
+        "decision": "widen toward the low release while keeping head and torso available"
+      },
+      "situation": {
+        "en": "You trail 13:14 at 26'. A backcourt player breaks through and enters six metres under control. You have stopped your advance. The ball starts high, then separates toward his outside hip for a low side release.",
+        "hr": "Gubite 13:14 u 26. minuti. Vanjski igrač prolazi obranu i kontrolirano ulazi na šest metara. Zaustavio si izlazak. Lopta je najprije visoko, a zatim ide prema vanjskom kuku za niski bočni izbačaj.",
+        "de": "Ihr liegt 13:14 in Minute 26 zurück. Ein Rückraumspieler bricht durch und kommt kontrolliert an den Kreis. Du hast dein Vorrücken gestoppt. Der Ball beginnt hoch und geht dann zur äußeren Hüfte für einen tiefen seitlichen Abwurf."
+      },
+      "question": {
+        "en": "When and how do you widen the saving surface?",
+        "hr": "Kada i kako širiš obrambenu površinu?",
+        "de": "Wann und wie verbreiterst du die Abwehrfläche?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Widen toward the ball as the low side release becomes clear, while keeping the head and torso upright",
+            "hr": "Raširi se prema lopti kada niski bočni izbačaj postane jasan, uz uspravnu glavu i trup",
+            "de": "Beim klaren tiefen Seitenabwurf zum Ball verbreitern und Kopf sowie Oberkörper aufrecht halten"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the movement follows the release without abandoning the high target.",
+            "hr": "Točno — pokret prati izbačaj bez otvaranja gornjeg dijela gola.",
+            "de": "Richtig — die Bewegung folgt dem Abwurf, ohne den hohen Torraum aufzugeben."
+          }
+        },
+        {
+          "text": {
+            "en": "Remain compact if the ball returns above the shoulder before release",
+            "hr": "Ostani kompaktan ako se lopta prije izbačaja vrati iznad ramena",
+            "de": "Kompakt bleiben, wenn der Ball vor dem Abwurf wieder über die Schulter geht"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — the cue for the low spread has disappeared.",
+            "hr": "Dobro — signal za nisku obranu više nije prisutan.",
+            "de": "Gut — das Signal für die tiefe Abwehr ist verschwunden."
+          }
+        },
+        {
+          "text": {
+            "en": "Spread as soon as the attacker enters six metres, before the ball moves low",
+            "hr": "Raširi se čim napadač uđe na šest metara, prije nego što lopta krene nisko",
+            "de": "Schon beim Eintritt an den Kreis verbreitern, bevor der Ball tief geht"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — an early spread opens the high finish and lob.",
+            "hr": "Rizično — prerano širenje otvara visoki završetak i lob.",
+            "de": "Riskant — frühes Verbreitern öffnet hohen Abschluss und Heber."
+          }
+        },
+        {
+          "text": {
+            "en": "Settle into a low, wide stance while the ball is still high",
+            "hr": "Postavi se u nizak, širok stav dok je lopta još visoko",
+            "de": "In einen tiefen, breiten Stand gehen, obwohl der Ball noch hoch ist"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you lose height before the shooter has committed low.",
+            "hr": "Loše — gubiš visinu prije nego što se šuter odlučio za niski završetak.",
+            "de": "Schlecht — du verlierst Höhe, bevor der Werfer tief abgeschlossen hat."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "At close range, widen the body in response to a visible low release. Keep enough height to protect against a last high finish.",
+        "hr": "Na maloj udaljenosti širi tijelo kao odgovor na vidljiv niski izbačaj. Zadrži dovoljno visine za moguću kasnu promjenu prema gore.",
+        "de": "Aus kurzer Distanz den Körper auf einen sichtbaren tiefen Abwurf verbreitern. Genug Höhe für einen späten hohen Abschluss behalten."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the ball moving toward the outside hip; B applies only if the ball returns high.",
+        "hr": "A odgovara lopti koja ide prema vanjskom kuku; B vrijedi samo ako se lopta vrati visoko.",
+        "de": "A passt zum Ball an der äußeren Hüfte; B gilt nur, wenn der Ball wieder hoch geht."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_02",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_breakaway_ball_distance",
+      "title": {
+        "en": "Goalkeeper — Stop Advancing When the Runner Regains Shooting Control",
+        "hr": "Vratar — zaustavi izlazak kada napadač ponovno može pucati",
+        "de": "Torwart — das Vorrücken stoppen, sobald der Läufer wieder wurfbereit ist"
+      },
+      "difficulty": "Intermediate",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Fast Break",
+      "minute": 21,
+      "score": "10:11",
+      "numerical": "transition",
+      "skillTags": [
+        "breakaway",
+        "distanceControl",
+        "setPosition"
+      ],
+      "primaryTacticalCue": "Runner gathers the ball close to the body at eight metres after a long dribble",
+      "fingerprint": {
+        "cue": "ball returns within immediate shooting control at eight metres",
+        "decision": "stop advance and set before the next action"
+      },
+      "situation": {
+        "en": "You trail 10:11 at 21'. A player is alone through the centre. You advanced during a long dribble, but at eight metres he gathers the ball close to his body and can now shoot, take another step or lob.",
+        "hr": "Gubite 10:11 u 21. minuti. Igrač sam prolazi sredinom. Izašao si tijekom dugog vođenja lopte, ali je na osam metara privlači uz tijelo i sada može pucati, napraviti još jedan korak ili lobati.",
+        "de": "Ihr liegt 10:11 in Minute 21 zurück. Ein Spieler läuft allein durch die Mitte. Während eines langen Dribblings bist du vorgerückt, doch bei acht Metern nimmt er den Ball körpernah auf und kann nun werfen, weitergehen oder heben."
+      },
+      "question": {
+        "en": "What changes when the ball returns to shooting control?",
+        "hr": "Što radiš kada napadač ponovno uspostavi kontrolu za šut?",
+        "de": "Was ändert sich, sobald der Ball wieder wurfbereit ist?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Stop the advance, set the feet and read the next ball action",
+            "hr": "Zaustavi izlazak, postavi stopala i čitaj sljedeći pokret lopte",
+            "de": "Das Vorrücken stoppen, die Füße setzen und die nächste Ballaktion lesen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — a stable set position is needed once an immediate finish is possible.",
+            "hr": "Točno — čim je završetak moguć, treba ti stabilan položaj.",
+            "de": "Richtig — sobald ein direkter Abschluss möglich ist, brauchst du einen stabilen Stand."
+          }
+        },
+        {
+          "text": {
+            "en": "Advance again only if a new touch sends the ball outside shooting control",
+            "hr": "Ponovno izađi samo ako novi dodir udalji loptu izvan kontrole za šut",
+            "de": "Nur erneut vorrücken, wenn ein neuer Kontakt den Ball aus der Wurfkontrolle bringt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — another long touch creates a new safe moment.",
+            "hr": "Dobro — novi dugi dodir ponovno stvara siguran trenutak za izlazak.",
+            "de": "Gut — ein weiterer langer Kontakt schafft erneut einen sicheren Moment."
+          }
+        },
+        {
+          "text": {
+            "en": "Continue forward until the attacker reaches six metres",
+            "hr": "Nastavi izlaziti dok napadač ne stigne na šest metara",
+            "de": "Weiter vorrücken, bis der Angreifer den Kreis erreicht"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — he can release while you are still moving.",
+            "hr": "Rizično — može pucati dok si još u kretanju.",
+            "de": "Riskant — er kann werfen, während du noch in Bewegung bist."
+          }
+        },
+        {
+          "text": {
+            "en": "Retreat immediately to the goal line when he gathers the ball",
+            "hr": "Odmah se povuci na gol-liniju kada primi loptu uz tijelo",
+            "de": "Bei der Ballaufnahme sofort auf die Torlinie zurückgehen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you return the full shooting angle to the attacker.",
+            "hr": "Loše — napadaču vraćaš puni kut šuta.",
+            "de": "Schlecht — du gibst dem Angreifer den vollen Wurfwinkel zurück."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Ball distance determines when advancing is safe. Gain space while the ball cannot be released, then become stable as soon as it can.",
+        "hr": "Udaljenost lopte od napadača određuje kada je izlazak siguran. Osvoji prostor dok ne može pucati, a zaustavi se čim završetak postane moguć.",
+        "de": "Der Ballabstand bestimmt, wann Vorrücken sicher ist. Raum gewinnen, solange kein Wurf möglich ist, und stehen, sobald der Abschluss möglich wird."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A matches the current controlled ball; B requires a new long touch that has not happened.",
+        "hr": "A odgovara trenutačno kontroliranoj lopti; B zahtijeva novi dugi dodir koji se još nije dogodio.",
+        "de": "A passt zum aktuell kontrollierten Ball; B setzt einen neuen langen Kontakt voraus."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_03",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_breakaway_lob_trigger",
+      "title": {
+        "en": "Goalkeeper — Protect the Lob Only After Its Release Cue",
+        "hr": "Vratar — zaštiti lob tek nakon jasnog signala izbačaja",
+        "de": "Torwart — den Heber erst nach seinem Abwurfsignal sichern"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Fast Break",
+      "minute": 44,
+      "score": "22:22",
+      "numerical": "transition",
+      "skillTags": [
+        "breakaway",
+        "lob",
+        "patience"
+      ],
+      "primaryTacticalCue": "Runner slows at six and a half metres and places the hand under the ball while the throwing motion rises",
+      "fingerprint": {
+        "cue": "hand moves under ball and release path rises after controlled slowdown",
+        "decision": "recover one short step while staying tall and tracking the ball"
+      },
+      "situation": {
+        "en": "Tied 22:22 at 44'. You have reduced the angle against a central breakaway and are set. At six and a half metres the runner slows, brings the hand under the ball and begins an upward release path.",
+        "hr": "Neriješeno je 22:22 u 44. minuti. Smanjio si kut protiv središnjeg kontranapada i zaustavio se. Na šest i pol metara napadač usporava, podvlači šaku pod loptu i započinje uzlazni pokret izbačaja.",
+        "de": "Unentschieden 22:22 in Minute 44. Gegen den zentralen Gegenstoß hast du den Winkel verkürzt und stehst stabil. Bei sechseinhalb Metern verlangsamt der Läufer, bringt die Hand unter den Ball und beginnt eine steigende Abwurfbewegung."
+      },
+      "question": {
+        "en": "How do you respond to the visible lob cue?",
+        "hr": "Kako reagiraš na vidljiv signal za lob?",
+        "de": "Wie reagierst du auf das sichtbare Hebersignal?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Take one short recovery step, stay tall and track the ball through release",
+            "hr": "Napravi jedan kratak korak natrag, ostani visok i prati loptu kroz izbačaj",
+            "de": "Einen kurzen Schritt zurücknehmen, aufrecht bleiben und den Ball bis zum Abwurf verfolgen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — you protect space above without losing sight or balance.",
+            "hr": "Točno — štitiš prostor iznad sebe bez gubitka pogleda i ravnoteže.",
+            "de": "Richtig — du sicherst den Raum über dir, ohne Sicht oder Balance zu verlieren."
+          }
+        },
+        {
+          "text": {
+            "en": "Hold the set point if the hand returns behind the ball for a direct shot",
+            "hr": "Zadrži postavljeni položaj ako se šaka vrati iza lopte za izravni šut",
+            "de": "Den gesetzten Punkt halten, wenn die Hand für einen direkten Wurf wieder hinter den Ball kommt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — the lob cue has then been cancelled.",
+            "hr": "Dobro — signal za lob tada više ne vrijedi.",
+            "de": "Gut — das Hebersignal ist dann aufgehoben."
+          }
+        },
+        {
+          "text": {
+            "en": "Retreat several steps as soon as the attacker slows down",
+            "hr": "Povuci se nekoliko koraka čim napadač uspori",
+            "de": "Schon beim Verlangsamen mehrere Schritte zurückgehen"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — slowing down alone does not prove a lob.",
+            "hr": "Rizično — samo usporavanje ne potvrđuje lob.",
+            "de": "Riskant — das Verlangsamen allein beweist keinen Heber."
+          }
+        },
+        {
+          "text": {
+            "en": "Keep advancing after the rising lob release has already begun",
+            "hr": "Nastavi izlaziti i nakon što je uzlazni izbačaj za lob već počeo",
+            "de": "Weiter vorrücken, obwohl der steigende Heberabwurf bereits begonnen hat"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you shorten the distance the lob needs to pass above you.",
+            "hr": "Loše — dodatno olakšavaš lopti da te prebaci.",
+            "de": "Schlecht — du verkürzt den Weg, den der Heber über dich nehmen muss."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A lob response should follow a combined ball-and-release cue, not a general change of speed. Recover only as much depth as you can control.",
+        "hr": "Na lob reagiraj tek nakon jasnog signala lopte i izbačaja, a ne samo zbog promjene brzine. Vrati se samo onoliko koliko možeš kontrolirati.",
+        "de": "Die Heberreaktion soll einem klaren Ball- und Abwurfsignal folgen, nicht nur einer Tempoänderung. Nur kontrollierbar viel Tiefe zurücknehmen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the confirmed rising path; B applies only if that path changes back to a direct throw.",
+        "hr": "A odgovara potvrđenoj uzlaznoj putanji; B vrijedi samo ako se pokret vrati u izravni šut.",
+        "de": "A passt zur bestätigten steigenden Bewegung; B gilt nur bei der Rückkehr zum direkten Wurf."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_04",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_breakaway_side_lane_force",
+      "title": {
+        "en": "Goalkeeper — Use the Recovering Defender to Narrow the Breakaway Lane",
+        "hr": "Vratar — iskoristi braniča koji se vraća za sužavanje koridora",
+        "de": "Torwart — den zurücklaufenden Verteidiger zum Verengen der Spur nutzen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Fast Break",
+      "minute": 38,
+      "score": "19:20",
+      "numerical": "transition",
+      "skillTags": [
+        "breakaway",
+        "defenderCooperation",
+        "positioning"
+      ],
+      "primaryTacticalCue": "Runner approaches from right lane while recovering defender has secure inside shoulder position",
+      "fingerprint": {
+        "cue": "inside lane is physically controlled by recovering defender",
+        "decision": "align to remaining outside shot line without abandoning balance"
+      },
+      "situation": {
+        "en": "You trail 19:20 at 38'. The breakaway runner approaches from the right lane. Your recovering defender is level with his inside shoulder and prevents a safe move toward the centre. The outside lane and shot remain open.",
+        "hr": "Gubite 19:20 u 38. minuti. Napadač u kontranapadu dolazi desnim koridorom. Tvoj branič koji se vraća poravnat je s njegovim unutarnjim ramenom i sigurno mu zatvara ulazak prema sredini. Vanjski koridor i šut ostaju otvoreni.",
+        "de": "Ihr liegt 19:20 in Minute 38 zurück. Der Gegenstoßläufer kommt über die rechte Spur. Euer zurücklaufender Verteidiger ist an seiner inneren Schulter und nimmt den sicheren Weg zur Mitte. Außenspur und Wurf bleiben offen."
+      },
+      "question": {
+        "en": "How do you divide the remaining space?",
+        "hr": "Kako dijeliš preostali prostor?",
+        "de": "Wie teilst du den verbleibenden Raum?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Set on the outside shot line while keeping the torso balanced for a late change",
+            "hr": "Postavi se na vanjsku liniju šuta i zadrži trup u ravnoteži za moguću kasnu promjenu",
+            "de": "Auf der äußeren Wurflinie stehen und den Oberkörper für eine späte Änderung ausbalanciert halten"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the defender owns the inside lane and you reduce the open finish.",
+            "hr": "Točno — branič preuzima unutarnji koridor, a ti smanjuješ otvoreni završetak.",
+            "de": "Richtig — der Verteidiger besitzt die Innenspur, du verkleinerst den offenen Abschluss."
+          }
+        },
+        {
+          "text": {
+            "en": "Return neutral if the defender loses the inside shoulder",
+            "hr": "Vrati se u neutralan položaj ako branič izgubi unutarnje rame",
+            "de": "Neutral werden, wenn der Verteidiger die innere Schulter verliert"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — without secure help you must again cover both routes.",
+            "hr": "Dobro — bez sigurne pomoći ponovno moraš čuvati oba smjera.",
+            "de": "Gut — ohne sichere Hilfe musst du wieder beide Wege decken."
+          }
+        },
+        {
+          "text": {
+            "en": "Move inside and cover the same lane as the defender",
+            "hr": "Pomakni se prema sredini i pokrij isti koridor kao branič",
+            "de": "Nach innen gehen und dieselbe Spur wie der Verteidiger decken"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the outside finish becomes too large.",
+            "hr": "Rizično — vanjski završetak postaje previše otvoren.",
+            "de": "Riskant — der äußere Abschluss wird zu groß."
+          }
+        },
+        {
+          "text": {
+            "en": "Remain fixed in the centre of goal despite the side approach",
+            "hr": "Ostani nepomičan u sredini gola unatoč prilazu iz bočnog koridora",
+            "de": "Trotz seitlichem Anlauf unbewegt in der Tormitte bleiben"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — your position does not match the remaining shot line.",
+            "hr": "Loše — tvoj položaj ne odgovara preostaloj liniji šuta.",
+            "de": "Schlecht — deine Position passt nicht zur verbleibenden Wurflinie."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The goalkeeper can use real defender control to reduce the open lane. The position must change immediately if that control is lost.",
+        "hr": "Vratar može iskoristiti stvarnu kontrolu braniča kako bi smanjio otvoreni koridor. Ako branič izgubi kontrolu, položaj se odmah vraća prema sredini.",
+        "de": "Der Torwart kann echte Verteidigerkontrolle nutzen, um die offene Spur zu verkleinern. Geht sie verloren, muss die Position sofort wieder neutral werden."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the currently secure inside shoulder; B is the fallback after that control breaks.",
+        "hr": "A koristi činjenicu da branič trenutačno sigurno zatvara unutarnji koridor; B je pričuvni izbor nakon gubitka te kontrole.",
+        "de": "A nutzt die aktuell gesicherte innere Schulter; B ist die Rückfallebene nach ihrem Verlust."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_05",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_two_v_one_pass_or_shot",
+      "title": {
+        "en": "Goalkeeper — In Two Against One, Stay With the Ball Until the Pass Leaves",
+        "hr": "Vratar — u situaciji dva na jedan ostani uz loptu dok dodavanje ne krene",
+        "de": "Torwart — im Zwei-gegen-eins beim Ball bleiben bis der Pass gespielt ist"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Fast Break",
+      "minute": 49,
+      "score": "24:25",
+      "numerical": "2v1",
+      "skillTags": [
+        "twoAgainstOne",
+        "passOrShot",
+        "patience"
+      ],
+      "primaryTacticalCue": "Central ball carrier is shot-ready at eight metres while left runner remains a passing option",
+      "fingerprint": {
+        "cue": "current carrier can shoot and pass lane remains open",
+        "decision": "stay square to ball at controlled depth until possession changes"
+      },
+      "situation": {
+        "en": "You trail 24:25 at 49'. Two attackers come against you with no defender able to intervene. The ball carrier is central at eight metres and ready to shoot; a teammate runs free on the left, but the pass has not left the carrier's hand.",
+        "hr": "Gubite 24:25 u 49. minuti. Dva napadača dolaze prema tebi, a nijedan branič ne može intervenirati. Igrač s loptom je u sredini na osam metara i spreman za šut; suigrač mu trči slobodno lijevo, ali dodavanje još nije krenulo.",
+        "de": "Ihr liegt 24:25 in Minute 49 zurück. Zwei Angreifer kommen frei auf dich zu, kein Verteidiger kann eingreifen. Der Ballführer ist zentral bei acht Metern wurfbereit; links läuft ein Mitspieler frei, doch der Pass ist noch nicht gespielt."
+      },
+      "question": {
+        "en": "What do you defend first?",
+        "hr": "Što prvo braniš?",
+        "de": "Was verteidigst du zuerst?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Stay square to the ball carrier at controlled depth and shift only when the pass leaves",
+            "hr": "Ostani okrenut prema igraču s loptom na kontroliranoj dubini i pomakni se tek kada dodavanje krene",
+            "de": "In kontrollierter Tiefe frontal zum Ballführer bleiben und erst mit dem Pass verschieben"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the immediate shooter remains the first threat.",
+            "hr": "Točno — igrač s loptom ostaje prva prijetnja.",
+            "de": "Richtig — der Ballführer bleibt die erste Gefahr."
+          }
+        },
+        {
+          "text": {
+            "en": "Explode toward the receiver as soon as the ball clearly leaves the carrier",
+            "hr": "Kreni prema primatelju čim lopta jasno napusti ruku igrača s loptom",
+            "de": "Zum Empfänger starten, sobald der Ball die Hand des Ballführers klar verlässt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — possession and the shot line have then changed.",
+            "hr": "Dobro — tada su se promijenili posjed i linija šuta.",
+            "de": "Gut — dann haben sich Ballbesitz und Wurflinie verändert."
+          }
+        },
+        {
+          "text": {
+            "en": "Stand halfway between both attackers before the pass",
+            "hr": "Prije dodavanja stani na pola puta između oba napadača",
+            "de": "Vor dem Pass auf halbem Weg zwischen beiden Angreifern stehen"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the ball carrier receives too much visible goal.",
+            "hr": "Rizično — igrač s loptom dobiva prevelik otvor prema golu.",
+            "de": "Riskant — der Ballführer erhält zu viel sichtbare Torfläche."
+          }
+        },
+        {
+          "text": {
+            "en": "Commit fully to the free runner while the carrier still controls the ball",
+            "hr": "Potpuno kreni prema slobodnom igraču dok prvi napadač još kontrolira loptu",
+            "de": "Vollständig zum freien Läufer gehen, obwohl der Ballführer den Ball noch kontrolliert"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — the current shooter can finish into an open goal.",
+            "hr": "Loše — trenutačni šuter može završiti u otvoreni gol.",
+            "de": "Schlecht — der aktuelle Werfer kann ins offene Tor abschließen."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "In an overload, defend the current ball and delay commitment to the next receiver. Movement begins with the actual pass, not with the possibility of one.",
+        "hr": "Kada napad ima igrača više, prvo brani igrača koji drži loptu i odgodi pomak prema sljedećem primatelju. Pomak počinje stvarnim dodavanjem, a ne njegovom mogućnošću.",
+        "de": "In Überzahl des Angriffs zuerst den aktuellen Ball verteidigen und die Festlegung auf den nächsten Empfänger verzögern. Die Bewegung beginnt mit dem echten Pass."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the ball still held by the central attacker; B follows immediately after release of the pass.",
+        "hr": "A odgovara lopti koja je još kod središnjeg napadača; B slijedi odmah nakon izbačaja dodavanja.",
+        "de": "A passt zum Ball beim zentralen Angreifer; B folgt unmittelbar nach dem Passabwurf."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_06",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_three_v_two_second_pass",
+      "title": {
+        "en": "Goalkeeper — In Three Against Two, Do Not Defend the Second Pass Before the First Is Complete",
+        "hr": "Vratar — u situaciji tri na dva ne brani drugo dodavanje prije završetka prvog",
+        "de": "Torwart — im Drei-gegen-zwei den zweiten Pass nicht vor dem ersten verteidigen"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Fast Break",
+      "minute": 53,
+      "score": "26:27",
+      "numerical": "3v2",
+      "skillTags": [
+        "threeAgainstTwo",
+        "secondPass",
+        "repositioning"
+      ],
+      "primaryTacticalCue": "First pass reaches right attacker at nine metres while a cross-court second pass remains possible",
+      "fingerprint": {
+        "cue": "right receiver gains current possession before cross-court option develops",
+        "decision": "rebuild position to current ball and move again only on second pass"
+      },
+      "situation": {
+        "en": "You trail 26:27 at 53'. In a three-against-two break, the first pass reaches the right attacker at nine metres. He can shoot after one step or send a second pass across to the left runner. Your defenders are still recovering through the middle.",
+        "hr": "Gubite 26:27 u 53. minuti. U kontranapadu tri na dva prvo dodavanje dolazi desnom napadaču na devet metara. Može pucati nakon jednog koraka ili poslati drugo dodavanje lijevom trkaču. Tvoji se braniči još vraćaju kroz sredinu.",
+        "de": "Ihr liegt 26:27 in Minute 53 zurück. Im Drei-gegen-zwei erreicht der erste Pass den rechten Angreifer bei neun Metern. Er kann nach einem Schritt werfen oder quer zum linken Läufer weiterspielen. Eure Verteidiger laufen noch durch die Mitte zurück."
+      },
+      "question": {
+        "en": "How do you handle the possible second pass?",
+        "hr": "Kako rješavaš mogućnost drugog dodavanja?",
+        "de": "Wie gehst du mit dem möglichen zweiten Pass um?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Rebuild the shot line to the right-side ball and stay able to push across if the second pass leaves",
+            "hr": "Postavi se na liniju šuta prema igraču s loptom desno i ostani spreman za odraz na drugu stranu ako drugo dodavanje krene",
+            "de": "Die Wurflinie zum Ball rechts neu aufbauen und für das zweite Zuspiel abdrückbereit bleiben"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — you cover the current shot without losing the next movement.",
+            "hr": "Točno — čuvaš trenutačni šut i ostaješ spreman za sljedeći pomak.",
+            "de": "Richtig — du deckst den aktuellen Wurf und bleibst für die nächste Bewegung bereit."
+          }
+        },
+        {
+          "text": {
+            "en": "Push across immediately when the second pass leaves the hand",
+            "hr": "Odmah se odgurni na drugu stranu kada drugo dodavanje napusti ruku",
+            "de": "Sofort zur Gegenseite abdrücken, wenn der zweite Pass die Hand verlässt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — the new receiver then becomes the current threat.",
+            "hr": "Dobro — novi primatelj tada postaje trenutačna prijetnja.",
+            "de": "Gut — der neue Empfänger wird dann zur aktuellen Gefahr."
+          }
+        },
+        {
+          "text": {
+            "en": "Begin drifting left while the right attacker still controls the ball",
+            "hr": "Počni se pomicati ulijevo dok desni napadač još kontrolira loptu",
+            "de": "Schon nach links driften, während der rechte Angreifer den Ball noch kontrolliert"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the right-side shot opens before the pass exists.",
+            "hr": "Rizično — desni šut otvara se prije nego što dodavanje postoji.",
+            "de": "Riskant — der Wurf von rechts öffnet sich vor dem Pass."
+          }
+        },
+        {
+          "text": {
+            "en": "Stay on the left runner after the first pass reaches the right",
+            "hr": "Ostani postavljen prema lijevom trkaču nakon što prvo dodavanje stigne desno",
+            "de": "Nach dem ersten Pass rechts weiter beim linken Läufer bleiben"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you abandon the player who now owns the ball.",
+            "hr": "Loše — napuštaš igrača koji sada ima loptu.",
+            "de": "Schlecht — du verlässt den Spieler mit aktuellem Ballbesitz."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Each pass creates a new ball-to-goal line. Rebuild to the current receiver first, but finish in a stance that allows the next push.",
+        "hr": "Svako dodavanje stvara novu liniju između lopte i gola. Najprije se postavi prema trenutačnom primatelju, ali završi pomak u stavu koji omogućuje novi odraz.",
+        "de": "Jeder Pass erzeugt eine neue Ball-Tor-Linie. Zuerst zum aktuellen Empfänger stellen und in einer Position enden, die den nächsten Abdruck erlaubt."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A is required while the right attacker controls the ball; B begins only when the second pass is released.",
+        "hr": "A vrijedi dok desni napadač kontrolira loptu; B počinje tek kada drugo dodavanje krene.",
+        "de": "A gilt beim Ballbesitz rechts; B beginnt erst mit dem zweiten Pass."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_07",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_set_point",
+      "title": {
+        "en": "Goalkeeper — Use a Repeatable Legal Set Point for Seven Metres",
+        "hr": "Vratar — za sedmerac koristi ponovljiv i dopušten početni položaj",
+        "de": "Torwart — beim Siebenmeter einen wiederholbaren regelgerechten Ausgangspunkt nutzen"
+      },
+      "difficulty": "Intermediate",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Set Play",
+      "minute": 17,
+      "score": "8:9",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "setPosition",
+        "rules"
+      ],
+      "primaryTacticalCue": "Thrower is ready and goalkeeper needs a stable reference behind the four-metre restraining line",
+      "fingerprint": {
+        "cue": "thrower set before whistle with no release cue yet",
+        "decision": "settle at repeatable legal depth and remain balanced"
+      },
+      "situation": {
+        "en": "You trail 8:9 at 17' and face a seven-metre throw. The thrower is ready behind the line, but the whistle has not sounded. You need a stable starting point without crossing the goalkeeper's four-metre restraining line before release.",
+        "hr": "Gubite 8:9 u 17. minuti i branite sedmerac. Izvođač je spreman iza crte, ali sudac još nije dao znak. Trebaš stabilan početni položaj bez prelaska vratareve crte na četiri metra prije izbačaja.",
+        "de": "Ihr liegt 8:9 in Minute 17 zurück und verteidigt einen Siebenmeter. Der Werfer steht bereit, der Pfiff ist noch nicht erfolgt. Du brauchst einen stabilen Ausgangspunkt, ohne die Vier-Meter-Linie vor dem Abwurf zu überschreiten."
+      },
+      "question": {
+        "en": "How do you establish the set point?",
+        "hr": "Kako postavljaš početni položaj?",
+        "de": "Wie bestimmst du den Ausgangspunkt?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Settle at your trained legal depth, keep at least one grounded foot on or behind four metres and balance for both sides",
+            "hr": "Smiri se na uvježbanoj dopuštenoj dubini, zadrži barem jedno stopalo na podu na crti četiri metra ili iza nje i ostani spreman za obje strane",
+            "de": "In der trainierten legalen Tiefe stehen, mindestens einen Fuß am Boden auf oder hinter vier Metern halten und für beide Seiten ausbalanciert bleiben"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — a repeatable legal reference supports timing and balance.",
+            "hr": "Točno — ponovljiv dopušten položaj čuva ravnotežu i vrijeme reakcije.",
+            "de": "Richtig — ein wiederholbarer legaler Bezugspunkt unterstützt Timing und Balance."
+          }
+        },
+        {
+          "text": {
+            "en": "Adjust laterally within the legal position if the thrower changes the ball-to-goal line",
+            "hr": "Bočno se prilagodi unutar dopuštenog položaja ako izvođač promijeni liniju između lopte i gola",
+            "de": "Innerhalb der legalen Position seitlich anpassen, wenn der Werfer die Ball-Tor-Linie verändert"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — lateral alignment may change while the legal depth remains controlled.",
+            "hr": "Dobro — bočno poravnanje može se mijenjati dok dopuštena dubina ostaje pod kontrolom.",
+            "de": "Gut — die seitliche Ausrichtung darf sich ändern, während die legale Tiefe kontrolliert bleibt."
+          }
+        },
+        {
+          "text": {
+            "en": "Change the starting depth repeatedly to make the thrower react",
+            "hr": "Više puta mijenjaj početnu dubinu kako bi izvođač reagirao",
+            "de": "Die Ausgangstiefe mehrfach wechseln, um den Werfer reagieren zu lassen"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — excess movement can damage your own set and timing.",
+            "hr": "Rizično — suvišno kretanje može narušiti tvoj stav i vrijeme reakcije.",
+            "de": "Riskant — zu viel Bewegung kann deinen Stand und dein Timing stören."
+          }
+        },
+        {
+          "text": {
+            "en": "Cross the four-metre line before the ball leaves the hand",
+            "hr": "Prijeđi crtu četiri metra prije nego što lopta napusti ruku",
+            "de": "Die Vier-Meter-Linie überschreiten, bevor der Ball die Hand verlässt"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — the position is illegal and can cause a retake.",
+            "hr": "Loše — položaj nije dopušten i sedmerac se može ponoviti.",
+            "de": "Schlecht — die Position ist regelwidrig und kann zur Wiederholung führen."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A consistent set point removes unnecessary variation. The goalkeeper may react freely, but must respect the four-metre restriction until the ball leaves the thrower.",
+        "hr": "Dosljedan početni položaj uklanja nepotrebne promjene. Vratar može reagirati, ali do izbačaja mora poštovati ograničenje crte na četiri metra.",
+        "de": "Ein konstanter Ausgangspunkt vermeidet unnötige Schwankungen. Der Torwart darf reagieren, muss aber bis zum Abwurf die Vier-Meter-Beschränkung beachten."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A establishes the base position before any cue; B is a later adjustment only if the shot line changes.",
+        "hr": "A postavlja osnovni položaj prije signala; B je naknadna prilagodba samo ako se promijeni linija šuta.",
+        "de": "A schafft die Grundposition vor jedem Signal; B ist eine spätere Anpassung bei veränderter Wurflinie."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_08",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_shooter_routine",
+      "title": {
+        "en": "Goalkeeper — Use the Shooter’s Routine to Time Your Set, Not to Guess a Corner",
+        "hr": "Vratar — rutinu izvođača koristi za određivanje trenutka postavljanja, ne za pogađanje kuta",
+        "de": "Torwart — die Werferroutine fürs Timing nutzen, nicht zum Eckraten"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Set Play",
+      "minute": 29,
+      "score": "14:14",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "routine",
+        "timing"
+      ],
+      "primaryTacticalCue": "Thrower repeats three bounces and a breath before lifting the ball, but direction varies",
+      "fingerprint": {
+        "cue": "stable preparation rhythm with non-stable shot direction",
+        "decision": "synchronise set timing to final preparation action without preselecting corner"
+      },
+      "situation": {
+        "en": "Tied 14:14 at 29'. The seven-metre thrower uses the same preparation seen on video: three bounces, one breath, then the ball rises. His shot direction has varied from that routine.",
+        "hr": "Neriješeno je 14:14 u 29. minuti. Izvođač sedmerca koristi pripremu viđenu na snimci: triput odbije loptu od poda, jednom udahne, a zatim podigne loptu. Iz iste rutine pucao je u različite strane.",
+        "de": "Unentschieden 14:14 in Minute 29. Der Siebenmeterwerfer nutzt die aus dem Video bekannte Vorbereitung: dreimal prellen, einmal atmen, dann hebt sich der Ball. Aus dieser Routine hat er in verschiedene Richtungen geworfen."
+      },
+      "question": {
+        "en": "What useful information does the routine provide?",
+        "hr": "Koju korisnu informaciju daje rutina?",
+        "de": "Welche nützliche Information liefert die Routine?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Use the final breath and ball lift to settle your feet, then read the current release",
+            "hr": "Iskoristi završni udah i podizanje lopte za postavljanje stopala, zatim čitaj trenutačni izbačaj",
+            "de": "Mit letztem Atemzug und Ballheben die Füße setzen, dann den aktuellen Abwurf lesen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the routine helps you choose the moment to set, while the release gives direction.",
+            "hr": "Točno — ritam rutine pomaže odrediti trenutak postavljanja, a izbačaj daje smjer.",
+            "de": "Richtig — die Routine liefert Timing, der Abwurf die Richtung."
+          }
+        },
+        {
+          "text": {
+            "en": "Delay the set if the thrower adds an extra bounce or pause",
+            "hr": "Odgodi postavljanje ako izvođač doda još jedno vođenje ili stanku",
+            "de": "Den Stand verzögern, wenn der Werfer einen zusätzlichen Preller oder eine Pause einfügt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — a changed rhythm moves the real release moment.",
+            "hr": "Dobro — promijenjen ritam pomiče stvarni trenutak izbačaja.",
+            "de": "Gut — ein veränderter Rhythmus verschiebt den echten Abwurfzeitpunkt."
+          }
+        },
+        {
+          "text": {
+            "en": "Choose the corner he used most often with that routine",
+            "hr": "Odaberi kut koji je iz te rutine najčešće gađao",
+            "de": "Die Ecke wählen, die er aus dieser Routine am häufigsten traf"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the same preparation has produced different finishes.",
+            "hr": "Rizično — ista priprema već je završavala različitim šutovima.",
+            "de": "Riskant — dieselbe Vorbereitung führte bereits zu verschiedenen Abschlüssen."
+          }
+        },
+        {
+          "text": {
+            "en": "Copy every upper-body movement before the release",
+            "hr": "Oponašaj svaki pokret njegova gornjeg dijela tijela prije izbačaja",
+            "de": "Jede Oberkörperbewegung vor dem Abwurf spiegeln"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you let preparation feints control your balance.",
+            "hr": "Loše — dopuštaš pripremnim varkama da upravljaju tvojom ravnotežom.",
+            "de": "Schlecht — Vorbereitungstäuschungen steuern dann deine Balance."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A reliable routine can reveal when the throw is approaching. It does not necessarily reveal where the ball will go.",
+        "hr": "Pouzdana rutina može otkriti kada se približava izbačaj, ali ne mora otkriti kamo će lopta ići.",
+        "de": "Eine verlässliche Routine kann zeigen, wann der Abwurf kommt. Sie zeigt nicht zwingend, wohin der Ball geht."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the unchanged three-bounce rhythm; B applies only if the thrower changes that rhythm.",
+        "hr": "A odgovara nepromijenjenom ritmu od tri vođenja; B vrijedi samo ako izvođač promijeni ritam.",
+        "de": "A passt zum unveränderten Drei-Preller-Rhythmus; B gilt nur bei einer Rhythmusänderung."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_09",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_lob_patience",
+      "title": {
+        "en": "Goalkeeper — At Seven Metres, Do Not Defend the Lob Before It Appears",
+        "hr": "Vratar — kod sedmerca ne brani lob prije nego što se pojavi",
+        "de": "Torwart — beim Siebenmeter den Heber nicht vor seinem Signal verteidigen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Set Play",
+      "minute": 36,
+      "score": "18:19",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "lob",
+        "patience"
+      ],
+      "primaryTacticalCue": "Thrower holds the ball high after the whistle and has not placed the hand under it",
+      "fingerprint": {
+        "cue": "high stationary ball with no rising underhand release",
+        "decision": "keep trained height until a real lob action begins"
+      },
+      "situation": {
+        "en": "You trail 18:19 at 36' and face a seven-metre throw. After the whistle the thrower pauses with the ball above the shoulder. The hand remains behind the ball, so a direct high or low shot is still available and no lob action has begun.",
+        "hr": "Gubite 18:19 u 36. minuti i branite sedmerac. Nakon sučeva znaka izvođač zastane s loptom iznad ramena. Šaka ostaje iza lopte, pa su izravni visoki i niski šut još mogući, a pokret za lob nije započeo.",
+        "de": "Ihr liegt 18:19 in Minute 36 zurück und verteidigt einen Siebenmeter. Nach dem Pfiff hält der Werfer den Ball über der Schulter. Die Hand bleibt hinter dem Ball; direkter hoher oder tiefer Wurf sind möglich, eine Heberbewegung hat nicht begonnen."
+      },
+      "question": {
+        "en": "How do you keep all finishes covered?",
+        "hr": "Kako ostaješ spreman za sve završetke?",
+        "de": "Wie hältst du alle Abschlüsse gedeckt?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Hold your trained height and balance until the release shows a direct shot or lob",
+            "hr": "Zadrži uvježbanu visinu i ravnotežu dok izbačaj ne pokaže izravni šut ili lob",
+            "de": "Trainierte Höhe und Balance halten, bis der Abwurf direkten Wurf oder Heber zeigt"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — patience keeps the full goal within reach.",
+            "hr": "Točno — strpljenjem zadržavaš cijeli gol u dosegu.",
+            "de": "Richtig — Geduld hält das ganze Tor erreichbar."
+          }
+        },
+        {
+          "text": {
+            "en": "Recover a short step only when the hand moves under the ball into a rising release",
+            "hr": "Napravi kratak korak natrag samo kada šaka ode pod loptu i započne uzlazni izbačaj",
+            "de": "Nur bei der Hand unter dem Ball und steigendem Abwurf einen kurzen Schritt zurücknehmen"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — that is a visible lob action.",
+            "hr": "Dobro — to je vidljiv pokret za lob.",
+            "de": "Gut — das ist eine sichtbare Heberbewegung."
+          }
+        },
+        {
+          "text": {
+            "en": "Sink the hips during the pause to invite and anticipate a lob",
+            "hr": "Spusti kukove tijekom stanke kako bi ponudio i očekivao lob",
+            "de": "Während der Pause die Hüfte senken, um den Heber anzubieten und zu erwarten"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the thrower can finish high before you recover.",
+            "hr": "Rizično — izvođač može pucati visoko prije nego se vratiš.",
+            "de": "Riskant — der Werfer kann hoch abschließen, bevor du dich erholst."
+          }
+        },
+        {
+          "text": {
+            "en": "Retreat to the goal line solely because the thrower pauses",
+            "hr": "Povuci se na gol-liniju samo zato što je izvođač zastao",
+            "de": "Allein wegen der Pause auf die Torlinie zurückgehen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — a pause does not identify the finish and you give away angle.",
+            "hr": "Loše — stanka ne otkriva završetak, a ti prepuštaš kut.",
+            "de": "Schlecht — eine Pause zeigt den Abschluss nicht und du gibst Winkel auf."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "A pause can be part of the thrower’s deception. Respond to the ball and release path; do not invent a lob cue.",
+        "hr": "Stanka može biti dio varke izvođača. Reagiraj na loptu i putanju izbačaja; nemoj zamišljati signal za lob.",
+        "de": "Eine Pause kann Teil der Täuschung sein. Auf Ball und Abwurfweg reagieren und kein Hebersignal erfinden."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the current high-ball pause; B starts only after the underhand rising action appears.",
+        "hr": "A odgovara trenutačnoj stanci s visokom loptom; B počinje tek kada se pojavi uzlazni pokret ispod lopte.",
+        "de": "A passt zur aktuellen Pause mit hohem Ball; B beginnt erst bei der steigenden Bewegung unter dem Ball."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_10",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_rebound_ready",
+      "title": {
+        "en": "Goalkeeper — After a Seven-Metre Save, Find the Rebound Before Resetting",
+        "hr": "Vratar — nakon obrane sedmerca prvo pronađi odbijenu loptu",
+        "de": "Torwart — nach der Siebenmeterparade zuerst den Abpraller finden"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Set Play",
+      "minute": 42,
+      "score": "21:21",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "rebound",
+        "secondSave"
+      ],
+      "primaryTacticalCue": "Low save deflects toward the free-throw line where players are entering after release",
+      "fingerprint": {
+        "cue": "parried seven-metre ball remains in play toward arriving players",
+        "decision": "recover sight and body to rebound before emotional reset"
+      },
+      "situation": {
+        "en": "Tied 21:21 at 42'. You save a seven-metre throw with the left leg. The ball deflects toward the free-throw line, where attackers and defenders are moving in after the release. You finish the save low on the left.",
+        "hr": "Neriješeno je 21:21 u 42. minuti. Sedmerac braniš lijevom nogom. Lopta se odbija prema crti devet metara, kamo nakon izbačaja ulaze napadači i braniči. Obranu završavaš nisko na lijevoj strani.",
+        "de": "Unentschieden 21:21 in Minute 42. Du parierst den Siebenmeter mit dem linken Bein. Der Ball springt zur Freiwurflinie, wohin Angreifer und Verteidiger nach dem Abwurf einlaufen. Du beendest die Parade tief links."
+      },
+      "question": {
+        "en": "What is your first task after the save?",
+        "hr": "Koji je tvoj prvi zadatak nakon obrane?",
+        "de": "Was ist deine erste Aufgabe nach der Parade?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Locate the rebound, turn eyes and hips toward it and prepare for possession or a second shot",
+            "hr": "Pronađi odbijenu loptu, okreni pogled i kukove prema njoj te se pripremi za posjed ili drugi šut",
+            "de": "Den Abpraller finden, Blick und Hüfte dorthin drehen und auf Ballbesitz oder Nachwurf vorbereiten"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the action continues until the rebound is controlled or cleared.",
+            "hr": "Točno — akcija traje dok netko ne osigura ili udalji odbijenu loptu.",
+            "de": "Richtig — die Aktion läuft, bis der Abpraller gesichert oder geklärt ist."
+          }
+        },
+        {
+          "text": {
+            "en": "Secure the ball immediately if it remains within reach",
+            "hr": "Odmah osiguraj loptu ako ostane u dosegu",
+            "de": "Den Ball sofort sichern, wenn er erreichbar bleibt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — possession ends the danger most quickly.",
+            "hr": "Dobro — posjed najbrže uklanja opasnost.",
+            "de": "Gut — Ballbesitz beendet die Gefahr am schnellsten."
+          }
+        },
+        {
+          "text": {
+            "en": "Stand fully upright before looking for the ball",
+            "hr": "Potpuno ustani prije nego što potražiš loptu",
+            "de": "Vollständig aufstehen, bevor du den Ball suchst"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the next action may begin before your orientation returns.",
+            "hr": "Rizično — sljedeća akcija može početi prije nego se ponovno usmjeriš.",
+            "de": "Riskant — die nächste Aktion kann vor deiner Neuorientierung beginnen."
+          }
+        },
+        {
+          "text": {
+            "en": "Recover to the centre of goal without first locating the rebound",
+            "hr": "Vrati se prema sredini gola bez prethodnog traženja odbijene lopte",
+            "de": "Zur Tormitte zurückkehren, ohne zuerst den Abpraller zu finden"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — your recovery goes to a fixed place instead of the new ball.",
+            "hr": "Loše — vraćaš se prema fiksnom mjestu umjesto prema novom položaju lopte.",
+            "de": "Schlecht — deine Erholung geht zu einem festen Ort statt zum neuen Ball."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "The first save is incomplete while the ball remains live. Reorient from the finishing position and solve the rebound before resetting emotionally.",
+        "hr": "Prva obrana nije završena dok je lopta u igri. Iz završnog položaja odmah se usmjeri prema odbijenoj lopti, a emocionalno se resetiraj tek nakon završetka akcije.",
+        "de": "Die erste Parade ist nicht beendet, solange der Ball im Spiel ist. Aus der Endposition sofort zum Abpraller orientieren und erst danach emotional zurücksetzen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits a rebound already travelling beyond reach; B is better only if the ball remains close enough to secure.",
+        "hr": "A odgovara odbijenoj lopti koja već izlazi iz dosega; B je bolji izbor samo ako je lopta dovoljno blizu za hvatanje.",
+        "de": "A passt zum bereits wegspringenden Ball; B ist nur beim noch erreichbaren Ball besser."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_11",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_endgame_no_early_gamble",
+      "title": {
+        "en": "Goalkeeper — In the Final Seconds, Do Not Turn Pressure Into an Early Gamble",
+        "hr": "Vratar — u završnim sekundama ne pretvaraj pritisak u prerano pogađanje",
+        "de": "Torwart — in den Schlusssekunden Druck nicht in frühes Raten verwandeln"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Final Minutes",
+      "minute": 60,
+      "score": "27:27",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "endGame",
+        "pressureControl"
+      ],
+      "primaryTacticalCue": "Three seconds remain, score is tied and thrower has not changed the familiar setup",
+      "fingerprint": {
+        "cue": "decisive score with unchanged setup and no directional cue",
+        "decision": "execute normal legal routine and preserve release-based decision"
+      },
+      "situation": {
+        "en": "Three seconds remain at 27:27 and the opponents have a seven-metre throw. The thrower uses a familiar setup but has previously finished to both sides. The importance of the moment is the only new information.",
+        "hr": "Ostale su tri sekunde pri 27:27, a suparnik izvodi sedmerac. Izvođač koristi poznatu pripremu, ali je prije pucao u obje strane. Važnost trenutka jedina je nova informacija.",
+        "de": "Noch drei Sekunden bei 27:27, der Gegner hat einen Siebenmeter. Der Werfer nutzt eine bekannte Vorbereitung, hat aber bereits auf beide Seiten abgeschlossen. Nur die Bedeutung des Moments ist neu."
+      },
+      "question": {
+        "en": "How do you protect decision quality under pressure?",
+        "hr": "Kako pod pritiskom čuvaš kvalitetu odluke?",
+        "de": "Wie schützt du unter Druck die Entscheidungsqualität?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Use the normal breath, set point and release read without adding an early corner choice",
+            "hr": "Primijeni uobičajeni udah, početni položaj i čitanje izbačaja bez ranog odabira kuta",
+            "de": "Normale Atmung, Ausgangspunkt und Abwurflesen nutzen, ohne früh eine Ecke zu wählen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the score changes the pressure, not the information in the throw.",
+            "hr": "Točno — rezultat mijenja pritisak, ali ne mijenja informacije u izbačaju.",
+            "de": "Richtig — der Spielstand verändert den Druck, nicht die Information im Wurf."
+          }
+        },
+        {
+          "text": {
+            "en": "Use prior direction only as a fallback if the release remains unreadable",
+            "hr": "Prethodni smjer koristi samo kao pričuvnu informaciju ako izbačaj ostane nečitljiv",
+            "de": "Frühere Richtung nur als Rückfallebene nutzen, wenn der Abwurf unlesbar bleibt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — history may break a final tie, but it must not replace the current cue.",
+            "hr": "Dobro — prethodni pokušaji mogu pomoći kao posljednji oslonac, ali ne smiju zamijeniti trenutačni signal.",
+            "de": "Gut — Historie kann als letzte Hilfe dienen, darf aber das aktuelle Signal nicht ersetzen."
+          }
+        },
+        {
+          "text": {
+            "en": "Move earlier than usual because this throw decides the match",
+            "hr": "Kreni ranije nego inače zato što ovaj sedmerac odlučuje utakmicu",
+            "de": "Früher als sonst reagieren, weil dieser Wurf das Spiel entscheidet"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the thrower gains more time to punish your choice.",
+            "hr": "Rizično — izvođač dobiva više vremena da kazni tvoju odluku.",
+            "de": "Riskant — der Werfer erhält mehr Zeit, deine Wahl zu bestrafen."
+          }
+        },
+        {
+          "text": {
+            "en": "Select a corner before the whistle to remove uncertainty",
+            "hr": "Odaberi kut prije sučeva znaka kako bi uklonio neizvjesnost",
+            "de": "Vor dem Pfiff eine Ecke wählen, um Unsicherheit zu beseitigen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — you remove uncertainty for yourself by giving information to the shooter.",
+            "hr": "Loše — sebi smanjuješ neizvjesnost tako što izvođaču otkrivaš odluku.",
+            "de": "Schlecht — du verringerst deine Unsicherheit, indem du dem Werfer deine Wahl zeigst."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Pressure should simplify the routine, not change the evidence used for the decision. Keep the same legal set and read the current ball.",
+        "hr": "Pritisak treba pojednostaviti rutinu, a ne promijeniti informacije na kojima temeljiš odluku. Zadrži isti dopušteni položaj i čitaj trenutačnu loptu.",
+        "de": "Druck soll die Routine vereinfachen, nicht die Entscheidungsgrundlage verändern. Gleiche legale Stellung halten und den aktuellen Ball lesen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A preserves the complete process; B is only the final fallback if the live release gives no usable information.",
+        "hr": "A čuva cijeli proces; B je samo posljednji oslonac ako izbačaj ne daje korisnu informaciju.",
+        "de": "A bewahrt den vollständigen Ablauf; B ist nur die letzte Rückfallebene ohne nutzbares Abwurfsignal."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_12",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_7m_repeated_shooter_adjust",
+      "title": {
+        "en": "Goalkeeper — Against the Repeated Thrower, Change the Timing He Has Already Read",
+        "hr": "Vratar — protiv istog izvođača promijeni trenutak reakcije koji je već pročitao",
+        "de": "Torwart — gegen denselben Werfer das bereits gelesene Timing verändern"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Open Play",
+      "minute": 51,
+      "score": "25:26",
+      "numerical": "7m throw",
+      "skillTags": [
+        "sevenMetre",
+        "adaptation",
+        "timing"
+      ],
+      "primaryTacticalCue": "Same thrower has twice waited for goalkeeper to move at the first ball lift",
+      "fingerprint": {
+        "cue": "shooter exploited goalkeeper movement timing twice",
+        "decision": "hold stable through first lift and force later commitment"
+      },
+      "situation": {
+        "en": "You trail 25:26 at 51'. The same player takes his third seven-metre throw. On the first two, you moved at his first ball lift; he waited, saw the movement and finished into the other side. His preparation is unchanged.",
+        "hr": "Gubite 25:26 u 51. minuti. Isti igrač izvodi treći sedmerac. U prva dva krenuo si na prvo podizanje lopte; pričekao je, vidio tvoj pokret i završio u drugu stranu. Njegova je priprema nepromijenjena.",
+        "de": "Ihr liegt 25:26 in Minute 51 zurück. Derselbe Spieler wirft den dritten Siebenmeter. Bei den ersten beiden hast du dich beim ersten Ballheben bewegt; er wartete, las dich und traf auf der Gegenseite. Seine Vorbereitung ist unverändert."
+      },
+      "question": {
+        "en": "What adjustment removes the information you gave him?",
+        "hr": "Kojom prilagodbom uklanjaš informaciju koju si mu davao?",
+        "de": "Welche Anpassung nimmt ihm die bisherige Information?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Hold the set through the first ball lift and make him reveal a later release action",
+            "hr": "Zadrži položaj kroz prvo podizanje lopte i prisili ga da pokaže kasniji pokret izbačaja",
+            "de": "Beim ersten Ballheben stehen bleiben und ihn zu einer späteren Abwurfaktion zwingen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — you change the timing he exploited while preserving balance.",
+            "hr": "Točno — mijenjaš trenutak reakcije koji je koristio, a zadržavaš ravnotežu.",
+            "de": "Richtig — du veränderst sein bisheriges Lesetiming und bleibst ausbalanciert."
+          }
+        },
+        {
+          "text": {
+            "en": "React to the first lift only if the ball now continues directly into release",
+            "hr": "Na prvo podizanje reagiraj samo ako se lopta sada bez stanke nastavi u izbačaj",
+            "de": "Auf das erste Heben nur reagieren, wenn der Ball diesmal direkt in den Abwurf übergeht"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — a genuine continuous release is different from the previous pause.",
+            "hr": "Dobro — stvarni kontinuirani izbačaj razlikuje se od prethodne stanke.",
+            "de": "Gut — ein echter durchgehender Abwurf unterscheidet sich von der bisherigen Pause."
+          }
+        },
+        {
+          "text": {
+            "en": "Move even earlier to surprise him before the first lift",
+            "hr": "Kreni još ranije kako bi ga iznenadio prije prvog podizanja",
+            "de": "Noch früher reagieren, um ihn vor dem ersten Heben zu überraschen"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — you give him the same information even sooner.",
+            "hr": "Rizično — istu mu informaciju daješ još ranije.",
+            "de": "Riskant — du gibst ihm dieselbe Information nur noch früher."
+          }
+        },
+        {
+          "text": {
+            "en": "Repeat the exact timing from the first two throws",
+            "hr": "Ponovi potpuno isti trenutak reakcije kao u prva dva sedmerca",
+            "de": "Das exakt gleiche Timing wie bei den ersten beiden Würfen wiederholen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — the thrower has already shown that he can exploit it.",
+            "hr": "Loše — izvođač je već pokazao da to zna iskoristiti.",
+            "de": "Schlecht — der Werfer hat bereits gezeigt, dass er dieses Timing nutzt."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Adaptation does not require a random corner. Change the part the shooter has learned: your moment of commitment.",
+        "hr": "Prilagodba ne znači nasumično odabrati kut. Promijeni ono što je izvođač već naučio čitati: trenutak tvoje odluke.",
+        "de": "Anpassung bedeutet keine zufällige Ecke. Verändere, was der Werfer gelernt hat: deinen Zeitpunkt der Festlegung."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the unchanged pause pattern; B applies only if this attempt becomes one continuous release.",
+        "hr": "A odgovara nepromijenjenom obrascu sa stankom; B vrijedi samo ako ovaj pokušaj postane kontinuiran izbačaj.",
+        "de": "A passt zum unveränderten Pausenmuster; B gilt nur bei einem diesmal durchgehenden Abwurf."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_13",
+      "teachingArea": "breakaway_and_seven_metre",
+      "familyKey": "gk_penalty_shootout_memory",
+      "title": {
+        "en": "Goalkeeper — In a Shootout, Carry One Verified Cue Into Each Throw",
+        "hr": "Vratar — u raspucavanju u svaki sedmerac prenesi jedan potvrđen signal",
+        "de": "Torwart — im Siebenmeterwerfen einen bestätigten Hinweis pro Wurf nutzen"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "Critical",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Shootout",
+      "minute": 60,
+      "score": "shootout",
+      "numerical": "7m shootout",
+      "skillTags": [
+        "shootout",
+        "memory",
+        "focus"
+      ],
+      "primaryTacticalCue": "Next thrower was observed earlier with a stable pause before release but variable direction",
+      "fingerprint": {
+        "cue": "player-specific timing pattern verified, directional pattern not verified",
+        "decision": "recall one reliable timing cue and clear unrelated attempts from attention"
+      },
+      "situation": {
+        "en": "A match is being decided by seven-metre throws. Video and one penalty earlier in the match show that the next thrower consistently uses a short pause after lifting the ball. His finishing direction varies. Several other shooters and outcomes are also in your memory.",
+        "hr": "Utakmica se odlučuje raspucavanjem sa sedam metara. Snimke i jedan sedmerac ranije u utakmici pokazuju da sljedeći izvođač dosljedno zastane nakon podizanja lopte. Smjer završetka mu se mijenja. U pamćenju su ti i brojni drugi izvođači i ishodi.",
+        "de": "Das Spiel wird im Siebenmeterwerfen entschieden. Video und ein Strafwurf im Spiel zeigen, dass der nächste Werfer nach dem Ballheben stabil kurz pausiert. Seine Abschlussrichtung variiert. Viele andere Werfer und Ergebnisse sind ebenfalls in deiner Erinnerung."
+      },
+      "question": {
+        "en": "How do you use memory without overloading the decision?",
+        "hr": "Kako koristiš pamćenje bez preopterećenja odluke?",
+        "de": "Wie nutzt du Erinnerung, ohne die Entscheidung zu überladen?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Carry the verified pause cue into the throw, clear unrelated attempts and read the current direction",
+            "hr": "U sedmerac prenesi potvrđenu stanku, odbaci nepovezane pokušaje i čitaj trenutačni smjer",
+            "de": "Den bestätigten Pausenhinweis mitnehmen, andere Versuche ausblenden und die aktuelle Richtung lesen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — one reliable player-specific cue supports focus without replacing the live release.",
+            "hr": "Točno — jedan pouzdan signal vezan uz tog igrača pomaže fokusu bez zamjene trenutačnog izbačaja.",
+            "de": "Richtig — ein verlässlicher spielerspezifischer Hinweis unterstützt den Fokus, ohne den aktuellen Abwurf zu ersetzen."
+          }
+        },
+        {
+          "text": {
+            "en": "Discard the cue if the thrower removes the pause in the current attempt",
+            "hr": "Odbaci taj signal ako izvođač u ovom pokušaju ukloni stanku",
+            "de": "Den Hinweis verwerfen, wenn der Werfer die Pause diesmal weglässt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — changed live behaviour overrides old memory.",
+            "hr": "Dobro — promijenjeno ponašanje u ovom pokušaju ima prednost pred starim podatkom.",
+            "de": "Gut — verändertes aktuelles Verhalten hat Vorrang vor alter Erinnerung."
+          }
+        },
+        {
+          "text": {
+            "en": "Use the most common direction of all opposing shooters as the main choice",
+            "hr": "Kao glavnu odluku koristi najčešći smjer svih suparničkih izvođača",
+            "de": "Die häufigste Richtung aller gegnerischen Werfer zur Hauptwahl machen"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — a team-wide average may not describe this player.",
+            "hr": "Rizično — prosjek cijele momčadi ne mora opisivati ovog igrača.",
+            "de": "Riskant — ein Mannschaftsdurchschnitt beschreibt diesen Spieler möglicherweise nicht."
+          }
+        },
+        {
+          "text": {
+            "en": "Replay every previous throw while the current shooter prepares",
+            "hr": "Dok se trenutačni izvođač priprema, u glavi ponovi svaki prethodni sedmerac",
+            "de": "Während der aktuellen Vorbereitung jeden früheren Wurf gedanklich wiederholen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — too much unrelated information delays the current read.",
+            "hr": "Loše — previše nepovezanih informacija usporava čitanje trenutačnog pokušaja.",
+            "de": "Schlecht — zu viele irrelevante Informationen verzögern das aktuelle Lesen."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "Shootout memory is most useful when it is player-specific, verified and brief. Enter each throw with one cue, then let current behaviour confirm or cancel it.",
+        "hr": "Pamćenje u raspucavanju najkorisnije je kada je vezano uz igrača, potvrđeno i kratko. U svaki sedmerac uđi s jednim signalom, a trenutačno ponašanje neka ga potvrdi ili poništi.",
+        "de": "Erinnerung im Siebenmeterwerfen hilft am meisten, wenn sie spielerspezifisch, bestätigt und kurz ist. Mit einem Hinweis starten und ihn durch aktuelles Verhalten bestätigen oder verwerfen."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A uses the verified pause currently expected; B becomes correct only if the thrower visibly removes it.",
+        "hr": "A koristi potvrđenu stanku koja se sada očekuje; B vrijedi tek ako je izvođač vidljivo ukloni.",
+        "de": "A nutzt die aktuell erwartete bestätigte Pause; B gilt erst, wenn der Werfer sie sichtbar entfernt."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_14",
+      "teachingArea": "defence_cooperation_and_numbers",
+      "familyKey": "gk_60_block_far_call",
+      "title": {
+        "en": "Goalkeeper — Hand the Block Call to the Far Middle Defender When the Shooter Crosses",
+        "hr": "Vratar — pri prelasku šutera prenesi poziv bloka na daljeg središnjeg braniča",
+        "de": "Torwart — beim Kreuzen des Werfers den Blockruf an den fernen Mittelblock übergeben"
+      },
+      "difficulty": "Expert",
+      "pressureLevel": "High",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Open Play",
+      "minute": 33,
+      "score": "16:17",
+      "defensiveSystem": "6-0",
+      "numerical": "6v6",
+      "skillTags": [
+        "blockCooperation",
+        "handover",
+        "communication"
+      ],
+      "primaryTacticalCue": "Left back crosses beyond centre and far middle defender becomes the balanced blocker",
+      "fingerprint": {
+        "cue": "shooter crosses responsibility line before catch",
+        "decision": "name far blocker and side, wait for confirmation, then divide goal"
+      },
+      "situation": {
+        "en": "You trail 16:17 at 33'. The left back crosses beyond the centre before receiving. Your near middle defender releases him, and the far middle defender is now balanced in the shooting lane. The original block responsibility has changed.",
+        "hr": "Gubite 16:17 u 33. minuti. Lijevi vanjski prelazi preko sredine prije prijema lopte. Bliži središnji branič predaje ga, a dalji središnji branič sada je u ravnoteži u liniji šuta. Početna odgovornost za blok se promijenila.",
+        "de": "Ihr liegt 16:17 in Minute 33 zurück. Der linke Rückraum kreuzt vor dem Fangen über die Mitte. Der nahe Mittelblock übergibt, der ferne Mittelblock steht nun stabil in der Wurflinie. Die ursprüngliche Blockverantwortung hat gewechselt."
+      },
+      "question": {
+        "en": "How do you complete the block handover?",
+        "hr": "Kako dovršavaš predaju odgovornosti za blok?",
+        "de": "Wie vollendest du die Blockübergabe?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Name the far middle defender and agreed side, receive confirmation, then prepare the complementary side",
+            "hr": "Pozovi daljeg središnjeg braniča i dogovorenu stranu, primi potvrdu, a zatim pripremi suprotnu stranu",
+            "de": "Fernen Mittelblock und vereinbarte Seite benennen, Bestätigung erhalten und dann die Gegenseite vorbereiten"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — the new blocker and goalkeeper now divide the goal clearly.",
+            "hr": "Točno — novi bloker i vratar sada jasno dijele gol.",
+            "de": "Richtig — neuer Blockspieler und Torwart teilen das Tor nun eindeutig."
+          }
+        },
+        {
+          "text": {
+            "en": "Remain neutral if the far defender does not confirm before the jump",
+            "hr": "Ostani neutralan ako dalji branič ne potvrdi prije skoka",
+            "de": "Neutral bleiben, wenn der ferne Verteidiger vor dem Sprung nicht bestätigt"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — an unconfirmed handover cannot support a one-sided position.",
+            "hr": "Dobro — nepotvrđena predaja ne dopušta jednostrano postavljanje.",
+            "de": "Gut — eine unbestätigte Übergabe trägt keine einseitige Position."
+          }
+        },
+        {
+          "text": {
+            "en": "Keep the original call with the near defender after the shooter has crossed",
+            "hr": "Zadrži početni poziv bližem braniču i nakon što je šuter prešao sredinu",
+            "de": "Den ursprünglichen Ruf beim nahen Verteidiger lassen, obwohl der Werfer gekreuzt hat"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — the named defender no longer owns the shooting lane.",
+            "hr": "Rizično — prozvani branič više nije odgovoran za liniju šuta.",
+            "de": "Riskant — der benannte Verteidiger besitzt die Wurflinie nicht mehr."
+          }
+        },
+        {
+          "text": {
+            "en": "Wait until the ball is flying to identify the new blocker",
+            "hr": "Čekaj da lopta poleti prije nego označiš novog blokera",
+            "de": "Bis zum Ballflug warten, um den neuen Blockspieler zu benennen"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — the communication arrives too late to organise the block.",
+            "hr": "Loše — komunikacija dolazi prekasno za organizaciju bloka.",
+            "de": "Schlecht — die Kommunikation kommt zu spät, um den Block zu organisieren."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "When a cross changes the responsible defender, the goalkeeper must update both the player and the agreed side. Confirmation is required before relying on the new block.",
+        "hr": "Kada križanje promijeni odgovornog braniča, vratar mora ažurirati i igrača i dogovorenu stranu. Prije oslanjanja na novi blok potrebna je potvrda.",
+        "de": "Wenn ein Kreuzen den zuständigen Verteidiger ändert, muss der Torwart Spieler und vereinbarte Seite aktualisieren. Vor dem Vertrauen auf den neuen Block ist Bestätigung nötig."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A completes the visible handover; B is the safe fallback if confirmation never comes.",
+        "hr": "A dovršava vidljivu predaju; B je siguran pričuvni izbor ako potvrda ne stigne.",
+        "de": "A vollendet die sichtbare Übergabe; B ist die sichere Rückfallebene ohne Bestätigung."
+      },
+      "perception": true
+    },
+    {
+      "batchId": "gk_c_15",
+      "teachingArea": "defence_cooperation_and_numbers",
+      "familyKey": "gk_51_front_defender_channel",
+      "title": {
+        "en": "Goalkeeper — In 5-1, Position From the Channel the Front Defender Really Forces",
+        "hr": "Vratar — u obrani 5-1 postavi se prema koridoru koji prednji branič stvarno usmjerava",
+        "de": "Torwart — im 5-1 nach der tatsächlich erzwungenen Spur des Vorgezogenen stehen"
+      },
+      "difficulty": "Advanced",
+      "pressureLevel": "High",
+      "attackOrDefence": "Defence",
+      "matchPhase": "Open Play",
+      "minute": 28,
+      "score": "14:13",
+      "defensiveSystem": "5-1",
+      "numerical": "6v6",
+      "skillTags": [
+        "fiveOne",
+        "frontDefender",
+        "positioning"
+      ],
+      "primaryTacticalCue": "Front defender controls centre back right shoulder and forces dribble into left shooting channel",
+      "fingerprint": {
+        "cue": "front defender has stable shoulder control that removes one channel",
+        "decision": "follow forced ball line while retaining neutral fallback if control breaks"
+      },
+      "situation": {
+        "en": "You lead 14:13 at 28' in a 5-1 defence. The front defender has stable contact on the centre back's right shoulder and forces the dribble into the left channel. The attacker keeps the ball but cannot safely return right while that contact holds.",
+        "hr": "Vodite 14:13 u 28. minuti u obrani 5-1. Prednji branič stabilno kontrolira desno rame srednjeg vanjskog i usmjerava vođenje lopte u lijevi koridor. Napadač zadržava loptu, ali se uz taj kontakt ne može sigurno vratiti desno.",
+        "de": "Ihr führt 14:13 in Minute 28 in einer 5-1-Abwehr. Der Vorgezogene kontrolliert stabil die rechte Schulter des Rückraum Mitte und zwingt das Dribbling in die linke Spur. Der Angreifer behält den Ball, kann unter diesem Kontakt aber nicht sicher nach rechts zurück."
+      },
+      "question": {
+        "en": "How does the forced channel affect your position?",
+        "hr": "Kako usmjereni koridor utječe na tvoj položaj?",
+        "de": "Wie beeinflusst die erzwungene Spur deine Position?"
+      },
+      "answers": [
+        {
+          "text": {
+            "en": "Move with the ball line into the forced left channel and set before the shot",
+            "hr": "Prati liniju lopte u usmjereni lijevi koridor i zaustavi se prije šuta",
+            "de": "Mit der Balllinie in die erzwungene linke Spur gehen und vor dem Wurf stehen"
+          },
+          "quality": "optimal",
+          "feedback": {
+            "en": "Correct — your position follows the channel the defence has actually created.",
+            "hr": "Točno — tvoj položaj prati koridor koji je obrana stvarno stvorila.",
+            "de": "Richtig — deine Position folgt der Spur, die die Abwehr tatsächlich geschaffen hat."
+          }
+        },
+        {
+          "text": {
+            "en": "Return neutral if the front defender loses shoulder control",
+            "hr": "Vrati se u neutralan položaj ako prednji branič izgubi kontrolu ramena",
+            "de": "Neutral werden, wenn der Vorgezogene die Schulterkontrolle verliert"
+          },
+          "quality": "good",
+          "feedback": {
+            "en": "Good — both channels reopen when the defensive control disappears.",
+            "hr": "Dobro — gubitkom obrambene kontrole ponovno se otvaraju oba koridora.",
+            "de": "Gut — mit dem Verlust der Kontrolle öffnen sich wieder beide Spuren."
+          }
+        },
+        {
+          "text": {
+            "en": "Move toward the blocked right channel because it was the attacker’s original route",
+            "hr": "Pomakni se prema zatvorenom desnom koridoru jer je to bio početni smjer napadača",
+            "de": "Zur blockierten rechten Spur gehen, weil sie der ursprüngliche Weg des Angreifers war"
+          },
+          "quality": "risky",
+          "feedback": {
+            "en": "Risky — you position from old information instead of the current ball line.",
+            "hr": "Rizično — postavljaš se prema staroj informaciji umjesto prema trenutačnoj liniji lopte.",
+            "de": "Riskant — du stellst dich nach alter Information statt nach der aktuellen Balllinie."
+          }
+        },
+        {
+          "text": {
+            "en": "Remain central and ignore the channel forced by the front defender",
+            "hr": "Ostani u sredini i zanemari koridor koji je prednji branič usmjerio",
+            "de": "Zentral bleiben und die vom Vorgezogenen erzwungene Spur ignorieren"
+          },
+          "quality": "poor",
+          "feedback": {
+            "en": "Poor — the shot line moves left while your position does not.",
+            "hr": "Loše — linija šuta pomiče se ulijevo, a tvoj položaj ostaje isti.",
+            "de": "Schlecht — die Wurflinie geht nach links, deine Position bleibt unverändert."
+          }
+        }
+      ],
+      "explanation": {
+        "en": "An advanced defender helps the goalkeeper only through real body control. Follow the forced lane while it exists, and restore neutral coverage as soon as it breaks.",
+        "hr": "Prednji branič pomaže vrataru samo stvarnom kontrolom tijela napadača. Prati usmjereni koridor dok kontrola traje, a po njezinu gubitku vrati neutralno pokrivanje.",
+        "de": "Ein Vorgezogener hilft dem Torwart nur durch echte Körperkontrolle. Der erzwungenen Spur folgen, solange sie besteht, und bei ihrem Verlust neutral werden."
+      },
+      "whyCorrectOverSecondBest": {
+        "en": "A fits the currently secured shoulder control; B follows only after that control is lost.",
+        "hr": "A odgovara trenutačno sigurnoj kontroli ramena; B slijedi tek nakon njezina gubitka.",
+        "de": "A passt zur aktuell gesicherten Schulterkontrolle; B folgt erst nach ihrem Verlust."
+      },
+      "perception": true
+    }
+  ]
+}

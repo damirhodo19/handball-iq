@@ -20,6 +20,8 @@ export interface CoachChallengeAnswer {
 
 export interface CoachChallenge {
   id: string;
+  /** Stable Gold decision-family identifier; absent only in historical attempts. */
+  familyKey?: string;
   category: CoachChallengeCategory;
   difficulty: CoachDifficulty;
   coachTypeTags: string[];

@@ -45,8 +45,12 @@ export function resolveCoachContent(profileInput?: UserProfile): CoachContentRes
   const profile = profileInput ?? loadProfile();
   const state = loadCoachDevState();
   const today = todayStr();
+  const storedDailyChallenge =
+    state.dailyChallengeDate === today && state.dailyChallengeId
+      ? getCoachChallengeById(state.dailyChallengeId ?? '')
+      : undefined;
 
-  if (state.dailyChallengeDate !== today || !state.dailyChallengeId) {
+  if (!storedDailyChallenge) {
     const picked = pickCoachChallengeForProfile({
       coachType: profile.coachType,
       experienceBand: profile.experienceBand,
@@ -54,7 +58,7 @@ export function resolveCoachContent(profileInput?: UserProfile): CoachContentRes
       favoriteDefense: profile.favoriteDefense,
       favoriteAttack: profile.favoriteAttack,
     });
-    setDailyCoachChallenge(picked.id, today);
+    setDailyCoachChallenge(picked.id, today, true);
   }
 
   const refreshed = loadCoachDevState();
