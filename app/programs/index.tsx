@@ -8,7 +8,7 @@ import { BackButton } from '@/components/BackButton';
 import { Card, PressableCard } from '@/components/Card';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useDevelopment } from '@/hooks/useDevelopment';
-import { loadProfile } from '@/lib/storage';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
 import {
   DEVELOPMENT_PROGRAMS,
   getEligiblePrograms,
@@ -28,7 +28,7 @@ export default function ProgramsIndex() {
   );
   const pausedPrograms = state.pausedPrograms ?? [];
   const statistics = state.statistics;
-  const profile = loadProfile();
+  const profile = useSyncedProfile();
   const positions = [profile.position, profile.secondaryPosition]
     .filter((value): value is HandballPosition => isHandballPosition(value));
   const developmentGoals = profile.developmentGoals.length

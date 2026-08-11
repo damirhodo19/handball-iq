@@ -21,10 +21,10 @@ import { localizeContent } from '@/lib/content-localize';
 import { resolveContent, filterResolvedScenarios, resolveRecommendedScenarios } from '@/lib/platform/content-resolver';
 import { getActiveMode } from '@/lib/platform/active-mode';
 import { getPositionModule, isHandballPosition } from '@/lib/platform/position-modules';
-import { loadProfile } from '@/lib/storage';
 import type { ScenarioCategory } from '@/content/scenario-bank/types';
 import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 import type { HandballPosition } from '@/lib/positions';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
 
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Zap, ArrowRight, Target, Shield, Crosshair, Users, Clock,
@@ -43,7 +43,7 @@ const SESSION_DURATION_MIN = 10;
 
 export default function TrainingScreen() {
   const { t, lang } = useTranslation();
-  const profile = loadProfile();
+  const profile = useSyncedProfile();
   const primaryPosition = resolvePlayerPosition(profile);
   const availablePositions = [profile.position, profile.secondaryPosition]
     .filter((value): value is HandballPosition => isHandballPosition(value));

@@ -9,7 +9,7 @@ import { Button } from '@/components/Button';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getProgramDef, isProgramEligible, type ProgramId } from '@/lib/development/programs';
 import { enrollInProgram } from '@/lib/development/program-progress';
-import { loadProfile } from '@/lib/storage';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
 import { isHandballPosition } from '@/lib/platform/position-modules';
 import type { HandballPosition } from '@/lib/positions';
 import { useDevelopment } from '@/hooks/useDevelopment';
@@ -18,7 +18,7 @@ export default function ProgramDetail() {
   const { t } = useTranslation();
   const { id } = useLocalSearchParams<{ id: string }>();
   const def = getProgramDef(id as ProgramId);
-  const profile = loadProfile();
+  const profile = useSyncedProfile();
   const positions = [profile.position, profile.secondaryPosition]
     .filter((value): value is HandballPosition => isHandballPosition(value));
   const { activeProgram, refresh } = useDevelopment();
