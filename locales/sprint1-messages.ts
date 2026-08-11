@@ -6,6 +6,7 @@ export const sprint1MessagesEn: Record<string, string> = {
   'match.configOpponentShort': 'Opponent',
   'matchDay.opponentPlaceholder': 'Opponent name',
   'profile.clubPlaceholder': 'Your club (optional)',
+  'profile.saveSyncFailed': 'Could not confirm the profile update. Check your connection and try saving again.',
   'coachLogin.teamNamePlaceholder': 'Your team name',
   'team.clubNamePlaceholder': 'Your club name',
 
@@ -177,6 +178,7 @@ export const sprint1MessagesHr: Record<string, string> = {
   'match.configOpponentShort': 'Protivnik',
   'matchDay.opponentPlaceholder': 'Ime protivnika',
   'profile.clubPlaceholder': 'Tvoj klub (opcionalno)',
+  'profile.saveSyncFailed': 'Promjena profila nije potvrđena. Provjeri vezu i pokušaj ponovno spremiti.',
   'coachLogin.teamNamePlaceholder': 'Naziv momčadi',
   'team.clubNamePlaceholder': 'Naziv kluba',
 
@@ -348,6 +350,7 @@ export const sprint1MessagesDe: Record<string, string> = {
   'match.configOpponentShort': 'Gegner',
   'matchDay.opponentPlaceholder': 'Name des Gegners',
   'profile.clubPlaceholder': 'Dein Verein (optional)',
+  'profile.saveSyncFailed': 'Die Profiländerung konnte nicht bestätigt werden. Prüfe die Verbindung und speichere erneut.',
   'coachLogin.teamNamePlaceholder': 'Name deines Teams',
   'team.clubNamePlaceholder': 'Name deines Vereins',
 

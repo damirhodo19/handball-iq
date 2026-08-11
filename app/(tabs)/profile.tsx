@@ -54,7 +54,7 @@ import { useDevelopment } from '@/hooks/useDevelopment';
 import { ProgressBar } from '@/components/Screen';
 import { AchievementDetail } from '@/components/AchievementDetail';
 import { useMode } from '@/context/ModeContext';
-import { syncPreferencesToCloud } from '@/services/preferencesService';
+import { pullPreferencesFromCloud, syncPreferencesToCloud } from '@/services/preferencesService';
 
 const HAND_OPTIONS: DominantHand[] = ['Left', 'Right'];
 const ROLE_OPTIONS: Exclude<AppRole, 'admin'>[] = ['player', 'coach', 'player_coach'];
@@ -167,6 +167,8 @@ export default function ProfileScreen() {
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<UserProfile | null>(null);
+  const [savingProfile, setSavingProfile] = useState(false);
+  const [profileSaveError, setProfileSaveError] = useState<string | null>(null);
 
   const loadData = useCallback(async () => {
     setLoading(true);
@@ -186,16 +188,39 @@ export default function ProfileScreen() {
   useFocusEffect(useCallback(() => { loadData(); }, [loadData]));
 
   function startEdit() {
+    setProfileSaveError(null);
     setDraft(profile ? { ...profile } : null);
     setEditing(true);
   }
 
-  function saveEdit() {
-    if (draft) {
-      saveProfile(draft);
-      setProfile(draft);
-      if (user?.id) void syncPreferencesToCloud(user.id);
+  async function saveEdit() {
+    if (!draft || savingProfile) return;
+    setSavingProfile(true);
+    setProfileSaveError(null);
+    saveProfile(draft);
+    const savedLocal = loadProfile();
+    setProfile(savedLocal);
+    setDraft(savedLocal);
+
+    if (user?.id) {
+      const pushed = await syncPreferencesToCloud(user.id);
+      if (pushed.error) {
+        setProfileSaveError(t('profile.saveSyncFailed'));
+        setSavingProfile(false);
+        return;
+      }
+      const pulled = await pullPreferencesFromCloud(user.id);
+      if (pulled.error) {
+        setProfileSaveError(t('profile.saveSyncFailed'));
+        setSavingProfile(false);
+        return;
+      }
+      const confirmed = loadProfile();
+      setProfile(confirmed);
+      setDraft(confirmed);
     }
+
+    setSavingProfile(false);
     setEditing(false);
   }
 
@@ -595,7 +620,14 @@ export default function ProfileScreen() {
             </View>
             <ScrollView contentContainerStyle={styles.modalScroll} keyboardShouldPersistTaps="handled">
               {draft && (
-                <EditForm draft={draft} setDraft={setDraft} t={t} onSave={saveEdit} />
+                <EditForm
+                  draft={draft}
+                  setDraft={setDraft}
+                  t={t}
+                  onSave={saveEdit}
+                  saving={savingProfile}
+                  saveError={profileSaveError}
+                />
               )}
             </ScrollView>
           </View>
@@ -610,11 +642,15 @@ function EditForm({
   setDraft,
   t,
   onSave,
+  saving,
+  saveError,
 }: {
   draft: UserProfile;
   setDraft: (p: UserProfile) => void;
   t: TranslateFn;
-  onSave: () => void;
+  onSave: () => void | Promise<void>;
+  saving: boolean;
+  saveError: string | null;
 }) {
   const [goalSelectionError, setGoalSelectionError] = useState<string | null>(null);
   const [coachGoalSelectionError, setCoachGoalSelectionError] = useState<string | null>(null);
@@ -892,8 +928,10 @@ function EditForm({
           }
           onSave();
         }}
+        loading={saving}
         iconRight={<Check size={20} color={Colors.background} />}
       />
+      {saveError && <Text style={styles.errorText}>{saveError}</Text>}
     </>
   );
 }
