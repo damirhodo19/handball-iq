@@ -143,6 +143,7 @@ function RootNavigation() {
         <Stack.Screen name="coach-tools" />
         <Stack.Screen name="coach-dashboard" />
         <Stack.Screen name="admin" />
+        <Stack.Screen name="team-calendar" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />

@@ -16,6 +16,7 @@ import {
   Users,
   Sun,
   AlertCircle,
+  CalendarDays,
 } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
@@ -558,6 +559,10 @@ export default function HomeScreen() {
           style={styles.softLinks}
           testID="home-final-cta"
         >
+          <PressableCard onPress={() => router.push('/team-calendar' as never)} variant="gradient" style={styles.softCard}>
+            <CalendarDays size={18} color={Colors.gold} />
+            <Text style={styles.softText}>{t('teamCalendar.title')}</Text>
+          </PressableCard>
           <PressableCard onPress={() => router.push('/match/intro')} variant="gradient" style={styles.softCard}>
             <Shield size={18} color={Colors.gold} />
             <Text style={styles.softText}>{t('home.playMatch')}</Text>

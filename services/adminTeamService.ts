@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import type { TeamJoinRequest, TeamMemberRecord } from '@/lib/team-platform/types';
+import type { TeamCalendarEvent, TeamJoinRequest, TeamMemberRecord } from '@/lib/team-platform/types';
 
 export interface AdminTeamRecord {
   team_id: string;
@@ -18,6 +18,7 @@ export interface AdminTeamRecord {
 export interface AdminTeamDetails {
   members: TeamMemberRecord[];
   requests: TeamJoinRequest[];
+  events: TeamCalendarEvent[];
 }
 
 export async function listAdminTeams(): Promise<{ teams: AdminTeamRecord[]; error: string | null }> {
@@ -29,19 +30,26 @@ export async function listAdminTeams(): Promise<{ teams: AdminTeamRecord[]; erro
 export async function getAdminTeamDetails(
   teamId: string,
 ): Promise<{ details: AdminTeamDetails; error: string | null }> {
-  if (!supabase) return { details: { members: [], requests: [] }, error: 'Supabase not configured.' };
-  const [membersResult, requestsResult] = await Promise.all([
+  if (!supabase) return { details: { members: [], requests: [], events: [] }, error: 'Supabase not configured.' };
+  const today = new Date();
+  const fromDate = `${today.getFullYear()}-${`${today.getMonth() + 1}`.padStart(2, '0')}-${`${today.getDate()}`.padStart(2, '0')}`;
+  const [membersResult, requestsResult, eventsResult] = await Promise.all([
     supabase.rpc('team_list_members', { p_team_id: teamId }),
     supabase.rpc('list_team_join_requests', { p_team_id: teamId, p_status: null }),
+    supabase.rpc('list_team_calendar', { p_team_id: teamId, p_from_date: fromDate, p_to_date: null }),
   ]);
-  const error = membersResult.error ?? requestsResult.error;
+  const error = membersResult.error ?? requestsResult.error ?? eventsResult.error;
   const members = ((membersResult.data ?? []) as any[]).map((member) => ({
     ...member,
     id: member.member_id,
     position: member.primary_position,
   })) as TeamMemberRecord[];
   return {
-    details: { members, requests: (requestsResult.data ?? []) as TeamJoinRequest[] },
+    details: {
+      members,
+      requests: (requestsResult.data ?? []) as TeamJoinRequest[],
+      events: (eventsResult.data ?? []) as TeamCalendarEvent[],
+    },
     error: error?.message ?? null,
   };
 }

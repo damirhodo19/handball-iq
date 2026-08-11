@@ -17,6 +17,8 @@ import type {
   PlatformRole,
   TeamJoinRequest,
   MyTeamJoinRequest,
+  TeamEventResponse,
+  TeamEventResponseStatus,
 } from './types';
 import {
   localCreateClub,
@@ -39,6 +41,9 @@ import {
   localFetchNotes,
   localFetchCalendar,
   localAddCalendarEvent,
+  localDeleteCalendarEvent,
+  localSetTeamEventResponse,
+  localFetchTeamEventResponses,
   ensureDemoTeam,
   localCacheTeams,
   localCacheTeam,
@@ -399,20 +404,130 @@ export async function fetchCoachNotes(teamId: string, playerId?: string): Promis
 
 // ─── Calendar ────────────────────────────────────────────────────────────────
 
-export async function fetchTeamCalendar(teamId: string): Promise<TeamCalendarEvent[]> {
-  if (USE_LOCAL) return localFetchCalendar(teamId);
+export async function fetchTeamCalendar(
+  teamId: string,
+  userId?: string,
+  fromDate?: string | null,
+  toDate?: string | null,
+): Promise<TeamCalendarEvent[]> {
+  if (USE_LOCAL) return localFetchCalendar(teamId, userId);
   if (!supabase) return [];
-  const { data } = await supabase.from('team_calendar_events').select('*').eq('team_id', teamId);
+  const { data, error } = await supabase.rpc('list_team_calendar', {
+    p_team_id: teamId,
+    p_from_date: fromDate ?? null,
+    p_to_date: toDate ?? null,
+  });
+  if (error) return [];
   return (data ?? []) as TeamCalendarEvent[];
 }
 
 export async function addTeamCalendarEvent(
-  input: Omit<TeamCalendarEvent, 'id' | 'created_at'>,
-): Promise<TeamCalendarEvent> {
-  if (USE_LOCAL) return localAddCalendarEvent(input);
-  if (!supabase) throw new Error('Supabase not configured');
-  const { data } = await supabase.from('team_calendar_events').insert(input).select('*').single();
-  return data as TeamCalendarEvent;
+  input: Omit<TeamCalendarEvent, 'id' | 'created_at' | 'updated_at' | 'attending_count' | 'not_attending_count' | 'maybe_count' | 'my_response'>,
+): Promise<{ event: TeamCalendarEvent | null; error: string | null }> {
+  if (USE_LOCAL) return { event: localAddCalendarEvent(input), error: null };
+  if (!supabase) return { event: null, error: 'Supabase not configured.' };
+  const { data, error } = await supabase.from('team_calendar_events').insert(input).select('*').single();
+  if (error) return { event: null, error: error.message };
+  return {
+    error: null,
+    event: {
+      ...(data as TeamCalendarEvent),
+      attending_count: 0,
+      not_attending_count: 0,
+      maybe_count: 0,
+      my_response: null,
+    },
+  };
+}
+
+export async function deleteTeamCalendarEvent(teamId: string, eventId: string): Promise<string | null> {
+  if (USE_LOCAL) {
+    localDeleteCalendarEvent(teamId, eventId);
+    return null;
+  }
+  if (!supabase) return 'Supabase not configured.';
+  const { error } = await supabase
+    .from('team_calendar_events')
+    .delete()
+    .eq('team_id', teamId)
+    .eq('id', eventId);
+  return error?.message ?? null;
+}
+
+export async function respondToTeamEvent(input: {
+  teamId: string;
+  eventId: string;
+  playerId: string;
+  displayName?: string;
+  responseStatus: TeamEventResponseStatus;
+  note?: string;
+}): Promise<{ response: TeamEventResponse | null; error: string | null }> {
+  if (USE_LOCAL) {
+    return { response: localSetTeamEventResponse(input), error: null };
+  }
+  if (!supabase) return { response: null, error: 'Supabase not configured.' };
+  const { data, error } = await supabase.rpc('respond_to_team_event', {
+    p_event_id: input.eventId,
+    p_response_status: input.responseStatus,
+    p_note: input.note?.trim() || null,
+  });
+  const row = Array.isArray(data) ? data[0] : data;
+  return { response: (row ?? null) as TeamEventResponse | null, error: error?.message ?? null };
+}
+
+export async function fetchTeamEventResponses(
+  teamId: string,
+  eventId: string,
+): Promise<{ responses: TeamEventResponse[]; error: string | null }> {
+  if (USE_LOCAL) return { responses: localFetchTeamEventResponses(teamId, eventId), error: null };
+  if (!supabase) return { responses: [], error: 'Supabase not configured.' };
+  const { data, error } = await supabase.rpc('list_team_event_responses', { p_event_id: eventId });
+  return { responses: (data ?? []) as TeamEventResponse[], error: error?.message ?? null };
+}
+
+export async function finalizeTeamEventAttendance(input: {
+  teamId: string;
+  eventId: string;
+  coachId: string;
+}): Promise<{ present: number; absent: number; skipped: number; error: string | null }> {
+  if (USE_LOCAL) {
+    const { loadCoachRosterForTeam, setCoachAttendance } = await import('@/lib/coach-workspace');
+    const event = localFetchCalendar(input.teamId).find((item) => item.id === input.eventId);
+    const responses = localFetchTeamEventResponses(input.teamId, input.eventId);
+    if (!event) return { present: 0, absent: 0, skipped: 0, error: 'Event not found.' };
+    const roster = loadCoachRosterForTeam(input.coachId, input.teamId);
+    let present = 0;
+    let absent = 0;
+    let skipped = 0;
+    for (const response of responses) {
+      if (response.response_status === 'maybe') continue;
+      const player = roster.find((item) => item.linked_user_id === response.player_id);
+      if (!player) {
+        skipped += 1;
+        continue;
+      }
+      const status = response.response_status === 'attending' ? 'present' : 'absent';
+      await setCoachAttendance({
+        coachId: input.coachId,
+        teamKey: player.team_key,
+        rosterPlayerId: player.id,
+        trainingDate: event.event_date,
+        status,
+      });
+      if (status === 'present') present += 1;
+      else absent += 1;
+    }
+    return { present, absent, skipped, error: null };
+  }
+  if (!supabase) return { present: 0, absent: 0, skipped: 0, error: 'Supabase not configured.' };
+  const { data, error } = await supabase.rpc('finalize_team_event_attendance', { p_event_id: input.eventId });
+  const row = Array.isArray(data) ? data[0] : data;
+  return {
+    present: row?.present_count ?? 0,
+    absent: row?.absent_count ?? 0,
+    skipped: row?.skipped_count ?? 0,
+    error: error?.message ?? null,
+  };
 }
 
 // ─── Dashboard & Reports ─────────────────────────────────────────────────────

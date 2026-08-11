@@ -5,6 +5,8 @@ import type {
   TeamInvitation,
   CoachNote,
   TeamCalendarEvent,
+  TeamEventResponse,
+  TeamEventResponseStatus,
   TrainingAssignment,
   TeamPlatformState,
 } from './types';
@@ -30,13 +32,27 @@ export function createDefaultState(): TeamPlatformState {
     invitations: {},
     notes: {},
     calendar: {},
+    eventResponses: {},
     assignments: {},
     attendance: {},
   };
 }
 
 export function loadPlatformState(): TeamPlatformState {
-  return getItem(STORAGE_KEY, createDefaultState());
+  const stored = getItem<Partial<TeamPlatformState>>(STORAGE_KEY, {});
+  return {
+    ...createDefaultState(),
+    ...stored,
+    clubs: stored.clubs ?? [],
+    teams: stored.teams ?? [],
+    members: stored.members ?? {},
+    invitations: stored.invitations ?? {},
+    notes: stored.notes ?? {},
+    calendar: stored.calendar ?? {},
+    eventResponses: stored.eventResponses ?? {},
+    assignments: stored.assignments ?? {},
+    attendance: stored.attendance ?? {},
+  };
 }
 
 export function savePlatformState(state: TeamPlatformState): void {
@@ -127,6 +143,7 @@ export function localCreateTeam(input: {
   state.invitations[team.id] = [];
   state.notes[team.id] = [];
   state.calendar[team.id] = [];
+  state.eventResponses[team.id] = [];
   state.assignments[team.id] = [];
   state.attendance[team.id] = [];
   savePlatformState(state);
@@ -321,12 +338,22 @@ export function localCreateAssignment(input: {
       team_id: input.team_id,
       event_type: 'assigned_session',
       event_date: input.due_date,
+      event_time: null,
+      end_time: null,
       title: `${input.category} — ${input.position}`,
       description: input.message ?? `Due ${input.due_date}`,
+      location: null,
+      response_required: false,
+      event_status: 'scheduled',
       player_id: playerId,
       assignment_id: assignment.id,
       created_by: input.coach_id,
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      attending_count: 0,
+      not_attending_count: 0,
+      maybe_count: 0,
+      my_response: null,
     });
     state.calendar[input.team_id] = cal;
   }
@@ -385,16 +412,41 @@ export function localFetchNotes(teamId: string, playerId?: string): CoachNote[] 
 
 // ─── Calendar ────────────────────────────────────────────────────────────────
 
-export function localFetchCalendar(teamId: string): TeamCalendarEvent[] {
-  return loadPlatformState().calendar[teamId] ?? [];
+export function localFetchCalendar(teamId: string, userId?: string): TeamCalendarEvent[] {
+  const state = loadPlatformState();
+  const responses = state.eventResponses[teamId] ?? [];
+  return (state.calendar[teamId] ?? []).map((event) => {
+    const eventResponses = responses.filter((response) => response.event_id === event.id);
+    return {
+      ...event,
+      event_time: event.event_time ?? null,
+      end_time: event.end_time ?? null,
+      location: event.location ?? null,
+      response_required: event.response_required ?? false,
+      event_status: event.event_status ?? 'scheduled',
+      updated_at: event.updated_at ?? event.created_at,
+      attending_count: eventResponses.filter((response) => response.response_status === 'attending').length,
+      not_attending_count: eventResponses.filter((response) => response.response_status === 'not_attending').length,
+      maybe_count: eventResponses.filter((response) => response.response_status === 'maybe').length,
+      my_response: eventResponses.find((response) => response.player_id === userId)?.response_status ?? null,
+    };
+  });
 }
 
-export function localAddCalendarEvent(input: Omit<TeamCalendarEvent, 'id' | 'created_at'>): TeamCalendarEvent {
+export function localAddCalendarEvent(
+  input: Omit<TeamCalendarEvent, 'id' | 'created_at' | 'updated_at' | 'attending_count' | 'not_attending_count' | 'maybe_count' | 'my_response'>,
+): TeamCalendarEvent {
   const state = loadPlatformState();
+  const now = new Date().toISOString();
   const event: TeamCalendarEvent = {
     ...input,
     id: uid('evt'),
-    created_at: new Date().toISOString(),
+    created_at: now,
+    updated_at: now,
+    attending_count: 0,
+    not_attending_count: 0,
+    maybe_count: 0,
+    my_response: null,
   };
   const list = state.calendar[input.team_id] ?? [];
   list.push(event);
@@ -402,6 +454,46 @@ export function localAddCalendarEvent(input: Omit<TeamCalendarEvent, 'id' | 'cre
   state.calendar[input.team_id] = list;
   savePlatformState(state);
   return event;
+}
+
+export function localDeleteCalendarEvent(teamId: string, eventId: string): void {
+  const state = loadPlatformState();
+  state.calendar[teamId] = (state.calendar[teamId] ?? []).filter((event) => event.id !== eventId);
+  state.eventResponses[teamId] = (state.eventResponses[teamId] ?? []).filter((response) => response.event_id !== eventId);
+  savePlatformState(state);
+}
+
+export function localSetTeamEventResponse(input: {
+  teamId: string;
+  eventId: string;
+  playerId: string;
+  displayName?: string;
+  responseStatus: TeamEventResponseStatus;
+  note?: string;
+}): TeamEventResponse {
+  const state = loadPlatformState();
+  const list = state.eventResponses[input.teamId] ?? [];
+  const response: TeamEventResponse = {
+    event_id: input.eventId,
+    player_id: input.playerId,
+    display_name: input.displayName ?? 'Player',
+    email: null,
+    response_status: input.responseStatus,
+    note: input.note?.trim() || null,
+    responded_at: new Date().toISOString(),
+  };
+  const existingIndex = list.findIndex((item) => item.event_id === input.eventId && item.player_id === input.playerId);
+  if (existingIndex >= 0) list[existingIndex] = response;
+  else list.push(response);
+  state.eventResponses[input.teamId] = list;
+  savePlatformState(state);
+  return response;
+}
+
+export function localFetchTeamEventResponses(teamId: string, eventId: string): TeamEventResponse[] {
+  return (loadPlatformState().eventResponses[teamId] ?? [])
+    .filter((response) => response.event_id === eventId)
+    .sort((a, b) => a.display_name.localeCompare(b.display_name));
 }
 
 // ─── Seed demo data if empty ─────────────────────────────────────────────────

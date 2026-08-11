@@ -242,12 +242,26 @@ export interface TeamCalendarEvent {
   team_id: string;
   event_type: string;
   event_date: string;
+  event_time: string | null;
+  end_time: string | null;
   title: string;
   description: string | null;
+  location: string | null;
+  response_required: boolean;
+  event_status: string;
   player_id: string | null;
   assignment_id: string | null;
   created_by: string | null;
   created_at: string;
+  updated_at: string;
+}
+
+export interface TeamEventResponse {
+  event_id: string;
+  player_id: string;
+  response_status: string;
+  note: string | null;
+  responded_at: string;
 }
 
 export interface UserGoal {

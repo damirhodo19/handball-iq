@@ -14,6 +14,10 @@ export type NoteType = 'training' | 'injury' | 'mental' | 'general';
 export type CalendarEventType =
   | 'training' | 'match' | 'assigned_session' | 'completed_session' | 'recovery';
 
+export type TeamEventStatus = 'scheduled' | 'completed' | 'cancelled';
+
+export type TeamEventResponseStatus = 'attending' | 'not_attending' | 'maybe';
+
 export type ReportPeriod = 'weekly' | 'monthly' | 'season' | 'individual' | 'team';
 
 export interface Club {
@@ -124,12 +128,32 @@ export interface TeamCalendarEvent {
   team_id: string;
   event_type: CalendarEventType;
   event_date: string;
+  event_time: string | null;
+  end_time: string | null;
   title: string;
   description: string | null;
+  location: string | null;
+  response_required: boolean;
+  event_status: TeamEventStatus;
   player_id: string | null;
   assignment_id: string | null;
   created_by: string | null;
   created_at: string;
+  updated_at: string;
+  attending_count: number;
+  not_attending_count: number;
+  maybe_count: number;
+  my_response: TeamEventResponseStatus | null;
+}
+
+export interface TeamEventResponse {
+  event_id: string;
+  player_id: string;
+  display_name: string;
+  email: string | null;
+  response_status: TeamEventResponseStatus;
+  note: string | null;
+  responded_at: string;
 }
 
 export interface TrainingAssignment {
@@ -183,6 +207,7 @@ export interface TeamPlatformState {
   invitations: Record<string, TeamInvitation[]>;
   notes: Record<string, CoachNote[]>;
   calendar: Record<string, TeamCalendarEvent[]>;
+  eventResponses: Record<string, TeamEventResponse[]>;
   assignments: Record<string, TrainingAssignment[]>;
   attendance: Record<string, { player_id: string; event_date: string; status: string }[]>;
 }

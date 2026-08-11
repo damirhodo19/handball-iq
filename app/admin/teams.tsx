@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { ChevronDown, ChevronUp, Search, Shield, UserPlus, Users } from 'lucide-react-native';
+import { CalendarDays, ChevronDown, ChevronUp, Clock3, MapPin, Search, Shield, UserPlus, Users } from 'lucide-react-native';
 
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
@@ -173,6 +173,30 @@ export default function AdminTeamsScreen() {
                             </View>
                           ))}
 
+                          <Text style={styles.sectionLabel}>{t('adminTeams.upcomingEvents')}</Text>
+                          {teamDetails.events.length === 0 ? (
+                            <Text style={styles.emptyText}>{t('adminTeams.noUpcomingEvents')}</Text>
+                          ) : teamDetails.events.slice(0, 5).map((event) => (
+                            <View key={event.id} style={styles.memberRow}>
+                              <View style={[styles.memberAvatar, { backgroundColor: Colors.infoSoft }]}>
+                                <CalendarDays size={15} color={Colors.info} />
+                              </View>
+                              <View style={styles.memberCopy}>
+                                <Text style={styles.memberName}>{event.title}</Text>
+                                <View style={styles.eventMetaRow}>
+                                  <Clock3 size={11} color={Colors.textTertiary} />
+                                  <Text style={styles.memberMeta}>
+                                    {new Date(`${event.event_date}T12:00:00`).toLocaleDateString(locale)}
+                                    {event.event_time ? ` · ${event.event_time.slice(0, 5)}` : ''}
+                                  </Text>
+                                  {event.location ? <MapPin size={11} color={Colors.textTertiary} /> : null}
+                                  {event.location ? <Text style={styles.memberMeta}>{event.location}</Text> : null}
+                                </View>
+                              </View>
+                              <Text style={styles.eventResponses}>{event.attending_count}/{event.not_attending_count}</Text>
+                            </View>
+                          ))}
+
                           <Text style={styles.sectionLabel}>{t('adminTeams.joinRequests')}</Text>
                           {teamDetails.requests.length === 0 ? (
                             <Text style={styles.emptyText}>{t('adminTeams.noRequests')}</Text>
@@ -266,6 +290,8 @@ const styles = StyleSheet.create({
   memberCopy: { flex: 1, minWidth: 0 },
   memberName: { fontFamily: 'Inter-SemiBold', fontSize: 13, color: Colors.textPrimary },
   memberMeta: { fontFamily: 'Inter-Regular', fontSize: 11, color: Colors.textTertiary, marginTop: 2 },
+  eventMetaRow: { flexDirection: 'row', alignItems: 'center', gap: 4, flexWrap: 'wrap' },
+  eventResponses: { fontFamily: 'Inter-ExtraBold', fontSize: 11, color: Colors.gold },
   requestStatus: { fontFamily: 'Inter-SemiBold', fontSize: 10, color: Colors.warning },
   emptyText: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, paddingVertical: Spacing.sm },
 });
