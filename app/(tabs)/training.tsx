@@ -127,25 +127,6 @@ export default function TrainingScreen() {
           </PressableCard>
         </View>
 
-        {availablePositions.length > 1 ? (
-          <Animated.View entering={FadeInDown.delay(20).duration(500)}>
-            <Text style={styles.sectionLabel}>{t('training.position')}</Text>
-            <View style={styles.filterRow}>
-              {availablePositions.map((playerPosition) => (
-                <FilterChip
-                  key={playerPosition}
-                  label={translatePosition(playerPosition, t)}
-                  active={position === playerPosition}
-                  onPress={() => {
-                    setSelectedPosition(playerPosition);
-                    setFilterCategory(null);
-                    setFilterDifficulty(null);
-                  }}
-                />
-              ))}
-            </View>
-          </Animated.View>
-        ) : null}
       </ScreenBackground>
     );
   }
@@ -162,6 +143,26 @@ export default function TrainingScreen() {
             </View>
           </View>
         </View>
+
+        {availablePositions.length > 1 ? (
+          <Animated.View entering={FadeInDown.delay(20).duration(500)}>
+            <Text style={styles.sectionLabel}>{t('training.position')}</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
+              {availablePositions.map((playerPosition) => (
+                <FilterChip
+                  key={playerPosition}
+                  label={translatePosition(playerPosition, t)}
+                  active={position === playerPosition}
+                  onPress={() => {
+                    setSelectedPosition(playerPosition);
+                    setFilterCategory(null);
+                    setFilterDifficulty(null);
+                  }}
+                />
+              ))}
+            </ScrollView>
+          </Animated.View>
+        ) : null}
 
         <Animated.View entering={FadeInDown.delay(40).duration(500)}>
           <Text style={styles.sectionLabel}>{t('training.focusLabel')}</Text>

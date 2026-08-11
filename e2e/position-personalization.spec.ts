@@ -1,6 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 
-type Position = 'Left Back' | 'Left Wing' | 'Pivot' | 'Centre Back';
+type Position = 'Left Back' | 'Left Wing' | 'Right Wing' | 'Pivot' | 'Centre Back' | 'Right Back';
 
 const GK_ONLY_MARKERS = [
   'Goalkeeper IQ',
@@ -14,14 +14,14 @@ const GK_ONLY_MARKERS = [
   'Decisive Save',
 ];
 
-function profileFor(position: Position) {
+function profileFor(position: Position, secondaryPosition: Position | null = null) {
   return {
     name: 'E2E Field',
     firstName: 'E2E',
     lastName: 'Field',
     role: 'player',
     position,
-    secondaryPosition: null,
+    secondaryPosition,
     age: '',
     ageGroup: null,
     club: '',
@@ -35,8 +35,8 @@ function profileFor(position: Position) {
   };
 }
 
-async function seed(page: Page, position: Position) {
-  const profile = profileFor(position);
+async function seed(page: Page, position: Position, secondaryPosition: Position | null = null) {
+  const profile = profileFor(position, secondaryPosition);
   await page.addInitScript((p) => {
     window.localStorage.setItem('hbiq_profile', JSON.stringify(p));
     window.localStorage.setItem('handball_iq_language', 'en');
@@ -67,6 +67,18 @@ async function openAsPlayer(page: Page) {
 }
 
 test.describe('Position personalization — no Goalkeeper leak', () => {
+  test('secondary position selector switches the complete training view', async ({ page }) => {
+    await seed(page, 'Right Wing', 'Right Back');
+    await openAsPlayer(page);
+
+    await page.goto('/(tabs)/training');
+    await page.waitForTimeout(2000);
+
+    await expect(page.getByText('Right Back', { exact: true }).first()).toBeVisible();
+    await page.getByText('Right Back', { exact: true }).first().click();
+    await expect(page.getByText('Right Back · Position-specific decision training', { exact: true })).toBeVisible();
+  });
+
   for (const position of ['Left Back', 'Left Wing', 'Pivot', 'Centre Back'] as Position[]) {
     test(`${position}: training intro + first scenarios are not GK-only`, async ({ page }) => {
       await seed(page, position);
