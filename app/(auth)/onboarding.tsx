@@ -133,14 +133,15 @@ export default function OnboardingScreen() {
   const [country, setCountry] = useState('');
   const [role, setRole] = useState<AppRole | null>(null);
   const [position, setPosition] = useState<HandballPosition | null>(null);
+  const [secondaryPosition, setSecondaryPosition] = useState<HandballPosition | null>(null);
   const [dominantHand, setDominantHand] = useState<DominantHand | null>(null);
   const [playingLevel, setPlayingLevel] = useState<PlayingLevelId | null>(null);
-  const [developmentGoal, setDevelopmentGoal] = useState<PlayerGoalId | null>(null);
+  const [developmentGoals, setDevelopmentGoals] = useState<PlayerGoalId[]>([]);
   const [coachType, setCoachType] = useState<CoachTypeId | null>(null);
   const [experienceBand, setExperienceBand] = useState<ExperienceBand | null>(null);
   const [favoriteDefense, setFavoriteDefense] = useState<DefenseSystemId | null>(null);
   const [favoriteAttack, setFavoriteAttack] = useState<AttackStyleId | null>(null);
-  const [coachDevelopmentGoal, setCoachDevelopmentGoal] = useState<CoachGoalId | null>(null);
+  const [coachDevelopmentGoals, setCoachDevelopmentGoals] = useState<CoachGoalId[]>([]);
 
   const steps = useMemo<StepId[]>(() => {
     const list: StepId[] = ['locale', 'role'];
@@ -156,10 +157,10 @@ export default function OnboardingScreen() {
     if (step === 'locale') return Boolean(country);
     if (step === 'role') return role !== null;
     if (step === 'player') {
-      return Boolean(position && dominantHand && playingLevel && developmentGoal);
+      return Boolean(position && dominantHand && playingLevel && developmentGoals.length > 0);
     }
     if (step === 'coach') {
-      return Boolean(coachType && experienceBand && favoriteDefense && favoriteAttack && coachDevelopmentGoal);
+      return Boolean(coachType && experienceBand && favoriteDefense && favoriteAttack && coachDevelopmentGoals.length > 0);
     }
     return false;
   };
@@ -187,14 +188,17 @@ export default function OnboardingScreen() {
       role,
       country,
       position: canonicalPosition,
+      secondaryPosition: normalizeHandballPosition(secondaryPosition) ?? null,
       dominantHand: dominantHand ?? existing.dominantHand ?? '',
       playingLevel: playingLevel ?? existing.playingLevel,
-      developmentGoal: developmentGoal ?? existing.developmentGoal,
+      developmentGoal: developmentGoals[0] ?? existing.developmentGoal,
+      developmentGoals: developmentGoals.length ? developmentGoals : existing.developmentGoals,
       coachType: coachType ?? null,
       experienceBand: experienceBand ?? null,
       favoriteDefense: favoriteDefense ?? null,
       favoriteAttack: favoriteAttack ?? null,
-      coachDevelopmentGoal: coachDevelopmentGoal ?? null,
+      coachDevelopmentGoal: coachDevelopmentGoals[0] ?? null,
+      coachDevelopmentGoals: coachDevelopmentGoals.length ? coachDevelopmentGoals : existing.coachDevelopmentGoals,
       onboardingVersion: 2,
     };
     saveProfile(nextProfile);
@@ -202,18 +206,21 @@ export default function OnboardingScreen() {
     if (user && supabase) {
       // Preserve player | coach | player_coach — never collapse dual-role to player
       const dbRole = role;
-      const base = {
+      const legacyBase = {
         id: user.id,
         role: dbRole,
         primary_position: canonicalPosition || null,
+        secondary_position: normalizeHandballPosition(secondaryPosition) ?? null,
         dominant_hand: dominantHand,
         playing_level: playingLevel,
-        development_goal: developmentGoal,
+        development_goal: developmentGoals[0] ?? null,
         country,
         onboarded: true,
         onboarding_version: 2,
         position: canonicalPosition || null,
       };
+
+      const base = { ...legacyBase, development_goals: developmentGoals.length ? developmentGoals : null };
 
       const fullPayload = {
         ...base,
@@ -221,7 +228,8 @@ export default function OnboardingScreen() {
         experience_band: experienceBand,
         favorite_defense: favoriteDefense,
         favorite_attack: favoriteAttack,
-        coach_development_goal: coachDevelopmentGoal,
+        coach_development_goal: coachDevelopmentGoals[0] ?? null,
+        coach_development_goals: coachDevelopmentGoals.length ? coachDevelopmentGoals : null,
       };
 
       let { error: upsertError } = await supabase.from('profiles').upsert(fullPayload as any);
@@ -237,7 +245,7 @@ export default function OnboardingScreen() {
             fields: Object.keys(fullPayload),
           });
         }
-        ({ error: upsertError } = await supabase.from('profiles').upsert(base as any));
+        ({ error: upsertError } = await supabase.from('profiles').upsert(legacyBase as any));
       }
 
       if (upsertError) {
@@ -280,8 +288,8 @@ export default function OnboardingScreen() {
       router.replace('/(tabs)/home');
     }
   }, [
-    role, country, position, dominantHand, playingLevel, developmentGoal,
-    coachType, experienceBand, favoriteDefense, favoriteAttack, coachDevelopmentGoal,
+    role, country, position, secondaryPosition, dominantHand, playingLevel, developmentGoals,
+    coachType, experienceBand, favoriteDefense, favoriteAttack, coachDevelopmentGoals,
     user, authProfile, refreshProfile, t,
   ]);
 
@@ -385,13 +393,30 @@ export default function OnboardingScreen() {
         {step === 'player' && (
           <Animated.View entering={FadeInDown.duration(400)} style={styles.step}>
             <Text style={styles.fieldLabel}>{t('onboarding.v2.position')}</Text>
+            <Text style={styles.hint}>
+              {t('onboarding.v2.positionHint', { n: position ? (secondaryPosition ? 2 : 1) : 0, max: 2 })}
+            </Text>
             <ChipGrid>
               {ALL_POSITIONS.map((p) => (
                 <Chip
                   key={p}
                   label={translatePosition(p, t)}
-                  selected={position === p}
-                  onPress={() => setPosition(p)}
+                  selected={position === p || secondaryPosition === p}
+                  onPress={() => {
+                    setError(null);
+                    if (position === p) {
+                      setPosition(secondaryPosition);
+                      setSecondaryPosition(null);
+                    } else if (secondaryPosition === p) {
+                      setSecondaryPosition(null);
+                    } else if (!position) {
+                      setPosition(p);
+                    } else if (!secondaryPosition) {
+                      setSecondaryPosition(p);
+                    } else {
+                      setError(t('onboarding.v2.positionMax'));
+                    }
+                  }}
                 />
               ))}
             </ChipGrid>
@@ -422,13 +447,23 @@ export default function OnboardingScreen() {
             </ChipGrid>
 
             <Text style={styles.fieldLabel}>{t('onboarding.v2.devGoal')}</Text>
+            <Text style={styles.hint}>{t('onboarding.v2.devGoalHint', { n: developmentGoals.length, max: 3 })}</Text>
             <ChipGrid>
               {PLAYER_GOALS_V2.map((g) => (
                 <Chip
                   key={g}
                   label={t(GOAL_KEYS[g])}
-                  selected={developmentGoal === g}
-                  onPress={() => setDevelopmentGoal(g)}
+                  selected={developmentGoals.includes(g)}
+                  onPress={() => {
+                    setError(null);
+                    if (developmentGoals.includes(g)) {
+                      setDevelopmentGoals(developmentGoals.filter((goal) => goal !== g));
+                    } else if (developmentGoals.length < 3) {
+                      setDevelopmentGoals([...developmentGoals, g]);
+                    } else {
+                      setError(t('onboarding.v2.devGoalMax'));
+                    }
+                  }}
                 />
               ))}
             </ChipGrid>
@@ -489,13 +524,25 @@ export default function OnboardingScreen() {
             </ChipGrid>
 
             <Text style={styles.fieldLabel}>{t('onboarding.v2.coachGoal')}</Text>
+            <Text style={styles.hint}>
+              {t('onboarding.v2.coachGoalHint', { n: coachDevelopmentGoals.length, max: 3 })}
+            </Text>
             <ChipGrid>
               {COACH_GOALS_V2.map((g) => (
                 <Chip
                   key={g}
                   label={t(COACH_GOAL_KEYS[g])}
-                  selected={coachDevelopmentGoal === g}
-                  onPress={() => setCoachDevelopmentGoal(g)}
+                  selected={coachDevelopmentGoals.includes(g)}
+                  onPress={() => {
+                    setError(null);
+                    if (coachDevelopmentGoals.includes(g)) {
+                      setCoachDevelopmentGoals(coachDevelopmentGoals.filter((goal) => goal !== g));
+                    } else if (coachDevelopmentGoals.length < 3) {
+                      setCoachDevelopmentGoals([...coachDevelopmentGoals, g]);
+                    } else {
+                      setError(t('onboarding.v2.coachGoalMax'));
+                    }
+                  }}
                 />
               ))}
             </ChipGrid>

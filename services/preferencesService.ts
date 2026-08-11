@@ -51,13 +51,25 @@ export async function syncPreferencesToCloud(userId: string): Promise<{ error: s
     country: profile.country || null,
     onboarding_version: Math.max(Number(profile.onboardingVersion) || 0, 0),
     development_goal: profile.developmentGoal ?? profile.coachDevelopmentGoal ?? null,
+    development_goals: profile.developmentGoals.length ? profile.developmentGoals : null,
+    coach_development_goal: profile.coachDevelopmentGoal ?? null,
+    coach_development_goals: profile.coachDevelopmentGoals.length ? profile.coachDevelopmentGoals : null,
     primary_position: profile.position || null,
+    secondary_position: profile.secondaryPosition || null,
     dominant_hand: profile.dominantHand || null,
     playing_level: profile.playingLevel ?? null,
     club: profile.club || null,
   };
 
-  const { error: profileError } = await upsertProfile(profilePatch);
+  let { error: profileError } = await upsertProfile(profilePatch);
+  if (profileError) {
+    const {
+      development_goals: _developmentGoals,
+      coach_development_goals: _coachDevelopmentGoals,
+      ...legacyProfilePatch
+    } = profilePatch;
+    ({ error: profileError } = await upsertProfile(legacyProfilePatch));
+  }
   if (profileError) return { error: profileError };
 
   const prefs: UserPreferencesRow = {
@@ -110,8 +122,16 @@ export async function pullPreferencesFromCloud(userId: string): Promise<{ error:
         playingLevel: p.playing_level ?? localProfile.playingLevel,
         country: p.country ?? localProfile.country,
         club: p.club ?? localProfile.club,
-        developmentGoal: p.development_goal ?? localProfile.developmentGoal,
+        developmentGoal: p.development_goals?.[0] ?? p.development_goal ?? localProfile.developmentGoal,
+        developmentGoals: p.development_goals?.length
+          ? p.development_goals.slice(0, 3)
+          : p.development_goal ? [p.development_goal] : localProfile.developmentGoals,
         coachType: p.coach_type ?? localProfile.coachType,
+        coachDevelopmentGoal:
+          p.coach_development_goals?.[0] ?? p.coach_development_goal ?? localProfile.coachDevelopmentGoal,
+        coachDevelopmentGoals: p.coach_development_goals?.length
+          ? p.coach_development_goals.slice(0, 3)
+          : p.coach_development_goal ? [p.coach_development_goal] : localProfile.coachDevelopmentGoals,
         experienceBand: p.experience_band ?? localProfile.experienceBand,
         favoriteDefense:
           normalizeDefenseSystemId(p.favorite_defense) ??

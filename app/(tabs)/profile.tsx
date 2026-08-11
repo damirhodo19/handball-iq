@@ -129,6 +129,16 @@ function goalLabel(goal: string | null | undefined, t: TranslateFn): string {
   return goal;
 }
 
+function goalsLabel(goals: string[] | undefined, fallback: string | null | undefined, t: TranslateFn): string {
+  const values = goals?.length ? goals : fallback ? [fallback] : [];
+  return values.length ? values.map((goal) => goalLabel(goal, t)).join(' · ') : t('common.notSet');
+}
+
+function positionsLabel(primary: string | null | undefined, secondary: string | null | undefined, t: TranslateFn): string {
+  const positions = [primary, secondary].filter((position): position is string => Boolean(position));
+  return positions.length ? positions.map((position) => translatePosition(position, t)).join(' · ') : t('common.notSet');
+}
+
 function levelLabel(level: string | null | undefined, t: TranslateFn): string {
   if (!level) return t('common.notSet');
   if (level in LEVEL_KEYS) return t(LEVEL_KEYS[level as PlayingLevelId]);
@@ -312,21 +322,21 @@ export default function ProfileScreen() {
             {showPlayerFields && (
               <ControlRow
                 label={t('profile.position')}
-                value={profile?.position ? translatePosition(profile.position, t) : t('common.notSet')}
+                value={positionsLabel(profile?.position, profile?.secondaryPosition, t)}
                 onPress={startEdit}
               />
             )}
             {showPlayerFields && (
               <ControlRow
                 label={t('profile.devGoal')}
-                value={goalLabel(profile?.developmentGoal, t)}
+                value={goalsLabel(profile?.developmentGoals, profile?.developmentGoal, t)}
                 onPress={startEdit}
               />
             )}
             {showCoachFields && (
               <ControlRow
                 label={t('onboarding.v2.coachGoal')}
-                value={goalLabel(profile?.coachDevelopmentGoal, t)}
+                value={goalsLabel(profile?.coachDevelopmentGoals, profile?.coachDevelopmentGoal, t)}
                 onPress={startEdit}
               />
             )}
@@ -606,6 +616,9 @@ function EditForm({
   t: TranslateFn;
   onSave: () => void;
 }) {
+  const [goalSelectionError, setGoalSelectionError] = useState<string | null>(null);
+  const [coachGoalSelectionError, setCoachGoalSelectionError] = useState<string | null>(null);
+  const [positionSelectionError, setPositionSelectionError] = useState<string | null>(null);
   const showCoach = isCoachRole(draft.role);
   const showPlayer = isPlayerRole(draft.role);
   const patch = (partial: Partial<UserProfile>) => setDraft({ ...draft, ...partial });
@@ -637,46 +650,106 @@ function EditForm({
 
       {showPlayer && (
         <InputGroup label={t('profile.position').toUpperCase()}>
+          <Text style={styles.hint}>
+            {t('onboarding.v2.positionHint', { n: draft.position ? (draft.secondaryPosition ? 2 : 1) : 0, max: 2 })}
+          </Text>
           <ChipGrid>
             {ALL_POSITIONS.map((p) => (
               <Chip
                 key={p}
                 label={translatePosition(p, t)}
-                selected={draft.position === p}
-                onPress={() => patch({ position: p })}
+                selected={draft.position === p || draft.secondaryPosition === p}
+                onPress={() => {
+                  setPositionSelectionError(null);
+                  if (draft.position === p) {
+                    if (draft.secondaryPosition) {
+                      patch({ position: draft.secondaryPosition, secondaryPosition: null });
+                    } else {
+                      setPositionSelectionError(t('onboarding.v2.positionMin'));
+                    }
+                  } else if (draft.secondaryPosition === p) {
+                    patch({ secondaryPosition: null });
+                  } else if (!draft.position) {
+                    patch({ position: p });
+                  } else if (!draft.secondaryPosition) {
+                    patch({ secondaryPosition: p });
+                  } else {
+                    setPositionSelectionError(t('onboarding.v2.positionMax'));
+                  }
+                }}
               />
             ))}
           </ChipGrid>
+          {positionSelectionError && <Text style={styles.errorText}>{positionSelectionError}</Text>}
         </InputGroup>
       )}
 
       {showPlayer && (
         <InputGroup label={t('onboarding.v2.devGoal').toUpperCase()}>
+          <Text style={styles.hint}>{t('onboarding.v2.devGoalHint', { n: draft.developmentGoals.length, max: 3 })}</Text>
           <ChipGrid>
             {PLAYER_GOALS_V2.map((g) => (
               <Chip
                 key={g}
                 label={t(GOAL_KEYS[g])}
-                selected={draft.developmentGoal === g}
-                onPress={() => patch({ developmentGoal: g })}
+                selected={draft.developmentGoals.includes(g)}
+                onPress={() => {
+                  const selected = draft.developmentGoals.includes(g);
+                  if (selected && draft.developmentGoals.length === 1) {
+                    setGoalSelectionError(t('onboarding.v2.devGoalMin'));
+                    return;
+                  }
+                  if (!selected && draft.developmentGoals.length === 3) {
+                    setGoalSelectionError(t('onboarding.v2.devGoalMax'));
+                    return;
+                  }
+                  const developmentGoals = selected
+                    ? draft.developmentGoals.filter((goal) => goal !== g)
+                    : [...draft.developmentGoals, g];
+                  setGoalSelectionError(null);
+                  patch({ developmentGoals, developmentGoal: developmentGoals[0] ?? null });
+                }}
               />
             ))}
           </ChipGrid>
+          {goalSelectionError && <Text style={styles.errorText}>{goalSelectionError}</Text>}
         </InputGroup>
       )}
 
       {showCoach && (
         <InputGroup label={t('onboarding.v2.coachGoal').toUpperCase()}>
+          <Text style={styles.hint}>
+            {t('onboarding.v2.coachGoalHint', { n: draft.coachDevelopmentGoals.length, max: 3 })}
+          </Text>
           <ChipGrid>
             {COACH_GOALS_V2.map((g) => (
               <Chip
                 key={g}
                 label={t(COACH_GOAL_KEYS[g])}
-                selected={draft.coachDevelopmentGoal === g}
-                onPress={() => patch({ coachDevelopmentGoal: g })}
+                selected={draft.coachDevelopmentGoals.includes(g)}
+                onPress={() => {
+                  const selected = draft.coachDevelopmentGoals.includes(g);
+                  if (selected && draft.coachDevelopmentGoals.length === 1) {
+                    setCoachGoalSelectionError(t('onboarding.v2.coachGoalMin'));
+                    return;
+                  }
+                  if (!selected && draft.coachDevelopmentGoals.length === 3) {
+                    setCoachGoalSelectionError(t('onboarding.v2.coachGoalMax'));
+                    return;
+                  }
+                  const coachDevelopmentGoals = selected
+                    ? draft.coachDevelopmentGoals.filter((goal) => goal !== g)
+                    : [...draft.coachDevelopmentGoals, g];
+                  setCoachGoalSelectionError(null);
+                  patch({
+                    coachDevelopmentGoals,
+                    coachDevelopmentGoal: coachDevelopmentGoals[0] ?? null,
+                  });
+                }}
               />
             ))}
           </ChipGrid>
+          {coachGoalSelectionError && <Text style={styles.errorText}>{coachGoalSelectionError}</Text>}
         </InputGroup>
       )}
 
@@ -802,7 +875,25 @@ function EditForm({
         </View>
       </InputGroup>
 
-      <Button label={t('common.save')} onPress={onSave} iconRight={<Check size={20} color={Colors.background} />} />
+      <Button
+        label={t('common.save')}
+        onPress={() => {
+          if (showPlayer && !draft.position) {
+            setPositionSelectionError(t('onboarding.v2.positionMin'));
+            return;
+          }
+          if (showPlayer && draft.developmentGoals.length === 0) {
+            setGoalSelectionError(t('onboarding.v2.devGoalMin'));
+            return;
+          }
+          if (showCoach && draft.coachDevelopmentGoals.length === 0) {
+            setCoachGoalSelectionError(t('onboarding.v2.coachGoalMin'));
+            return;
+          }
+          onSave();
+        }}
+        iconRight={<Check size={20} color={Colors.background} />}
+      />
     </>
   );
 }
@@ -880,6 +971,8 @@ function Toggle({ value, onToggle }: { value: boolean; onToggle: () => void }) {
 }
 
 const styles = StyleSheet.create({
+  hint: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, marginBottom: Spacing.sm },
+  errorText: { fontFamily: 'Inter-Medium', fontSize: 12, color: Colors.error, marginTop: Spacing.sm },
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
   header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, marginBottom: Spacing.lg },
   headerIcon: { width: 40, height: 40, borderRadius: 12, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },

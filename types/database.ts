@@ -27,11 +27,13 @@ export interface Profile {
   club: string | null;
   team_id: string | null;
   development_goal: string | null;
+  development_goals: string[] | null;
   coach_type: string | null;
   experience_band: string | null;
   favorite_defense: string | null;
   favorite_attack: string | null;
   coach_development_goal: string | null;
+  coach_development_goals: string[] | null;
   preferred_language: string | null;
   theme: string | null;
   onboarding_version: number | null;

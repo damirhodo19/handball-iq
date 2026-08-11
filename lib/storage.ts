@@ -24,11 +24,15 @@ export interface UserProfile {
   experienceLevel: string;
   playingLevel: string | null;
   developmentGoal: string | null;
+  /** Up to three player development goals. developmentGoal remains the primary legacy value. */
+  developmentGoals: string[];
   coachType?: string | null;
   experienceBand?: string | null;
   favoriteDefense?: string | null;
   favoriteAttack?: string | null;
   coachDevelopmentGoal?: string | null;
+  /** Up to three coach development goals. coachDevelopmentGoal remains the primary legacy value. */
+  coachDevelopmentGoals: string[];
   onboardingVersion: number;
   notificationsEnabled?: boolean;
 }
@@ -95,11 +99,13 @@ const DEFAULT_PROFILE: UserProfile = {
   experienceLevel: '',
   playingLevel: null,
   developmentGoal: null,
+  developmentGoals: [],
   coachType: null,
   experienceBand: null,
   favoriteDefense: null,
   favoriteAttack: null,
   coachDevelopmentGoal: null,
+  coachDevelopmentGoals: [],
   onboardingVersion: 0,
   notificationsEnabled: true,
 };
@@ -129,11 +135,40 @@ function daysBetween(a: string, b: string): number {
 
 export function loadProfile(): UserProfile {
   const stored = getItem<Partial<UserProfile>>(KEYS.PROFILE, {});
-  return { ...DEFAULT_PROFILE, ...stored };
+  const profile = { ...DEFAULT_PROFILE, ...stored };
+  const goals = Array.from(new Set([
+    ...(Array.isArray(stored.developmentGoals) ? stored.developmentGoals : []),
+    ...(stored.developmentGoal ? [stored.developmentGoal] : []),
+  ].filter((goal): goal is string => typeof goal === 'string' && goal.length > 0))).slice(0, 3);
+  const coachGoals = Array.from(new Set([
+    ...(Array.isArray(stored.coachDevelopmentGoals) ? stored.coachDevelopmentGoals : []),
+    ...(stored.coachDevelopmentGoal ? [stored.coachDevelopmentGoal] : []),
+  ].filter((goal): goal is string => typeof goal === 'string' && goal.length > 0))).slice(0, 3);
+  return {
+    ...profile,
+    developmentGoal: goals[0] ?? null,
+    developmentGoals: goals,
+    coachDevelopmentGoal: coachGoals[0] ?? null,
+    coachDevelopmentGoals: coachGoals,
+  };
 }
 
 export function saveProfile(profile: UserProfile): void {
-  const next: UserProfile = { ...profile };
+  const goals = Array.from(new Set([
+    ...(Array.isArray(profile.developmentGoals) ? profile.developmentGoals : []),
+    ...(profile.developmentGoal ? [profile.developmentGoal] : []),
+  ].filter((goal): goal is string => typeof goal === 'string' && goal.length > 0))).slice(0, 3);
+  const coachGoals = Array.from(new Set([
+    ...(Array.isArray(profile.coachDevelopmentGoals) ? profile.coachDevelopmentGoals : []),
+    ...(profile.coachDevelopmentGoal ? [profile.coachDevelopmentGoal] : []),
+  ].filter((goal): goal is string => typeof goal === 'string' && goal.length > 0))).slice(0, 3);
+  const next: UserProfile = {
+    ...profile,
+    developmentGoal: goals[0] ?? null,
+    developmentGoals: goals,
+    coachDevelopmentGoal: coachGoals[0] ?? null,
+    coachDevelopmentGoals: coachGoals,
+  };
   const defense = normalizeDefenseSystemId(next.favoriteDefense);
   if (defense) next.favoriteDefense = defense;
   const attack = normalizeAttackStyleId(next.favoriteAttack);
