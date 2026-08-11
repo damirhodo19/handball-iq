@@ -33,6 +33,7 @@ import { useSettings } from '@/context/SettingsContext';
 import { useTheme } from '@/context/ThemeContext';
 import { useSignOut } from '@/hooks/useSignOut';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useAdminAccess } from '@/hooks/useAdminAccess';
 import type { SupportedLanguage } from '@/locales';
 import { loadDevelopmentState, updateNotificationPrefs } from '@/lib/development';
 import { loadProfile } from '@/lib/storage';
@@ -61,6 +62,7 @@ export default function SettingsScreen() {
   const { preference, setPreference } = useTheme();
   const signOut = useSignOut();
   const { lang, setLang, t } = useTranslation();
+  const { isAdmin } = useAdminAccess();
   const [langModal, setLangModal] = useState(false);
   const [themeModal, setThemeModal] = useState(false);
   const [aboutModal, setAboutModal] = useState(false);
@@ -214,8 +216,8 @@ export default function SettingsScreen() {
           </TouchableOpacity>
         </Card>
 
-        {/* Admin — development builds only */}
-        {__DEV__ ? (
+        {/* Admin — visible only to accounts approved by Supabase. */}
+        {isAdmin ? (
           <>
             <SectionLabel label={t('settings.adminSection')} />
             <Card variant="gradient" shadow="card" style={styles.groupCard}>
