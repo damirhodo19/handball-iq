@@ -17,6 +17,8 @@ import { useTeamPlatform } from '@/hooks/useTeamPlatform';
 import { renderCoachMessage } from '@/lib/coach-i18n';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateRole } from '@/lib/translations';
+import { loadCoachAttendance, loadCoachRoster } from '@/lib/coach-workspace';
+import { getActiveTeam } from '@/lib/team-platform/platform';
 
 const INIT_TIMEOUT_MS = 8000;
 
@@ -29,6 +31,7 @@ export default function CoachDashboardHome() {
   const [topRecs, setTopRecs] = useState<TrainingRecommendation[]>([]);
   const [timedOut, setTimedOut] = useState(false);
   const [dataError, setDataError] = useState(false);
+  const [workspaceOverview, setWorkspaceOverview] = useState({ rosterCount: 0, attendanceRate: 0, hasAttendance: false });
   const coachId = user?.id ?? (isDevAuthenticated ? 'dev_coach' : undefined);
   const { team: platformTeam, stats: platformStats, init, refresh: refreshTeam } = useTeamPlatform(coachId, coach?.name);
 
@@ -45,6 +48,19 @@ export default function CoachDashboardHome() {
       setStats(getTeamStats());
       setCoach(loadCoachAccount());
       setTopRecs(generateTeamRecommendations().slice(0, 3));
+      if (coachId) {
+        const teamKey = getActiveTeam()?.id ?? 'default';
+        const roster = loadCoachRoster(coachId, teamKey);
+        const now = new Date();
+        const today = `${now.getFullYear()}-${`${now.getMonth() + 1}`.padStart(2, '0')}-${`${now.getDate()}`.padStart(2, '0')}`;
+        const attendance = loadCoachAttendance(coachId, teamKey, today);
+        const present = attendance.filter((entry) => entry.status === 'present').length;
+        setWorkspaceOverview({
+          rosterCount: roster.length,
+          attendanceRate: attendance.length ? Math.round((present / attendance.length) * 100) : 0,
+          hasAttendance: attendance.length > 0,
+        });
+      }
       if (coachId && !platformTeam) init();
       refreshTeam();
       setDataError(false);
@@ -168,9 +184,9 @@ export default function CoachDashboardHome() {
           <Animated.View entering={FadeInDown.delay(50).duration(500)}>
             <Text style={styles.sectionLabel}>{t('coachDashboard.teamOverview')}</Text>
             <View style={styles.statsGrid}>
-              <StatCard icon={<Users size={18} color={Colors.gold} />} value={`${platformStats?.rosterCount ?? (stats as TeamStats)?.totalPlayers ?? 0}`} label={t('team.roster')} />
+              <StatCard icon={<Users size={18} color={Colors.gold} />} value={`${workspaceOverview.rosterCount || platformStats?.rosterCount || (stats as TeamStats)?.totalPlayers || 0}`} label={t('team.roster')} />
               <StatCard icon={<Activity size={18} color={Colors.success} />} value={`${platformStats?.dailyActivity ?? (stats as TeamStats)?.todayActive ?? 0}`} label={t('team.dailyActivity')} />
-              <StatCard icon={<Target size={18} color={Colors.info} />} value={`${platformStats?.attendanceRate ?? 0}%`} label={t('team.attendance')} />
+              <StatCard icon={<Target size={18} color={Colors.info} />} value={`${workspaceOverview.hasAttendance ? workspaceOverview.attendanceRate : (platformStats?.attendanceRate ?? 0)}%`} label={t('team.attendance')} />
               <StatCard icon={<Brain size={18} color={Colors.gold} />} value={`${platformStats?.avgDecisionScore ?? (stats as TeamStats)?.avgDecisionScore ?? 0}`} label={t('coachDashboard.avgDecision')} />
             </View>
           </Animated.View>
@@ -236,6 +252,7 @@ export default function CoachDashboardHome() {
           <Text style={styles.sectionLabel}>{t('coachDashboard.management')}</Text>
           <View style={styles.menuCol}>
             <MenuItem icon={<Users size={20} color={Colors.gold} />} title={t('coachDashboard.playerList')} subtitle={t('coachDashboard.playerListSub')} onPress={() => router.push('/coach-dashboard/players')} />
+            <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('team.attendanceManager')} subtitle={t('team.attendanceManagerSub')} onPress={() => router.push('/coach-dashboard/attendance' as never)} />
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('coachDashboard.teamAnalysis')} subtitle={t('coachDashboard.teamAnalysisSub')} onPress={() => router.push('/coach-dashboard/team-analysis')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('coachDashboard.sessionAssignment')} subtitle={t('coachDashboard.sessionAssignmentSub')} onPress={() => router.push('/coach-dashboard/assign')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.invitePlayers')} subtitle={t('team.inviteSub')} onPress={() => router.push('/coach-dashboard/invite')} />

@@ -220,6 +220,24 @@ export function CoachHome({
           <ChevronRight size={16} color={Colors.gold} />
         </PressableCard>
 
+        <PressableCard onPress={() => router.push('/coach-dashboard/attendance' as never)} variant="gradient" style={styles.softCard}>
+          <ClipboardList size={18} color={Colors.gold} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.softText}>{t('team.attendanceManager')}</Text>
+            <Text style={styles.linkSub}>{t('team.attendanceManagerSub')}</Text>
+          </View>
+          <ChevronRight size={16} color={Colors.gold} />
+        </PressableCard>
+
+        <PressableCard onPress={() => router.push('/coach-dashboard/notes')} variant="gradient" style={styles.softCard}>
+          <BookOpen size={18} color={Colors.gold} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.softText}>{t('team.coachNotes')}</Text>
+            <Text style={styles.linkSub}>{t('team.coachNotesSub')}</Text>
+          </View>
+          <ChevronRight size={16} color={Colors.gold} />
+        </PressableCard>
+
         <PressableCard onPress={() => router.push('/coach-dashboard')} variant="gradient" style={styles.softCard}>
           <Users size={18} color={Colors.gold} />
           <View style={{ flex: 1 }}>

@@ -18,6 +18,7 @@ export default function CoachDashboardLayout() {
       <Stack.Screen name="invite" />
       <Stack.Screen name="join" />
       <Stack.Screen name="players" />
+      <Stack.Screen name="attendance" />
       <Stack.Screen name="player-report" />
       <Stack.Screen name="team-analysis" />
       <Stack.Screen name="assign" />
