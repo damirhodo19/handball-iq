@@ -16,6 +16,8 @@ const USER_SCOPED_KEYS = [
   'hbiq_matches',
   'hbiq_development',
   'hbiq_coach_dev_state',
+  'hbiq_coach_workspace_v1',
+  'hbiq_coach_player_goals_v1',
   'hbiq_offline_queue',
   'hbiq_synced_records',
   'hbiq_sync_status',

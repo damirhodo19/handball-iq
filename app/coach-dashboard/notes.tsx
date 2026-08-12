@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { NotebookPen, Trash2, UserRound } from 'lucide-react-native';
 
 import { BackButton } from '@/components/BackButton';
@@ -31,8 +31,9 @@ export default function CoachNotesScreen() {
   const coachId = user?.id ?? 'dev_coach';
   const team = getActiveTeam();
   const teamKey = team?.id ?? 'default';
+  const { rosterPlayerId } = useLocalSearchParams<{ rosterPlayerId?: string }>();
   const [players, setPlayers] = useState<CoachRosterPlayer[]>([]);
-  const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(null);
+  const [selectedPlayerId, setSelectedPlayerId] = useState<string | null>(rosterPlayerId || null);
   const [noteType, setNoteType] = useState<NoteType>('general');
   const [content, setContent] = useState('');
   const [notes, setNotes] = useState<CoachWorkspaceNote[]>([]);

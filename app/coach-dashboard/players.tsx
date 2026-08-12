@@ -1,45 +1,83 @@
-import { useState, useCallback } from 'react';
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { useCallback, useMemo, useState } from 'react';
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { Search, TrendingUp, TrendingDown, Minus, ChevronRight } from 'lucide-react-native';
-import { Colors, Spacing, Radius } from '@/lib/theme';
+import { CheckCircle2, ChevronRight, Link2, Search, UserRound } from 'lucide-react-native';
+
+import { BackButton } from '@/components/BackButton';
 import { Card } from '@/components/Card';
 import { EmptyState } from '@/components/EmptyState';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
-import { BackButton } from '@/components/BackButton';
-import { loadPlayers, PlayerProfile } from '@/lib/coach-dashboard-data';
+import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
+import {
+  loadCoachAttendanceHistoryForTeam,
+  loadCoachRosterForTeam,
+  syncCoachWorkspaceForTeam,
+  type CoachRosterPlayer,
+} from '@/lib/coach-workspace';
+import { fetchAssignments, fetchTeamMembers, getActiveTeam } from '@/lib/team-platform/platform';
+import type { TeamMemberRecord, TrainingAssignment } from '@/lib/team-platform/types';
+import { Colors, Radius, Spacing } from '@/lib/theme';
 import { translatePosition } from '@/lib/translations';
+
+interface PlayerListItem {
+  rosterId: string | null;
+  userId: string | null;
+  name: string;
+  position: string | null;
+  secondaryPosition: string | null;
+  decisionScore: number;
+  xp: number;
+  improvement: number;
+  attendanceRate: number | null;
+  activeAssignments: number;
+}
 
 export default function PlayersScreen() {
   const { t } = useTranslation();
-  const [players, setPlayers] = useState<PlayerProfile[]>([]);
+  const { user } = useAuth();
+  const coachId = user?.id ?? 'dev_coach';
+  const team = getActiveTeam();
+  const teamKey = team?.id ?? 'default';
+  const [players, setPlayers] = useState<PlayerListItem[]>([]);
   const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  const refresh = useCallback(async () => {
+    setLoading(true);
+    await syncCoachWorkspaceForTeam(coachId, teamKey);
+    const roster = loadCoachRosterForTeam(coachId, teamKey);
+    const members = team ? await fetchTeamMembers(team.id) : [];
+    const assignments = team ? await fetchAssignments(team.id) : [];
+    setPlayers(buildPlayerList(roster, members, assignments, coachId, teamKey));
+    setLoading(false);
+  }, [coachId, team, teamKey]);
 
   useFocusEffect(useCallback(() => {
-    setPlayers(loadPlayers());
-  }, []));
+    void refresh();
+  }, [refresh]));
 
-  const filtered = players.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase()) ||
-    p.club.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = useMemo(() => {
+    const needle = search.trim().toLowerCase();
+    if (!needle) return players;
+    return players.filter((player) =>
+      player.name.toLowerCase().includes(needle) ||
+      (player.position ?? '').toLowerCase().includes(needle),
+    );
+  }, [players, search]);
 
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-
-        {/* Header */}
         <View style={styles.header}>
           <BackButton />
-          <View style={{ flex: 1 }}>
+          <View style={styles.headerCopy}>
             <Text style={styles.headerTitle}>{t('cdPlayers.title')}</Text>
             <Text style={styles.headerSub}>{t('cdPlayers.subtitle', { n: players.length })}</Text>
           </View>
         </View>
 
-        {/* Search */}
         <View style={styles.searchWrap}>
           <Search size={16} color={Colors.textQuaternary} />
           <TextInput
@@ -51,18 +89,65 @@ export default function PlayersScreen() {
           />
         </View>
 
-        {/* Player cards */}
-        {filtered.map((player, i) => (
-          <PlayerCard key={player.id} player={player} index={i} onPress={() => router.push({ pathname: '/coach-dashboard/player-report', params: { playerId: player.id } })} />
+        {filtered.map((player, index) => (
+          <Animated.View key={player.rosterId ?? player.userId ?? player.name} entering={FadeInDown.delay(index * 35).duration(350)}>
+            <TouchableOpacity
+              activeOpacity={0.85}
+              onPress={() => router.push({
+                pathname: '/coach-dashboard/player-hub',
+                params: {
+                  rosterPlayerId: player.rosterId ?? '',
+                  playerId: player.userId ?? '',
+                  playerName: player.name,
+                  position: player.position ?? '',
+                },
+              } as never)}
+            >
+              <Card variant="gradient" shadow="card" style={styles.playerCard}>
+                <View style={styles.playerHeader}>
+                  <View style={styles.avatar}><UserRound size={20} color={Colors.gold} /></View>
+                  <View style={styles.playerCopy}>
+                    <Text style={styles.playerName}>{player.name}</Text>
+                    <Text style={styles.playerMeta}>
+                      {player.position ? translatePosition(player.position, t) : t('team.positionNotSet')}
+                      {player.secondaryPosition ? ` · ${translatePosition(player.secondaryPosition, t)}` : ''}
+                    </Text>
+                  </View>
+                  {player.userId ? <Link2 size={16} color={Colors.success} /> : null}
+                  <ChevronRight size={18} color={Colors.gold} />
+                </View>
+
+                <View style={styles.metrics}>
+                  <Metric value={player.attendanceRate == null ? '—' : `${player.attendanceRate}%`} label={t('team.attendance')} />
+                  <Metric value={player.userId ? `${player.decisionScore}%` : '—'} label={t('cdPlayers.decision')} />
+                  <Metric value={String(player.activeAssignments)} label={t('coachPlayerHub.activeTasks')} />
+                </View>
+                {player.userId ? (
+                  <View style={styles.progressWrap}>
+                    <View style={styles.progressCopy}>
+                      <Text style={styles.progressLabel}>{t('coachPlayerHub.development')}</Text>
+                      <Text style={styles.progressValue}>+{player.improvement}% · {player.xp} XP</Text>
+                    </View>
+                    <ProgressBar progress={Math.max(0, Math.min(1, player.decisionScore / 100))} height={5} color={Colors.gold} />
+                  </View>
+                ) : (
+                  <View style={styles.manualRow}>
+                    <CheckCircle2 size={14} color={Colors.textTertiary} />
+                    <Text style={styles.manualText}>{t('coachPlayerHub.manualPlayerHint')}</Text>
+                  </View>
+                )}
+              </Card>
+            </TouchableOpacity>
+          </Animated.View>
         ))}
 
-        {filtered.length === 0 ? (
+        {!loading && filtered.length === 0 ? (
           <EmptyState
             icon={<Search size={28} color={Colors.gold} />}
             title={t('cdPlayers.empty')}
             description={search ? t('cdPlayers.emptySearch') : t('cdPlayers.emptySub')}
-            actionLabel={search ? t('common.clearAll') : undefined}
-            onAction={search ? () => setSearch('') : undefined}
+            actionLabel={search ? t('common.clearAll') : t('team.openAttendance')}
+            onAction={search ? () => setSearch('') : () => router.push('/coach-dashboard/attendance')}
           />
         ) : null}
       </ScrollView>
@@ -70,94 +155,83 @@ export default function PlayersScreen() {
   );
 }
 
-function PlayerCard({ player, index, onPress }: { player: PlayerProfile; index: number; onPress: () => void }) {
-  const { t } = useTranslation();
-  const trendColor = player.weeklyTrend > 0 ? Colors.success : player.weeklyTrend < 0 ? Colors.error : Colors.textTertiary;
-  const TrendIcon = player.weeklyTrend > 0 ? TrendingUp : player.weeklyTrend < 0 ? TrendingDown : Minus;
-  const decisionColor = player.decisionScore >= 75 ? Colors.success : player.decisionScore >= 55 ? Colors.gold : Colors.warning;
-  const lastSession = player.lastSessionDate
-    ? new Date(player.lastSessionDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
-    : t('cdPlayers.noSessions');
+function buildPlayerList(
+  roster: CoachRosterPlayer[],
+  members: TeamMemberRecord[],
+  assignments: TrainingAssignment[],
+  coachId: string,
+  teamKey: string,
+): PlayerListItem[] {
+  const playerMembers = members.filter((member) => member.member_role === 'player');
+  const memberByUser = new Map(playerMembers.map((member) => [member.user_id, member]));
+  const rows: PlayerListItem[] = roster.map((entry) => {
+    const member = entry.linked_user_id ? memberByUser.get(entry.linked_user_id) : undefined;
+    const attendance = loadCoachAttendanceHistoryForTeam(coachId, teamKey, entry.id);
+    const present = attendance.filter((item) => item.status === 'present').length;
+    return {
+      rosterId: entry.id,
+      userId: entry.linked_user_id,
+      name: member?.display_name ?? entry.display_name,
+      position: member?.position ?? entry.position,
+      secondaryPosition: member?.secondary_position ?? null,
+      decisionScore: member?.decision_score ?? 0,
+      xp: member?.total_xp ?? 0,
+      improvement: member?.improvement ?? 0,
+      attendanceRate: attendance.length ? Math.round((present / attendance.length) * 100) : null,
+      activeAssignments: entry.linked_user_id
+        ? assignments.filter((assignment) => assignment.player_id === entry.linked_user_id && assignment.status !== 'completed').length
+        : 0,
+    };
+  });
+  for (const member of playerMembers) {
+    if (rows.some((row) => row.userId === member.user_id)) continue;
+    rows.push({
+      rosterId: null,
+      userId: member.user_id,
+      name: member.display_name ?? member.email ?? 'Player',
+      position: member.position ?? null,
+      secondaryPosition: member.secondary_position ?? null,
+      decisionScore: member.decision_score ?? 0,
+      xp: member.total_xp ?? 0,
+      improvement: member.improvement ?? 0,
+      attendanceRate: null,
+      activeAssignments: assignments.filter((assignment) => assignment.player_id === member.user_id && assignment.status !== 'completed').length,
+    });
+  }
+  return rows.sort((a, b) => a.name.localeCompare(b.name));
+}
 
+function Metric({ value, label }: { value: string; label: string }) {
   return (
-    <Animated.View entering={FadeInDown.delay(index * 40).duration(400)}>
-      <TouchableOpacity activeOpacity={0.85} onPress={onPress}>
-        <Card variant="gradient" shadow="card" style={styles.playerCard}>
-          <View style={styles.playerHeader}>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.playerName}>{player.name}</Text>
-              <Text style={styles.playerMeta}>{translatePosition(player.position, t)} · {player.age} {t('common.yrs')} · {player.club}</Text>
-            </View>
-            <View style={[styles.trendBadge, { backgroundColor: trendColor + '22', borderColor: trendColor }]}>
-              <TrendIcon size={12} color={trendColor} />
-              <Text style={[styles.trendText, { color: trendColor }]}>
-                {player.weeklyTrend > 0 ? '+' : ''}{player.weeklyTrend}
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.scoresRow}>
-            <View style={styles.scoreCol}>
-              <Text style={[styles.scoreValue, { color: decisionColor }]}>{player.decisionScore}</Text>
-              <Text style={styles.scoreLabel}>{t('cdPlayers.decision')}</Text>
-              <ProgressBar progress={player.decisionScore / 100} height={4} color={decisionColor} />
-            </View>
-            <View style={styles.scoreCol}>
-              <Text style={[styles.scoreValue, { color: Colors.gold }]}>{player.mentalReadiness}</Text>
-              <Text style={styles.scoreLabel}>{t('cdPlayers.mental')}</Text>
-              <ProgressBar progress={player.mentalReadiness / 100} height={4} color={Colors.gold} />
-            </View>
-            <View style={styles.scoreCol}>
-              <Text style={styles.scoreValueSmall}>{lastSession}</Text>
-              <Text style={styles.scoreLabel}>{t('cdPlayers.lastSession')}</Text>
-              <View style={styles.sessionsPill}>
-                <Text style={styles.sessionsText}>{t('cdPlayers.total', { n: player.sessionsCompleted })}</Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={styles.footerRow}>
-            {player.assignedSession && (
-              <View style={styles.assignedPill}>
-                <Text style={styles.assignedText}>{t('cdPlayers.assigned', { type: player.assignedSession.type })}</Text>
-              </View>
-            )}
-            <ChevronRight size={18} color={Colors.gold} style={{ marginLeft: 'auto' }} />
-          </View>
-        </Card>
-      </TouchableOpacity>
-    </Animated.View>
+    <View style={styles.metric}>
+      <Text style={styles.metricValue}>{value}</Text>
+      <Text style={styles.metricLabel}>{label}</Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },
-
-  header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.lg },
+  scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl, gap: Spacing.sm },
+  header: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, marginBottom: Spacing.sm },
+  headerCopy: { flex: 1 },
   headerTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 22, color: Colors.textPrimary },
-  headerSub: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 13, marginTop: 2 },
-
-  searchWrap: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, backgroundColor: Colors.surfaceRaised, borderRadius: Radius.md, borderWidth: 1.5, borderColor: Colors.border, paddingHorizontal: Spacing.md, paddingVertical: 12, marginBottom: Spacing.md },
+  headerSub: { fontFamily: 'Inter-Regular', fontSize: 13, color: Colors.textTertiary, marginTop: 2 },
+  searchWrap: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, backgroundColor: Colors.surfaceRaised, borderRadius: Radius.md, borderWidth: 1.5, borderColor: Colors.border, paddingHorizontal: Spacing.md, minHeight: 48, marginBottom: Spacing.sm },
   searchInput: { flex: 1, color: Colors.textPrimary, fontFamily: 'Inter-Medium', fontSize: 15 },
-
-  playerCard: { gap: Spacing.sm, marginBottom: Spacing.sm },
-  playerHeader: { flexDirection: 'row', alignItems: 'flex-start', gap: Spacing.md },
-  playerName: { fontFamily: 'Inter-ExtraBold', fontSize: 17, color: Colors.textPrimary },
+  playerCard: { gap: Spacing.md },
+  playerHeader: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },
+  avatar: { width: 40, height: 40, borderRadius: 20, backgroundColor: Colors.goldSoft, alignItems: 'center', justifyContent: 'center' },
+  playerCopy: { flex: 1, minWidth: 0 },
+  playerName: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary },
   playerMeta: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, marginTop: 2 },
-  trendBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 8, paddingVertical: 4, borderRadius: Radius.sm, borderWidth: 1 },
-  trendText: { fontFamily: 'Inter-ExtraBold', fontSize: 12 },
-
-  scoresRow: { flexDirection: 'row', gap: Spacing.md },
-  scoreCol: { flex: 1, gap: 4 },
-  scoreValue: { fontFamily: 'Inter-ExtraBold', fontSize: 20 },
-  scoreValueSmall: { fontFamily: 'Inter-ExtraBold', fontSize: 14, color: Colors.textSecondary },
-  scoreLabel: { fontFamily: 'Inter-SemiBold', fontSize: 10, color: Colors.textQuaternary, letterSpacing: 0.5 },
-  sessionsPill: { backgroundColor: Colors.surfaceRaised, borderRadius: Radius.sm, paddingHorizontal: 6, paddingVertical: 2, alignSelf: 'flex-start' },
-  sessionsText: { fontFamily: 'Inter-SemiBold', fontSize: 10, color: Colors.textTertiary },
-
-  footerRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, borderTopWidth: 1, borderTopColor: Colors.hairline, paddingTop: Spacing.sm },
-  assignedPill: { backgroundColor: Colors.goldSoft, borderRadius: Radius.pill, paddingHorizontal: 10, paddingVertical: 4, borderWidth: 1, borderColor: Colors.gold },
-  assignedText: { fontFamily: 'Inter-SemiBold', fontSize: 11, color: Colors.gold },
-
-  emptyText: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 14, textAlign: 'center', marginTop: Spacing.xxl },
+  metrics: { flexDirection: 'row', gap: Spacing.sm },
+  metric: { flex: 1, backgroundColor: Colors.surfaceRaised, borderRadius: Radius.sm, padding: Spacing.sm, alignItems: 'center' },
+  metricValue: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.gold },
+  metricLabel: { fontFamily: 'Inter-SemiBold', fontSize: 9, color: Colors.textTertiary, textAlign: 'center', marginTop: 2 },
+  progressWrap: { gap: 6 },
+  progressCopy: { flexDirection: 'row', justifyContent: 'space-between', gap: Spacing.sm },
+  progressLabel: { fontFamily: 'Inter-SemiBold', fontSize: 11, color: Colors.textTertiary },
+  progressValue: { fontFamily: 'Inter-SemiBold', fontSize: 11, color: Colors.gold },
+  manualRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  manualText: { flex: 1, fontFamily: 'Inter-Regular', fontSize: 11, color: Colors.textTertiary },
 });

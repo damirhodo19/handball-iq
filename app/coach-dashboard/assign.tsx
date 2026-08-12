@@ -8,8 +8,8 @@ import { Card, PressableCard } from '@/components/Card';
 import { ScreenBackground } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
-import { loadPlayers, loadCoachAccount, assignSession, PlayerProfile, SessionType } from '@/lib/coach-dashboard-data';
-import { assignTraining, getActiveTeam } from '@/lib/team-platform/platform';
+import { loadPlayers, loadCoachAccount, assignSession, SessionType } from '@/lib/coach-dashboard-data';
+import { assignTraining, fetchTeamMembers, getActiveTeam } from '@/lib/team-platform/platform';
 import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSessionType, translatePosition } from '@/lib/translations';
@@ -33,12 +33,20 @@ const SESSION_ICONS: Record<SessionType, string> = {
   'Mental Training': 'Mental',
 };
 
+interface AssignablePlayer {
+  id: string;
+  name: string;
+  position: string;
+  club: string;
+  legacy: boolean;
+}
+
 export default function AssignScreen() {
   const { t } = useTranslation();
   const { user } = useAuth();
   const { playerId, sessionType } = useLocalSearchParams<{ playerId?: string; sessionType?: SessionType }>();
-  const [players, setPlayers] = useState<PlayerProfile[]>([]);
-  const [selectedPlayer, setSelectedPlayer] = useState<PlayerProfile | null>(null);
+  const [players, setPlayers] = useState<AssignablePlayer[]>([]);
+  const [selectedPlayer, setSelectedPlayer] = useState<AssignablePlayer | null>(null);
   const [selectedSession, setSelectedSession] = useState<SessionType | null>(sessionType ?? null);
   const [position, setPosition] = useState('');
   const [difficulty, setDifficulty] = useState('Intermediate');
@@ -51,12 +59,34 @@ export default function AssignScreen() {
   const [assignError, setAssignError] = useState<string | null>(null);
 
   useFocusEffect(useCallback(() => {
-    const all = loadPlayers();
-    setPlayers(all);
-    if (playerId) {
-      const p = all.find((x) => x.id === playerId);
-      if (p) setSelectedPlayer(p);
-    }
+    let active = true;
+    (async () => {
+      const team = getActiveTeam();
+      const members = team ? await fetchTeamMembers(team.id) : [];
+      const connected: AssignablePlayer[] = members
+        .filter((member) => member.member_role === 'player')
+        .map((member) => ({
+          id: member.user_id,
+          name: member.display_name ?? member.email ?? 'Player',
+          position: member.position ?? '',
+          club: team?.name ?? '',
+          legacy: false,
+        }));
+      const legacy: AssignablePlayer[] = loadPlayers()
+        .filter((oldPlayer) => !connected.some((item) => item.id === oldPlayer.id))
+        .map((oldPlayer) => ({ id: oldPlayer.id, name: oldPlayer.name, position: oldPlayer.position, club: oldPlayer.club, legacy: true }));
+      const all = [...connected, ...legacy];
+      if (!active) return;
+      setPlayers(all);
+      if (playerId) {
+        const selected = all.find((item) => item.id === playerId);
+        if (selected) {
+          setSelectedPlayer(selected);
+          setPosition((current) => current || selected.position);
+        }
+      }
+    })();
+    return () => { active = false; };
   }, [playerId]));
 
   const handleAssign = async () => {
@@ -66,16 +96,9 @@ export default function AssignScreen() {
     }
     setAssignError(null);
     const coach = loadCoachAccount();
-    assignSession(
-      selectedPlayer.id,
-      selectedSession,
-      dueDate,
-      note.trim() || t('cdAssign.defaultNote', { coach: coach?.name ?? t('role.coach') }),
-      coach?.name ?? t('role.coach'),
-    );
 
     const team = getActiveTeam();
-    if (team) {
+    if (team && !selectedPlayer.legacy) {
       const { error } = await assignTraining({
         coach_id: user?.id ?? 'dev_coach',
         team_id: team.id,
@@ -91,6 +114,14 @@ export default function AssignScreen() {
         setAssignError(mapServiceError(error, t));
         return;
       }
+    } else if (selectedPlayer.legacy) {
+      assignSession(
+        selectedPlayer.id,
+        selectedSession,
+        dueDate,
+        note.trim() || t('cdAssign.defaultNote', { coach: coach?.name ?? t('role.coach') }),
+        coach?.name ?? t('role.coach'),
+      );
     }
 
     setShowSuccess(true);
@@ -242,7 +273,7 @@ export default function AssignScreen() {
                 >
                   <View style={{ flex: 1 }}>
                     <Text style={styles.modalPlayerName}>{p.name}</Text>
-                    <Text style={styles.modalPlayerMeta}>{translatePosition(p.position, t)} · {p.age} {t('common.yrs')} · {p.club}</Text>
+                    <Text style={styles.modalPlayerMeta}>{p.position ? translatePosition(p.position, t) : t('team.positionNotSet')} · {p.club}</Text>
                   </View>
                   {selectedPlayer?.id === p.id && <Check size={18} color={Colors.gold} />}
                 </TouchableOpacity>

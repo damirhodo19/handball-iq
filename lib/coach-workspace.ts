@@ -117,6 +117,19 @@ export function loadCoachAttendanceForTeam(
     .filter((entry, index, all) => all.findIndex((item) => item.id === entry.id) === index);
 }
 
+export function loadCoachAttendanceHistoryForTeam(
+  coachId: string,
+  teamKey: string,
+  rosterPlayerId?: string,
+): CoachAttendanceEntry[] {
+  const keys = teamKey === 'default' ? ['default'] : [teamKey, 'default'];
+  return keys
+    .flatMap((key) => scoped(loadState().attendance, coachId, key))
+    .filter((entry) => !rosterPlayerId || entry.roster_player_id === rosterPlayerId)
+    .filter((entry, index, all) => all.findIndex((item) => item.id === entry.id) === index)
+    .sort((a, b) => b.training_date.localeCompare(a.training_date));
+}
+
 export function loadCoachWorkspaceNotes(
   coachId: string,
   teamKey: string,
