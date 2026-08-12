@@ -10,7 +10,7 @@ export function WebAvatarPicker(props: { avatarUrl?: string | null; fallback?: s
   return <View style={styles.wrap}>
     <ProfileAvatar uri={props.avatarUrl} fallback={props.fallback} size={84} />
     <View style={styles.actions}>
-      {isWeb ? createElement('input', { ref: inputRef, type: 'file', accept: 'image/jpeg,image/png,image/webp', style: { display: 'none' }, onChange: (event: { target?: { files?: FileList; value?: string } }) => { const file = event.target?.files?.[0]; if (file) props.onChoose(file); if (event.target) event.target.value = ''; } }) : null}
+      {isWeb ? createElement('input', { ref: inputRef, type: 'file', accept: 'image/*,.heic,.heif,.jfif', style: { display: 'none' }, onChange: (event: { target?: { files?: FileList; value?: string } }) => { const file = event.target?.files?.[0]; if (file) props.onChoose(file); if (event.target) event.target.value = ''; } }) : null}
       <TouchableOpacity style={[styles.choose, (!isWeb || props.uploading) && styles.disabled]} disabled={!isWeb || props.uploading} onPress={() => inputRef.current?.click?.()}><Camera size={16} color={Colors.background} /><Text style={styles.chooseText}>{props.uploading ? '…' : props.chooseLabel}</Text></TouchableOpacity>
       {props.avatarUrl ? <TouchableOpacity style={styles.remove} disabled={props.uploading} onPress={props.onRemove}><Trash2 size={15} color={Colors.error} /><Text style={styles.removeText}>{props.removeLabel}</Text></TouchableOpacity> : null}
       {!isWeb ? <Text style={styles.unavailable}>{props.unavailableLabel}</Text> : null}

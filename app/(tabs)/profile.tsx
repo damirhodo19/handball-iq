@@ -249,7 +249,12 @@ export default function ProfileScreen() {
     setAvatarUploading(true);
     setAvatarError(null);
     const result = await uploadProfileAvatar(user.id, file);
-    if (result.error) setAvatarError(t(avatarErrorKey(result.error)));
+    if (result.error) {
+      setAvatarError(t(avatarErrorKey(result.error)));
+      setAvatarUploading(false);
+      return;
+    }
+    setAvatarUrl(await resolveAvatarUrl(result.avatarPath));
     await refreshProfile();
     setAvatarUploading(false);
   }
