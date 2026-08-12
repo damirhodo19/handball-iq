@@ -1,6 +1,8 @@
-import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
 import { translations, TranslationDict, SupportedLanguage } from '@/locales';
 import { readStorageRaw, writeStorageRaw } from '@/lib/platform-storage';
+import { loadSettings, saveSettings, type AppSettings } from '@/lib/storage';
+import { useAuth } from '@/context/AuthContext';
 
 const STORAGE_KEY = 'handball_iq_language';
 
@@ -14,6 +16,12 @@ function getStoredLang(): SupportedLanguage {
 
 function storeLang(lang: SupportedLanguage) {
   writeStorageRaw(STORAGE_KEY, lang);
+}
+
+function languageName(lang: SupportedLanguage): AppSettings['language'] {
+  if (lang === 'de') return 'German';
+  if (lang === 'hr') return 'Croatian';
+  return 'English';
 }
 
 interface LanguageContextValue {
@@ -46,12 +54,29 @@ function interpolate(str: string, vars?: Record<string, string | number>): strin
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  const { profile, user } = useAuth();
   const [lang, setLangState] = useState<SupportedLanguage>(() => getStoredLang());
 
   const setLang = useCallback((newLang: SupportedLanguage) => {
     setLangState(newLang);
     storeLang(newLang);
-  }, []);
+    saveSettings({ ...loadSettings(), language: languageName(newLang) });
+    if (user?.id) {
+      void import('@/services/preferencesService').then(({ syncPreferencesToCloud }) =>
+        syncPreferencesToCloud(user.id),
+      ).catch(() => {
+        // The local choice stays active and can sync on the next authenticated refresh.
+      });
+    }
+  }, [user?.id]);
+
+  useEffect(() => {
+    const cloudLang = profile?.preferred_language as SupportedLanguage | null | undefined;
+    if (!cloudLang || !VALID_LANGS.includes(cloudLang) || cloudLang === lang) return;
+    setLangState(cloudLang);
+    storeLang(cloudLang);
+    saveSettings({ ...loadSettings(), language: languageName(cloudLang) });
+  }, [profile?.id, profile?.preferred_language]);
 
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>) => {

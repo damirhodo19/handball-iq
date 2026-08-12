@@ -154,6 +154,7 @@ export async function pullPreferencesFromCloud(userId: string): Promise<{ error:
         // Never downgrade a completed V2 profile because of stale/default cloud 0
         onboardingVersion: Math.max(
           Number(p.onboarding_version) || 0,
+          Number(prefs?.onboarding_version) || 0,
           Number(localProfile.onboardingVersion) || 0,
           p.onboarded ? 2 : 0,
         ),

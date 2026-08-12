@@ -4,6 +4,7 @@ import { Session, User } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import { Profile } from '@/types/database';
 import { fetchProfile } from '@/services/profileService';
+import { updateProfile } from '@/services/profileService';
 import { pullPreferencesFromCloud, syncPreferencesToCloud } from '@/services/preferencesService';
 import { ensureProfileForUser } from '@/services/authService';
 import { flushOfflineQueue, hasUnsyncedData, hasMigrationBeenPrompted } from '@/services/syncService';
@@ -13,6 +14,8 @@ import {
   setCoachSyncUser,
   syncCoachDevelopmentFull,
 } from '@/services/coachDevelopmentService';
+import { loadProfile } from '@/lib/storage';
+import { hasCompletedOnboarding } from '@/lib/platform/onboarding-status';
 
 interface AuthContextValue {
   session: Session | null;
@@ -53,12 +56,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { bindDataOwner } = await import('@/lib/clear-user-local');
       bindDataOwner(userId);
       const data = await fetchProfile(userId);
-      setProfile(data);
       if (!data) {
+        setProfile(null);
         setError('error.profileLoadFailed');
       } else {
         setError(null);
         await pullPreferencesFromCloud(userId);
+
+        // `user_preferences.onboarding_version` is also durable. Older accounts
+        // may have all answers saved while one of the profile flags is stale.
+        const localProfile = loadProfile();
+        const completed =
+          hasCompletedOnboarding(data) || Number(localProfile.onboardingVersion) >= 2;
+        const resolvedProfile: Profile = completed
+          ? {
+              ...data,
+              onboarded: true,
+              onboarding_version: Math.max(Number(data.onboarding_version) || 0, 2),
+            }
+          : data;
+
+        setProfile(resolvedProfile);
+
+        if (completed && (!data.onboarded || Number(data.onboarding_version) < 2)) {
+          // Best-effort self-heal so every later login has one clear source of truth.
+          void updateProfile(userId, { onboarded: true, onboarding_version: 2 });
+        }
+
         await hydrateDevelopmentFromCloud(userId);
         await hydrateCoachDevelopmentFromCloud(userId);
         setCoachSyncUser(userId);
@@ -138,6 +162,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const { data: sub } = supabase.auth.onAuthStateChange((event, newSession) => {
       setSession(newSession);
       if (newSession?.user) {
+        if (event === 'SIGNED_IN') {
+          // Do not let auth routes evaluate a new session against a profile that
+          // has not finished loading yet.
+          setLoading(true);
+          setError(null);
+          setProfile(null);
+        }
         (async () => {
           try {
             if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {

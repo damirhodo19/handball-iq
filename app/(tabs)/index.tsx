@@ -3,6 +3,7 @@ import { View, ActivityIndicator } from 'react-native';
 import { useAuth } from '@/context/AuthContext';
 import { useDevAuth } from '@/context/DevAuthContext';
 import { Colors } from '@/lib/theme';
+import { hasCompletedOnboarding } from '@/lib/platform/onboarding-status';
 
 export default function TabsEntry() {
   const { session, profile, loading } = useAuth();
@@ -17,7 +18,8 @@ export default function TabsEntry() {
   }
 
   if (session) {
-    if (!profile?.onboarded) return <Redirect href="/(auth)/onboarding" />;
+    if (!profile) return <Redirect href="/(auth)/splash" />;
+    if (!hasCompletedOnboarding(profile)) return <Redirect href="/(auth)/onboarding" />;
     return <Redirect href="/(tabs)/home" />;
   }
 

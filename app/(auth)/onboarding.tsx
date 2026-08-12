@@ -1,5 +1,5 @@
-import { useState, useCallback, useMemo, type ReactNode } from 'react';
-import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { useState, useCallback, useEffect, useMemo, useRef, type ReactNode } from 'react';
+import { ActivityIndicator, View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { ArrowRight, ArrowLeft, Check } from 'lucide-react-native';
@@ -34,9 +34,13 @@ import {
   DefenseSystemId,
   AttackStyleId,
   CoachGoalId,
+  normalizeAttackStyleId,
+  normalizeDefenseSystemId,
 } from '@/lib/platform/types';
 import { normalizeHandballPosition } from '@/lib/platform/resolve-position';
 import { getPendingTeamJoinPath } from '@/lib/team-platform/pending-join';
+import { hasCompletedOnboarding } from '@/lib/platform/onboarding-status';
+import { profileNeedsCompletion } from '@/lib/platform/personalization';
 
 const LANGUAGES: { code: SupportedLanguage; labelKey: string; flag: string }[] = [
   { code: 'en', labelKey: 'settings.languageEn', flag: '🇬🇧' },
@@ -124,8 +128,9 @@ function ChipGrid({ children }: { children: ReactNode }) {
 }
 
 export default function OnboardingScreen() {
-  const { user, profile: authProfile, refreshProfile } = useAuth();
+  const { user, profile: authProfile, loading: authLoading, refreshProfile } = useAuth();
   const { lang, setLang, t } = useTranslation();
+  const initialized = useRef(false);
 
   const [stepIndex, setStepIndex] = useState(0);
   const [saving, setSaving] = useState(false);
@@ -143,6 +148,83 @@ export default function OnboardingScreen() {
   const [favoriteDefense, setFavoriteDefense] = useState<DefenseSystemId | null>(null);
   const [favoriteAttack, setFavoriteAttack] = useState<AttackStyleId | null>(null);
   const [coachDevelopmentGoals, setCoachDevelopmentGoals] = useState<CoachGoalId[]>([]);
+
+  useEffect(() => {
+    if (initialized.current || authLoading || (user && !authProfile)) return;
+
+    const local = loadProfile();
+    const storedRole = authProfile?.role ?? local.role;
+    if (storedRole === 'player' || storedRole === 'coach' || storedRole === 'player_coach') {
+      setRole(storedRole);
+    }
+    setCountry(authProfile?.country ?? local.country ?? '');
+    setPosition(
+      normalizeHandballPosition(authProfile?.primary_position) ??
+        normalizeHandballPosition(authProfile?.position) ??
+        normalizeHandballPosition(local.position),
+    );
+    setSecondaryPosition(
+      normalizeHandballPosition(authProfile?.secondary_position) ??
+        normalizeHandballPosition(local.secondaryPosition),
+    );
+
+    const storedHand = authProfile?.dominant_hand ?? local.dominantHand;
+    if (storedHand === 'Left' || storedHand === 'Right') setDominantHand(storedHand);
+
+    const storedLevel = authProfile?.playing_level ?? local.playingLevel;
+    if (storedLevel && PLAYING_LEVELS_V2.includes(storedLevel as PlayingLevelId)) {
+      setPlayingLevel(storedLevel as PlayingLevelId);
+    }
+
+    const playerGoals = [
+      ...(authProfile?.development_goals ?? local.developmentGoals),
+      authProfile?.development_goal ?? local.developmentGoal,
+    ].filter((goal): goal is PlayerGoalId =>
+      Boolean(goal && PLAYER_GOALS_V2.includes(goal as PlayerGoalId)),
+    );
+    setDevelopmentGoals(Array.from(new Set(playerGoals)).slice(0, 3));
+
+    const storedCoachType = authProfile?.coach_type ?? local.coachType;
+    if (storedCoachType && COACH_TYPES_V2.includes(storedCoachType as CoachTypeId)) {
+      setCoachType(storedCoachType as CoachTypeId);
+    }
+    const storedExperience = authProfile?.experience_band ?? local.experienceBand;
+    if (storedExperience && EXPERIENCE_BANDS.includes(storedExperience as ExperienceBand)) {
+      setExperienceBand(storedExperience as ExperienceBand);
+    }
+    setFavoriteDefense(
+      normalizeDefenseSystemId(authProfile?.favorite_defense ?? local.favoriteDefense),
+    );
+    setFavoriteAttack(
+      normalizeAttackStyleId(authProfile?.favorite_attack ?? local.favoriteAttack),
+    );
+
+    const coachGoals = [
+      ...(authProfile?.coach_development_goals ?? local.coachDevelopmentGoals),
+      authProfile?.coach_development_goal ?? local.coachDevelopmentGoal,
+    ].filter((goal): goal is CoachGoalId =>
+      Boolean(goal && COACH_GOALS_V2.includes(goal as CoachGoalId)),
+    );
+    setCoachDevelopmentGoals(Array.from(new Set(coachGoals)).slice(0, 3));
+    initialized.current = true;
+  }, [authLoading, authProfile, user]);
+
+  const skipCompletedOnboarding = Boolean(
+    !authLoading &&
+      user &&
+      hasCompletedOnboarding(authProfile) &&
+      !profileNeedsCompletion(loadProfile()),
+  );
+
+  useEffect(() => {
+    if (!skipCompletedOnboarding) return;
+    if (authProfile?.role === 'coach') {
+      router.replace('/coach-dashboard');
+      return;
+    }
+    const pendingJoinPath = getPendingTeamJoinPath();
+    router.replace((pendingJoinPath ?? '/(tabs)/home') as never);
+  }, [skipCompletedOnboarding, authProfile?.role]);
 
   const steps = useMemo<StepId[]>(() => {
     const list: StepId[] = ['locale', 'role'];
@@ -308,6 +390,16 @@ export default function OnboardingScreen() {
   }
 
   const isLast = stepIndex >= steps.length - 1;
+
+  if (authLoading || skipCompletedOnboarding) {
+    return (
+      <ScreenBackground>
+        <View style={styles.loadingWrap}>
+          <ActivityIndicator size="large" color={Colors.gold} />
+        </View>
+      </ScreenBackground>
+    );
+  }
 
   return (
     <ScreenBackground>
@@ -577,6 +669,7 @@ export default function OnboardingScreen() {
 }
 
 const styles = StyleSheet.create({
+  loadingWrap: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   progressRow: {
     flexDirection: 'row',
     gap: Spacing.sm,

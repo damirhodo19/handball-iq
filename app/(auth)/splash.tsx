@@ -18,6 +18,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { supabase } from '@/lib/supabase';
 import { getPendingTeamJoinPath } from '@/lib/team-platform/pending-join';
 import { translations, SupportedLanguage } from '@/locales';
+import { hasCompletedOnboarding } from '@/lib/platform/onboarding-status';
 
 function splashCopy(lang: SupportedLanguage) {
   const dict = translations[lang];
@@ -108,12 +109,12 @@ export default function SplashScreen() {
   useEffect(() => {
     if (loading) return;
 
-    if (session && profile?.onboarded) {
+    if (session && hasCompletedOnboarding(profile)) {
       const pendingJoinPath = getPendingTeamJoinPath();
       router.replace((pendingJoinPath ?? '/(tabs)') as never);
       return;
     }
-    if (session) {
+    if (session && profile) {
       router.replace('/(auth)/onboarding');
       return;
     }
@@ -121,8 +122,9 @@ export default function SplashScreen() {
       router.replace('/(tabs)/home');
       return;
     }
-    if (error && session) {
-      router.replace('/(tabs)/home');
+    if (session) {
+      // A temporary profile/network failure must never be mistaken for a new user.
+      // Keep the retry UI visible instead of showing onboarding again.
       return;
     }
 
