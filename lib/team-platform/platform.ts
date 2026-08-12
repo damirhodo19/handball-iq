@@ -53,6 +53,7 @@ import {
 } from './storage';
 import { computeTeamDashboard, computeLeaderboards, generateTeamReport, exportReportCsv, exportReportPdf } from './reports';
 import type { TeamReport } from './reports';
+import { resolveAvatarUrl } from '@/services/avatarService';
 
 const USE_LOCAL = !isSupabaseConfigured;
 
@@ -232,10 +233,15 @@ export async function fetchTeamMembers(teamId: string): Promise<TeamMemberRecord
   if (!supabase) return [];
   const { data, error } = await supabase.rpc('team_list_members', { p_team_id: teamId });
   if (error) return [];
+  const { data: avatarRows } = await supabase.rpc('list_team_member_avatars', { p_team_id: teamId });
+  const avatarEntries = await Promise.all(((avatarRows ?? []) as { user_id: string; avatar_url: string | null }[])
+    .map(async (row) => [row.user_id, await resolveAvatarUrl(row.avatar_url)] as const));
+  const avatars = new Map(avatarEntries);
   const members = ((data ?? []) as any[]).map((member) => ({
     ...member,
     id: member.member_id,
     position: member.primary_position,
+    avatar_url: avatars.get(member.user_id) ?? null,
   })) as TeamMemberRecord[];
   localCacheMembers(teamId, members);
   return members;

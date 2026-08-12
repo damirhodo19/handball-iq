@@ -78,6 +78,7 @@ export interface TeamMemberRecord {
   email?: string;
   position?: string;
   secondary_position?: string;
+  avatar_url?: string | null;
   decision_score?: number;
   total_xp?: number;
   streak?: number;

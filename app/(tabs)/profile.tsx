@@ -1,4 +1,4 @@
-import { useState, useCallback, type ReactNode } from 'react';
+import { useState, useCallback, useEffect, type ReactNode } from 'react';
 import {
   View, StyleSheet, Text, ScrollView, TouchableOpacity, Modal, TextInput,
 } from 'react-native';
@@ -10,6 +10,7 @@ import {
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card } from '@/components/Card';
+import { WebAvatarPicker } from '@/components/WebAvatarPicker';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
 import { useDevAuth } from '@/context/DevAuthContext';
@@ -55,6 +56,7 @@ import { ProgressBar } from '@/components/Screen';
 import { AchievementDetail } from '@/components/AchievementDetail';
 import { useMode } from '@/context/ModeContext';
 import { pullPreferencesFromCloud, syncPreferencesToCloud } from '@/services/preferencesService';
+import { removeProfileAvatar, resolveAvatarUrl, uploadProfileAvatar, type AvatarErrorCode } from '@/services/avatarService';
 
 const HAND_OPTIONS: DominantHand[] = ['Left', 'Right'];
 const ROLE_OPTIONS: Exclude<AppRole, 'admin'>[] = ['player', 'coach', 'player_coach'];
@@ -158,7 +160,7 @@ export default function ProfileScreen() {
   const { preference } = useTheme();
   const { isDevAuthenticated } = useDevAuth();
   const signOut = useSignOut();
-  const { user } = useAuth();
+  const { user, profile: cloudProfile, refreshProfile } = useAuth();
   const { activeMode, canSwitch, setMode, isCoachMode } = useMode();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [sessions, setSessions] = useState<SessionRecord[]>([]);
@@ -169,6 +171,9 @@ export default function ProfileScreen() {
   const [draft, setDraft] = useState<UserProfile | null>(null);
   const [savingProfile, setSavingProfile] = useState(false);
   const [profileSaveError, setProfileSaveError] = useState<string | null>(null);
+  const [avatarUploading, setAvatarUploading] = useState(false);
+  const [avatarError, setAvatarError] = useState<string | null>(null);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
   const loadData = useCallback(async () => {
     setLoading(true);
@@ -232,6 +237,40 @@ export default function ProfileScreen() {
     if (user?.id) void syncPreferencesToCloud(user.id);
   }
 
+  const avatarErrorKey = (code: AvatarErrorCode): string => {
+    if (code === 'too_large') return 'profile.avatarTooLarge';
+    if (code === 'invalid_type' || code === 'decode_failed') return 'profile.avatarInvalid';
+    if (code === 'unsupported_platform') return 'profile.avatarWebOnly';
+    return 'profile.avatarUploadFailed';
+  };
+
+  async function chooseAvatar(file: File) {
+    if (!user?.id || avatarUploading) return;
+    setAvatarUploading(true);
+    setAvatarError(null);
+    const result = await uploadProfileAvatar(user.id, file);
+    if (result.error) setAvatarError(t(avatarErrorKey(result.error)));
+    await refreshProfile();
+    setAvatarUploading(false);
+  }
+
+  async function removeAvatar() {
+    if (!user?.id || avatarUploading) return;
+    setAvatarUploading(true);
+    setAvatarError(null);
+    const error = await removeProfileAvatar(user.id);
+    if (error) setAvatarError(t('profile.avatarRemoveFailed'));
+    await refreshProfile();
+    setAvatarUploading(false);
+  }
+
+  useEffect(() => {
+    let active = true;
+    void resolveAvatarUrl(cloudProfile?.avatar_url ?? (user?.user_metadata?.avatar_url as string | undefined))
+      .then((url) => { if (active) setAvatarUrl(url); });
+    return () => { active = false; };
+  }, [cloudProfile?.avatar_url, user?.user_metadata?.avatar_url]);
+
   const rawName = profile?.name?.trim() ?? '';
   const displayName = rawName || t('role.player');
   const avatarLetter = rawName[0]?.toUpperCase() ?? '?';
@@ -276,11 +315,17 @@ export default function ProfileScreen() {
 
         <Animated.View entering={FadeInDown.delay(100).duration(500)}>
           <Card variant="gradient" shadow="cardLg" style={styles.profileCard}>
-            <View style={styles.profileTop}>
-              <View style={styles.avatar}>
-                <Text style={styles.avatarText}>{avatarLetter}</Text>
-              </View>
-              <View style={styles.profileInfo}>
+            <WebAvatarPicker
+              avatarUrl={avatarUrl}
+              fallback={avatarLetter}
+              uploading={avatarUploading}
+              chooseLabel={t('profile.choosePhoto')}
+              removeLabel={t('profile.removePhoto')}
+              unavailableLabel={t('profile.avatarWebOnly')}
+              onChoose={(file) => { void chooseAvatar(file); }}
+              onRemove={() => { void removeAvatar(); }}
+            />
+            <View style={styles.profileInfo}>
                 <Text style={styles.profileName}>{displayName}</Text>
                 <Text style={styles.profilePosition}>{displayPosition}</Text>
                 {isDevAuthenticated && (
@@ -289,8 +334,9 @@ export default function ProfileScreen() {
                     <Text style={styles.foundingText}>{t('profile.foundingMember')}</Text>
                   </View>
                 )}
-              </View>
             </View>
+            <Text style={styles.avatarHint}>{t('profile.avatarHint')}</Text>
+            {avatarError ? <Text style={styles.errorText}>{avatarError}</Text> : null}
           </Card>
         </Animated.View>
 
@@ -1020,6 +1066,7 @@ const styles = StyleSheet.create({
   editBtnText: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 13 },
 
   profileCard: { gap: Spacing.md, marginBottom: Spacing.sm },
+  avatarHint: { fontFamily: 'Inter-Regular', fontSize: 10, lineHeight: 15, color: Colors.textTertiary },
   profileTop: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md },
   avatar: { width: 64, height: 64, borderRadius: 20, backgroundColor: Colors.gold, justifyContent: 'center', alignItems: 'center' },
   avatarText: { fontFamily: 'Inter-ExtraBold', fontSize: 28, color: Colors.background },

@@ -7,6 +7,7 @@ import { CalendarCheck, Check, ClipboardList, Link2, Minus, NotebookPen, Plus, T
 import { BackButton } from '@/components/BackButton';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
+import { ProfileAvatar } from '@/components/ProfileAvatar';
 import { EmptyState } from '@/components/EmptyState';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
 import { useAuth } from '@/context/AuthContext';
@@ -39,6 +40,7 @@ export default function CoachPlayerHubScreen() {
     playerId?: string;
     playerName?: string;
     position?: string;
+    avatarUrl?: string;
   }>();
   const rosterPlayerId = params.rosterPlayerId || null;
   const playerId = params.playerId || null;
@@ -149,7 +151,7 @@ export default function CoachPlayerHubScreen() {
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
           <BackButton />
-          <View style={styles.avatar}><UserRound size={24} color={Colors.gold} /></View>
+          <ProfileAvatar uri={params.avatarUrl} fallback={displayName} size={46} />
           <View style={styles.headerCopy}>
             <Text style={styles.headerTitle}>{displayName}</Text>
             <Text style={styles.headerSub}>{displayPosition ? translatePosition(displayPosition, t) : t('team.positionNotSet')}</Text>

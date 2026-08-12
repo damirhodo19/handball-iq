@@ -6,6 +6,7 @@ import { CheckCircle2, ChevronRight, Link2, Search, UserRound } from 'lucide-rea
 
 import { BackButton } from '@/components/BackButton';
 import { Card } from '@/components/Card';
+import { ProfileAvatar } from '@/components/ProfileAvatar';
 import { EmptyState } from '@/components/EmptyState';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
 import { useAuth } from '@/context/AuthContext';
@@ -32,6 +33,7 @@ interface PlayerListItem {
   improvement: number;
   attendanceRate: number | null;
   activeAssignments: number;
+  avatarUrl: string | null;
 }
 
 export default function PlayersScreen() {
@@ -100,12 +102,13 @@ export default function PlayersScreen() {
                   playerId: player.userId ?? '',
                   playerName: player.name,
                   position: player.position ?? '',
+                  avatarUrl: player.avatarUrl ?? '',
                 },
               } as never)}
             >
               <Card variant="gradient" shadow="card" style={styles.playerCard}>
                 <View style={styles.playerHeader}>
-                  <View style={styles.avatar}><UserRound size={20} color={Colors.gold} /></View>
+                  <ProfileAvatar uri={player.avatarUrl} fallback={player.name} size={40} />
                   <View style={styles.playerCopy}>
                     <Text style={styles.playerName}>{player.name}</Text>
                     <Text style={styles.playerMeta}>
@@ -181,6 +184,7 @@ function buildPlayerList(
       activeAssignments: entry.linked_user_id
         ? assignments.filter((assignment) => assignment.player_id === entry.linked_user_id && assignment.status !== 'completed').length
         : 0,
+      avatarUrl: member?.avatar_url ?? null,
     };
   });
   for (const member of playerMembers) {
@@ -196,6 +200,7 @@ function buildPlayerList(
       improvement: member.improvement ?? 0,
       attendanceRate: null,
       activeAssignments: assignments.filter((assignment) => assignment.player_id === member.user_id && assignment.status !== 'completed').length,
+      avatarUrl: member.avatar_url ?? null,
     });
   }
   return rows.sort((a, b) => a.name.localeCompare(b.name));
