@@ -18,6 +18,15 @@ export type TeamEventStatus = 'scheduled' | 'completed' | 'cancelled';
 
 export type TeamEventResponseStatus = 'attending' | 'not_attending' | 'maybe';
 
+export type TeamNotificationKind =
+  | 'coach_message'
+  | 'join_request'
+  | 'join_approved'
+  | 'join_rejected'
+  | 'team_event_created'
+  | 'event_response'
+  | 'event_reminder';
+
 export type ReportPeriod = 'weekly' | 'monthly' | 'season' | 'individual' | 'team';
 
 export interface Club {
@@ -154,6 +163,26 @@ export interface TeamEventResponse {
   response_status: TeamEventResponseStatus;
   note: string | null;
   responded_at: string;
+}
+
+export interface TeamNotification {
+  id: string;
+  recipient_id: string;
+  actor_id: string | null;
+  team_id: string | null;
+  event_id: string | null;
+  notification_kind: TeamNotificationKind | string;
+  title: string;
+  message: string;
+  metadata: Record<string, string | number | boolean | null>;
+  action_path: string | null;
+  read_at: string | null;
+  created_at: string;
+}
+
+export interface TeamNotificationCounts {
+  unreadNotifications: number;
+  pendingJoinRequests: number;
 }
 
 export interface TrainingAssignment {

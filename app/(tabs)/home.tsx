@@ -17,6 +17,7 @@ import {
   Sun,
   AlertCircle,
   CalendarDays,
+  Bell,
 } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
@@ -56,6 +57,7 @@ import {
 } from '@/lib/platform/resolve-position';
 import { isPlatformStorageHydrated } from '@/lib/platform-storage';
 import { useTabScreenBottomPadding } from '@/lib/layout';
+import { fetchTeamNotificationCounts } from '@/lib/team-platform/notifications';
 
 function getGreetingKey(): string {
   const hour = new Date().getHours();
@@ -90,7 +92,7 @@ function goalLabel(
 export default function HomeScreen() {
   const { t } = useTranslation();
   const { themeVersion } = useTheme();
-  const { profile: authProfile, loading: authLoading } = useAuth();
+  const { user, profile: authProfile, loading: authLoading } = useAuth();
   const { isDevAuthenticated, testUser } = useDevAuth();
   const [refreshing, setRefreshing] = useState(false);
   const [profileReady, setProfileReady] = useState(false);
@@ -99,6 +101,7 @@ export default function HomeScreen() {
   const [localProfile, setLocalProfile] = useState<UserProfile | null>(null);
   const [matches, setMatches] = useState<ReturnType<typeof loadMatchHistory>>([]);
   const [syncStatus, setSyncStatus] = useState<SyncUiStatus>('idle');
+  const [unreadNotifications, setUnreadNotifications] = useState(0);
   const { activeMode, isCoachMode, canSwitch: showModeSwitch, setMode, refreshMode } = useMode();
   // Measured tab bar height + small visual gap (see lib/layout.ts).
   const tabBottomPad = useTabScreenBottomPadding();
@@ -127,6 +130,16 @@ export default function HomeScreen() {
       loadData();
     }, [loadData]),
   );
+
+  useFocusEffect(useCallback(() => {
+    if (!user?.id) {
+      setUnreadNotifications(0);
+      return;
+    }
+    void fetchTeamNotificationCounts(null, user.id).then((result) => {
+      if (!result.error) setUnreadNotifications(result.counts.unreadNotifications);
+    });
+  }, [user?.id]));
 
   const {
     dailyChallenge,
@@ -563,6 +576,13 @@ export default function HomeScreen() {
             <CalendarDays size={18} color={Colors.gold} />
             <Text style={styles.softText}>{t('teamCalendar.title')}</Text>
           </PressableCard>
+          <PressableCard onPress={() => router.push('/notifications' as never)} variant="gradient" style={styles.softCard}>
+            <Bell size={18} color={Colors.gold} />
+            <Text style={styles.softText}>{t('notifications.title')}</Text>
+            {unreadNotifications > 0 ? (
+              <Text style={styles.softBadge}>{unreadNotifications > 99 ? '99+' : unreadNotifications}</Text>
+            ) : null}
+          </PressableCard>
           <PressableCard onPress={() => router.push('/match/intro')} variant="gradient" style={styles.softCard}>
             <Shield size={18} color={Colors.gold} />
             <Text style={styles.softText}>{t('home.playMatch')}</Text>
@@ -822,5 +842,6 @@ function createStyles() {
       minWidth: 0,
       flexWrap: 'wrap',
     },
+    softBadge: { minWidth: 25, paddingHorizontal: 7, paddingVertical: 4, borderRadius: Radius.pill, overflow: 'hidden', textAlign: 'center', fontFamily: 'Inter-ExtraBold', fontSize: 10, color: Colors.background, backgroundColor: Colors.gold },
   });
 }

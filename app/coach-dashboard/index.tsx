@@ -19,6 +19,8 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { translateRole } from '@/lib/translations';
 import { loadCoachAttendanceForTeam, loadCoachRosterForTeam } from '@/lib/coach-workspace';
 import { getActiveTeam } from '@/lib/team-platform/platform';
+import { fetchTeamNotificationCounts } from '@/lib/team-platform/notifications';
+import type { TeamNotificationCounts } from '@/lib/team-platform/types';
 
 const INIT_TIMEOUT_MS = 8000;
 
@@ -32,6 +34,10 @@ export default function CoachDashboardHome() {
   const [timedOut, setTimedOut] = useState(false);
   const [dataError, setDataError] = useState(false);
   const [workspaceOverview, setWorkspaceOverview] = useState({ rosterCount: 0, attendanceRate: 0, hasAttendance: false });
+  const [notificationCounts, setNotificationCounts] = useState<TeamNotificationCounts>({
+    unreadNotifications: 0,
+    pendingJoinRequests: 0,
+  });
   const coachId = user?.id ?? (isDevAuthenticated ? 'dev_coach' : undefined);
   const { team: platformTeam, stats: platformStats, refresh: refreshTeam } = useTeamPlatform(coachId, coach?.name);
 
@@ -67,6 +73,14 @@ export default function CoachDashboardHome() {
       setDataError(true);
     }
   }, [coachId, refreshTeam]));
+
+  useFocusEffect(useCallback(() => {
+    if (!coachId) return;
+    void fetchTeamNotificationCounts(platformTeam?.id ?? getActiveTeam()?.id, coachId)
+      .then((result) => {
+        if (!result.error) setNotificationCounts(result.counts);
+      });
+  }, [coachId, platformTeam?.id]));
 
   // State: auth still loading (with 8s timeout)
   if (authLoading && !isDevAuthenticated && !timedOut) {
@@ -255,13 +269,13 @@ export default function CoachDashboardHome() {
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('coachDashboard.teamAnalysis')} subtitle={t('coachDashboard.teamAnalysisSub')} onPress={() => router.push('/coach-dashboard/team-analysis')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('coachDashboard.sessionAssignment')} subtitle={t('coachDashboard.sessionAssignmentSub')} onPress={() => router.push('/coach-dashboard/assign')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.invitePlayers')} subtitle={t('team.inviteSub')} onPress={() => router.push('/coach-dashboard/invite')} />
-            <MenuItem icon={<UserPlus size={20} color={Colors.gold} />} title={t('team.joinRequests')} subtitle={t('team.joinRequestsSub')} onPress={() => router.push('/coach-dashboard/join-requests' as never)} />
+            <MenuItem icon={<UserPlus size={20} color={Colors.gold} />} title={t('team.joinRequests')} subtitle={t('team.joinRequestsSub')} badge={notificationCounts.pendingJoinRequests} onPress={() => router.push('/coach-dashboard/join-requests' as never)} />
             <MenuItem icon={<BarChart3 size={20} color={Colors.gold} />} title={t('team.leaderboards')} subtitle={t('team.leaderboardsSub')} onPress={() => router.push('/coach-dashboard/leaderboards')} />
             <MenuItem icon={<ClipboardList size={20} color={Colors.gold} />} title={t('team.reports')} subtitle={t('team.reportsSub')} onPress={() => router.push('/coach-dashboard/reports')} />
             <MenuItem icon={<Shield size={20} color={Colors.gold} />} title={t('team.clubs')} subtitle={t('team.clubsSub')} onPress={() => router.push('/coach-dashboard/clubs')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('team.coachNotes')} subtitle={t('team.coachNotesSub')} onPress={() => router.push('/coach-dashboard/notes')} />
             <MenuItem icon={<UserCircle size={20} color={Colors.gold} />} title={t('coachDashboard.playerComparison')} subtitle={t('coachDashboard.playerComparisonSub')} onPress={() => router.push('/coach-dashboard/compare')} />
-            <MenuItem icon={<Bell size={20} color={Colors.gold} />} title={t('coachDashboard.notifications')} subtitle={t('coachDashboard.notificationsSub')} onPress={() => router.push('/coach-dashboard/notifications')} />
+            <MenuItem icon={<Bell size={20} color={Colors.gold} />} title={t('coachDashboard.notifications')} subtitle={t('coachDashboard.notificationsSub')} badge={notificationCounts.unreadNotifications} onPress={() => router.push('/coach-dashboard/notifications')} />
             <MenuItem icon={<Calendar size={20} color={Colors.gold} />} title={t('coachDashboard.teamCalendar')} subtitle={t('coachDashboard.teamCalendarSub')} onPress={() => router.push('/coach-dashboard/calendar')} />
           </View>
         </Animated.View>
@@ -280,7 +294,7 @@ function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string
   );
 }
 
-function MenuItem({ icon, title, subtitle, onPress }: { icon: React.ReactNode; title: string; subtitle: string; onPress: () => void }) {
+function MenuItem({ icon, title, subtitle, badge, onPress }: { icon: React.ReactNode; title: string; subtitle: string; badge?: number; onPress: () => void }) {
   return (
     <PressableCard onPress={onPress} variant="gradient" shadow="card" style={styles.menuCard}>
       <View style={styles.menuRow}>
@@ -289,6 +303,7 @@ function MenuItem({ icon, title, subtitle, onPress }: { icon: React.ReactNode; t
           <Text style={styles.menuTitle}>{title}</Text>
           <Text style={styles.menuSub}>{subtitle}</Text>
         </View>
+        {badge ? <Text style={styles.menuBadge}>{badge > 99 ? '99+' : badge}</Text> : null}
         <ChevronRight size={18} color={Colors.gold} />
       </View>
     </PressableCard>
@@ -340,4 +355,5 @@ const styles = StyleSheet.create({
   menuIcon: { width: 44, height: 44, borderRadius: 14, backgroundColor: Colors.goldSoft, justifyContent: 'center', alignItems: 'center' },
   menuTitle: { fontFamily: 'Inter-ExtraBold', fontSize: 16, color: Colors.textPrimary },
   menuSub: { fontFamily: 'Inter-Regular', fontSize: 13, color: Colors.textTertiary },
+  menuBadge: { minWidth: 25, paddingHorizontal: 7, paddingVertical: 4, borderRadius: Radius.pill, overflow: 'hidden', textAlign: 'center', fontFamily: 'Inter-ExtraBold', fontSize: 10, color: Colors.background, backgroundColor: Colors.gold },
 });

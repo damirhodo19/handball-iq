@@ -79,6 +79,21 @@ export interface TeamMember {
   created_at: string;
 }
 
+export interface AppNotification {
+  id: string;
+  recipient_id: string;
+  actor_id: string | null;
+  team_id: string | null;
+  event_id: string | null;
+  notification_kind: string;
+  title: string;
+  message: string;
+  metadata: Record<string, string | number | boolean | null>;
+  action_path: string | null;
+  read_at: string | null;
+  created_at: string;
+}
+
 export interface Scenario {
   id: string;
   title: string;

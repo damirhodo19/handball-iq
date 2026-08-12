@@ -40,6 +40,7 @@ import { useTeamPlatform } from '@/hooks/useTeamPlatform';
 import { useTranslation } from '@/hooks/useTranslation';
 import { syncCoachWorkspaceForTeam } from '@/lib/coach-workspace';
 import { migrateLegacyCustomCalendarEvents } from '@/lib/team-platform/legacy-calendar';
+import { remindTeamEventNonResponders } from '@/lib/team-platform/notifications';
 import {
   addTeamCalendarEvent,
   deleteTeamCalendarEvent,
@@ -291,6 +292,31 @@ export default function CoachCalendarScreen() {
     );
   };
 
+  const handleRemindNonResponders = async (event: TeamCalendarEvent) => {
+    if (!team?.id || !user?.id) return;
+    const busyId = `remind_${event.id}`;
+    setBusyEventId(busyId);
+    const result = await remindTeamEventNonResponders({
+      teamId: team.id,
+      eventId: event.id,
+      coachId: user.id,
+      title: t('notifications.reminderTitle'),
+      message: t('notifications.reminderMessage', {
+        event: event.title,
+        date: event.event_date,
+        time: event.event_time?.slice(0, 5) ?? t('cdCalendar.timeNotSet'),
+      }),
+    });
+    setBusyEventId(null);
+    if (result.error) {
+      setMessage(t('cdCalendar.reminderFailed'));
+      return;
+    }
+    setMessage(result.sent > 0
+      ? t('cdCalendar.reminderSent', { n: result.sent })
+      : t('cdCalendar.noPlayersToRemind'));
+  };
+
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
@@ -425,6 +451,17 @@ export default function CoachCalendarScreen() {
 
                           {event.event_status === 'completed' ? (
                             <Text style={styles.completedText}>{t('cdCalendar.completed')}</Text>
+                          ) : null}
+                          {event.event_status === 'scheduled' && event.response_required ? (
+                            <Button
+                              label={t('cdCalendar.remindNonResponders')}
+                              onPress={() => handleRemindNonResponders(event)}
+                              loading={busyEventId === `remind_${event.id}`}
+                              disabled={busyEventId !== null && busyEventId !== `remind_${event.id}`}
+                              variant="outline"
+                              size="md"
+                              style={styles.reminderButton}
+                            />
                           ) : null}
                           <View style={styles.actionRow}>
                             {canFinalize ? (
@@ -608,6 +645,7 @@ const styles = StyleSheet.create({
   responseNote: { fontFamily: 'Inter-Regular', fontSize: 11, color: Colors.textTertiary, marginTop: 2 },
   responseStatus: { fontFamily: 'Inter-ExtraBold', fontSize: 10, color: Colors.warning },
   completedText: { fontFamily: 'Inter-SemiBold', fontSize: 12, color: Colors.success, marginTop: Spacing.sm },
+  reminderButton: { marginTop: Spacing.md },
   actionRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, marginTop: Spacing.md },
   actionButton: { flex: 1 },
   deleteButton: { width: 46, height: 46, borderRadius: Radius.md, borderWidth: 1, borderColor: Colors.error, backgroundColor: Colors.errorSoft, alignItems: 'center', justifyContent: 'center' },
