@@ -196,6 +196,10 @@ export function processActivity(payload: ActivityPayload): ProcessResult {
       state.dailyChallenge.completed = true;
       state.dailyChallenge.completedScore = payload.decisionScore;
       state.dailyChallenge.xpAwarded = true;
+      state.dailyChallengesByPosition = {
+        ...(state.dailyChallengesByPosition ?? {}),
+        [payload.position]: state.dailyChallenge,
+      };
     }
   }
 
@@ -208,7 +212,7 @@ export function processActivity(payload: ActivityPayload): ProcessResult {
   }
 
   const dayIndex = getTodayDayIndex();
-  state.weeklyProgram = getOrCreateWeeklyProgram(payload.position);
+  state.weeklyProgram = getOrCreateWeeklyProgram(payload.position, state);
   if (state.weeklyProgram) {
     const dayKey = `weekly_${state.weeklyProgram.weekStart}_day_${dayIndex}`;
     const day = state.weeklyProgram.days[dayIndex];
@@ -221,6 +225,10 @@ export function processActivity(payload: ActivityPayload): ProcessResult {
       state.weeklyProgram.weeklyScore = scores.length > 0
         ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
         : 0;
+      state.weeklyProgramsByPosition = {
+        ...(state.weeklyProgramsByPosition ?? {}),
+        [payload.position]: state.weeklyProgram,
+      };
     }
     if (!hasXpEvent(state, dayKey)) {
       xpEarned += awardXp(state, dayKey, 'weekly_day', XP_REWARDS.weekly_day, 'weekly_program');

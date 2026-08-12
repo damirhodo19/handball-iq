@@ -73,7 +73,7 @@ export function getScenariosForGoals(
   count: number,
   position?: HandballPosition | null,
   extras?: {
-    developmentGoal?: string | null;
+    developmentGoal?: string | string[] | null;
     playingLevel?: string | null;
     dominantHand?: string | null;
     opponent?: string | null;

@@ -45,6 +45,9 @@ const WING_SHARED: Omit<PositionModule, 'position'> = {
     'Match Preparation': ['Match Ending'],
     'Game Intelligence': ['Decision Making', 'Fast Break'],
     Defence: ['Defence'],
+    'Mental Preparation': ['Match Ending', 'Decision Making'],
+    Leadership: ['Decision Making', 'Defence'],
+    'Complete Development': ['Left Wing', 'Right Wing', 'Fast Break', 'Decision Making', 'Defence'],
   },
 };
 
@@ -76,6 +79,9 @@ const BACK_SHARED: Omit<PositionModule, 'position'> = {
     'Game Intelligence': ['Decision Making', 'Defence'],
     'Decision Making': ['Decision Making'],
     'Match Preparation': ['Match Ending'],
+    'Mental Preparation': ['Match Ending', 'Decision Making'],
+    Leadership: ['Decision Making', 'Defence'],
+    'Complete Development': ['Left Back', 'Centre Back', 'Right Back', 'Decision Making', 'Defence', 'Fast Break'],
   },
 };
 
@@ -108,6 +114,10 @@ export const POSITION_MODULES: Record<HandballPosition, PositionModule> = {
       'Mental Preparation': ['Match Ending', 'Goalkeeper'],
       'Match Preparation': ['Match Ending'],
       Defence: ['Goalkeeper', 'Defence'],
+      Attack: ['Goalkeeper', 'Fast Break', 'Power Play'],
+      'Game Intelligence': ['Goalkeeper', 'Decision Making'],
+      Leadership: ['Decision Making', 'Defence'],
+      'Complete Development': ['Goalkeeper', 'Decision Making', 'Fast Break', 'Match Ending', 'Defence'],
     },
   },
   'Left Wing': { ...WING_SHARED, position: 'Left Wing', primaryCategories: ['Left Wing', 'Fast Break', 'Decision Making', 'Defence'] },
@@ -146,6 +156,11 @@ export const POSITION_MODULES: Record<HandballPosition, PositionModule> = {
       Attack: ['Pivot', 'Power Play'],
       'Decision Making': ['Pivot', 'Decision Making'],
       Defence: ['Defence', 'Pivot'],
+      'Game Intelligence': ['Pivot', 'Decision Making'],
+      'Mental Preparation': ['Match Ending', 'Decision Making'],
+      'Match Preparation': ['Match Ending'],
+      Leadership: ['Decision Making', 'Defence'],
+      'Complete Development': ['Pivot', 'Decision Making', 'Defence', 'Power Play', 'Fast Break'],
     },
   },
 };

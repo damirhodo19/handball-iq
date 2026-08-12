@@ -1,4 +1,4 @@
-import { loadSessions, loadMatchHistory, type SessionRecord, type MatchHistoryRecord } from '@/lib/storage';
+import { loadSessions, loadMatchHistory, loadProfile, type SessionRecord, type MatchHistoryRecord } from '@/lib/storage';
 import { loadDevelopmentState } from '@/lib/development/storage';
 import type { DecisionEvent } from '@/lib/development/types';
 import type { HandballPosition } from '@/lib/positions';
@@ -114,13 +114,23 @@ export function calculateHandballIq(
   events: DecisionEvent[] = loadDevelopmentState().decisionEvents,
 ): HandballIqReport {
   const position = isHandballPosition(positionInput) ? positionInput : null;
+  const primaryPosition = loadProfile().position;
+  const scopedSessions = position
+    ? sessions.filter((session) => session.position === position || (!session.position && primaryPosition === position))
+    : sessions;
+  const scopedMatches = position
+    ? matches.filter((match) => match.position === position || (!match.position && primaryPosition === position))
+    : matches;
+  const scopedEvents = position
+    ? events.filter((event) => event.position === position || (!event.position && primaryPosition === position))
+    : events;
 
-  const sessionScores = sessions.map((s) => s.decisionScore).filter((n) => n > 0);
-  const matchScores = matches.map((m) => m.decisionScore).filter((n) => n > 0);
+  const sessionScores = scopedSessions.map((s) => s.decisionScore).filter((n) => n > 0);
+  const matchScores = scopedMatches.map((m) => m.decisionScore).filter((n) => n > 0);
   const decisionValues = [...sessionScores, ...matchScores];
 
   const attackValues = eventAccuracy(
-    events,
+    scopedEvents,
     (e) =>
       /attack|wing|pivot|fast break|power|finish|shot/i.test(`${e.category} ${e.scenarioType}`) ||
       e.category === 'Left Wing' ||
@@ -134,35 +144,35 @@ export function calculateHandballIq(
   }
 
   const defenceValues = eventAccuracy(
-    events,
+    scopedEvents,
     (e) =>
       e.category === 'Defence' ||
       /defence|defense|block|6:0|5:1/i.test(`${e.category} ${e.scenarioType} ${e.formation ?? ''}`),
   );
   if (defenceValues.length < 3) {
-    defenceValues.push(...matchPressureScores(matches).slice(0, 5));
+    defenceValues.push(...matchPressureScores(scopedMatches).slice(0, 5));
   }
 
   const readingValues = [
-    ...matchReadingScores(matches),
-    ...eventAccuracy(events, (e) => /read|shooter|tactical|scan/i.test(`${e.category} ${e.scenarioType}`)),
+    ...matchReadingScores(scopedMatches),
+    ...eventAccuracy(scopedEvents, (e) => /read|shooter|tactical|scan/i.test(`${e.category} ${e.scenarioType}`)),
   ];
 
   const mentalValues = [
-    ...matchConsistencyScores(matches),
-    ...eventAccuracy(events, (e) => /pressure|mental|emotion|reset/i.test(`${e.category} ${e.scenarioType}`)),
+    ...matchConsistencyScores(scopedMatches),
+    ...eventAccuracy(scopedEvents, (e) => /pressure|mental|emotion|reset/i.test(`${e.category} ${e.scenarioType}`)),
   ];
 
   const pressureValues = [
-    ...matchPressureScores(matches),
-    ...eventAccuracy(events, (e) => e.difficulty === 'Expert' || e.difficulty === 'Advanced' || /pressure|final|critical/i.test(e.scenarioType)),
+    ...matchPressureScores(scopedMatches),
+    ...eventAccuracy(scopedEvents, (e) => e.difficulty === 'Expert' || e.difficulty === 'Advanced' || /pressure|final|critical/i.test(e.scenarioType)),
   ];
 
-  const posSkills = position ? positionSkillScores(position, events) : [];
+  const posSkills = position ? positionSkillScores(position, scopedEvents) : [];
   const posSkillValues = posSkills.map((s) => s.score).filter((n): n is number => n != null);
   // Position IQ also blends position-scoped event accuracy
   const positionEventValues = position
-    ? eventAccuracy(events, (e) => e.position === position)
+    ? eventAccuracy(scopedEvents, (e) => e.position === position)
     : [];
   const positionIqValues = [...posSkillValues, ...positionEventValues, ...sessionScores.slice(0, 5)];
 

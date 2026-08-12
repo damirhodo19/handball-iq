@@ -8,6 +8,7 @@ import {
   normalizeAttackStyleId,
   normalizeDefenseSystemId,
 } from '@/lib/platform/tactical-systems';
+import { reconcileActivePlayerPosition } from '@/lib/platform/active-player-position';
 
 export interface UserProfile {
   name: string;
@@ -41,6 +42,8 @@ export interface SessionRecord {
   id: string;
   date: string;
   sessionName: string;
+  /** Added in Position Engine 2.0; absent on legacy sessions. */
+  position?: string;
   decisionScore: number;
   timeSpent: number;
   correctCount: number;
@@ -61,6 +64,8 @@ export interface StreakData {
 
 export interface MetricHistory {
   date: string;
+  /** Added in Position Engine 2.0; absent on legacy metrics. */
+  position?: string;
   decisionScore: number;
   pressureControl: number;
   shooterReading: number;
@@ -174,6 +179,7 @@ export function saveProfile(profile: UserProfile): void {
   const attack = normalizeAttackStyleId(next.favoriteAttack);
   if (attack) next.favoriteAttack = attack;
   setItem(KEYS.PROFILE, next);
+  reconcileActivePlayerPosition(next);
 }
 
 // ---- Sessions ----
@@ -283,6 +289,7 @@ function updateMetrics(session: Omit<SessionRecord, 'id'>): void {
 
   metrics.unshift({
     date: session.date,
+    position: session.position,
     decisionScore,
     pressureControl,
     shooterReading,
@@ -340,6 +347,8 @@ export interface MatchReportSnapshot {
 export interface MatchHistoryRecord {
   id: string;
   date: string;
+  /** Added in Position Engine 2.0; absent on legacy matches. */
+  position?: string;
   opponent: string;
   competition: string;
   matchRating: number;

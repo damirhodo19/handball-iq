@@ -206,6 +206,8 @@ export const en: TranslationDict = {
   'training.feedbackAfter': 'feedback after completion',
   'training.scenariosCount': '{n} match scenarios',
   'training.position': 'Position',
+  'position.activeLabel': 'Active position',
+  'position.activeHint': 'Training, Match Day and progress use this position.',
   'training.duration': 'Duration',
   'training.difficulty': 'Difficulty',
   'training.progress': 'Progress',

@@ -198,6 +198,8 @@ export const hr: TranslationDict = {
   'training.feedbackAfter': 'povratna informacija nakon završetka',
   'training.scenariosCount': '{n} situacija iz utakmice',
   'training.position': 'Pozicija',
+  'position.activeLabel': 'Aktivna pozicija',
+  'position.activeHint': 'Trening, Match Day i napredak koriste ovu poziciju.',
   'training.duration': 'Trajanje',
   'training.difficulty': 'Težina',
   'training.progress': 'Napredak',

@@ -198,6 +198,8 @@ export const de: TranslationDict = {
   'training.feedbackAfter': 'Feedback nach Abschluss',
   'training.scenariosCount': '{n} Spielszenarien',
   'training.position': 'Position',
+  'position.activeLabel': 'Aktive Position',
+  'position.activeHint': 'Training, Match Day und Fortschritt verwenden diese Position.',
   'training.duration': 'Dauer',
   'training.difficulty': 'Schwierigkeit',
   'training.progress': 'Fortschritt',

@@ -17,7 +17,7 @@ export interface PrepSetup {
   goals: PersonalGoal[];
   /** Canonical position captured at prep start — required for tactics/plan. */
   position: HandballPosition;
-  developmentGoal?: string | null;
+  developmentGoal?: string | string[] | null;
   playingLevel?: string | null;
   dominantHand?: string | null;
 }

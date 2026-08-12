@@ -5,11 +5,13 @@ import {
 import { generatePositionMatch } from '@/lib/position-scenarios';
 import { HandballPosition } from '@/lib/positions';
 import { loadProfile } from '@/lib/storage';
-import { isHandballPosition } from '@/lib/platform/position-modules';
+import { resolveActivePlayerPosition } from '@/lib/platform/active-player-position';
 
 export type MatchPhase = 'first-half' | 'halftime' | 'second-half' | 'finished';
 
 interface MatchState {
+  /** Stable active position snapshot taken at match start. */
+  position: HandballPosition | null;
   /** Stable snapshot taken at match start — never replaced mid-match. */
   situations: MatchSituation[];
   answers: MatchAnswer[];
@@ -54,6 +56,7 @@ function matchReducer(state: MatchState, action: MatchAction): MatchState {
     case 'START': {
       const situations = sanitizeSituations(generatePositionMatch(action.position), action.position);
       return {
+        position: action.position,
         situations,
         answers: [],
         currentIndex: 0,
@@ -106,6 +109,7 @@ function matchReducer(state: MatchState, action: MatchAction): MatchState {
 
     case 'RESET':
       return {
+        position: null,
         situations: [],
         answers: [],
         currentIndex: 0,
@@ -120,6 +124,7 @@ function matchReducer(state: MatchState, action: MatchAction): MatchState {
 }
 
 const initialState: MatchState = {
+  position: null,
   situations: [],
   answers: [],
   currentIndex: 0,
@@ -151,11 +156,12 @@ export function MatchProvider({ children }: { children: ReactNode }) {
 
   const startMatch = useCallback(() => {
     const profile = loadProfile();
-    if (!isHandballPosition(profile.position)) {
+    const position = resolveActivePlayerPosition(profile);
+    if (!position) {
       if (__DEV__) console.warn('[MatchSimulator] No position on profile — cannot start match.');
       return;
     }
-    dispatch({ type: 'START', position: profile.position });
+    dispatch({ type: 'START', position });
   }, []);
 
   const submitAnswer = useCallback((situation: MatchSituation, decisionId: string): boolean => {

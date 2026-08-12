@@ -20,11 +20,11 @@ import { clearActiveTrainingSession } from '@/lib/development/active-session';
 import { localizeContent } from '@/lib/content-localize';
 import { resolveContent, filterResolvedScenarios, resolveRecommendedScenarios } from '@/lib/platform/content-resolver';
 import { getActiveMode } from '@/lib/platform/active-mode';
-import { getPositionModule, isHandballPosition } from '@/lib/platform/position-modules';
+import { getPositionModule } from '@/lib/platform/position-modules';
 import type { ScenarioCategory } from '@/content/scenario-bank/types';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
-import type { HandballPosition } from '@/lib/positions';
 import { useSyncedProfile } from '@/hooks/useSyncedProfile';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
 
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Zap, ArrowRight, Target, Shield, Crosshair, Users, Clock,
@@ -44,13 +44,11 @@ const SESSION_DURATION_MIN = 10;
 export default function TrainingScreen() {
   const { t, lang } = useTranslation();
   const profile = useSyncedProfile();
-  const primaryPosition = resolvePlayerPosition(profile);
-  const availablePositions = [profile.position, profile.secondaryPosition]
-    .filter((value): value is HandballPosition => isHandballPosition(value));
-  const [selectedPosition, setSelectedPosition] = useState<HandballPosition | null>(primaryPosition);
-  const position = selectedPosition && availablePositions.includes(selectedPosition)
-    ? selectedPosition
-    : primaryPosition;
+  const {
+    position,
+    positions: availablePositions,
+    selectPosition,
+  } = useActivePlayerPosition(profile);
   const effectiveProfile = useMemo(
     () => ({ ...profile, position: position ?? profile.position }),
     [profile, position],
@@ -62,7 +60,10 @@ export default function TrainingScreen() {
   const categories = resolved.training.categories;
   const dailySession = resolved.training.dailySession;
   const sessions = loadSessions();
-  const stats = useMemo(() => computePlayerStats(sessions), [sessions.length]);
+  const stats = useMemo(
+    () => computePlayerStats(sessions, undefined, position),
+    [sessions.length, position],
+  );
 
   const [filterCategory, setFilterCategory] = useState<ScenarioCategory | null>(null);
   const [filterDifficulty, setFilterDifficulty] = useState<string | null>(null);
@@ -89,6 +90,7 @@ export default function TrainingScreen() {
     const map: Record<string, number> = {};
     for (const cat of categories) {
       const related = sessions.filter((s) =>
+        (s.position === position || (!s.position && profile.position === position)) &&
         s.sessionName.toLowerCase().includes(cat.name.toLowerCase().split(' ')[0] ?? ''),
       );
       map[cat.id] = related.length > 0
@@ -96,7 +98,7 @@ export default function TrainingScreen() {
         : 0;
     }
     return map;
-  }, [categories, sessions]);
+  }, [categories, sessions, position, profile.position]);
 
   const { weeklyProgram } = useDevelopment();
   const todayIndex = getTodayDayIndex();
@@ -107,6 +109,7 @@ export default function TrainingScreen() {
     clearActiveTrainingSession();
     setSessionMode('standard');
     setSessionIntent({
+      position: position ?? undefined,
       category: opts?.category ?? filterCategory ?? undefined,
       difficulty: opts?.difficulty ?? filterDifficulty ?? undefined,
       scenarioIds: opts?.scenarioIds ?? resolved.training.scenarioIds,
@@ -144,23 +147,18 @@ export default function TrainingScreen() {
           </View>
         </View>
 
-        {availablePositions.length > 1 ? (
+        {availablePositions.length > 0 ? (
           <Animated.View entering={FadeInDown.delay(20).duration(500)}>
-            <Text style={styles.sectionLabel}>{t('training.position')}</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
-              {availablePositions.map((playerPosition) => (
-                <FilterChip
-                  key={playerPosition}
-                  label={translatePosition(playerPosition, t)}
-                  active={position === playerPosition}
-                  onPress={() => {
-                    setSelectedPosition(playerPosition);
-                    setFilterCategory(null);
-                    setFilterDifficulty(null);
-                  }}
-                />
-              ))}
-            </ScrollView>
+            <ActivePositionSelector
+              positions={availablePositions}
+              activePosition={position}
+              onSelect={(playerPosition) => {
+                selectPosition(playerPosition);
+                setFilterCategory(null);
+                setFilterDifficulty(null);
+              }}
+              compact
+            />
           </Animated.View>
         ) : null}
 

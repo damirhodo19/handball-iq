@@ -2,7 +2,7 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 import { PrepSetup, PrepMode, MatchDayPrep, TacticalAnswer, createPrep, savePrep, completePrep, calculateReadiness, loadPrepById } from '@/lib/match-day-storage';
 import { buildMatchDayTactics, buildMatchPlan, type MatchPlan, type TacticalScenario } from '@/lib/match-day-tactics';
 import { loadProfile } from '@/lib/storage';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
+import { resolveActivePlayerPosition } from '@/lib/platform/active-player-position';
 import { saveMatchDayPreparation } from '@/services/matchDayService';
 import { useAuth } from '@/context/AuthContext';
 
@@ -113,7 +113,7 @@ export function MatchDayProvider({ children }: { children: ReactNode }) {
     if (!prep || prep.completed) return null;
     // Migrate older in-progress preps that lack setup.position (never invent GK)
     if (!prep.setup?.position) {
-      const resolved = resolvePlayerPosition(loadProfile());
+      const resolved = resolveActivePlayerPosition(loadProfile());
       if (resolved) {
         prep = {
           ...prep,

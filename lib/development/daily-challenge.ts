@@ -74,6 +74,7 @@ export function generateDailyChallenge(
   const targetScore = difficulty === 'Expert' ? 90 : difficulty === 'Advanced' ? 80 : difficulty === 'Intermediate' ? 70 : 60;
 
   return {
+    position,
     date,
     scenarioIds: selected.map((s) => s.id),
     // Language-neutral focus label; UI translates via home.dailyChallengeTitle
@@ -86,17 +87,38 @@ export function generateDailyChallenge(
   };
 }
 
-export function getOrCreateDailyChallenge(position: HandballPosition): DailyChallenge {
-  const state = loadDevelopmentState();
+export function getOrCreateDailyChallenge(
+  position: HandballPosition,
+  inputState?: DevelopmentState,
+): DailyChallenge {
+  const state = inputState ?? loadDevelopmentState();
   const today = todayStr();
-  if (state.dailyChallenge?.date === today) {
+  const byPosition = state.dailyChallengesByPosition ?? {};
+  const savedForPosition = byPosition[position];
+  if (savedForPosition?.date === today) {
+    state.dailyChallenge = savedForPosition;
+    state.dailyChallengesByPosition = byPosition;
+    if (!inputState) saveDevelopmentState(state);
+    return savedForPosition;
+  }
+  if (
+    state.dailyChallenge?.date === today &&
+    (!state.dailyChallenge.position || state.dailyChallenge.position === position)
+  ) {
     // Stale IDs (e.g. removed legacy LW) must not lock the day to an empty pool.
     const resolved = getDailyChallengeScenarios(state.dailyChallenge, position);
-    if (resolved.length >= 3) return state.dailyChallenge;
+    if (resolved.length >= 3) {
+      const migrated = { ...state.dailyChallenge, position };
+      state.dailyChallenge = migrated;
+      state.dailyChallengesByPosition = { ...byPosition, [position]: migrated };
+      if (!inputState) saveDevelopmentState(state);
+      return migrated;
+    }
   }
   const challenge = generateDailyChallenge(position, state);
   state.dailyChallenge = challenge;
-  saveDevelopmentState(state);
+  state.dailyChallengesByPosition = { ...byPosition, [position]: challenge };
+  if (!inputState) saveDevelopmentState(state);
   return challenge;
 }
 
@@ -119,5 +141,11 @@ export function markDailyChallengeComplete(score: number): void {
   if (!state.dailyChallenge) return;
   state.dailyChallenge.completed = true;
   state.dailyChallenge.completedScore = score;
+  if (state.dailyChallenge.position) {
+    state.dailyChallengesByPosition = {
+      ...(state.dailyChallengesByPosition ?? {}),
+      [state.dailyChallenge.position]: state.dailyChallenge,
+    };
+  }
   saveDevelopmentState(state);
 }

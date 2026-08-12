@@ -55,7 +55,9 @@ export function createDefaultState(): DevelopmentState {
     achievements: [],
     decisionEvents: [],
     dailyChallenge: null,
+    dailyChallengesByPosition: {},
     weeklyProgram: null,
+    weeklyProgramsByPosition: {},
     dailyGoals: null,
     weeklyGoals: null,
     activeProgram: null,
@@ -87,6 +89,8 @@ function migrateState(raw: DevelopmentState): DevelopmentState {
   state.xpEvents = Array.isArray(state.xpEvents) ? state.xpEvents : [];
   state.achievements = Array.isArray(state.achievements) ? state.achievements : [];
   state.decisionEvents = Array.isArray(state.decisionEvents) ? state.decisionEvents : [];
+  state.dailyChallengesByPosition = state.dailyChallengesByPosition ?? {};
+  state.weeklyProgramsByPosition = state.weeklyProgramsByPosition ?? {};
   state.dailyGoals = state.dailyGoals ?? null;
   state.weeklyGoals = state.weeklyGoals ?? null;
   state.activeProgram = state.activeProgram ?? null;

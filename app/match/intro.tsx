@@ -9,16 +9,17 @@ import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { useMatch } from '@/context/MatchContext';
 import { getLocalizedMatchConfig } from '@/lib/match-config-i18n';
-import { loadProfile } from '@/lib/storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateDifficulty, translatePosition } from '@/lib/translations';
-import { isHandballPosition } from '@/lib/platform/position-modules';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
 
 export default function MatchIntroScreen() {
   const { t } = useTranslation();
   const { startMatch } = useMatch();
-  const profile = loadProfile();
-  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const profile = useSyncedProfile();
+  const { position, positions, selectPosition } = useActivePlayerPosition(profile);
   const matchConfig = getLocalizedMatchConfig(t);
 
   function handleStart() {
@@ -46,6 +47,12 @@ export default function MatchIntroScreen() {
             {position ? translatePosition(position, t) : t('match.subtitle')}
           </Text>
         </Animated.View>
+
+        <ActivePositionSelector
+          positions={positions}
+          activePosition={position}
+          onSelect={selectPosition}
+        />
 
         {/* Match Info Card */}
         <Animated.View entering={FadeInDown.delay(200).duration(600)}>

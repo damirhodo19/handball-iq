@@ -23,6 +23,8 @@ import type { Difficulty } from '@/lib/admin-storage';
 import { buildFocusSignature, computeDevelopmentLoad, shouldAvoidSignature } from '@/lib/development/load';
 import { getWeakestSkillId } from '@/lib/development/weakness';
 import { getProgramDef } from '@/lib/development/programs';
+import { computeStatistics } from '@/lib/development/statistics';
+import { resolveActivePlayerPosition } from '@/lib/platform/active-player-position';
 
 export interface ResolverInput {
   profile?: UserProfile;
@@ -157,12 +159,14 @@ export function resolveRecommendedScenarios(
     ? profile.developmentGoals
     : profile.developmentGoal ? [profile.developmentGoal] : [];
   const state = loadDevelopmentState();
-  const weakCategories = Object.entries(state.statistics.byCategory)
+  const positionEvents = state.decisionEvents.filter((event) => event.position === position);
+  const positionStatistics = computeStatistics(positionEvents);
+  const weakCategories = Object.entries(positionStatistics.byCategory)
     .filter(([, v]) => v.total >= 3 && v.total > 0 && v.correct / v.total < 0.65)
     .map(([k]) => k);
-  const incorrectTypes = collectIncorrectTypes(state.decisionEvents);
-  const weakSkill = getWeakestSkillId(state.statistics);
-  const weakSkills = weakSkill ? [weakSkill] : Object.entries(state.statistics.bySkill ?? {})
+  const incorrectTypes = collectIncorrectTypes(positionEvents);
+  const weakSkill = getWeakestSkillId(positionStatistics);
+  const weakSkills = weakSkill ? [weakSkill] : Object.entries(positionStatistics.bySkill ?? {})
     .filter(([, v]) => v.total >= 3 && v.accuracy < 65)
     .map(([k]) => k)
     .slice(0, 3);
@@ -221,7 +225,7 @@ export function resolveRecommendedScenarios(
           incorrectTypes,
           weakSkills,
           programSkills,
-          state.statistics.improvementTrend ?? 0,
+          positionStatistics.improvementTrend ?? 0,
         ) - (s.primaryPosition === 'All' ? 35 : 0);
       // Break loops: rotate when same focus signature repeats
       if (avoidRepeat) {
@@ -265,18 +269,23 @@ export function resolveContent(input: ResolverInput = {}): ContentResolution {
   const activeMode = input.activeMode ?? getActiveMode();
   const isCoachMode = activeMode === 'coach' && (role === 'coach' || role === 'player_coach');
 
-  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const position = isCoachMode
+    ? (isHandballPosition(profile.position) ? profile.position : null)
+    : resolveActivePlayerPosition(profile);
   const mod = position ? getPositionModule(position) : null;
 
   const sessions = loadSessions();
   const matches = loadMatchHistory();
   const events = loadDevelopmentState().decisionEvents;
+  const positionStatistics = computeStatistics(
+    position ? events.filter((event) => event.position === position) : events,
+  );
   const iq = calculateHandballIq(position, sessions, matches, events);
 
   const preferredDifficulty = levelToDifficulty(profile.playingLevel);
   const load = computeDevelopmentLoad();
   const recommended = position ? resolveRecommendedScenarios(position, profile) : [];
-  const weakSkill = position ? getWeakestSkillId(loadDevelopmentState().statistics) : null;
+  const weakSkill = position ? getWeakestSkillId(positionStatistics) : null;
 
   const group = mod?.group ?? 'general';
   const training: ResolvedTrainingPlan = {

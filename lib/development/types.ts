@@ -80,6 +80,8 @@ export interface DecisionEvent {
 }
 
 export interface DailyChallenge {
+  /** Added in Position Engine 2.0; absent on legacy challenges. */
+  position?: HandballPosition;
   date: string;
   scenarioIds: string[];
   title: string;
@@ -103,6 +105,8 @@ export interface WeeklyDayPlan {
 }
 
 export interface WeeklyProgram {
+  /** Added in Position Engine 2.0; absent on legacy weekly plans. */
+  position?: HandballPosition;
   weekStart: string;
   days: WeeklyDayPlan[];
   weeklyScore: number;
@@ -243,7 +247,11 @@ export interface DevelopmentState {
   achievements: UnlockedAchievement[];
   decisionEvents: DecisionEvent[];
   dailyChallenge: DailyChallenge | null;
+  /** Per-position challenges; dailyChallenge remains the active legacy alias. */
+  dailyChallengesByPosition?: Partial<Record<HandballPosition, DailyChallenge>>;
   weeklyProgram: WeeklyProgram | null;
+  /** Per-position weekly plans; weeklyProgram remains the active legacy alias. */
+  weeklyProgramsByPosition?: Partial<Record<HandballPosition, WeeklyProgram>>;
   dailyGoals: DailyGoalsState | null;
   weeklyGoals: WeeklyGoalsState | null;
   activeProgram: ProgramEnrollment | null;

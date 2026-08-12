@@ -1,8 +1,11 @@
 import { readStorageRaw, writeStorageRaw, removeStorageKey } from '@/lib/platform-storage';
+import type { HandballPosition } from '@/lib/positions';
 
 const KEY = 'hbiq_session_intent';
 
 export interface SessionIntent {
+  /** Position explicitly selected before opening the session. */
+  position?: HandballPosition;
   /** Prefer these bank scenario ids when starting a standard session */
   scenarioIds?: string[];
   /** Optional category name filter (scenario-bank category) */

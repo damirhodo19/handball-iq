@@ -10,7 +10,7 @@ import { ScreenBackground, ProgressBar } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
 import { ProgressRing } from '@/components/ProgressRing';
 import { useMatch } from '@/context/MatchContext';
-import { saveMatchRecord, loadProfile } from '@/lib/storage';
+import { saveMatchRecord } from '@/lib/storage';
 import { useAuth } from '@/context/AuthContext';
 import { buildMatchActivityPayload, processActivity, stableActivityId } from '@/lib/development';
 import { syncDevelopmentFull } from '@/services/developmentService';
@@ -21,19 +21,17 @@ import { getLocalizedMatchMetadata } from '@/lib/match-config-i18n';
 import { translatePosition } from '@/lib/translations';
 import { buildLocalizedReportView } from '@/lib/match-report-i18n';
 import { snapshotFromMatchReport } from '@/lib/match-history-i18n';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 
 export default function MatchReportScreen() {
   const { t } = useTranslation();
-  const { report, answers, situations, resetMatch } = useMatch();
+  const { state, report, answers, situations, resetMatch } = useMatch();
   const { user } = useAuth();
   const localSavedKeyRef = useRef<string | null>(null);
   const cloudSavedKeyRef = useRef<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [devResult, setDevResult] = useState<{ xp: number; levelUp: boolean } | null>(null);
 
-  const profile = loadProfile();
-  const position = resolvePlayerPosition(profile);
+  const position = state.position;
   const positionLabel = position ? translatePosition(position, t) : t('role.player');
   const matchMeta = getLocalizedMatchMetadata(t, positionLabel);
 
@@ -43,6 +41,7 @@ export default function MatchReportScreen() {
     ? stableActivityId('m', [
         matchMeta.opponent,
         matchMeta.competition,
+        position ?? 'no-position',
         report.decisionScore,
         ...answers.map((a) => `${a.situationIndex}:${a.chosenDecisionId}:${a.isCorrect}`),
       ])
@@ -56,6 +55,7 @@ export default function MatchReportScreen() {
     saveMatchRecord({
       id: sourceId,
       date: new Date().toISOString(),
+      position: position ?? undefined,
       opponent: matchMeta.opponent,
       competition: matchMeta.competition,
       matchRating: report.matchRating,

@@ -17,15 +17,16 @@ export async function syncDevelopmentFull(userId: string): Promise<{ error: stri
   const state = loadDevelopmentState();
   const streak = loadStreak();
 
-  const { error } = await supabase.from('player_development').upsert(
-    {
+  const payload = {
       user_id: userId,
       total_xp: state.totalXp,
       player_level: state.level,
       player_level_number: state.playerLevel,
       decision_events: state.decisionEvents.slice(0, 200),
       daily_challenge: state.dailyChallenge,
+      daily_challenges_by_position: state.dailyChallengesByPosition ?? {},
       weekly_program: state.weeklyProgram,
+      weekly_programs_by_position: state.weeklyProgramsByPosition ?? {},
       daily_goals: state.dailyGoals,
       weekly_goals: state.weeklyGoals,
       active_program: state.activeProgram,
@@ -44,9 +45,22 @@ export async function syncDevelopmentFull(userId: string): Promise<{ error: stri
         weekStart: streak.weekStart,
       },
       updated_at: new Date().toISOString(),
-    },
+  };
+  let { error } = await supabase.from('player_development').upsert(
+    payload,
     { onConflict: 'user_id' },
   );
+  if (error) {
+    const {
+      daily_challenges_by_position: _dailyByPosition,
+      weekly_programs_by_position: _weeklyByPosition,
+      ...legacyPayload
+    } = payload;
+    ({ error } = await supabase.from('player_development').upsert(
+      legacyPayload,
+      { onConflict: 'user_id' },
+    ));
+  }
 
   await syncXpEventsToCloud(userId, state);
   await syncAchievementsToCloud(userId, state);
@@ -191,7 +205,15 @@ export async function hydrateDevelopmentFromCloud(userId: string): Promise<{ err
           : local.decisionEvents)
       : local.decisionEvents,
     dailyChallenge: mergeDaily(data.daily_challenge ?? null, local.dailyChallenge),
+    dailyChallengesByPosition: {
+      ...((data.daily_challenges_by_position as DevelopmentState['dailyChallengesByPosition']) ?? {}),
+      ...(local.dailyChallengesByPosition ?? {}),
+    },
     weeklyProgram: data.weekly_program ?? local.weeklyProgram,
+    weeklyProgramsByPosition: {
+      ...((data.weekly_programs_by_position as DevelopmentState['weeklyProgramsByPosition']) ?? {}),
+      ...(local.weeklyProgramsByPosition ?? {}),
+    },
     dailyGoals: data.daily_goals ?? local.dailyGoals,
     weeklyGoals: data.weekly_goals ?? local.weeklyGoals,
     activeProgram: data.active_program ?? local.activeProgram,

@@ -44,7 +44,7 @@ export interface MatchDayTacticsInput {
   position: HandballPosition;
   goals: PersonalGoal[];
   count: number;
-  developmentGoal?: string | null;
+  developmentGoal?: string | string[] | null;
   playingLevel?: string | null;
   dominantHand?: string | null;
   opponent?: string | null;

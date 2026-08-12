@@ -1,24 +1,28 @@
 import type { CoachReport, DevelopmentState } from './types';
 import { detectWeaknesses } from './weakness';
 import type { HandballPosition } from '@/lib/positions';
+import { computeStatistics } from './statistics';
 
 export function generateCoachReport(
   state: DevelopmentState,
-  _position: HandballPosition,
+  position: HandballPosition,
 ): CoachReport {
-  const weaknesses = detectWeaknesses(state.statistics, state.decisionEvents);
-  const daily = state.dailyChallenge;
+  const events = state.decisionEvents.filter((event) => event.position === position);
+  const statistics = computeStatistics(events);
+  const weaknesses = detectWeaknesses(statistics, events);
+  const daily = state.dailyChallengesByPosition?.[position] ??
+    (state.dailyChallenge?.position === position ? state.dailyChallenge : null);
 
   const improved: string[] = [];
   const declined: string[] = [];
 
-  if (state.statistics.improvementTrend > 3) {
-    improved.push(`Decision accuracy up ${state.statistics.improvementTrend}% over the last week.`);
-  } else if (state.statistics.improvementTrend < -3) {
-    declined.push(`Decision accuracy down ${Math.abs(state.statistics.improvementTrend)}% — refocus on basics.`);
+  if (statistics.improvementTrend > 3) {
+    improved.push(`Decision accuracy up ${statistics.improvementTrend}% over the last week.`);
+  } else if (statistics.improvementTrend < -3) {
+    declined.push(`Decision accuracy down ${Math.abs(statistics.improvementTrend)}% — refocus on basics.`);
   }
 
-  const catEntries = Object.entries(state.statistics.byCategory)
+  const catEntries = Object.entries(statistics.byCategory)
     .filter(([, s]) => s.total >= 5)
     .sort((a, b) => b[1].accuracy - a[1].accuracy);
 
@@ -29,15 +33,17 @@ export function generateCoachReport(
     declined.push(`Weakest area: ${catEntries[catEntries.length - 1][0]} (${catEntries[catEntries.length - 1][1].accuracy}%).`);
   }
 
-  if (state.statistics.avgReactionMs > 0 && state.statistics.avgReactionMs < 6000) {
+  if (statistics.avgReactionMs > 0 && statistics.avgReactionMs < 6000) {
     improved.push('Reaction speed is competitive — keep trusting your first read.');
   } else if (weaknesses.slowDecisions) {
     declined.push('Decisions are taking too long under pressure.');
   }
 
   const trainNext = [...weaknesses.recommendations];
-  if (state.weeklyProgram && state.weeklyProgram.daysCompleted < 7) {
-    const nextDay = state.weeklyProgram.days.find((d) => !d.completed);
+  const weekly = state.weeklyProgramsByPosition?.[position] ??
+    (state.weeklyProgram?.position === position ? state.weeklyProgram : null);
+  if (weekly && weekly.daysCompleted < 7) {
+    const nextDay = weekly.days.find((d) => !d.completed);
     if (nextDay) trainNext.push(`Complete weekly day: ${nextDay.focus}.`);
   }
 

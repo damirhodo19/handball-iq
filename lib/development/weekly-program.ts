@@ -30,11 +30,32 @@ function buildWeekDays(position: HandballPosition): WeeklyDayPlan[] {
   }));
 }
 
-export function getOrCreateWeeklyProgram(position: HandballPosition): WeeklyProgram {
-  const state = loadDevelopmentState();
+export function getOrCreateWeeklyProgram(
+  position: HandballPosition,
+  inputState?: import('./types').DevelopmentState,
+): WeeklyProgram {
+  const state = inputState ?? loadDevelopmentState();
   const weekStart = getWeekStart();
-  if (state.weeklyProgram?.weekStart === weekStart) return state.weeklyProgram;
+  const byPosition = state.weeklyProgramsByPosition ?? {};
+  const savedForPosition = byPosition[position];
+  if (savedForPosition?.weekStart === weekStart) {
+    state.weeklyProgram = savedForPosition;
+    state.weeklyProgramsByPosition = byPosition;
+    if (!inputState) saveDevelopmentState(state);
+    return savedForPosition;
+  }
+  if (
+    state.weeklyProgram?.weekStart === weekStart &&
+    (!state.weeklyProgram.position || state.weeklyProgram.position === position)
+  ) {
+    const migrated = { ...state.weeklyProgram, position };
+    state.weeklyProgram = migrated;
+    state.weeklyProgramsByPosition = { ...byPosition, [position]: migrated };
+    if (!inputState) saveDevelopmentState(state);
+    return migrated;
+  }
   const program: WeeklyProgram = {
+    position,
     weekStart,
     days: buildWeekDays(position),
     weeklyScore: 0,
@@ -42,7 +63,8 @@ export function getOrCreateWeeklyProgram(position: HandballPosition): WeeklyProg
     xpAwarded: false,
   };
   state.weeklyProgram = program;
-  saveDevelopmentState(state);
+  state.weeklyProgramsByPosition = { ...byPosition, [position]: program };
+  if (!inputState) saveDevelopmentState(state);
   return program;
 }
 
@@ -62,6 +84,12 @@ export function markWeeklyDayComplete(dayIndex: number, score: number): WeeklyPr
   state.weeklyProgram.weeklyScore = scores.length > 0
     ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
     : 0;
+  if (state.weeklyProgram.position) {
+    state.weeklyProgramsByPosition = {
+      ...(state.weeklyProgramsByPosition ?? {}),
+      [state.weeklyProgram.position]: state.weeklyProgram,
+    };
+  }
   saveDevelopmentState(state);
   return state.weeklyProgram;
 }

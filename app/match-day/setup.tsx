@@ -11,10 +11,11 @@ import { ScreenBackground } from '@/components/Screen';
 import { useMatchDay } from '@/context/MatchDayContext';
 import { MatchType, MatchLocation, PlayingTime, PersonalGoal, PrepMode } from '@/lib/match-day-storage';
 import { getMatchDayPersonalGoals } from '@/lib/positions';
-import { loadProfile } from '@/lib/storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal } from '@/lib/translations';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
 
 const MATCH_TYPES: MatchType[] = ['League', 'Cup', 'Friendly', 'Tournament'];
 const LOCATIONS: MatchLocation[] = ['Home', 'Away', 'Neutral'];
@@ -32,8 +33,8 @@ export default function SetupScreen() {
   const [goals, setGoals] = useState<string[]>([]);
   const [opponentError, setOpponentError] = useState(false);
 
-  const profile = loadProfile();
-  const position = resolvePlayerPosition(profile);
+  const profile = useSyncedProfile();
+  const { position, positions, selectPosition } = useActivePlayerPosition(profile);
   const PERSONAL_GOALS = position ? getMatchDayPersonalGoals(position) : [];
 
   const toggleGoal = (g: string) => {
@@ -60,7 +61,9 @@ export default function SetupScreen() {
         matchType,
         location,
         playingTime,
-        developmentGoal: profile.developmentGoal ?? null,
+        developmentGoal: profile.developmentGoals.length
+          ? profile.developmentGoals
+          : profile.developmentGoal ?? null,
         playingLevel: profile.playingLevel ?? null,
         route: '/match-day/prepare',
       });
@@ -72,7 +75,9 @@ export default function SetupScreen() {
       playingTime,
       goals: goals as PersonalGoal[],
       position,
-      developmentGoal: profile.developmentGoal ?? null,
+      developmentGoal: profile.developmentGoals.length
+        ? profile.developmentGoals
+        : profile.developmentGoal ?? null,
       playingLevel: profile.playingLevel ?? null,
       dominantHand: profile.dominantHand ?? null,
     });
@@ -107,6 +112,15 @@ export default function SetupScreen() {
             <Text style={styles.headerSub}>{mode === 'quick' ? t('matchDay.modeQuick') : t('matchDay.modeComplete')}</Text>
           </View>
         </View>
+
+        <ActivePositionSelector
+          positions={positions}
+          activePosition={position}
+          onSelect={(nextPosition) => {
+            selectPosition(nextPosition);
+            setGoals([]);
+          }}
+        />
 
         {/* Opponent */}
         <Animated.View entering={FadeInDown.delay(50).duration(400)}>

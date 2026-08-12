@@ -99,7 +99,7 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
     const { error } = await saveSessionResult({
       session_type: 'training',
       session_name: session.sessionName,
-      position: null,
+      position: session.position ?? data.profile?.position ?? null,
       score: session.decisionScore,
       decision_score: session.decisionScore,
       mental_readiness: 0,
@@ -119,7 +119,7 @@ export async function syncLocalDataToCloud(): Promise<{ synced: number; failed: 
 
   for (const match of data.matches) {
     const { error } = await saveMatchSimulation({
-      position: data.profile?.position || '',
+      position: match.position ?? data.profile?.position ?? '',
       opponent: match.opponent,
       difficulty: match.competition,
       final_home_score: 0,

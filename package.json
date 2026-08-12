@@ -19,6 +19,7 @@
     "terminology:validate": "node scripts/validate-handball-terminology.mjs",
     "validate:no-position-fallback": "node scripts/validate-no-position-fallback.mjs",
     "validate:position-personalization": "node scripts/validate-position-personalization.mjs",
+    "validate:position-engine-v2": "node scripts/validate-position-engine-v2.mjs",
     "validate:unique-session": "node scripts/validate-unique-session-scenarios.mjs",
     "validate:match-day-tactics": "node scripts/validate-match-day-tactics.mjs",
     "validate:tactical-systems": "node scripts/validate-tactical-systems.mjs",

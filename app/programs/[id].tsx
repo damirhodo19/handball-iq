@@ -13,6 +13,7 @@ import { useSyncedProfile } from '@/hooks/useSyncedProfile';
 import { isHandballPosition } from '@/lib/platform/position-modules';
 import type { HandballPosition } from '@/lib/positions';
 import { useDevelopment } from '@/hooks/useDevelopment';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
 
 export default function ProgramDetail() {
   const { t } = useTranslation();
@@ -21,6 +22,7 @@ export default function ProgramDetail() {
   const profile = useSyncedProfile();
   const positions = [profile.position, profile.secondaryPosition]
     .filter((value): value is HandballPosition => isHandballPosition(value));
+  const { position: activePosition, selectPosition } = useActivePlayerPosition(profile);
   const { activeProgram, refresh } = useDevelopment();
 
   if (!def) {
@@ -31,7 +33,9 @@ export default function ProgramDetail() {
     );
   }
 
-  const programPosition = positions.find((position) => isProgramEligible(def.id, position)) ?? null;
+  const programPosition = activePosition && isProgramEligible(def.id, activePosition)
+    ? activePosition
+    : positions.find((position) => isProgramEligible(def.id, position)) ?? null;
   const eligible = programPosition !== null;
   const isCurrent = activeProgram?.programId === def.id && !activeProgram.completed;
 
@@ -41,6 +45,7 @@ export default function ProgramDetail() {
       return;
     }
     try {
+      selectPosition(programPosition);
       enrollInProgram(def.id, programPosition);
       refresh();
       router.replace('/programs');

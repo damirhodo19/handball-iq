@@ -7,6 +7,7 @@ export interface UserPreferences {
   notifications_enabled: boolean | null;
   daily_reminder_time: string | null;
   active_mode: 'player' | 'coach' | null;
+  active_player_position: string | null;
   onboarding_version: number | null;
   created_at: string;
   updated_at: string;

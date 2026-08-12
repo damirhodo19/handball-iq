@@ -109,7 +109,7 @@ function pauseActiveProgram(state: DevelopmentState): void {
 export function ensureActiveProgram(
   state: DevelopmentState,
   position: HandballPosition,
-  developmentGoal?: string | null,
+  developmentGoal?: string | string[] | null,
   weakestCategory?: string | null,
 ): ProgramEnrollment {
   if (!state.completedPrograms) state.completedPrograms = [];
@@ -128,6 +128,7 @@ export function ensureActiveProgram(
   if (
     state.activeProgram &&
     !state.activeProgram.completed &&
+    state.activeProgram.position === position &&
     isProgramEligible(state.activeProgram.programId, position)
   ) {
     state.activeProgram.completionPercent = computeCompletion(state.activeProgram);
@@ -137,6 +138,23 @@ export function ensureActiveProgram(
   // In-progress program became ineligible after position change — pause (never mark completed)
   if (state.activeProgram && !state.activeProgram.completed) {
     pauseActiveProgram(state);
+  }
+
+  const pausedIndex = (state.pausedPrograms ?? []).findLastIndex(
+    (program) =>
+      program.position === position &&
+      !program.completed &&
+      isProgramEligible(program.programId, position),
+  );
+  if (pausedIndex >= 0) {
+    const [paused] = state.pausedPrograms!.splice(pausedIndex, 1);
+    state.activeProgram = {
+      ...paused,
+      status: 'active',
+      pausedAt: null,
+      completionPercent: computeCompletion(paused),
+    };
+    return state.activeProgram;
   }
 
   const recommended = recommendPrograms(position, developmentGoal, weakestCategory)[0]
@@ -152,6 +170,9 @@ export function enrollInProgram(programId: ProgramId, position: HandballPosition
     throw new Error(`Program ${programId} is not eligible for ${position}`);
   }
   const state = loadDevelopmentState();
+  if (state.activeProgram && !state.activeProgram.completed) {
+    pauseActiveProgram(state);
+  }
   const enrollment = createEnrollment(programId, position);
   state.activeProgram = enrollment;
   saveDevelopmentState(state);
@@ -166,7 +187,10 @@ export function applyProgramProgress(
   if (!state.activeProgram || state.activeProgram.completed) {
     return { weekCompleted: false, programCompleted: false, milestone: false };
   }
-  if (!isProgramEligible(state.activeProgram.programId, position)) {
+  if (
+    state.activeProgram.position !== position ||
+    !isProgramEligible(state.activeProgram.programId, position)
+  ) {
     return { weekCompleted: false, programCompleted: false, milestone: false };
   }
 

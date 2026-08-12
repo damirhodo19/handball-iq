@@ -17,6 +17,10 @@ import {
 } from '@/lib/development/active-session';
 import { isHandballPosition } from '@/lib/platform/position-modules';
 import {
+  getAvailablePlayerPositions,
+  resolveActivePlayerPosition,
+} from '@/lib/platform/active-player-position';
+import {
   resolveTrainingScenariosAsGk,
   resolveRecommendedScenarios,
   filterResolvedScenarios,
@@ -86,7 +90,7 @@ function resolveFromBankIds(ids: string[], position: HandballPosition): BankScen
   for (const id of dedupeIdsPreserveOrder(ids)) {
     const s = map.get(id);
     if (!s) continue;
-    if (s.primaryPosition === 'Goalkeeper' && position !== 'Goalkeeper') continue;
+    if (!isScenarioForPosition(s, position)) continue;
     const family = getScenarioFamilyId(s);
     if (seenFamilies.has(family)) continue;
     seenFamilies.add(family);
@@ -147,6 +151,7 @@ function loadPersonalizedScenarios(position: HandballPosition, targetCount = DEF
 }
 
 interface SessionState {
+  position: HandballPosition | null;
   answers: (number | null)[];
   currentScenarioIndex: number;
   selectedIndex: number | null;
@@ -165,6 +170,7 @@ const SessionContext = createContext<SessionState | undefined>(undefined);
 
 export function SessionProvider({ children }: { children: ReactNode }) {
   const [scenarios, setScenarios] = useState<GKScenario[]>([]);
+  const [sessionPosition, setSessionPosition] = useState<HandballPosition | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -188,12 +194,21 @@ export function SessionProvider({ children }: { children: ReactNode }) {
 
     (async () => {
       const profile = loadProfile();
-      const position = isHandballPosition(profile.position) ? profile.position : null;
+      const intent = getSessionIntent();
+      const availablePositions = getAvailablePlayerPositions(profile);
+      const intentPosition = intent?.position && availablePositions.includes(intent.position)
+        ? intent.position
+        : null;
+      const position = intentPosition ?? resolveActivePlayerPosition(profile);
 
       if (!position) {
-        if (!cancelled) setScenarios([]);
+        if (!cancelled) {
+          setSessionPosition(null);
+          setScenarios([]);
+        }
         return;
       }
+      if (!cancelled) setSessionPosition(position);
 
       // Resume: navigating away/back must not regenerate the active pool
       if (restoreIfActive(position)) return;
@@ -334,6 +349,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   return (
     <SessionContext.Provider
       value={{
+        position: sessionPosition,
         answers,
         currentScenarioIndex,
         selectedIndex,

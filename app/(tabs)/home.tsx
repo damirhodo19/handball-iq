@@ -53,11 +53,12 @@ import { Button } from '@/components/Button';
 import { getSyncUiStatus, type SyncUiStatus } from '@/services/syncService';
 import {
   activeModeNeedsPlayerPosition,
-  resolvePlayerPosition,
 } from '@/lib/platform/resolve-position';
 import { isPlatformStorageHydrated } from '@/lib/platform-storage';
 import { useTabScreenBottomPadding } from '@/lib/layout';
 import { fetchTeamNotificationCounts } from '@/lib/team-platform/notifications';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
 
 function getGreetingKey(): string {
   const hour = new Date().getHours();
@@ -150,6 +151,7 @@ export default function HomeScreen() {
     todayProgramSession,
     levelProgress,
     streak: devStreak,
+    positionStatistics,
     refresh: refreshDev,
   } = useDevelopment();
 
@@ -159,20 +161,27 @@ export default function HomeScreen() {
     refreshDev();
     setRefreshing(false);
   }, [loadData, refreshDev]);
-  const stats = useMemo(
-    () => computePlayerStats(localSessions, matches),
-    [localSessions, matches],
-  );
-
   const styles = useMemo(() => createStyles(), [themeVersion]);
 
   const safeProfile = localProfile ?? migrateLocalProfileToV2();
-  const playerPosition = resolvePlayerPosition(safeProfile);
+  const {
+    position: playerPosition,
+    positions: playerPositions,
+    selectPosition,
+  } = useActivePlayerPosition(safeProfile);
+  const effectiveProfile = useMemo(
+    () => ({ ...safeProfile, position: playerPosition ?? safeProfile.position }),
+    [safeProfile, playerPosition],
+  );
+  const stats = useMemo(
+    () => computePlayerStats(localSessions, matches, playerPosition),
+    [localSessions, matches, playerPosition],
+  );
   const needsPlayerPosition = activeModeNeedsPlayerPosition(safeProfile, activeMode);
 
   const resolved = useMemo(
-    () => resolveContent({ profile: safeProfile, activeMode }),
-    [safeProfile, activeMode, localSessions, matches],
+    () => resolveContent({ profile: effectiveProfile, activeMode }),
+    [effectiveProfile, activeMode, localSessions, matches],
   );
 
   const iqScore = resolved.iq.overall;
@@ -205,14 +214,22 @@ export default function HomeScreen() {
 
   const startRecommended = () => {
     clearActiveTrainingSession();
-    setSessionIntent({ scenarioIds: resolved.training.scenarioIds });
+    setSessionIntent({
+      position: playerPosition ?? undefined,
+      scenarioIds: resolved.training.scenarioIds,
+    });
     setSessionMode('standard');
     router.push('/session');
   };
 
   const sessionsThisWeek = streak?.sessionsThisWeek ?? stats.sessionsThisWeek ?? 0;
-  const trend = devState.statistics?.improvementTrend ?? 0;
-  const upcomingGoal = goalLabel(resolved.developmentGoal, t);
+  const trend = positionStatistics.improvementTrend ?? 0;
+  const activeDevelopmentGoals = safeProfile.developmentGoals.length
+    ? safeProfile.developmentGoals
+    : resolved.developmentGoal ? [resolved.developmentGoal] : [];
+  const upcomingGoal = activeDevelopmentGoals.length
+    ? activeDevelopmentGoals.map((goal) => goalLabel(goal, t)).join(' · ')
+    : goalLabel(null, t);
 
   const positionLabel = playerPosition
     ? translatePosition(playerPosition, t)
@@ -342,6 +359,17 @@ export default function HomeScreen() {
           </Animated.View>
         )}
 
+        <Animated.View entering={FadeInDown.delay(35).duration(400)}>
+          <ActivePositionSelector
+            positions={playerPositions}
+            activePosition={playerPosition}
+            onSelect={(nextPosition) => {
+              selectPosition(nextPosition);
+              refreshDev();
+            }}
+          />
+        </Animated.View>
+
         {/* Today's Handball IQ */}
         <Animated.View entering={FadeInDown.delay(50).duration(500)}>
           <PressableCard
@@ -460,6 +488,7 @@ export default function HomeScreen() {
               testID="home-daily-challenge-card"
               onPress={() => {
                 clearActiveTrainingSession();
+                setSessionIntent({ position: playerPosition ?? undefined });
                 setSessionMode('daily_challenge');
                 router.push('/session');
               }}

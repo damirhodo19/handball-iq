@@ -16,21 +16,24 @@ import {
   type ProgramId,
   type DevelopmentProgramDef,
 } from '@/lib/development/programs';
-import { isHandballPosition } from '@/lib/platform/position-modules';
-import type { HandballPosition } from '@/lib/positions';
 import { getWeakestSkillId } from '@/lib/development/weakness';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
+import { PLAYER_GOALS_V2 } from '@/lib/platform/types';
 
 export default function ProgramsIndex() {
   const { t } = useTranslation();
-  const { activeProgram, state } = useDevelopment();
+  const { activeProgram, state, positionStatistics, refresh } = useDevelopment();
   const completedPrograms = (state.completedPrograms ?? []).filter(
     (p) => p.completed || p.status === 'completed',
   );
   const pausedPrograms = state.pausedPrograms ?? [];
-  const statistics = state.statistics;
+  const statistics = positionStatistics;
   const profile = useSyncedProfile();
-  const positions = [profile.position, profile.secondaryPosition]
-    .filter((value): value is HandballPosition => isHandballPosition(value));
+  const { position: activePosition, positions, selectPosition } = useActivePlayerPosition(profile);
+  const orderedPositions = activePosition
+    ? [activePosition, ...positions.filter((position) => position !== activePosition)]
+    : positions;
   const developmentGoals = profile.developmentGoals.length
     ? profile.developmentGoals
     : profile.developmentGoal ? [profile.developmentGoal] : [];
@@ -42,6 +45,10 @@ export default function ProgramsIndex() {
       Defence: 'sprint5.goal.defence',
       Attack: 'sprint5.goal.attack',
       'Mental Preparation': 'sprint5.goal.mentalPreparation',
+      'Game Intelligence': 'goal.gameIntelligence',
+      'Match Preparation': 'goal.matchPreparation',
+      Leadership: 'goal.leadership',
+      'Complete Development': 'goal.completeDevelopment',
     };
     const key = map[g];
     if (!key) return g;
@@ -57,7 +64,7 @@ export default function ProgramsIndex() {
   };
 
   const recommended = useMemo(() => {
-    const rankedByPosition = positions.map((position) =>
+    const rankedByPosition = orderedPositions.map((position) =>
       recommendPrograms(position, developmentGoals, getWeakestSkillId(statistics)),
     );
     const programs: DevelopmentProgramDef[] = [];
@@ -71,7 +78,7 @@ export default function ProgramsIndex() {
     return programs.filter((program, index) =>
       programs.findIndex((candidate) => candidate.id === program.id) === index,
     );
-  }, [profile.position, profile.secondaryPosition, developmentGoals.join('|'), statistics]);
+  }, [activePosition, profile.position, profile.secondaryPosition, developmentGoals.join('|'), statistics]);
 
   const eligible = useMemo(() => {
     if (!positions.length) return DEVELOPMENT_PROGRAMS;
@@ -115,6 +122,15 @@ export default function ProgramsIndex() {
       <ScrollView contentContainerStyle={styles.container}>
         <BackButton labeled label={t('common.back')} fallbackHref="/(tabs)/progress" style={{ marginBottom: Spacing.sm }} />
         <Text style={styles.title}>{t('sprint5.programs.title')}</Text>
+
+        <ActivePositionSelector
+          positions={positions}
+          activePosition={activePosition}
+          onSelect={(nextPosition) => {
+            selectPosition(nextPosition);
+            refresh();
+          }}
+        />
 
         {activeProgram && !activeProgram.completed ? (
           <View style={styles.section}>
@@ -180,7 +196,7 @@ export default function ProgramsIndex() {
         <View style={styles.section}>
           <Text style={styles.sectionLabel}>{t('sprint5.programs.all')}</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filters}>
-            {[null, 'Decision Making', 'Defence', 'Attack', 'Mental Preparation'].map((g) => (
+            {[null, ...PLAYER_GOALS_V2].map((g) => (
               <TouchableOpacity
                 key={g ?? 'all'}
                 style={[styles.chip, filterGoal === g && styles.chipActive]}

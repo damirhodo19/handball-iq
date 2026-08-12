@@ -6,16 +6,19 @@ import { BarChart3, Target, Shield, Eye, Activity, TrendingUp, Award } from 'luc
 import { Colors, Typography, Spacing, Radius, Shadows } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { ScreenBackground, ProgressBar } from '@/components/Screen';
-import { loadMetrics, loadSessions, loadMatchHistory, loadStreak, loadProfile, MetricHistory, SessionRecord } from '@/lib/storage';
+import { loadMetrics, loadSessions, loadMatchHistory, loadStreak, MetricHistory, SessionRecord } from '@/lib/storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSkill } from '@/lib/translations';
 import { buildWeaknessRecommendations, formatWeaknessRecommendation } from '@/lib/development/weakness-i18n';
 import { localizeContent } from '@/lib/content-localize';
 import { useDevelopment } from '@/hooks/useDevelopment';
 import { resolveContent } from '@/lib/platform/content-resolver';
-import { getPositionModule, isHandballPosition } from '@/lib/platform/position-modules';
+import { getPositionModule } from '@/lib/platform/position-modules';
 import { getProgramDef } from '@/lib/development/programs';
 import { AchievementDetail } from '@/components/AchievementDetail';
+import { useSyncedProfile } from '@/hooks/useSyncedProfile';
+import { useActivePlayerPosition } from '@/hooks/useActivePlayerPosition';
+import { ActivePositionSelector } from '@/components/ActivePositionSelector';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const CHART_WIDTH = SCREEN_WIDTH - Spacing.lg * 2 - 40;
@@ -40,26 +43,52 @@ export default function ProgressScreen() {
     setRefreshing(false);
   }, [load]);
 
-  const recentMetrics = [...metrics].reverse().slice(0, 10);
-  const totalSessions = sessions.length;
-  const avgScore = totalSessions > 0 ? Math.round(sessions.reduce((s, ss) => s + ss.decisionScore, 0) / totalSessions) : 0;
-  const bestScore = totalSessions > 0 ? Math.max(...sessions.map((s) => s.decisionScore)) : 0;
-  const { state: devState, weaknesses, coachReport, achievements, activeProgram, weeklyGoalSummary, streak: devStreak } = useDevelopment();
+  const profile = useSyncedProfile();
+  const { position, positions, selectPosition } = useActivePlayerPosition(profile);
+  const scopedSessions = useMemo(
+    () => position
+      ? sessions.filter((session) => session.position === position || (!session.position && profile.position === position))
+      : sessions,
+    [sessions, position, profile.position],
+  );
+  const scopedMetrics = useMemo(
+    () => position
+      ? metrics.filter((metric) => metric.position === position || (!metric.position && profile.position === position))
+      : metrics,
+    [metrics, position, profile.position],
+  );
+  const recentMetrics = [...scopedMetrics].reverse().slice(0, 10);
+  const totalSessions = scopedSessions.length;
+  const avgScore = totalSessions > 0 ? Math.round(scopedSessions.reduce((s, ss) => s + ss.decisionScore, 0) / totalSessions) : 0;
+  const bestScore = totalSessions > 0 ? Math.max(...scopedSessions.map((s) => s.decisionScore)) : 0;
+  const {
+    state: devState,
+    positionStatistics,
+    weaknesses,
+    coachReport,
+    achievements,
+    activeProgram,
+    weeklyGoalSummary,
+    streak: devStreak,
+    refresh: refreshDevelopment,
+  } = useDevelopment();
   const completedPrograms = devState.completedPrograms ?? [];
   const [selectedAch, setSelectedAch] = useState<string | null>(null);
   const weaknessRecs = buildWeaknessRecommendations(weaknesses);
   const localizedWeaknessRecs = weaknessRecs.length > 0
     ? weaknessRecs.map((item) => formatWeaknessRecommendation(item, t))
     : [t('dev.rec.maintainConsistency')];
-  const stats = devState.statistics;
-  const totalTime = sessions.reduce((s, ss) => s + ss.timeSpent, 0);
+  const stats = positionStatistics;
+  const totalTime = scopedSessions.reduce((s, ss) => s + ss.timeSpent, 0);
   const topCategories = Object.entries(stats.byCategory)
     .filter(([, s]) => s.total >= 3)
     .sort((a, b) => b[1].accuracy - a[1].accuracy)
     .slice(0, 5);
-  const profile = loadProfile();
-  const resolved = useMemo(() => resolveContent({ profile }), [profile, sessions]);
-  const position = isHandballPosition(profile.position) ? profile.position : null;
+  const effectiveProfile = useMemo(
+    () => ({ ...profile, position: position ?? profile.position }),
+    [profile, position],
+  );
+  const resolved = useMemo(() => resolveContent({ profile: effectiveProfile }), [effectiveProfile, scopedSessions]);
   const mod = position ? getPositionModule(position) : null;
   const skillRows = mod
     ? mod.positionSkills.map((id) => ({
@@ -70,10 +99,12 @@ export default function ProgressScreen() {
       }))
     : [];
   const progressCtx = {
-    sessionCount: sessions.length,
+    sessionCount: scopedSessions.length,
     decisionCount: stats.totalDecisions,
     streak: devStreak?.currentStreak ?? loadStreak().currentStreak,
-    matchCount: loadMatchHistory().length,
+    matchCount: loadMatchHistory().filter((match) =>
+      !position || match.position === position || (!match.position && profile.position === position),
+    ).length,
     programWeeks: activeProgram?.weeksCompleted.length ?? 0,
     programsCompleted: completedPrograms.filter((p) => p.completed).length,
   };
@@ -93,6 +124,15 @@ export default function ProgressScreen() {
             <Text style={styles.headerSub}>{t('progress.subtitle')}</Text>
           </View>
         </View>
+
+        <ActivePositionSelector
+          positions={positions}
+          activePosition={position}
+          onSelect={(nextPosition) => {
+            selectPosition(nextPosition);
+            refreshDevelopment();
+          }}
+        />
 
         {/* Handball IQ trend */}
         <SectionLabel label={t('home.overallIq')} />

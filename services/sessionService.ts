@@ -9,6 +9,7 @@ export function sessionResultToRecord(result: SessionResult): SessionRecord {
     id: result.id,
     date: result.completed_at,
     sessionName: result.session_name,
+    position: result.position ?? undefined,
     decisionScore: result.decision_score,
     timeSpent: result.duration_seconds,
     correctCount,

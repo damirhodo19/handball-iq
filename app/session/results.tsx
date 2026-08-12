@@ -12,7 +12,6 @@ import { useSession } from '@/context/SessionContext';
 import { getMetricRating } from '@/lib/scenarios';
 import { saveSession } from '@/lib/storage';
 import { useAuth } from '@/context/AuthContext';
-import { loadProfile } from '@/lib/storage';
 import { buildTrainingActivityPayload, processActivity, clearSessionMode, stableActivityId } from '@/lib/development';
 import { syncDevelopmentFull } from '@/services/developmentService';
 import { persistOrQueue } from '@/services/syncService';
@@ -20,10 +19,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateSkill } from '@/lib/translations';
 import { getLocalizedSessionResults } from '@/lib/content-localize';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
 
 export default function ResultsScreen() {
-  const { scenarios, answers, decisionScore, correctCount, resetSession } = useSession();
+  const { position, scenarios, answers, decisionScore, correctCount, resetSession } = useSession();
   const { user } = useAuth();
   const { t, lang } = useTranslation();
   const activityKeyRef = useRef<string | null>(null);
@@ -38,10 +36,11 @@ export default function ResultsScreen() {
         : stableActivityId('s', [
             ...scenarios.map((s) => s.id ?? s.metric),
             ...answers.map((a) => a ?? 'x'),
+            position ?? 'no-position',
             decisionScore,
             correctCount,
           ]),
-    [scenarios, answers, decisionScore, correctCount],
+    [scenarios, answers, position, decisionScore, correctCount],
   );
 
   useEffect(() => {
@@ -56,6 +55,7 @@ export default function ResultsScreen() {
       id: sourceId,
       date: new Date().toISOString(),
       sessionName: scenarios[0]?.metric ?? t('home.trainingSession'),
+      position: position ?? undefined,
       decisionScore,
       timeSpent: scenarios.length * 120,
       correctCount,
@@ -63,8 +63,6 @@ export default function ResultsScreen() {
       metrics: sessionMetrics,
     });
 
-    const profile = loadProfile();
-    const position = resolvePlayerPosition(profile);
     if (position) {
       const payload = buildTrainingActivityPayload(
         scenarios, answers, decisionScore, correctCount, position, sourceId, t('home.trainingSession'),
@@ -73,7 +71,7 @@ export default function ResultsScreen() {
       setDevResult({ xp: result.xpEarned, achievements: result.newAchievements, levelUp: result.levelUp });
     }
     clearSessionMode();
-  }, [sourceId, scenarios, answers, decisionScore, correctCount, t]);
+  }, [sourceId, scenarios, answers, position, decisionScore, correctCount, t]);
 
   useEffect(() => {
     if (cloudSavedRef.current || !sourceId || scenarios.length === 0) return;
@@ -88,7 +86,7 @@ export default function ResultsScreen() {
         {
           session_type: 'training',
           session_name: scenarios[0]?.metric ?? t('home.trainingSession'),
-          position: null,
+          position,
           score: decisionScore,
           decision_score: decisionScore,
           mental_readiness: 0,
@@ -110,7 +108,7 @@ export default function ResultsScreen() {
       {
         session_type: 'training',
         session_name: scenarios[0]?.metric ?? t('home.trainingSession'),
-        position: null,
+        position,
         score: decisionScore,
         decision_score: decisionScore,
         mental_readiness: 0,
@@ -124,7 +122,7 @@ export default function ResultsScreen() {
       else if (!error) syncDevelopmentFull(user.id);
       else if (queued) setSaveError(null);
     });
-  }, [user, sourceId, scenarios, answers, decisionScore, t]);
+  }, [user, sourceId, scenarios, answers, position, decisionScore, t]);
 
   const sessionResults = getLocalizedSessionResults(lang);
 

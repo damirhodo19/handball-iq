@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { loadProfile, loadStreak } from '@/lib/storage';
-import { resolvePlayerPosition } from '@/lib/platform/resolve-position';
+import { resolveActivePlayerPosition } from '@/lib/platform/active-player-position';
+import { computeStatistics } from '@/lib/development/statistics';
 import {
   loadDevelopmentState,
   saveDevelopmentState,
@@ -56,18 +57,23 @@ export function useDevelopment() {
   const refresh = useCallback(() => setTick((t) => t + 1), []);
 
   const profile = loadProfile();
-  const position = resolvePlayerPosition(profile);
+  const position = resolveActivePlayerPosition(profile);
 
   const data = useMemo(() => {
     void tick;
     const state = loadDevelopmentState();
+    const positionEvents = position
+      ? state.decisionEvents.filter((event) => event.position === position)
+      : [];
+    const positionStatistics = computeStatistics(positionEvents);
     const levelProgress = xpToNextLevel(state.totalXp);
-    const weaknesses = detectWeaknesses(state.statistics, state.decisionEvents);
+    const weaknesses = detectWeaknesses(positionStatistics, positionEvents);
     const streak = loadStreak();
 
     if (!position) {
       return {
         state,
+        positionStatistics,
         dailyChallenge: EMPTY_CHALLENGE,
         weeklyProgram: EMPTY_WEEKLY,
         coachReport: EMPTY_COACH_REPORT,
@@ -87,11 +93,11 @@ export function useDevelopment() {
     ensureActiveProgram(
       state,
       position,
-      profile.developmentGoal,
+      profile.developmentGoals.length ? profile.developmentGoals : profile.developmentGoal,
       weaknesses.weakCategories[0]?.name,
     );
-    const dailyChallenge = getOrCreateDailyChallenge(position);
-    const weeklyProgram = getOrCreateWeeklyProgram(position);
+    const dailyChallenge = getOrCreateDailyChallenge(position, state);
+    const weeklyProgram = getOrCreateWeeklyProgram(position, state);
     const dailyGoals = buildDailyGoals(state, position);
     const weeklyGoals = buildWeeklyGoals(state);
     state.dailyGoals = dailyGoals;
@@ -107,6 +113,7 @@ export function useDevelopment() {
 
     return {
       state: snapshot.state,
+      positionStatistics,
       dailyChallenge,
       weeklyProgram,
       coachReport: snapshot.coachReport,

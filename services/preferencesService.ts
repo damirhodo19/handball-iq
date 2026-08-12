@@ -7,12 +7,17 @@ import {
   normalizeAttackStyleId,
   normalizeDefenseSystemId,
 } from '@/lib/platform/tactical-systems';
+import {
+  resolveActivePlayerPosition,
+  setActivePlayerPosition,
+} from '@/lib/platform/active-player-position';
 
 export interface UserPreferencesRow {
   user_id: string;
   notifications_enabled: boolean | null;
   daily_reminder_time: string | null;
   active_mode: 'player' | 'coach' | null;
+  active_player_position?: string | null;
   onboarding_version: number | null;
   created_at?: string;
   updated_at?: string;
@@ -77,11 +82,16 @@ export async function syncPreferencesToCloud(userId: string): Promise<{ error: s
     notifications_enabled: profile.notificationsEnabled ?? true,
     daily_reminder_time: null,
     active_mode: settings.activeMode,
+    active_player_position: resolveActivePlayerPosition(profile),
     onboarding_version: profile.onboardingVersion ?? 2,
     updated_at: new Date().toISOString(),
   };
 
-  const { error } = await supabase.from('user_preferences').upsert(prefs);
+  let { error } = await supabase.from('user_preferences').upsert(prefs);
+  if (error) {
+    const { active_player_position: _activePlayerPosition, ...legacyPrefs } = prefs;
+    ({ error } = await supabase.from('user_preferences').upsert(legacyPrefs));
+  }
   return { error: error?.message ?? null };
 }
 
@@ -164,6 +174,9 @@ export async function pullPreferencesFromCloud(userId: string): Promise<{ error:
       if (typeof prefs?.notifications_enabled === 'boolean') {
         next.notificationsEnabled = prefs.notifications_enabled;
         saveProfile(next);
+      }
+      if (prefs?.active_player_position) {
+        setActivePlayerPosition(next, prefs.active_player_position);
       }
       saveSettings(nextSettings);
     }

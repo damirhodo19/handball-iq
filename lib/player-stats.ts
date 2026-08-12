@@ -51,41 +51,48 @@ function avg(nums: number[]): number {
 export function computePlayerStats(
   sessions: SessionRecord[] = loadSessions(),
   matches: MatchHistoryRecord[] = loadMatchHistory(),
+  position?: string | null,
 ): PlayerStats {
   const streak = loadStreak();
   const profile = loadProfile();
+  const scopedSessions = position
+    ? sessions.filter((session) => session.position === position || (!session.position && profile.position === position))
+    : sessions;
+  const scopedMatches = position
+    ? matches.filter((match) => match.position === position || (!match.position && profile.position === position))
+    : matches;
   const weekStart = startOfWeek();
   const monthStart = startOfMonth();
 
-  const weeklySessions = sessions.filter((s) => new Date(s.date) >= weekStart);
-  const monthlySessions = sessions.filter((s) => new Date(s.date) >= monthStart);
+  const weeklySessions = scopedSessions.filter((s) => new Date(s.date) >= weekStart);
+  const monthlySessions = scopedSessions.filter((s) => new Date(s.date) >= monthStart);
 
   const allScores = [
-    ...sessions.map((s) => s.decisionScore),
-    ...matches.map((m) => m.decisionScore),
+    ...scopedSessions.map((s) => s.decisionScore),
+    ...scopedMatches.map((m) => m.decisionScore),
   ];
 
   const bestScore = allScores.length > 0 ? Math.max(...allScores) : 0;
   const avgDecisionScore = avg(allScores);
-  const decisionScore = sessions[0]?.decisionScore ?? matches[0]?.decisionScore ?? avgDecisionScore;
+  const decisionScore = scopedSessions[0]?.decisionScore ?? scopedMatches[0]?.decisionScore ?? avgDecisionScore;
 
-  const totalCorrect = sessions.reduce((sum, s) => sum + s.correctCount, 0);
-  const totalQuestions = sessions.reduce((sum, s) => sum + s.totalCount, 0);
+  const totalCorrect = scopedSessions.reduce((sum, s) => sum + s.correctCount, 0);
+  const totalQuestions = scopedSessions.reduce((sum, s) => sum + s.totalCount, 0);
   const completionRate = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
 
   const totalTrainingMinutes = Math.round(
-    sessions.reduce((sum, s) => sum + s.timeSpent, 0) / 60,
+    scopedSessions.reduce((sum, s) => sum + s.timeSpent, 0) / 60,
   );
 
   const recentActivity: ActivityItem[] = [
-    ...sessions.slice(0, 5).map((s) => ({
+    ...scopedSessions.slice(0, 5).map((s) => ({
       id: s.id,
       type: 'session' as const,
       title: s.sessionName,
       score: s.decisionScore,
       date: s.date,
     })),
-    ...matches.slice(0, 5).map((m) => ({
+    ...scopedMatches.slice(0, 5).map((m) => ({
       id: m.id,
       type: 'match' as const,
       title: m.competition,
@@ -100,8 +107,8 @@ export function computePlayerStats(
     decisionScore: decisionScore || 0,
     avgDecisionScore,
     bestScore,
-    sessionsCompleted: sessions.length,
-    matchesPlayed: matches.length,
+    sessionsCompleted: scopedSessions.length,
+    matchesPlayed: scopedMatches.length,
     currentStreak: streak.currentStreak,
     longestStreak: streak.longestStreak,
     sessionsThisWeek: streak.sessionsThisWeek,
@@ -110,7 +117,7 @@ export function computePlayerStats(
     weeklySessions: weeklySessions.length,
     monthlySessions: monthlySessions.length,
     completionRate,
-    favouritePosition: profile.position ?? '',
+    favouritePosition: position ?? profile.position ?? '',
     totalTrainingMinutes,
     recentActivity,
   };
