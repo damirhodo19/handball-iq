@@ -145,6 +145,7 @@ function RootNavigation() {
         <Stack.Screen name="admin" />
         <Stack.Screen name="team-calendar" />
         <Stack.Screen name="notifications" />
+        <Stack.Screen name="tactics-board" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />

@@ -288,6 +288,12 @@ export default function ProfileScreen() {
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
   const showCoachFields = isCoachRole(profile?.role);
   const showPlayerFields = isPlayerRole(profile?.role);
+  const handballIqScores = [
+    { label: t('iq.skill.attackIq'), value: 82 },
+    { label: t('iq.skill.defenceIq'), value: 71 },
+    { label: t('iq.skill.decisionMaking'), value: 80 },
+    { label: t('iq.skill.gameReading'), value: 76 },
+  ];
 
   const langLabel =
     lang === 'hr' ? t('settings.languageHr')
@@ -344,6 +350,51 @@ export default function ProfileScreen() {
             {avatarError ? <Text style={styles.errorText}>{avatarError}</Text> : null}
           </Card>
         </Animated.View>
+
+        {showPlayerFields && (
+          <>
+            <SectionLabel label={t('profile.handballIqTitle').toUpperCase()} />
+            <Animated.View entering={FadeInDown.delay(110).duration(500)}>
+              <Card variant="gradient" shadow="cardLg" style={styles.iqCard}>
+                <View style={styles.iqHero}>
+                  <View style={styles.iqScoreRing}>
+                    <Text style={styles.iqOverallValue}>78</Text>
+                    <Text style={styles.iqScoreMax}>/ 100</Text>
+                  </View>
+                  <View style={styles.iqHeroCopy}>
+                    <Text style={styles.iqOverallLabel}>{t('home.overallIq')}</Text>
+                    <Text style={styles.iqOverallHint}>{t('profile.handballIqPreviewHint')}</Text>
+                  </View>
+                </View>
+                <View style={styles.iqBars}>
+                  {handballIqScores.map((score) => (
+                    <View key={score.label} style={styles.iqBarItem}>
+                      <View style={styles.iqBarHeader}>
+                        <Text style={styles.iqScoreLabel}>{score.label}</Text>
+                        <Text style={styles.iqScoreValue}>{score.value}</Text>
+                      </View>
+                      <View style={styles.iqBarTrack}>
+                        <View style={[styles.iqBarFill, { width: `${score.value}%` }]} />
+                      </View>
+                    </View>
+                  ))}
+                </View>
+                <View style={styles.iqInsightsRow}>
+                  <View style={styles.iqInsightColumn}>
+                    <Text style={styles.iqInsightTitle}>{t('profile.handballIqStrengths')}</Text>
+                    <Text style={styles.iqInsightText}>✓ {t('profile.handballIqStrengthFinishing')}</Text>
+                    <Text style={styles.iqInsightText}>✓ {t('profile.handballIqStrengthGoalkeeper')}</Text>
+                  </View>
+                  <View style={styles.iqInsightColumn}>
+                    <Text style={styles.iqInsightTitle}>{t('profile.handballIqImprove')}</Text>
+                    <Text style={styles.iqInsightText}>→ {t('profile.handballIqImproveDefence')}</Text>
+                    <Text style={styles.iqInsightText}>→ {t('profile.handballIqImproveTiming')}</Text>
+                  </View>
+                </View>
+              </Card>
+            </Animated.View>
+          </>
+        )}
 
         {/* Control Center */}
         <SectionLabel label={t('profile.controlCenter').toUpperCase()} />
@@ -1080,6 +1131,26 @@ const styles = StyleSheet.create({
   profilePosition: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 14 },
   foundingBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4, backgroundColor: Colors.goldSoft, paddingHorizontal: 8, paddingVertical: 4, borderRadius: Radius.sm, borderWidth: 1, borderColor: Colors.gold, alignSelf: 'flex-start' },
   foundingText: { color: Colors.gold, fontFamily: 'Inter-SemiBold', fontSize: 11 },
+
+  iqCard: { gap: Spacing.lg, marginBottom: Spacing.sm },
+  iqHero: { flexDirection: 'row', alignItems: 'center', gap: Spacing.lg },
+  iqScoreRing: { width: 112, height: 112, borderRadius: 56, borderWidth: 8, borderColor: Colors.gold, backgroundColor: Colors.goldSoft, alignItems: 'center', justifyContent: 'center' },
+  iqHeroCopy: { flex: 1, gap: 5 },
+  iqOverallLabel: { color: Colors.textPrimary, fontFamily: 'Inter-ExtraBold', fontSize: 18 },
+  iqOverallHint: { color: Colors.textTertiary, fontFamily: 'Inter-Regular', fontSize: 12, lineHeight: 18 },
+  iqOverallValue: { color: Colors.gold, fontFamily: 'Inter-ExtraBold', fontSize: 38, lineHeight: 40 },
+  iqScoreMax: { color: Colors.textTertiary, fontFamily: 'Inter-SemiBold', fontSize: 11 },
+  iqBars: { gap: Spacing.md },
+  iqBarItem: { gap: 7 },
+  iqBarHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  iqScoreValue: { color: Colors.gold, fontFamily: 'Inter-ExtraBold', fontSize: 14 },
+  iqScoreLabel: { color: Colors.textSecondary, fontFamily: 'Inter-SemiBold', fontSize: 12 },
+  iqBarTrack: { height: 7, borderRadius: Radius.pill, backgroundColor: Colors.border, overflow: 'hidden' },
+  iqBarFill: { height: '100%', borderRadius: Radius.pill, backgroundColor: Colors.gold },
+  iqInsightsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.md, paddingTop: Spacing.sm, borderTopWidth: 1, borderTopColor: Colors.hairline },
+  iqInsightColumn: { flex: 1, minWidth: 150, gap: 7 },
+  iqInsightTitle: { color: Colors.gold, fontFamily: 'Inter-ExtraBold', fontSize: 12, letterSpacing: 0.5 },
+  iqInsightText: { color: Colors.textSecondary, fontFamily: 'Inter-Regular', fontSize: 12, lineHeight: 18 },
 
   controlCard: { gap: 0, paddingVertical: Spacing.xs },
   controlRow: {

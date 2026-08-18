@@ -18,6 +18,7 @@ import {
   AlertCircle,
   CalendarDays,
   Bell,
+  Route,
 } from 'lucide-react-native';
 import { Colors, Typography, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
@@ -615,6 +616,10 @@ export default function HomeScreen() {
           <PressableCard onPress={() => router.push('/match/intro')} variant="gradient" style={styles.softCard}>
             <Shield size={18} color={Colors.gold} />
             <Text style={styles.softText}>{t('home.playMatch')}</Text>
+          </PressableCard>
+          <PressableCard onPress={() => router.push('/tactics-board' as never)} variant="gradient" style={styles.softCard}>
+            <Route size={18} color={Colors.gold} />
+            <Text style={styles.softText}>{t('tactics.title')}</Text>
           </PressableCard>
           <PressableCard onPress={() => router.push('/coach')} variant="gradient" style={styles.softCard}>
             <Brain size={18} color={Colors.gold} />

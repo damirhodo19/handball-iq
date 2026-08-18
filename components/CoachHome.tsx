@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import {
-  Brain, ChevronRight, ClipboardList, Users, Sun, BookOpen, BarChart3,
+  Brain, ChevronRight, ClipboardList, Users, Sun, BookOpen, BarChart3, Route,
 } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
 import { Card, PressableCard } from '@/components/Card';
@@ -202,6 +202,15 @@ export function CoachHome({
         style={styles.softLinks}
         testID="home-final-cta"
       >
+        <PressableCard onPress={() => router.push('/tactics-board' as never)} variant="gradient" style={styles.softCard}>
+          <Route size={18} color={Colors.gold} />
+          <View style={{ flex: 1 }}>
+            <Text style={styles.softText}>{t('tactics.title')}</Text>
+            <Text style={styles.linkSub}>{t('tactics.coachEntrySub')}</Text>
+          </View>
+          <ChevronRight size={16} color={Colors.gold} />
+        </PressableCard>
+
         <PressableCard onPress={() => router.push('/coach-tools/planner')} variant="gradient" style={styles.softCard}>
           <ClipboardList size={18} color={Colors.gold} />
           <View style={{ flex: 1 }}>
