@@ -20,6 +20,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     buildNumber: '1',
     infoPlist: {
       CFBundleDisplayName: 'Handball IQ',
+      ITSAppUsesNonExemptEncryption: false,
     },
   },
   android: {
