@@ -3,7 +3,8 @@ import { GKScenario } from '@/lib/scenarios';
 import { MatchSituation, MatchDecision } from '@/lib/match-engine';
 import { TacticalScenario, VisualizationStep } from '@/lib/match-day-scenarios';
 import { scenarioTextDe, scenarioTextHr } from '@/locales/scenario-text';
-import { translateMatchPhase, translatePressure, translateSkill } from '@/lib/translations';
+import { translateDefensiveSystem, translateMatchPhase, translatePressure, translateSkill } from '@/lib/translations';
+import { localizeMatchDayText } from '@/lib/match-day-localize';
 
 type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -110,11 +111,14 @@ export function localizeMatchSituation(
   }
   const suffix = lang === 'hr' ? '_hr' : '_de';
   const s = situation as MatchSituation & Record<string, unknown>;
+  const adminFormation = situation.formation.match(/^(6-0|5-1|4-2|3-2-1|Man-to-Man|Mixed) defence$/);
   return {
     ...situation,
     scenarioType: String(s[`scenarioType${suffix}`] ?? translateScenarioType(situation.scenarioType, t)),
     pressure: translatePressure(situation.pressure, t) as MatchSituation['pressure'],
-    formation: translateScenarioText(situation.formation, lang),
+    formation: adminFormation
+      ? translateDefensiveSystem(adminFormation[1], t)
+      : translateScenarioText(situation.formation, lang),
     description: String(s[`description${suffix}`] ?? translateScenarioText(situation.description, lang)),
     decisions: situation.decisions.map((d) => localizeDecision(d, lang)),
   };
@@ -153,8 +157,8 @@ export function localizeVisualizationStep(
   return {
     title: translateScenarioType(step.title, t) !== step.title
       ? translateScenarioType(step.title, t)
-      : translateScenarioText(step.title, lang),
-    instruction: translateScenarioText(step.instruction, lang),
+      : localizeMatchDayText(translateScenarioText(step.title, lang), lang, t),
+    instruction: localizeMatchDayText(translateScenarioText(step.instruction, lang), lang, t),
   };
 }
 

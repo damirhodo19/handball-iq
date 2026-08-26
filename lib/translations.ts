@@ -1,4 +1,4 @@
-import { TranslationDict } from '@/locales';
+import { translations, type TranslationDict } from '@/locales';
 
 type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -214,6 +214,13 @@ const DAY_KEYS: Record<string, string> = {
   'Friday': 'day.friday',
   'Saturday': 'day.saturday',
   'Sunday': 'day.sunday',
+  'Mon': 'day.monday',
+  'Tue': 'day.tuesday',
+  'Wed': 'day.wednesday',
+  'Thu': 'day.thursday',
+  'Fri': 'day.friday',
+  'Sat': 'day.saturday',
+  'Sun': 'day.sunday',
 };
 
 const ATTACK_DEFENCE_KEYS: Record<string, string> = {
@@ -295,6 +302,29 @@ export function resolveDefaultStatement(statement: string, t: TFunc): string {
     return t('default.statement');
   }
   return statement;
+}
+
+const STORED_ACTIVITY_KEYS = [
+  'home.trainingSession',
+  'match.title',
+  'match.configCompetition',
+  'match.configCompetitionShort',
+] as const;
+
+export function translateStoredActivityTitle(
+  title: string,
+  type: 'session' | 'match',
+  t: TFunc,
+): string {
+  if (type === 'session') {
+    const skill = translateSkill(title, t);
+    if (skill !== title) return skill;
+  }
+  for (const key of STORED_ACTIVITY_KEYS) {
+    const isKnownValue = Object.values(translations).some((dict) => dict[key] === title);
+    if (isKnownValue) return t(key);
+  }
+  return title;
 }
 
 export { TFunc };

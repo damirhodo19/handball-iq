@@ -1,6 +1,11 @@
-import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect, useRef } from 'react';
 import { GKScenario } from '@/lib/scenarios';
-import { loadPublishedScenariosForPositionAsync, AdminScenario } from '@/lib/admin-storage';
+import {
+  hasLocalizedAdminScenario,
+  loadPublishedScenariosForPositionAsync,
+  AdminScenario,
+} from '@/lib/admin-storage';
+import { useTranslation } from '@/hooks/useTranslation';
 import { loadProfile } from '@/lib/storage';
 import { HandballPosition } from '@/lib/positions';
 import {
@@ -48,10 +53,18 @@ function adminScenarioToGKScenario(s: AdminScenario, index: number): GKScenario 
     time: `${s.minute}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
     score: s.score,
     situation: s.situation,
+    situation_hr: s.situation_hr,
+    situation_de: s.situation_de,
     question: s.question,
+    question_hr: s.question_hr,
+    question_de: s.question_de,
     options: s.answerOptions,
+    options_hr: s.answerOptions_hr,
+    options_de: s.answerOptions_de,
     correctIndex: s.recommendedAnswer,
     explanation: s.explanation,
+    explanation_hr: s.explanation_hr,
+    explanation_de: s.explanation_de,
     metric: s.mentalSkill as any || 'decisionMaking',
   };
 }
@@ -169,8 +182,10 @@ interface SessionState {
 const SessionContext = createContext<SessionState | undefined>(undefined);
 
 export function SessionProvider({ children }: { children: ReactNode }) {
+  const { lang } = useTranslation();
   const [scenarios, setScenarios] = useState<GKScenario[]>([]);
   const [sessionPosition, setSessionPosition] = useState<HandballPosition | null>(null);
+  const scenarioPoolKeyRef = useRef('');
 
   useEffect(() => {
     let cancelled = false;
@@ -181,13 +196,31 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         return false;
       }
       const restored = resolveFromBankIds(active.bankIds, position);
-      // Missing bank rows (removed legacy IDs / stale offline cache) → clear and regenerate.
+      // Admin IDs are resolved after the async content load. A stale pool is replaced later.
       if (restored.length < MIN_SESSION_LENGTH) {
-        clearActiveTrainingSession();
         return false;
       }
       const gk = bankToSessionScenarios(restored, position);
       logSessionIds('resume', gk);
+      if (!cancelled) setScenarios(gk);
+      return true;
+    };
+
+    const restoreAdminIfActive = (
+      position: HandballPosition,
+      adminScenarios: AdminScenario[],
+    ): boolean => {
+      const active = loadActiveTrainingSession();
+      if (!active || active.position !== position || active.bankIds.length < MIN_SESSION_LENGTH) {
+        return false;
+      }
+      const byId = new Map(adminScenarios.map((scenario) => [scenario.id, scenario]));
+      const restored = active.bankIds
+        .map((id) => byId.get(id))
+        .filter((scenario): scenario is AdminScenario => Boolean(scenario));
+      if (restored.length < MIN_SESSION_LENGTH) return false;
+      const gk = restored.map((scenario, index) => adminScenarioToGKScenario(scenario, index));
+      logSessionIds('resume_admin', gk);
       if (!cancelled) setScenarios(gk);
       return true;
     };
@@ -247,8 +280,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       try {
         const adminScenarios = await loadPublishedScenariosForPositionAsync(position);
         if (cancelled) return;
+        const exact = dedupeAdminByContent(
+          adminScenarios.filter(
+            (s) => s.position === position && hasLocalizedAdminScenario(s, lang),
+          ),
+        );
         if (restoreIfActive(position)) return;
-        const exact = dedupeAdminByContent(adminScenarios.filter((s) => s.position === position));
+        if (restoreAdminIfActive(position, exact)) return;
         if (exact.length >= MIN_SESSION_LENGTH) {
           const slice = exact.slice(0, DEFAULT_SESSION_LENGTH);
           const gk = slice.map((s, i) => adminScenarioToGKScenario(s, i));
@@ -286,7 +324,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [lang]);
 
   const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
@@ -324,10 +362,17 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [scenarios]);
 
   useEffect(() => {
-    setAnswers((prev) => {
-      if (prev.some((a) => a !== null)) return prev;
-      return scenarios.map(() => null);
-    });
+    const nextPoolKey = scenarios.map((scenario) => scenario.bankId ?? scenario.id).join('|');
+    const poolChanged = Boolean(scenarioPoolKeyRef.current) && scenarioPoolKeyRef.current !== nextPoolKey;
+    scenarioPoolKeyRef.current = nextPoolKey;
+    if (poolChanged) {
+      setAnswers(scenarios.map(() => null));
+      setCurrentScenarioIndex(0);
+      setSelectedIndex(null);
+      setConfirmed(false);
+      return;
+    }
+    setAnswers((prev) => prev.length === scenarios.length ? prev : scenarios.map(() => null));
   }, [scenarios]);
 
   const correctCount = answers.reduce<number>((count, ans, i) => {

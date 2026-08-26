@@ -2,6 +2,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Clock } from 'lucide-react-native';
 import { Colors, Spacing, Radius } from '@/lib/theme';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface MatchScoreboardProps {
   minute: number;
@@ -21,11 +22,14 @@ export function MatchScoreboard({
   scoreTeam,
   scoreOpp,
   halfLabel,
-  teamLabel = 'You',
-  opponentLabel = 'Opp',
+  teamLabel,
+  opponentLabel,
   pressureLabel,
   pressureColor = Colors.gold,
 }: MatchScoreboardProps) {
+  const { t } = useTranslation();
+  const resolvedTeamLabel = teamLabel ?? t('match.teamLabel');
+  const resolvedOpponentLabel = opponentLabel ?? t('match.opponentLabel');
   const clock = `${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
 
   return (
@@ -35,7 +39,12 @@ export function MatchScoreboard({
       end={{ x: 1, y: 1 }}
       style={styles.board}
       accessibilityRole="summary"
-      accessibilityLabel={`${halfLabel}. Score ${scoreTeam} to ${scoreOpp}. Time ${clock}`}
+      accessibilityLabel={t('match.scoreboardA11y', {
+        half: halfLabel,
+        team: scoreTeam,
+        opponent: scoreOpp,
+        time: clock,
+      })}
     >
       <View style={styles.topRow}>
         <View style={styles.halfBadge}>
@@ -54,12 +63,12 @@ export function MatchScoreboard({
 
       <View style={styles.scoreRow}>
         <View style={styles.teamCol}>
-          <Text style={styles.teamLabel}>{teamLabel}</Text>
+          <Text style={styles.teamLabel}>{resolvedTeamLabel}</Text>
           <Text style={styles.score}>{scoreTeam}</Text>
         </View>
         <View style={styles.divider} />
         <View style={styles.teamCol}>
-          <Text style={styles.teamLabel}>{opponentLabel}</Text>
+          <Text style={styles.teamLabel}>{resolvedOpponentLabel}</Text>
           <Text style={styles.score}>{scoreOpp}</Text>
         </View>
       </View>

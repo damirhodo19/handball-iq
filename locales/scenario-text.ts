@@ -956,6 +956,7 @@ export const scenarioTextHr: Record<string, string> = {
   'Stay patient before committing. Read the shooter\'s eyes': 'Budi strpljiv prije odluke. Pročitaj oči šutera',
   'Stay patient, read the shooter\'s shoulder': 'Budi strpljiv, pročitaj rame šutera',
   'You consistently read the shooter\'s shoulder and timing before committing': 'Dosljedno čitaš rame šutera i tajming prije nego što se odlučiš',
+  'A 7m throw is awarded. The shooter is their top scorer, right-handed, and tends to go high-left. The arena goes quiet.': 'Dosuđen je sedmerac. To je njihov najbolji šuter, dešnjak, i obično puca visoko lijevo. Dvorana utihne.',
 };
 
 export const scenarioTextDe: Record<string, string> = {
@@ -1918,4 +1919,25 @@ export const scenarioTextDe: Record<string, string> = {
   'Stay patient, read the shooter\'s shoulder': 'Geduldig bleiben, Schulter des Werfers lesen',
   'Practice controlled advancement to the five-metre line and reading the attacker\'s body language': 'Kontrolliertes Herauslaufen bis zur 5-m-Linie und Lesen der Körpersprache des Angreifers üben',
   'You consistently read the shooter\'s shoulder and timing before committing': 'Du liest konsequent Schulter und Timing des Werfers, bevor du dich festlegst',
+  'Correct — if the defence anticipates the screen, rolling to the opposite side creates an open passing lane.': 'Richtig — wenn die Abwehr die Sperre erwartet, öffnet das Abrollen zur Gegenseite einen freien Passweg.',
+  'Correct — if the defence anticipates the screen, the far post becomes the open option.': 'Richtig — wenn die Abwehr die Sperre erwartet, wird der lange Pfosten zur freien Option.',
+  'Correct — if the defence anticipates the screen, the pivot becomes the open option.': 'Richtig — wenn die Abwehr die Sperre erwartet, wird der Kreisläufer zur freien Anspielstation.',
+  'Correct — reading around the screen keeps you aligned with the actual shooting threat.': 'Richtig — der Blick um die Sperre hält dich auf die tatsächliche Wurfgefahr ausgerichtet.',
+  'Correct — reading around the screen keeps you aligned with the real threat.': 'Richtig — der Blick um die Sperre hält dich auf die wirkliche Gefahr ausgerichtet.',
+  'Correct — timing the pass to the cutter around the screen creates a high-quality shot.': 'Richtig — ein gut getimter Pass zum einlaufenden Spieler an der Sperre ermöglicht eine hochwertige Wurfchance.',
+  'Correct — timing the screen to block the goalkeeper\'s view at the moment of the shot gives your back the best chance.': 'Richtig — eine im Wurfmoment gesetzte Sperre, die dem Torwart die Sicht nimmt, gibt deinem Rückraumspieler die beste Chance.',
+  'Good — drawing contact is reasonable, but screening the goalkeeper is the primary role here.': 'Gut — Kontakt zu binden ist sinnvoll, doch die wichtigste Aufgabe ist hier, dem Torwart die Sicht zu nehmen.',
+  'Good — holding is safe but the screen may delay your reaction.': 'Gut — die Position zu halten ist sicher, aber die Sperre kann deine Reaktion verzögern.',
+  'Move to screen the goalkeeper\'s view at the right moment': 'Im richtigen Moment die Sicht des Torwarts durch eine Sperre nehmen',
+  'Read around the screen, track the cutter': 'Um die Sperre schauen und den einlaufenden Spieler verfolgen',
+  'Read the defence — if they anticipate the screen, cut to the far post instead': 'Die Abwehr lesen — wenn sie die Sperre erwartet, stattdessen zum langen Pfosten einlaufen',
+  'Read the defence — if they anticipate the screen, pass to the pivot who is now open': 'Die Abwehr lesen — wenn sie die Sperre erwartet, zum nun freien Kreisläufer passen',
+  'Read the defence — if they anticipate the screen, roll to the opposite side for the pass': 'Die Abwehr lesen — wenn sie die Sperre erwartet, zur Gegenseite abrollen und den Pass annehmen',
+  'Risky — without a screen, the goalkeeper sees the shot clearly and has a good chance to save.': 'Riskant — ohne Sperre sieht der Torwart den Wurf klar und hat eine gute Abwehrchance.',
+  'The opposition runs a rehearsed set play from a free throw. The pivot screens your defender while the left back cuts to the centre.': 'Der Gegner spielt nach einem Freiwurf eine einstudierte Aktion. Der Kreisläufer sperrt deinen Abwehrspieler, während der linke Rückraumspieler zur Mitte einläuft.',
+  'Time the pass to the cutting left back around the screen': 'Den Pass zum an der Sperre einlaufenden linken Rückraumspieler richtig timen',
+  'Your team runs a rehearsed set play from a free throw. The pivot screens a defender while the left back cuts to the centre. You have the ball at the top.': 'Dein Team spielt nach einem Freiwurf eine einstudierte Aktion. Der Kreisläufer sperrt einen Abwehrspieler, während der linke Rückraumspieler zur Mitte einläuft. Du hast den Ball im Zentrum.',
+  'Your team runs a rehearsed set play from a free throw. You are supposed to receive a screen from the pivot, then finish at the near post. The defence seems to anticipate the screen.': 'Dein Team spielt nach einem Freiwurf eine einstudierte Aktion. Du sollst eine Sperre vom Kreisläufer erhalten und anschließend am kurzen Pfosten abschließen. Die Abwehr scheint die Sperre zu erwarten.',
+  'Your team runs a rehearsed set play from a free throw. You are supposed to screen a defender, then roll to the 6m line for a pass. The defence seems to anticipate the screen.': 'Dein Team spielt nach einem Freiwurf eine einstudierte Aktion. Du sollst einen Abwehrspieler sperren und danach zur Sechsmeterlinie abrollen, um den Pass anzunehmen. Die Abwehr scheint die Sperre zu erwarten.',
+  'Your team runs a rehearsed set play. You are supposed to receive a screen from the pivot, then shoot from 9m. The defence seems to anticipate the screen.': 'Dein Team spielt eine einstudierte Aktion. Du sollst eine Sperre vom Kreisläufer erhalten und anschließend aus neun Metern werfen. Die Abwehr scheint die Sperre zu erwarten.',
 };

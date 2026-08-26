@@ -101,10 +101,10 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: Colors.background }}>
       <SafeAreaProvider>
-        <AppErrorBoundary>
-          <AuthProvider>
-            <DevAuthProvider>
-              <LanguageProvider>
+        <AuthProvider>
+          <DevAuthProvider>
+            <LanguageProvider>
+              <AppErrorBoundary>
                 <SettingsProvider>
                   <ThemeProvider>
                     <ModeProvider>
@@ -116,10 +116,10 @@ export default function RootLayout() {
                     </ModeProvider>
                   </ThemeProvider>
                 </SettingsProvider>
-              </LanguageProvider>
-            </DevAuthProvider>
-          </AuthProvider>
-        </AppErrorBoundary>
+              </AppErrorBoundary>
+            </LanguageProvider>
+          </DevAuthProvider>
+        </AuthProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

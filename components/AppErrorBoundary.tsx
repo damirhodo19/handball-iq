@@ -2,9 +2,11 @@ import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors, Spacing } from '@/lib/theme';
 import { getBetaVersionLabel } from '@/lib/app-version';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Props {
   children: ReactNode;
+  t: (key: string) => string;
 }
 
 interface State {
@@ -15,7 +17,7 @@ interface State {
  * Last-resort crash surface for standalone beta builds.
  * Keeps testers from a blank redbox with no recovery path.
  */
-export class AppErrorBoundary extends Component<Props, State> {
+class AppErrorBoundaryInner extends Component<Props, State> {
   state: State = { error: null };
 
   static getDerivedStateFromError(error: Error): State {
@@ -37,19 +39,21 @@ export class AppErrorBoundary extends Component<Props, State> {
 
     return (
       <View style={styles.container} accessibilityRole="alert">
-        <Text style={styles.title}>Something went wrong</Text>
+        <Text style={styles.title}>{this.props.t('errorBoundary.title')}</Text>
         <Text style={styles.version}>{getBetaVersionLabel()}</Text>
-        <Text style={styles.body}>
-          The app hit an unexpected error. Please restart. If it keeps happening, send beta feedback
-          from Settings after relaunch.
-        </Text>
+        <Text style={styles.body}>{this.props.t('errorBoundary.body')}</Text>
         {__DEV__ ? <Text style={styles.dev}>{this.state.error.message}</Text> : null}
         <TouchableOpacity style={styles.btn} onPress={this.reset} activeOpacity={0.85}>
-          <Text style={styles.btnText}>Try again</Text>
+          <Text style={styles.btnText}>{this.props.t('common.tryAgain')}</Text>
         </TouchableOpacity>
       </View>
     );
   }
+}
+
+export function AppErrorBoundary({ children }: { children: ReactNode }) {
+  const { t } = useTranslation();
+  return <AppErrorBoundaryInner t={t}>{children}</AppErrorBoundaryInner>;
 }
 
 const styles = StyleSheet.create({

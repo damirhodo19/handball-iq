@@ -11,6 +11,7 @@ import {
   resolveActivePlayerPosition,
   setActivePlayerPosition,
 } from '@/lib/platform/active-player-position';
+import { normalizeSupportedLanguage } from '@/lib/locale';
 
 export interface UserPreferencesRow {
   user_id: string;
@@ -30,8 +31,9 @@ function languageToCode(lang: AppSettings['language']): string {
 }
 
 function codeToLanguage(code: string | null | undefined): AppSettings['language'] {
-  if (code === 'de') return 'German';
-  if (code === 'hr') return 'Croatian';
+  const normalized = normalizeSupportedLanguage(code);
+  if (normalized === 'de') return 'German';
+  if (normalized === 'hr') return 'Croatian';
   return 'English';
 }
 

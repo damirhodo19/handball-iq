@@ -11,9 +11,10 @@ import { loadPreps, MatchDayPrep } from '@/lib/match-day-storage';
 import { useMatchDay } from '@/context/MatchDayContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateMatchType } from '@/lib/translations';
+import { localeTagForLanguage } from '@/lib/locale';
 
 export default function MatchDayTabScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const { resumePrep } = useMatchDay();
   const [preps, setPreps] = useState<MatchDayPrep[]>([]);
 
@@ -165,7 +166,7 @@ export default function MatchDayTabScreen() {
                   <View style={{ flex: 1 }}>
                     <Text style={styles.historyOpponent}>{t('matchDay.vsOpponent', { opponent: prep.setup.opponent })}</Text>
                     <Text style={styles.historyMeta}>
-                      {new Date(prep.date).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })} · {translateMatchType(prep.setup.matchType, t)} · {prep.mode === 'complete' ? t('matchDay.completePrep') : t('matchDay.quickPrep')}
+                      {new Date(prep.date).toLocaleDateString(localeTagForLanguage(lang), { weekday: 'short', month: 'short', day: 'numeric' })} · {translateMatchType(prep.setup.matchType, t)} · {prep.mode === 'complete' ? t('matchDay.completePrep') : t('matchDay.quickPrep')}
                     </Text>
                   </View>
                   <View style={styles.historyScores}>

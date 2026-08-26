@@ -20,6 +20,8 @@ export type PressureLevel = 'Low' | 'Moderate' | 'High' | 'Critical';
 export interface AdminScenario {
   id: string;
   title: string;
+  title_hr?: string;
+  title_de?: string;
   position: HandballPosition | 'All';
   secondaryPositions: HandballPosition[];
   category: string;
@@ -34,20 +36,53 @@ export interface AdminScenario {
   playersOnCourt: number;
   defensiveSystem: DefensiveSystem;
   situation: string;
+  situation_hr?: string;
+  situation_de?: string;
   question: string;
+  question_hr?: string;
+  question_de?: string;
   answerOptions: string[];
+  answerOptions_hr?: string[];
+  answerOptions_de?: string[];
   recommendedAnswer: number;
   explanation: string;
+  explanation_hr?: string;
+  explanation_de?: string;
   learningObjective: string;
+  learningObjective_hr?: string;
+  learningObjective_de?: string;
   mentalSkill: string;
   tacticalSkill: string;
   commonMistake: string;
+  commonMistake_hr?: string;
+  commonMistake_de?: string;
   coachNote: string;
+  coachNote_hr?: string;
+  coachNote_de?: string;
   pressureLevel: PressureLevel;
   createdAt: string;
   updatedAt: string;
   createdBy: string;
   deleted?: boolean;
+}
+
+export function hasLocalizedAdminScenario(
+  scenario: AdminScenario,
+  lang: import('@/locales').SupportedLanguage,
+): boolean {
+  if (lang === 'en') return true;
+  const suffix = lang === 'hr' ? '_hr' : '_de';
+  const localized = scenario as AdminScenario & Record<string, unknown>;
+  const options = localized[`answerOptions${suffix}`];
+  return Boolean(
+    String(localized[`title${suffix}`] ?? '').trim() &&
+    String(localized[`situation${suffix}`] ?? '').trim() &&
+    String(localized[`question${suffix}`] ?? '').trim() &&
+    String(localized[`explanation${suffix}`] ?? '').trim() &&
+    Array.isArray(options) &&
+    options.length === scenario.answerOptions.length &&
+    options.every((option) => typeof option === 'string' && option.trim()),
+  );
 }
 
 export interface ImportResult {

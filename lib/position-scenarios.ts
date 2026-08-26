@@ -4,8 +4,14 @@
 
 import { HandballPosition } from '@/lib/positions';
 import { MatchDecision, MatchSituation } from '@/lib/match-engine';
-import { loadPublishedScenariosForPosition, loadPublishedScenariosForPositionAsync, AdminScenario } from '@/lib/admin-storage';
+import {
+  hasLocalizedAdminScenario,
+  loadPublishedScenariosForPosition,
+  loadPublishedScenariosForPositionAsync,
+  AdminScenario,
+} from '@/lib/admin-storage';
 import { getMatchTemplatesForPosition } from '@/lib/scenario-bank';
+import type { SupportedLanguage } from '@/locales';
 
 interface ScenarioTemplate {
   type: string;
@@ -823,8 +829,16 @@ function adminScenarioToMatchSituation(s: AdminScenario, index: number, minute: 
   const decisions: MatchDecision[] = s.answerOptions.map((text, i) => ({
     id: String.fromCharCode(97 + i),
     text,
+    text_hr: s.answerOptions_hr?.[i],
+    text_de: s.answerOptions_de?.[i],
     quality: i === s.recommendedAnswer ? 'optimal' : (i === s.recommendedAnswer + 1 ? 'good' : qualityOrder[2 + (i % 2)] as any),
     feedback: i === s.recommendedAnswer ? s.explanation : s.commonMistake || `This is not the optimal response for this situation.`,
+    feedback_hr: i === s.recommendedAnswer
+      ? s.explanation_hr
+      : s.commonMistake_hr ?? s.explanation_hr,
+    feedback_de: i === s.recommendedAnswer
+      ? s.explanation_de
+      : s.commonMistake_de ?? s.explanation_de,
   }));
   const shuffledDecisions = shuffle(decisions);
   const correct = shuffledDecisions.find((d) => d.quality === 'optimal') ?? shuffledDecisions[0];
@@ -837,23 +851,37 @@ function adminScenarioToMatchSituation(s: AdminScenario, index: number, minute: 
     pressure: s.pressureLevel,
     formation: `${s.defensiveSystem} defence`,
     description: s.situation,
+    description_hr: s.situation_hr,
+    description_de: s.situation_de,
     scenarioType: s.category,
+    scenarioType_hr: s.title_hr,
+    scenarioType_de: s.title_de,
     decisions: shuffledDecisions,
     correctDecisionId: correct.id,
   };
 }
 
-export async function generatePositionMatchAsync(position: HandballPosition): Promise<MatchSituation[]> {
+export async function generatePositionMatchAsync(
+  position: HandballPosition,
+  lang: SupportedLanguage = 'en',
+): Promise<MatchSituation[]> {
   const adminScenarios = await loadPublishedScenariosForPositionAsync(position);
-  return generatePositionMatchFromScenarios(position, adminScenarios);
+  return generatePositionMatchFromScenarios(position, adminScenarios, lang);
 }
 
-export function generatePositionMatch(position: HandballPosition): MatchSituation[] {
+export function generatePositionMatch(
+  position: HandballPosition,
+  lang: SupportedLanguage = 'en',
+): MatchSituation[] {
   const adminScenarios = loadPublishedScenariosForPosition(position);
-  return generatePositionMatchFromScenarios(position, adminScenarios);
+  return generatePositionMatchFromScenarios(position, adminScenarios, lang);
 }
 
-function generatePositionMatchFromScenarios(position: HandballPosition, adminScenarios: AdminScenario[]): MatchSituation[] {
+function generatePositionMatchFromScenarios(
+  position: HandballPosition,
+  adminScenarios: AdminScenario[],
+  lang: SupportedLanguage,
+): MatchSituation[] {
   const pool = SCENARIO_MAP[position] ?? [];
   const shuffled = shuffle(pool.length ? pool : [getFallbackTemplate(position)]);
 
@@ -871,7 +899,9 @@ function generatePositionMatchFromScenarios(position: HandballPosition, adminSce
   const situations: MatchSituation[] = [];
 
   // Only override bank templates with position-exact admin rows (not All / Goalkeeper bleed)
-  const exactAdmin = adminScenarios.filter((s) => s.position === position);
+  const exactAdmin = adminScenarios.filter(
+    (s) => s.position === position && hasLocalizedAdminScenario(s, lang),
+  );
   const useAdminScenarios = exactAdmin.length >= 5;
 
   for (let i = 0; i < TOTAL_SITUATIONS; i++) {

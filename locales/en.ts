@@ -2001,6 +2001,11 @@ export const en: TranslationDict = {
   'profile.avatarUploadFailed': 'The photo could not be uploaded. Try again.',
   'profile.avatarRemoveFailed': 'The photo could not be removed. Try again.',
   'profile.avatarWebOnly': 'Photo upload is currently available in the web/PWA app.',
+  'error.unknown': 'Unknown',
+  'dev.achievementUnlocked': 'Achievements unlocked: {n}',
+  'errorBoundary.title': 'Something went wrong',
+  'errorBoundary.body': 'The app hit an unexpected error. Please restart. If it keeps happening, send beta feedback from Settings after relaunch.',
+  'match.scoreboardA11y': '{half}. Score {team} to {opponent}. Time {time}',
 
   ...coachEngineMessagesEn,
   ...sprint1MessagesEn,

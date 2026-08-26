@@ -12,7 +12,7 @@ import { ScreenBackground, ProgressBar } from '@/components/Screen';
 import { loadSessions } from '@/lib/storage';
 import { computePlayerStats } from '@/lib/player-stats';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translatePosition, translateDifficulty, translateCategory } from '@/lib/translations';
+import { translatePosition, translateDifficulty, translateCategory, translateDay } from '@/lib/translations';
 import { useDevelopment } from '@/hooks/useDevelopment';
 import { getTodayDayIndex, setSessionMode } from '@/lib/development';
 import { setSessionIntent } from '@/lib/development/session-intent';
@@ -227,14 +227,14 @@ export default function TrainingScreen() {
                     ]}
                   />
                   <Text style={[styles.weekDayLabel, day.dayIndex === todayIndex && styles.weekDayLabelToday]}>
-                    {day.label}
+                    {translateDay(day.label, t).slice(0, 3)}
                   </Text>
                 </View>
               ))}
             </View>
             {weeklyProgram.days[todayIndex] && (
               <Text style={styles.weeklyTodayFocus}>
-                {t('dev.todayFocus')}: {weeklyProgram.days[todayIndex].focus}
+                {t('dev.todayFocus')}: {localizeContent(weeklyProgram.days[todayIndex].focus, lang, t)}
               </Text>
             )}
           </View>

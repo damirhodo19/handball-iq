@@ -123,7 +123,7 @@ export interface Scenario {
   common_mistake: string | null;
   coach_note: string | null;
   pressure_level: string;
-  // Bilingual fields (Croatian, nullable — fall back to English)
+  // Localized scenario fields. Runtime must reject incomplete localized rows.
   title_hr: string | null;
   situation_hr: string | null;
   question_hr: string | null;
@@ -132,6 +132,14 @@ export interface Scenario {
   learning_objective_hr: string | null;
   common_mistake_hr: string | null;
   coach_note_hr: string | null;
+  title_de: string | null;
+  situation_de: string | null;
+  question_de: string | null;
+  answer_options_de: string[] | null;
+  explanation_de: string | null;
+  learning_objective_de: string | null;
+  common_mistake_de: string | null;
+  coach_note_de: string | null;
   created_by: string | null;
   deleted_at: string | null;
   created_at: string;

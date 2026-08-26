@@ -30,10 +30,12 @@ import {
 import { fetchAssignments, getActiveTeam } from '@/lib/team-platform/platform';
 import type { TrainingAssignment } from '@/lib/team-platform/types';
 import { Colors, Radius, Spacing } from '@/lib/theme';
-import { translatePosition } from '@/lib/translations';
+import { translateCategory, translatePosition, translateSessionType } from '@/lib/translations';
+import { localeTagForLanguage } from '@/lib/locale';
 
 export default function CoachPlayerHubScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
+  const locale = localeTagForLanguage(lang);
   const { user } = useAuth();
   const params = useLocalSearchParams<{
     rosterPlayerId?: string;
@@ -226,7 +228,7 @@ export default function CoachPlayerHubScreen() {
         {activeGoals.length === 0 ? (
           <EmptyState icon={<Target size={28} color={Colors.gold} />} title={t('coachPlayerHub.noGoals')} description={playerId ? t('coachPlayerHub.noGoalsDescription') : t('coachPlayerHub.connectForGoals')} />
         ) : activeGoals.map((goal) => (
-          <GoalCard key={goal.id} goal={goal} onChange={changeProgress} onDelete={removeGoal} t={t} />
+          <GoalCard key={goal.id} goal={goal} onChange={changeProgress} onDelete={removeGoal} t={t} locale={locale} />
         ))}
 
         {completedGoals.length ? (
@@ -246,8 +248,10 @@ export default function CoachPlayerHubScreen() {
           <Card key={assignment.id} variant="gradient" style={styles.listCard}>
             <View style={styles.listIcon}><ClipboardList size={16} color={Colors.gold} /></View>
             <View style={styles.listCopy}>
-              <Text style={styles.listTitle}>{assignment.category || assignment.session_type}</Text>
-              <Text style={styles.listMeta}>{assignment.due_date ? new Date(assignment.due_date).toLocaleDateString() : t('coachPlayerHub.noDeadline')} · {t(`coachPlayerHub.status.${assignment.status}`)}</Text>
+              <Text style={styles.listTitle}>{assignment.category
+                ? translateCategory(assignment.category, t)
+                : translateSessionType(assignment.session_type, t)}</Text>
+              <Text style={styles.listMeta}>{assignment.due_date ? new Date(assignment.due_date).toLocaleDateString(locale) : t('coachPlayerHub.noDeadline')} · {t(`coachPlayerHub.status.${assignment.status}`)}</Text>
             </View>
             {assignment.status === 'completed' ? <Check size={18} color={Colors.success} /> : null}
           </Card>
@@ -266,7 +270,7 @@ export default function CoachPlayerHubScreen() {
           <Card key={note.id} variant="gradient" style={styles.noteCard}>
             <Text style={styles.noteType}>{t(`team.note.${note.note_type}`)}</Text>
             <Text style={styles.noteContent}>{note.content}</Text>
-            <Text style={styles.noteDate}>{new Date(note.created_at).toLocaleDateString()}</Text>
+            <Text style={styles.noteDate}>{new Date(note.created_at).toLocaleDateString(locale)}</Text>
           </Card>
         ))}
 
@@ -287,17 +291,18 @@ function MetricBar({ label, value }: { label: string; value: number }) {
   return <View style={styles.metricBar}><View style={styles.metricHeader}><Text style={styles.metricLabel}>{label}</Text><Text style={styles.metricValue}>{value}%</Text></View><ProgressBar progress={Math.max(0, Math.min(1, value / 100))} height={5} color={Colors.gold} /></View>;
 }
 
-function GoalCard({ goal, onChange, onDelete, t }: {
+function GoalCard({ goal, onChange, onDelete, t, locale }: {
   goal: CoachPlayerGoal;
   onChange: (goal: CoachPlayerGoal, amount: number) => void;
   onDelete: (goal: CoachPlayerGoal) => void;
   t: (key: string, vars?: Record<string, string | number>) => string;
+  locale: string;
 }) {
   return (
     <Card variant="gradient" shadow="card" style={styles.goalCard}>
       <View style={styles.goalHeader}>
         <Target size={18} color={Colors.gold} />
-        <View style={styles.listCopy}><Text style={styles.goalTitle}>{goal.title}</Text>{goal.due_date ? <Text style={styles.listMeta}>{t('coachPlayerHub.due', { date: new Date(goal.due_date).toLocaleDateString() })}</Text> : null}</View>
+        <View style={styles.listCopy}><Text style={styles.goalTitle}>{goal.title}</Text>{goal.due_date ? <Text style={styles.listMeta}>{t('coachPlayerHub.due', { date: new Date(goal.due_date).toLocaleDateString(locale) })}</Text> : null}</View>
         <TouchableOpacity onPress={() => onDelete(goal)} style={styles.iconButton}><Trash2 size={16} color={Colors.textQuaternary} /></TouchableOpacity>
       </View>
       <ProgressBar progress={goal.progress / 100} height={6} color={Colors.gold} />

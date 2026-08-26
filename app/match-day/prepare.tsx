@@ -17,6 +17,7 @@ import { buildMatchPlan } from '@/lib/match-day-tactics';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal, resolveDefaultStatement } from '@/lib/translations';
 import { localizeTacticalScenario, localizeVisualizationStep } from '@/lib/scenario-localize';
+import { localizeMatchDayText } from '@/lib/match-day-localize';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -598,13 +599,13 @@ export default function PrepareScreen() {
                   ? plan.reminders
                   : [t('matchDay.reminder1'), t('matchDay.reminder2'), t('matchDay.reminder3')]
                 ).map((text, i) => (
-                  <Reminder key={`r-${i}`} text={text} />
+                  <Reminder key={`r-${i}`} text={localizeMatchDayText(text, lang, t)} />
                 ))}
               </View>
               {plan?.focusPoints?.length ? (
                 <View style={[styles.reminders, { marginTop: Spacing.sm }]}>
                   {plan.focusPoints.map((text, i) => (
-                    <Reminder key={`f-${i}`} text={text} />
+                    <Reminder key={`f-${i}`} text={localizeMatchDayText(text, lang, t)} />
                   ))}
                 </View>
               ) : null}
@@ -645,13 +646,13 @@ export default function PrepareScreen() {
                   ? plan.reminders
                   : [t('matchDay.reminder1'), t('matchDay.reminder2'), t('matchDay.reminder3')]
                 ).map((text, i) => (
-                  <Reminder key={`qr-${i}`} text={text} />
+                  <Reminder key={`qr-${i}`} text={localizeMatchDayText(text, lang, t)} />
                 ))}
               </View>
               {plan?.focusPoints?.length ? (
                 <View style={[styles.reminders, { marginTop: Spacing.sm }]}>
                   {plan.focusPoints.map((text, i) => (
-                    <Reminder key={`qf-${i}`} text={text} />
+                    <Reminder key={`qf-${i}`} text={localizeMatchDayText(text, lang, t)} />
                   ))}
                 </View>
               ) : null}

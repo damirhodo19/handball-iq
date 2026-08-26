@@ -9,10 +9,11 @@ import { BackButton } from '@/components/BackButton';
 import { ScreenBackground } from '@/components/Screen';
 import { loadPreps, MatchDayPrep } from '@/lib/match-day-storage';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal } from '@/lib/translations';
+import { translateMatchType, translateMatchLocation, translatePlayingTime, translatePersonalGoal, resolveDefaultStatement } from '@/lib/translations';
+import { localeTagForLanguage } from '@/lib/locale';
 
 export default function HistoryScreen() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [preps, setPreps] = useState<MatchDayPrep[]>([]);
 
   useFocusEffect(useCallback(() => {
@@ -50,7 +51,7 @@ export default function HistoryScreen() {
 
         {preps.map((prep, i) => {
           const date = new Date(prep.date);
-          const dateStr = date.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+          const dateStr = date.toLocaleDateString(localeTagForLanguage(lang), { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
           const mentalColor = prep.mentalReadiness >= 80 ? Colors.success : prep.mentalReadiness >= 60 ? Colors.gold : Colors.warning;
           const tacColor = prep.tacticalReadiness >= 80 ? Colors.success : prep.tacticalReadiness >= 60 ? Colors.gold : Colors.warning;
 
@@ -60,7 +61,7 @@ export default function HistoryScreen() {
                 {/* Top row */}
                 <View style={styles.topRow}>
                   <View style={{ flex: 1 }}>
-                    <Text style={styles.opponent}>vs {prep.setup.opponent}</Text>
+                    <Text style={styles.opponent}>{t('matchDay.vsOpponent', { opponent: prep.setup.opponent })}</Text>
                     <Text style={styles.dateText}>{dateStr}</Text>
                   </View>
                   <View style={styles.modeBadge}>
@@ -110,7 +111,7 @@ export default function HistoryScreen() {
                 {/* Personal statement */}
                 {prep.personalStatement ? (
                   <View style={styles.statementRow}>
-                    <Text style={styles.statementText} numberOfLines={2}>{prep.personalStatement}</Text>
+                    <Text style={styles.statementText} numberOfLines={2}>{resolveDefaultStatement(prep.personalStatement, t)}</Text>
                   </View>
                 ) : null}
               </Card>

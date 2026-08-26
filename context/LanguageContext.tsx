@@ -3,15 +3,13 @@ import { translations, TranslationDict, SupportedLanguage } from '@/locales';
 import { readStorageRaw, writeStorageRaw } from '@/lib/platform-storage';
 import { loadSettings, saveSettings, type AppSettings } from '@/lib/storage';
 import { useAuth } from '@/context/AuthContext';
+import { normalizeSupportedLanguage } from '@/lib/locale';
 
 const STORAGE_KEY = 'handball_iq_language';
 
-const VALID_LANGS: SupportedLanguage[] = ['en', 'hr', 'de'];
-
 function getStoredLang(): SupportedLanguage {
   const raw = readStorageRaw(STORAGE_KEY);
-  if (raw && VALID_LANGS.includes(raw as SupportedLanguage)) return raw as SupportedLanguage;
-  return 'en';
+  return normalizeSupportedLanguage(raw);
 }
 
 function storeLang(lang: SupportedLanguage) {
@@ -71,8 +69,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [user?.id]);
 
   useEffect(() => {
-    const cloudLang = profile?.preferred_language as SupportedLanguage | null | undefined;
-    if (!cloudLang || !VALID_LANGS.includes(cloudLang) || cloudLang === lang) return;
+    if (!profile?.preferred_language) return;
+    const cloudLang = normalizeSupportedLanguage(profile.preferred_language, lang);
+    if (cloudLang === lang) return;
     setLangState(cloudLang);
     storeLang(cloudLang);
     saveSettings({ ...loadSettings(), language: languageName(cloudLang) });

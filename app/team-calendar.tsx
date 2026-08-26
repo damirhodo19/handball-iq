@@ -29,6 +29,8 @@ import type {
   TeamEventResponseStatus,
 } from '@/lib/team-platform/types';
 import { Colors, Radius, Spacing } from '@/lib/theme';
+import { translateCategory, translatePosition } from '@/lib/translations';
+import { localeTagForLanguage } from '@/lib/locale';
 
 function localDateString(): string {
   const now = new Date();
@@ -87,7 +89,22 @@ export default function PlayerTeamCalendarScreen() {
     return Array.from(map.entries()).map(([date, dateEvents]) => ({ date, events: dateEvents }));
   }, [events]);
 
-  const locale = lang === 'hr' ? 'hr-HR' : lang === 'de' ? 'de-DE' : 'en-US';
+  const locale = localeTagForLanguage(lang);
+
+  const eventTitle = (event: TeamCalendarEvent): string => {
+    if (event.event_type !== 'assigned_session') return event.title;
+    const [category, position] = event.title.split(' — ');
+    if (!category || !position) return event.title;
+    return `${translateCategory(category, t)} · ${translatePosition(position, t)}`;
+  };
+
+  const eventDescription = (event: TeamCalendarEvent): string | null => {
+    if (!event.description || event.event_type !== 'assigned_session') return event.description;
+    const due = event.description.match(/^Due (\d{4}-\d{2}-\d{2})$/);
+    if (!due) return event.description;
+    const date = new Date(`${due[1]}T12:00:00`).toLocaleDateString(locale);
+    return t('coachPlayerHub.due', { date });
+  };
 
   const typeLabel = (type: CalendarEventType): string => {
     if (type === 'match') return t('cdCalendar.eventMatch');
@@ -192,7 +209,7 @@ export default function PlayerTeamCalendarScreen() {
                           {eventIcon(event.event_type, tone.color)}
                         </View>
                         <View style={styles.eventCopy}>
-                          <Text style={styles.eventTitle}>{event.title}</Text>
+                          <Text style={styles.eventTitle}>{eventTitle(event)}</Text>
                           <Text style={[styles.typeLabel, { color: tone.color }]}>{typeLabel(event.event_type)}</Text>
                         </View>
                       </View>
@@ -208,7 +225,7 @@ export default function PlayerTeamCalendarScreen() {
                             <Text style={styles.metaText}>{event.location}</Text>
                           </View>
                         ) : null}
-                        {event.description ? <Text style={styles.description}>{event.description}</Text> : null}
+                        {eventDescription(event) ? <Text style={styles.description}>{eventDescription(event)}</Text> : null}
                       </View>
 
                       {canRespond ? (

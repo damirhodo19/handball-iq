@@ -64,7 +64,7 @@ export function clearUserScopedLocalData(opts?: { preserveDeviceSettings?: boole
   // Reset settings to device-global prefs only (drop activeMode / user prefs)
   if (preserve) {
     writeStorageJson('hbiq_settings', {
-      language: language ?? 'en',
+      language: language ?? 'English',
       theme: theme ?? 'dark',
       themeMigrated: true,
       activeMode: 'player',

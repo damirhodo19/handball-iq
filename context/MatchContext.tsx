@@ -6,6 +6,8 @@ import { generatePositionMatch } from '@/lib/position-scenarios';
 import { HandballPosition } from '@/lib/positions';
 import { loadProfile } from '@/lib/storage';
 import { resolveActivePlayerPosition } from '@/lib/platform/active-player-position';
+import { useTranslation } from '@/hooks/useTranslation';
+import type { SupportedLanguage } from '@/locales';
 
 export type MatchPhase = 'first-half' | 'halftime' | 'second-half' | 'finished';
 
@@ -23,7 +25,7 @@ interface MatchState {
 }
 
 type MatchAction =
-  | { type: 'START'; position: HandballPosition }
+  | { type: 'START'; position: HandballPosition; lang: SupportedLanguage }
   | { type: 'SUBMIT_ANSWER'; answer: MatchAnswer; situationIndex: number }
   | { type: 'NEXT_SITUATION' }
   | { type: 'CONTINUE_SECOND_HALF' }
@@ -41,11 +43,15 @@ function validateSituation(s: MatchSituation | undefined): s is MatchSituation {
   return true;
 }
 
-function sanitizeSituations(raw: MatchSituation[], position: HandballPosition): MatchSituation[] {
+function sanitizeSituations(
+  raw: MatchSituation[],
+  position: HandballPosition,
+  lang: SupportedLanguage,
+): MatchSituation[] {
   const valid = raw.filter((s) => validateSituation(s));
   if (valid.length === 0) {
     if (__DEV__) console.warn('[MatchSimulator] No valid scenarios — regenerating for', position);
-    const retry = generatePositionMatch(position).filter((s) => validateSituation(s));
+    const retry = generatePositionMatch(position, lang).filter((s) => validateSituation(s));
     return retry.slice(0, MATCH_SITUATION_COUNT).map((s, i) => ({ ...s, index: i }));
   }
   return valid.slice(0, MATCH_SITUATION_COUNT).map((s, i) => ({ ...s, index: i }));
@@ -54,7 +60,11 @@ function sanitizeSituations(raw: MatchSituation[], position: HandballPosition): 
 function matchReducer(state: MatchState, action: MatchAction): MatchState {
   switch (action.type) {
     case 'START': {
-      const situations = sanitizeSituations(generatePositionMatch(action.position), action.position);
+      const situations = sanitizeSituations(
+        generatePositionMatch(action.position, action.lang),
+        action.position,
+        action.lang,
+      );
       return {
         position: action.position,
         situations,
@@ -152,6 +162,7 @@ interface MatchContextValue {
 const MatchContext = createContext<MatchContextValue | undefined>(undefined);
 
 export function MatchProvider({ children }: { children: ReactNode }) {
+  const { lang } = useTranslation();
   const [state, dispatch] = useReducer(matchReducer, initialState);
 
   const startMatch = useCallback(() => {
@@ -161,8 +172,8 @@ export function MatchProvider({ children }: { children: ReactNode }) {
       if (__DEV__) console.warn('[MatchSimulator] No position on profile — cannot start match.');
       return;
     }
-    dispatch({ type: 'START', position });
-  }, []);
+    dispatch({ type: 'START', position, lang });
+  }, [lang]);
 
   const submitAnswer = useCallback((situation: MatchSituation, decisionId: string): boolean => {
     const chosen = situation.decisions.find((d) => d.id === decisionId);

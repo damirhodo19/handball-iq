@@ -50,7 +50,8 @@ import { EmptyState } from '@/components/EmptyState';
 import { LoadingState } from '@/components/LoadingState';
 import { fetchSessionResults, sessionResultToRecord } from '@/services/sessionService';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translatePosition, translateHand } from '@/lib/translations';
+import { localeTagForLanguage } from '@/lib/locale';
+import { translateStoredActivityTitle, translatePosition, translateHand } from '@/lib/translations';
 import { useDevelopment } from '@/hooks/useDevelopment';
 import { ProgressBar } from '@/components/Screen';
 import { AchievementDetail } from '@/components/AchievementDetail';
@@ -691,10 +692,10 @@ export default function ProfileScreen() {
                       <Target size={16} color={Colors.gold} />
                     </View>
                     <View style={styles.historyInfo}>
-                      <Text style={styles.historyName}>{item.title}</Text>
+                      <Text style={styles.historyName}>{translateStoredActivityTitle(item.title, item.type, t)}</Text>
                       <Text style={styles.historyDate}>
                         {item.type === 'session' ? t('profile.activitySession') : t('profile.activityMatch')} ·{' '}
-                        {new Date(item.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
+                        {new Date(item.date).toLocaleDateString(localeTagForLanguage(lang), { month: 'short', day: 'numeric', year: 'numeric' })}
                       </Text>
                     </View>
                   </View>
