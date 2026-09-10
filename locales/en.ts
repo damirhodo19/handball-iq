@@ -8,6 +8,15 @@ import { sprint5MessagesEn } from './sprint5-messages';
 import { closedBetaMessagesEn } from './closed-beta-messages';
 
 export const en: TranslationDict = {
+  'auth.recoveryTitle': "Set a new password",
+  'auth.recoveryConfirm': "Confirm new password",
+  'auth.recoverySave': "Save new password",
+  'auth.recoveryBack': "Back to sign in",
+  'auth.recoveryInvalid': "This recovery link is invalid or has expired. Request a new link from the sign in screen and open it in the same browser.",
+  'auth.recoverySuccess': "Your password has been updated.",
+  'auth.recoveryMismatch': "The passwords do not match.",
+  'auth.recoverySame': "Choose a password different from your current password.",
+
   'formation.attacking321': '3-2-1 attacking formation',
   'formation.attacking24': '2-4 attacking with line player',
   'formation.emptyCourt76': '7 vs 6 empty-court attack',

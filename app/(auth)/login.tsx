@@ -1,3 +1,4 @@
+import { recoveryRedirectUrl } from '@/lib/password-recovery';
 import { useState } from 'react';
 import { View, StyleSheet, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -111,7 +112,7 @@ export default function LoginScreen() {
     if (!email.trim()) { setError(t('auth.errorNoEmail')); return; }
     setLoading(true);
     try {
-      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email.trim());
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email.trim(), { redirectTo: recoveryRedirectUrl() });
       if (resetError) {
         setError(mapAuthError(resetError.message, t));
       } else {

@@ -1,3 +1,4 @@
+import { recoveryRedirectUrl } from '@/lib/password-recovery';
 import type { User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { fetchProfile, upsertProfile } from '@/services/profileService';
@@ -65,7 +66,7 @@ export async function resetPassword(email: string): Promise<{ error: string | nu
     return { error: 'Cloud authentication is not configured.' };
   }
   try {
-    const { error } = await supabase.auth.resetPasswordForEmail(email);
+    const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: recoveryRedirectUrl() });
     return { error: error?.message ?? null };
   } catch (e: unknown) {
     return { error: e instanceof Error ? e.message : 'Password reset failed.' };

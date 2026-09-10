@@ -12,6 +12,7 @@
     "build:preview:android": "eas build --profile preview --platform android",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
+    "test:password-recovery": "node scripts/test-password-recovery.mjs",
     "validate:closed-beta": "node scripts/validate-closed-beta.mjs",
     "validate:onboarding-step3": "node scripts/validate-onboarding-step3-schema.mjs",
     "test:e2e:onboarding-step3": "playwright test e2e/onboarding-step3.spec.ts",

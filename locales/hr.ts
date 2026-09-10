@@ -8,6 +8,15 @@ import { sprint5MessagesHr } from './sprint5-messages';
 import { closedBetaMessagesHr } from './closed-beta-messages';
 
 export const hr: TranslationDict = {
+  'auth.recoveryTitle': "Postavi novu lozinku",
+  'auth.recoveryConfirm': "Potvrdi novu lozinku",
+  'auth.recoverySave': "Spremi novu lozinku",
+  'auth.recoveryBack': "Povratak na prijavu",
+  'auth.recoveryInvalid': "Poveznica za oporavak nije valjana ili je istekla. Zatraži novu poveznicu na zaslonu za prijavu i otvori je u istom pregledniku.",
+  'auth.recoverySuccess': "Lozinka je uspješno promijenjena.",
+  'auth.recoveryMismatch': "Lozinke se ne podudaraju.",
+  'auth.recoverySame': "Odaberi lozinku koja se razlikuje od trenutačne.",
+
   'formation.attacking321': 'Napadačka formacija 3:2:1',
   'formation.attacking24': 'Napad 2:4 s pivotom',
   'formation.emptyCourt76': 'Napad 7 na 6 na praznom terenu',

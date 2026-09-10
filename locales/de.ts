@@ -8,6 +8,15 @@ import { sprint5MessagesDe } from './sprint5-messages';
 import { closedBetaMessagesDe } from './closed-beta-messages';
 
 export const de: TranslationDict = {
+  'auth.recoveryTitle': "Neues Passwort festlegen",
+  'auth.recoveryConfirm': "Neues Passwort bestätigen",
+  'auth.recoverySave': "Neues Passwort speichern",
+  'auth.recoveryBack': "Zurück zur Anmeldung",
+  'auth.recoveryInvalid': "Dieser Link ist ungültig oder abgelaufen. Fordere auf der Anmeldeseite einen neuen Link an und öffne ihn im selben Browser.",
+  'auth.recoverySuccess': "Dein Passwort wurde geändert.",
+  'auth.recoveryMismatch': "Die Passwörter stimmen nicht überein.",
+  'auth.recoverySame': "Wähle ein anderes Passwort als dein aktuelles.",
+
   'formation.attacking321': 'Angriffsformation 3:2:1',
   'formation.attacking24': 'Angriff 2:4 mit Kreisläufer',
   'formation.emptyCourt76': 'Angriff 7 gegen 6 auf leerem Spielfeld',

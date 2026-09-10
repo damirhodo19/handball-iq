@@ -1,4 +1,5 @@
 import 'react-native-url-polyfill/auto';
+import { observeRecoveryEvent } from '@/lib/password-recovery';
 import { Platform } from 'react-native';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { createSupabaseAuthStorage } from '@/lib/async-storage-safe';
@@ -27,3 +28,6 @@ export const supabase: SupabaseClient | null = isSupabaseConfigured
       },
     })
   : null;
+
+// Register before auth initialization completes so recovery cannot be missed.
+supabase?.auth.onAuthStateChange(observeRecoveryEvent);

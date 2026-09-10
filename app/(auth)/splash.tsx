@@ -1,3 +1,4 @@
+import { isRecoverySession } from '@/lib/password-recovery';
 import { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -107,6 +108,10 @@ export default function SplashScreen() {
   }, [visibleLang]);
 
   useEffect(() => {
+    if (isRecoverySession(session)) {
+      router.replace('/reset-password' as never);
+      return;
+    }
     if (loading) return;
 
     if (session && hasCompletedOnboarding(profile)) {
