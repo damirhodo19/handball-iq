@@ -1,9 +1,10 @@
 import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
-import { translations, TranslationDict, SupportedLanguage } from '@/locales';
+import { SupportedLanguage } from '@/locales';
 import { readStorageRaw, writeStorageRaw } from '@/lib/platform-storage';
 import { loadSettings, saveSettings, type AppSettings } from '@/lib/storage';
 import { useAuth } from '@/context/AuthContext';
 import { normalizeSupportedLanguage } from '@/lib/locale';
+import { createTranslator } from '@/lib/locale-text';
 
 const STORAGE_KEY = 'handball_iq_language';
 
@@ -30,32 +31,12 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
-function resolveKey(dict: TranslationDict, key: string): string | undefined {
-  const direct = dict[key];
-  if (typeof direct === 'string') return direct;
-
-  const parts = key.split('.');
-  let current: TranslationDict | string = dict;
-  for (const part of parts) {
-    if (typeof current === 'string' || current === undefined) return undefined;
-    current = (current as TranslationDict)[part];
-  }
-  return typeof current === 'string' ? current : undefined;
-}
-
-function interpolate(str: string, vars?: Record<string, string | number>): string {
-  if (!vars) return str;
-  return str.replace(/\{(\w+)\}/g, (_, name) => {
-    const val = vars[name];
-    return val !== undefined ? String(val) : `{${name}}`;
-  });
-}
-
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const { profile, user } = useAuth();
   const [lang, setLangState] = useState<SupportedLanguage>(() => getStoredLang());
 
   const setLang = useCallback((newLang: SupportedLanguage) => {
+    newLang = normalizeSupportedLanguage(newLang);
     setLangState(newLang);
     storeLang(newLang);
     saveSettings({ ...loadSettings(), language: languageName(newLang) });
@@ -79,10 +60,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>) => {
-      const dict = translations[lang] ?? translations.en;
-      const val = resolveKey(dict, key);
-      if (val === undefined) return key;
-      return interpolate(val, vars);
+      return createTranslator(lang)(key, vars);
     },
     [lang]
   );

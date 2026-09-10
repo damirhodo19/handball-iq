@@ -8,6 +8,19 @@ import { sprint5MessagesHr } from './sprint5-messages';
 import { closedBetaMessagesHr } from './closed-beta-messages';
 
 export const hr: TranslationDict = {
+  'formation.attacking321': 'Napadačka formacija 3:2:1',
+  'formation.attacking24': 'Napad 2:4 s pivotom',
+  'formation.emptyCourt76': 'Napad 7 na 6 na praznom terenu',
+  'formation.standard60': 'Standardna obrana 6:0',
+  'formation.aggressive51': 'Agresivna obrana 5:1',
+  'formation.shifting321': 'Pomicanje obrane 3:2:1',
+  'training.positionIq': '{position} IQ',
+  'training.focus.tempoControl': 'Kontrola tempa',
+  'training.focus.pivotConnection': 'Suradnja s pivotom',
+  'training.focus.positionSkills': 'Vještine za poziciju',
+  'training.focus.matchSimulation': 'Simulacija utakmice',
+  'common.countOf': '{shown} od {total}',
+  'common.versus': 'protiv',
   // ─── Common ───
   'common.loading': 'Učitavanje...',
   'common.retry': 'Pokušaj ponovno',

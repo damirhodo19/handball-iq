@@ -1,3 +1,4 @@
+import { pickLocalizedText as pickLocalized } from '@/lib/locale-text';
 import { useMemo, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
@@ -17,14 +18,6 @@ import {
 import { loadProfile } from '@/lib/storage';
 import type { CoachChallengeAnswer } from '@/lib/coach-platform';
 
-function pickLocalized(
-  text: { en: string; hr: string; de: string },
-  lang: string,
-): string {
-  if (lang === 'hr') return text.hr;
-  if (lang === 'de') return text.de;
-  return text.en;
-}
 
 export default function CoachChallengeScreen() {
   const { t, lang } = useTranslation();

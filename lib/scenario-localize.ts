@@ -3,8 +3,9 @@ import { GKScenario } from '@/lib/scenarios';
 import { MatchSituation, MatchDecision } from '@/lib/match-engine';
 import { TacticalScenario, VisualizationStep } from '@/lib/match-day-scenarios';
 import { scenarioTextDe, scenarioTextHr } from '@/locales/scenario-text';
-import { translateDefensiveSystem, translateMatchPhase, translatePressure, translateSkill } from '@/lib/translations';
+import { translateDefensiveSystem, translateFormation, translateMatchPhase, translatePressure, translateSkill } from '@/lib/translations';
 import { localizeMatchDayText } from '@/lib/match-day-localize';
+import { normalizeSupportedLanguage } from '@/lib/locale';
 
 type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -65,12 +66,14 @@ export function translateScenarioType(type: string, t: TFunc): string {
 }
 
 export function translateScenarioText(text: string, lang: SupportedLanguage): string {
+  lang = normalizeSupportedLanguage(lang);
   if (!text || lang === 'en') return text;
   const map = lang === 'hr' ? scenarioTextHr : scenarioTextDe;
   return map[text] ?? text;
 }
 
 export function localizeGKScenario(scenario: GKScenario, lang: SupportedLanguage, t: TFunc): GKScenario {
+  lang = normalizeSupportedLanguage(lang);
   if (lang === 'en') return scenario;
   const suffix = lang === 'hr' ? '_hr' : '_de';
   const s = scenario as GKScenario & Record<string, unknown>;
@@ -102,6 +105,7 @@ export function localizeMatchSituation(
   lang: SupportedLanguage,
   t: TFunc,
 ): MatchSituation {
+  lang = normalizeSupportedLanguage(lang);
   if (lang === 'en') {
     return {
       ...situation,
@@ -118,7 +122,7 @@ export function localizeMatchSituation(
     pressure: translatePressure(situation.pressure, t) as MatchSituation['pressure'],
     formation: adminFormation
       ? translateDefensiveSystem(adminFormation[1], t)
-      : translateScenarioText(situation.formation, lang),
+      : translateScenarioText(translateFormation(situation.formation, t), lang),
     description: String(s[`description${suffix}`] ?? translateScenarioText(situation.description, lang)),
     decisions: situation.decisions.map((d) => localizeDecision(d, lang)),
   };
@@ -129,6 +133,7 @@ export function localizeTacticalScenario(
   lang: SupportedLanguage,
   t: TFunc,
 ): TacticalScenario {
+  lang = normalizeSupportedLanguage(lang);
   if (lang === 'en') {
     return {
       ...scenario,

@@ -187,7 +187,7 @@ export default function AdminScenariosScreen() {
           <BackButton />
           <View style={{ flex: 1 }}>
             <Text style={styles.headerTitle}>{t('adminScenarios.title')}</Text>
-            <Text style={styles.headerSub}>{filtered.length} of {scenarios.length} {t('adminScenarios.title').toLowerCase()}</Text>
+            <Text style={styles.headerSub}>{t('common.countOf', { shown: filtered.length, total: scenarios.length })} {t('adminScenarios.title').toLowerCase()}</Text>
           </View>
           <TouchableOpacity style={styles.iconBtn} onPress={() => router.push('/admin/editor')}>
             <Plus size={20} color={Colors.gold} />

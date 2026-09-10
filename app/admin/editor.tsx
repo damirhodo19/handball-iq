@@ -22,7 +22,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import {
   translatePosition, translateDifficulty, translateAgeGroup,
   translatePlayingLevel, translateStatus, translateMatchPhase,
-  translateAttackDefence, translatePressure, translateCategory,
+  translateAttackDefence, translatePressure, translateCategory, translateDefensiveSystem,
 } from '@/lib/translations';
 
 const STEPS = ['Basic Info', 'Match Context', 'Decision', 'Learning', 'Preview'];
@@ -333,7 +333,7 @@ function Step2Context({ draft, update }: { draft: Partial<AdminScenario>; update
       <TextInput style={styles.input} placeholder={t('editor.playersPlaceholder')} placeholderTextColor={Colors.textQuaternary} value={String(draft.playersOnCourt ?? 7)} onChangeText={(v) => update({ playersOnCourt: parseInt(v) || 7 })} keyboardType="numeric" />
 
       <FieldLabel label={t('editor.defensiveSystem')} />
-      <ChipSelector values={DEFENSIVE_SYSTEMS} current={draft.defensiveSystem as string} onChange={(v) => update({ defensiveSystem: v as DefensiveSystem })} />
+      <ChipSelector values={DEFENSIVE_SYSTEMS} current={draft.defensiveSystem as string} onChange={(v) => update({ defensiveSystem: v as DefensiveSystem })} translate={(v) => translateDefensiveSystem(v, t)} />
 
       <FieldLabel label={t('editor.pressureLevel')} />
       <ChipSelector values={PRESSURE_LEVELS} current={draft.pressureLevel as string} onChange={(v) => update({ pressureLevel: v as PressureLevel })} translate={(v) => translatePressure(v, t)} />

@@ -1,3 +1,4 @@
+import { useSession } from '@/context/SessionContext';
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -13,7 +14,8 @@ import { translateDifficulty } from '@/lib/translations';
 
 export default function SessionIntroScreen() {
   const { t, lang } = useTranslation();
-  const info = getLocalizedSessionInfo(lang);
+  const { position } = useSession();
+  const info = getLocalizedSessionInfo(lang, position);
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>

@@ -180,6 +180,17 @@ const SESSION_TYPE_KEYS: Record<string, string> = {
 };
 
 const SKILL_KEYS: Record<string, string> = {
+  'Patience Training': 'coach.plan.focus.patience',
+  'Match Preparation': 'coach.plan.focus.matchPrep',
+  'Recovery and Review': 'coach.plan.focus.recovery',
+  'Defence Reading': 'iq.skill.defensiveReading',
+  'Tempo Control': 'training.focus.tempoControl',
+  'Pivot Connection': 'training.focus.pivotConnection',
+  'Pressure Decisions': 'iq.skill.pressureDecisions',
+  'Space Creation': 'iq.skill.spaceCreation',
+  'Pressure Control': 'iq.skill.pressureControl',
+  'Position Skills': 'training.focus.positionSkills',
+  'Match Simulation': 'training.focus.matchSimulation',
   'Decision Making': 'skill.decisionMaking',
   'Patience': 'skill.patience',
   'Reading the Shooter': 'skill.readingShooter',
@@ -288,12 +299,37 @@ export const translateMomentum = makeTranslator(MOMENTUM_KEYS);
 export const translateConfidence = makeTranslator(CONFIDENCE_KEYS);
 export const translatePersonalGoal = makeTranslator(PERSONAL_GOAL_KEYS);
 export const translateSessionType = makeTranslator(SESSION_TYPE_KEYS);
-export const translateSkill = makeTranslator(SKILL_KEYS);
+export function translateSkill(value: string, t: TFunc): string {
+  const explicit = SKILL_KEYS[value];
+  if (explicit) return t(explicit);
+  // Runtime metric IDs and old saved English labels share the same display path.
+  for (const key of [`iq.skill.${value}`, `coach.skill.${value}`, `skill.${value}`]) {
+    const result = t(key);
+    if (result !== key) return result;
+  }
+  const key = Object.keys(translations.en).find((candidate) =>
+    /^(iq\.skill|coach\.skill|skill|category|term)\./.test(candidate) && translations.en[candidate] === value,
+  );
+  return key ? t(key) : translateCategory(value, t);
+}
 export const translatePlayerType = makeTranslator(PLAYER_TYPE_KEYS);
 export const translateDay = makeTranslator(DAY_KEYS);
 export const translateAttackDefence = makeTranslator(ATTACK_DEFENCE_KEYS);
 export const translateCategory = makeTranslator(CATEGORY_KEYS);
-export const translateDefensiveSystem = makeTranslator(DEFENSIVE_SYSTEM_KEYS);
+export const translateFormation = makeTranslator({
+  '3-2-1 attacking formation': 'formation.attacking321',
+  '2-4 attacking with line player': 'formation.attacking24',
+  '7 vs 6 empty-court attack': 'formation.emptyCourt76',
+  'Standard 6-0 defence': 'formation.standard60',
+  '5-1 aggressive defence': 'formation.aggressive51',
+  '3-2-1 defence shifting': 'formation.shifting321',
+});
+export function translateDefensiveSystem(value: string, t: TFunc): string {
+  const normalized = value.replace(/:/g, '-');
+  return makeTranslator(DEFENSIVE_SYSTEM_KEYS)(normalized, t) === normalized
+    ? value
+    : makeTranslator(DEFENSIVE_SYSTEM_KEYS)(normalized, t);
+}
 
 const ENGLISH_DEFAULT_STATEMENT = 'Today I will focus on the next action, not the previous result.';
 

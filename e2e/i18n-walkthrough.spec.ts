@@ -93,7 +93,7 @@ for (const lang of ['en', 'hr', 'de'] as Lang[]) {
           await assertNoEnglishOnLocalized(page, lang);
         } catch (e) {
           await screenshot(page, lang, `${route.replace(/[^\w-]+/g, '_')}_error`);
-          console.warn(`Route ${route} (${lang}):`, e);
+          throw e;
         }
       }
 

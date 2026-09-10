@@ -55,7 +55,7 @@ export default function MatchReviewScreen() {
           const correct = sit.decisions.find((d) => d.id === sit.correctDecisionId);
           const isCorrect = answer.isCorrect;
           const qualityColor = QUALITY_COLORS[answer.quality] ?? Colors.textTertiary;
-          const pressureColor = PRESSURE_COLORS[sit.pressure] ?? Colors.textTertiary;
+          const pressureColor = PRESSURE_COLORS[rawSit.pressure] ?? Colors.textTertiary;
 
           return (
             <Animated.View key={sit.index} entering={FadeInDown.delay(i * 50).duration(400)}>
@@ -113,7 +113,7 @@ export default function MatchReviewScreen() {
                 {/* Feedback */}
                 <View style={styles.feedbackBox}>
                   <View style={styles.feedbackIcon}><Activity size={12} color={Colors.gold} /></View>
-                  <Text style={styles.feedbackText}>{localizeContent(answer.feedback, lang, t)}</Text>
+                  <Text style={styles.feedbackText}>{chosen?.feedback ?? localizeContent(answer.feedback, lang, t)}</Text>
                 </View>
               </Card>
             </Animated.View>

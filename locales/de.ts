@@ -8,6 +8,19 @@ import { sprint5MessagesDe } from './sprint5-messages';
 import { closedBetaMessagesDe } from './closed-beta-messages';
 
 export const de: TranslationDict = {
+  'formation.attacking321': 'Angriffsformation 3:2:1',
+  'formation.attacking24': 'Angriff 2:4 mit Kreisläufer',
+  'formation.emptyCourt76': 'Angriff 7 gegen 6 auf leerem Spielfeld',
+  'formation.standard60': 'Standardabwehr 6:0',
+  'formation.aggressive51': 'Aggressive Abwehr 5:1',
+  'formation.shifting321': 'Verschieben der Abwehr 3:2:1',
+  'training.positionIq': '{position} IQ',
+  'training.focus.tempoControl': 'Temposteuerung',
+  'training.focus.pivotConnection': 'Zusammenspiel mit dem Kreisläufer',
+  'training.focus.positionSkills': 'Positionsspezifische Fähigkeiten',
+  'training.focus.matchSimulation': 'Spielsimulation',
+  'common.countOf': '{shown} von {total}',
+  'common.versus': 'gegen',
   // ─── Common ───
   'common.loading': 'Wird geladen...',
   'common.retry': 'Erneut versuchen',

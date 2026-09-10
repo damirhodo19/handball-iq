@@ -97,7 +97,8 @@
     "test:e2e": "playwright test",
     "recover:rw-gold-bank": "node scripts/recover-right-wing-gold-bank.mjs",
     "audit:rw-gold-coach-risk-v2": "node scripts/audit-rw-gold-human-coach-risk-v2.mjs",
-    "export:rw-gold-human-review-20": "node scripts/export-rw-gold-human-review-20.mjs"
+    "export:rw-gold-human-review-20": "node scripts/export-rw-gold-human-review-20.mjs",
+    "test:localization": "node scripts/test-localization.mjs && node scripts/test-localization-render.mjs"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.2",

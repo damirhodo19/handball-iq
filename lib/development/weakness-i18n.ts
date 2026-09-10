@@ -1,5 +1,7 @@
+import type { SupportedLanguage } from '@/locales';
+import { localizeContent } from '@/lib/content-localize';
 import type { WeaknessReport } from './types';
-import { translateSkill } from '@/lib/translations';
+import { translateSkill, translateDefensiveSystem, translateFormation } from '@/lib/translations';
 
 type TranslateFn = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -30,7 +32,7 @@ export function buildWeaknessRecommendations(report: WeaknessReport): WeaknessRe
   return items;
 }
 
-export function formatWeaknessRecommendation(item: WeaknessRecommendation, t: TranslateFn): string {
+export function formatWeaknessRecommendation(item: WeaknessRecommendation, t: TranslateFn, lang: SupportedLanguage = 'en'): string {
   switch (item.type) {
     case 'category':
       return t('dev.rec.focusCategory', {
@@ -38,11 +40,11 @@ export function formatWeaknessRecommendation(item: WeaknessRecommendation, t: Tr
         accuracy: item.accuracy,
       });
     case 'formation':
-      return t('dev.rec.formation', { formation: item.formation });
+      return t('dev.rec.formation', { formation: translateFormation(translateDefensiveSystem(item.formation, t), t) });
     case 'slowReads':
       return t('dev.rec.slowReads');
     case 'mistake':
-      return t('dev.rec.repeatedMistake', { scenario: translateSkill(item.scenarioType, t) });
+      return t('dev.rec.repeatedMistake', { scenario: localizeContent(item.scenarioType, lang, t) });
     default:
       return '';
   }

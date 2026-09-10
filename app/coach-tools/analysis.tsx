@@ -169,7 +169,7 @@ export default function MatchAnalysisScreen() {
         ) : (
           <Animated.View entering={FadeInDown.duration(400)} style={{ gap: Spacing.md }}>
             <View style={styles.card}>
-              <Text style={styles.cardTitle}>{report.ownTeam} vs {report.opponent}</Text>
+              <Text style={styles.cardTitle}>{report.ownTeam} {t('common.versus')} {report.opponent}</Text>
               <Text style={styles.cardMeta}>
                 {report.date} · {report.competition}
                 {report.result ? ` · ${report.result}` : ''}

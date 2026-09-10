@@ -76,7 +76,7 @@ export default function ProgressScreen() {
   const [selectedAch, setSelectedAch] = useState<string | null>(null);
   const weaknessRecs = buildWeaknessRecommendations(weaknesses);
   const localizedWeaknessRecs = weaknessRecs.length > 0
-    ? weaknessRecs.map((item) => formatWeaknessRecommendation(item, t))
+    ? weaknessRecs.map((item) => formatWeaknessRecommendation(item, t, lang))
     : [t('dev.rec.maintainConsistency')];
   const stats = positionStatistics;
   const totalTime = scopedSessions.reduce((s, ss) => s + ss.timeSpent, 0);

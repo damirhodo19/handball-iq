@@ -1,3 +1,4 @@
+import { pickLocalizedText as pickLocalized } from '@/lib/locale-text';
 import { View, Text } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -36,14 +37,6 @@ function goalLabel(goal: string | null | undefined, t: TranslateFn): string {
   return key ? t(key) : goal;
 }
 
-function pickLocalized(
-  text: { en: string; hr: string; de: string },
-  lang: string,
-): string {
-  if (lang === 'hr') return text.hr;
-  if (lang === 'de') return text.de;
-  return text.en;
-}
 
 export function CoachHome({
   profile,

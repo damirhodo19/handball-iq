@@ -1,6 +1,9 @@
+import { getAllScenarios } from '@/lib/scenario-bank';
 import { SupportedLanguage } from '@/locales';
 import { scenarioTextDe, scenarioTextHr } from '@/locales/scenario-text';
-import { translatePlayerType, translateSkill, TFunc } from '@/lib/translations';
+import { translatePlayerType, translateSkill, translatePosition, translateCategory, translateDefensiveSystem, TFunc } from '@/lib/translations';
+import { normalizeSupportedLanguage } from '@/lib/locale';
+import { createTranslator } from '@/lib/locale-text';
 import { SESSION_RESULTS } from '@/lib/scenarios';
 import { SESSION_INFO } from '@/lib/scenarios';
 import { getDailySession } from '@/lib/positions';
@@ -26,16 +29,18 @@ export function getLocalizedSessionInfo(
   lang: SupportedLanguage,
   position?: HandballPosition | null,
 ) {
+  lang = normalizeSupportedLanguage(lang);
+  const t = createTranslator(lang);
   const resolved =
     position !== undefined ? position : resolvePlayerPosition(loadProfile());
   const daily = getDailySession(resolved);
 
   if (daily && resolved && resolved !== 'Goalkeeper') {
     return {
-      title: daily.title,
-      subtitle: `${resolved} IQ`,
+      title: localizeContent(daily.title, lang, t),
+      subtitle: t('training.positionIq', { position: translatePosition(resolved, t) }),
       sessionNumber: pickLocalizedField<string>(SESSION_INFO, 'sessionNumber', lang),
-      description: daily.desc,
+      description: localizeContent(daily.desc, lang, t),
       structure: pickLocalizedField<string[]>(SESSION_INFO, 'structure', lang),
       instruction: pickLocalizedField<string>(SESSION_INFO, 'instruction', lang),
       duration: SESSION_INFO.duration,
@@ -75,17 +80,26 @@ export function getLocalizedSessionInfo(
 }
 
 export function localizeContent(text: string, lang: SupportedLanguage, t?: TFunc): string {
-  if (!text || lang === 'en') return text;
+  lang = normalizeSupportedLanguage(lang);
+  if (!text) return text;
+  t ??= createTranslator(lang);
+  const keyed = t(text);
+  if (keyed !== text) return keyed;
 
   if (t) {
     const asSkill = translateSkill(text, t);
     if (asSkill !== text) return asSkill;
     const asType = translatePlayerType(text, t);
     if (asType !== text) return asType;
+    const asCategory = translateCategory(text, t);
+    if (asCategory !== text) return asCategory;
+    const asFormation = translateDefensiveSystem(text, t);
+    if (asFormation !== text) return asFormation;
   }
 
   const map = lang === 'hr' ? scenarioTextHr : scenarioTextDe;
-  return map[text] ?? text;
+  const title = getAllScenarios().find((scenario) => Object.values(scenario.title).includes(text))?.title;
+  return title?.[lang] ?? (lang === 'en' ? text : map[text] ?? text);
 }
 
 export function localizeContentList(texts: string[], lang: SupportedLanguage, t?: TFunc): string[] {
@@ -93,6 +107,7 @@ export function localizeContentList(texts: string[], lang: SupportedLanguage, t?
 }
 
 export function getLocalizedSessionResults(lang: SupportedLanguage, position?: HandballPosition | null) {
+  lang = normalizeSupportedLanguage(lang);
   const resolved =
     position !== undefined ? position : resolvePlayerPosition(loadProfile());
 

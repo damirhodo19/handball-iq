@@ -279,7 +279,7 @@ export default function MatchPlayScreen() {
                 </View>
                 <Text style={styles.feedbackTitle}>{lastAnswer.isCorrect ? t('match.correct') : t('match.incorrect')}</Text>
               </View>
-              <Text style={styles.feedbackText}>{localizeContent(lastAnswer.feedback, lang, t)}</Text>
+              <Text style={styles.feedbackText}>{situation.decisions.find((decision) => decision.id === lastAnswer.chosenDecisionId)?.feedback ?? localizeContent(lastAnswer.feedback, lang, t)}</Text>
               {!lastAnswer.isCorrect ? (
                 <Text style={styles.correctHint}>
                   {t('match.correctAnswer')}: {situation.decisions.find((d) => d.id === situationRaw.correctDecisionId)?.text}
