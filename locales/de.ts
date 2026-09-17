@@ -8,6 +8,10 @@ import { sprint5MessagesDe } from './sprint5-messages';
 import { closedBetaMessagesDe } from './closed-beta-messages';
 
 export const de: TranslationDict = {
+  'profile.playerIqPending': "k. A.",
+  'profile.playerIqSample': "Basierend auf {n} gültigen Antworten in den geladenen Trainingsergebnissen.",
+  'profile.playerIqFormula': "Gerundeter Prozentsatz richtiger Antworten. Mindestens {min} Antworten erforderlich. Dies misst die Genauigkeit im Training.",
+  'profile.playerIqDetailsUnavailable': "Teilbewertungen, Stärken und Verbesserungsprioritäten sind nicht verfügbar, da gespeicherte Ergebnisse keine verlässlichen Szenariokategorien enthalten.",
   'auth.recoveryTitle': "Neues Passwort festlegen",
   'auth.recoveryConfirm': "Neues Passwort bestätigen",
   'auth.recoverySave': "Neues Passwort speichern",

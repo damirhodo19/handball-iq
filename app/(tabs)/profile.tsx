@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, type ReactNode } from 'react';
+import { useState, useCallback, useEffect, useMemo, type ReactNode } from 'react';
 import {
   View, StyleSheet, Text, ScrollView, TouchableOpacity, Modal, TextInput,
 } from 'react-native';
@@ -8,7 +8,7 @@ import {
   User, Globe, Edit3, X, Check,
   Flame, Calendar, Activity, ChevronRight, Award, Target, Bell, Palette,
 } from 'lucide-react-native';
-import { Colors, Spacing, Radius } from '@/lib/theme';
+import { Colors, Spacing, Radius, getPaletteForScheme, type ThemePalette } from '@/lib/theme';
 import { Card } from '@/components/Card';
 import { WebAvatarPicker } from '@/components/WebAvatarPicker';
 import { Button } from '@/components/Button';
@@ -46,6 +46,7 @@ import {
 } from '@/lib/platform/types';
 import { ALL_POSITIONS, DominantHand } from '@/lib/positions';
 import { computePlayerStats } from '@/lib/player-stats';
+import { calculatePlayerIq, PLAYER_IQ_MIN_ANSWERS } from '@/lib/player-iq';
 import { EmptyState } from '@/components/EmptyState';
 import { LoadingState } from '@/components/LoadingState';
 import { fetchSessionResults, sessionResultToRecord } from '@/services/sessionService';
@@ -157,6 +158,7 @@ function isPlayerRole(role: string | null | undefined): boolean {
 }
 
 export default function ProfileScreen() {
+  const styles = useProfileStyles();
   const { t, lang } = useTranslation();
   const { preference } = useTheme();
   const { isDevAuthenticated } = useDevAuth();
@@ -289,12 +291,7 @@ export default function ProfileScreen() {
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
   const showCoachFields = isCoachRole(profile?.role);
   const showPlayerFields = isPlayerRole(profile?.role);
-  const handballIqScores = [
-    { label: t('iq.skill.attackIq'), value: 82 },
-    { label: t('iq.skill.defenceIq'), value: 71 },
-    { label: t('iq.skill.decisionMaking'), value: 80 },
-    { label: t('iq.skill.gameReading'), value: 76 },
-  ];
+  const playerIq = calculatePlayerIq(sessions);
 
   const langLabel =
     lang === 'hr' ? t('settings.languageHr')
@@ -359,39 +356,20 @@ export default function ProfileScreen() {
               <Card variant="gradient" shadow="cardLg" style={styles.iqCard}>
                 <View style={styles.iqHero}>
                   <View style={styles.iqScoreRing}>
-                    <Text style={styles.iqOverallValue}>78</Text>
+                    <Text style={styles.iqOverallValue}>{playerIq.overall ?? t('profile.playerIqPending')}</Text>
                     <Text style={styles.iqScoreMax}>/ 100</Text>
                   </View>
                   <View style={styles.iqHeroCopy}>
                     <Text style={styles.iqOverallLabel}>{t('home.overallIq')}</Text>
-                    <Text style={styles.iqOverallHint}>{t('profile.handballIqPreviewHint')}</Text>
+                    <Text style={styles.iqOverallHint}>
+                      {t('profile.playerIqSample', { n: playerIq.sampleCount })}
+                    </Text>
+                    <Text style={styles.iqOverallHint}>
+                      {t('profile.playerIqFormula', { min: PLAYER_IQ_MIN_ANSWERS })}
+                    </Text>
                   </View>
                 </View>
-                <View style={styles.iqBars}>
-                  {handballIqScores.map((score) => (
-                    <View key={score.label} style={styles.iqBarItem}>
-                      <View style={styles.iqBarHeader}>
-                        <Text style={styles.iqScoreLabel}>{score.label}</Text>
-                        <Text style={styles.iqScoreValue}>{score.value}</Text>
-                      </View>
-                      <View style={styles.iqBarTrack}>
-                        <View style={[styles.iqBarFill, { width: `${score.value}%` }]} />
-                      </View>
-                    </View>
-                  ))}
-                </View>
-                <View style={styles.iqInsightsRow}>
-                  <View style={styles.iqInsightColumn}>
-                    <Text style={styles.iqInsightTitle}>{t('profile.handballIqStrengths')}</Text>
-                    <Text style={styles.iqInsightText}>✓ {t('profile.handballIqStrengthFinishing')}</Text>
-                    <Text style={styles.iqInsightText}>✓ {t('profile.handballIqStrengthGoalkeeper')}</Text>
-                  </View>
-                  <View style={styles.iqInsightColumn}>
-                    <Text style={styles.iqInsightTitle}>{t('profile.handballIqImprove')}</Text>
-                    <Text style={styles.iqInsightText}>→ {t('profile.handballIqImproveDefence')}</Text>
-                    <Text style={styles.iqInsightText}>→ {t('profile.handballIqImproveTiming')}</Text>
-                  </View>
-                </View>
+                <Text style={styles.iqInsightText}>{t('profile.playerIqDetailsUnavailable')}</Text>
               </Card>
             </Animated.View>
           </>
@@ -755,6 +733,7 @@ function EditForm({
   saving: boolean;
   saveError: string | null;
 }) {
+  const styles = useProfileStyles();
   const [goalSelectionError, setGoalSelectionError] = useState<string | null>(null);
   const [coachGoalSelectionError, setCoachGoalSelectionError] = useState<string | null>(null);
   const [positionSelectionError, setPositionSelectionError] = useState<string | null>(null);
@@ -1040,6 +1019,7 @@ function EditForm({
 }
 
 function ControlRow({ label, value, onPress }: { label: string; value: string; onPress: () => void }) {
+  const styles = useProfileStyles();
   return (
     <TouchableOpacity style={styles.controlRow} activeOpacity={0.7} onPress={onPress}>
       <View style={styles.controlTextCol}>
@@ -1052,6 +1032,7 @@ function ControlRow({ label, value, onPress }: { label: string; value: string; o
 }
 
 function StatBox({ label, value, sub, highlight }: { label: string; value: string; sub?: string; highlight?: boolean }) {
+  const styles = useProfileStyles();
   return (
     <View style={styles.statBox}>
       <Text style={[styles.statBoxValue, highlight && { color: Colors.gold }]}>{value}</Text>
@@ -1062,10 +1043,12 @@ function StatBox({ label, value, sub, highlight }: { label: string; value: strin
 }
 
 function SectionLabel({ label }: { label: string }) {
+  const styles = useProfileStyles();
   return <Text style={styles.sectionLabel}>{label}</Text>;
 }
 
 function InputGroup({ label, children }: { label: string; children: ReactNode }) {
+  const styles = useProfileStyles();
   return (
     <View style={styles.inputGroup}>
       <Text style={styles.inputLabel}>{label}</Text>
@@ -1085,6 +1068,7 @@ function Chip({
   onPress: () => void;
   compact?: boolean;
 }) {
+  const styles = useProfileStyles();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -1100,10 +1084,12 @@ function Chip({
 }
 
 function ChipGrid({ children }: { children: ReactNode }) {
+  const styles = useProfileStyles();
   return <View style={styles.chipGrid}>{children}</View>;
 }
 
 function Toggle({ value, onToggle }: { value: boolean; onToggle: () => void }) {
+  const styles = useProfileStyles();
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onToggle} style={[styles.toggle, value && styles.toggleOn]}>
       <View style={[styles.toggleThumb, value && styles.toggleThumbOn]} />
@@ -1111,7 +1097,13 @@ function Toggle({ value, onToggle }: { value: boolean; onToggle: () => void }) {
   );
 }
 
-const styles = StyleSheet.create({
+// Resolve styles from the current scheme instead of freezing the initial light palette.
+function useProfileStyles() {
+  const { scheme } = useTheme();
+  return useMemo(() => createProfileStyles(getPaletteForScheme(scheme)), [scheme]);
+}
+
+const createProfileStyles = (Colors: ThemePalette) => StyleSheet.create({
   hint: { fontFamily: 'Inter-Regular', fontSize: 12, color: Colors.textTertiary, marginBottom: Spacing.sm },
   errorText: { fontFamily: 'Inter-Medium', fontSize: 12, color: Colors.error, marginTop: Spacing.sm },
   scroll: { paddingHorizontal: Spacing.lg, paddingTop: Spacing.xxxl + 16, paddingBottom: Spacing.xxxl },

@@ -8,6 +8,10 @@ import { sprint5MessagesHr } from './sprint5-messages';
 import { closedBetaMessagesHr } from './closed-beta-messages';
 
 export const hr: TranslationDict = {
+  'profile.playerIqPending': "N/D",
+  'profile.playerIqSample': "Na temelju {n} valjanih odgovora iz učitanih rezultata treninga.",
+  'profile.playerIqFormula': "Zaokruženi postotak točnih odgovora. Potrebno je najmanje {min} odgovora. Ovo je mjera točnosti na treningu.",
+  'profile.playerIqDetailsUnavailable': "Ocjene vještina, jake strane i prioriteti za poboljšanje nisu dostupni jer spremljeni rezultati ne sadrže pouzdane kategorije scenarija.",
   'auth.recoveryTitle': "Postavi novu lozinku",
   'auth.recoveryConfirm': "Potvrdi novu lozinku",
   'auth.recoverySave': "Spremi novu lozinku",
