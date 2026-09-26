@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
@@ -10,21 +10,23 @@ import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
-import { getContentStats, AdminScenario } from '@/lib/admin-storage';
+import { getContentStats, getContentStatsAsync, AdminScenario } from '@/lib/admin-storage';
 import { useTranslation } from '@/hooks/useTranslation';
 import { translatePosition, translateDifficulty, translateCategory } from '@/lib/translations';
+import { localizeContent } from '@/lib/content-localize';
 import { useSignOut } from '@/hooks/useSignOut';
 
 export default function AdminDashboardScreen() {
   const { t } = useTranslation();
   const signOut = useSignOut();
-  const [stats, setStats] = useState<ReturnType<typeof getContentStats> | null>(null);
+  const [stats, setStats] = useState(() => getContentStats(undefined, t));
 
-  useFocusEffect(() => {
-    setStats(getContentStats());
-  });
-
-  if (!stats) return null;
+  useFocusEffect(useCallback(() => {
+    let current = true;
+    setStats(getContentStats(undefined, t));
+    void getContentStatsAsync(t).then((next) => { if (current) setStats(next); });
+    return () => { current = false; };
+  }, [t]));
 
   const handleLogout = () => {
     signOut();
@@ -107,7 +109,7 @@ export default function AdminDashboardScreen() {
           <Card padding={Spacing.md}>
             {Object.entries(stats.byCategory).map(([cat, count]) => (
               <View key={cat} style={styles.distributionRow}>
-                <Text style={styles.distLabel}>{cat}</Text>
+                <Text style={styles.distLabel}>{translateCategory(cat, t)}</Text>
                 <Text style={styles.distCount}>{count}</Text>
               </View>
             ))}
@@ -181,8 +183,9 @@ function QuickAction({ icon, label, onPress }: { icon: React.ReactNode; label: s
 }
 
 function RecentRow({ scenario, isLast }: { scenario: AdminScenario; isLast: boolean }) {
-  const { t } = useTranslation();
-  const date = new Date(scenario.createdAt).toLocaleDateString();
+  const { t, lang } = useTranslation();
+  const date = new Date(scenario.createdAt).toLocaleDateString(lang);
+  const title = (lang === 'hr' ? scenario.title_hr : lang === 'de' ? scenario.title_de : undefined) || localizeContent(scenario.title, lang, t);
   return (
     <TouchableOpacity
       style={[styles.recentRow, isLast && { borderBottomWidth: 0 }]}
@@ -190,7 +193,7 @@ function RecentRow({ scenario, isLast }: { scenario: AdminScenario; isLast: bool
       activeOpacity={0.7}
     >
       <View style={{ flex: 1 }}>
-        <Text style={styles.recentTitle} numberOfLines={1}>{scenario.title}</Text>
+        <Text style={styles.recentTitle} numberOfLines={1}>{title}</Text>
         <Text style={styles.recentMeta}>{translatePosition(scenario.position, t)} · {translateCategory(scenario.category, t)} · {date}</Text>
       </View>
       <ChevronRight size={18} color={Colors.textQuaternary} />

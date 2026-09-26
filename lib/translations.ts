@@ -4,6 +4,7 @@ type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
 // Map position identifier to translation key
 const POSITION_KEYS: Record<string, string> = {
+  'All': 'common.all',
   'Goalkeeper': 'position.goalkeeper',
   'Left Wing': 'position.leftWing',
   'Right Wing': 'position.rightWing',

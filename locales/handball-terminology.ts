@@ -114,7 +114,7 @@ export function buildScenarioGlossary(lang: 'hr' | 'de'): Array<[RegExp, string]
       'center back': 'srednji vanjski',
       screen: 'blok',
       screener: 'postavljač bloka',
-      'jump shot': 'skok-šut',
+      'jump shot': "šut iz skoka",
       'defensive block': 'obrambeni blok',
       'six-metre line': 'linija šest metara',
       'nine-metre line': 'linija devet metara',

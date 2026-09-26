@@ -8,6 +8,10 @@ import { sprint5MessagesDe } from './sprint5-messages';
 import { closedBetaMessagesDe } from './closed-beta-messages';
 
 export const de: TranslationDict = {
+  "admin.warningMissingPosition": "Keine Szenarien für {position}",
+  "admin.warningMissingProfessional": "Keine Szenarien auf Profiniveau für {position}",
+  "admin.warningMissingUnder14": "Keine U14-Szenarien für {position}",
+
   'profile.playerIqPending': "k. A.",
   'profile.playerIqSample': "Basierend auf {n} gültigen Antworten in den geladenen Trainingsergebnissen.",
   'profile.playerIqFormula': "Gerundeter Prozentsatz richtiger Antworten. Mindestens {min} Antworten erforderlich. Dies misst die Genauigkeit im Training.",

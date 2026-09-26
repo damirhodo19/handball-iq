@@ -7,6 +7,9 @@ import { supabase } from './supabase';
 import { fetchPublishedScenariosForPosition } from '@/services/scenarioService';
 import { readStorageJson, writeStorageJson } from '@/lib/platform-storage';
 import { isAdminScenarioForPosition } from '@/lib/platform/scenario-position';
+import { getAllScenarios } from '@/lib/scenario-bank';
+import { createTranslator } from '@/lib/locale-text';
+import { translatePosition, type TFunc } from '@/lib/translations';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -178,6 +181,8 @@ export function createScenario(partial: Partial<AdminScenario>): AdminScenario {
   const scenario: AdminScenario = {
     id: generateId(),
     title: partial.title ?? 'Untitled Scenario',
+    title_hr: partial.title_hr,
+    title_de: partial.title_de,
     position: partial.position ?? 'All',
     secondaryPositions: partial.secondaryPositions ?? [],
     category: partial.category ?? 'General',
@@ -192,15 +197,29 @@ export function createScenario(partial: Partial<AdminScenario>): AdminScenario {
     playersOnCourt: partial.playersOnCourt ?? 7,
     defensiveSystem: partial.defensiveSystem ?? '6-0',
     situation: partial.situation ?? '',
+    situation_hr: partial.situation_hr,
+    situation_de: partial.situation_de,
     question: partial.question ?? '',
+    question_hr: partial.question_hr,
+    question_de: partial.question_de,
     answerOptions: partial.answerOptions ?? ['', ''],
+    answerOptions_hr: partial.answerOptions_hr,
+    answerOptions_de: partial.answerOptions_de,
     recommendedAnswer: partial.recommendedAnswer ?? 0,
     explanation: partial.explanation ?? '',
+    explanation_hr: partial.explanation_hr,
+    explanation_de: partial.explanation_de,
     learningObjective: partial.learningObjective ?? '',
+    learningObjective_hr: partial.learningObjective_hr,
+    learningObjective_de: partial.learningObjective_de,
     mentalSkill: partial.mentalSkill ?? '',
     tacticalSkill: partial.tacticalSkill ?? '',
     commonMistake: partial.commonMistake ?? '',
+    commonMistake_hr: partial.commonMistake_hr,
+    commonMistake_de: partial.commonMistake_de,
     coachNote: partial.coachNote ?? '',
+    coachNote_hr: partial.coachNote_hr,
+    coachNote_de: partial.coachNote_de,
     pressureLevel: partial.pressureLevel ?? 'Moderate',
     createdAt: now,
     updatedAt: now,
@@ -371,6 +390,8 @@ export function importScenarios(jsonString: string): ImportResult {
     const scenario: AdminScenario = {
       id,
       title: raw.title,
+      title_hr: typeof raw.title_hr === 'string' ? raw.title_hr : undefined,
+      title_de: typeof raw.title_de === 'string' ? raw.title_de : undefined,
       position: raw.position ?? 'All',
       secondaryPositions: Array.isArray(raw.secondaryPositions) ? raw.secondaryPositions : [],
       category: raw.category ?? 'General',
@@ -385,15 +406,29 @@ export function importScenarios(jsonString: string): ImportResult {
       playersOnCourt: typeof raw.playersOnCourt === 'number' ? raw.playersOnCourt : 7,
       defensiveSystem: raw.defensiveSystem ?? '6-0',
       situation: raw.situation ?? '',
+      situation_hr: typeof raw.situation_hr === 'string' ? raw.situation_hr : undefined,
+      situation_de: typeof raw.situation_de === 'string' ? raw.situation_de : undefined,
       question: raw.question,
+      question_hr: typeof raw.question_hr === 'string' ? raw.question_hr : undefined,
+      question_de: typeof raw.question_de === 'string' ? raw.question_de : undefined,
       answerOptions: raw.answerOptions.filter((a: any) => typeof a === 'string'),
+      answerOptions_hr: Array.isArray(raw.answerOptions_hr) && raw.answerOptions_hr.every((value: unknown) => typeof value === 'string') ? raw.answerOptions_hr : undefined,
+      answerOptions_de: Array.isArray(raw.answerOptions_de) && raw.answerOptions_de.every((value: unknown) => typeof value === 'string') ? raw.answerOptions_de : undefined,
       recommendedAnswer: typeof raw.recommendedAnswer === 'number' ? raw.recommendedAnswer : 0,
       explanation: raw.explanation ?? '',
+      explanation_hr: typeof raw.explanation_hr === 'string' ? raw.explanation_hr : undefined,
+      explanation_de: typeof raw.explanation_de === 'string' ? raw.explanation_de : undefined,
       learningObjective: raw.learningObjective ?? '',
+      learningObjective_hr: typeof raw.learningObjective_hr === 'string' ? raw.learningObjective_hr : undefined,
+      learningObjective_de: typeof raw.learningObjective_de === 'string' ? raw.learningObjective_de : undefined,
       mentalSkill: raw.mentalSkill ?? '',
       tacticalSkill: raw.tacticalSkill ?? '',
       commonMistake: raw.commonMistake ?? '',
+      commonMistake_hr: typeof raw.commonMistake_hr === 'string' ? raw.commonMistake_hr : undefined,
+      commonMistake_de: typeof raw.commonMistake_de === 'string' ? raw.commonMistake_de : undefined,
       coachNote: raw.coachNote ?? '',
+      coachNote_hr: typeof raw.coachNote_hr === 'string' ? raw.coachNote_hr : undefined,
+      coachNote_de: typeof raw.coachNote_de === 'string' ? raw.coachNote_de : undefined,
       pressureLevel: raw.pressureLevel ?? 'Moderate',
       createdAt: raw.createdAt ?? now,
       updatedAt: now,
@@ -409,8 +444,26 @@ export function importScenarios(jsonString: string): ImportResult {
 
 // ── Statistics ────────────────────────────────────────────────────────────────
 
-export function getContentStats(): ContentStats {
-  const all = loadScenarios();
+export function getContentStats(managedScenarios = loadScenarios(), t: TFunc = createTranslator('en')): ContentStats {
+  // The bundled bank is the runtime source of truth, not the local starter seeds.
+  // Project only inventory metadata; never copy bank content into editable storage.
+  const bank = getAllScenarios();
+  const bankIds = new Set(bank.map((s) => s.id));
+  const managed = managedScenarios.filter((s) => !s.deleted && !bankIds.has(s.id));
+  const all = [
+    ...bank.map((s) => ({
+      id: s.id,
+      position: s.primaryPosition,
+      secondaryPositions: s.secondaryPositions,
+      category: s.category,
+      difficulty: s.difficulty,
+      status: 'Published' as const,
+      // The runtime bank has no age-group or playing-level restrictions.
+      ageGroup: 'All' as const,
+      playingLevel: 'All' as const,
+    })),
+    ...managed,
+  ];
   const active = all.filter((s) => s.status === 'Published' || s.status === 'Draft');
   const archived = all.filter((s) => s.status === 'Archived');
   const drafts = all.filter((s) => s.status === 'Draft');
@@ -426,8 +479,8 @@ export function getContentStats(): ContentStats {
     byCategory[s.category] = (byCategory[s.category] ?? 0) + 1;
   }
 
-  const recentlyCreated = [...all].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 5);
-  const recentlyEdited = [...all].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 5);
+  const recentlyCreated = [...managed].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 5);
+  const recentlyEdited = [...managed].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 5);
 
   // Average difficulty
   const diffRank: Record<string, number> = { Beginner: 1, Intermediate: 2, Advanced: 3, Expert: 4 };
@@ -438,19 +491,19 @@ export function getContentStats(): ContentStats {
 
   // Warnings — content gaps
   const warnings: string[] = [];
-  const positions: string[] = ['Goalkeeper', 'Left Wing', 'Right Wing', 'Pivot', 'Centre Back', 'Left Back', 'Right Back'];
+  const positions: HandballPosition[] = ['Goalkeeper', 'Left Wing', 'Right Wing', 'Pivot', 'Centre Back', 'Left Back', 'Right Back'];
   for (const pos of positions) {
-    const posScenarios = all.filter((s) => s.position === pos);
+    const posScenarios = active.filter((s) => isAdminScenarioForPosition(s, pos));
     if (posScenarios.length === 0) {
-      warnings.push(`No scenarios for ${pos}`);
+      warnings.push(t('admin.warningMissingPosition', { position: translatePosition(pos, t) }));
     }
     const profScenarios = posScenarios.filter((s) => s.playingLevel === 'Professional' || s.playingLevel === 'All');
     if (posScenarios.length > 0 && profScenarios.length === 0) {
-      warnings.push(`No Professional-level ${pos} scenarios`);
+      warnings.push(t('admin.warningMissingProfessional', { position: translatePosition(pos, t) }));
     }
     const u14 = posScenarios.filter((s) => s.ageGroup === 'Under 14' || s.ageGroup === 'All');
     if (posScenarios.length > 0 && u14.length === 0) {
-      warnings.push(`No Under 14 ${pos} scenarios`);
+      warnings.push(t('admin.warningMissingUnder14', { position: translatePosition(pos, t) }));
     }
   }
 
@@ -468,6 +521,11 @@ export function getContentStats(): ContentStats {
     averageDifficulty: avgLabel,
     warnings,
   };
+}
+
+// Use the same cloud/local managed source as the scenario list, plus the runtime bank.
+export async function getContentStatsAsync(t: TFunc = createTranslator('en')): Promise<ContentStats> {
+  return getContentStats(await loadScenariosAsync(), t);
 }
 
 // ── Validation ─────────────────────────────────────────────────────────────────
@@ -672,6 +730,8 @@ function createSeedScenarios(): AdminScenario[] {
 function toDbRow(s: Partial<AdminScenario>): Record<string, any> {
   return {
     title: s.title,
+    title_hr: s.title_hr,
+    title_de: s.title_de,
     position: s.position ?? 'All',
     secondary_positions: s.secondaryPositions ?? [],
     category: s.category ?? 'General',
@@ -687,15 +747,29 @@ function toDbRow(s: Partial<AdminScenario>): Record<string, any> {
     players_on_court: String(s.playersOnCourt ?? 7),
     defensive_system: s.defensiveSystem ?? '6-0',
     situation: s.situation ?? '',
+    situation_hr: s.situation_hr,
+    situation_de: s.situation_de,
     question: s.question ?? '',
+    question_hr: s.question_hr,
+    question_de: s.question_de,
     answer_options: s.answerOptions ?? [],
+    answer_options_hr: s.answerOptions_hr,
+    answer_options_de: s.answerOptions_de,
     recommended_answer: s.recommendedAnswer ?? 0,
     explanation: s.explanation ?? '',
+    explanation_hr: s.explanation_hr,
+    explanation_de: s.explanation_de,
     learning_objective: s.learningObjective ?? '',
+    learning_objective_hr: s.learningObjective_hr,
+    learning_objective_de: s.learningObjective_de,
     mental_skill: s.mentalSkill ?? null,
     tactical_skill: s.tacticalSkill ?? null,
     common_mistake: s.commonMistake ?? null,
+    common_mistake_hr: s.commonMistake_hr,
+    common_mistake_de: s.commonMistake_de,
     coach_note: s.coachNote ?? null,
+    coach_note_hr: s.coachNote_hr,
+    coach_note_de: s.coachNote_de,
     pressure_level: s.pressureLevel ?? 'Moderate',
   };
 }
@@ -758,6 +832,8 @@ export async function loadScenariosAsync(): Promise<AdminScenario[]> {
     return (data as any[]).map((s) => ({
       id: s.id,
       title: s.title,
+      title_hr: s.title_hr,
+      title_de: s.title_de,
       position: s.position,
       secondaryPositions: s.secondary_positions ?? [],
       category: s.category,
@@ -772,15 +848,29 @@ export async function loadScenariosAsync(): Promise<AdminScenario[]> {
       playersOnCourt: parseInt(s.players_on_court) || 7,
       defensiveSystem: s.defensive_system,
       situation: s.situation,
+      situation_hr: s.situation_hr,
+      situation_de: s.situation_de,
       question: s.question,
+      question_hr: s.question_hr,
+      question_de: s.question_de,
       answerOptions: s.answer_options ?? [],
+      answerOptions_hr: s.answer_options_hr,
+      answerOptions_de: s.answer_options_de,
       recommendedAnswer: s.recommended_answer,
       explanation: s.explanation,
+      explanation_hr: s.explanation_hr,
+      explanation_de: s.explanation_de,
       learningObjective: s.learning_objective,
+      learningObjective_hr: s.learning_objective_hr,
+      learningObjective_de: s.learning_objective_de,
       mentalSkill: s.mental_skill ?? '',
       tacticalSkill: s.tactical_skill ?? '',
       commonMistake: s.common_mistake ?? '',
+      commonMistake_hr: s.common_mistake_hr,
+      commonMistake_de: s.common_mistake_de,
       coachNote: s.coach_note ?? '',
+      coachNote_hr: s.coach_note_hr,
+      coachNote_de: s.coach_note_de,
       pressureLevel: s.pressure_level,
       createdAt: s.created_at,
       updatedAt: s.updated_at,

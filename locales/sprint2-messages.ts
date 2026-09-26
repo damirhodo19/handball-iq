@@ -74,8 +74,8 @@ export const sprint2MessagesEn: Record<string, string> = {
 };
 
 export const sprint2MessagesHr: Record<string, string> = {
-  'mode.player': 'Način igrača',
-  'mode.coach': 'Način trenera',
+  'mode.player': "Igrački način",
+  'mode.coach': "Trenerski način",
   'mode.switch': 'Način',
 
   'home.overallIq': 'Ukupni Handball IQ',
@@ -84,16 +84,16 @@ export const sprint2MessagesHr: Record<string, string> = {
   'home.strongestSkill': 'Najjača vještina',
   'home.developmentGoal': 'Razvojni cilj',
   'home.noIqYet': 'Završi sesije za otključavanje',
-  'home.dailyChallengeTitle': 'Dnevni izazov — {focus}',
+  'home.dailyChallengeTitle': "Dnevni izazov: {focus}",
 
-  'home.rec.wing.title': '{n} krilnih situacija odlučivanja',
+  'home.rec.wing.title': "{n} situacija za odlučivanje na krilu",
   'home.rec.back.title': '{n} situacija vanjskih igrača',
   'home.rec.pivot.title': '{n} situacija za pivota',
   'home.rec.goalkeeper.title': '{n} situacija za vratara',
   'home.rec.general.title': '{n} situacija odlučivanja',
 
   'home.focus.wing.default': 'Završnica iz uskog kuta',
-  'home.focus.back.default': 'Probojne odluke pod pritiskom',
+  'home.focus.back.default': "Odluke u prodoru pod pritiskom",
   'home.focus.pivot.default': 'Blokade i stvaranje prostora na šest metara',
   'home.focus.goalkeeper.default': 'Čitanje šuta prije reakcije',
 
@@ -113,8 +113,8 @@ export const sprint2MessagesHr: Record<string, string> = {
   'iq.skill.finishing': 'Završnica',
   'iq.skill.angleSelection': 'Odabir kuta',
   'iq.skill.fastBreak': 'Kontra',
-  'iq.skill.timing': 'Timing',
-  'iq.skill.breakthrough': 'Probojne odluke',
+  'iq.skill.timing': "Pravodobnost",
+  'iq.skill.breakthrough': "Odluke u prodoru",
   'iq.skill.passing': 'Dodavanje',
   'iq.skill.shotSelection': 'Odabir šuta',
   'iq.skill.tacticalReading': 'Taktičko čitanje',
@@ -122,7 +122,7 @@ export const sprint2MessagesHr: Record<string, string> = {
   'iq.skill.spaceCreation': 'Stvaranje prostora',
 
   'home.completeProfileTitle': 'Dovrši profil da personaliziraš Handball IQ.',
-  'home.completeProfileBody': 'Odaberi ulogu i igračku poziciju kako bismo gradili trening, izazove i simulator oko tebe — ne oko zadane pozicije.',
+  'home.completeProfileBody': "Odaberi ulogu i igračku poziciju kako bismo gradili trening, izazove i simulator oko tebe: ne oko zadane pozicije.",
   'home.setupProfileCta': 'Postavi moj profil',
   'home.profileLoading': 'Učitavanje profila…',
 

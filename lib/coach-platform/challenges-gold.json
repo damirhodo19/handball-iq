@@ -270,7 +270,7 @@
     ],
     "explanation": {
       "en": "Protecting a one-goal lead requires secure entry, a clear trigger to attack, and immediate retreat roles — not simply using time.",
-      "hr": "Čuvanje gola prednosti traži siguran ulaz, jasan trenutak za napad i trenutačne uloge u povratku — ne samo trošenje vremena.",
+      "hr": "Čuvanje gola prednosti traži siguran ulaz, jasan trenutak za napad i trenutačne uloge u povratku: ne samo trošenje vremena.",
       "de": "Eine Ein-Tor-Führung schützt man mit sicherem Aufbau, klarem Angriffsauslöser und sofortigen Rückzugsaufgaben — nicht nur durch Zeitverbrauch."
     }
   },
@@ -792,7 +792,7 @@
         },
         "feedback": {
           "en": "Faster rushed shots create the turnovers and unbalanced positions that feed the run.",
-          "hr": "Još brži i brzopleti završeci stvaraju gubitke i loše položaje koji hrane protivnički niz.",
+          "hr": "Još brži, ali brzopleti završeci donose gubitke lopte i loš raspored za povratak, pa protivnik lakše nastavlja svoj niz.",
           "de": "Noch schnellere überhastete Abschlüsse schaffen Ballverluste und schlechte Rückzugspositionen."
         },
         "id": "c"
@@ -1945,7 +1945,7 @@
         "quality": "optimal",
         "text": {
           "en": "Give one cue — scan before the catch — allow one planned possession, then substitute and reinforce whether the read was early",
-          "hr": "Daj jednu uputu — pogled prije primanja — ostavi ga za jedan dogovoreni napad, zatim ga zamijeni i potvrdi je li prostor pročitao na vrijeme",
+          "hr": "Daj jednu uputu: pogled prije primanja: ostavi ga za jedan dogovoreni napad, zatim ga zamijeni i potvrdi je li prostor pročitao na vrijeme",
           "de": "Eine Anweisung geben — vor dem Fangen schauen — einen geplanten Angriff lassen, dann wechseln und die frühe Wahrnehmung bestätigen"
         },
         "feedback": {
@@ -3050,7 +3050,7 @@
         "quality": "good",
         "text": {
           "en": "Use repeated balanced jump shots from one fixed marker",
-          "hr": "Ponavljaj uravnotežene skok-šuteve s jedne označene udaljenosti",
+          "hr": "Ponavljaj šuteve iz skoka uz dobru ravnotežu s jedne označene udaljenosti",
           "de": "Wiederholt stabile Sprungwürfe von einer festen Markierung ausführen"
         },
         "feedback": {
@@ -4497,7 +4497,7 @@
         "quality": "optimal",
         "text": {
           "en": "Coordinate youth and senior loads, give one senior task of reading contact before the catch, use short preplanned senior appearances, and review both decisions and recovery every two weeks",
-          "hr": "Uskladi opterećenje juniora i seniora, zadaj jedan seniorski cilj — čitanje kontakta prije primanja — uvedi kratke, unaprijed planirane ulaske u seniorske utakmice i svaka dva tjedna procijeni odluke i oporavak",
+          "hr": "Uskladi opterećenje juniora i seniora, zadaj jedan seniorski cilj: čitanje kontakta prije primanja: uvedi kratke, unaprijed planirane ulaske u seniorske utakmice i svaka dva tjedna procijeni odluke i oporavak",
           "de": "Jugend- und Seniorenbelastung abstimmen, eine Seniorenaufgabe zum Kontaktlesen vor dem Fang geben, kurze vorab geplante Senioreneinsätze nutzen und Entscheidungen sowie Erholung alle zwei Wochen prüfen"
         },
         "feedback": {
@@ -5774,7 +5774,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop the public targeting, restate that feedback must describe an action, give the wing one next-task cue — sprint the lane again — and address the finish privately later",
-          "hr": "Odmah zaustavi prozivanje igrača, ponovi da povratna informacija mora opisivati radnju, krilu daj jedan sljedeći zadatak — ponovno istrči svoju liniju — a završnicu poslije obradi nasamo",
+          "hr": "Odmah zaustavi prozivanje igrača, ponovi da povratna informacija mora opisivati radnju, krilu daj jedan sljedeći zadatak: ponovno istrči svoju liniju: a završnicu poslije obradi nasamo",
           "de": "Öffentliches Bloßstellen sofort stoppen, klarstellen, dass Rückmeldung eine Handlung beschreibt, dem Flügel eine nächste Aufgabe geben — Laufweg erneut sprinten — und den Abschluss später persönlich besprechen"
         },
         "feedback": {
@@ -6324,7 +6324,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop the blame, take staff responsibility for the call, give the team one corrected rule—no double exchange during a quick restart—and review the staff decision privately after the match",
-          "hr": "Zaustavi okrivljavanje, preuzmi odgovornost stožera za poziv, ekipi daj jedno ispravljeno pravilo — nema dvostruke zamjene tijekom brzog nastavka — a odluku stožera poslije utakmice analiziraj nasamo",
+          "hr": "Zaustavi okrivljavanje, preuzmi odgovornost stožera za poziv, ekipi daj jedno ispravljeno pravilo: nema dvostruke zamjene tijekom brzog nastavka: a odluku stožera poslije utakmice analiziraj nasamo",
           "de": "Schuldzuweisung stoppen, Stabsverantwortung für den Ruf übernehmen, eine korrigierte Regel geben—kein Doppelwechsel bei schnellem Neustart—und die Stabsentscheidung nach dem Spiel vertraulich prüfen"
         },
         "feedback": {

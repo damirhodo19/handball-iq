@@ -6,8 +6,8 @@ type LocalizedPair = { hr: string; de: string };
 
 const MATCH_DAY_COPY: Record<string, LocalizedPair> = {
   'Stay patient before moving.': { hr: 'Ostani strpljiv prije pokreta.', de: 'Bleib geduldig, bevor du dich bewegst.' },
-  'Use previous shots as information, not certainty.': { hr: 'Koristi prethodne šuteve kao informaciju, a ne kao sigurnost.', de: 'Nutze frühere Würfe als Information, nicht als Gewissheit.' },
-  'Reset immediately after every action.': { hr: 'Odmah se resetiraj nakon svake akcije.', de: 'Fokussiere dich nach jeder Aktion sofort neu.' },
+  'Use previous shots as information, not certainty.': { hr: "Uzmi u obzir prethodne šuteve, ali nemoj pretpostaviti da će sljedeći biti isti.", de: 'Nutze frühere Würfe als Information, nicht als Gewissheit.' },
+  'Reset immediately after every action.': { hr: "Nakon svake akcije odmah usmjeri pažnju na sljedeću.", de: 'Fokussiere dich nach jeder Aktion sofort neu.' },
   'Scan the defence before receiving the ball.': { hr: 'Pregledaj obranu prije primanja lopte.', de: 'Erfasse die Abwehr, bevor du den Ball annimmst.' },
   'Control the tempo — do not rush the first pass.': { hr: 'Kontroliraj tempo i ne žuri s prvim dodavanjem.', de: 'Kontrolliere das Tempo und überstürze den ersten Pass nicht.' },
   'Communicate the attacking plan before each phase.': { hr: 'Komuniciraj plan napada prije svake faze.', de: 'Kommuniziere den Angriffsplan vor jeder Phase.' },
@@ -24,9 +24,9 @@ const MATCH_DAY_COPY: Record<string, LocalizedPair> = {
   'Stay ready for contact — protect the ball on reception.': { hr: 'Budi spreman na kontakt i zaštiti loptu pri primanju.', de: 'Sei auf Kontakt vorbereitet und schütze den Ball bei der Annahme.' },
   'Scan before you receive.': { hr: 'Pregledaj situaciju prije primanja lopte.', de: 'Erfasse die Situation, bevor du den Ball annimmst.' },
   'Commit to the highest-percentage action.': { hr: 'Odlučno izvedi akciju s najvećom vjerojatnošću uspjeha.', de: 'Führe die Aktion mit der höchsten Erfolgswahrscheinlichkeit entschlossen aus.' },
-  'Reset immediately after every possession.': { hr: 'Odmah se resetiraj nakon svakog posjeda.', de: 'Fokussiere dich nach jedem Ballbesitz sofort neu.' },
+  'Reset immediately after every possession.': { hr: "Nakon svakog napada odmah usmjeri pažnju na sljedeću akciju.", de: 'Fokussiere dich nach jedem Ballbesitz sofort neu.' },
   'Stay present on the next action': { hr: 'Ostani usredotočen na sljedeću akciju', de: 'Konzentriere dich auf die nächste Aktion' },
-  'First Possession': { hr: 'Prvi posjed', de: 'Erster Ballbesitz' },
+  'First Possession': { hr: "Prvi napad", de: 'Erster Ballbesitz' },
   'After a Mistake': { hr: 'Nakon pogreške', de: 'Nach einem Fehler' },
   'Decisive Moment': { hr: 'Odlučujući trenutak', de: 'Entscheidender Moment' },
   'Focus Cue 1': { hr: 'Fokus 1', de: 'Fokus 1' },
@@ -37,7 +37,7 @@ const MATCH_DAY_COPY: Record<string, LocalizedPair> = {
     de: 'Stell dir vor, wie du im ersten geordneten Angriff den Ball annimmst. Erfasse die Abwehr, wähle deinen Raum und führe die erfolgversprechendste Entscheidung für deine Position entschlossen aus. Spüre die ruhige Kontrolle vor der Aktion.',
   },
   'Imagine a turnover or missed chance. Reset immediately — one breath, clear communication, and the next defensive or attacking action. The previous play is gone. Your focus is entirely forward.': {
-    hr: 'Zamisli izgubljenu loptu ili propuštenu priliku. Odmah se resetiraj jednim udahom, jasnom komunikacijom i sljedećom obrambenom ili napadačkom akcijom. Prethodna je akcija završena. Fokus je potpuno usmjeren naprijed.',
+    hr: "Zamisli da si izgubio loptu ili propustio priliku. Udahni, jasno se dogovori sa suigračima i odmah se uključi u sljedeću obrambenu ili napadačku akciju. Prethodna je akcija završena. Sada se usredotoči na sljedeću.",
     de: 'Stell dir einen Ballverlust oder eine vergebene Chance vor. Fokussiere dich sofort neu mit einem Atemzug, klarer Kommunikation und der nächsten Abwehraktion oder Angriffsaktion. Die vorige Aktion ist vorbei. Dein Fokus ist vollständig nach vorn gerichtet.',
   },
   'Imagine a late, tight scoreline with the ball in your area of responsibility. Read the situation, trust your preparation, and execute the best available decision under pressure.': {
@@ -62,8 +62,8 @@ const ATTACK_HINTS: Record<string, LocalizedPair> = {
   'Second Pivot': { hr: 'drugi pivot', de: 'zweiter Kreisläufer' },
   'Empty Goal': { hr: 'prazan gol', de: 'leeres Tor' },
   'Two Pivot': { hr: 'dva pivota', de: 'zwei Kreisläufer' },
-  'Wing Overload': { hr: 'preopterećenje krila', de: 'Überzahl am Flügel' },
-  'Backcourt Shooting': { hr: 'šut vanjske linije', de: 'Rückraumwurf' },
+  'Wing Overload': { hr: "stvaranje viška na krilu", de: 'Überzahl am Flügel' },
+  'Backcourt Shooting': { hr: "šut vanjskog igrača", de: 'Rückraumwurf' },
   '1v1 Isolation': { hr: 'izolacija jedan na jedan', de: 'Isolation im Eins gegen Eins' },
   'Pivot Cooperation': { hr: 'suradnja s pivotom', de: 'Zusammenspiel mit dem Kreis' },
   'Numerical Superiority': { hr: 'brojčana nadmoć', de: 'Überzahl' },

@@ -39,7 +39,7 @@ export const SESSION_INFO = {
   description:
     'You will analyze five realistic match situations and choose the best goalkeeper response.',
   description_hr:
-    'Analizirat ćete pet realnih situacija iz utakmice i odabrati najbolji vratarski odgovor.',
+    "Analiziraj pet situacija iz utakmice i odaberi najbolju vratarsku reakciju.",
   description_de:
     'Du analysierst fünf realistische Spielsituationen und wählst die beste Torwart-Reaktion.',
   structure: ['5 match scenarios', 'approximately 10 minutes', 'feedback after completion'],
@@ -48,7 +48,7 @@ export const SESSION_INFO = {
   instruction:
     'Do not guess quickly. Read the score, match time, attacker position and previous shooting behavior.',
   instruction_hr:
-    'Ne nagađaj brzo. Pročitaj rezultat, vrijeme utakmice, poziciju napadača i prethodno ponašanje šutera.',
+    "Nemoj žuriti s odgovorom. Provjeri rezultat, vrijeme utakmice, položaj napadača i njegove prethodne šuteve.",
   instruction_de:
     'Rate nicht zu schnell. Lies den Spielstand, die Spielzeit, die Position des Angreifers und sein bisheriges Wurfverhalten.',
   duration: '10 min',
@@ -63,7 +63,7 @@ export const SESSION_RESULTS = {
   ],
   strengths_hr: [
     'Dobro prepoznavanje obrazaca šutanja',
-    'Jaka pozicija u situacijama s krila',
+    "Dobro postavljanje pri šutevima s krila",
     'Mirno donošenje odluka tijekom kontranapada',
   ],
   improve: [
@@ -72,8 +72,8 @@ export const SESSION_RESULTS = {
     'Stay balanced under pressure',
   ],
   improve_hr: [
-    'Izbjegavaj prisanje prevelikom brzinom',
-    'Koristi prethodne šutove kao informaciju, a ne sigurnost',
+    "Nemoj reagirati prerano",
+    "Uzmi u obzir prethodne šuteve, ali nemoj pretpostaviti da će sljedeći biti isti",
     'Ostani uravnotežen pod pritiskom',
   ],
   recommendation:

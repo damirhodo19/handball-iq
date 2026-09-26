@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import {
   BarChart3, Layers, TrendingUp, AlertTriangle,
@@ -11,14 +11,21 @@ import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { ScreenBackground } from '@/components/Screen';
 import { BackButton } from '@/components/BackButton';
-import { getContentStats } from '@/lib/admin-storage';
+import { getContentStats, getContentStatsAsync } from '@/lib/admin-storage';
 import { ALL_POSITIONS } from '@/lib/positions';
 import { useTranslation } from '@/hooks/useTranslation';
-import { translateDifficulty, translateStatus } from '@/lib/translations';
+import { translateDifficulty, translateStatus, translatePosition, translateCategory } from '@/lib/translations';
 
 export default function AdminStatisticsScreen() {
   const { t } = useTranslation();
-  const [stats] = useState(getContentStats());
+  const [stats, setStats] = useState(() => getContentStats(undefined, t));
+
+  useFocusEffect(useCallback(() => {
+    let current = true;
+    setStats(getContentStats(undefined, t));
+    void getContentStatsAsync(t).then((next) => { if (current) setStats(next); });
+    return () => { current = false; };
+  }, [t]));
 
   return (
     <ScreenBackground>
@@ -75,7 +82,7 @@ export default function AdminStatisticsScreen() {
               const pct = stats.total > 0 ? (count / stats.total) * 100 : 0;
               return (
                 <View key={pos} style={styles.barRow}>
-                  <Text style={styles.barLabel}>{translateDifficulty(pos, t)}</Text>
+                  <Text style={styles.barLabel}>{translatePosition(pos, t)}</Text>
                   <View style={styles.barTrack}>
                     <View style={[styles.barFill, { width: `${pct}%` }]} />
                   </View>
@@ -92,7 +99,7 @@ export default function AdminStatisticsScreen() {
           <Card padding={Spacing.md}>
             {Object.entries(stats.byCategory).map(([cat, count]) => (
               <View key={cat} style={styles.barRow}>
-                <Text style={styles.barLabel}>{cat}</Text>
+                <Text style={styles.barLabel}>{translateCategory(cat, t)}</Text>
                 <View style={styles.barTrack}>
                   <View style={[styles.barFill, { width: `${stats.total > 0 ? (count / stats.total) * 100 : 0}%` }]} />
                 </View>
@@ -104,7 +111,7 @@ export default function AdminStatisticsScreen() {
 
         {/* Missing Content Warnings */}
         <Animated.View entering={FadeInDown.delay(300).duration(500)}>
-          <Text style={styles.sectionLabel}>{t('adminStats.topCategories')}</Text>
+          <Text style={styles.sectionLabel}>{t('admin.contentWarnings')}</Text>
           {stats.warnings.length === 0 ? (
             <Card padding={Spacing.md} style={{ alignItems: 'center' }}>
               <CheckCircle2 size={24} color={Colors.success} />

@@ -283,87 +283,87 @@ export const coachEngineMessagesEn: Record<string, string> = {
 
 export const coachEngineMessagesHr: Record<string, string> = {
   'coach.feedback.noData':
-    'Još nema dovoljno podataka. Odradi više treninga i utakmica kako bi otključao personalizirane povratne informacije za {skill}.',
-  'coach.feedback.trendUp': 'Trend ide prema gore za {n} bodova — nastavi onim što radi.',
+    "Još nema dovoljno podataka za područje {skill}. Odradi više treninga i utakmica za osobne preporuke.",
+  'coach.feedback.trendUp': "Rezultat je porastao za {n} bodova. Nastavi s onim što ti donosi napredak.",
   'coach.feedback.trendDown':
     'U posljednje vrijeme trend pada za {n} bodova. Vrati se na osnove ovog segmenta igre.',
 
   'coach.feedback.decisionMaking.excellent':
-    'Tvoje donošenje odluka je izvrsno. Dosljedno ostaješ strpljiv i pročitaš situaciju prije nego što se obvežeš.',
+    "Izvrsno donosiš odluke. Strpljivo procjenjuješ situaciju prije nego što reagiraš.",
   'coach.feedback.decisionMaking.good':
-    'Tvoje donošenje odluka se poboljšava. Obično ostaješ strpljiv prije obveze, ali pod pritiskom ponekad kreneš prerano.',
+    "Sve bolje donosiš odluke. Uglavnom strpljivo čekaš, ali pod pritiskom ponekad reagiraš prerano.",
   'coach.feedback.decisionMaking.developing':
-    'Tvoje donošenje odluka je u razvoju. Ponekad se obvežeš prije nego što pročitaš cijelu situaciju. Fokusiraj se na čekanje završnog pokreta šutera.',
+    "Još razvijaš donošenje odluka. Ponekad reagiraš prije nego što procijeniš cijelu situaciju. Vježbaj čekanje završnog pokreta šutera.",
   'coach.feedback.decisionMaking.needsWork':
-    'Tvoje donošenje odluka traži pažnju. Sklon si ranoj obvezi. Vježbaj odgađanje prve reakcije dok ne vidiš signal za šut.',
+    "Trebaš poboljšati donošenje odluka. Često reagiraš prerano. Vježbaj odgađanje prve reakcije dok ne prepoznaš šut.",
 
   'coach.feedback.patience.excellent':
-    'Strpljivost ti je jaka strana. Držiš poziciju i pustiš da šuter pokaže namjeru prije reakcije.',
+    "Strpljivost ti je jaka strana. Zadržavaš položaj i čekaš da šuter pokaže namjeru prije nego što reagiraš.",
   'coach.feedback.patience.good':
-    'Pokazuješ dobru strpljivost u većini situacija. Pod jakim pritiskom ponekad skratiš čekanje — vjeruj poziciji i zadrži trenutak duže.',
+    "U većini situacija dobro čekaš. Pod velikim pritiskom ponekad reagiraš prerano. Vjeruj svom položaju i pričekaj još trenutak.",
   'coach.feedback.patience.developing':
     'Strpljivost ti je neujednačena. Ponekad kreneš prije nego što pročitaš šutera. Vježbaj držanje stava dok ne krene zamah ruke.',
   'coach.feedback.patience.needsWork':
-    'Strpljivost je tvoja najveća prilika. Često se obvežeš prije nego što šuter pokaže plan. Uspori i čekaj signal za šut.',
+    "Najviše možeš napredovati u strpljivosti. Često reagiraš prije nego što šuter pokaže namjeru. Uspori i pričekaj šut.",
 
   'coach.feedback.readingShooter.excellent':
     'Dosljedno dobro prepoznaješ položaj tijela. Nastavi odgađati prvu reakciju i vjerovati onome što vidiš.',
   'coach.feedback.readingShooter.good':
-    'Dobro čitaš šutera u većini situacija. Ponekad reagiraš na fintu — potvrdi položaj ruke prije potpune obveze.',
+    "Uglavnom dobro procjenjuješ šutera. Ponekad reagiraš na fintu. Prati položaj ruke prije nego što kreneš u obranu.",
   'coach.feedback.readingShooter.developing':
-    'Tvoje čitanje šutera je u razvoju. Ponekad reagiraš na rane signale tijela umjesto na konačni položaj ruke. Fokusiraj se na točku šuta.',
+    "Još razvijaš procjenu šutera. Ponekad reagiraš na početni pokret tijela umjesto na završni položaj ruke. Prati trenutak izbačaja.",
   'coach.feedback.readingShooter.needsWork':
     'Čitanje šutera traži rad. Često reagiraš na početni pokret umjesto na konačni šut. Vježbaj praćenje zgloba i lakta u trenutku šuta.',
 
   'coach.feedback.fastBreak.excellent':
-    'Tvoje odluke u kontranapadu su oštre. Kontroliraš izlazak i dobro čitaš brzinu napadača.',
+    "Dobro odlučuješ u kontranapadu. Kontroliraš izlazak i procjenjuješ brzinu napadača.",
   'coach.feedback.fastBreak.good':
-    'Dobro rješavaš kontranapade. Ponekad previše izađeš — sjeti se stati na pet metara i postaviti poziciju.',
+    "Dobro braniš kontranapade. Ponekad izađeš predaleko. Zaustavi se na pet metara i zauzmi stav.",
   'coach.feedback.fastBreak.developing':
-    'U kontranapadu si neujednačen. Ponekad izađeš prerano ili ostaneš preduboko. Vježbaj kontrolirani izlazak do linije pet metara.',
+    "Obrane kontranapada nisu ti ujednačene. Ponekad izađeš prerano ili ostaneš preblizu golu. Vježbaj kontrolirani izlazak do pet metara.",
   'coach.feedback.fastBreak.needsWork':
-    'Kontranapad ti je slabost. Sklon si ili preuranjeno izlasku ili zaleđivanju. Radi na kontroliranom, stabilnom izlasku koji skraćuje kut bez prekomjerne obveze.',
+    "Trebaš poboljšati obranu kontranapada. Ponekad izađeš prerano, a ponekad ostaneš bez reakcije. Vježbaj stabilan izlazak kojim smanjuješ kut šuta i ostaješ spreman reagirati.",
 
   'coach.feedback.wingSituations.excellent':
-    'Odlično rješavaš šuteve s krila. Držiš oblik i pustiš da teški kut radi za tebe.',
+    "Odlično braniš šuteve s krila. Zadržavaš dobar stav i koristiš prednost uskog kuta.",
   'coach.feedback.wingSituations.good':
-    'Dobro rješavaš situacije s krila. Ponekad prerano zatvoriš bližu vratnicu — drži poziciju do šuta.',
+    "Dobro rješavaš situacije s krila. Ponekad prerano zatvoriš bližu vratnicu: drži poziciju do šuta.",
   'coach.feedback.wingSituations.developing':
-    'Situacije s krila su neujednačene. Ponekad pogađaš kut. Vjeruj kutu i reagiraj na stvarni šut.',
+    "Obrane s krila nisu ti ujednačene. Ponekad nagađaš kut šuta. Zadrži dobar položaj i reagiraj na loptu.",
   'coach.feedback.wingSituations.needsWork':
-    'Šutevi s krila su slabost. Često se obvežeš prije šuta. Kut je ionako težak — drži oblik i uvećaj se.',
+    "Trebaš poboljšati obranu s krila. Često reagiraš prije šuta. Napadač ima uzak kut, pa zadrži stav i pokrij što više gola.",
 
   'coach.feedback.sevenMetre.excellent':
-    'Tvoja igra na sedmercima je izvrsna. Ostaješ centralno i reagiraš na šut umjesto da pogađaš.',
+    "Izvrsno braniš sedmerce. Ostaješ u sredini i reagiraš na šut bez nagađanja.",
   'coach.feedback.sevenMetre.good':
-    'Dobro rješavaš sedmerce. Ponekad skočiš unaprijed na temelju navika — koristi ih kao kontekst, ne kao sigurnost.',
+    "Dobro braniš sedmerce. Ponekad prerano kreneš na temelju šuterovih navika. Uzmi ih u obzir, ali nemoj ih smatrati sigurnom najavom šuta.",
   'coach.feedback.sevenMetre.developing':
-    'Na sedmercima si neujednačen. Ponekad pogađaš stranu. Ostani centralno i čitaj pokret šuta.',
+    "Obrane sedmeraca nisu ti ujednačene. Ponekad nagađaš stranu. Ostani u sredini i prati pokret šuta.",
   'coach.feedback.sevenMetre.needsWork':
-    'Sedmerci su slabost. Često skačeš unaprijed. Bez informacije, reakcija je najbolji alat — ostani centralno i reagiraj.',
+    "Trebaš poboljšati obranu sedmeraca. Često kreneš prerano. Ako nemaš jasan znak, ostani u sredini i reagiraj na šut.",
 
   'coach.feedback.pressureHandling.excellent':
     'Dobro igraš pod pritiskom. Održavaš rutinu i disanje u ključnim situacijama.',
   'coach.feedback.pressureHandling.good':
-    'Dobro igraš do posljednjih minuta. Uspori disanje prije ključnih situacija i vrati se pred-šut rutini.',
+    "Dobro igraš i u završnici. Uspori disanje prije ključnih situacija i vrati se rutini pripreme za šut.",
   'coach.feedback.pressureHandling.developing':
     'Pritisak utječe na tvoje odluke. Pod pritiskom ubrzavaš. Vježbaj disanje i tretiraj svaki šut kao prvi.',
   'coach.feedback.pressureHandling.needsWork':
-    'Igra pod pritiskom traži značajan rad. Gubiš strukturu u ključnim trenucima. Izgradi reset rutinu: jedan udah, jedna riječ, jedna obrana.',
+    "Trebaš znatno poboljšati igru pod pritiskom. U ključnim trenucima gubiš sigurnost u igri. Uvedi rutinu za vraćanje pažnje: jedan udah, jedna riječ, jedna obrana.",
 
   'coach.feedback.consistency.excellent':
-    'Tvoja konstantnost je izvrsna. Daješ pouzdanu igru kroz treninge i utakmice.',
+    "Igraš vrlo ujednačeno. Pouzdan si na treninzima i utakmicama.",
   'coach.feedback.consistency.good':
-    'Uglavnom si konstantan. Povremeni padovi se događaju — fokusiraj se na pred-šut rutinu kako bi održao standard u svakoj situaciji.',
+    "Uglavnom igraš ujednačeno. Za manje oscilacija ponavljaj istu rutinu pripreme za šut u svakoj situaciji.",
   'coach.feedback.consistency.developing':
-    'Konstantnost ti varira. Neki treninzi su jaki, drugi padaju. Izgradi ponovljivu pred-šut rutinu za stabilniju razinu.',
+    "Igra ti oscilira. Na nekim treninzima igraš dobro, a na drugima slabije. Uvedi stalnu rutinu pripreme za šut.",
   'coach.feedback.consistency.needsWork':
-    'Konstantnost je značajan jaz. Igra ti jako osciliraju. Fokusiraj se na jedan ponovljiv signal prije svake akcije.',
+    "Igra ti znatno oscilira. Prije svake akcije usmjeri se na jedan isti podsjetnik koji ti pomaže da se pripremiš.",
 
   'coach.feedback.mentalPreparation.excellent':
-    'Tvoja mentalna priprema je izvrsna. Dolaziš fokusiran i dobro se resetiraš nakon grešaka.',
+    "Izvrsno se mentalno pripremaš. Dolaziš usredotočen i nakon pogreške brzo vraćaš pažnju na igru.",
   'coach.feedback.mentalPreparation.good':
-    'Mentalna priprema ti je solidna. Koristiš disanje i vizualizaciju prije utakmice — nastavi redovito.',
+    "Dobro se mentalno pripremaš. Koristiš disanje i vizualizaciju prije utakmice. Nastavi redovito.",
   'coach.feedback.mentalPreparation.developing':
     'Mentalna priprema je u razvoju. Ponekad preskočiš rutinu. Redovitije završavaj pripremu prije utakmice.',
   'coach.feedback.mentalPreparation.needsWork':
@@ -372,24 +372,24 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'coach.weekly.improvementUp':
     '{skill} se poboljšao za {n} bodova u odnosu na prethodne treninge.',
   'coach.weekly.improvementStable':
-    'Tvoje vještine su stabilne. Nema velikih skokova ovaj tjedan, ali konstantnost je vrijedna.',
+    "Rezultati su ti stabilni. Ovaj tjedan nema velikih pomaka, ali i ujednačenost je vrijedna.",
   'coach.weekly.weaknessLow':
-    '{skill} je tvoje najslabije područje s {score}%. Tu su najveći potencijalni napretci.',
+    "Najniži rezultat imaš u području {skill}: {score}%. Tu imaš najviše prostora za napredak.",
   'coach.weekly.weaknessModerate':
-    '{skill} je tvoje najslabije područje s {score}%, što je i dalje razumna razina. Mali napretci ovdje zaokružuju igru.',
+    "Najniži rezultat imaš u području {skill}: {score}%, što je i dalje solidno. Mali pomaci u tom području učinit će tvoju igru potpunijom.",
   'coach.weekly.recFocusWeak':
     'Sljedeći tjedan fokusiraj se na {skill}. Dodaj dva kratka treninga za to područje i završi pripremu za utakmicu prije sljedeće utakmice.',
   'coach.weekly.recTrendUp':
     'Trend ti ide prema gore. Nastavi trenutnu rutinu i dodaj jedan dodatni trening za {skill} kako bi podigao ukupni rezultat.',
   'coach.weekly.recTrendDown':
-    'Nedavni trend ti blago pada. Vrati se na osnove — završi pripremu za utakmicu i fokusiraj se na disanje prije sljedeće utakmice.',
+    "Rezultati ti u posljednje vrijeme blago padaju. Vrati se osnovama, dovrši pripremu za utakmicu i posveti pažnju disanju prije sljedećeg nastupa.",
   'coach.weekly.recStable':
-    'Performanse su stabilne. Za proboj, ciljaj {skill} s dva fokusirana treninga i završi refleksiju nakon sljedeće utakmice.',
+    "Rezultati su stabilni. Za daljnji napredak odradi dva ciljana treninga za područje {skill} i osvrt nakon sljedeće utakmice.",
   'coach.weekly.allSkillsStable': 'Sve vještine su stabilne',
 
   'coach.plan.focus.decisionMaking': 'Donošenje odluka',
   'coach.plan.desc.decisionMaking':
-    'Pregledaj scenarije i vježbaj čitanje cijele situacije prije obveze.',
+    "Prođi scenarije i vježbaj procjenu cijele situacije prije reakcije.",
   'coach.plan.focus.patience': 'Trening strpljivosti',
   'coach.plan.desc.patience':
     'Vježbaj držanje stava. Čekaj završni pokret šutera prije reakcije.',
@@ -398,37 +398,37 @@ export const coachEngineMessagesHr: Record<string, string> = {
     'Prouči položaj tijela, kut ramena i signale zamaha. Odgodi prvu reakciju.',
   'coach.plan.focus.fastBreak': 'Odluke u kontranapadu',
   'coach.plan.desc.fastBreak':
-    'Vježbaj kontrolirani izlazak do linije pet metara i čitanje brzine napadača.',
+    "Vježbaj kontrolirani izlazak do pet metara i procjenu brzine napadača.",
   'coach.plan.focus.wingSituations': 'Situacije s krila',
   'coach.plan.desc.wingSituations':
-    'Treniraj pozicioniranje na šutevima s krila. Drži oblik i pusti da kut radi za tebe.',
+    "Vježbaj postavljanje pri šutu s krila. Zadrži stav i iskoristi prednost uskog kuta.",
   'coach.plan.focus.sevenMetre': 'Sedmerci',
   'coach.plan.desc.sevenMetre':
-    'Vježbaj ostajanje centralno na sedmercima. Reagiraj na pokret šuta, ne pogađaj.',
+    "Pri sedmercima vježbaj zadržavanje u sredini. Reagiraj na pokret šuta bez nagađanja.",
   'coach.plan.focus.pressureHandling': 'Situacije pod pritiskom',
   'coach.plan.desc.pressureHandling':
     'Simuliraj pritisak u završnici. Vježbaj disanje prije svake ključne obrane.',
-  'coach.plan.focus.consistency': 'Trening konstantnosti',
+  'coach.plan.focus.consistency': "Trening ujednačenosti",
   'coach.plan.desc.consistency':
-    'Ponavljaj pred-šut rutinu prije svake akcije. Izgradi jednu pouzdanu riječ-signala.',
+    "Prije svake akcije ponovi rutinu pripreme za šut. Odaberi jednu riječ koja te podsjeća na zadatak.",
   'coach.plan.focus.mentalPreparation': 'Mentalna priprema',
   'coach.plan.desc.mentalPreparation':
     'Završi pripremu za utakmicu. Disanje, vizualizacija i taktički pregled.',
   'coach.plan.desc.pressureFriday':
-    'Simuliraj visokopritiske situacije. Vježbaj disanje i reset rutinu prije ključnih obrana.',
+    "Simuliraj situacije pod velikim pritiskom. Prije ključnih obrana vježbaj disanje i vraćanje pažnje.",
   'coach.plan.focus.matchPrep': 'Priprema za utakmicu',
   'coach.plan.desc.matchPrep':
-    'Završi punu pripremu za utakmicu. Disanje, mentalni reset, vizualizacija i taktički scenariji.',
+    "Dovrši pripremu za utakmicu: disanje, vraćanje pažnje, vizualizaciju i taktičke scenarije.",
   'coach.plan.focus.recovery': 'Oporavak i pregled',
   'coach.plan.desc.recovery':
     'Lagani pregled tjedna. Razmisli što se poboljšalo i postavi jedan fokus za sljedeći tjedan.',
 
-  'coach.playerType.calmReader.name': 'Smireni čitatelj',
+  'coach.playerType.calmReader.name': "Smireni procjenitelj igre",
   'coach.playerType.calmReader.description':
-    'Smireni si čitatelj igre. Ostaješ strpljiv, dobro čitaš šutera i rijetko se obvezuješ prerano. Smirenost ti je prednost — koristi je dok poboljšavaš brzinu u kontranapadu.',
+    "Smireno procjenjuješ igru. Strpljiv si, dobro pratiš šutera i rijetko reagiraš prerano. Zadrži tu smirenost dok poboljšavaš brzinu reakcije u kontranapadu.",
   'coach.playerType.calmReader.focus':
     'Poboljšaj brzinu reakcije u kontranapadu uz zadržavanje strpljivog stila čitanja.',
-  'coach.playerType.calmReader.strength.0': 'Strpljivost prije obveze',
+  'coach.playerType.calmReader.strength.0': "Strpljivost prije reakcije",
   'coach.playerType.calmReader.strength.1': 'Čitanje položaja tijela šutera',
   'coach.playerType.calmReader.strength.2': 'Smirenost pod pritiskom',
   'coach.playerType.calmReader.risk.0': 'Može primiti gol zbog prevelike pasivnosti u brzim napadima',
@@ -436,23 +436,23 @@ export const coachEngineMessagesHr: Record<string, string> = {
 
   'coach.playerType.aggressive.name': 'Agresivni vratar',
   'coach.playerType.aggressive.description':
-    'Agresivni si vratar. Samouvjereno izlaziš i cvjetaš pod pritiskom. Rizik ti je prekomjerna obveza — dodaj strpljivost u igru iz igre.',
+    "Agresivan si vratar. Samouvjereno izlaziš i dobro igraš pod pritiskom. Ponekad prerano kreneš u obranu šuta. Budi strpljiviji pri šutevima iz igre.",
   'coach.playerType.aggressive.focus':
-    'Uravnoteži agresiju s više strpljivosti. Čekaj signal za šut u napadima iz igre.',
+    "Uz agresivnu igru razvijaj i strpljivost. Pri šutevima iz igre pričekaj jasan znak za reakciju.",
   'coach.playerType.aggressive.strength.0': 'Odluke u kontranapadu',
   'coach.playerType.aggressive.strength.1': 'Samopouzdanje pod pritiskom',
   'coach.playerType.aggressive.strength.2': 'Proaktivno pozicioniranje',
-  'coach.playerType.aggressive.risk.0': 'Ponekad se prekomjerno obveže',
-  'coach.playerType.aggressive.risk.1': 'Može biti nadigran od strane strpljivih šutera',
+  'coach.playerType.aggressive.risk.0': "Ponekad prerano krene u obranu šuta",
+  'coach.playerType.aggressive.risk.1': "Strpljivi šuteri mogu ga nadmudriti",
 
   'coach.playerType.reactive.name': 'Reaktivni vratar',
   'coach.playerType.reactive.description':
-    'Reaktivni si vratar. Oslanjaš se na reakciju i konstantnost, a ne na rano čitanje. Ojačaj čitanje šutera za sljedeću razinu.',
+    "Oslanjaš se na reakciju i ujednačenost obrana. Za daljnji napredak razvijaj raniju procjenu šuterove namjere.",
   'coach.playerType.reactive.focus':
-    'Poboljšaj čitanje šutera. Fokusiraj se na signale ramena i zgloba pri bacanju.',
-  'coach.playerType.reactive.strength.0': 'Konstantne performanse',
+    "Poboljšaj procjenu šutera. Pri izbačaju prati rame i ručni zglob.",
+  'coach.playerType.reactive.strength.0': "Ujednačena igra",
   'coach.playerType.reactive.strength.1': 'Pouzdano donošenje odluka',
-  'coach.playerType.reactive.strength.2': 'Jake reaktivne obrane',
+  'coach.playerType.reactive.strength.2': "Brze reakcije pri obrani",
   'coach.playerType.reactive.risk.0': 'Može imati problema protiv šutera s jakim fintama',
   'coach.playerType.reactive.risk.1': 'Čitanje signala tijela treba poboljšati',
 
@@ -460,7 +460,7 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'coach.playerType.pressure.description':
     'Specijalist si pod pritiskom. Blistiš u ključnim trenucima i mentalno se pripremaš bolje od većine. Uravnoteži to s konstantnošću u rutinskim situacijama.',
   'coach.playerType.pressure.focus':
-    'Održi performanse pod pritiskom i poboljšaj konstantnost u rutinskim situacijama.',
+    "Zadrži kvalitetu igre pod pritiskom i poboljšaj ujednačenost u uobičajenim situacijama.",
   'coach.playerType.pressure.strength.0': 'Igra u ključnim trenucima',
   'coach.playerType.pressure.strength.1': 'Jaka mentalna priprema',
   'coach.playerType.pressure.strength.2': 'Pouzdanost pod pritiskom',
@@ -471,7 +471,7 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'coach.playerType.balanced.description':
     'Uravnoteženi si vratar. Nemaš velikih slabosti i pouzdano igraš u svim situacijama. Za sljedeću razinu razvij jednu istaknutu prednost.',
   'coach.playerType.balanced.focus':
-    'Odaberi jednu vještinu za vrhunac. Pretvori uravnoteženu igru u dominantnu.',
+    "Odaberi jednu vještinu koju ćeš posebno razvijati. Uz uravnoteženu igru izgradi i prepoznatljivu jaku stranu.",
   'coach.playerType.balanced.strength.0': 'Bez velikih slabosti',
   'coach.playerType.balanced.strength.1': 'Konstantan u svim situacijama',
   'coach.playerType.balanced.strength.2': 'Prilagodljiv različitim scenarijima utakmice',
@@ -486,7 +486,7 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'coach.playerType.developing.strength.0': 'Gradiš temelje',
   'coach.playerType.developing.strength.1': 'Otvoren si za napredak',
   'coach.playerType.developing.strength.2': 'Svaki trening donosi podatke',
-  'coach.playerType.developing.risk.0': 'Neujednačene performanse',
+  'coach.playerType.developing.risk.0': "Neujednačena igra",
   'coach.playerType.developing.risk.1': 'Ograničeno iskustvo u nekim situacijama',
 
   'coach.skill.decisionMaking': 'Donošenje odluka',
@@ -496,18 +496,18 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'coach.skill.wingSituations': 'Situacije s krila',
   'coach.skill.sevenMetre': 'Sedmerci',
   'coach.skill.pressureHandling': 'Igra pod pritiskom',
-  'coach.skill.consistency': 'Konstantnost',
+  'coach.skill.consistency': "Ujednačenost",
   'coach.skill.mentalPreparation': 'Mentalna priprema',
 
   'cdCalendar.teamTraining.title': 'Timski trening',
-  'cdCalendar.teamTraining.desc': 'Taktičke vježbe i rad na igri iz igre',
+  'cdCalendar.teamTraining.desc': "Taktičke vježbe i rad na organiziranoj igri",
   'cdCalendar.leagueMatch.title': 'Ligaška utakmica',
-  'cdCalendar.leagueMatch.desc': 'protiv {opponent} — domaći susret',
+  'cdCalendar.leagueMatch.desc': "protiv {opponent}, domaća utakmica",
   'cdCalendar.recovery.title': 'Oporavak',
   'cdCalendar.recovery.desc': 'Lagani oporavak i video analiza',
-  'cdCalendar.assignedSession.title': '{sessionType} — {playerName}',
+  'cdCalendar.assignedSession.title': "{sessionType}: {playerName}",
   'cdCalendar.assignedSessionDesc': 'Dodijelio {coachName}',
-  'cdCalendar.assignedNote.default': 'Završi ovu sesiju prije roka.',
+  'cdCalendar.assignedNote.default': "Dovrši ovaj trening prije roka.",
 
   'cdRecommend.issue.wingSituations': 'Igrač prerano reagira u situacijama s krila.',
   'cdRecommend.action.wingSituations': 'Dodijeli trening s krila 03.',
@@ -520,7 +520,7 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'cdRecommend.issue.mentalPreparation': 'Mentalna rutina priprema je neujednačena.',
   'cdRecommend.action.mentalPreparation': 'Završi mentalni trening.',
   'cdRecommend.issue.readingAbility':
-    'Čitanje šutera treba rad — igrač reagira na rane signale.',
+    "Čitanje šutera treba rad: igrač reagira na rane signale.",
   'cdRecommend.action.readingAbility':
     'Dodijeli pripremu za utakmicu za vizualizaciju.',
   'cdRecommend.issue.none': 'Nema kritičnih slabosti.',
@@ -540,7 +540,7 @@ export const coachEngineMessagesHr: Record<string, string> = {
   'category.decisionMaking': 'Donošenje odluka',
   'category.pivot': 'Pivot',
   'category.pressure': 'Pritisci',
-  'category.mental': 'Mentalno',
+  'category.mental': "Mentalna priprema",
 
   'defensiveSystem.60': '6-0',
   'defensiveSystem.51': '5-1',

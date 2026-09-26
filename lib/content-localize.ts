@@ -68,7 +68,7 @@ export function getLocalizedSessionInfo(
     sessionNumber: pickLocalizedField<string>(SESSION_INFO, 'sessionNumber', lang),
     description:
       lang === 'hr'
-        ? 'Analizirat ćete pet realnih situacija iz utakmice i odabrati najbolji odgovor za svoju poziciju.'
+        ? "Analiziraj pet situacija iz utakmice i odaberi najbolju odluku za svoju poziciju."
         : lang === 'de'
           ? 'Du analysierst fünf realistische Spielsituationen und wählst die beste Reaktion für deine Position.'
           : 'You will analyze five realistic match situations and choose the best response for your position.',
@@ -120,8 +120,8 @@ export function getLocalizedSessionResults(lang: SupportedLanguage, position?: H
       ],
       strengths_hr: [
         'Jasne rane odluke pod pritiskom',
-        'Dobro prepoznavanje prostora i tajminga',
-        'Mirni izbori u tranzicijskim trenucima',
+        "Dobro prepoznavanje prostora i pravog trenutka za akciju",
+        "Smirene odluke pri prijelazu iz obrane u napad i iz napada u obranu",
       ],
       strengths_de: [
         'Klare frühe Entscheidungen unter Druck',
@@ -134,9 +134,9 @@ export function getLocalizedSessionResults(lang: SupportedLanguage, position?: H
         'Stay balanced when the defence recovers',
       ],
       improve_hr: [
-        'Pregledaj prije nego što se odlučiš',
-        'Biraj opciju s najvećim postotkom uspjeha',
-        'Ostani uravnotežen kad se obrana vrati',
+        "Pregledaj igru prije nego što odlučiš",
+        "Biraj akciju s najvećom vjerojatnošću uspjeha",
+        "Zadrži ravnotežu kad se obrana ponovno postavi",
       ],
       improve_de: [
         'Scanne, bevor du dich festlegst',
@@ -146,7 +146,7 @@ export function getLocalizedSessionResults(lang: SupportedLanguage, position?: H
       recommendation:
         'Repeat this session in 48 hours and focus on one decision cue at a time.',
       recommendation_hr:
-        'Ponovi ovaj trening za 48 sati i fokusiraj se na jedan signal za odluku.',
+        "Ponovi ovaj trening za 48 sati i svaki put usmjeri pažnju na jedan znak koji ti pomaže donijeti odluku.",
       recommendation_de:
         'Wiederhole diese Einheit in 48 Stunden und fokussiere dich auf ein Entscheidungssignal.',
     };
