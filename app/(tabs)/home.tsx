@@ -45,7 +45,7 @@ import { profileNeedsCompletion, resolveAppRole } from '@/lib/platform/personali
 import { resolveContent } from '@/lib/platform/content-resolver';
 import { setSessionIntent } from '@/lib/development/session-intent';
 import { clearActiveTrainingSession } from '@/lib/development/active-session';
-import { translateCategory } from '@/lib/translations';
+import { translateSkill } from '@/lib/translations';
 import { useMode } from '@/context/ModeContext';
 import { CoachHome } from '@/components/CoachHome';
 import { LoadingState } from '@/components/LoadingState';
@@ -255,7 +255,7 @@ export default function HomeScreen() {
 
   const dailyTitle = dailyChallenge.focusCategory
     ? t('home.dailyChallengeTitle', {
-        focus: translateCategory(dailyChallenge.focusCategory, t),
+        focus: translateSkill(dailyChallenge.focusCategory, t),
       })
     : dailyChallenge.title;
 
