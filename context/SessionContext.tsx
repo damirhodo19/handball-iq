@@ -42,7 +42,7 @@ import {
 } from '@/lib/platform/scenario-family';
 import type { BankScenario } from '@/content/scenario-bank/types';
 
-const DEFAULT_SESSION_LENGTH = 5;
+import { DEFAULT_SESSION_LENGTH } from '@/lib/development/session-config';
 const MIN_SESSION_LENGTH = 3;
 
 function adminScenarioToGKScenario(s: AdminScenario, index: number): GKScenario {
@@ -50,7 +50,7 @@ function adminScenarioToGKScenario(s: AdminScenario, index: number): GKScenario 
     id: 1000 + index,
     bankId: s.id,
     half: s.matchPhase === 'Second Half' ? 'Second Half' : 'First Half',
-    time: `${s.minute}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
+    time: `${s.minute}′`,
     score: s.score,
     situation: s.situation,
     situation_hr: s.situation_hr,

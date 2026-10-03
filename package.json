@@ -100,6 +100,7 @@
     "audit:rw-gold-coach-risk-v2": "node scripts/audit-rw-gold-human-coach-risk-v2.mjs",
     "export:rw-gold-human-review-20": "node scripts/export-rw-gold-human-review-20.mjs",
     "test:admin-content": "node scripts/test-admin-content-stats.mjs && node scripts/test-admin-localization-render.mjs",
+    "test:training-copy": "node scripts/test-training-copy-consistency.mjs",
     "test:croatian-content": "node scripts/test-croatian-content.mjs",
     "test:localization": "node scripts/test-localization.mjs && node scripts/test-localization-render.mjs"
   },

@@ -38,7 +38,7 @@ const DIFFICULTY_COLORS: Record<string, string> = {
 };
 
 const DIFFICULTIES = ['Beginner', 'Intermediate', 'Advanced', 'Expert'] as const;
-const SESSION_SCENARIO_COUNT = 5;
+import { DEFAULT_SESSION_LENGTH as SESSION_SCENARIO_COUNT } from '@/lib/development/session-config';
 const SESSION_DURATION_MIN = 10;
 
 export default function TrainingScreen() {

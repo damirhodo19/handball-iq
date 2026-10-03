@@ -14,8 +14,8 @@ import { translateDifficulty } from '@/lib/translations';
 
 export default function SessionIntroScreen() {
   const { t, lang } = useTranslation();
-  const { position } = useSession();
-  const info = getLocalizedSessionInfo(lang, position);
+  const { position, scenarios } = useSession();
+  const info = getLocalizedSessionInfo(lang, position, scenarios.length || undefined);
   return (
     <ScreenBackground>
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>

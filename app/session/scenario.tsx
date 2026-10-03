@@ -70,7 +70,7 @@ export default function ScenarioScreen() {
 
         {/* Progress bar */}
         <View style={styles.progressWrap}>
-          <ProgressBar progress={progress} color={Colors.gold} height={4} />
+          <ProgressBar progress={progress} color={Colors.gold} height={4} style={{ flex: 1 }} />
           <Text style={styles.progressLabel}>{Math.round(progress * 100)}%</Text>
         </View>
 

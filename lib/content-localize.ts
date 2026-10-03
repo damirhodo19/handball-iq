@@ -1,3 +1,4 @@
+import { DEFAULT_SESSION_LENGTH } from '@/lib/development/session-config';
 import { getAllScenarios } from '@/lib/scenario-bank';
 import { SupportedLanguage } from '@/locales';
 import { scenarioTextDe, scenarioTextHr } from '@/locales/scenario-text';
@@ -28,21 +29,24 @@ function pickLocalizedField<T extends string | string[]>(
 export function getLocalizedSessionInfo(
   lang: SupportedLanguage,
   position?: HandballPosition | null,
+  scenarioCount = DEFAULT_SESSION_LENGTH,
 ) {
   lang = normalizeSupportedLanguage(lang);
   const t = createTranslator(lang);
   const resolved =
     position !== undefined ? position : resolvePlayerPosition(loadProfile());
   const daily = getDailySession(resolved);
+  const structure = pickLocalizedField<string[]>(SESSION_INFO, 'structure', lang).slice();
+  structure[0] = t('training.scenariosCount', { n: scenarioCount });
 
   if (daily && resolved && resolved !== 'Goalkeeper') {
     return {
       title: localizeContent(daily.title, lang, t),
       subtitle: t('training.positionIq', { position: translatePosition(resolved, t) }),
       sessionNumber: pickLocalizedField<string>(SESSION_INFO, 'sessionNumber', lang),
-      description: localizeContent(daily.desc, lang, t),
-      structure: pickLocalizedField<string[]>(SESSION_INFO, 'structure', lang),
-      instruction: pickLocalizedField<string>(SESSION_INFO, 'instruction', lang),
+      description: t('training.positionSessionDescription', { position: translatePosition(resolved, t) }),
+      structure,
+      instruction: t('training.fieldPlayerInstruction'),
       duration: SESSION_INFO.duration,
       difficulty: SESSION_INFO.difficulty,
     };
@@ -53,8 +57,8 @@ export function getLocalizedSessionInfo(
       title: pickLocalizedField<string>(SESSION_INFO, 'title', lang),
       subtitle: pickLocalizedField<string>(SESSION_INFO, 'subtitle', lang),
       sessionNumber: pickLocalizedField<string>(SESSION_INFO, 'sessionNumber', lang),
-      description: pickLocalizedField<string>(SESSION_INFO, 'description', lang),
-      structure: pickLocalizedField<string[]>(SESSION_INFO, 'structure', lang),
+      description: t('training.goalkeeperSessionDescription'),
+      structure,
       instruction: pickLocalizedField<string>(SESSION_INFO, 'instruction', lang),
       duration: SESSION_INFO.duration,
       difficulty: SESSION_INFO.difficulty,
@@ -68,12 +72,12 @@ export function getLocalizedSessionInfo(
     sessionNumber: pickLocalizedField<string>(SESSION_INFO, 'sessionNumber', lang),
     description:
       lang === 'hr'
-        ? "Analiziraj pet situacija iz utakmice i odaberi najbolju odluku za svoju poziciju."
+        ? "Analiziraj situacije iz utakmice i odaberi najbolju odluku za svoju poziciju."
         : lang === 'de'
-          ? 'Du analysierst fünf realistische Spielsituationen und wählst die beste Reaktion für deine Position.'
-          : 'You will analyze five realistic match situations and choose the best response for your position.',
-    structure: pickLocalizedField<string[]>(SESSION_INFO, 'structure', lang),
-    instruction: pickLocalizedField<string>(SESSION_INFO, 'instruction', lang),
+          ? 'Du analysierst realistische Spielsituationen und wählst die beste Reaktion für deine Position.'
+          : 'You will analyze realistic match situations and choose the best response for your position.',
+    structure,
+    instruction: t('training.fieldPlayerInstruction'),
     duration: SESSION_INFO.duration,
     difficulty: SESSION_INFO.difficulty,
   };

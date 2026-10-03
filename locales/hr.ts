@@ -8,6 +8,10 @@ import { sprint5MessagesHr } from './sprint5-messages';
 import { closedBetaMessagesHr } from './closed-beta-messages';
 
 export const hr: TranslationDict = {
+  "training.positionSessionDescription": "Vježbaj donošenje odluka u situacijama iz utakmice za svoju poziciju: {position}.",
+  "training.goalkeeperSessionDescription": "Analiziraj situacije iz utakmice i odaberi najbolju vratarsku reakciju.",
+  "training.fieldPlayerInstruction": "Prije odluke provjeri rezultat, vrijeme, raspored igrača i otvorene mogućnosti za dodavanje ili šut.",
+
   "admin.warningMissingPosition": "Nema scenarija za poziciju: {position}",
   "admin.warningMissingProfessional": "Nema scenarija za profesionalnu razinu za poziciju: {position}",
   "admin.warningMissingUnder14": "Nema scenarija za igrače do 14 godina za poziciju: {position}",
@@ -1750,7 +1754,7 @@ export const hr: TranslationDict = {
   'dev.notifBrokenStreak': 'Prekinut niz',
   'dev.notifBrokenStreakSub': 'Upozorenje kad je niz u opasnosti',
   'dev.notifAchievement': 'Postignuće otključano',
-  'dev.notifAchievementSub': 'Obavijest o novom znački',
+  'dev.notifAchievementSub': 'Obavijest o novoj znački',
   'dev.achievement.first_training': 'Prvi trening',
   'dev.achievement.sessions_10': "10 treninga",
   'dev.achievement.sessions_50': "50 treninga",

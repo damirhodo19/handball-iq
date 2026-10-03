@@ -90,7 +90,7 @@ export function toGKScenario(
     id,
     bankId: scenario.id,
     half,
-    time: `${minute}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`,
+    time: `${minute}′`,
     score: scenario.score,
     situation: scenario.situation.en,
     situation_hr: scenario.situation.hr,

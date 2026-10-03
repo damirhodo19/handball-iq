@@ -8,6 +8,10 @@ import { sprint5MessagesEn } from './sprint5-messages';
 import { closedBetaMessagesEn } from './closed-beta-messages';
 
 export const en: TranslationDict = {
+  "training.positionSessionDescription": "Practise decisions in match situations for your position: {position}.",
+  "training.goalkeeperSessionDescription": "Analyse match situations and choose the best goalkeeper response.",
+  "training.fieldPlayerInstruction": "Check the score, time, player positions and available passing or shooting options before deciding.",
+
   "admin.warningMissingPosition": "No scenarios for {position}",
   "admin.warningMissingProfessional": "No Professional-level {position} scenarios",
   "admin.warningMissingUnder14": "No Under 14 {position} scenarios",

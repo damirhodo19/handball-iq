@@ -1,3 +1,4 @@
+import { DEFAULT_SESSION_LENGTH } from './session-config';
 import { loadSessions, loadMatchHistory, loadStreak } from '@/lib/storage';
 import { getWeekStart, todayStr, daysBetweenLocal } from './calendar';
 
@@ -65,7 +66,7 @@ export function computeDevelopmentLoad(streakOverride?: number): DevelopmentLoad
 
   const recommendedSessionLength: RecommendedSessionLength =
     loadLevel === 'high' ? 'short_review' : 'standard';
-  const scenarioCount = recommendedSessionLength === 'short_review' ? 4 : 8;
+  const scenarioCount = recommendedSessionLength === 'short_review' ? 4 : DEFAULT_SESSION_LENGTH;
 
   return {
     loadLevel,
