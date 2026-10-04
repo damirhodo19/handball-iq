@@ -4,8 +4,10 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { createRuntime } from './lib/localization-test-runtime.mjs';
 
-// Locked before the Croatian editorial pass. These hashes include every other
-// field: IDs, family keys, counts/order, answers, scoring and EN/DE wording.
+// Reviewed baseline for non-HR fields: IDs, family keys, counts/order,
+// answers, scoring and EN/DE wording. Refreshed on 2026-10-04 only after
+// checking the 12 intentional right-wing tactical revisions; scoring,
+// metadata and all other non-HR scenarios were unchanged.
 const fixtures = JSON.parse(readFileSync(new URL('./fixtures/croatian-content-invariants.json', import.meta.url)));
 const omitCroatian = value => Array.isArray(value) ? value.map(omitCroatian)
   : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value)
@@ -37,4 +39,4 @@ const t = load('@/lib/locale-text').createTranslator('hr');
 assert.equal(t('position.centreBack'), 'Srednji vanjski');
 assert.equal(t('admin.recentlyEdited'), 'NEDAVNO UREĐIVANO');
 assert.ok(!t('admin.contentWarnings').includes('CONTENT'));
-console.log(`PASS: ${texts} Croatian strings; all non-HR bank fields match the pre-edit baseline`);
+console.log(`PASS: ${texts} Croatian strings; all non-HR bank fields match the reviewed baseline`);
