@@ -36598,9 +36598,9 @@
           "de": "Den ersten tiefen Helfer binden, wenn der vorgezogene Verteidiger schon zu spät in die Bahn zurückkommt"
         },
         "feedback": {
-          "en": "Good — often works, but if you do not threaten the recovery the point can still recover into the lane.",
-          "hr": "Dobro: često radi, ali ako ne ugroziš povratak prednji još može ući u prolaz.",
-          "de": "Gut — geht oft, aber ohne Bedrohung der Rückkehr kann der vorgezogene Verteidiger noch in die Bahn kommen."
+          "hr": "Dobro ako se istureni branič više ne može vratiti u putanju. Ovdje još može intervenirati.",
+          "en": "Good if the front defender can no longer recover into the lane. Here he can still intervene.",
+          "de": "Gut, wenn der vorgezogene Verteidiger nicht mehr in den Passweg zurückkommt. Hier kann er noch eingreifen."
         }
       },
       {
@@ -37088,9 +37088,9 @@
           "de": "Selbst den ersten Riss angreifen nur wenn die Rückpassbahn nach links schon zu ist"
         },
         "feedback": {
-          "en": "Good — can create a local bind, but the clearer late side is already the left you abandoned.",
-          "hr": "Dobro: može stvoriti lokalno vezanje, ali jasnija kasna strana već je lijeva koju si napustio.",
-          "de": "Gut — kann lokale Bindung schaffen, aber die klarere späte Seite ist schon die verlassene Linke."
+          "hr": "Dobro nakon prijema ako je povratak ulijevo zatvoren i otvori se prostor za tvoj prodor.",
+          "en": "Good after receiving if the return left is closed and space opens for your drive.",
+          "de": "Gut nach dem Ballempfang, wenn der Rückpass nach links geschlossen ist und sich Raum für deinen Durchbruch öffnet."
         }
       },
       {
@@ -37186,9 +37186,9 @@
           "de": "1 gegen 1 nur angreifen wenn der Kanal vor dem nächsten Pass schließt"
         },
         "feedback": {
-          "en": "Good — creates surplus too, but slower than punishing the already open channel.",
-          "hr": "Dobro: i to stvara višak, ali sporije od kažnjavanja već otvorenog kanala.",
-          "de": "Gut — schafft auch Vorteil, aber langsamer als den schon offenen Kanal zu bestrafen."
+          "hr": "Dobro ako se dodavanje zatvori, ali ostane prostor za tvoj duel jedan na jedan.",
+          "en": "Good if the pass closes but space remains for your one on one.",
+          "de": "Gut, wenn der Passweg schließt, aber Raum für dein Eins gegen eins bleibt."
         }
       },
       {
@@ -37482,9 +37482,9 @@
           "de": "Die freie Gasse auf einen Rückraum bedienen wenn dein eigener Zugwinkel schon gedeckt ist"
         },
         "feedback": {
-          "en": "Good — if the lows are still connected, but here the lane is already open behind the highs.",
-          "hr": "Dobro: ako su niski još povezani, ali ovdje je prolaz iza visokih već otvoren.",
-          "de": "Gut — wenn die Tiefen noch verbunden sind, aber hier ist die Bahn hinter den Hohen schon offen."
+          "hr": "Dobro ako obrana zatvori tvoj prodor, a suigračev prolaz ostane otvoren.",
+          "en": "Good if the defence closes your drive while your teammate’s lane stays open.",
+          "de": "Gut, wenn dein Durchbruch geschlossen wird und die Lücke für den Mitspieler offen bleibt."
         }
       },
       {
@@ -37580,9 +37580,9 @@
           "de": "Selbst die Diagonale angreifen wenn der Pass nach rechts schon gedeckt ist"
         },
         "feedback": {
-          "en": "Good — next option after help leaves, but the first open lane is already there for the right back.",
-          "hr": "Dobro: sljedeća opcija nakon što pomoć izađe, ali prvi otvoreni prolaz već je tu za desnog vanjskog.",
-          "de": "Gut — nächste Option, wenn Hilfe kommt, aber die erste offene Bahn ist schon für den rechten Rückraum da."
+          "hr": "Dobro ako se dodavanje zatvori, ali dijagonala ostane otvorena za tvoj prodor.",
+          "en": "Good if the pass closes but the diagonal stays open for your drive.",
+          "de": "Gut, wenn der Passweg schließt, die Diagonale für deinen Durchbruch aber offen bleibt."
         }
       },
       {
@@ -37775,9 +37775,9 @@
           "de": "Den freien Rückraum in der Tasche bedienen wenn die Kreisbahn schon dicht ist"
         },
         "feedback": {
-          "en": "Good — only if the pocket is not yet clear; here both feet already left nine metres.",
-          "hr": "Dobro: samo ako džep još nije jasan; ovdje su oba stopala već napustila devet metara.",
-          "de": "Gut — nur wenn die Tasche noch unklar ist; hier verließen beide Füße schon neun Meter."
+          "hr": "Dobro ako je pivot pokriven, a vanjski slobodan u prostoru iza isturenog braniča.",
+          "en": "Good if the pivot is covered and the back is free behind the front defender.",
+          "de": "Gut, wenn der Kreis gedeckt und der Rückraumspieler hinter dem vorgezogenen Verteidiger frei ist."
         }
       },
       {
@@ -37970,9 +37970,9 @@
           "de": "Diese Gasse auf einen Rückraum bedienen wenn dein eigener Eintritt schon von einem zurückkehrenden Verteidiger getroffen wird"
         },
         "feedback": {
-          "en": "Good — next if help leaves, but the first space is the stretched back lane.",
-          "hr": "Dobro: sljedeće ako pomoć izađe, ali prvi prostor je razvučeni prolaz vanjskih.",
-          "de": "Gut — als Nächstes, wenn Hilfe kommt, aber der erste Raum ist die gedehnte Rückraumbahn."
+          "hr": "Dobro ako branič zatvori tvoj ulazak, a suigrač još može napasti taj prostor.",
+          "en": "Good if a defender closes your entry while your teammate can still attack that space.",
+          "de": "Gut, wenn ein Verteidiger deinen Weg schließt und der Mitspieler diesen Raum noch angreifen kann."
         }
       },
       {
