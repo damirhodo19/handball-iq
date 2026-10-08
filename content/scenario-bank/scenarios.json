@@ -40122,9 +40122,9 @@
     "score": "16:15",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 16:15 at 29' in 6v5 after their exclusion. The defence drops into a short five. You receive in the middle. The free zone is clearly between left half and centre — one body width — with your left back already aligned. Wasting a full extra swing only lets the five settle.",
-      "hr": "Vodite 16:15 u 29. minuti u 6 na 5 nakon njihova isključenja. Obrana pada u kratku petorku. Primaš u sredini. Slobodna zona jasno je između lijevog polubranitelja i sredine: širina tijela: a lijevi vanjski već je poravnat. Trošenje još jednog punog obilaska samo pušta petorku da se slegne.",
-      "de": "Ihr führt 16:15 in Minute 29 im 6 gegen 5 nach ihrer Zeitstrafe. Die Abwehr fällt in eine kurze Fünf. Du bekommst in der Mitte. Die freie Zone liegt klar zwischen linkem Halben und Mitte — körperbreit — und dein Linker ist schon ausgerichtet. Eine volle Extra-Kreisung lässt die Fünf nur setzen."
+      "hr": "Vodite 16:15 u 29. minuti i napadate šest na pet nakon protivničkog isključenja. Primaš loptu u sredini. Na vašoj lijevoj strani, između protivničkog desnog polubranitelja i središnjeg braniča, otvoren je prostor širine tijela. Lijevi vanjski spreman je napasti taj prostor nakon dodavanja. Dodatno kruženje loptom dalo bi obrani vremena da ga zatvori.",
+      "en": "You lead 16:15 in minute 29 and attack six against five after an opposing suspension. You receive centrally. On your left, between the opposing right half defender and central defender, a body width gap is open. Your left back is ready to attack it on receiving. Extra circulation would give the defence time to close it.",
+      "de": "Ihr führt 16:15 in Minute 29 und greift nach einer gegnerischen Zeitstrafe sechs gegen fünf an. Du erhältst den Ball zentral. Auf eurer linken Angriffsseite ist zwischen dem gegnerischen rechten Halbverteidiger und dem zentralen Verteidiger eine körperbreite Lücke offen. Dein linker Rückraumspieler ist bereit, nach dem Pass dort anzugreifen. Weiteres Durchspielen gäbe der Abwehr Zeit zum Schließen."
     },
     "question": {
       "en": "How should the organizer use a clear 6v5 free zone?",
@@ -41624,9 +41624,9 @@
     "score": "9:8",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 9:8 at 17' in the middle of a 6:0. Their pivot seals your inside hip while the centre back looks for the short bounce. You can feel the seal, but you still see the ball. Losing sight of the ball to fight the seal with both hands would open the mid-range lane.",
-      "hr": "Vodite 9:8 u 17. minuti u sredini 6:0. Njihov pivot držanjei tvoj unutarnji bok dok srednji vanjski traži kratki odskok. Osjećaš držanje, ali još vidiš loptu. Izgubiti loptu iz vida da se s obje ruke boriš protiv držanja otvorilo bi liniju iz srednje distance.",
-      "de": "Ihr führt 9:8 in Minute 17 in der Mitte einer 6:0. Ihr Kreisläufer siegelt deine Innenhüfte während der RM den kurzen Bounce sucht. Du fühlst das Siegel, siehst aber noch den Ball. Den Ball aus den Augen zu verlieren um mit beiden Händen gegen das Siegel zu kämpfen öffnete die Mittelstrecke."
+      "hr": "Vodite 9:8 u 17. minuti. Braniš sredinu obrane 6:0. Protivnički pivot zauzima položaj uz tvoj unutarnji bok, a srednji vanjski traži dodavanje od poda. Još možeš pratiti loptu i položajem tijela zatvoriti put dodavanju. Potpuno okretanje prema pivotu ostavilo bi vanjskom igraču prostor za šut.",
+      "en": "You lead 9:8 in minute 17, defending the centre of a 6:0. The pivot establishes position at your inside hip while the centre back looks for a bounce pass. You can still see the ball and close the passing lane with your positioning. Turning fully toward the pivot would open space for the back to shoot.",
+      "de": "Ihr führt 9:8 in Minute 17 und verteidigt zentral in einer 6:0. Der Kreisläufer positioniert sich an deiner Innenseite, während der Mittelspieler einen Bodenpass sucht. Du kannst den Ball noch sehen und durch deine Position den Passweg schließen. Vollständiges Wegdrehen zum Kreis würde dem Rückraumspieler Wurfraum öffnen."
     },
     "question": {
       "en": "How do you control the pivot without opening the shot?",
@@ -41637,9 +41637,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep vision on the ball, use the body on the pivot’s hip, and deny the short bounce lane",
-          "hr": "Drži pogled na lopti, tijelom na pivota bok, i zatvori liniju kratkog odskoka",
-          "de": "Blick auf dem Ball, Körper an der Kreisläufer-Hüfte, kurze Bounce-Bahn zustellen"
+          "hr": "Prati loptu i položajem tijela zatvori dodavanje pivotu, bez držanja ili odgurivanja",
+          "en": "Watch the ball and close the pivot passing lane through positioning, without holding or pushing",
+          "de": "Ball beobachten und den Passweg zum Kreis durch Stellungsspiel schließen, ohne Halten oder Stoßen"
         },
         "feedback": {
           "en": "Correct — pivot control is body + vision, not a blind wrestling match.",
@@ -41688,9 +41688,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: pivot seal on your hip while CB looks for the short bounce. Control with body + vision on the ball. Call help (B) only if the hip is fully lost and the lane opens.",
-      "hr": "Signal: pivota držanje na tvom boku dok srednji vanjski traži kratki odskok. Kontroliraj tijelom uz pogled na loptu. Zovi pomoć (B) samo ako potpuno izgubiš bok i linija se otvori.",
-      "de": "Signal: Siegel an der Hüfte, kurzer Bounce droht — Körper plus Blick, nicht blind ringen."
+      "hr": "Još vidiš loptu i možeš zatvoriti put dodavanju. Zadrži taj položaj. Ako pivot stekne prednost koju više ne možeš pokriti, pozovi pomoć iz odgovora B.",
+      "en": "You can still see the ball and close the passing lane. Keep that position. If the pivot gains an advantage you can no longer cover, call for help as in B.",
+      "de": "Du siehst den Ball noch und kannst den Passweg schließen. Halte diese Position. Gewinnt der Kreisläufer einen nicht mehr kontrollierbaren Vorteil, fordere wie in B Hilfe an."
     },
     "whyCorrectOverSecondBest": {
       "en": "A beats B because you still have hip position and vision; early help is for when that position is already lost. B is correct only after the pivot fully wins the hip.",
@@ -42017,9 +42017,9 @@
     "score": "13:13",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 13:13 at 25' in a 6:0. Their left back beats your left-half defender by a half-step. You are the central defender. If you never help, the drive is free; if you help and stay, the pivot or the opposite back becomes free. The read is help-and-recover.",
-      "hr": "Neriješeno je 13:13 u 25. minuti u 6:0. Njihov lijevi vanjski dobiva tvog lijevog polubranitelja za pola koraka. Ti si središnji branič. Ako nikad ne pomogneš, prodor je slobodan; ako pomogneš i ostaneš, slobodan postaje pivot ili suprotni vanjski. Čitanje je pomozi-i-vrati-se.",
-      "de": "Unentschieden 13:13 in Minute 25 in der 6:0. Ihr Linker schlägt den linken Halben um einen halben Schritt. Du bist der Zentrale. Wenn du nie hilfst, ist der Durchbruch frei; wenn du hilfst und bleibst, werden Kreisläufer oder gegenüberliegender Rückraum frei. Die Lesung ist helfen-und-zurück."
+      "hr": "Neriješeno je 13:13 u 25. minuti. Braniš sredinu obrane 6:0. Protivnički lijevi vanjski prolazi vašeg desnog polubranitelja za pola koraka. Suigrač još može vratiti položaj ako kratko zatvoriš prodor. Nakon što ponovno preuzme napadača, vrati se svojoj zadaći kako pivot ili suprotni vanjski ne bi ostao slobodan.",
+      "en": "Tied 13:13 in minute 25. You defend centrally in a 6:0. The opposing left back gets half a step past your right half defender. Your teammate can still recover if you briefly close the drive. Once he has regained the attacker, return to your assignment so the pivot or opposite back is not left free.",
+      "de": "Bei 13:13 in Minute 25 verteidigst du zentral in einer 6:0. Der gegnerische linke Rückraumspieler kommt einen halben Schritt an eurem rechten Halbverteidiger vorbei. Dein Mitspieler kann seine Position wiedererlangen, wenn du den Durchbruch kurz schließt. Nach seiner erneuten Übernahme kehrst du zu deiner Aufgabe zurück, damit Kreis oder Gegenseite nicht frei bleiben."
     },
     "question": {
       "en": "When the half is beaten by a half-step, what is your help rule?",
@@ -42081,9 +42081,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: left half beaten by a half-step. Give short help to kill the free drive, then recover before the next free man. Longer help (B) only if the half is fully gone.",
-      "hr": "Signal: lijevi polubranitelj dobiven za pola koraka. Daj kratku pomoć da ugasiš slobodan prodor, pa se vrati prije sljedećeg slobodnog. Duža pomoć (B) samo ako je polubranitelj potpuno van.",
-      "de": "Signal: Halber einen halben Schritt geschlagen — kurze Hilfe, dann sofort zurück."
+      "hr": "Pomogni desnom polubranitelju zatvoriti prodor. Kad ponovno preuzme napadača, vrati se svojoj zadaći. Ako ne može vratiti položaj i nema druge pomoći, ostani u pomoći prema odgovoru B.",
+      "en": "Help your right half defender close the drive. Recover to your assignment once he takes the attacker again. If he cannot recover and no other help is available, stay longer as in B.",
+      "de": "Hilf dem rechten Halbverteidiger, den Durchbruch zu schließen. Kehre nach seiner erneuten Übernahme zurück. Kann er nicht zurückkehren und fehlt weitere Hilfe, bleibe wie in B länger."
     },
     "whyCorrectOverSecondBest": {
       "en": "A beats B because the default central rule is short help-and-recover; lingering longer is only for a fully beaten teammate with no other recovery. B is the emergency extension, not the first rule.",
