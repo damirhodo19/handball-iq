@@ -40021,9 +40021,9 @@
     "score": "21:20",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 21:20 at 39' in 7v6. Teammates shout for the first pivot. You see his defender’s chest and outside foot already in the lane; the second pivot is also tight. The right back has just received a half-step of space after a late slide. Your own goal is guarded.",
-      "hr": "Vodite 21:20 u 39. minuti u 7 na 6. Suigrači viču na prvog pivota. Vidiš da su mu prsa braniča i vanjsko stopalo već u prolazu; i drugi pivot je ustipt. Desni vanjski upravo je dobio pola koraka prostora nakon kasnog klizanja. Vlastiti gol je čuvan.",
-      "de": "Ihr führt 21:20 in Minute 39 im 7 gegen 6. Mitspieler rufen den ersten Kreisläufer. Du siehst Brust und Außenfuß seines Verteidigers schon in der Bahn; auch der zweite ist eng. Der Rechte hat nach spätem Schieben einen halben Schritt Raum. Euer Tor ist besetzt."
+      "en": "You lead 21:20 at 39' in 7v6. Teammates shout for the first pivot. You see his defender’s chest and outside foot already in the lane; the second pivot is also tight. The right back has just received a half-step of space after a late slide. You have seven court players, so your own goal is empty.",
+      "hr": "Vodite 21:20 u 39. minuti u 7 na 6. Suigrači traže dodavanje prvom pivotu. Vidiš da su mu prsa braniča i vanjsko stopalo već u prolazu; i drugi pivot je pokriven. Desni vanjski upravo je dobio pola koraka prostora nakon kasnog klizanja. Igrate sa sedam igrača u polju, pa je vaš gol prazan.",
+      "de": "Ihr führt 21:20 in Minute 39 im 7 gegen 6. Mitspieler rufen den ersten Kreisläufer. Du siehst Brust und Außenfuß seines Verteidigers schon in der Bahn; auch der zweite ist eng. Der Rechte hat nach spätem Schieben einen halben Schritt Raum. Ihr spielt mit sieben Feldspielern, euer eigenes Tor ist daher leer."
     },
     "question": {
       "en": "What does 7v6 demand when both pivots are covered?",
@@ -41027,9 +41027,9 @@
     "score": "19:19",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 19:19 at 35' under passive warning with about three seconds left. Your own shooting angle is poor — shoulder closed, block arm high. In the same beat your right back shows a clearly cleaner mid-range window with a low block arm and is ready now.",
-      "hr": "Neriješeno je 19:19 u 35. minuti pod upozorenjem na pasivnu igru uz oko tri sekunde. Tvoj kut šuta loš je: rame zatvoreno, ruka bloka visoka. U istom taktu desni vanjski pokazuje jasno čišći prozor iz srednje distance uz nisku ruku bloka i spreman je sada.",
-      "de": "Unentschieden 19:19 in Minute 35 unter Passivwarnung mit etwa drei Sekunden. Dein Wurfwinkel ist schlecht — Schulter zu, Blockarm hoch. Im selben Takt zeigt der Rechte ein klar saubereres Mittelstreckenfenster bei tiefem Blockarm und ist jetzt bereit."
+      "hr": "Neriješeno je 19:19 u 35. minuti. Nakon upozorenja na pasivnu igru izvedena su dva dodavanja, uključujući ono kojim si primio loptu. Tvoj kut šuta je loš, a branič drži ruku za blok visoko. Desni vanjski već je spreman za šut iz boljeg položaja, uz nisku ruku svojeg braniča. Put dodavanju je otvoren.",
+      "en": "Tied 19:19 in minute 35. Two passes have been completed since the passive warning, including your reception. Your shooting angle is poor and the block arm is high. The right back is ready for a cleaner shot with a low block arm in front of him. The passing lane is open.",
+      "de": "Bei 19:19 in Minute 35 wurden seit der Passivwarnung zwei Pässe gespielt, einschließlich deines Ballempfangs. Dein Wurfwinkel ist ungünstig, der Blockarm hoch. Rechts ist dein Mitspieler bei tiefem Blockarm in einer besseren Wurfposition bereit. Der Passweg ist frei."
     },
     "question": {
       "en": "Under passive pressure with a poor own angle, what is the read?",
@@ -42100,9 +42100,9 @@
   {
     "id": "scn_bank_867",
     "title": {
-      "en": "Centre Back — Defence: Legal Foul in Final Minutes",
-      "hr": "Srednji vanjski: obrana: pravilan prekršaj u završnici",
-      "de": "Rückraum Mitte — Abwehr: korrektes Foul in der Schlussphase"
+      "hr": "Srednji vanjski: obrana šuta u završnici",
+      "en": "Centre Back: Defending a Late Shot",
+      "de": "Rückraum Mitte: Wurfabwehr in der Schlussphase"
     },
     "category": "Centre Back",
     "primaryPosition": "Centre Back",
@@ -42115,78 +42115,78 @@
     "score": "27:28",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "At 59' you trail 27:28 — one goal. About 25 seconds remain. Their centre back has a clear path into a high-percentage mid-range with a low block arm and no help arriving. A clean legal tactical foul outside the clear scoring path can stop the shot without a two-minute risk; a desperate reach across the shooting arm is a penalty danger.",
-      "hr": "U 59. minuti Gubite 27:28: jedan gol. Ostalo je oko 25 sekundi. Njihov srednji vanjski ima čist put u visok postotak iz srednje distance uz nisku ruku bloka i bez dolazeće pomoći. Čist pravilan taktički prekršaj izvan jasne linije šuta može zaustaviti šut bez rizika od dvije minute; očajni zahvat preko ruke za šut opasnost je od sedmerca.",
-      "de": "In Minute 59 liegt ihr 27:28 — ein Tor. Noch etwa 25 Sekunden. Ihr RM hat klaren Weg in hohe Mittelstrecken-Quote bei tiefem Blockarm ohne ankommende Hilfe. Ein sauberes taktisches Foul außerhalb der klaren Wurflinie kann den Wurf ohne Zwei-Minuten-Risiko stoppen; verzweifeltes Greifen über den Wurfarm ist Siebenmeter-Gefahr."
+      "hr": "Gubite 27:28 u 59. minuti, a do kraja je oko 25 sekundi. Protivnički srednji vanjski priprema šut s devet metara. Još si ispred njega i možeš podignuti ruke za blok bez ulaska u njegov prostor doskoka. Pomoć trenutačno ne stiže. Posezanje za rukom kojom šutira ugrozilo bi protivnika.",
+      "en": "You trail 27:28 in minute 59 with about 25 seconds left. The opposing centre back prepares a nine metre shot. You are still in front and can raise your arms to block without entering his landing space. No help is currently arriving. Grabbing his shooting arm would endanger him.",
+      "de": "Ihr liegt in Minute 59 mit 27:28 zurück, etwa 25 Sekunden bleiben. Der gegnerische Mittelspieler bereitet einen Wurf aus neun Metern vor. Du stehst noch vor ihm und kannst die Arme zum Block heben, ohne seinen Landeraum zu betreten. Hilfe kommt derzeit nicht. Ein Griff an seinen Wurfarm würde ihn gefährden."
     },
     "question": {
-      "en": "Trailing by one with a clear opponent finish, what is the legal last resort?",
-      "hr": "Kad gubiš za jedan uz čist protivnički završetak, što je pravilan zadnji alat?",
-      "de": "Bei Rückstand um eins mit klarem Gegnerabschluss — was ist das korrekte letzte Mittel?"
+      "hr": "Kako sada ometaš šut?",
+      "en": "How do you contest the shot now?",
+      "de": "Wie störst du den Wurf jetzt?"
     },
     "answers": [
       {
         "quality": "optimal",
         "text": {
-          "en": "Take a clean legal tactical foul that stops the high-percentage shot without playing the shooting arm",
-          "hr": "Napravi čist pravilan taktički prekršaj koji zaustavlja visok postotak bez igre na ruku za šut",
-          "de": "Sauberes taktisches Foul das die hohe Quote stoppt ohne am Wurfarm zu spielen"
+          "hr": "Ostani ispred šutera i podigni ruke za blok bez hvatanja ili ulaska u njegov doskok",
+          "en": "Stay in front and raise your arms to block without grabbing or entering his landing space",
+          "de": "Vor dem Werfer bleiben und die Arme zum Block heben, ohne zu greifen oder seinen Landeraum zu betreten"
         },
         "feedback": {
-          "en": "Correct — late trail can justify a clean tactical foul to deny the clear finish.",
-          "hr": "Točno: kasni zaostatak može opravdati čist taktički prekršaj da spriječiš čist završetak.",
-          "de": "Richtig — später Rückstand kann ein sauberes taktisches Foul rechtfertigen um den klaren Abschluss zu nehmen."
+          "hr": "Točno: već si u položaju za blok i možeš odmah ometati šut.",
+          "en": "Correct: you are already positioned to block and can contest immediately.",
+          "de": "Richtig: Du stehst bereits für den Block und kannst sofort stören."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Contest legally without fouling if help arrives in time to make the shot average",
-          "hr": "Ometaj pravilno bez prekršaja ako pomoć stigne na vrijeme da šut postane prosječan",
-          "de": "Legal stören ohne Foul wenn Hilfe rechtzeitig kommt und den Wurf mittel macht"
+          "hr": "Prepusti blok suigraču samo ako stigne i jasno preuzme šutera, a ti zatvori sljedeću opciju",
+          "en": "Leave the block to a teammate only if he arrives and clearly takes the shooter, then cover the next option",
+          "de": "Den Block nur abgeben, wenn ein Mitspieler rechtzeitig kommt und den Werfer klar übernimmt; dann die nächste Option sichern"
         },
         "feedback": {
-          "en": "Good if true help arrives; here no help is arriving and the look stays high percentage.",
-          "hr": "Dobro ako stvarna pomoć stigne; ovdje pomoć ne stiže i šut ostaje visok postotak.",
-          "de": "Gut wenn echte Hilfe kommt; hier kommt keine und die Quote bleibt hoch."
+          "hr": "To vrijedi uz pravodobno preuzimanje. Ovdje pomoć još ne stiže.",
+          "en": "That works with a timely handover. Here help is not arriving.",
+          "de": "Das passt bei rechtzeitiger Übernahme. Hier kommt noch keine Hilfe."
         }
       },
       {
         "quality": "risky",
         "text": {
-          "en": "Reach across the shooting arm and risk a penalty in the final seconds",
-          "hr": "Posegni preko ruke za šut i rizikuj sedmerac u zadnjim sekundama",
-          "de": "Über den Wurfarm greifen und in den Schlusssekunden den Siebenmeter riskieren"
+          "hr": "Posegni za rukom kojom protivnik šutira",
+          "en": "Grab the opponent’s shooting arm",
+          "de": "Nach dem Wurfarm des Gegners greifen"
         },
         "feedback": {
-          "en": "Risky — a penalty can end the game worse than the field shot.",
-          "hr": "Rizično: sedmerac može ugasiti utakmicu gore od šuta s igre.",
-          "de": "Riskant — ein Siebenmeter kann das Spiel schlimmer beenden als der Feldwurf."
+          "hr": "Rizično: takav kontakt može ugroziti šutera i dovesti do osobne kazne.",
+          "en": "Risky: that contact can endanger the shooter and lead to a personal sanction.",
+          "de": "Riskant: Der Kontakt kann den Werfer gefährden und eine persönliche Strafe nach sich ziehen."
         }
       },
       {
         "quality": "poor",
         "text": {
-          "en": "Let the clear high-percentage shot go uncontested because “no fouls late”",
-          "hr": "Pusti čist visok postotak bez ometanja jer “kasno nema prekršaja”",
-          "de": "Den klaren Hochquote-Wurf ungestört lassen weil “spät nicht foulen”"
+          "hr": "Ostani spuštenih ruku i dopusti neometan šut",
+          "en": "Keep your arms down and allow an uncontested shot",
+          "de": "Die Arme unten lassen und einen ungestörten Wurf zulassen"
         },
         "feedback": {
-          "en": "Poor — trailing late with a free finish is exactly when legal tactics matter.",
-          "hr": "Loše: kasni zaostatak uz slobodan završetak upravo je trenutak za pravilan taktički alat.",
-          "de": "Schlecht — später Rückstand mit freiem Abschluss ist genau der Moment für korrektes taktisches Mittel."
+          "hr": "Loše: propuštaš mogućnost bloka iz položaja koji već imaš.",
+          "en": "Poor: you give up the block available from your current position.",
+          "de": "Schlecht: Du nutzt deine vorhandene Blockposition nicht."
         }
       }
     ],
     "explanation": {
-      "en": "Cue: trail by one, ~25 seconds, clear high-percentage mid-range, no help. A clean legal tactical foul that avoids the shooting arm is the last resort. Legal contest without foul (B) only if help truly arrives in time.",
-      "hr": "Signal: zaostatak od jedan, ~25 sekundi, čist visok postotak, nema pomoći. Čist pravilan taktički prekršaj koji izbjegava ruku za šut zadnji je alat. Pravilno ometanje bez prekršaja (B) samo ako pomoć stvarno stigne na vrijeme.",
-      "de": "Signal: Rückstand um eins, klare hohe Quote, keine Hilfe — sauberes taktisches Foul als letztes Mittel."
+      "hr": "Već si ispred šutera, a pomoć ne stiže. Odmah postavi blok i sačuvaj njegov prostor doskoka. B ima smisla tek kada suigrač stvarno preuzme šutera.",
+      "en": "You are in front of the shooter and help is not arriving. Block now while keeping his landing space clear. B applies only when a teammate actually takes over.",
+      "de": "Du stehst vor dem Werfer und Hilfe kommt nicht. Jetzt blocken und den Landeraum freihalten. B passt erst bei tatsächlicher Übernahme durch einen Mitspieler."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A beats B because no help is arriving and the finish stays high percentage; waiting for a legal contest without foul gifts the open look. B is correct only when help arrives in time to make the shot average.",
-      "hr": "A je bolji od B jer pomoć ne stiže i završetak ostaje visok postotak; čekanje pravilnog ometanja bez prekršaja poklanja otvoren šut. B je točan samo kad pomoć stigne na vrijeme da šut postane prosječan.",
-      "de": "A schlägt B, weil keine Hilfe kommt und die Quote hoch bleibt."
+      "hr": "A koristi postojeći položaj odmah. B ovisi o pomoći koje trenutačno nema.",
+      "en": "A uses your existing position immediately. B depends on help that is not currently available.",
+      "de": "A nutzt deine Position sofort. B setzt Hilfe voraus, die derzeit fehlt."
     },
     "skillTags": [
       "defensiveReading",
