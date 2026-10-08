@@ -39720,9 +39720,9 @@
     "score": "22:21",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 22:21 at 41' in 7v6. Both pivots are almost stacked on the same hip of the six-metre line, so one defender covers both hands. The perimeter still has a free right-back lane because the stacked pivots pulled two bodies into one spot. You are the organizer with the ball in the middle.",
-      "hr": "Vodite 22:21 u 41. minuti u 7 na 6. Prvi i drugi pivot gotovo su složeni na istom boku šest metara, pa jedan branič pokriva obje ruke. Na vanjskom još postoji slobodna linija desnog vanjskog jer su složeni pivoti povukli dva tijela na jedno mjesto. Ti si organizator s loptom u sredini.",
-      "de": "Ihr führt 22:21 in Minute 41 im 7 gegen 6. Beide Kreisläufer sind fast auf derselben Hüfte der Sechs gestapelt — ein Verteidiger deckt beide Hände. Außen bleibt eine freie Rechte-Bahn, weil die Stapelung zwei Körper auf einen Punkt zog. Du bist Organisator mit Ball in der Mitte."
+      "hr": "Vodite 22:21 u 41. minuti i napadate sedam na šest. Dva pivota stoje preblizu jedan drugome, pa jedan branič može zatvoriti dodavanje obojici. Dodatni branič također se pomaknuo prema njima i ostavio desnom vanjskom slobodan prostor. Imaš loptu u sredini i otvoren put dodavanju desnom vanjskom.",
+      "en": "You lead 22:21 in minute 41, attacking seven against six. Both pivots stand too close together, allowing one defender to cover both passing lanes. Another defender has also moved toward them, leaving the right back free. You have the ball centrally and an open pass to the right back.",
+      "de": "Ihr führt 22:21 in Minute 41 und greift sieben gegen sechs an. Beide Kreisläufer stehen zu eng zusammen, sodass ein Verteidiger beide Passwege decken kann. Ein weiterer Verteidiger ist ebenfalls eingerückt und lässt rechts im Rückraum Platz. Du hast zentral den Ball und einen freien Passweg dorthin."
     },
     "question": {
       "en": "What does bad two-pivot spacing ask the organizer to do?",
@@ -39733,9 +39733,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Skip the stacked pivots: play the free right-back lane created by the compressed inside",
-          "hr": "Preskoči složene pivote: odigraj slobodnu liniju desnog vanjskog koju je stisnuti unutra stvorio",
-          "de": "Die gestapelten Kreisläufer lassen: die freie Rechte-Bahn spielen, die die komprimierte Innenzone schuf"
+          "hr": "Odmah dodaj slobodnom desnom vanjskom umjesto pokrivenim pivotima",
+          "en": "Pass immediately to the free right back instead of the covered pivots",
+          "de": "Sofort zum freien rechten Rückraumspieler statt zu den gedeckten Kreisläufern passen"
         },
         "feedback": {
           "en": "Correct — stacked pivots waste 7v6; the surplus moves to the perimeter.",
@@ -40542,9 +40542,9 @@
           "de": "Mit sicherer Struktur kontrollieren: zurückspielen und nur bei klar besserer Quote abschließen"
         },
         "feedback": {
-          "en": "Correct — +1 late makes average shots more expensive than turnovers.",
-          "hr": "Točno: +1 kasno čini prosječne šuteve skupljima od gubitaka.",
-          "de": "Richtig — +1 spät macht mittlere Würfe teurer als Ballverluste."
+          "hr": "Točno: sigurno dodavanje omogućuje nastavak napada bez forsiranja otežanog šuta.",
+          "en": "Correct: a safe pass continues the attack without forcing a difficult shot.",
+          "de": "Richtig: Ein sicherer Pass setzt den Angriff fort, ohne einen erschwerten Wurf zu erzwingen."
         }
       },
       {
@@ -40555,9 +40555,9 @@
           "de": "Sofort werfen, wenn sich vor dem Abwurf eine klare gute Chance öffnet"
         },
         "feedback": {
-          "en": "Good only on a true high-percentage look; here the block arm is half up.",
-          "hr": "Dobro samo na stvarno visokom postotku; ovdje je ruka bloka napola gore.",
-          "de": "Gut nur bei wirklich hoher Quote; hier ist der Blockarm halb hoch."
+          "hr": "Dobro ako se prilika poboljša. U opisu blok i kut još otežavaju šut.",
+          "en": "Good if the chance improves. In the description, the block and angle still make the shot difficult.",
+          "de": "Gut bei verbesserter Chance. Hier erschweren Block und Winkel den Wurf noch."
         }
       },
       {
@@ -40593,9 +40593,9 @@
       "de": "Bei Führung und erschwertem Wurf sicher abspielen und aktiv eine Chance suchen. B gilt, wenn der Wurf tatsächlich frei wird. Keine Wahl garantiert ein Tor oder verhindert einen weiteren gegnerischen Angriff."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A beats B because the available mid-range is contested with a half-up block; with +1 late, control possession outranks that look. B is correct only on a clearly sure finish.",
-      "hr": "A je bolji od B jer je dostupna srednja distanca otežana uz napola dignutu ruku bloka; uz +1 kasno, kontrola posjeda nadmašuje taj šut. B je točan samo na jasno sigurnom završetku.",
-      "de": "A schlägt B, weil die Mittelstrecke umkämpft ist; bei +1 spät hat Kontrollbesitz Vorrang."
+      "hr": "A čuva posjed uz nastavak aktivnog napada jer je opisani šut otežan. B vrijedi ako se otvori kvalitetnija prilika, ali ni tada pogodak nije zajamčen.",
+      "en": "A retains possession while continuing an active attack because the described shot is difficult. B applies if a better chance opens, but a goal is never guaranteed.",
+      "de": "A sichert den Ball bei weiter aktivem Angriff, weil der beschriebene Wurf erschwert ist. B gilt bei einer besseren Chance, garantiert aber kein Tor."
     },
     "skillTags": [
       "pressureDecisions",
@@ -40642,9 +40642,9 @@
           "de": "Besitz mit kontrolliertem Rückspiel sichern; nur werfen wenn klar bessere Quote entsteht"
         },
         "feedback": {
-          "en": "Correct — with +3 and time, turnover risk outweighs an average baited shot.",
-          "hr": "Točno: uz +3 i vrijeme, rizik gubitka teži više od prosječnog mamnog šuta.",
-          "de": "Richtig — bei +3 und Restzeit wiegt Ballverlust schwerer als der mittelmäßige Lockwurf."
+          "hr": "Točno: sigurno dodavanje omogućuje nastavak napada bez forsiranja otežanog šuta.",
+          "en": "Correct: a safe pass continues the attack without forcing a difficult shot.",
+          "de": "Richtig: Ein sicherer Pass setzt den Angriff fort, ohne einen erschwerten Wurf zu erzwingen."
         }
       },
       {
@@ -40655,9 +40655,9 @@
           "de": "Sofort werfen, wenn sich vor dem Abwurf eine klare gute Chance öffnet"
         },
         "feedback": {
-          "en": "Good only if the shot is truly high percentage; here the cue is average angle + bait.",
-          "hr": "Dobro samo ako je šut stvarno visok postotak; ovdje je signal prosječan kut i mamac.",
-          "de": "Gut nur bei wirklich hoher Quote; hier Winkel mittel und Köder."
+          "hr": "Dobro ako se prilika poboljša. U opisu blok i kut još otežavaju šut.",
+          "en": "Good if the chance improves. In the description, the block and angle still make the shot difficult.",
+          "de": "Gut bei verbesserter Chance. Hier erschweren Block und Winkel den Wurf noch."
         }
       },
       {
@@ -40693,9 +40693,9 @@
       "de": "Bei Führung und erschwertem Wurf sicher abspielen und aktiv eine Chance suchen. B gilt, wenn der Wurf tatsächlich frei wird. Keine Wahl garantiert ein Tor oder verhindert einen weiteren gegnerischen Angriff."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A beats B because the stated mid-range is average and baited; with +3, safe possession is clearer. B is correct only on a truly sure finish that denies their last attack.",
-      "hr": "A je bolji od B jer je opisana srednja distanca prosječna i mamna; uz +3 siguran posjed je jasniji. B je točan samo na stvarno sigurnom završetku koji gasi njihov zadnji napad.",
-      "de": "A schlägt B, weil die Mittelstrecke mittel und geködert ist; bei +3 ist sicherer Besitz klarer."
+      "hr": "A čuva posjed uz nastavak aktivnog napada jer je opisani šut otežan. B vrijedi ako se otvori kvalitetnija prilika, ali ni tada pogodak nije zajamčen.",
+      "en": "A retains possession while continuing an active attack because the described shot is difficult. B applies if a better chance opens, but a goal is never guaranteed.",
+      "de": "A sichert den Ball bei weiter aktivem Angriff, weil der beschriebene Wurf erschwert ist. B gilt bei einer besseren Chance, garantiert aber kein Tor."
     },
     "skillTags": [
       "pressureDecisions",
@@ -42086,9 +42086,9 @@
       "de": "Hilf dem rechten Halbverteidiger, den Durchbruch zu schließen. Kehre nach seiner erneuten Übernahme zurück. Kann er nicht zurückkehren und fehlt weitere Hilfe, bleibe wie in B länger."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A beats B because the default central rule is short help-and-recover; lingering longer is only for a fully beaten teammate with no other recovery. B is the emergency extension, not the first rule.",
-      "hr": "A je bolji od B jer je zadano središnje pravilo kratka pomoć i povratak; duže ostajanje samo je za potpuno dobivenog suigrača bez druge pomoći. B je hitno produženje, ne prvo pravilo.",
-      "de": "A schlägt B, weil Standard kurze Hilfe-und-zurück ist; längeres Verweilen nur Notfall."
+      "hr": "A odgovara opisu jer suigrač još može ponovno preuzeti napadača. B vrijedi ako to ne može i nema druge pomoći.",
+      "en": "A fits because the teammate can still recover his attacker. B applies if he cannot and no other help is available.",
+      "de": "A passt, weil der Mitspieler seinen Angreifer wieder übernehmen kann. B gilt, wenn dies nicht möglich ist und weitere Hilfe fehlt."
     },
     "skillTags": [
       "defensiveReading",
