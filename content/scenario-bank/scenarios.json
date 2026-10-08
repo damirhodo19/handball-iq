@@ -41526,9 +41526,9 @@
     "score": "11:10",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 11:10 at 20' in a 6:0. You defend the centre. Their centre back starts a short exchange toward the left back; you and your left half begin a switch. On this beat the ball is still on the centre back for one more pass. If you both chase the ball, the left-back shooting lane opens a body width. Your job on this geometry: close the free left-back lane while the half takes the ball carrier after the release.",
-      "hr": "Vodite 11:10 u 20. minuti u obrani 6:0. Braniš sredinu. Njihov srednji vanjski kreće kratku razmjenu prema lijevom vanjskom; s lijevim polubraniteljem krećete zamjenu. U ovom taktu lopta je još jedan dodavanje na srednjem vanjskom. Ako obojica jurite na loptu, linija šuta lijevog vanjskog otvara se za širinu tijela. Tvoj zadatak u ovoj geometriji: zatvori slobodnu liniju lijevog vanjskog dok polubranitelj preuzima nosača lopte nakon puštanja.",
-      "de": "Ihr führt 11:10 in Minute 20 in einer 6:0. Du verteidigst die Mitte. Ihr Rückraum Mitte startet einen kurzen Austausch zum linken Rückraum; du und dein linker Halber beginnt einen Wechsel. In diesem Takt liegt der Ball noch einen Pass lang beim Rückraum Mitte. Wenn ihr beide zum Ball lauft, öffnet sich die Wurfbahn links körperbreit. Deine Aufgabe in dieser Geometrie: die freie Linke-Bahn schließen, während der Halbe nach der Abgabe den Ballführer übernimmt."
+      "hr": "Vodite 11:10 u 20. minuti u obrani 6:0. Protivnički srednji vanjski vodi loptu prema vašoj desnoj strani, a njihov lijevi vanjski križa prema sredini. Desni polubranitelj jasno preuzima igrača s loptom. Ti možeš pokriti lijevog vanjskog koji ulazi u sredinu. Ako obojica krenete na loptu, taj igrač ostaje slobodan za prijem i šut.",
+      "en": "You lead 11:10 in minute 20 in a 6:0 defence. The opposing centre back carries the ball toward your right while their left back crosses into the middle. Your right half defender clearly takes the ball carrier. You can cover the left back entering the centre. If both defenders chase the ball, that receiver is free to shoot.",
+      "de": "Ihr führt 11:10 in Minute 20 in einer 6:0. Der gegnerische Mittelspieler führt den Ball auf eure rechte Seite, während der linke Rückraumspieler zur Mitte kreuzt. Euer rechter Halbverteidiger übernimmt den Ballführer eindeutig. Du kannst den zur Mitte kommenden Spieler decken. Geht ihr beide zum Ball, bleibt dieser für Pass und Wurf frei."
     },
     "question": {
       "en": "On this switch beat, what is your first responsibility?",
@@ -41539,27 +41539,27 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Close the free left-back lane yourself; let the half take the ball carrier after the release",
-          "hr": "Sam zatvori slobodnu liniju lijevog vanjskog; pusti polubranitelja da preuzme nosača lopte nakon puštanja",
-          "de": "Selbst die freie Linke-Bahn schließen; den Halben den Ballführer nach der Abgabe übernehmen lassen"
+          "hr": "Preuzmi lijevog vanjskog koji ulazi u sredinu dok desni polubranitelj pokriva igrača s loptom",
+          "en": "Take the left back entering the middle while your right half defender covers the ball carrier",
+          "de": "Den zur Mitte kommenden linken Rückraumspieler übernehmen, während der rechte Halbverteidiger den Ballführer deckt"
         },
         "feedback": {
-          "en": "Correct — from centre you own the opening left-back lane; the half is closer to the release.",
-          "hr": "Točno: iz sredine ti pokrivaš otvorenu liniju lijevog vanjskog; polubranitelj je bliži puštanju.",
-          "de": "Richtig — aus der Mitte gehörst du auf die öffnende Linke-Bahn; der Halbe ist näher an der Abgabe."
+          "hr": "Točno: podjela uloga zatvara i igrača s loptom i mogućeg primatelja.",
+          "en": "Correct: the role split covers both the ball carrier and the receiver.",
+          "de": "Richtig: So sind Ballführer und möglicher Passempfänger gedeckt."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Chase the ball carrier with the half and hope the far side covers the left back",
-          "hr": "Juri nosača lopte zajedno s polubraniteljem i nadaj se da će daleka strana pokriti lijevog vanjskog",
-          "de": "Mit dem Halben zum Ballführer sprinten und hoffen, dass die ferne Seite den Linken deckt"
+          "hr": "Ostani na igraču s loptom samo ako suigrač jasno preuzme igrača koji križa",
+          "en": "Stay with the ball carrier only if your teammate clearly takes the crossing player",
+          "de": "Beim Ballführer bleiben, wenn der Mitspieler den kreuzenden Spieler eindeutig übernimmt"
         },
         "feedback": {
-          "en": "That doubles the ball and opens the exact lane the cross exchange creates.",
-          "hr": "To udvostručuje pokrivanje lopte i otvara točno liniju koju razmjena stvara.",
-          "de": "Das verdoppelt den Ball und öffnet genau die Bahn, die der Austausch erzeugt."
+          "hr": "Moguće uz drukčiji jasan dogovor. Ovdje je polubranitelj već preuzeo igrača s loptom.",
+          "en": "Possible with a different clear agreement. Here the half defender has already taken the ball carrier.",
+          "de": "Bei anderer klarer Absprache möglich. Hier hat der Halbverteidiger bereits den Ballführer übernommen."
         }
       },
       {
@@ -41590,14 +41590,14 @@
       }
     ],
     "explanation": {
-      "en": "Cue: switch on a real centre-to-left-back exchange; ball still central one beat; left-back lane opens if both chase the ball. From centre your first job is to close that lane; the half takes the carrier after the release. “Communicate” alone is not the decision — the geometry assigns roles.",
-      "hr": "Signal: zamjena na stvarnoj razmjeni sredina–lijevi vanjski; lopta još jedan takt u sredini; linija lijevog vanjskog otvara se ako obojica jurite na loptu. Iz sredine prvi je posao zatvoriti tu liniju; polubranitelj preuzima nosača nakon puštanja. Samo „komuniciraj“ nije odluka: geometrija dijeli uloge.",
-      "de": "Signal: Wechsel bei echtem Austausch Mitte–links; Ball noch einen Takt zentral; Linke-Bahn öffnet sich, wenn beide zum Ball laufen. Aus der Mitte zuerst diese Bahn schließen; der Halbe übernimmt nach der Abgabe."
+      "hr": "Polubranitelj preuzima igrača s loptom, pa ti zatvori igrača koji križa u sredinu. Nemojte obojica pokrivati istog napadača.",
+      "en": "The half defender takes the ball carrier, so cover the player crossing into the middle. Do not both cover the same attacker.",
+      "de": "Der Halbverteidiger übernimmt den Ballführer. Decke deshalb den zur Mitte kreuzenden Spieler, statt denselben Angreifer doppelt zu decken."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A assigns you the opening left-back lane from centre; B doubles the ball with the half and concedes that lane.",
-      "hr": "A ti iz sredine dodjeljuje otvorenu liniju lijevog vanjskog; B udvostručuje loptu s polubraniteljem i pušta tu liniju.",
-      "de": "A weist dir aus der Mitte die öffnende Linke-Bahn zu; B verdoppelt den Ball mit dem Halben und gibt diese Bahn frei."
+      "hr": "A slijedi potvrđenu podjelu uloga. B traži drukčiji dogovor koji u opisanoj situaciji nije uspostavljen.",
+      "en": "A follows the confirmed role split. B requires a different agreement that is not in place here.",
+      "de": "A folgt der bestätigten Aufteilung. B erfordert eine andere Absprache, die hier nicht besteht."
     },
     "skillTags": [
       "defensiveReading",
@@ -41721,9 +41721,9 @@
     "score": "16:16",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 16:16 at 30'. Their centre back and left back start a cross. If you both follow your original men through the cross without a clear call, a free shooting lane opens for one beat. A clean switch or bump keeps the lane closed.",
-      "hr": "Neriješeno je 16:16 u 30. minuti. Njihov srednji vanjski i lijevi vanjski kreću u križanje. Ako oboje prate originalne igrače kroz križanje bez jasnog dogovora, na jedan takt otvara se slobodna linija šuta. Čista zamjena ili sudar drži liniju zatvorenom.",
-      "de": "Unentschieden 16:16 in Minute 30. Ihr RM und Linker starten ein Kreuzen. Wenn beide ohne klaren Ruf den Ursprungsspielern durchs Kreuzen folgen, öffnet sich einen Takt eine freie Wurfbahn. Sauberer Wechsel oder Bump hält die Bahn zu."
+      "hr": "Neriješeno je 16:16 u 30. minuti. Protivnički srednji i lijevi vanjski križaju se. Dogovor vaše obrane za ovu akciju jest preuzimanje. Ako obojica bez dogovora nastavite pratiti početne igrače, otvorit će se prostor za šut. Rano i usklađeno preuzimanje zatvara taj prostor.",
+      "en": "Tied 16:16 in minute 30. The opposing centre and left back cross. Your defensive agreement for this action is to switch. Following the original players without coordination would open a shooting lane. An early coordinated handover closes it.",
+      "de": "Bei 16:16 in Minute 30 kreuzen die gegnerischen Rückraumspieler Mitte und links. Für diese Aktion ist Übergeben und Übernehmen vereinbart. Unabgestimmtes Weiterverfolgen würde eine Wurfbahn öffnen. Die frühe abgestimmte Übergabe schließt sie."
     },
     "question": {
       "en": "How do you deny the advantage created by a cross?",
@@ -41747,14 +41747,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Bump and hold the central corridor if the cross is a decoy and the ball stays middle",
-          "hr": "Odredi i drži središnji koridor ako je križanje varka i lopta ostaje u sredini",
-          "de": "Zentralen Korridor halten wenn die Kreuzung Finte ist und der Ball Mitte bleibt"
+          "hr": "Zadrži središnji prostor samo ako protivnik odustane od križanja i lopta ostane u sredini",
+          "en": "Hold the central space only if the opponent abandons the cross and the ball stays in the middle",
+          "de": "Den zentralen Raum halten, wenn der Gegner das Kreuzen abbricht und der Ball in der Mitte bleibt"
         },
         "feedback": {
-          "en": "Good when you are already outside; through the middle of the cross it leaves a gap.",
-          "hr": "Dobro kad si već vani; kroz sredinu križanja ostavlja rupu.",
-          "de": "Gut wenn du schon außen bist; mitten durchs Kreuzen bleibt eine Lücke."
+          "hr": "Dobro ako križanje izostane. Ovdje je počelo i treba provesti dogovoreno preuzimanje.",
+          "en": "Good if the cross is abandoned. Here it has started and the agreed handover is needed.",
+          "de": "Gut bei abgebrochenem Kreuzen. Hier läuft es bereits, daher ist die vereinbarte Übergabe nötig."
         }
       },
       {
@@ -41785,9 +41785,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: CB–LB cross creating a potential free shooting beat. Call early and switch/bump to deny that beat. Staying with the original man (B) only if you are already outside and the lane stays closed.",
-      "hr": "Signal: križanje srednji–lijevi vanjski stvara mogući slobodan takt šuta. Rano se dogovori i zamijeni/sudari da taj takt spriječiš. Ostati na originalu (B) samo ako si već vani i linija ostaje zatvorena.",
-      "de": "Signal: RM-Linker-Kreuzen — früh rufen, wechseln/bumpen, keine freie Wurfbahn."
+      "hr": "Provedi dogovoreno preuzimanje čim se napadači križaju. B vrijedi ako protivnik odustane od križanja.",
+      "en": "Carry out the agreed handover as the attackers cross. B applies if they abandon the cross.",
+      "de": "Beim Kreuzen die vereinbarte Übergabe durchführen. B gilt, wenn die Angreifer das Kreuzen abbrechen."
     },
     "whyCorrectOverSecondBest": {
       "en": "A denies the shooting lane the real cross creates; B is for a decoy cross with the ball staying central.",
@@ -42443,14 +42443,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Drop fully onto the pivot and leave the centre back a free nine-metre shot",
-          "hr": "Padni potpuno na pivota i ostavi srednjem vanjskom slobodan šut s devet",
-          "de": "Falle komplett auf den Kreisläufer und lass den Rückraum Mitte frei werfen"
+          "hr": "Preuzmi pivota bliže šest metara samo ako suigrač istodobno preuzme srednjeg vanjskog",
+          "en": "Take the pivot closer to six metres only if a teammate simultaneously covers the centre back",
+          "de": "Den Kreisläufer näher an sechs Metern übernehmen, wenn ein Mitspieler gleichzeitig den Mittelspieler deckt"
         },
         "feedback": {
-          "en": "Good against a pure seal, but here the line is open for one beat — first deny the pass.",
-          "hr": "Dobro protiv čistog držanja pivota, ali ovdje je linija otvorena jedan takt: prvo spriječi dodavanje.",
-          "de": "Gut gegen reine Abdichtung, aber hier ist die Linie einen Takt offen."
+          "hr": "Moguće uz potvrđeno preuzimanje šutera. Ovdje prvo možeš sam zatvoriti otvorenu putanju dodavanja.",
+          "en": "Possible with confirmed coverage of the shooter. Here you can close the open passing lane yourself first.",
+          "de": "Bei bestätigter Deckung des Werfers möglich. Hier kannst du zunächst selbst den offenen Passweg schließen."
         }
       },
       {
@@ -42481,14 +42481,14 @@
       }
     ],
     "explanation": {
-      "en": "Cue: body-width line-pass lane open for one beat. First step into that lane and force the ball wide. Dropping fully onto the pivot (B) is second if the pass is already denied.",
-      "hr": "Signal: linija dodavanja široka kao tijelo otvorena jedan takt. Prvo uđi u tu liniju i natjeraj loptu van. Pad na pivota (B) dolazi tek kad je dodavanje već spriječeno.",
-      "de": "Signal: körperbreite Passlinie einen Takt offen. Zuerst in die Linie treten und den Ball nach außen zwingen."
+      "hr": "Put dodavanju pivotu nakratko je otvoren. Zatvori ga odmah. Dublje preuzimanje pivota traži dogovor da suigrač pokrije srednjeg vanjskog.",
+      "en": "The pivot passing lane is briefly open. Close it now. Taking the pivot deeper requires agreement that a teammate covers the centre back.",
+      "de": "Der Passweg zum Kreis ist kurz offen. Schließe ihn sofort. Eine tiefere Übernahme am Kreis erfordert die Absprache, dass ein Mitspieler den Mittelspieler deckt."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A denies the highest-value pass on the exact open beat; B abandons the lane and gifts the pivot catch.",
-      "hr": "A zatvara dodavanje upravo dok je putanja otvorena. B napušta taj prostor i dopušta prijem pivotu.",
-      "de": "A unterbindet den wertvollsten Pass im offenen Takt; B verlässt die Gasse."
+      "hr": "A odmah zatvara otvoreni put lopti. B ovisi o preuzimanju suigrača koje još nije potvrđeno.",
+      "en": "A closes the open lane immediately. B depends on a teammate handover that is not yet confirmed.",
+      "de": "A schließt den offenen Passweg sofort. B hängt von einer noch nicht bestätigten Übernahme ab."
     },
     "skillTags": [
       "defensiveReading",
