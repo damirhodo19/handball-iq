@@ -36487,9 +36487,9 @@
           "de": "Direkt hinter dem herausspringenden vorgezogenen Verteidiger — jetzt den Kreisläufer in die zentrale Naht spielen"
         },
         "feedback": {
-          "en": "Correct — a hard jump always leaves the seam behind; that is the first punish.",
-          "hr": "Točno: jaki izlazak uvijek ostavlja spoj iza sebe; to je prva kazna.",
-          "de": "Richtig — ein harter Heraussprung lässt immer die Naht hinter sich; das ist die erste Strafe."
+          "hr": "Točno: u ovoj situaciji izlazak braniča otvorio je dodavanje pivotu iza njega.",
+          "en": "Correct: in this situation the defender’s step out has opened the pass to the pivot behind him.",
+          "de": "Richtig: In dieser Situation öffnet das Heraustreten den Pass zum Kreisläufer hinter dem Verteidiger."
         }
       },
       {
@@ -37762,9 +37762,9 @@
           "de": "Hinter dem springenden Hohen in den Kreisläufer in die Tasche spielen bevor die tiefe Fünf heraustritt"
         },
         "feedback": {
-          "en": "Correct — 5:1 is punished behind the high; the deep five is late by design.",
-          "hr": "Točno: 5:1 kažnjava se iza visokog; duboka petorka kasni po strukturi.",
-          "de": "Richtig — 5:1 wird hinter dem Hohen bestraft; die tiefe Fünf ist strukturell spät."
+          "hr": "Točno: prednji branič izašao je visoko, a opisani prostor iza njega još nije pokriven.",
+          "en": "Correct: the front defender has stepped high and the described space behind him is not yet covered.",
+          "de": "Richtig: Der vorgezogene Verteidiger ist weit herausgetreten, der beschriebene Raum dahinter ist noch ungedeckt."
         }
       },
       {
@@ -38153,9 +38153,9 @@
           "de": "Eine freie Organisationsbahn oben in die Lücke zwischen den vier Tiefen — angreifen, bevor ein Bewacher zurückkehrt"
         },
         "feedback": {
-          "en": "Correct — 4+2 always leaves one organizer free; that free touch must punish the low line immediately.",
-          "hr": "Točno: 4+2 uvijek ostavlja jednog organizatora slobodnim; taj slobodni dodir odmah mora kazniti nisku liniju.",
-          "de": "Richtig — 4+2 lässt immer einen Organisator frei; dieser freie Kontakt muss die Tiefenlinie sofort bestrafen."
+          "hr": "Točno: u opisanoj situaciji ti si slobodan organizator i pred tobom je otvoren prolaz.",
+          "en": "Correct: in this situation you are the free organiser with an open lane ahead.",
+          "de": "Richtig: In dieser Situation bist du der freie Spielmacher mit einer offenen Lücke vor dir."
         }
       },
       {
@@ -39125,9 +39125,9 @@
     "score": "15:14",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 15:14 at 28' against a 6:0. Your pivot starts a hard seal on the central defender; both half defenders shade inside toward him. The pass into the pivot is tight. At the same moment your right back’s defender leaves a half-step of space outside because he helped on the seal — the right mid-range lane opens with a low block arm.",
       "hr": "Vodite 15:14 u 28. minuti protiv obrane 6:0. Pivot zauzima položaj ispred središnjeg braniča, bez držanja ili odgurivanja. Oba polubranitelja pomiču se prema njemu i sužavaju prostor za dodavanje. Branič desnog vanjskog pritom ostavlja pola koraka prostora prema van i drži ruku za blok nisko. Desnom vanjskom otvara se prostor za napad.",
-      "de": "Ihr führt 15:14 in Minute 28 gegen 6:0. Der Kreisläufer setzt einen harten Siegel auf den Zentralen; beide Halben schatten innen zu ihm. Der Pass zum Kreisläufer ist eng. Gleichzeitig lässt der Verteidiger deines Rechten einen halben Schritt außen, weil er zum Siegel half — die rechte Mittelstrecke öffnet sich bei tiefem Blockarm."
+      "en": "You lead 15:14 in minute 28 against a 6:0. Your pivot establishes position in front of the central defender without holding or pushing. Both half defenders move toward him and narrow the passing lane. The right back’s defender leaves half a step of outside space with a low block arm. Your right back has room to attack.",
+      "de": "Ihr führt 15:14 in Minute 28 gegen eine 6:0. Der Kreisläufer positioniert sich vor dem zentralen Verteidiger, ohne zu halten oder zu stoßen. Beide Halbverteidiger rücken zu ihm und verengen den Passweg. Der Verteidiger rechts im Rückraum lässt außen einen halben Schritt Platz und hält den Blockarm tief. Euer rechter Rückraumspieler hat Angriffsraum."
     },
     "question": {
       "en": "How do you use a pivot who is attracting help?",
@@ -39143,9 +39143,9 @@
           "de": "Kreisläufer als Köder: den engen Innenpass lassen und früh zum freieren Rechten abgeben"
         },
         "feedback": {
-          "en": "Correct — when help collapses on the seal, the surplus appears on the perimeter.",
           "hr": "Točno: pomoć obrane prema pivotu otvorila je prostor desnom vanjskom.",
-          "de": "Richtig — wenn Hilfe auf den Siegel fällt, entsteht der Vorteil außen."
+          "en": "Correct: help toward the pivot has opened space for the right back.",
+          "de": "Richtig: Die Hilfe zum Kreis öffnet Raum im rechten Rückraum."
         }
       },
       {
@@ -39164,14 +39164,14 @@
       {
         "quality": "risky",
         "text": {
-          "en": "Force the tight bounce into the sealed pivot while both half defenders are shading",
           "hr": "Forsiraj dodavanje od poda pokrivenom pivotu dok oba polubranitelja zatvaraju prostor",
-          "de": "Den engen Bounce in den gesiegelten Kreisläufer erzwingen, während beide Halben schatten"
+          "en": "Force a bounce pass to the covered pivot while both half defenders close the space",
+          "de": "Einen Bodenpass zum gedeckten Kreisläufer erzwingen, während beide Halbverteidiger den Raum schließen"
         },
         "feedback": {
-          "en": "Risky — that is the steal the shaded help is built for.",
           "hr": "Rizično: braniči koji pomažu mogu presjeći to dodavanje.",
-          "de": "Riskant — genau den Ball klaut die schattende Hilfe."
+          "en": "Risky: the helping defenders can intercept that pass.",
+          "de": "Riskant: Die helfenden Verteidiger können den Pass abfangen."
         }
       },
       {
@@ -39189,9 +39189,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: pivot seal attracts both half defenders and the right-back lane opens a half-step. Use the pivot as decoy and release early right. Playing the pivot (B) waits for a true overhelp that is not yet fully there.",
       "hr": "Pivot je privukao pomoć oba polubranitelja i otvorio prostor desnom vanjskom. Brzo dodavanje desno koristi postojeću prednost. Dodavanje pivotu iz odgovora B dolazi u obzir tek ako se otvori put lopti.",
-      "de": "Signal: Siegel zieht beide Halben, rechte Bahn öffnet sich — Köder nutzen, früh rechts abgeben."
+      "en": "The pivot has drawn both half defenders inward, leaving room for the right back. Pass right quickly to use that advantage. B applies only if a passing lane to the pivot opens.",
+      "de": "Der Kreisläufer zieht beide Halbverteidiger nach innen und öffnet rechts Raum. Ein schneller Pass nutzt diesen Vorteil. B gilt erst bei offenem Passweg zum Kreis."
     },
     "whyCorrectOverSecondBest": {
       "en": "A beats B because the surplus from the decoy already sits on the right back; waiting for a fuller overhelp risks closing that cleaner lane. B is correct only when a half defender fully jumps past the target hand.",
