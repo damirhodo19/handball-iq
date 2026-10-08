@@ -39946,9 +39946,9 @@
       {
         "quality": "good",
         "text": {
-          "en": "Call the goalkeeper back and settle into 6v6 if neither pivot lane stays safe",
-          "hr": "Pozovi vratara natrag i prijeđi u 6 na 6 ako nijedna linija pivota ne ostane sigurna",
-          "de": "Torwart zurückrufen und ins 6 gegen 6 setzen, wenn keine Kreisläufer-Bahn sicher bleibt"
+          "hr": "Ako se zatvore oba dodavanja pivotima, sačuvaj posjed i organiziraj povratak vratara nakon izlaska jednog igrača iz polja",
+          "en": "If both pivot lanes close, retain possession and arrange the goalkeeper’s return after a court player has left",
+          "de": "Wenn beide Passwege zum Kreis schließen, den Ball sichern und den Torwart erst nach dem Verlassen eines Feldspielers zurückbringen"
         },
         "feedback": {
           "en": "Good emergency if both insides are unsafe; here the second-pivot diagonal is still safe.",
@@ -40324,9 +40324,9 @@
     "score": "29:28",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 29:28 at 59' attacking 7v6 with your own goal empty. The first pivot is covered; the second-pivot lane is closing. A risky bounce is the only remaining inside option. Their left wing is already sprinting for a long counter if you lose the ball — your goalkeeper is still at the substitution area.",
-      "hr": "Vodite 29:28 u 59. minuti u napadu 7 na 6 s vlastitim praznim golom. Prvi pivot je pokriven; prolaz drugog pivota se zatvara. Rizični odskok jedina je preostala unutarnja opcija. Njihovo lijevo krilo već sprinta za dugi kontranapad ako izgubiš loptu: tvoj vratar još je na prostoru za zamjene.",
-      "de": "Ihr führt 29:28 in Minute 59 im Angriff 7 gegen 6 mit eigenem leeren Tor. Erster Kreisläufer zugestellt; Bahn des zweiten schließt. Riskanter Bounce ist die letzte Innenoption. Ihr Linksaußen sprintet schon für den langen Konter bei Ballverlust — euer Torwart steht noch am Wechselraum."
+      "en": "You lead 29:28 at 59' attacking 7v6 with your own goal empty. The first pivot is covered; the second-pivot lane is closing. A risky bounce is the only remaining inside option. Their left wing is already sprinting for a long counter if you lose the ball — your goalkeeper is still at the substitution area. A court player is ready to leave through the substitution area; the goalkeeper may enter only after that player has left.",
+      "hr": "Vodite 29:28 u 59. minuti u napadu 7 na 6 s vlastitim praznim golom. Prvi pivot je pokriven; prolaz drugog pivota se zatvara. Rizični odskok jedina je preostala unutarnja opcija. Njihovo lijevo krilo već sprinta za dugi kontranapad ako izgubiš loptu: tvoj vratar još je na prostoru za zamjene. Jedan igrač iz polja spreman je izaći kroz prostor za zamjene; vratar smije ući tek nakon njegova izlaska.",
+      "de": "Ihr führt 29:28 in Minute 59 im Angriff 7 gegen 6 mit eigenem leeren Tor. Erster Kreisläufer zugestellt; Bahn des zweiten schließt. Riskanter Bounce ist die letzte Innenoption. Ihr Linksaußen sprintet schon für den langen Konter bei Ballverlust — euer Torwart steht noch am Wechselraum. Ein Feldspieler ist zum Auswechseln bereit; der Torwart darf erst nach dessen Verlassen des Spielfelds eintreten."
     },
     "question": {
       "en": "What is the first priority with empty own goal and dying 7v6 options?",
@@ -40337,9 +40337,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Stop forcing: call the goalkeeper back / refuse the high-turnover bounce while their wing is already running",
-          "hr": "Prestani forsirati: pozovi vratara natrag / odbij odskok visokog gubitka dok njihovo krilo već trči",
-          "de": "Nicht mehr erzwingen: Torwart zurückrufen / den verlustreichen Bounce ablehnen während ihr Außen schon läuft"
+          "hr": "Sačuvaj loptu i organiziraj povratak vratara nakon izlaska igrača iz polja, bez forsiranja pokrivenog pivota",
+          "en": "Keep possession and arrange the goalkeeper’s return after the court player exits, without forcing a pass to a covered pivot",
+          "de": "Ballbesitz sichern und den Torwart nach dem Wechsel des Feldspielers zurückbringen, ohne den Pass zum gedeckten Kreisläufer zu erzwingen"
         },
         "feedback": {
           "en": "Correct — when 7v6 quality closes and the counter is primed, empty-goal risk overrides finishing.",
@@ -40524,9 +40524,9 @@
     "score": "28:27",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "At 58' you lead 28:27 — one goal. About 80 seconds remain. You receive at nine metres against a set 6:0. A contested mid-range exists with a half-up block arm. A safe recycle to the left back keeps structure and clock; a miss would gift them a last equalizer possession.",
-      "hr": "U 58. minuti Vodite 28:27: jedan gol. Ostalo je oko 80 sekundi. Primaš na devet metara protiv postavljene 6:0. Postoji otežana srednja distanca uz napola dignutu ruku bloka. Siguran povratak na lijevog vanjskog čuva strukturu i sat; promašaj bi im poklonio zadnji napad za izjednačenje.",
-      "de": "In Minute 58 führt ihr 28:27 — ein Tor. Noch etwa 80 Sekunden. Du bekommst auf neun Metern gegen stehende 6:0. Umkämpfte Mittelstrecke mit halb hohem Blockarm. Sicheres Rückspiel zum Linken schützt Struktur und Uhr; Fehlwurf schenkt letzten Ausgleichsbesitz."
+      "hr": "Vodite 28:27 u 58. minuti. Do kraja je oko 80 sekundi. Primaš na devet metara protiv postavljene obrane 6:0. Šut je otežan blokom i nepovoljnim kutom. Sigurno dodavanje lijevom vanjskom omogućuje nastavak aktivnog napada i traženje bolje prilike. Rani promašaj mogao bi protivniku omogućiti novi posjed.",
+      "en": "You lead 28:27 in minute 58 with about 80 seconds remaining. You receive at nine metres against a set 6:0. The block and angle make the shot difficult. A safe pass to the left back allows continued active attack for a better chance. An early miss could give the opponent another possession.",
+      "de": "Ihr führt 28:27 in Minute 58, etwa 80 Sekunden bleiben. Du erhältst den Ball auf neun Metern gegen eine stehende 6:0. Block und Winkel erschweren den Wurf. Ein sicherer Pass nach links ermöglicht aktives Weiterspielen für eine bessere Chance. Ein früher Fehlwurf könnte dem Gegner neuen Ballbesitz ermöglichen."
     },
     "question": {
       "en": "Leading by one with ~80 seconds left, what does the game ask for?",
@@ -40550,9 +40550,9 @@
       {
         "quality": "good",
         "text": {
-          "en": "Take the mid-range now only if you are sure of the finish and can deny their last attack",
-          "hr": "Uzmi srednju distancu sada samo ako si siguran u završetak i možeš ugasiti njihov zadnji napad",
-          "de": "Mittelstrecke jetzt nur wenn du den Abschluss sicher hast und ihren letzten Angriff löschst"
+          "hr": "Šutiraj odmah samo ako se prije izbačaja otvori jasna, kvalitetna prilika",
+          "en": "Shoot now only if a clear, high quality chance opens before release",
+          "de": "Sofort werfen, wenn sich vor dem Abwurf eine klare gute Chance öffnet"
         },
         "feedback": {
           "en": "Good only on a true high-percentage look; here the block arm is half up.",
@@ -40588,9 +40588,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: +1 with ~80 seconds and only a contested mid-range. Priority is control — safe recycle, finish only on a clear upgrade. A sure high-percentage shot (B) can be right; the stated look is not.",
-      "hr": "Signal: +1, ~80 sekundi i samo otežana srednja distanca. Prioritet je kontrola: siguran povratak, završetak samo na jasnom nadogradnji. Siguran visoki postotak (B) može biti točan; opisani šut to nije.",
-      "de": "Signal: +1, ~80 Sekunden, nur umkämpfte Mittelstrecke — Kontrolle priorisieren."
+      "hr": "Vodstvo i otežan šut opravdavaju sigurno dodavanje i nastavak aktivnog traženja prilike. B vrijedi ako se šut stvarno otvori. Nijedna odluka ne jamči pogodak ni sprječavanje sljedećeg protivničkog napada.",
+      "en": "With a lead and a difficult shot, pass safely and keep actively creating a chance. B applies if the shot really opens. Neither choice guarantees a goal or prevents another opposing attack.",
+      "de": "Bei Führung und erschwertem Wurf sicher abspielen und aktiv eine Chance suchen. B gilt, wenn der Wurf tatsächlich frei wird. Keine Wahl garantiert ein Tor oder verhindert einen weiteren gegnerischen Angriff."
     },
     "whyCorrectOverSecondBest": {
       "en": "A beats B because the available mid-range is contested with a half-up block; with +1 late, control possession outranks that look. B is correct only on a clearly sure finish.",
@@ -40624,9 +40624,9 @@
     "score": "30:27",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "At 58' you lead 30:27 — three goals. About 90 seconds remain. You receive at nine metres against a set 6:0. A clean-looking mid-range exists, but the angle is average and the defence is baiting an early shot for a last possession. A safe recycle keeps clock and structure.",
-      "hr": "U 58. minuti Vodite 30:27: tri gola. Ostalo je oko 90 sekundi. Primaš na devet metara protiv postavljene 6:0. Izgleda čista srednja distanca, ali kut je prosječan, a obrana mami rani šut za zadnji napad. Siguran povratak čuva sat i strukturu.",
-      "de": "In Minute 58 führt ihr 30:27 — drei Tore. Noch etwa 90 Sekunden. Du bekommst auf neun Metern gegen stehende 6:0. Mittelstrecke wirkt sauber, aber Winkel durchschnittlich; die Abwehr lockt frühen Wurf für letzten Besitz. Sicheres Rückspiel schützt Uhr und Struktur."
+      "hr": "Vodite 30:27 u 58. minuti. Do kraja je oko 90 sekundi. Primaš na devet metara protiv postavljene obrane 6:0. Šut je otežan blokom i nepovoljnim kutom. Sigurno dodavanje lijevom vanjskom omogućuje nastavak aktivnog napada i traženje bolje prilike. Rani promašaj mogao bi protivniku omogućiti novi posjed.",
+      "en": "You lead 30:27 in minute 58 with about 90 seconds remaining. You receive at nine metres against a set 6:0. The block and angle make the shot difficult. A safe pass to the left back allows continued active attack for a better chance. An early miss could give the opponent another possession.",
+      "de": "Ihr führt 30:27 in Minute 58, etwa 90 Sekunden bleiben. Du erhältst den Ball auf neun Metern gegen eine stehende 6:0. Block und Winkel erschweren den Wurf. Ein sicherer Pass nach links ermöglicht aktives Weiterspielen für eine bessere Chance. Ein früher Fehlwurf könnte dem Gegner neuen Ballbesitz ermöglichen."
     },
     "question": {
       "en": "Leading by three with ~90 seconds left, what is the safe organize?",
@@ -40650,9 +40650,9 @@
       {
         "quality": "good",
         "text": {
-          "en": "Take the mid-range now if you are truly sure of the finish and can erase their last attack",
-          "hr": "Uzmi srednju distancu sada ako si stvarno siguran u završetak i možeš ugasiti njihov zadnji napad",
-          "de": "Mittelstrecke jetzt wenn du den Abschluss wirklich sicher hast"
+          "hr": "Šutiraj odmah samo ako se prije izbačaja otvori jasna, kvalitetna prilika",
+          "en": "Shoot now only if a clear, high quality chance opens before release",
+          "de": "Sofort werfen, wenn sich vor dem Abwurf eine klare gute Chance öffnet"
         },
         "feedback": {
           "en": "Good only if the shot is truly high percentage; here the cue is average angle + bait.",
@@ -40688,9 +40688,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: +3 with ~90 seconds and only an average baited shot. Priority is possession and clock — controlled recycle. A sure high-percentage finish (B) can be right; the stated look is not.",
-      "hr": "Signal: +3, ~90 sekundi i samo prosječan mamni šut. Prioritet su posjed i sat: kontrolirani povratak. Siguran visoki postotak (B) može biti točan; opisani šut to nije.",
-      "de": "Signal: +3, ~90 Sekunden, nur mittelmäßiger Lockwurf — Besitz und Uhr priorisieren."
+      "hr": "Vodstvo i otežan šut opravdavaju sigurno dodavanje i nastavak aktivnog traženja prilike. B vrijedi ako se šut stvarno otvori. Nijedna odluka ne jamči pogodak ni sprječavanje sljedećeg protivničkog napada.",
+      "en": "With a lead and a difficult shot, pass safely and keep actively creating a chance. B applies if the shot really opens. Neither choice guarantees a goal or prevents another opposing attack.",
+      "de": "Bei Führung und erschwertem Wurf sicher abspielen und aktiv eine Chance suchen. B gilt, wenn der Wurf tatsächlich frei wird. Keine Wahl garantiert ein Tor oder verhindert einen weiteren gegnerischen Angriff."
     },
     "whyCorrectOverSecondBest": {
       "en": "A beats B because the stated mid-range is average and baited; with +3, safe possession is clearer. B is correct only on a truly sure finish that denies their last attack.",
@@ -42343,14 +42343,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Jump for the block yourself from the central spot without coordinating the half defender",
-          "hr": "Skoči sam na blok sa središnjeg mjesta bez usklađivanja s polubraniteljem",
-          "de": "Spring selbst aus der zentralen Position, ohne den Halbverteidiger abzustimmen"
+          "hr": "Sam preuzmi blok samo ako polubranitelj ne može stići i jasno mu prepustiš pokrivanje odbijene lopte",
+          "en": "Take the block yourself only if the half defender cannot arrive and you clearly assign him rebound coverage",
+          "de": "Den Block selbst übernehmen, wenn der Halbverteidiger nicht rechtzeitig hinkommt und du ihm klar die Abprallersicherung zuweist"
         },
         "feedback": {
-          "en": "Plausible, but then the half defender and you collide and the rebound lane opens.",
-          "hr": "Plausibilno, ali onda se sudarate s polubraniteljem i otvara se linija odbijene lopte.",
-          "de": "Plausibel, aber dann kollidiert ihr und die Abpraller-Linie öffnet sich."
+          "hr": "Moguće uz jasnu promjenu uloga. Ovdje polubranitelj može stići na blok.",
+          "en": "Possible with a clear role change. Here the half defender can reach the block.",
+          "de": "Bei klarer Rollenänderung möglich. Hier kann der Halbverteidiger den Block erreichen."
         }
       },
       {
@@ -42381,14 +42381,14 @@
       }
     ],
     "explanation": {
-      "en": "Cue: jump shot from nine, keeper shows near corner. Organise a high outside block arm and cover the rebound yourself. Solo jumping without the half defender (B) creates a collision.",
-      "hr": "Signal: skok šut s devet, vratar pokazuje bliži kut. Organiziraj visoku vanjsku ruku bloka i pokrij odbijenu loptu. Solo skok bez polubranitelja (B) stvara sudar.",
-      "de": "Signal: Sprungwurf von neun, Torhüter zeigt nahe Ecke. Organisiere hohen äußeren Blockarm und sichere den Abpraller. Solo-Sprung ohne Halbverteidiger (B) erzeugt Kollision."
+      "hr": "Polubranitelj može blokirati, a ti osigurati odbijenu loptu prema dogovoru s vratarom. B je zamjena uloga ako polubranitelj ne stigne, uz jasan poziv.",
+      "en": "The half defender can block while you cover the rebound according to the goalkeeper agreement. B changes those roles if he cannot arrive, with a clear call.",
+      "de": "Der Halbverteidiger kann blocken, während du gemäß Torwartabsprache den Abpraller sicherst. B tauscht bei fehlender Zeit diese Rollen mit klarer Ansage."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A coordinates keeper and block; B jumps alone and loses rebound geometry.",
-      "hr": "A usklađuje vratara i blok; B skače sam i gubi geometriju odbijene lopte.",
-      "de": "A koordiniert Torhüter und Block; B springt allein und verliert die Abpraller-Geometrie."
+      "hr": "A koristi dostupnog polubranitelja za blok. B zahtijeva promjenu uloga koja ovdje nije potrebna.",
+      "en": "A uses the available half defender for the block. B requires a role change that is unnecessary here.",
+      "de": "A nutzt den verfügbaren Halbverteidiger zum Block. B erfordert hier keinen nötigen, sondern einen zusätzlichen Rollenwechsel."
     },
     "skillTags": [
       "defensiveReading",
