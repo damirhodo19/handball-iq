@@ -5,8 +5,8 @@ import { createHash } from 'node:crypto';
 import { createRuntime } from './lib/localization-test-runtime.mjs';
 
 // Reviewed baseline for non-HR fields: IDs, family keys, counts/order,
-// answers, scoring and EN/DE wording. Refreshed on 2026-10-05 only after
-// checking the intentional left-wing content revisions; scoring,
+// answers, scoring and EN/DE wording. Refreshed on 2026-10-08 only after
+// checking the intentional left-back content revisions; scoring,
 // metadata and all other non-HR scenarios were unchanged.
 const fixtures = JSON.parse(readFileSync(new URL('./fixtures/croatian-content-invariants.json', import.meta.url)));
 const omitCroatian = value => Array.isArray(value) ? value.map(omitCroatian)
