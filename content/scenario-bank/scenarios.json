@@ -55130,9 +55130,9 @@
     "minute": 44,
     "score": "22:22",
     "situation": {
-      "en": "Tied 22:22 at 44'. You turn into a clear six-metre scoring chance. A defender arrives from the side and clamps your shooting arm before release while the ball remains secure against your body. Twisting violently could lose the ball or create an attacking foul; stopping completely could hide the clear chance from the referee.",
-      "hr": "Neriješeno je 22:22 u 44. minuti. Okrećeš se u čistu priliku sa šest metara. Branič dolazi sa strane i prije izbačaja steže tvoju šutersku ruku, dok je lopta sigurna uz tijelo. Nasilan okret može izgubiti loptu ili stvoriti prekršaj u napadu; potpuno zaustavljanje može sakriti jasnu priliku od suca.",
-      "de": "Unentschieden 22:22 in Minute 44. Du drehst in eine klare Torchance am Kreis. Ein Verteidiger kommt seitlich und klemmt den Wurfarm vor dem Wurf, während der Ball sicher am Körper bleibt. Gewaltiges Drehen kann Ballverlust oder Stürmerfoul bringen; vollständiges Stoppen kann die klare Chance verdecken."
+      "hr": "Neriješeno je 22:22 u 44. minuti. Okrećeš se prema golu sa šest metara. Branič dolazi sa strane i prije izbačaja hvata tvoju šutersku ruku. Lopta je još uz tijelo, ali slobodan i kontroliran izbačaj više nije moguć.",
+      "en": "The score is 22:22 in minute 44. You turn toward goal from six metres. A defender arrives from the side and grabs your shooting arm before release. The ball remains beside your body, but a free, controlled release is no longer possible.",
+      "de": "Es steht 22:22 in Minute 44. Du drehst dich von sechs Metern zum Tor. Ein Verteidiger kommt seitlich und hält vor dem Abwurf deinen Wurfarm fest. Der Ball bleibt am Körper, aber ein freier, kontrollierter Abwurf ist nicht mehr möglich."
     },
     "question": {
       "en": "How do you continue the action safely?",
@@ -55143,14 +55143,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Protect the ball, keep moving toward goal under control and let the illegal arm stop produce the seven-metre decision",
-          "hr": "Zaštiti loptu, kontrolirano nastavi prema golu i dopusti da nedopušteno zaustavljanje ruke dovede do sedmerca",
-          "de": "Ball schützen, kontrolliert zum Tor weitergehen und aus dem regelwidrigen Armstopp die Siebenmeterentscheidung entstehen lassen"
+          "hr": "Zaštiti loptu i ravnotežu, bez nasilnog izvlačenja uhvaćene ruke; reagiraj na zvižduk",
+          "en": "Protect the ball and your balance without forcibly pulling the trapped arm free; respond to the whistle",
+          "de": "Ball und Gleichgewicht schützen, den festgehaltenen Arm nicht gewaltsam losreißen und auf den Pfiff reagieren"
         },
         "feedback": {
-          "en": "Correct — you preserve the clear chance without adding illegal force.",
-          "hr": "Točno: čuvaš jasnu priliku bez dodavanja nedopuštene sile.",
-          "de": "Richtig — du erhältst die klare Chance ohne eigene illegale Gewalt."
+          "hr": "Točno: ne forsiraš pokret uhvaćenom rukom niti uzvraćaš kontakt. Suci procjenjuju prekršaj i nastavak igre.",
+          "en": "Correct: you neither force movement with the trapped arm nor retaliate. The referees assess the infringement and restart.",
+          "de": "Richtig: Du erzwingst keine Bewegung mit dem festgehaltenen Arm und revanchierst dich nicht. Die Schiedsrichter beurteilen Vergehen und Spielfortsetzung."
         }
       },
       {
@@ -55194,9 +55194,9 @@
       }
     ],
     "explanation": {
-      "en": "A clear chance stopped illegally should remain a controlled goal action. Protect the ball, continue toward goal and avoid adding force. The defender’s arm clamp, not your reaction, should decide the play.",
-      "hr": "Jasna prilika zaustavljena nedopušteno mora ostati kontrolirana akcija prema golu. Zaštiti loptu, nastavi prema golu i ne dodaj silu. Stezanje braniča, a ne tvoja reakcija, treba odlučiti akciju.",
-      "de": "Eine regelwidrig gestoppte klare Chance bleibt eine kontrollierte Toraktion. Ball schützen, zum Tor weitergehen und keine eigene Gewalt hinzufügen. Die Armklammer des Verteidigers soll die Aktion entscheiden."
+      "hr": "Kad je šuterska ruka uhvaćena, zaštiti loptu i ravnotežu bez nasilnog okreta ili udarca laktom. Nemoj nastavljati bolan ili nekontroliran pokret radi iznuđivanja odluke. Sigurno dodavanje može biti opcija samo ako je izvedivo prije prekida; odluku o prekršaju donose suci.",
+      "en": "When the shooting arm is trapped, protect the ball and balance without a forceful turn or elbow strike. Do not continue painful or uncontrolled movement to induce a decision. A safe pass is an option only if feasible before the stoppage; the referees decide the infringement.",
+      "de": "Bei festgehaltenem Wurfarm Ball und Gleichgewicht ohne gewaltsame Drehung oder Ellbogenschlag schützen. Keine schmerzhafte oder unkontrollierte Bewegung fortsetzen, um eine Entscheidung zu erzwingen. Ein sicherer Pass kommt nur infrage, wenn er vor der Unterbrechung möglich ist; die Schiedsrichter entscheiden über das Vergehen."
     },
     "whyCorrectOverSecondBest": {
       "en": "A preserves the clear chance and likely seven; B is only right with a fully confirmed free receiver.",
