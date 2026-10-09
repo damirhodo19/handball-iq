@@ -35492,9 +35492,9 @@
     "score": "10:9",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 10:9 at 16'. You defend right back in a 6:0. Their pivot seals on your inside hip before the ball arrives. If you push too early you foul; if you wait too late he owns the space for a bounce.",
-      "hr": "Vodite 10:9 u 16. minuti. Braniš kao desni vanjski u 6:0. Njihov pivot zatvara na tvoj unutarnji bok prije nego lopta stigne. Ako gurneš prerano: prekršaj; ako kasniš: on drži prostor za odskok.",
-      "de": "Ihr führt 10:9 in Minute 16. Du verteidigst als rechter Rückraum in der 6:0. Deren Kreisläufer dichtet an deiner inneren Hüfte ab bevor der Ball kommt. Zu früh schieben = Foul; zu spät = er besitzt den Bounce-Raum."
+      "hr": "Vodite 10:9 u 16. minuti. Braniš na desnoj strani obrane 6:0. Pivot se postavlja uz tvoj unutarnji bok prije dolaska lopte. Još možeš zauzeti položaj između njega i gola. Ako zakasniš, može primiti loptu i pripremiti šut.",
+      "en": "You lead 10:9 in minute 16, defending on the right side of a 6:0. The pivot is positioning beside your inside shoulder before the ball arrives. You can still take position between him and the goal. If you are late, he may receive and prepare a shot.",
+      "de": "Ihr führt 10:9 in Minute 16. Du verteidigst rechts in der 6:0. Der Kreisläufer positioniert sich vor der Ballankunft an deiner Innenseite. Du kannst noch zwischen ihm und dem Tor Position beziehen. Kommst du zu spät, kann er den Ball annehmen und den Wurf vorbereiten."
     },
     "question": {
       "en": "When do you take legal contact on the sealing pivot?",
@@ -35505,14 +35505,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "As the ball travels toward your side — body on him before the bounce lane opens",
-          "hr": "Dok lopta putuje prema tvojoj strani: tijelo na njemu prije nego se otvori linija odskoka",
-          "de": "Während der Ball auf deine Seite kommt — Körper an ihm bevor die Bounce-Bahn öffnet"
+          "hr": "Zauzmi položaj između pivota i gola dok lopta putuje, uz dopušten kontakt bez držanja i guranja",
+          "en": "Take position between the pivot and goal while the ball travels, using legal contact without holding or pushing",
+          "de": "Während des Passes zwischen Kreis und Tor Position beziehen, mit erlaubtem Kontakt ohne Halten oder Stoßen"
         },
         "feedback": {
-          "en": "Correct — contact on the flight of the ball, not after the seal is finished.",
-          "hr": "Točno: kontakt u letu lopte, ne nakon što je zatvaranje gotovo.",
-          "de": "Richtig — Kontakt im Ballflug, nicht nachdem die Abdichtung fertig ist."
+          "hr": "Točno: još imaš vremena zauzeti položaj. Vrijeme kontakta ne čini držanje ili guranje dopuštenim.",
+          "en": "Correct: there is still time to take position. The timing of contact does not make holding or pushing legal.",
+          "de": "Richtig: Du kannst noch Position beziehen. Der Zeitpunkt des Kontakts macht Halten oder Stoßen nicht erlaubt."
         }
       },
       {
@@ -35536,9 +35536,9 @@
           "de": "Von hinten schieben nachdem er abgedichtet hat"
         },
         "feedback": {
-          "en": "Risky — late shove from behind is a classic foul / seven-metre.",
-          "hr": "Rizično: kasni guranje odostraga klasičan je prekršaj / sedmerac.",
-          "de": "Riskant — spätes Schieben von hinten ist klassisches Foul/Siebenmeter."
+          "hr": "Rizično: guranje odostraga nije dopušteno. Odluka o nastavku igre i osobnoj kazni ovisi o konkretnom prekršaju.",
+          "en": "Risky: pushing from behind is not permitted. The restart and personal sanction depend on the specific infringement.",
+          "de": "Riskant: Stoßen von hinten ist nicht erlaubt. Spielfortsetzung und persönliche Strafe hängen vom konkreten Vergehen ab."
         }
       },
       {
@@ -35556,9 +35556,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: pivot sealing your inside hip before the ball arrives. Take legal body contact as the ball travels. Late shove from behind or ignoring him gifts the bounce.",
-      "hr": "Signal: pivot zatvara unutarnji bok prije lopte. Uzmi ispravan kontakt tijelom dok lopta putuje. Kasni guranje odostraga ili ignoriranje poklanja odskok.",
-      "de": "Signal: Kreisläufer dichtet innere Hüfte ab — Kontakt im Ballflug."
+      "hr": "Reagiraj prije prijema lopte i zauzmi raspoloživ položaj između pivota i gola. Održavaj dopušten kontakt, bez držanja ili guranja. Ako pivot već ima prednost, pokušaj otežati prijem i šut iz dostupnog položaja umjesto da ga guraš odostraga.",
+      "en": "React before the reception and take the available position between the pivot and goal. Maintain legal contact without holding or pushing. If the pivot already has the advantage, contest the reception and shot from your available position instead of pushing from behind.",
+      "de": "Vor der Ballannahme reagieren und die verfügbare Position zwischen Kreis und Tor einnehmen. Erlaubten Kontakt ohne Halten oder Stoßen halten. Hat der Kreis bereits den Vorteil, Annahme und Wurf aus deiner Position erschweren, statt von hinten zu stoßen."
     },
     "skillTags": [
       "pressureDecisions"
