@@ -33376,9 +33376,9 @@
     "score": "24:24",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 24:24 at 46' against a 6:0. You go up for the shot from the right and take contact on the hip from the half defender as you jump. It is real contact, but your shoulders stay square, your left arm is free above the block and your landing is under control. The referee shows the advantage sign and lets play run. The goalkeeper has reacted to the contact and lost his line by half a step.",
-      "hr": "Neriješeno je 24:24 u 46. minuti protiv obrane 6:0. Dižeš se na šut s desne strane i u skoku primaš kontakt na kuku od polubranitelja. Kontakt je stvaran, ali ramena ti ostaju poravnata, lijeva ruka je slobodna iznad bloka, a doskok je pod kontrolom. Sudac pokazuje znak prednosti i pušta igru. Vratar je reagirao na kontakt i izgubio liniju za pola koraka.",
-      "de": "Unentschieden 24:24 in Minute 46 gegen eine 6:0. Du steigst rechts zum Wurf hoch und bekommst im Sprung Kontakt an der Hüfte vom Halbverteidiger. Der Kontakt ist echt, doch deine Schultern bleiben gerade, der linke Arm ist frei über dem Block und die Landung ist kontrolliert. Der Schiedsrichter zeigt Vorteil und lässt laufen. Der Torwart hat auf den Kontakt reagiert und seine Linie um einen halben Schritt verloren."
+      "en": "Tied 24:24 at 46' against a 6:0. You go up for the shot from the right and take contact on the hip from the half defender as you jump. It is real contact, but your shoulders stay square, your left arm is free above the block and your landing is under control. The referee has not stopped play. The goalkeeper has reacted to the contact and lost his line by half a step.",
+      "hr": "Neriješeno je 24:24 u 46. minuti protiv obrane 6:0. Dižeš se na šut s desne strane i u skoku primaš kontakt na kuku od polubranitelja. Kontakt je stvaran, ali ramena ti ostaju poravnata, lijeva ruka je slobodna iznad bloka, a doskok je pod kontrolom. Sudac nije prekinuo igru. Vratar je reagirao na kontakt i izgubio liniju za pola koraka.",
+      "de": "Unentschieden 24:24 in Minute 46 gegen eine 6:0. Du steigst rechts zum Wurf hoch und bekommst im Sprung Kontakt an der Hüfte vom Halbverteidiger. Der Kontakt ist echt, doch deine Schultern bleiben gerade, der linke Arm ist frei über dem Block und die Landung ist kontrolliert. Der Schiedsrichter hat das Spiel nicht unterbrochen. Der Torwart hat auf den Kontakt reagiert und seine Linie um einen halben Schritt verloren."
     },
     "question": {
       "en": "You take contact but stay balanced — what do you do?",
@@ -33394,9 +33394,9 @@
           "de": "Den Wurf durchziehen: Der Arm ist frei, der Torwart hat die Linie verloren und der Schiedsrichter lässt laufen"
         },
         "feedback": {
-          "en": "Correct — balance plus a free arm means contact is an advantage, not a reason to stop.",
-          "hr": "Točno: ravnoteža i slobodna ruka znače da je kontakt prednost, a ne razlog za prekid.",
-          "de": "Richtig — Gleichgewicht plus freier Arm heißt, der Kontakt ist ein Vorteil, kein Grund aufzuhören."
+          "hr": "Točno: prema opisu zadržavaš kontrolu, ruka je slobodna i igra nije prekinuta. Iskoristi otvorenu priliku za šut.",
+          "en": "Correct: you retain control, your arm is free and play has not stopped. Use the open shooting chance.",
+          "de": "Richtig: Du behältst die Kontrolle, der Arm ist frei und das Spiel läuft. Nutze die freie Wurfchance."
         }
       },
       {
@@ -33420,9 +33420,9 @@
           "de": "Die Bewegung stoppen und den Schiedsrichter um einen Freiwurf bitten"
         },
         "feedback": {
-          "en": "Risky — the advantage sign is already given; stopping turns your own chance into their possession.",
-          "hr": "Rizično: znak prednosti je već pokazan; prekid pretvara tvoju priliku u njihov posjed.",
-          "de": "Riskant — der Vorteil ist schon angezeigt; ein Stopp macht aus deiner Chance ihren Ballbesitz."
+          "hr": "Rizično: čekanjem zvižduka kojeg nema možeš propustiti otvorenu priliku.",
+          "en": "Risky: waiting for a whistle that has not come may cost you the open chance.",
+          "de": "Riskant: Das Warten auf einen ausbleibenden Pfiff kann die freie Chance kosten."
         }
       },
       {
@@ -33433,16 +33433,16 @@
           "de": "Den Ball in den Verteidiger werfen, um einen Pfiff zu erzwingen, statt abzuschließen"
         },
         "feedback": {
-          "en": "Poor — you give up a clean chance in a tied game and the referees rarely reward it.",
-          "hr": "Loše: odustaješ od čiste prilike u izjednačenoj utakmici, a suci to rijetko nagrade.",
-          "de": "Schlecht — du gibst eine klare Chance im Gleichstand auf, und die Schiedsrichter belohnen das selten."
+          "hr": "Loše: namjerno bacanje lopte u braniča ne jamči zvižduk i odustaješ od opisane prilike.",
+          "en": "Poor: deliberately throwing at the defender does not guarantee a whistle and gives up the described chance.",
+          "de": "Schlecht: Absichtliches Anwerfen garantiert keinen Pfiff und verschenkt die beschriebene Chance."
         }
       }
     ],
     "explanation": {
-      "en": "Cue: there is contact, but your shoulders are square, the left arm is above the block and the referee has signalled advantage. Because the goalkeeper has already reacted and lost half a step, the shot is now better than before the contact. Playing the pivot is right when the arm closes your line, while stopping for the whistle or throwing into the body throws the chance away.",
-      "hr": "Signal: kontakt postoji, ali ramena su ti poravnata, lijeva ruka je iznad bloka, a sudac je pokazao prednost. Kako je vratar već reagirao i izgubio pola koraka, šut je sada bolji nego prije kontakta. Dodavanje pivotu je točno kad ruka zatvori liniju, dok prekid zbog zvižduka ili bacanje u tijelo bacaju priliku.",
-      "de": "Signal: Es gibt Kontakt, aber die Schultern sind gerade, der linke Arm über dem Block und der Schiedsrichter zeigt Vorteil. Weil der Torwart schon reagiert und einen halben Schritt verloren hat, ist der Wurf jetzt besser als vorher."
+      "hr": "Unatoč kontaktu zadržavaš kontrolu, ruka za šut je slobodna, a sudac nije prekinuo igru. Vratar se pomaknuo i ostavio dostupnu putanju šuta. Završi uz kontroliran pokret. Ako se putanja zatvori, dodavanje pivotu ima smisla samo uz slobodnog primatelja i sigurnu putanju dodavanja. Kontakt sam po sebi nije prednost niti razlog da očekuješ zvižduk.",
+      "en": "Despite contact you retain control, your shooting arm is free and play has not stopped. The goalkeeper has shifted, leaving an available shooting lane. Finish under control. If the lane closes, a pivot pass makes sense only with a free receiver and a clear passing lane. Contact itself is neither an advantage nor a reason to expect a whistle.",
+      "de": "Trotz Kontakt behältst du die Kontrolle, der Wurfarm ist frei und das Spiel läuft. Der Torwart hat sich verschoben und eine Wurflinie offengelassen. Kontrolliert abschließen. Schließt sich die Linie, ist das Kreisanspiel nur bei freiem Empfänger und freiem Passweg sinnvoll. Kontakt allein ist weder ein Vorteil noch ein Grund, einen Pfiff zu erwarten."
     },
     "skillTags": [
       "shotReading",
