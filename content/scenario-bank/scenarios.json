@@ -34410,9 +34410,9 @@
           "de": "Im Lauf fangen und direkt auf den zurücklaufenden Verteidiger ziehen — ihn zwischen dir und dem Außen wählen lassen, dann abschließen oder abspielen"
         },
         "feedback": {
-          "en": "Correct — the ball carrier who attacks a retreating defender always creates a two-against-one; the decision comes after he commits.",
-          "hr": "Točno: igrač s loptom koji napada braniča u povratku uvijek stvara 2 na 1; odluka dolazi nakon što se on odluči.",
-          "de": "Richtig — wer mit Ball den zurücklaufenden Verteidiger angreift, erzeugt immer ein Zwei gegen Eins; die Entscheidung folgt nach seiner Festlegung."
+          "hr": "Točno: u opisanom odnosu dva na jedan napadni slobodan prostor prema golu i pročitaj braniča prije šuta ili dodavanja.",
+          "en": "Correct: in this two-on-one, attack the space toward goal and read the defender before shooting or passing.",
+          "de": "Richtig: In diesem Zwei-gegen-eins den Raum zum Tor angreifen und vor Wurf oder Pass den Verteidiger lesen."
         }
       },
       {
@@ -34501,9 +34501,9 @@
           "de": "Nur drei Verteidiger stehen, die Arme sind unten und die Mitte hat keinen Besitzer — im selben Schritt angreifen"
         },
         "feedback": {
-          "en": "Correct — a defence that is still running backwards with low arms cannot block or step out; that is the whole window.",
-          "hr": "Točno: obrana koja još trči unatrag sa spuštenim rukama ne može blokirati ni izaći; to je cijeli prozor.",
-          "de": "Richtig — eine Abwehr, die noch rückwärts läuft und die Arme unten hat, kann weder blocken noch herausgehen; das ist das Fenster."
+          "hr": "Točno: sredina je prema opisu nepokrivena. Iskoristi je prije nego se obrana posloži, prateći moguće pomicanje i blok.",
+          "en": "Correct: the centre is uncovered in the description. Use it before the defence settles, while watching for movement and a block.",
+          "de": "Richtig: Die Mitte ist laut Beschreibung ungedeckt. Vor dem Ordnen der Abwehr nutzen, mögliche Bewegung und Block aber beachten."
         }
       },
       {
@@ -34685,9 +34685,9 @@
           "de": "Ihn zur Seitenlinie lenken und den Ball verlangsamen — die Sekunden für deine Mitspieler kaufen, statt auf Ballgewinn zu spekulieren"
         },
         "feedback": {
-          "en": "Correct — the first recoverer wins time, not the ball; every metre toward the sideline is a metre away from the goal.",
-          "hr": "Točno: prvi povratnik osvaja vrijeme, a ne loptu; svaki metar prema bočnoj liniji metar je dalje od gola.",
-          "de": "Richtig — der erste Rückkehrer gewinnt Zeit, nicht den Ball; jeder Meter zur Seitenlinie ist ein Meter weg vom Tor."
+          "hr": "Točno: u ovoj situaciji usporavanje igrača s loptom daje suigračima vrijeme za povratak. Ne riskiraj otvoren prolaz pokušajem oduzimanja bez dobre prilike.",
+          "en": "Correct: slowing the ball carrier here gives teammates time to recover. Do not risk an open lane by attempting a steal without a good opportunity.",
+          "de": "Richtig: Das Verzögern des Ballführers gibt den Mitspielern hier Rückzugszeit. Ohne gute Gelegenheit keinen freien Durchbruch durch einen Ballgewinnversuch riskieren."
         }
       },
       {
