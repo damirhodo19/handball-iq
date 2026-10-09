@@ -33950,22 +33950,22 @@
           "de": "Dass ein Fehlwurf ohne Abprallsicherung ihr schnellster Weg zurück ist — Ball halten, Uhr laufen lassen und sie zum Verteidigen oder Foulen zwingen"
         },
         "feedback": {
-          "en": "Correct — with +3 and two minutes, the value of the possession is far higher than the value of an average shot they are offering you.",
-          "hr": "Točno: uz +3 i dvije minute, vrijednost posjeda daleko je veća od vrijednosti prosječnog šuta koji ti nude.",
-          "de": "Richtig — bei +3 und zwei Minuten ist der Ballbesitz weit mehr wert als der durchschnittliche Wurf, den sie dir anbieten."
+          "hr": "Točno: uz tri gola prednosti i oko četiri minute do kraja nastavi aktivno stvarati kvalitetnu priliku umjesto forsiranja opisanog prosječnog šuta.",
+          "en": "Correct: with a three-goal lead and about four minutes left, keep actively creating a quality chance rather than forcing the described average shot.",
+          "de": "Richtig: Bei drei Toren Vorsprung und etwa vier Minuten Restzeit weiter aktiv eine gute Chance herausspielen, statt den beschriebenen mäßigen Wurf zu erzwingen."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Take it only once the pivot has arrived and secured the rebound",
-          "hr": "Uzmi ga tek kad pivot stigne i osigura odbijenu loptu",
-          "de": "Ihn erst nehmen, wenn der Kreisläufer da ist und den Abpraller sichert"
+          "hr": "Ponovno procijeni šut kad pivot bude spreman boriti se za odbijenu loptu",
+          "en": "Reassess the shot when the pivot is ready to contest a rebound",
+          "de": "Den Wurf neu bewerten, wenn der Kreis um einen Abpraller kämpfen kann"
         },
         "feedback": {
-          "en": "Good — cover changes the maths of the shot, but you still need the clock more than the goal right now.",
-          "hr": "Dobro: pokrivenost mijenja računicu šuta, ali sat ti je i dalje potrebniji od gola.",
-          "de": "Gut — Sicherung ändert die Rechnung des Wurfs, aber die Uhr brauchst du gerade mehr als das Tor."
+          "hr": "Dobro je smanjiti rizik odbijene lopte, ali to ne jamči novi posjed niti samo po sebi poboljšava kut šuta.",
+          "en": "Reducing rebound risk helps, but it neither guarantees another possession nor improves the shooting angle by itself.",
+          "de": "Das Abprallrisiko zu verringern hilft, garantiert aber weder neuen Ballbesitz noch einen besseren Wurfwinkel."
         }
       },
       {
@@ -33976,9 +33976,9 @@
           "de": "Jetzt werfen, denn bei drei Toren Vorsprung ist ein schlechter Angriff verkraftbar"
         },
         "feedback": {
-          "en": "Risky — one save plus one counter-attack is a two-goal swing in under twenty seconds.",
-          "hr": "Rizično: jedna obrana i jedan kontranapad razlika su od dva gola u manje od dvadeset sekundi.",
-          "de": "Riskant — eine Parade plus ein Tempogegenstoß sind zwei Tore in weniger als zwanzig Sekunden."
+          "hr": "Rizično: obrana vratara može otvoriti kontranapad i smanjiti prednost. Vodstvo ne opravdava namjerno loš odabir šuta.",
+          "en": "Risky: a save can open a counterattack and reduce the lead. Being ahead does not justify deliberately poor shot selection.",
+          "de": "Riskant: Eine Parade kann einen Gegenangriff ermöglichen und den Vorsprung verkürzen. Die Führung rechtfertigt keine absichtlich schlechte Wurfauswahl."
         }
       },
       {
@@ -34068,9 +34068,9 @@
           "de": "Jetzt angreifen, solange ihre Abwehr noch tief und passiv steht"
         },
         "feedback": {
-          "en": "Risky — scoring with 40 seconds left hands them the last attack of the match.",
-          "hr": "Rizično: gol uz preostalih 40 sekundi daje im zadnji napad utakmice.",
-          "de": "Riskant — ein Tor bei 40 Sekunden schenkt ihnen den letzten Angriff des Spiels."
+          "hr": "Rizično ako napadaš bez čitanja obrane i dogovorene pripreme. Raniji kvalitetan završetak može biti opravdan, ali protivniku može ostaviti vrijeme za odgovor.",
+          "en": "Risky if you attack without reading the defence or preparing the agreed action. An earlier quality finish can be justified, but may leave the opponent time to respond.",
+          "de": "Riskant, wenn du ohne Lesen der Abwehr und Vorbereitung der Absprache angreifst. Ein früher guter Abschluss kann berechtigt sein, lässt dem Gegner aber möglicherweise Zeit zur Antwort."
         }
       },
       {
