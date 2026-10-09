@@ -30080,9 +30080,9 @@
           "de": "Ein Schritt zur Seitenlinie und außen am Blockarm vorbei werfen"
         },
         "feedback": {
-          "en": "Correct — he is square and cannot travel, so a left-hander who widens the angle throws past the arm, not into it.",
-          "hr": "Točno: stoji ravno i ne prati, pa ljevoruki koji proširi kut puca pored ruke, a ne u nju.",
-          "de": "Richtig — er steht frontal und geht nicht mit, also wirft der Linkshänder mit breiterem Winkel am Arm vorbei."
+          "hr": "Točno: bočni korak mijenja putanju šuta u odnosu na ruku bloka koju branič ne pomiče.",
+          "en": "Correct: a lateral step changes the shooting line relative to the block arm that the defender is not moving.",
+          "de": "Richtig: Der seitliche Schritt verändert die Wurflinie gegenüber dem unbewegten Blockarm."
         }
       },
       {
@@ -30093,9 +30093,9 @@
           "de": "Stattdessen die Höhe verändern — Wurf aus Hüfthöhe unter dem erhobenen Arm hindurch"
         },
         "feedback": {
-          "en": "Good — the low release beats a high arm, but from an unchanged angle the goalkeeper reads the near corner.",
-          "hr": "Dobro: nisko ispaljivanje pobjeđuje visoku ruku, ali iz neizmijenjenog kuta vratar čita bliži kut.",
-          "de": "Gut — der tiefe Wurf schlägt den hohen Arm, aber aus unverändertem Winkel liest der Torhüter die kurze Ecke."
+          "hr": "Promjena visine izbačaja moguća je ako je putanja ispod ruke slobodna. Opis jasnije pokazuje slobodan prostor pored bloka.",
+          "en": "Changing release height is possible if the lane beneath the arm is clear. The description more clearly identifies space beside the block.",
+          "de": "Eine andere Abwurfhöhe ist möglich, wenn der Weg unter dem Arm frei ist. Beschrieben ist vor allem der freie Raum neben dem Block."
         }
       },
       {
@@ -30126,9 +30126,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: a high block arm on your straight line plus square feet that do not travel. A left-handed right back does not need that line — one step to the sideline widens the angle and the throw goes around the outside of the arm, where nobody stands. Changing the release height (B) also beats a high arm, but from the same spot the goalkeeper only has one corner to defend. Forcing the ball into the block or bouncing blind gifts the counter while you lead by one.",
-      "hr": "Signal: visoka ruka bloka na tvojoj ravnoj liniji i ravna stopala koja ne prate. Ljevorukom desnom vanjskom ta linija ne treba: korak prema aut-liniji širi kut, a šut ide pored vanjske ruke, gdje nitko ne stoji. Promjena visine (B) također pobjeđuje visoku ruku, ali s istog mjesta vratar brani samo jedan kut. Guranje lopte u blok ili slijepi odskok daju kontru dok držiš gol prednosti.",
-      "de": "Signal: hoher Blockarm auf deiner geraden Linie und frontale Füße, die nicht mitgehen. Der linkshändige rechte Rückraum braucht diese Linie nicht — ein Schritt zur Seitenlinie öffnet den Winkel, der Wurf geht außen am Arm vorbei. Die Höhenänderung (B) schlägt den hohen Arm auch, lässt dem Torhüter aber nur eine Ecke. In den Block werfen oder blind aufsetzen schenkt bei Ein-Tor-Führung den Konter."
+      "hr": "Branič ne prati bočno kretanje, a prostor pored ruke bloka je slobodan. Korak u stranu može otvoriti putanju pored bloka; to ne znači da se kut prema golu nužno povećava. Nizak izbačaj iz odgovora B moguć je ako je putanja slobodna. Položaj vratara nije naveden pa se ne može tvrditi da brani samo jedan kut.",
+      "en": "The defender does not track lateral movement and space beside his block arm is clear. A lateral step can open a line around the block; it does not necessarily widen the goal angle. B is possible if the low release lane is clear. No goalkeeper position is given, so there is no basis to claim only one corner is defended.",
+      "de": "Der Verteidiger folgt seitlich nicht, neben seinem Blockarm ist Raum. Ein Seitwärtsschritt kann eine Wurflinie am Block vorbei öffnen, vergrößert aber nicht zwingend den Torwinkel. B ist bei freier tiefer Wurflinie möglich. Ohne angegebene Torwartposition lässt sich keine Deckung nur einer Ecke behaupten."
     },
     "skillTags": [
       "screening",
@@ -31090,22 +31090,22 @@
           "de": "Ein langer Schritt an seiner Außenhüfte vorbei in den freien Raum und Abschluss aus dem natürlichen Linkshänder-Winkel"
         },
         "feedback": {
-          "en": "Correct — upright with narrow feet cannot follow one long step, and a left-hander lands straight into his best angle.",
-          "hr": "Točno: uspravan stav s uskim stopalima ne prati dugi korak, a ljevoruki tako uleti u svoj najbolji kut.",
-          "de": "Richtig — aufrecht mit engen Füßen kann einem langen Schritt nicht folgen, und der Linkshänder landet im besten Winkel."
+          "hr": "Točno: iskoristi otvoreni prostor dok branič još nije prilagodio položaj.",
+          "en": "Correct: use the open space before the defender adjusts his position.",
+          "de": "Richtig: Nutze den freien Raum, bevor der Verteidiger seine Position anpasst."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Play the pivot behind him, since the inside defender is already occupied",
-          "hr": "Dodaj pivotu iza njega jer je unutarnji branič već zauzet",
-          "de": "Den Kreisläufer hinter ihm anspielen, weil der Innenverteidiger schon gebunden ist"
+          "hr": "Dodaj pivotu samo ako njegov branič napusti pokrivanje kako bi zaustavio tvoj prodor",
+          "en": "Pass to the pivot only if his defender leaves him to stop your drive",
+          "de": "Zum Kreis passen, wenn dessen Verteidiger die Deckung verlässt, um deinen Durchbruch zu stoppen"
         },
         "feedback": {
-          "en": "Good — the pass is on, but it is the harder version of a duel you already win on your own.",
-          "hr": "Dodavanje je moguće, ali je teža verzija dvoboja koji i sam dobivaš.",
-          "de": "Gut — der Pass geht, ist aber die schwierigere Version eines Duells, das du allein gewinnst."
+          "hr": "Dobro ako pomoć oslobodi pivota. Trenutačno je pivot pokriven, a prostor za tvoj prodor otvoren.",
+          "en": "Good if help frees the pivot. Currently the pivot is covered and your driving space is open.",
+          "de": "Gut, wenn die Hilfe den Kreis freigibt. Derzeit ist der Kreis gedeckt und dein Durchbruchsraum offen."
         }
       },
       {
@@ -31136,9 +31136,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: he is out at eleven metres, upright, feet together — no base to move sideways. The simplest answer is one long step past his outside hip; the floor behind him is empty and a left-handed right back finishes from there at his natural angle. Playing the pivot (B) is available because the inside defender is busy, but it is the harder solution to a duel you already win. Shooting over him or stopping the ball returns him to the line for free.",
-      "hr": "Signal: izašao je na jedanaest metara, uspravno, stopala skupljena: nema baze za bočno kretanje. Najjednostavnije rješenje je jedan dugi korak pored vanjskog boka; iza njega je prazno, a ljevoruki desni vanjski odande završava iz prirodnog kuta. Dodavanje pivotu (B) postoji jer je unutarnji branič zauzet, ali je teže rješenje dvoboja koji već dobivaš. Šut preko njega ili zaustavljanje lopte vraćaju ga u liniju besplatno.",
-      "de": "Signal: er steht auf elf Metern, aufrecht, Füße eng — keine Basis für seitliche Bewegung. Die einfachste Antwort ist ein langer Schritt an der Außenhüfte vorbei; dahinter ist frei und der Linkshänder schließt im natürlichen Winkel ab. Der Kreisläuferpass (B) geht, ist aber die schwerere Lösung. Über ihn werfen oder anhalten bringt ihn gratis zurück in die Linie."
+      "hr": "Branič je izašao visoko, a prostor iza njegova vanjskog boka je otvoren. Napadni taj prostor prije nego se vrati. Pivot je zasad pokriven; dodavanje iz odgovora B dolazi u obzir ako njegov branič izađe pomoći na tvom prodoru.",
+      "en": "The defender is high and space behind his outside hip is open. Attack it before he recovers. The pivot is currently covered; B becomes available if his defender helps against your drive.",
+      "de": "Der Verteidiger steht hoch, hinter seiner Außenhüfte ist Raum. Greife an, bevor er zurückkommt. Der Kreis ist derzeit gedeckt; B wird möglich, wenn sein Verteidiger gegen deinen Durchbruch hilft."
     },
     "skillTags": [
       "shotReading",
