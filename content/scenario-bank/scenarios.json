@@ -31190,14 +31190,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Take the uncontested nine-metre shot straight away while nobody blocks",
-          "hr": "Uzmi neometan šut s devet metara odmah dok nema bloka",
-          "de": "Den ungestörten Neun-Meter-Wurf sofort nehmen, solange niemand blockt"
+          "hr": "Šutiraj odmah samo ako već vidiš čistu putanju prema golu",
+          "en": "Shoot immediately only if you already see a clear lane to goal",
+          "de": "Sofort werfen, nur wenn bereits eine freie Wurflinie zum Tor besteht"
         },
         "feedback": {
-          "en": "Good — a free shot has value, but from a closed right-hander angle the goalkeeper only guards one corner.",
-          "hr": "Slobodan šut je moguć, ali iz tog položaja dešnjaka kut je uzak pa vratar treba zatvoriti samo jednu stranu.",
-          "de": "Gut — ein freier Wurf hat Wert, aus dem geschlossenen Winkel deckt der Torhüter aber nur eine Ecke."
+          "hr": "Moguće uz čistu putanju. Opis trenutačno navodi blok i nepovoljan kut, pa prvo iskoristi slobodan prostor.",
+          "en": "Possible with a clear lane. The description currently gives a block and an unfavourable angle, so use the available space first.",
+          "de": "Bei freier Wurflinie möglich. Beschrieben sind derzeit ein Block und ein ungünstiger Winkel; zunächst den freien Raum nutzen."
         }
       },
       {
@@ -31270,14 +31270,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "His weight is inside, so attack the outside where he cannot push off",
-          "hr": "Težina mu je unutra, pa napadni van gdje se ne može odgurnuti",
-          "de": "Sein Gewicht liegt innen, also außen angreifen, wo er nicht abdrücken kann"
+          "hr": "Napadni otvoreni prostor prema van prije nego branič prilagodi položaj",
+          "en": "Attack the open outside space before the defender adjusts",
+          "de": "Den freien Raum nach außen angreifen, bevor der Verteidiger seine Position anpasst"
         },
         "feedback": {
-          "en": "Correct — a loaded inside foot cannot generate a first step outwards; the low outside arm confirms it.",
-          "hr": "Točno: opterećena unutarnja noga ne može dati prvi korak prema van; niska vanjska ruka to potvrđuje.",
-          "de": "Richtig — der belastete Innenfuß erzeugt keinen ersten Schritt nach außen; der tiefe Außenarm bestätigt es."
+          "hr": "Točno: njegov položaj otvara prostor prema van. Prati reakciju jer se branič još može pomaknuti.",
+          "en": "Correct: his position opens outside space. Read his response because he can still move.",
+          "de": "Richtig: Seine Position öffnet Raum nach außen. Seine Reaktion beachten, denn er kann sich weiterhin bewegen."
         }
       },
       {
@@ -31288,9 +31288,9 @@
           "de": "Seine Hüfte ist gedreht, also schlägt ihn auch eine Finte nach außen mit Rückschritt nach innen"
         },
         "feedback": {
-          "en": "Good — the double move works, but it takes an extra beat and runs back toward central help.",
-          "hr": "Dobro: dvostruki potez radi, ali traži dodatni takt i vodi natrag prema pomoći u sredini.",
-          "de": "Gut — die Doppelbewegung klappt, kostet aber einen Takt und führt zurück zur zentralen Hilfe."
+          "hr": "Moguće ako se nakon varke otvori prolaz unutra. Dodatni pokret ipak daje obrani vrijeme za prilagodbu.",
+          "en": "Possible if the feint opens an inside lane. The extra movement also gives the defence time to adjust.",
+          "de": "Möglich, wenn die Finte innen einen Durchbruch öffnet. Die zusätzliche Bewegung gibt der Abwehr aber Zeit zur Anpassung."
         }
       },
       {
@@ -31301,9 +31301,9 @@
           "de": "Egal — von neun Metern werfen, bevor er sich überhaupt bewegt"
         },
         "feedback": {
-          "en": "Risky — you ignore a defender who has already lost the duel in his stance.",
-          "hr": "Rizično: ignoriraš braniča koji je dvoboj već izgubio u stavu.",
-          "de": "Riskant — du ignorierst einen Verteidiger, der das Duell schon in der Stellung verloren hat."
+          "hr": "Rizično: zanemaruješ opisani slobodan prostor bez provjere kvalitete šuta.",
+          "en": "Risky: you ignore the described open space without assessing the shot quality.",
+          "de": "Riskant: Du ignorierst den beschriebenen freien Raum, ohne die Wurfqualität zu prüfen."
         }
       },
       {
@@ -31314,9 +31314,9 @@
           "de": "Zurück zur Mitte spielen und jemand anderen angreifen lassen"
         },
         "feedback": {
-          "en": "Poor — you hand back a duel you have already won by reading his stance.",
-          "hr": "Loše: vraćaš dvoboj koji si već dobio čitanjem njegovog stava.",
-          "de": "Schlecht — du gibst ein Duell zurück, das du durch das Lesen der Stellung gewonnen hast."
+          "hr": "Loše u opisanoj situaciji: odustaješ od dostupnog prostora prije nego ga pokušaš iskoristiti.",
+          "en": "Poor here: you give up available space before trying to use it.",
+          "de": "Hier schlecht: Du gibst den verfügbaren Raum auf, bevor du ihn zu nutzen versuchst."
         }
       }
     ],
@@ -31366,9 +31366,9 @@
           "de": "Sofort in die lange Ecke abschließen, solange der Helfer noch einen halben Schritt weg ist"
         },
         "feedback": {
-          "en": "Correct — the goalkeeper has already committed near, and a late helper cannot reach a shot that leaves now.",
-          "hr": "Točno: vratar je već otišao na bliži kut, a zakašnjela pomoć ne stiže šut koji ide sada.",
-          "de": "Richtig — der Torhüter ist schon kurz, und die späte Hilfe erreicht einen sofortigen Wurf nicht."
+          "hr": "Točno: pomoć još nije zatvorila priliku, a vratar se pomaknuo prema bližem kutu. To daje prednost pravodobnom šutu u dalji kut, bez jamstva pogotka.",
+          "en": "Correct: help has not yet closed the chance and the goalkeeper has moved near side. This favours a timely far-corner shot without guaranteeing a goal.",
+          "de": "Richtig: Die Hilfe hat die Chance noch nicht geschlossen und der Torwart ist zur kurzen Ecke gerückt. Das spricht für den rechtzeitigen Wurf in die lange Ecke, ohne Torgarantie."
         }
       },
       {
@@ -31379,9 +31379,9 @@
           "de": "Die späte Hilfe ganz binden und den Ball zum Kreisläufer hinter ihm spielen"
         },
         "feedback": {
-          "en": "Good — the pivot is genuinely free, but the extra beat lets both the helper and the keeper reset.",
-          "hr": "Dobro: pivot je stvarno slobodan, ali dodatni takt vraća i braniča i vratara na mjesto.",
-          "de": "Gut — der Kreisläufer ist wirklich frei, aber der Extra-Takt ordnet Helfer und Torhüter neu."
+          "hr": "Dobro ako pomoć zatvori tvoj šut i otvori dodavanje pivotu. Ne odgađaj već dostupnu priliku samo radi dodatnog dodavanja.",
+          "en": "Good if help closes your shot and opens the pivot pass. Do not delay an available chance merely to add another pass.",
+          "de": "Gut, wenn die Hilfe deinen Wurf schließt und den Kreisanspielweg öffnet. Eine verfügbare Chance nicht nur für einen weiteren Pass verzögern."
         }
       },
       {
@@ -31392,9 +31392,9 @@
           "de": "Noch einen Schritt bis zur Sechs machen und den Kontakt suchen"
         },
         "feedback": {
-          "en": "Risky — one more step is exactly the time the help needs to arrive with a legal body.",
-          "hr": "Rizično: još jedan korak je točno vrijeme koje pomoći treba da stigne tijelom.",
-          "de": "Riskant — dieser eine Schritt ist genau die Zeit, die die Hilfe zum Ankommen braucht."
+          "hr": "Rizično: dodatni korak može omogućiti pomoći da zatvori prostor; traženje kontakta nije cilj završetka.",
+          "en": "Risky: an extra step may let help close the space; seeking contact is not the aim of the finish.",
+          "de": "Riskant: Ein weiterer Schritt kann der Hilfe das Schließen des Raums ermöglichen; Kontakt zu suchen ist nicht das Ziel des Abschlusses."
         }
       },
       {
