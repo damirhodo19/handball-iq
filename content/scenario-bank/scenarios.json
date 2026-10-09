@@ -53830,9 +53830,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Sprint goal-side through the middle, take the centre runner or opposing pivot, then organise the next handover",
-          "hr": "Sprintaj kroz sredinu prema svom golu, preuzmi središnjeg trkača ili protivničkog pivota pa organiziraj sljedeću predaju",
-          "de": "Torseitig durch die Mitte sprinten, zentralen Läufer oder gegnerischen Kreis übernehmen und die nächste Übergabe organisieren"
+          "hr": "Sprintaj kroz sredinu prema svom golu, javi slobodnog trkača i preuzmi protivnika kojeg možeš dosegnuti",
+          "en": "Sprint back through the centre, call the free runner and take an opponent you can reach",
+          "de": "Durch die Mitte zum eigenen Tor sprinten, den freien Läufer ansagen und einen erreichbaren Gegner übernehmen"
         },
         "feedback": {
           "hr": "Točno: povratkom kroz sredinu i komunikacijom smanjuješ otvoreni prostor. Preuzimanje ovisi o tome kojeg igrača možeš stići.",
@@ -54773,9 +54773,9 @@
           "de": "Den Ball einhändig Richtung Tor tippen, bevor er kontrolliert ist"
         },
         "feedback": {
-          "en": "Risky — contact turns the tip into a loose ball.",
-          "hr": "Rizično: kontakt pretvara skretanje u izgubljenu loptu.",
-          "de": "Riskant — Kontakt macht aus dem Tipp einen freien Ball."
+          "hr": "Rizično: skretanje jednom rukom pod kontaktom otežava kontrolu i povećava rizik gubitka lopte.",
+          "en": "Risky: a one-handed redirection under contact makes control harder and increases turnover risk.",
+          "de": "Riskant: Einhändiges Umlenken unter Kontakt erschwert die Kontrolle und erhöht das Ballverlustrisiko."
         }
       },
       {
@@ -54894,9 +54894,9 @@
       }
     ],
     "explanation": {
-      "en": "Under back contact, base before turn. A staggered stance protects balance and tells you where pressure is strongest. One protected turn then beats the help clock.",
-      "hr": "Pod kontaktom s leđa prvo postavi oslonac. Pomaknuti stav čuva ravnotežu i pokazuje gdje je pritisak najjači. Jedan zaštićeni okret zatim pobjeđuje dolazak pomoći.",
-      "de": "Unter Rückenkontakt kommt die Basis vor der Drehung. Versetzter Stand schützt das Gleichgewicht und zeigt die Druckseite. Eine geschützte Drehung schlägt dann die Hilfezeit."
+      "hr": "Prvo osiguraj ravnotežu i zaštiti loptu. Ako prostor ostaje otvoren, okreni se prema slobodnoj strani uz poštovanje dopuštenih koraka. Ako pomoć zatvori priliku prije okreta, vrati loptu slobodnom suigraču. Postavljanje oslonca ne jamči da ćeš prestići pomoć.",
+      "en": "First secure your balance and protect the ball. If space remains open, turn toward the free side within the permitted steps. If help closes the chance before the turn, return the ball to a free teammate. Establishing support does not guarantee beating the help.",
+      "de": "Zuerst Gleichgewicht sichern und Ball schützen. Bleibt Raum frei, innerhalb der erlaubten Schritte zur freien Seite drehen. Schließt die Hilfe vorher die Chance, zu einem freien Mitspieler zurückpassen. Ein stabiler Stand garantiert nicht, der Hilfe zuvorzukommen."
     },
     "whyCorrectOverSecondBest": {
       "en": "A uses the available two seconds to preserve the finish; B is needed only if help arrives sooner.",
