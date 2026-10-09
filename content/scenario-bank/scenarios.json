@@ -31228,9 +31228,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: he stays on the six, so you own the nine-metre floor, but your right-handed angle from that spot is closed. Spend the free metres before the ball leaves your hand: two steps toward the middle opens the far corner and turns an average look into a real one. Shooting immediately (B) is defensible because it is unblocked, yet the goalkeeper covers a single corner. Driving into his body or resetting wastes the one thing he actually gave you — space.",
-      "hr": "Signal: ostaje na šest metara pa je devet metara tvojih, ali kut desnorukog s tog mjesta je zatvoren. Potroši slobodne metre prije nego lopta ode: dva koraka prema sredini otvaraju dalji kut i pretvaraju prosječan šut u pravi. Trenutni šut (B) se može braniti jer je bez bloka, ali vratar pokriva samo jedan kut. Prodor u njegovo tijelo ili vraćanje lopte bacaju jedino što ti je dao: prostor.",
-      "de": "Signal: er bleibt an der Sechs, die neun Meter gehören dir, aber dein Rechtshänder-Winkel ist geschlossen. Investiere die freien Meter vor dem Wurf: zwei Schritte zur Mitte öffnen die lange Ecke. Der sofortige Wurf (B) ist vertretbar, weil ungeblockt, lässt dem Torhüter aber nur eine Ecke. In seinen Körper ziehen oder zurückspielen verschenkt genau den Raum, den er dir gibt."
+      "hr": "Branič ti ostavlja prostor, ali trenutačni kut šuta je nepovoljan. Iskoristi slobodan prostor prema sredini i ponovno procijeni putanju prije šuta. B je moguća alternativa ako već imaš čistu putanju. Položaj vratara nije naveden, pa se ne može zaključiti koji kut pokriva.",
+      "en": "The defender leaves space but your current shooting angle is poor. Use the space toward the middle and reassess the shooting lane. B is an alternative if a clear lane is already available. The goalkeeper’s position is not given, so his corner coverage cannot be inferred.",
+      "de": "Der Verteidiger lässt Raum, dein aktueller Wurfwinkel ist aber ungünstig. Nutze den Raum zur Mitte und prüfe die Wurflinie neu. B ist bei bereits freier Wurflinie möglich. Die Torwartposition ist nicht angegeben, seine Eckendeckung lässt sich daher nicht ableiten."
     },
     "skillTags": [
       "screening",
@@ -31321,9 +31321,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: hips turned inside, weight on the inside foot, outside arm low. Weight tells you where he cannot go — he has no push-off toward the sideline, so the outside is open and your wing is holding the width that keeps the help away. The feint-and-return (B) also beats a turned hip, but it costs a beat and takes you into central help. Shooting blind or resetting the ball throws away a duel you have already won with your eyes.",
-      "hr": "Signal: bokovi okrenuti prema unutra, težina na unutarnjoj nozi, vanjska ruka niska. Težina ti govori kamo ne može: nema odguranja prema aut-liniji, pa je vanjska strana otvorena, a krilo drži širinu koja drži pomoć daleko. Varka pa povratni korak (B) također tuče okrenut bok, ali košta takt i vodi u pomoć u sredini. Šut naslijepo ili vraćanje lopte bacaju dvoboj koji si očima već dobio.",
-      "de": "Signal: Hüfte nach innen, Gewicht auf dem Innenfuß, Außenarm tief. Das Gewicht sagt dir, wohin er nicht kann — kein Abdruck zur Seitenlinie, also ist außen offen, und euer Außen hält die Breite von der Hilfe fern. Finte mit Rückschritt (B) schlägt die gedrehte Hüfte auch, kostet aber einen Takt Richtung Hilfe. Blind werfen oder zurückspielen verschenkt ein gewonnenes Duell."
+      "hr": "Branič se okrenuo prema sredini, a krilo drži širinu. Iskoristi otvoren prostor prema van prije nego branič prilagodi položaj. Varka s povratkom unutra iz odgovora B moguća je ako se ondje otvori prolaz; ne pretpostavljaj da branič zbog položaja noge uopće ne može reagirati.",
+      "en": "The defender has turned inward and the wing maintains width. Use the outside space before he adjusts. B is possible if the inside lane opens; his foot position does not mean he cannot react at all.",
+      "de": "Der Verteidiger dreht nach innen, der Außen hält die Breite. Nutze den äußeren Raum, bevor er sich anpasst. B ist bei offener innerer Lücke möglich; seine Fußstellung bedeutet nicht, dass er gar nicht reagieren kann."
     },
     "skillTags": [
       "shotReading"
@@ -31412,9 +31412,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: you are already through at seven metres, the helper is half a step behind and the goalkeeper has committed to the near post. Release now to the far corner — a late helper who is still travelling cannot block, and the keeper cannot get back across. Serving the rolling pivot (B) is a genuine alternative once the help fully commits, but the beat it costs restores both defenders. Taking another step or pulling out gives away a finished attack while you are chasing the score.",
-      "hr": "Signal: već si prošao na sedam metara, pomoć kasni pola koraka, a vratar je otišao na bliži kut. Pucaj sada u dalji kut: branič koji još putuje ne može blokirati, a vratar se ne stigne vratiti. Dodavanje pivotu u okretu (B) je prava alternativa kada pomoć potpuno preuzme, ali takt koji košta vraća oba braniča. Još jedan korak ili izvlačenje lopte bacaju gotov napad u minuti kad ti gol najviše treba.",
-      "de": "Signal: du bist auf sieben Metern durch, der Helfer ist einen halben Schritt zurück, der Torhüter steht kurz. Jetzt in die lange Ecke abschließen — ein noch laufender Helfer blockt nicht und der Torhüter kommt nicht zurück. Den Kreisläufer (B) zu bedienen ist eine echte Alternative nach vollem Zugriff, kostet aber den entscheidenden Takt. Ein Schritt mehr oder Herausziehen verschenkt einen fertigen Angriff."
+      "hr": "Pomoć kasni, a vratar se pomaknuo prema bližem kutu. Opis zato daje prednost pravodobnom šutu u dalji kut, bez jamstva pogotka. Ako pomoć zatvori šut i oslobodi pivota, dodavanje iz odgovora B postaje bolja opcija.",
+      "en": "Help is late and the goalkeeper has moved toward the near corner. The description favours a timely far corner shot, without guaranteeing a goal. If help closes the shot and frees the pivot, B becomes the better option.",
+      "de": "Die Hilfe kommt spät, der Torwart steht zur kurzen Ecke. Daher spricht die Situation für den rechtzeitigen Wurf in die lange Ecke, ohne Torgarantie. Schließt die Hilfe den Wurf und gibt den Kreis frei, wird B besser."
     },
     "skillTags": [
       "shotReading",
@@ -31717,9 +31717,9 @@
     "score": "12:12",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "At 21' it is 12:12 against a set 6:0. You and the centre back are lined up for a crossing run on the right. Before anyone moves, their right half defender calls the exchange out loud and puts a foot into the crossing path. The centre back has just received at eleven metres, drifting away from the goal, so he arrives without depth. At the same time your right wing has pulled his marker wide and a free channel sits between the half and the wing defender.",
-      "hr": "U 21. minuti Neriješeno je 12:12 protiv postavljene obrane 6:0. Ti i srednji vanjski postavljeni ste za križanje na desnoj strani. Prije nego itko krene, njihov desni polubranitelj naglas najavljuje preuzimanje i stopalom ulazi u putanju križanja. Srednji vanjski je upravo primio na jedanaest metara, u kretanju od gola, pa dolazi bez dubine. Istodobno je tvoje desno krilo odvuklo čuvara u širinu i između polubranitelja i krilnog braniča stoji slobodan kanal.",
-      "de": "In Minute 21 steht es 12:12 gegen eine stehende 6:0. Du und der Rückraum Mitte seid für eine Kreuzbewegung rechts aufgestellt. Bevor jemand losgeht, ruft ihr rechter Halbverteidiger die Übernahme laut an und stellt einen Fuß in die Kreuzbahn. Der Rückraum Mitte hat gerade auf elf Metern angenommen, in einer Bewegung vom Tor weg, also kommt er ohne Tiefe. Gleichzeitig hat euer Rechtsaußen seinen Gegenspieler in die Breite gezogen und zwischen Halb- und Außenverteidiger liegt ein freier Kanal."
+      "en": "At 21' it is 12:12 against a set 6:0. You and the centre back are lined up for a crossing run on the right. Before anyone moves, their left half defender calls the exchange out loud and puts a foot into the crossing path. The centre back has just received at eleven metres, drifting away from the goal, so he arrives without depth. At the same time your right wing has pulled his marker wide and a free channel sits between the half and the wing defender.",
+      "hr": "U 21. minuti Neriješeno je 12:12 protiv postavljene obrane 6:0. Ti i srednji vanjski postavljeni ste za križanje na desnoj strani. Prije nego itko krene, njihov lijevi polubranitelj naglas najavljuje preuzimanje i stopalom ulazi u putanju križanja. Srednji vanjski je upravo primio na jedanaest metara, u kretanju od gola, pa dolazi bez dubine. Istodobno je tvoje desno krilo odvuklo čuvara u širinu i između polubranitelja i krilnog braniča stoji slobodan kanal.",
+      "de": "In Minute 21 steht es 12:12 gegen eine stehende 6:0. Du und der Rückraum Mitte seid für eine Kreuzbewegung rechts aufgestellt. Bevor jemand losgeht, ruft ihr linker Halbverteidiger die Übernahme laut an und stellt einen Fuß in die Kreuzbahn. Der Rückraum Mitte hat gerade auf elf Metern angenommen, in einer Bewegung vom Tor weg, also kommt er ohne Tiefe. Gleichzeitig hat euer Rechtsaußen seinen Gegenspieler in die Breite gezogen und zwischen Halb- und Außenverteidiger liegt ein freier Kanal."
     },
     "question": {
       "en": "What is the signal that you should NOT cross?",
