@@ -33932,9 +33932,9 @@
     "score": "28:25",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 28:25 at 56' with about two minutes left. Their 6:0 has dropped deep and is openly leaving you a shot from the edge of nine metres — an average angle with their goalkeeper standing exactly on it. Your pivot is changing sides, so nobody is on the rebound, and their wing is already cheating toward the halfway line.",
-      "hr": "Vodite 28:25 u 56. minuti, ostale su otprilike dvije minute. Njihova 6:0 povukla se duboko i otvoreno ti pušta šut s ruba devet metara: prosječan kut na kojem njihov vratar stoji točno. Tvoj pivot mijenja stranu, pa nitko nije na odbijenoj lopti, a njihovo krilo već vara start prema sredini terena.",
-      "de": "Ihr führt 28:25 in Minute 56, noch etwa zwei Minuten. Ihre 6:0 ist tief gefallen und lässt dir offen den Wurf vom Rand der neun Meter — ein durchschnittlicher Winkel, auf dem ihr Torwart genau steht. Euer Kreisläufer wechselt die Seite, niemand ist am Abpraller, und ihr Außen schleicht sich schon Richtung Mittellinie."
+      "hr": "Vodite 28:25 u 56. minuti, do kraja je oko četiri minute. Obrana 6:0 povukla se duboko i nudi šut s devet metara iz prosječnog kuta. Vratar je dobro postavljen. Pivot mijenja stranu, nitko nije spreman za odbijenu loptu, a protivničko krilo kreće prema sredini terena.",
+      "en": "You lead 28:25 in minute 56, with about four minutes left. The deep 6:0 offers a nine metre shot from an average angle. The goalkeeper is well positioned. Your pivot is changing sides, nobody is ready for the rebound, and an opposing wing is moving toward halfway.",
+      "de": "Ihr führt 28:25 in Minute 56, etwa vier Minuten bleiben. Die tiefe 6:0 bietet einen Wurf aus neun Metern mit durchschnittlichem Winkel. Der Torwart steht gut. Euer Kreisläufer wechselt die Seite, niemand sichert den Abpraller und ein gegnerischer Außen läuft zur Mittellinie."
     },
     "question": {
       "en": "They are deliberately leaving you this shot — what does that tell you?",
@@ -33996,9 +33996,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: +3 with two minutes, a deep defence offering an average shot, no rebound cover and a wing already leaving. The offer is the trap — possession and clock beat the shot. Shooting once the pivot secures the rebound is defensible. Shooting now or empty holding both give them the tempo they need.",
-      "hr": "Signal: +3 uz dvije minute, duboka obrana nudi prosječan šut, nema pokrivene odbijene lopte, krilo već kreće. Ponuda je zamka: posjed i sat vrijede više od šuta. Šut nakon što pivot osigura odbijenu loptu je obranjiv. Šut odmah ili prazno držanje daju im tempo koji traže.",
-      "de": "Signal: +3, zwei Minuten, tiefe Abwehr bietet den Wurf an, keine Sicherung, Außen startet früh. Das Angebot ist die Falle — Ballbesitz und Uhr schlagen den Wurf."
+      "hr": "Uz tri gola prednosti i četiri minute do kraja ne forsiraj prosječan šut bez osiguranja povratka. Nastavi aktivno stvarati priliku. Spremnost pivota za odbijenu loptu iz odgovora B smanjuje jedan rizik, ali ne jamči novi posjed.",
+      "en": "With a three goal lead and four minutes left, avoid forcing an average shot without recovery coverage. Keep actively creating a chance. Pivot rebound readiness in B reduces one risk but does not guarantee possession.",
+      "de": "Bei drei Toren Führung und vier Minuten Restzeit keinen durchschnittlichen Wurf ohne Rückzugsabsicherung erzwingen. Aktiv Chancen schaffen. Die Abprallerbereitschaft in B verringert ein Risiko, garantiert aber keinen Ballbesitz."
     },
     "skillTags": [
       "shotReading",
@@ -34024,9 +34024,9 @@
     "score": "25:25",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 25:25 at 59' and this is your last possession. There are 42 seconds on the clock and they get no further attack if you keep the ball to the end. They defend a deep 6:0 and clearly do not want to foul. You are a left-handed right back and the agreed final action runs through your pivot on your side.",
-      "hr": "Neriješeno je 25:25 u 59. minuti i ovo je tvoj zadnji napad. Na satu su 42 sekunde i protivnik nema novi napad ako držiš loptu do kraja. Brane duboku 6:0 i očito ne žele prekršaj. Ti si ljevoruki desni vanjski, a dogovorena zadnja akcija ide preko pivota na tvojoj strani.",
-      "de": "Es steht 25:25 in Minute 59 und das ist euer letzter Angriff. 42 Sekunden stehen auf der Uhr, und sie bekommen keinen weiteren Angriff, wenn ihr den Ball bis zum Ende haltet. Sie verteidigen eine tiefe 6:0 und wollen offensichtlich nicht foulen. Du bist linkshändiger rechter Rückraum, und die vereinbarte letzte Aktion läuft über den Kreisläufer auf deiner Seite."
+      "hr": "Neriješeno je 25:25 u 59. minuti, preostale su 42 sekunde. Ljevoruki si desni vanjski. Napadate postavljenu obranu 6:0 i imate dogovorenu akciju preko pivota. Morate aktivno stvarati priliku; ne možete računati da ćete smjeti samo čuvati loptu do isteka vremena.",
+      "en": "Tied 25:25 in minute 59 with 42 seconds remaining. You are a left handed right back attacking a set 6:0 with an agreed pivot action. You must actively create a chance; you cannot assume you may simply retain the ball until time expires.",
+      "de": "Bei 25:25 in Minute 59 bleiben 42 Sekunden. Du bist linkshändiger rechter Rückraum. Gegen eine stehende 6:0 ist eine Aktion über den Kreis vereinbart. Ihr müsst aktiv eine Chance schaffen und dürft nicht davon ausgehen, den Ball bis zum Ende nur halten zu können."
     },
     "question": {
       "en": "When do you start the final action?",
@@ -34037,27 +34037,27 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Late enough that a save leaves them no time — start the agreed action at about ten seconds and finish at the end of it",
-          "hr": "Dovoljno kasno da im obrana vratara ne ostavi vremena: pokreni dogovorenu akciju na otprilike deset sekundi i završi na njezinom kraju",
-          "de": "So spät, dass ihnen eine Parade keine Zeit lässt — die vereinbarte Aktion bei etwa zehn Sekunden starten und an ihrem Ende abschließen"
+          "hr": "Aktivno pripremi dogovorenu akciju i prilagodi završetak obrani, preostalom vremenu i mogućem upozorenju na pasivnu igru",
+          "en": "Actively prepare the agreed action and adapt the finish to the defence, remaining time and any passive warning",
+          "de": "Die vereinbarte Aktion aktiv vorbereiten und den Abschluss an Abwehr, Restzeit und mögliche Passivwarnung anpassen"
         },
         "feedback": {
-          "en": "Correct — in a tied last possession the shot should arrive so late that even a save or a block cannot become their attack.",
-          "hr": "Točno: u izjednačenom zadnjem napadu šut mora doći toliko kasno da ni obrana ni blok ne mogu postati njihov napad.",
-          "de": "Richtig — im letzten Angriff bei Gleichstand muss der Wurf so spät kommen, dass auch Parade oder Block kein Angriff mehr für sie werden."
+          "hr": "Točno: planiraj završetak, ali reagiraj na stvarnu priliku i sudačko upozorenje.",
+          "en": "Correct: plan the finish while responding to a real chance and the passive warning.",
+          "de": "Richtig: Den Abschluss planen, dabei auf Chancen und Passivwarnung reagieren."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Start at about twenty seconds so there is time for a second attempt after a rebound",
-          "hr": "Pokreni na otprilike dvadeset sekundi da ostane vremena za drugi pokušaj nakon odbijene lopte",
-          "de": "Bei etwa zwanzig Sekunden starten, damit nach einem Abpraller Zeit für einen zweiten Versuch bleibt"
+          "hr": "Završi ranije ako se tijekom pripreme otvori jasna prilika",
+          "en": "Finish earlier if a clear chance opens during preparation",
+          "de": "Früher abschließen, wenn sich bei der Vorbereitung eine klare Chance öffnet"
         },
         "feedback": {
-          "en": "Good if you are confident of the offensive rebound, but the same time window also gives them a possession if you miss.",
-          "hr": "Dobro ako si siguran u napadačku odbijenu loptu, ali isti prozor daje i njima napad ako promašiš.",
-          "de": "Gut, wenn ihr den Abpraller sicher habt, aber dasselbe Zeitfenster gibt auch ihnen einen Angriff bei Fehlwurf."
+          "hr": "Dobra prilagodba kada prilika stvarno nastane. Sam broj sekundi ne određuje odluku.",
+          "en": "A good adjustment when the chance actually appears. The seconds alone do not decide it.",
+          "de": "Eine gute Anpassung bei tatsächlicher Chance. Die Sekundenzahl allein entscheidet nicht."
         }
       },
       {
@@ -34088,9 +34088,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: tied, 42 seconds, last possession, a deep defence that will not foul. The timing is the whole decision — start the agreed action around ten seconds so nothing is left after the shot. Starting at twenty is defensible if you own the rebound. Attacking now or waiting for the passive signal both give them a chance to win it.",
-      "hr": "Signal: neriješeno, 42 sekunde, zadnji napad, duboka obrana koja neće prekršaj. Tempiranje je cijela odluka: pokreni dogovorenu akciju oko desete sekunde da nakon šuta ne ostane ništa. Start na dvadesetoj je obranjiv ako držiš odbijenu loptu. Napad odmah ili čekanje pasivne igre daju im priliku za pobjedu.",
-      "de": "Signal: Gleichstand, 42 Sekunden, letzter Angriff, tiefe Abwehr ohne Foul. Das Timing ist die Entscheidung — Aktion bei etwa zehn Sekunden starten."
+      "hr": "Ne postoji zajamčeno pravo držanja lopte preostale 42 sekunde. Aktivno razvijaj akciju i odluči prema prilici, vremenu i pasivnoj igri. Raniji kvalitetan završetak iz odgovora B može biti opravdan; čekanje unaprijed zadane sekunde može izgubiti napad.",
+      "en": "There is no guaranteed right to hold the ball for the remaining 42 seconds. Develop the attack actively and decide from the chance, time and passive play. An earlier quality finish in B may be justified; waiting for a fixed second can lose the attack.",
+      "de": "Es gibt kein garantiertes Recht, den Ball die verbleibenden 42 Sekunden zu halten. Den Angriff aktiv entwickeln und nach Chance, Zeit und Passivspiel entscheiden. Ein früher guter Abschluss in B kann passen; das Warten auf eine feste Sekunde kann den Angriff kosten."
     },
     "skillTags": [
       "pressureDecisions",
