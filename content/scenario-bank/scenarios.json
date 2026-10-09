@@ -33839,40 +33839,40 @@
     "score": "26:25",
     "defensiveSystem": "5-1",
     "situation": {
-      "en": "You lead 26:25 at 57'. They defend an aggressive 5:1 and are hunting one stolen possession. You have the ball on your side. Their right wing is already standing high at the halfway line and leaves the moment you shoot. Your pivot is behind a defender and not in a rebound position, and your left wing is deep in the far corner.",
-      "hr": "Vodite 26:25 u 57. minuti. Brane agresivnu 5:1 i love jedan ukradeni napad. Lopta je kod tebe na tvojoj strani. Njihovo desno krilo već stoji visoko na sredini terena i kreće čim ti šutiraš. Tvoj pivot je iza braniča i nije u poziciji za odbijenu loptu, a lijevo krilo je duboko u suprotnom kutu.",
-      "de": "Ihr führt 26:25 in Minute 57. Sie verteidigen eine aggressive 5:1 und jagen einen einzigen Ballgewinn. Du hast den Ball auf deiner Seite. Ihr Rechtsaußen steht schon hoch an der Mittellinie und startet, sobald du wirfst. Euer Kreisläufer steht hinter einem Verteidiger und nicht in der Abprallposition, euer Linksaußen tief in der anderen Ecke."
+      "en": "You lead 26:25 at 57'. They defend an aggressive 5:1 and are hunting one stolen possession. You have the ball on your side. Their right wing is already standing high at the halfway line and leaves the moment you shoot. Your pivot is behind a defender and not in a rebound position, and your left wing is deep in the far corner. A defender blocks your shooting lane, while the centre back is available for a short pass.",
+      "hr": "Vodite 26:25 u 57. minuti. Brane agresivnu 5:1 i love jedan ukradeni napad. Lopta je kod tebe na tvojoj strani. Njihovo desno krilo već stoji visoko na sredini terena i kreće čim ti šutiraš. Tvoj pivot je iza braniča i nije u poziciji za odbijenu loptu, a lijevo krilo je duboko u suprotnom kutu. Branič ti zatvara putanju šuta, a srednji vanjski je slobodan za kratko dodavanje.",
+      "de": "Ihr führt 26:25 in Minute 57. Sie verteidigen eine aggressive 5:1 und jagen einen einzigen Ballgewinn. Du hast den Ball auf deiner Seite. Ihr Rechtsaußen steht schon hoch an der Mittellinie und startet, sobald du wirfst. Euer Kreisläufer steht hinter einem Verteidiger und nicht in der Abprallposition, euer Linksaußen tief in der anderen Ecke. Ein Verteidiger schließt deine Wurflinie; Rückraum Mitte ist für einen kurzen Pass frei."
     },
     "question": {
-      "en": "What has to be true before you release a shot with a one-goal lead?",
-      "hr": "Što mora biti ispunjeno prije nego pustiš šut uz gol prednosti?",
-      "de": "Was muss erfüllt sein, bevor du bei Ein-Tor-Führung wirfst?"
+      "hr": "Kako nastavljaš ovaj napad uz gol prednosti?",
+      "en": "How do you continue this attack with a one-goal lead?",
+      "de": "Wie setzt du diesen Angriff bei einem Tor Vorsprung fort?"
     },
     "answers": [
       {
         "quality": "optimal",
         "text": {
-          "en": "Rebound cover and balance behind the ball — otherwise keep the ball moving and make them defend or foul",
-          "hr": "Pokrivena odbijena lopta i ravnoteža iza lopte: inače drži loptu u kretanju i natjeraj ih da brane ili prekrše",
-          "de": "Abprallsicherung und Balance hinter dem Ball — sonst den Ball laufen lassen und sie zum Verteidigen oder Foulen zwingen"
+          "hr": "Dodaj slobodnom srednjem vanjskom, nastavi stvarati priliku i dogovori osiguranje povratka",
+          "en": "Pass to the free centre back, keep creating a chance and organise defensive cover",
+          "de": "Zum freien Rückraum Mitte passen, weiter eine Chance herausspielen und die Rückzugssicherung abstimmen"
         },
         "feedback": {
-          "en": "Correct — with their wing leaving early, an unprotected shot is not an attack, it is the start of their counter-attack.",
-          "hr": "Točno: uz vodstvo od jednog u završnici ne smiješ priuštiti izgubiti loptu bez pokrivene odbijene lopte i ravnoteže iza.",
-          "de": "Richtig — solange ihr Außen früh startet, ist ein ungesicherter Wurf kein Angriff, sondern der Beginn ihres Tempogegenstoßes."
+          "hr": "Točno: sigurno dodavanje omogućuje nastavak aktivnog napada bez forsiranja pokrivenog šuta. Istodobno treba pratiti protivnika koji čeka kontru.",
+          "en": "Correct: the safe pass keeps the attack active without forcing a covered shot. Track the opponent waiting for the counter as well.",
+          "de": "Richtig: Der sichere Pass hält den Angriff aktiv, ohne einen gedeckten Wurf zu erzwingen. Zugleich den auf den Konter wartenden Gegner beachten."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "Attack the front defender of the 5:1 to draw a two-minute suspension",
-          "hr": "Napadni prednjeg braniča u 5:1 da izazoveš isključenje na dvije minute",
-          "de": "Den Vorderen der 5:1 angreifen, um eine Zeitstrafe zu provozieren"
+          "hr": "Napadni prostor uz prednjeg braniča ako se otvori, uz kontrolu lopte",
+          "en": "Attack the space beside the front defender if it opens, keeping control of the ball",
+          "de": "Den Raum neben dem vorgezogenen Verteidiger angreifen, falls er sich öffnet, und den Ball kontrollieren"
         },
         "feedback": {
-          "en": "Good — an exclusion late is a strong prize, but attacking into contact is also where they win the ball you cannot afford to lose.",
-          "hr": "Dobro: isključenje u završnici velika je nagrada, ali ulazak u kontakt mjesto je gdje mogu uzeti loptu koju ne smiješ priuštiti izgubiti.",
-          "de": "Gut — eine späte Zeitstrafe ist ein starker Gewinn, aber im Kontakt holen sie auch den Ball, den ihr nicht verlieren dürft."
+          "hr": "Dobro ako se prostor otvori. Trenutačno je kratko dodavanje dostupno, a ulazak u kontakt nosi dodatni rizik gubitka lopte.",
+          "en": "Good if the space opens. A short pass is currently available, while entering contact adds turnover risk.",
+          "de": "Gut, wenn sich der Raum öffnet. Aktuell ist ein kurzer Pass möglich; Kontakt erhöht das Ballverlustrisiko."
         }
       },
       {
@@ -33883,9 +33883,9 @@
           "de": "Den ersten Wurf aus der Mitteldistanz nehmen, um auf zwei Tore zu erhöhen"
         },
         "feedback": {
-          "en": "Risky — a save with nobody on the rebound turns a one-goal lead into a tie within seconds.",
-          "hr": "Rizično: obrana vratara bez nikoga na odbijenoj lopti u nekoliko sekundi pretvara plus jedan u izjednačenje.",
-          "de": "Riskant — eine Parade ohne Abprallsicherung macht aus der Ein-Tor-Führung in Sekunden ein Unentschieden."
+          "hr": "Rizično: putanja šuta je pokrivena, a protivnik već čeka kontru. Obrana ili blok mogu mu omogućiti brz napad, ali ishod nije unaprijed određen.",
+          "en": "Risky: the shooting lane is covered and an opponent is waiting for the counter. A save or block may enable a fast break, but the outcome is not predetermined.",
+          "de": "Riskant: Die Wurflinie ist gedeckt und ein Gegner wartet auf den Konter. Parade oder Block können einen schnellen Gegenangriff ermöglichen, garantieren ihn aber nicht."
         }
       },
       {
@@ -33903,9 +33903,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: +1 late, their wing cheating for the counter-attack, your pivot out of the rebound and your wing deep. The condition for shooting is cover and balance, not the picture of the shot itself. Drawing an exclusion is a reasonable second idea. Shooting unprotected or waiting for the passive signal both give them the possession they need.",
-      "hr": "Signal: plus jedan u završnici, njihovo krilo vara start za kontranapad, tvoj pivot izvan odbijene lopte, krilo duboko. Uvjet za šut je pokrivenost i ravnoteža, a ne izgled samog šuta. Izazivanje isključenja razumna je druga ideja. Nepokriven šut ili čekanje pasivne igre daju im napad koji im treba.",
-      "de": "Signal: +1 spät, ihr Außen lauert auf den Konter, euer Kreisläufer ohne Abprallposition. Bedingung für den Wurf ist Sicherung und Balance, nicht das Wurfbild."
+      "hr": "Ovdje je putanja šuta pokrivena, srednji vanjski slobodan, a protivnik spreman za kontru. Nastavi aktivan napad kratkim dodavanjem i dogovori osiguranje povratka. Procjenjuj kvalitetu prilike zajedno s rizikom gubitka lopte. To ne znači da se svaka dobra prilika mora odbiti ako pivot ne može do odbijene lopte.",
+      "en": "Here the shot is covered, the centre back is free and an opponent is ready to counter. Continue actively with a short pass and organise defensive cover. Assess shot quality alongside turnover risk. This does not mean rejecting every good chance whenever the pivot cannot reach a rebound.",
+      "de": "Hier ist der Wurf gedeckt, Rückraum Mitte frei und ein Gegner konterbereit. Mit kurzem Pass aktiv weiterspielen und den Rückzug absichern. Wurfqualität und Ballverlustrisiko gemeinsam bewerten. Eine gute Chance muss nicht grundsätzlich verworfen werden, nur weil der Kreis keinen Abpraller erreichen kann."
     },
     "skillTags": [
       "shotReading",
