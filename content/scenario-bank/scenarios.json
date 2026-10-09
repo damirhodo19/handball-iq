@@ -32817,9 +32817,9 @@
     "score": "26:27",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Your pivot is excluded, so you attack five against six at 52' while trailing 26:27, with about forty seconds of the penalty still to run. The defence pushes high on the ball because they know you are short. The half defender in front of you steps out very early, and behind him there is genuine space. A nine-metre shot without a screen against six defenders is exactly the possession they want you to play.",
-      "hr": "Tvoj pivot je isključen, pa napadaš 5 na 6 u 52. minuti dok Gubite 26:27, uz još otprilike četrdeset sekundi kazne. Obrana izlazi visoko na loptu jer zna da ste igrač manje. Polubranitelj ispred tebe izlazi vrlo rano, a iza njega je stvaran prostor. Šut s devet metara bez bloka protiv šest braniča upravo je napad kakav oni žele da odigraš.",
-      "de": "Euer Kreisläufer ist hinausgestellt, also greift ihr in Minute 52 fünf gegen sechs an und liegt 26:27 zurück, mit noch etwa vierzig Sekunden Strafe. Die Abwehr geht hoch auf den Ball, weil sie eure Unterzahl kennt. Der Halbverteidiger vor dir tritt sehr früh heraus, und hinter ihm ist echter Raum. Ein Neun-Meter-Wurf ohne Sperre gegen sechs Verteidiger ist genau der Angriff, den sie sehen wollen."
+      "hr": "Tvoj pivot je isključen pa napadate pet na šest. U 52. minuti gubite 26:27, a do isteka kazne ostaje otprilike četrdeset sekundi. Polubranitelj rano izlazi prema tebi i podiže ruke u putanju šuta. Uz njegov bok ostaje slobodan prolaz, a pomoć ga još nije zatvorila.",
+      "en": "Your pivot is suspended, so you attack five against six. In minute 52 you trail 26:27, with about forty seconds of the suspension left. The half defender steps out early and raises his arms into your shooting lane. A lane beside him remains open and help has not closed it yet.",
+      "de": "Euer Kreisläufer ist hinausgestellt, ihr greift fünf gegen sechs an. In Minute 52 liegt ihr 26:27 zurück; die Strafe läuft noch etwa vierzig Sekunden. Der Halbverteidiger tritt früh heraus und hebt die Arme in deine Wurflinie. Neben ihm bleibt ein Durchbruch offen, den die Hilfe noch nicht geschlossen hat."
     },
     "question": {
       "en": "A man short and one goal down — how do you attack?",
@@ -32835,9 +32835,9 @@
           "de": "Ihre Aggressivität nutzen: den Raum hinter dem früh heraustretenden Verteidiger angreifen"
         },
         "feedback": {
-          "en": "Correct — when a defence pushes high against five, the punishment lives behind the first man out.",
-          "hr": "Točno: kad obrana izlazi visoko protiv petorice, kazna živi iza prvog koji izađe.",
-          "de": "Richtig — wenn eine Abwehr gegen fünf hoch geht, liegt die Strafe hinter dem ersten Heraustretenden."
+          "hr": "Točno: opisani prolaz još je otvoren, dok branič ometa šut. Napadni prostor i prati reakciju pomoći.",
+          "en": "Correct: the described lane is still open while the defender contests the shot. Attack the space and read the help.",
+          "de": "Richtig: Die beschriebene Bahn ist noch frei, während der Verteidiger den Wurf stört. Den Raum angreifen und die Hilfe beachten."
         }
       },
       {
@@ -32861,9 +32861,9 @@
           "de": "Früh von neun Metern werfen, um Zeit zu sparen, während ihr einen Mann weniger seid"
         },
         "feedback": {
-          "en": "Risky — a shot into six set defenders is a rebound for them and a fast break against four.",
-          "hr": "Rizično: šut u šest posloženih braniča njima je odbijena lopta i kontra protiv četvorice.",
-          "de": "Riskant — ein Wurf in sechs geordnete Verteidiger ist ihr Abpraller und ihr Gegenstoß gegen vier."
+          "hr": "Rizično: forsiraš šut kroz opisani blok i zanemaruješ otvoreni prolaz. Sam broj braniča ne određuje kvalitetu šuta.",
+          "en": "Risky: you force a shot through the described block and ignore the open lane. The number of defenders alone does not determine shot quality.",
+          "de": "Riskant: Du erzwingst einen Wurf durch den beschriebenen Block und ignorierst den freien Durchbruch. Die Zahl der Verteidiger allein bestimmt die Wurfqualität nicht."
         }
       },
       {
@@ -32881,9 +32881,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: you are short-handed and behind, and their defence answers with an early step out that leaves space behind it. That space is the whole attack, because a screen-free shot against six is what they are inviting. Patient circulation is playable for a while, whereas an early shot or dead holding both end the possession badly.",
-      "hr": "Signal: igrač ste manje i u zaostatku, a njihova obrana odgovara ranim izlaskom koji iza sebe ostavlja prostor. Taj prostor je cijeli napad, jer šut bez bloka protiv šestorice je ono na što vas mame. Strpljivo kruženje neko vrijeme prolazi, dok rani šut ili mrtvo držanje lopte loše završavaju napad.",
-      "de": "Signal: Ihr seid in Unterzahl und im Rückstand, ihre Abwehr tritt früh heraus und lässt Raum. Dieser Raum ist der ganze Angriff, denn den Wurf ohne Sperre gegen sechs wollen sie sehen."
+      "hr": "Prednost proizlazi iz otvorenog prolaza uz braniča koji rano izlazi, dok su mu ruke u putanji šuta. Iskoristi prolaz dok pomoć kasni i prilagodi odluku njezinoj reakciji. Igrač manje sam po sebi ne čini svaki šut s devet metara lošim. Čekanje isteka kazne bez aktivnog napada nije pouzdan način čuvanja lopte.",
+      "en": "The advantage comes from the open lane beside the early stepping defender whose arms occupy the shooting lane. Use it while help is late and adapt to its response. Being a player down does not by itself make every nine metre shot poor. Waiting out the suspension without active attack is not a reliable way to retain possession.",
+      "de": "Der Vorteil liegt im freien Weg neben dem früh heraustretenden Verteidiger, dessen Arme in der Wurflinie stehen. Nutze ihn, solange die Hilfe zu spät kommt, und reagiere auf sie. Unterzahl allein macht nicht jeden Neunmeterwurf schlecht. Die Strafe ohne aktiven Angriff abzuwarten sichert den Ballbesitz nicht zuverlässig."
     },
     "skillTags": [
       "shotReading",
