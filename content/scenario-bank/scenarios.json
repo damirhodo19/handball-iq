@@ -53579,9 +53579,9 @@
       }
     ],
     "explanation": {
-      "en": "The 3:2:1 pocket exists only while the half defender is high and the central defender has not shifted. Move with the pass, arrive behind the pressure and show immediately. If the centre closes early, reseal him instead.",
-      "hr": "Prostor protiv 3:2:1 postoji samo dok je polubranitelj visoko, a središnji branič još nije pomaknut. Kreni s loptom, stigni iza pritiska i odmah se pokaži. Ako sredina rano zatvori, ponovno zatvori središnjeg braniča.",
-      "de": "Der Raum gegen 3:2:1 besteht nur, solange der Halbverteidiger hoch steht und der zentrale Verteidiger noch nicht verschoben hat. Mit dem Pass starten, hinter dem Druck ankommen und sofort zeigen. Schließt die Mitte früh, sperre sie neu."
+      "hr": "U opisanoj situaciji polubranitelj izlazi, a središnji branič još nije zatvorio prostor iza njega. Kreni istodobno s dodavanjem lijevom vanjskom i pokaži se za prijem. Ako središnji branič zatvori putanju prije dodavanja, prilagodi položaj umjesto da nastaviš u pokriven prostor.",
+      "en": "Here the half defender steps out and the central defender has not yet closed the space behind him. Move as the pass travels to the left back and show for reception. If the central defender closes the lane before the pass, adjust your position instead of continuing into covered space.",
+      "de": "Hier tritt der Halbverteidiger heraus, während der zentrale Verteidiger den Raum dahinter noch nicht geschlossen hat. Mit dem Pass zum linken Rückraum starten und sich anbieten. Schließt der zentrale Verteidiger den Weg vor dem Anspiel, die Position anpassen statt in gedeckten Raum weiterzulaufen."
     },
     "whyCorrectOverSecondBest": {
       "en": "A uses the two-step window; B is the counter only if the central defender closes it early.",
@@ -53835,9 +53835,9 @@
           "de": "Torseitig durch die Mitte sprinten, zentralen Läufer oder gegnerischen Kreis übernehmen und die nächste Übergabe organisieren"
         },
         "feedback": {
-          "en": "Correct — the deepest attacker must first remove the direct central goal.",
-          "hr": "Točno: najdublji napadač prvo mora ukloniti izravan pogodak kroz sredinu.",
-          "de": "Richtig — der tiefste Angreifer muss zuerst das direkte Tor durch die Mitte verhindern."
+          "hr": "Točno: povratkom kroz sredinu i komunikacijom smanjuješ otvoreni prostor. Preuzimanje ovisi o tome kojeg igrača možeš stići.",
+          "en": "Correct: central recovery and communication reduce open space. Your assignment depends on which player you can reach.",
+          "de": "Richtig: Rückzug durch die Mitte und Kommunikation verringern den freien Raum. Die Übernahme hängt davon ab, welchen Spieler du erreichst."
         }
       },
       {
@@ -53881,9 +53881,9 @@
       }
     ],
     "explanation": {
-      "en": "After losing the ball at six metres, the pivot is often the first body able to protect the middle. Sprint goal-side, own the centre runner or opposing pivot, and only then help toward the ball. Ball-chasing from behind is not recovery.",
-      "hr": "Nakon gubitka na šest metara pivot je često prvo tijelo koje može zaštititi sredinu. Sprintaj prema svom golu, preuzmi središnjeg trkača ili protivničkog pivota pa tek onda pomaži prema lopti. Lovljenje lopte s leđa nije povratak.",
-      "de": "Nach Ballverlust am Kreis ist der Kreisläufer oft der erste Körper, der die Mitte schützen kann. Torseitig sprinten, zentralen Läufer oder gegnerischen Kreis übernehmen und erst dann zum Ball helfen. Hinterherjagen ist kein Rückzug."
+      "hr": "Kao najdublji napadač moraš odmah krenuti u povratak kroz sredinu, ali ne možeš pretpostaviti da ćeš prestići igrače koji su već ispred tebe. Sprintaj prema svom golu, javi nepokrivenog trkača i preuzmi igrača kojeg stvarno možeš dosegnuti. Pomoć prema širokoj lopti dolazi tek uz potvrđeno pokriće sredine.",
+      "en": "As the deepest attacker, recover through the centre immediately, but do not assume you can overtake players already ahead. Sprint toward your goal, call out the unmarked runner and take an opponent you can actually reach. Help toward the wide ball only with confirmed central cover.",
+      "de": "Als tiefster Angreifer sofort durch die Mitte zurücklaufen, aber nicht voraussetzen, dass du bereits vorauslaufende Gegner einholst. Zum eigenen Tor sprinten, den freien Läufer ansagen und einen tatsächlich erreichbaren Gegner übernehmen. Erst bei bestätigter Absicherung der Mitte zum breiten Ball helfen."
     },
     "whyCorrectOverSecondBest": {
       "en": "A protects the unowned highest-value lane; B is allowed only after a teammate confirms that job is done.",
