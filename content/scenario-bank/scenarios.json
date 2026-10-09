@@ -33487,9 +33487,9 @@
           "de": "Auf der Seite, die der Bewacher verlassen hat — mit Tempo in die gedehnte Lücke neben deinem Verteidiger, bevor die Fünf verschieben"
         },
         "feedback": {
-          "en": "Correct — a 5+1 pays for the marker with width, and the surplus sits on the ball side while they are still shifting.",
-          "hr": "Točno: 5+1 čuvara plaća širinom, a višak je na strani lopte dok se još pomiču.",
-          "de": "Richtig — die 5+1 bezahlt den Bewacher mit Breite, und der Vorteil liegt auf der Ballseite, solange sie noch verschieben."
+          "hr": "Točno: iskoristi opisani preveliki razmak dok se obrana pomiče. Prednost je u prostoru, a ne u ukupnom broju igrača.",
+          "en": "Correct: exploit the described oversized gap while the defence shifts. The advantage is spatial, not an overall player advantage.",
+          "de": "Richtig: Die beschriebene zu große Lücke beim Verschieben nutzen. Der Vorteil liegt im Raum, nicht in einer zahlenmäßigen Überzahl."
         }
       },
       {
@@ -33500,9 +33500,9 @@
           "de": "Früh zum Rechtsaußen ins Eins gegen Eins, weil der Außenverteidiger jetzt deutlich mehr Raum decken muss"
         },
         "feedback": {
-          "en": "Good — the missing sixth defender really does help your wing, but the gap next to you opens first and closes fastest.",
-          "hr": "Dobro: nedostatak šestog braniča stvarno pomaže krilu, ali razmak pokraj tebe otvara se prvi i najbrže se zatvara.",
-          "de": "Gut — der fehlende sechste Verteidiger hilft dem Außen wirklich, aber die Lücke neben dir öffnet sich zuerst und schließt am schnellsten."
+          "hr": "Dobro ako krilo može primiti loptu u povoljnom položaju. Ovdje je izričito otvoren i prolaz pokraj tebe.",
+          "en": "Good if the wing can receive in a favourable position. Here the lane beside you is explicitly open too.",
+          "de": "Gut, wenn der Außen in günstiger Position angespielt werden kann. Hier ist auch die Bahn neben dir ausdrücklich offen."
         }
       },
       {
@@ -33533,9 +33533,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: the extra defender leaves the line to follow the pivot, so five players cover six attacking positions. The free zone is the stretched gap on your side — attack it with tempo. The wing one-on-one is the correct second option. Passing to the marked pivot or shooting from a standing position hands the advantage straight back.",
-      "hr": "Signal: kombinirana 5+1 s individualnim čuvanjem pivota: +1 napušta liniju, pa petorica pokrivaju šest napadačkih mjesta. Slobodna zona je rastegnuti razmak na tvojoj strani: napadni ga tempom. Krilo u 1 na 1 druga je ispravna opcija. Dodavanje pokrivenom pivotu ili daleki šut iz mjesta baca prednost.",
-      "de": "Signal: der zusätzliche Verteidiger verlässt die Linie für den Kreisläufer, fünf decken sechs Positionen. Die freie Zone ist die gedehnte Lücke auf deiner Seite — mit Tempo angreifen. Der Außen im Eins gegen Eins ist die zweite Option."
+      "hr": "Jedan branič prati pivota, a preostalih pet brani ostalih pet napadača. Opisana prednost nije brojčana: razmak na tvojoj strani je prevelik. Napadni taj prostor dok postoji i prati pomoć. Dodavanje krilu ostaje opcija ako se otvori povoljan prijem.",
+      "en": "One defender marks the pivot and the other five defend the remaining five attackers. The described advantage is not numerical: the gap on your side is too large. Attack it while available and read the help. Passing to the wing remains an option if a favourable reception opens.",
+      "de": "Ein Verteidiger deckt den Kreis, die anderen fünf die übrigen fünf Angreifer. Der beschriebene Vorteil ist keine Überzahl: Die Lücke auf deiner Seite ist zu groß. Nutze sie und beachte die Hilfe. Der Außenpass bleibt bei günstigem Anspiel eine Option."
     },
     "skillTags": [
       "perception",
@@ -35052,22 +35052,22 @@
           "de": "Du — innen hinter deinen Vorderen treten und diesen Kanal übernehmen, während der Außenverteidiger hinter dir einrückt"
         },
         "feedback": {
-          "en": "Correct — in a 5:1 the half defender behind the front man owns the space he vacates, especially once the pivot has tied up the middle.",
-          "hr": "Točno: u 5:1 polubranitelj iza prednjeg vlasnik je prostora koji prednji napusti, pogotovo kad je pivot vezao sredinu.",
-          "de": "Richtig — in der 5:1 gehört der Raum hinter dem Vorderen dem Halbverteidiger dahinter, erst recht wenn der Kreisläufer die Mitte bindet."
+          "hr": "Točno za opisanu rotaciju: prednji branič kasni, susjed čuva pivota, a ti možeš zatvoriti otvoreni prolaz uz pomicanje krilnog braniča.",
+          "en": "Correct for this rotation: the front defender is late, your neighbour covers the pivot, and you can close the open lane as the outside defender shifts.",
+          "de": "Richtig für diese Rotation: Der Vorgezogene kommt zu spät, dein Nachbar deckt den Kreis, und du kannst mit dem Einrücken des Außenverteidigers die freie Bahn schließen."
         }
       },
       {
         "quality": "good",
         "text": {
-          "en": "The front defender must recover that channel himself after chasing the ball",
-          "hr": "Prednji branič mora sam vratiti taj kanal nakon jurnjave za loptom",
-          "de": "Der Vordere muss den Kanal nach seiner Ballverfolgung selbst wieder schließen"
+          "hr": "Prednji branič preuzima prostor ako se pravodobno vrati i jasno potvrdi preuzimanje",
+          "en": "The front defender takes the space if he recovers in time and clearly confirms the handover",
+          "de": "Der Vorgezogene übernimmt den Raum, wenn er rechtzeitig zurückkehrt und die Übernahme klar bestätigt"
         },
         "feedback": {
-          "en": "Good in theory, but he is already behind the action; waiting for him leaves the second crossing runner free for one full tempo.",
-          "hr": "Dobro u teoriji, ali on je već iza akcije; čekanje njega ostavlja drugog igrača u križanju slobodnim cijeli jedan tempo.",
-          "de": "Theoretisch gut, aber er ist schon hinter der Aktion; auf ihn zu warten lässt den zweiten Kreuzenden ein ganzes Tempo frei."
+          "hr": "Dobro uz pravodoban povratak i potvrđeno preuzimanje. Ovdje je još iza akcije, pa ne čekaj njegov povratak dok prolaz ostaje otvoren.",
+          "en": "Good with a timely recovery and confirmed handover. Here he is still behind the play, so do not wait while the lane remains open.",
+          "de": "Gut bei rechtzeitiger Rückkehr und bestätigter Übernahme. Hier ist er noch hinter der Aktion; bei offenem Durchbruch nicht auf ihn warten."
         }
       },
       {
