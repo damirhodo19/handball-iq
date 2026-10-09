@@ -34300,9 +34300,9 @@
     "score": "30:30",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 30:30 at 58'. You attack seven against six with your own goal empty. The ball has been circulating for a long time and the referee has just raised the passive signal. You are at nine metres on your side; the only pass still available is a long diagonal that their half defender is already reading. Their wing has stopped at the halfway line and is not coming back on defence at all.",
-      "hr": "Neriješeno je 30:30 u 58. minuti. Napadaš sedam na šest s vlastitim praznim golom. Loptu vrtite već dugo i sudac je upravo podigao znak za pasivnu igru. Ti si na devet metara na svojoj strani; jedino preostalo dodavanje duga je dijagonala koju njihov polubranitelj već čita. Njihovo krilo stalo je na sredini terena i uopće se ne vraća u obranu.",
-      "de": "Es steht 30:30 in Minute 58. Ihr greift sieben gegen sechs mit eigenem leeren Tor an. Der Ball läuft schon lange, und der Schiedsrichter hat gerade das Passivzeichen gehoben. Du stehst auf neun Metern auf deiner Seite; der einzige verbleibende Pass ist eine lange Diagonale, die ihr Halbverteidiger bereits liest. Ihr Außen ist an der Mittellinie stehen geblieben und läuft überhaupt nicht mehr zurück."
+      "en": "Tied 30:30 at 58'. You attack seven against six with your own goal empty. The ball has been circulating for a long time and the referee has just raised the passive signal. You are at nine metres on your side; the only pass still available is a long diagonal that their half defender is already reading. Their wing has stopped at the halfway line and is not coming back on defence at all. The team agreement is to prepare the substitution when safe attacking options close. A court player must leave before the goalkeeper enters.",
+      "hr": "Neriješeno je 30:30 u 58. minuti. Napadaš sedam na šest s vlastitim praznim golom. Loptu vrtite već dugo i sudac je upravo podigao znak za pasivnu igru. Ti si na devet metara na svojoj strani; jedino preostalo dodavanje duga je dijagonala koju njihov polubranitelj već čita. Njihovo krilo stalo je na sredini terena i uopće se ne vraća u obranu. Dogovor momčadi je pripremiti zamjenu čim se sigurne napadačke opcije zatvore. Igrač iz polja mora izaći prije ulaska vratara.",
+      "de": "Es steht 30:30 in Minute 58. Ihr greift sieben gegen sechs mit eigenem leeren Tor an. Der Ball läuft schon lange, und der Schiedsrichter hat gerade das Passivzeichen gehoben. Du stehst auf neun Metern auf deiner Seite; der einzige verbleibende Pass ist eine lange Diagonale, die ihr Halbverteidiger bereits liest. Ihr Außen ist an der Mittellinie stehen geblieben und läuft überhaupt nicht mehr zurück. Die Mannschaft hat vereinbart, den Wechsel vorzubereiten, sobald sichere Angriffsoptionen fehlen. Ein Feldspieler muss vor dem Eintritt des Torwarts das Feld verlassen."
     },
     "question": {
       "en": "What is the first signal that the goalkeeper must return?",
@@ -34313,14 +34313,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "The raised passive signal while the only remaining pass is already being read — the possession is about to end one way or another",
-          "hr": "Podignut znak za pasivnu igru dok je jedino preostalo dodavanje već pročitano: napad ovako ili onako završava",
-          "de": "Das erhobene Passivzeichen, während der einzige verbleibende Pass schon gelesen wird — der Angriff endet so oder so gleich"
+          "hr": "Pripremi dogovorenu zamjenu sada, dok je gol prazan i sigurne opcije su zatvorene; vratar ulazi nakon izlaska igrača iz polja",
+          "en": "Prepare the agreed substitution now, with an empty goal and safe options closed; the goalkeeper enters after a court player leaves",
+          "de": "Den vereinbarten Wechsel jetzt vorbereiten; der Torwart tritt erst nach dem Verlassen eines Feldspielers ein"
         },
         "feedback": {
-          "en": "Correct — passive count plus a read pass means a forced shot or a turnover is coming, and the goalkeeper needs the head start.",
-          "hr": "Točno: pasivna igra uz pročitano dodavanje znači da slijedi forsiran šut ili gubitak lopte, a vratar treba prednost u startu.",
-          "de": "Richtig — Passivzeichen plus gelesener Pass heißt, es kommt ein erzwungener Wurf oder ein Ballverlust; der Torwart braucht den Vorsprung."
+          "hr": "Točno: opisani rizik i dogovor momčadi opravdavaju ranu pripremu zamjene.",
+          "en": "Correct: the described risk and team agreement justify preparing the substitution early.",
+          "de": "Richtig: Das beschriebene Risiko und die Mannschaftsabsprache sprechen für die frühe Wechselvorbereitung."
         }
       },
       {
@@ -34331,9 +34331,9 @@
           "de": "Der Moment, in dem der Wurf deine Hand verlässt"
         },
         "feedback": {
-          "en": "Good instinct, but over that distance starting at the release is already one step late.",
-          "hr": "Dobar instinkt, ali na toj udaljenosti kretanje tek pri ispuštanju već kasni jedan korak.",
-          "de": "Guter Instinkt, aber auf dieser Distanz ist der Start beim Abwurf schon einen Schritt zu spät."
+          "hr": "Dobro je povezati povratak vratara sa završetkom napada, ali ovdje dogovor i zatvorene opcije traže raniju pripremu zamjene.",
+          "en": "Linking the goalkeeper return to the finish is sensible, but here the agreement and closed options call for earlier preparation.",
+          "de": "Die Torwartrückkehr mit dem Abschluss zu verbinden ist sinnvoll; hier verlangen Absprache und fehlende Optionen eine frühere Vorbereitung."
         }
       },
       {
@@ -34344,9 +34344,9 @@
           "de": "Erst, wenn ihr den Ball tatsächlich verloren habt"
         },
         "feedback": {
-          "en": "Risky — reacting to the turnover is always slower than their pass into the empty goal.",
-          "hr": "Rizično: reakcija na gubitak lopte uvijek je sporija od njihovog dodavanja u prazan gol.",
-          "de": "Riskant — die Reaktion auf den Ballverlust ist immer langsamer als ihr Pass ins leere Tor."
+          "hr": "Rizično: čekanjem gubitka lopte skraćuješ vrijeme za povratak vratara.",
+          "en": "Risky: waiting for a turnover reduces the time available for the goalkeeper to return.",
+          "de": "Riskant: Warten auf den Ballverlust verkürzt die Zeit für die Torwartrückkehr."
         }
       },
       {
@@ -34364,9 +34364,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: passive signal raised, only one pass left and it is already being read, their wing parked at halfway. Together that is the signal — the possession is ending, so the goalkeeper starts back before the shot, not after it. Leaving at the release is late; leaving after the turnover is far too late.",
-      "hr": "Signal: podignut znak za pasivnu igru, ostalo je samo jedno dodavanje i ono je već pročitano, njihovo krilo parkirano na sredini. Zajedno to je znak: napad završava, pa vratar kreće natrag prije šuta, a ne poslije. Kretanje pri ispuštanju kasni; kretanje nakon gubitka lopte kasni puno više.",
-      "de": "Signal: Passivzeichen, nur noch ein gelesener Pass, ihr Außen an der Mittellinie. Der Angriff endet — der Torwart startet vor dem Wurf zurück."
+      "hr": "Upozorenje je tek podignuto i ne znači da je ostalo samo jedno dopušteno dodavanje. Ovdje je jedina vidljiva putanja dodavanja već pokrivena, protivnik čeka kontranapad, a momčad ima dogovor za povratak vratara. Pripremi zamjenu dok čuvaš loptu. Vratar ulazi tek nakon izlaska igrača iz polja.",
+      "en": "A newly raised warning does not mean only one permitted pass remains. Here the only visible passing lane is covered, an opponent awaits the counter, and the team has a goalkeeper return agreement. Prepare the substitution while retaining possession. The goalkeeper enters only after a court player leaves.",
+      "de": "Eine neue Passivwarnung bedeutet nicht, dass nur noch ein erlaubter Pass bleibt. Hier ist der sichtbare Passweg gedeckt, ein Gegner wartet auf den Konter und die Rückkehr ist abgesprochen. Den Wechsel bei gesichertem Ball vorbereiten. Der Torwart tritt erst nach dem Verlassen eines Feldspielers ein."
     },
     "skillTags": [
       "shotReading",
@@ -35400,27 +35400,27 @@
     "score": "24:23",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You lead 24:23 at 44'. Short-handed after an exclusion — you defend 5v6 as right back. Ball swings to your side: pivot sealed, right wing wide. You cannot cover both the nine-metre shot and the wing. Central help is occupied.",
-      "hr": "Vodite 24:23 u 44. minuti. U igraču manje nakon isključenja: braniš 5 na 6 kao desni vanjski. Lopta ide na tvoju stranu: pivot zatvoren, desno krilo široko. Ne možeš pokriti i šut s devet i krilo. Središnja pomoć je zauzeta.",
-      "de": "Ihr führt 24:23 in Minute 44. Unterzahl nach Zeitstrafe — du verteidigst 5 gegen 6 als rechter Rückraum. Ball auf deine Seite: Kreisläufer abgedichtet, Rechtsaußen breit. Du kannst nicht Neun-Meter und Außen gleichzeitig. Zentrale Hilfe ist gebunden."
+      "hr": "Vodite 24:23 u 44. minuti i branite pet na šest nakon isključenja. Na tvojoj strani vanjski igrač ima loptu i otvorenu putanju za šut s devet metara. Pivot je pokriven, a krilo je vrlo široko uz golnu crtu i ima uzak kut. Vratar traži da ometaš šut vanjskog dok on priprema obranu iz tog uskog kuta. Ne možeš istodobno zatvoriti oba igrača.",
+      "en": "You lead 24:23 in minute 44, defending five against six after a suspension. The back on your side has the ball and a clear nine metre shooting lane. The pivot is covered; the wing is wide by the goal line with a narrow angle. Your goalkeeper asks you to contest the back while he prepares for that narrow wing angle. You cannot cover both players simultaneously.",
+      "de": "Ihr führt 24:23 in Minute 44 und verteidigt nach einer Zeitstrafe fünf gegen sechs. Der Rückraumspieler auf deiner Seite hat den Ball und eine freie Wurflinie aus neun Metern. Der Kreis ist gedeckt, der Außen steht weit an der Torauslinie mit engem Winkel. Der Torwart fordert dich zum Stören des Rückraumwurfs auf und bereitet sich auf den engen Außenwinkel vor. Du kannst nicht beide zugleich decken."
     },
     "question": {
-      "en": "What must you protect first on the ball side when short-handed?",
-      "hr": "Što moraš prvo čuvati na strani lopte u igraču manje?",
-      "de": "Was musst du bei Unterzahl auf der Ballseite zuerst schützen?"
+      "hr": "Koju prijetnju prvo zatvaraš u opisanoj obrani s igračem manje?",
+      "en": "Which threat do you cover first in this short-handed situation?",
+      "de": "Welche Gefahr sicherst du in dieser Unterzahlsituation zuerst ab?"
     },
     "answers": [
       {
         "quality": "optimal",
         "text": {
-          "en": "The higher-percentage inside threat — contest the back; accept a tougher wing finish",
-          "hr": "Prijetnju većeg postotka unutra: otežaj vanjskog; prihvati teži završetak krila",
-          "de": "Die höhere Innengefahr — Rückraum erschweren; schwierigeren Außenabschluss akzeptieren"
+          "hr": "Ometaj otvoreni šut vanjskog prema dogovoru s vratarem, zatim reagiraj na dodavanje krilu",
+          "en": "Contest the open backcourt shot as agreed with the goalkeeper, then react to a pass to the wing",
+          "de": "Den freien Rückraumwurf wie mit dem Torwart abgesprochen stören, dann auf den Pass nach außen reagieren"
         },
         "feedback": {
-          "en": "Correct — in 5v6 give the harder wing before a clean nine-metre or pivot finish.",
-          "hr": "Točno: u 5 na 6 daješ teže krilo prije čistog šuta s devet ili pivota.",
-          "de": "Richtig — in Unterzahl gibst du den schwierigeren Außen vor klaren Neun Metern."
+          "hr": "Točno: vanjski ima otvorenu putanju šuta, a vratar se priprema za mogući šut krila iz uskog kuta.",
+          "en": "Correct: the back has a clear shooting lane and the goalkeeper is preparing for a possible narrow-angle wing shot.",
+          "de": "Richtig: Der Rückraum hat eine freie Wurflinie; der Torwart bereitet sich auf einen möglichen Außenwurf aus engem Winkel vor."
         }
       },
       {
@@ -35444,9 +35444,9 @@
           "de": "Von der Seite foulen ohne Absprache mit dem Torwart"
         },
         "feedback": {
-          "en": "Risky — side fouls create seven-metres or more exclusions while short-handed.",
-          "hr": "Rizično: bočni prekršaji daju sedmerac ili novo isključenje u manjku.",
-          "de": "Riskant — Seitenfouls bringen Siebenmeter oder weitere Strafe."
+          "hr": "Rizično: rušenje s boka može ugroziti igrača i dovesti do kazne. Ovdje pravodobno zauzmi položaj i ometaj šut dopuštenim kontaktom.",
+          "en": "Risky: bringing a player down from the side can endanger them and lead to a sanction. Here, take position in time and contest the shot with legal contact.",
+          "de": "Riskant: Seitliches Zu-Fall-Bringen kann den Spieler gefährden und eine Strafe nach sich ziehen. Rechtzeitig Position beziehen und den Wurf mit erlaubtem Kontakt stören."
         }
       },
       {
@@ -35464,9 +35464,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: 5v6 ball side, pivot sealed, cannot cover both. Protect the higher-percentage inside first; accept a tougher wing. Wing sprint (B) only after the pass.",
-      "hr": "Signal: 5 na 6 na strani lopte, pivot zatvoren, ne možeš oboje. Prvo čuvaj viši postotak unutra; prihvati teže krilo. Sprint na krilo (B) tek nakon dodavanja.",
-      "de": "Signal: Unterzahl Ballseite — zuerst höhere Innenquote."
+      "hr": "U ovoj situaciji vanjski ima otvoren šut, krilo uzak kut, a vratar je potvrdio podjelu zadaća. Ometaj vanjskog dok ima loptu, pa reagiraj na dodavanje. To nije opće pravilo da je svaki šut s devet metara opasniji od svakog šuta s krila.",
+      "en": "Here the back has a clear shot, the wing a narrow angle, and the goalkeeper has agreed the responsibilities. Contest the back while he has the ball, then react to the pass. This is not a general rule that every nine metre shot is more dangerous than every wing shot.",
+      "de": "Hier hat der Rückraum eine freie Wurflinie, der Außen einen engen Winkel und der Torwart bestätigt die Aufteilung. Den Ballführer stören und auf den Pass reagieren. Nicht jeder Neunmeterwurf ist grundsätzlich gefährlicher als jeder Außenwurf."
     },
     "skillTags": [
       "shotReading",
