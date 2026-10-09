@@ -38543,7 +38543,7 @@
         "quality": "optimal",
         "text": {
           "en": "Release to the free right back immediately while the half is in traffic and the centre is late",
-          "hr": "Odmah pusti loptu slobodnom desnom vanjskom dok je polubranitelj u gužvi, a sredina kasni",
+          "hr": "Odmah dodaj slobodnom desnom vanjskom dok obrana kasni s preuzimanjem",
           "de": "Sofort auf den freien rechten Rückraum abgeben, während der Halbe im Verkehr ist und die Mitte spät"
         },
         "feedback": {
@@ -38642,7 +38642,7 @@
         "quality": "optimal",
         "text": {
           "en": "Attack the lane between centre and late right half immediately on the return catch",
-          "hr": "Na povratnom prijemu odmah napadni prolaz između sredine i kasnog desnog polubranitelja",
+          "hr": "Nakon povratnog dodavanja odmah napadni otvoreni prostor između dvojice braniča",
           "de": "Beim Rückfang sofort die Bahn zwischen Mitte und spätem rechtem Halben angreifen"
         },
         "feedback": {
@@ -38779,7 +38779,7 @@
         "quality": "poor",
         "text": {
           "en": "Ignore the free left back and force a deep contested shot through the recovering centre",
-          "hr": "Ignoriraj slobodnog lijevog vanjskog i forsiraj duboki otežan šut kroz vraćajućeg središnjeg",
+          "hr": "Zanemari slobodnog lijevog vanjskog i forsiraj otežan šut kroz braniča koji se vraća",
           "de": "Den freien Linken ignorieren und einen tiefen umkämpften Wurf durch den zurückkehrenden Zentralen erzwingen"
         },
         "feedback": {
@@ -38842,7 +38842,7 @@
         "quality": "optimal",
         "text": {
           "en": "Attack the open left-back lane immediately while both switchers are still looking at the ball",
-          "hr": "Odmah napadni otvorenu liniju lijevog vanjskog dok oba u zamjeni još gledaju loptu",
+          "hr": "Odmah dodaj lijevom vanjskom u otvoreni prostor dok obrana kasni s preuzimanjem",
           "de": "Sofort die offene Linke-Rückraum-Bahn angreifen, solange beide Wechsler noch zum Ball schauen"
         },
         "feedback": {
@@ -38855,7 +38855,7 @@
         "quality": "good",
         "text": {
           "en": "Feed the pivot on the held inside hip if the left lane closes a half-step sooner than expected",
-          "hr": "Dodaj pivotu na držani unutarnji bok ako se lijeva linija zatvori pola koraka ranije nego očekuješ",
+          "hr": "Dodaj pivotu na slobodnu stranu ako se put prema lijevom vanjskom zatvori",
           "de": "Zum Kreisläufer an der gehaltenen Innenhüfte, wenn die linke Bahn einen halben Schritt früher schließt"
         },
         "feedback": {
@@ -38942,7 +38942,7 @@
         "quality": "optimal",
         "text": {
           "en": "Play a firm early pass to the pivot’s target hand before the central defender can recover the hip",
-          "hr": "Odigraj čvrsto rano dodavanje u pivota u otvorenu ruku za prijem prije nego središnji branič vrati bok",
+          "hr": "Pravodobno dodaj pivotu u slobodnu ruku prije nego branič zatvori put dodavanju",
           "de": "Frühen festen Pass in die Zielhand des Kreisläufers, bevor der Zentrale die Hüfte zurückholt"
         },
         "feedback": {
@@ -39026,7 +39026,7 @@
     "defensiveSystem": "6-0",
     "situation": {
       "en": "Tied 9:9 at 16' against a 6:0. Your pivot raises a hand between two defenders, so the pass looks open at first glance. On a second read the near defender’s outside foot is already shading the lane and his hip is half a step inside the target. The left back shows a cleaner mid-range window with a low block arm.",
-      "hr": "Neriješeno je 9:9 u 16. minuti protiv 6:0. Pivot diže ruku između dva braniča, pa dodavanje na prvi pogled izgleda otvoreno. Na drugom čitanju vanjsko stopalo bližeg braniča već sjenuje prolaz, a bok mu je pola koraka unutar cilja. Lijevi vanjski pokazuje čišći prozor iz srednje distance uz nisku ruku bloka.",
+      "hr": "Neriješeno je 9:9 u 16. minuti protiv obrane 6:0. Pivot podiže ruku između dvojice braniča. Ipak, bliži branič već je zakoračio u putanju dodavanja i može presjeći loptu. Lijevi vanjski ima bolju priliku za šut s devet metara jer njegov branič drži ruku za blok nisko.",
       "de": "Unentschieden 9:9 in Minute 16 gegen 6:0. Der Kreisläufer hebt die Hand zwischen zwei Verteidigern — der Pass wirkt zuerst offen. Im Zweitlesen schattet der nahe Verteidiger mit dem Außenfuß schon die Bahn, Hüfte einen halben Schritt im Ziel. Der Linke Rückraum zeigt ein saubereres Mittelstreckenfenster bei tiefem Blockarm."
     },
     "question": {
@@ -39039,7 +39039,7 @@
         "quality": "optimal",
         "text": {
           "en": "Leave the fake-open pivot: play the cleaner left-back window before the shaded lane steals the ball",
-          "hr": "Ostavi lažno otvorenog pivota: odigraj čišći prozor lijevog vanjskog prije nego osjenčani prolaz ukrade loptu",
+          "hr": "Dodaj lijevom vanjskom koji ima bolju priliku umjesto pivotu kojem je put dodavanju zatvoren",
           "de": "Den scheinbar offenen Kreisläufer lassen: das sauberere Linke-Fenster spielen, bevor die beschattete Bahn den Ball stiehlt"
         },
         "feedback": {
@@ -39065,7 +39065,7 @@
         "quality": "risky",
         "text": {
           "en": "Force a bounce into the shaded pivot because the hand is up",
-          "hr": "Forsiraj odskok u osjenčanog pivota jer je ruka gore",
+          "hr": "Forsiraj dodavanje od poda pokrivenom pivotu samo zato što podiže ruku",
           "de": "Einen Bounce in den beschatteten Kreisläufer erzwingen, weil die Hand oben ist"
         },
         "feedback": {
