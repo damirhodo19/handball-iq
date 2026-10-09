@@ -35216,9 +35216,9 @@
     "minute": 59,
     "score": "22:22",
     "situation": {
-      "en": "Tied 22:22 with 14 seconds on the clock. Their player has caught the ball on the run and is going alone at your goal. You are the only defender between him and your goalkeeper — there is no help behind you. A foul from behind on a clear scoring chance means a seven-metre and most likely a suspension, and your goalkeeper is calling for you to push the runner wide.",
-      "hr": "Neriješeno je 22:22, a na satu je 14 sekundi. Njihov igrač uhvatio je loptu u trku i ide sam prema vašem golu. Ti si jedini branič između njega i vratara: iza tebe nema pomoći. Prekršaj s leđa na čistoj prilici znači sedmerac i najvjerojatnije isključenje, a vratar ti doviknuo je da ga istjeraš prema van.",
-      "de": "Es steht 22:22 bei 14 Sekunden auf der Uhr. Ihr Spieler hat den Ball im Lauf gefangen und geht allein auf euer Tor. Du bist der einzige Verteidiger zwischen ihm und eurem Torwart — hinter dir gibt es keine Hilfe. Ein Foul von hinten bei klarer Torchance bedeutet einen 7-Meter-Wurf und höchstwahrscheinlich eine Zeitstrafe, und euer Torwart ruft, dass du ihn nach außen drängen sollst."
+      "hr": "Neriješeno je 22:22, a do kraja je 14 sekundi. Protivnik je primio loptu u trku prema vašem golu. Ti si jedini branič između njega i vratara, ali još imaš prostor pravodobno zauzeti položaj ispred njega. Nema obrambene pomoći. Vratar traži da zatvoriš sredinu i usmjeriš napadača prema van, bez držanja ili guranja.",
+      "en": "The score is 22:22 with 14 seconds remaining. An opponent receives the ball while running toward your goal. You are the only defender between him and the goalkeeper, but still have room to take position in front in time. There is no defensive help. Your goalkeeper asks you to close the centre and guide the attacker outside without holding or pushing.",
+      "de": "Es steht 22:22 bei 14 Sekunden Restzeit. Ein Gegner erhält den Ball im Lauf auf euer Tor. Du bist der einzige Verteidiger vor dem Torwart, hast aber noch Platz, rechtzeitig vor dem Angreifer Position zu beziehen. Es gibt keine Abwehrhilfe. Der Torwart fordert dich auf, die Mitte zu schließen und den Angreifer ohne Halten oder Stoßen nach außen zu lenken."
     },
     "question": {
       "en": "You are the last defender with 14 seconds left — what do you do?",
@@ -35229,14 +35229,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Do not foul from behind — get in front of him, take a legal position and force him wide into the angle your goalkeeper wants",
-          "hr": "Bez prekršaja s leđa: dođi ispred njega, zauzmi ispravan položaj i istjeraj ga prema van, u kut koji vratar traži",
-          "de": "Nicht von hinten foulen — vor ihn kommen, eine regelkonforme Position einnehmen und ihn nach außen in den Winkel drängen, den euer Torwart will"
+          "hr": "Pravodobno zauzmi položaj ispred napadača i zatvori sredinu, bez držanja ili guranja",
+          "en": "Take position in front in time and close the centre without holding or pushing",
+          "de": "Rechtzeitig vor dem Angreifer Position beziehen und die Mitte ohne Halten oder Stoßen schließen"
         },
         "feedback": {
-          "en": "Correct — with no help behind you, a foul is a seven-metre and a suspension; steering him into a bad angle is the only way you still win the situation.",
-          "hr": "Točno: bez pomoći iza tebe prekršaj znači sedmerac i isključenje; usmjeravanje u loš kut jedini je način da još dobiješ situaciju.",
-          "de": "Richtig — ohne Absicherung bedeutet ein Foul 7-Meter-Wurf und Zeitstrafe; ihn in einen schlechten Winkel zu lenken ist die einzige Chance."
+          "hr": "Točno: opis kaže da još stižeš zauzeti položaj. Time otežavaš izravan put prema golu i surađuješ s vratarem.",
+          "en": "Correct: the situation states that you can still take position in time. This makes the direct route harder and supports your goalkeeper.",
+          "de": "Richtig: Laut Beschreibung kannst du noch rechtzeitig Position beziehen. So erschwerst du den direkten Weg und unterstützt deinen Torwart."
         }
       },
       {
@@ -35247,22 +35247,22 @@
           "de": "Auf gleicher Höhe mitlaufen und den Wurf ohne Kontakt erschweren"
         },
         "feedback": {
-          "en": "Good — no contact is right, but running level lets him pick his own angle; getting in front takes that choice away.",
-          "hr": "Dobro: bez kontakta je ispravno, ali trčanje u visini pušta ga da sam bira kut; izlazak ispred oduzima mu taj izbor.",
-          "de": "Gut — kein Kontakt ist richtig, aber auf gleicher Höhe wählt er den Winkel selbst; vor ihm zu sein nimmt ihm diese Wahl."
+          "hr": "Dobro ako više ne možeš sigurno zauzeti položaj ispred njega. Ovdje taj prostor još postoji, pa ga možeš iskoristiti za zatvaranje sredine.",
+          "en": "Good if you can no longer safely take position in front. Here that space is still available, so use it to close the centre.",
+          "de": "Gut, wenn du nicht mehr sicher vor ihm Position beziehen kannst. Hier ist dieser Raum noch vorhanden, um die Mitte zu schließen."
         }
       },
       {
         "quality": "risky",
         "text": {
-          "en": "Hold him early with the body to stop the chance before he reaches the goal",
-          "hr": "Rano ga zadrži tijelom da prekineš priliku prije nego dođe do gola",
-          "de": "Ihn früh mit dem Körper festhalten, um die Chance vor dem Tor zu stoppen"
+          "hr": "Zadrži napadača rukama kako bi zaustavio njegov prolaz",
+          "en": "Hold the attacker with your arms to stop his run",
+          "de": "Den Angreifer mit den Armen festhalten, um seinen Lauf zu stoppen"
         },
         "feedback": {
-          "en": "Risky — as the last defender on a clear chance that is a seven-metre and a suspension in the final seconds.",
-          "hr": "Rizično: kao zadnji branič na čistoj prilici to je sedmerac i isključenje u zadnjim sekundama.",
-          "de": "Riskant — als letzter Mann bei klarer Torchance ist das ein 7-Meter-Wurf und eine Zeitstrafe in den Schlusssekunden."
+          "hr": "Rizično: držanje nije dopušten način zatvaranja prolaza i može dovesti do kazne. Sama činjenica da si zadnji branič ne određuje automatski odluku sudaca.",
+          "en": "Risky: holding is not a legal way to close the route and may lead to a sanction. Being the last defender alone does not automatically determine the referees’ decision.",
+          "de": "Riskant: Festhalten ist keine erlaubte Art, den Weg zu schließen, und kann eine Strafe nach sich ziehen. Allein die Position als letzter Verteidiger bestimmt die Schiedsrichterentscheidung nicht automatisch."
         }
       },
       {
@@ -35280,9 +35280,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: tied, 14 seconds, clear chance, no help behind and a goalkeeper asking for the outside angle. Because you are the last defender, the legal-foul option disappears — get in front and steer him wide. Running level without contact is second best. Holding him or giving up both decide the match against you.",
-      "hr": "Signal: neriješeno, 14 sekundi, čista prilika, nema pomoći iza i vratar traži vanjski kut. Budući da si zadnji branič, opcija prekršaja otpada: dođi ispred i istjeraj ga prema van. Trčanje u visini bez kontakta druga je opcija. Zadržavanje ili odustajanje odlučuju utakmicu protiv vas.",
-      "de": "Signal: Gleichstand, 14 Sekunden, klare Chance, keine Hilfe, Torwart will den Außenwinkel. Als letzter Mann kein Foul — vor ihn kommen und nach außen lenken."
+      "hr": "Iskoristi opisani prostor da pravodobno zatvoriš sredinu dopuštenim položajem tijela. Ako to više nije sigurno moguće, prati napadača i ometaj šut bez opasnog kontakta. Status zadnjeg braniča sam po sebi ne znači automatski sedmerac ili određenu osobnu kaznu. Ni jedna odluka ne jamči ishod napada.",
+      "en": "Use the available space to close the centre in time with legal body positioning. If this is no longer safely possible, track the attacker and contest the shot without dangerous contact. Being the last defender alone does not automatically mean a seven-metre throw or a specific personal sanction. No decision guarantees the outcome.",
+      "de": "Nutze den beschriebenen Raum, um die Mitte rechtzeitig mit regelkonformer Körperposition zu schließen. Ist das nicht mehr sicher möglich, begleite den Angreifer und störe den Wurf ohne gefährlichen Kontakt. Letzter Verteidiger zu sein bedeutet allein weder automatisch Siebenmeter noch eine bestimmte persönliche Strafe. Keine Entscheidung garantiert den Ausgang."
     },
     "skillTags": [
       "sevenMetre",
