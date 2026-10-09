@@ -30810,14 +30810,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "On his landing step, immediately, before the low line can rotate across",
-          "hr": "Na njegovom doskoku, odmah, prije nego niska linija stigne rotirati",
-          "de": "Im Moment seiner Landung, sofort, bevor die tiefe Linie rotieren kann"
+          "hr": "Odmah iskoristi slobodan prolaz uz braniča, izvan njegove putanje doskoka",
+          "en": "Use the open lane beside the defender immediately, outside his landing path",
+          "de": "Die freie Bahn neben dem Verteidiger sofort nutzen, außerhalb seines Landewegs"
         },
         "feedback": {
-          "en": "Correct — a defender who has just landed on a loaded front foot cannot change direction; that half second is the goal.",
-          "hr": "Točno: branič koji je upravo doskočio na opterećenu prednju nogu ne može promijeniti smjer; ta polusekunda je gol.",
-          "de": "Richtig — wer gerade auf dem belasteten Vorderfuß landet, kann nicht umkehren; diese halbe Sekunde ist das Tor."
+          "hr": "Točno: pomoć još nije zatvorila prostor. Prođi uz braniča, bez ulaska u njegovu putanju doskoka. Njegov položaj ne jamči pogodak.",
+          "en": "Correct: help has not yet closed the space. Pass beside the defender without entering his landing path. His position does not guarantee a goal.",
+          "de": "Richtig: Die Hilfe hat den Raum noch nicht geschlossen. Neben dem Verteidiger vorbeigehen, ohne seinen Landeweg zu betreten. Seine Position garantiert kein Tor."
         }
       },
       {
@@ -30828,9 +30828,9 @@
           "de": "Einen halben Takt später, mit der Sperre des Kreisläufers am Innenverteidiger"
         },
         "feedback": {
-          "en": "Good — the block widens the door, but half a beat is exactly how long the low line needs to arrive.",
-          "hr": "Dobro: blok širi vrata, ali pola takta je točno onoliko koliko niskoj liniji treba da stigne.",
-          "de": "Gut — die Sperre öffnet die Tür weiter, aber genau diesen halben Takt braucht die tiefe Linie."
+          "hr": "Moguće ako nakon bloka prolaz ostane otvoren. Čekanje daje obrani dodatno vrijeme za pomicanje.",
+          "en": "Possible if the lane remains open after the screen. Waiting gives the defence more time to shift.",
+          "de": "Möglich, wenn die Bahn nach der Sperre frei bleibt. Warten gibt der Abwehr zusätzliche Zeit zum Verschieben."
         }
       },
       {
@@ -30861,9 +30861,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: he attacks two metres early and lands weight-forward, while the low line has not rotated. Break on the landing step itself — that is the only frame in which he cannot push off and the help has not arrived. Using the pivot block (B) makes the door bigger but costs the half beat the rotation needs. Faking first hands his balance back, and an eleven-metre shot is exactly what a 3:2:1 wants from a team chasing the score.",
-      "hr": "Signal: napada dva metra prerano i doskače s težinom naprijed, a niska linija još nije rotirala. Prodri točno na doskoku: to je jedini kadar u kojem se ne može odgurnuti, a pomoć još nije stigla. Blok pivota (B) širi vrata, ali košta pola takta koje rotaciji treba. Varka mu vraća ravnotežu, a šut s jedanaest je upravo ono što 3:2:1 traži od momčadi koja juri rezultat.",
-      "de": "Signal: er greift zwei Meter zu früh an und landet mit Gewicht vorne, die tiefe Linie hat nicht rotiert. Brich im Landeschritt durch — nur dann kann er nicht abdrücken und die Hilfe fehlt. Die Sperre (B) macht die Tür größer, kostet aber den halben Takt der Rotation. Eine Finte gibt ihm die Balance zurück, und der Elf-Meter-Wurf ist genau das Angebot der 3:2:1."
+      "hr": "Pomoć još nije zatvorila prolaz uz braniča. Iskoristi ga dok je dostupan, ali ostani izvan putanje njegova doskoka. Ne zaključuj da branič ne može reagirati samo iz položaja noge. Ako se prostor zatvori, ponovno procijeni dodavanje ili šut.",
+      "en": "Help has not yet closed the lane beside the defender. Use it while available, staying outside his landing path. Do not infer that he cannot react solely from his foot position. If the space closes, reassess the pass or shot.",
+      "de": "Die Hilfe hat die Bahn neben dem Verteidiger noch nicht geschlossen. Nutze sie, solange sie frei ist, und bleibe außerhalb seines Landewegs. Aus der Fußstellung allein folgt nicht, dass er nicht reagieren kann. Schließt sich der Raum, Pass oder Wurf neu bewerten."
     },
     "skillTags": [
       "angleSelection"
@@ -31914,14 +31914,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Only once the first exchange has dragged the inside defender a full position across",
-          "hr": "Tek kad je prva razmjena povukla unutarnjeg braniča za cijelu poziciju u stranu",
-          "de": "Erst wenn der erste Tausch den Innenverteidiger eine volle Position mitgezogen hat"
+          "hr": "Kad pomak obrane otvori prostor i provjeriš da ruka isturenog braniča ne zatvara dodavanje",
+          "en": "When the defensive shift opens space and you confirm the front defender’s arm does not block the pass",
+          "de": "Wenn die Abwehrverschiebung Raum öffnet und der Arm des Vorgezogenen den Passweg nicht schließt"
         },
         "feedback": {
-          "en": "Correct — the second cross lives off the displacement of the first; without it you pass into a standing line.",
-          "hr": "Točno: drugo križanje živi od pomaka koji je stvorilo prvo; bez toga dodaješ u nepomaknutu liniju.",
-          "de": "Richtig — das zweite Kreuz lebt von der Verschiebung des ersten; ohne sie spielst du in eine stehende Linie."
+          "hr": "Točno: pomak otvara prostor za križanje, ali prije dodavanja moraš provjeriti i samu putanju lopte.",
+          "en": "Correct: the shift opens space for the crossing, but you must also check the ball’s path before passing.",
+          "de": "Richtig: Die Verschiebung öffnet Raum für das Kreuzen, doch vor dem Pass muss auch der Ballweg frei sein."
         }
       },
       {
@@ -31965,9 +31965,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: the inside defender has shifted with the first exchange while the advanced defender reaches back into the second line. The ball goes only after that displacement is complete, because that is what makes the second lane real. Finishing on the first cross is right when the defender is beaten, but a blind pass or a scripted run ignores the read.",
-      "hr": "Signal: unutarnji branič pomaknuo se s prvom razmjenom, dok istureni poseže natrag u drugu liniju. Lopta ide tek kad je taj pomak gotov, jer upravo on drugu liniju čini stvarnom. Završetak na prvom križanju točan je kad je branič pobijeđen, ali slijepo dodavanje ili naučeni obrazac ignoriraju čitanje.",
-      "de": "Signal: Der Innenverteidiger ist mit dem ersten Tausch verschoben, der Vorgezogene greift zurück. Der Ball geht erst, wenn die Verschiebung abgeschlossen ist, weil sie die zweite Bahn erst echt macht. Abschluss beim ersten Kreuz ist richtig, wenn der Verteidiger geschlagen ist."
+      "hr": "Pomak unutarnjeg braniča stvara prostor za drugo križanje, ali ruka isturenog braniča može zatvoriti dodavanje. Nastavi tek uz slobodnu putanju i spremnog primatelja. Ako je ruka u putanji, zadrži kontrolu i prilagodi akciju. Sam pomak obrane nije dovoljan razlog za dodavanje.",
+      "en": "The inside defender’s shift creates space for the second crossing, but the front defender’s arm may block the pass. Continue only with a clear lane and a ready receiver. If the arm blocks the lane, retain control and adapt. The defensive shift alone is not enough reason to pass.",
+      "de": "Die Verschiebung des inneren Verteidigers schafft Raum für das zweite Kreuzen, doch der Arm des Vorgezogenen kann den Passweg schließen. Nur bei freier Bahn und bereitem Empfänger fortsetzen. Liegt der Arm im Passweg, Kontrolle behalten und anpassen. Die Abwehrverschiebung allein reicht nicht als Passgrund."
     },
     "skillTags": [
       "shotReading"
@@ -32743,9 +32743,9 @@
           "de": "Sofort den späten Umschieber angreifen, bevor ihre Fünf die Abstände finden"
         },
         "feedback": {
-          "en": "Correct — a short-handed defence is at its weakest on the very first action, not after three swings.",
-          "hr": "Točno: obrana s igračem manje najslabija je u prvoj akciji, a ne nakon tri prebacivanja.",
-          "de": "Richtig — eine Unterzahlabwehr ist in der allerersten Aktion am schwächsten, nicht nach drei Verlagerungen."
+          "hr": "Točno: opisani branič još kasni s pomicanjem. Iskoristi tu konkretnu prednost dok postoji.",
+          "en": "Correct: the described defender is still late shifting. Use that specific advantage while it exists.",
+          "de": "Richtig: Der beschriebene Verteidiger verschiebt noch zu spät. Nutze diesen konkreten Vorteil, solange er besteht."
         }
       },
       {
@@ -32769,9 +32769,9 @@
           "de": "Eine langsame Ballzirkulation starten, um sie „laufen zu lassen“, bevor du entscheidest"
         },
         "feedback": {
-          "en": "Risky — five organised defenders defend a small area very well; the running only tires your own attack.",
-          "hr": "Rizično: pet posloženih braniča vrlo dobro brani mali prostor; trčanje umara samo tvoj napad.",
-          "de": "Riskant — fünf geordnete Verteidiger decken einen kleinen Raum sehr gut; das Laufen ermüdet nur euch."
+          "hr": "Rizično: sporo kruženje daje ovoj još neorganiziranoj obrani vrijeme da zatvori dostupni prostor.",
+          "en": "Risky: slow circulation gives this unsettled defence time to close the available space.",
+          "de": "Riskant: Langsames Weiterspielen gibt dieser noch ungeordneten Abwehr Zeit, den freien Raum zu schließen."
         }
       },
       {
@@ -32789,9 +32789,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: the man who has to cover two positions is still recovering outwards as you catch the ball. Because a short-handed defence is most disorganised in the first three seconds, the first action goes straight at him. One swing is acceptable, while slow circulation or an early distance shot both hand the advantage back.",
-      "hr": "Signal: igrač koji mora pokrivati dvije pozicije još se vraća prema van dok primaš loptu. Kako je obrana s igračem manje najneposloženija u prve tri sekunde, prva akcija ide ravno na njega. Jedno prebacivanje je prihvatljivo, dok sporo kruženje ili rani šut izdaleka vraćaju prednost.",
-      "de": "Signal: Der Mann für zwei Positionen läuft noch zurück, während du fängst. Weil eine Unterzahlabwehr in den ersten Sekunden am ungeordnetsten ist, geht die erste Aktion direkt auf ihn."
+      "hr": "Branič još kasni s pomicanjem dok primaš loptu, pa napadni dostupni prostor i prati njegovu reakciju. Prednost proizlazi iz opisanog položaja, a ne iz pravila o prve tri sekunde. Ako se obrana posloži, prilagodi napad novoj situaciji.",
+      "en": "The defender is still late shifting as you receive, so attack the available space and read his response. The advantage comes from his described position, not a rule about the first three seconds. If the defence settles, adapt to the new situation.",
+      "de": "Der Verteidiger verschiebt beim Fangen noch zu spät. Greife den freien Raum an und beachte seine Reaktion. Der Vorteil folgt aus der beschriebenen Position, nicht aus einer Regel über die ersten drei Sekunden. Ordnet sich die Abwehr, den Angriff anpassen."
     },
     "skillTags": [
       "pressureDecisions",
