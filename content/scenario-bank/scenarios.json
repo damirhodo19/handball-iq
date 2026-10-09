@@ -34862,9 +34862,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "The wide lane behind you — retreat inside the passing line so the long ball to the wing is never on",
-          "hr": "Široki kanal iza tebe: vraćaj se unutar linije dodavanja da duga lopta na krilo nikad ne postoji",
-          "de": "Die breite Bahn hinter dir — innerhalb der Passlinie zurücklaufen, damit der lange Ball zum Außen gar nicht möglich ist"
+          "hr": "Vraćaj se tako da zatvoriš dostupnu putanju dugog dodavanja krilu, uz praćenje lopte i igrača",
+          "en": "Recover to cover the reachable long passing lane to the wing while tracking ball and player",
+          "de": "Im Rückzug die erreichbare lange Passbahn zum Außen schließen und Ball sowie Spieler beobachten"
         },
         "feedback": {
           "en": "Correct — a teammate is already on the ball, so your value is the passing line, not a second body on the carrier.",
@@ -34913,9 +34913,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: a teammate already delays the carrier, and the wing is waiting in the lane you are recovering into. Running at the ball opens exactly that lane — retreat inside the passing line instead. Warning the goalkeeper is useful but not sufficient. Doubling the carrier or chasing the wing into the corner both cost you the defence.",
-      "hr": "Signal: suigrač već usporava nosača, a krilo čeka u kanalu u koji se vraćaš. Trčanje na loptu otvara upravo taj kanal: umjesto toga vraćaj se unutar linije dodavanja. Upozoriti vratara korisno je, ali nije dovoljno. Udvajanje nosača ili jurnjava za krilom u kut koštaju te obrane.",
-      "de": "Signal: der Ballführende wird schon gebremst, der Außen wartet in deiner Bahn. Zum Ball zu laufen öffnet genau diese Bahn — bleib in der Passlinie."
+      "hr": "Suigrač već usporava igrača s loptom, a krilo čeka dugo dodavanje u tvojem dijelu terena. Zatvori dostupnu putanju dodavanja i nastavi povratak prema golu, prateći obojicu. Ne možeš jamčiti da dodavanje neće proći, ali udvajanje već pokrivenog igrača ostavlja primatelja slobodnim.",
+      "en": "A teammate is already slowing the ball carrier and the wing awaits a long pass in your area. Cover the reachable passing lane and continue recovering toward goal while tracking both. You cannot guarantee interception, but doubling the covered ball carrier leaves the receiver free.",
+      "de": "Ein Mitspieler bremst bereits den Ballführer, während der Außen in deinem Bereich den langen Pass erwartet. Die erreichbare Passbahn schließen und mit Blick auf beide zum Tor zurücklaufen. Ein Abfangen ist nicht garantiert; das Doppeln des gedeckten Ballführers lässt aber den Empfänger frei."
     },
     "skillTags": [
       "shotReading",
@@ -35334,14 +35334,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Delay one step to see if they abort the cross, then decide",
-          "hr": "Pričekaj jedan korak da vidiš hoće li odustati od križanja, pa odluči",
-          "de": "Einen Schritt warten ob sie das Kreuzen abbrechen, dann entscheiden"
+          "hr": "Ako prije stvarnog križanja odustanu od razmjene, potvrdi sa suigračem ostajete li na svojim igračima",
+          "en": "If they abandon the exchange before actually crossing, confirm with your teammate whether to keep your assignments",
+          "de": "Brechen sie den Wechsel vor dem tatsächlichen Kreuzen ab, mit dem Mitspieler die bisherigen Zuordnungen bestätigen"
         },
         "feedback": {
-          "en": "Good if the cross is fake; here the paths already crossed and the call is made.",
-          "hr": "Dobro ako je križanje finta; ovdje su putanje već križane i zov je dan.",
-          "de": "Gut wenn Kreuzen Finte ist; hier haben sich die Wege schon gekreuzt und der Ruf ist da."
+          "hr": "Dobro ako se akcija promijeni prije križanja. Ovdje su putanje već ukrižene i suigrač je zatražio preuzimanje.",
+          "en": "Good if the action changes before the crossing. Here the paths have already crossed and your teammate has called the handover.",
+          "de": "Gut, wenn sich die Aktion vor dem Kreuzen ändert. Hier haben sich die Wege bereits gekreuzt und der Mitspieler hat die Übergabe angesagt."
         }
       },
       {
