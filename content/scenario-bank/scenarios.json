@@ -30356,9 +30356,9 @@
           "de": "Außen an seiner Hüfte vorbei, weil innen genau der zweite Verteidiger wartet"
         },
         "feedback": {
-          "en": "Correct — you attack where the help is not; his front-foot weight means he cannot turn back outside.",
-          "hr": "Točno: napadaš tamo gdje nema pomoći; težina na prednjoj nozi znači da se ne stigne okrenuti van.",
-          "de": "Richtig — du greifst dort an, wo keine Hilfe ist; sein Gewicht vorne lässt kein Zurückdrehen zu."
+          "hr": "Točno: prema opisu pomoć čeka unutra, pa napadni slobodnu vanjsku stranu i prati reakciju braniča.",
+          "en": "Correct: help waits inside in this situation, so attack the free outside and read the defender’s response.",
+          "de": "Richtig: Die Hilfe wartet hier innen. Deshalb die freie Außenseite angreifen und die Reaktion des Verteidigers beachten."
         }
       },
       {
@@ -30538,9 +30538,9 @@
           "de": "Die Bahn direkt hinter seinem Rücken — dort den Kreisläufer bedienen, bevor die Fünferkette schiebt"
         },
         "feedback": {
-          "en": "Correct — that is the space a high point defender always leaves, and it closes the moment the line shifts.",
-          "hr": "Točno: to je prostor koji visoki prednji uvijek ostavlja i zatvara se čim linija klizne.",
-          "de": "Richtig — genau diesen Raum lässt ein hoher Vorgezogener, und er schließt sich beim Verschieben."
+          "hr": "Točno: iskoristi opisani prostor iza isturenog braniča dok putanja dodavanja ostaje slobodna.",
+          "en": "Correct: use the described space behind the front defender while the passing lane remains open.",
+          "de": "Richtig: Den beschriebenen Raum hinter dem Vorgezogenen nutzen, solange der Passweg frei bleibt."
         }
       },
       {
@@ -30735,9 +30735,9 @@
           "de": "Die Kreisläuferbahn hinter der Spitze, wenn ihr Rücken ganz zur Sechs zeigt"
         },
         "feedback": {
-          "en": "Good — a real option, but the low three in a 3:2:1 sit on the pivot far tighter than in a 6:0.",
-          "hr": "Dobro: prava opcija, ali donji red obrane u 3:2:1 stoji na pivotu puno čvršće nego u 6:0.",
-          "de": "Gut — echte Option, aber die drei Tiefen der 3:2:1 stehen enger am Kreis als in der 6:0."
+          "hr": "Dobro ako je pivot dostupan i putanja dodavanja slobodna. Sam naziv obrambenog sustava ne govori koliko je čvrsto pokriven.",
+          "en": "Good if the pivot is available and the passing lane is clear. The defensive system’s name alone does not establish how tightly he is marked.",
+          "de": "Gut, wenn der Kreis anspielbar und der Passweg frei ist. Der Name des Abwehrsystems allein sagt nicht, wie eng er gedeckt wird."
         }
       },
       {
@@ -30932,9 +30932,9 @@
           "de": "Im Warten auf elf Metern auf einen perfekten Einlauf des Außen"
         },
         "feedback": {
-          "en": "Risky — waiting is exactly how a 3:3 turns into a compact 5:1 in front of you.",
-          "hr": "Rizično: čekanjem se 3:3 pretvori u zbijenu 5:1 pred tobom.",
-          "de": "Riskant — durch Warten wird aus der 3:3 eine kompakte 5:1 vor dir."
+          "hr": "Rizično: čekanje daje obrani vrijeme da zatvori opisani slobodan prolaz.",
+          "en": "Risky: waiting gives the defence time to close the described open lane.",
+          "de": "Riskant: Warten gibt der Abwehr Zeit, die beschriebene freie Bahn zu schließen."
         }
       },
       {
