@@ -36287,7 +36287,7 @@
         "quality": "optimal",
         "text": {
           "en": "Move the ball immediately into the returning right half's blind side for the arriving right back",
-          "hr": "Odmah pokreni loptu u slijepu stranu vraćajućeg desnog polubranitelja za stižućeg desnog vanjskog",
+          "hr": "Odmah dodaj desnom vanjskom koji ulazi u prostor iza braniča koji se vraća",
           "de": "Den Ball sofort auf die blinde Seite des zurückkehrenden rechten Halben zum ankommenden rechten Rückraum bringen"
         },
         "feedback": {
@@ -36372,7 +36372,7 @@
     "defensiveSystem": "5-1",
     "situation": {
       "en": "Tied 10:10 at 16' against a 5:1. The point defender sits high on you at ten metres, hands active. The back five stay connected. You receive with the left back one short pass away and the pivot behind the point between the two central low defenders. The point has not yet committed to a side.",
-      "hr": "Neriješeno je 10:10 u 16. minuti protiv 5:1. Prednji branič sjedi visoko na tebi na deset metara, ruke aktivne. Niska petorka ostaje povezana. Primaš, lijevi vanjski je jedno kratko dodavanje daleko, a pivot je iza prednjeg između dva središnja niska braniča. Prednji još nije odabrao stranu.",
+      "hr": "Neriješeno je 10:10 u 16. minuti protiv obrane 5:1. Istureni branič pritišće te na deset metara i aktivno radi rukama. Petorica iza njega ostaju povezani. Primaš loptu, lijevi vanjski dostupan je za kratko dodavanje, a pivot je iza isturenog braniča između dvojice središnjih braniča. Istureni branič još nije odabrao stranu.",
       "de": "Unentschieden 10:10 in Minute 16 gegen 5:1. Der Vorgeschobene sitzt hoch auf dir auf zehn Metern, Hände aktiv. Die tiefe Fünf bleibt verbunden. Du bekommst, linker Rückraum ist einen kurzen Pass entfernt, der Kreisläufer steht hinter dem vorgezogenen Verteidiger zwischen den beiden zentralen Tiefen. Der vorgezogene Verteidiger hat noch keine Seite gewählt."
     },
     "question": {
@@ -36522,7 +36522,7 @@
         "quality": "poor",
         "text": {
           "en": "Force a contested shot into the jumping point's hands",
-          "hr": "Forsiraj osporeni šut u ruke izašlog prednjeg",
+          "hr": "Forsiraj šut kroz podignute ruke isturenog braniča",
           "de": "Einen umkämpften Wurf in die Hände des herausspringenden vorgezogenen Verteidigers erzwingen"
         },
         "feedback": {
@@ -36607,7 +36607,7 @@
         "quality": "risky",
         "text": {
           "en": "Hold and wait for a perfect pivot seal while the point recovers",
-          "hr": "Drži i čekaj savršeno zatvaranje pivota dok se prednji vraća",
+          "hr": "Zadrži loptu i čekaj bolji položaj pivota dok se istureni branič vraća",
           "de": "Halten und auf den perfekten Kreisabschluss warten, während der vorgezogene Verteidiger zurückkehrt"
         },
         "feedback": {
@@ -36816,7 +36816,7 @@
         "quality": "poor",
         "text": {
           "en": "Force a left-side shot into the fully shifted load you created",
-          "hr": "Forsiraj šut s lijeve strane u skroz pomaknuto opterećenje koje si stvorio",
+          "hr": "Forsiraj šut s lijeve strane kroz obranu koju si ondje zgusnuo",
           "de": "Einen Wurf von links in die voll verschobene Last erzwingen, die du selbst geschaffen hast"
         },
         "feedback": {
@@ -36875,7 +36875,7 @@
         "quality": "optimal",
         "text": {
           "en": "Attack the middle-line gap behind him immediately — that is the first punishable space",
-          "hr": "Odmah napadni rupu u srednjoj liniji iza njega: to je prvi kaznivi prostor",
+          "hr": "Odmah napadni otvoreni prostor iza isturenog braniča prije povratka obrane",
           "de": "Sofort die Mittellinien-Lücke hinter ihm angreifen — das ist der erste strafbare Raum"
         },
         "feedback": {
@@ -36999,7 +36999,7 @@
         "quality": "risky",
         "text": {
           "en": "Start a slow lateral swing toward the far wing across all three lines",
-          "hr": "Kreneš spori bočni prebac prema dalekom krilu preko sve tri linije",
+          "hr": "Sporo prebaci loptu prema udaljenom krilu preko sve tri obrambene linije",
           "de": "Ein langsames seitliches Pendeln zum fernen Außen über alle drei Linien starten"
         },
         "feedback": {
@@ -37071,7 +37071,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop the slow lateral chain — return the ball fast to the late left side with tempo",
-          "hr": "Prekini spori bočni lanac: vrati loptu brzo na zakašnjelu lijevu stranu s tempom",
+          "hr": "Ponudi se desnom vanjskom za povratno dodavanje pa brzo prenesi loptu na lijevu stranu",
           "de": "Die langsame laterale Kette stoppen — den Ball schnell mit Tempo auf die späte linke Seite zurück"
         },
         "feedback": {
@@ -37110,7 +37110,7 @@
         "quality": "poor",
         "text": {
           "en": "Force a low-percentage shot under the full slide pressure on the right",
-          "hr": "Forsiraj šut male postotke pod punim pritiskom klizanja na desnoj",
+          "hr": "Forsiraj otežan šut s desne strane pod punim pritiskom obrane",
           "de": "Einen Low-Percentage-Wurf unter vollem Schiebedruck rechts erzwingen"
         },
         "feedback": {
@@ -37253,7 +37253,7 @@
     "defensiveSystem": "Mixed",
     "situation": {
       "en": "Tied 15:15 at 25' in a 3:3. After your fake to the left, the left high defender steps out early. Between him and the central high a clear channel opens toward the low line. The right high stays connected. The pivot is between the left and central low defenders, not yet sealed.",
-      "hr": "Neriješeno je 15:15 u 25. minuti u obrani 3:3. Nakon tvoje varke ulijevo lijevi visoki branič rano izlazi. Između njega i središnjeg visokog otvara se čist kanal prema niskoj liniji. Desni visoki ostaje povezan. Pivot je između lijevog i središnjeg niskog, još bez zatvaranja.",
+      "hr": "Neriješeno je 15:15 u 25. minuti i napadate protiv obrane 3:3. Nakon tvoje varke jedan istureni branič rano izlazi. Između njega i središnjeg isturenog braniča otvara se prolaz prema stražnjoj liniji. Istureni branič na suprotnoj strani ostaje u dobrom položaju. Pivot je u stražnjoj liniji, ali još nije zagradio svojeg braniča.",
       "de": "Unentschieden 15:15 in Minute 25 in der 3:3. Nach deiner Finte nach links tritt der linke Hohe früh heraus. Zwischen ihm und dem zentralen Hohen öffnet sich ein klarer Kanal zur Tiefenlinie. Der rechte Hohe bleibt verbunden. Der Kreisläufer steht zwischen linkem und zentralem Tiefen, noch ohne Abschluss."
     },
     "question": {
@@ -37266,7 +37266,7 @@
         "quality": "optimal",
         "text": {
           "en": "In the channel between the early-out left high and the central high — attack it before it closes",
-          "hr": "U kanalu između rano izašlog lijevog visokog i središnjeg visokog: napadni ga prije zatvaranja",
+          "hr": "Napadni otvoreni prolaz između dvojice isturenih braniča prije nego ga zatvore",
           "de": "Im Kanal zwischen dem früh herausgetretenen linken Hohen und dem zentralen Hohen — angreifen, bevor er schließt"
         },
         "feedback": {
@@ -37279,7 +37279,7 @@
         "quality": "good",
         "text": {
           "en": "Toward the pivot if the left low leaves early to cover the same channel",
-          "hr": "Prema pivotu ako lijevi niski rano napusti liniju da pokrije isti kanal",
+          "hr": "Dodaj pivotu ako bliži branič iz stražnje linije izađe zatvoriti taj prolaz",
           "de": "Zum Kreisläufer, wenn der linke Tiefe früh denselben Kanal deckt"
         },
         "feedback": {
@@ -37292,7 +37292,7 @@
         "quality": "risky",
         "text": {
           "en": "On the far right while the connected right high has not been threatened",
-          "hr": "Na dalekoj desnoj dok povezani desni visoki nije ugrožen",
+          "hr": "Prebaci na suprotnu stranu gdje je istureni branič još dobro postavljen",
           "de": "Weit rechts, während der verbundene rechte Hohe nicht bedroht wurde"
         },
         "feedback": {
@@ -37378,7 +37378,7 @@
         "quality": "good",
         "text": {
           "en": "Wait one beat for the pivot seal if the high fully turns his back to the channel",
-          "hr": "Pričekaj jedan takt zatvaranje pivota ako visoki skroz okrene leđa kanalu",
+          "hr": "Pričekaj kratko da pivot zagradi braniča samo ako se istureni branič potpuno okrene od prolaza",
           "de": "Einen Takt auf den Kreisabschluss warten, wenn der Hohe dem Kanal voll den Rücken dreht"
         },
         "feedback": {
