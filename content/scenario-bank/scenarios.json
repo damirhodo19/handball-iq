@@ -39250,7 +39250,7 @@
         "quality": "good",
         "text": {
           "en": "Use the extreme left wing if the right lane closes and the far defender is late sliding",
-          "hr": "Iskoristi ekstremno lijevo krilo ako se desna linija zatvori i daleki branič kasni u klizanju",
+          "hr": "Dodaj lijevom krilu koje drži širinu ako se prostor desno zatvori, a njegov branič zakasni",
           "de": "Extremen Linksaußen nutzen, wenn die rechte Bahn schließt und der ferne Verteidiger spät schiebt"
         },
         "feedback": {
@@ -39336,7 +39336,7 @@
         "quality": "optimal",
         "text": {
           "en": "Release early to the left wing while he is still a step ahead of the recovering marker",
-          "hr": "Rano pusti lijevom krilu dok je još korak ispred vraćajućeg čuvara",
+          "hr": "Rano dodaj lijevom krilu dok još ima korak prednosti pred svojim braničem",
           "de": "Früh zum Linksaußen abspielen, solange er noch einen Schritt vor dem zurückkehrenden Bewacher ist"
         },
         "feedback": {
@@ -39435,7 +39435,7 @@
         "quality": "optimal",
         "text": {
           "en": "Release early to the right wing while he still owns the step on his recovering marker",
-          "hr": "Rano pusti desnom krilu dok još drži korak prednosti pred vraćajućim čuvarom",
+          "hr": "Rano dodaj desnom krilu dok još ima korak prednosti pred svojim braničem",
           "de": "Früh zum Rechtsaußen, solange er den Schritt Vorsprung vor dem zurückkehrenden Bewacher hat"
         },
         "feedback": {
@@ -39533,7 +39533,7 @@
         "quality": "optimal",
         "text": {
           "en": "Refuse the covered wing pass; continue through the left back’s cleaner return lane",
-          "hr": "Odbij dodavanje na pokriveno krilo; nastavi kroz čišću liniju povratka lijevog vanjskog",
+          "hr": "Ne forsiraj pokriveno krilo, nego vrati loptu dostupnom lijevom vanjskom",
           "de": "Den gedeckten Außenpass ablehnen; über die sauberere Rückspielbahn des Linken weiter"
         },
         "feedback": {
@@ -39646,7 +39646,7 @@
         "quality": "good",
         "text": {
           "en": "Skip both pivots and release to a freer wing if neither hip stays open for the next beat",
-          "hr": "Preskoči oba pivota i pusti slobodnijem krilu ako nijedan bok ne ostane otvoren u sljedećem taktu",
+          "hr": "Dodaj slobodnijem krilu ako se zatvore oba dodavanja pivotima",
           "de": "Beide Kreisläufer lassen und zum freieren Außen, wenn keine Hüfte im nächsten Takt offen bleibt"
         },
         "feedback": {
@@ -39760,7 +39760,7 @@
         "quality": "risky",
         "text": {
           "en": "Force a bounce into the stacked double target anyway",
-          "hr": "Svejedno forsiraj odskok u složeni dvostruki cilj",
+          "hr": "Svejedno forsiraj dodavanje od poda dvojici pivota koji stoje preblizu",
           "de": "Trotzdem einen Bounce in das gestapelte Doppelziel erzwingen"
         },
         "feedback": {
@@ -39833,7 +39833,7 @@
         "quality": "optimal",
         "text": {
           "en": "Release early to the left wing while his marker is still late from helping the second pivot",
-          "hr": "Rano pusti lijevom krilu dok mu čuvar još kasni od pomoći drugom pivotu",
+          "hr": "Rano dodaj lijevom krilu dok se njegov branič još vraća iz pomoći pivotu",
           "de": "Früh zum Linksaußen, solange sein Bewacher vom Helfen am zweiten Kreisläufer noch spät ist"
         },
         "feedback": {
@@ -39934,7 +39934,7 @@
         "quality": "optimal",
         "text": {
           "en": "Use the safer diagonal to the second pivot; refuse the three-hand bounce that risks the empty goal",
-          "hr": "Koristi sigurniju dijagonalu na drugog pivota; odbij odskok kroz tri ruke koji rizika prazan gol",
+          "hr": "Dodaj sigurnijom dijagonalom drugom pivotu umjesto kroz podignute ruke braniča",
           "de": "Die sicherere Diagonale zum zweiten Kreisläufer; den Drei-Hände-Bounce ablehnen der das Leertor riskiert"
         },
         "feedback": {
@@ -40035,7 +40035,7 @@
         "quality": "optimal",
         "text": {
           "en": "Refuse both covered pivots; attack the freer right-back space from the late slide",
-          "hr": "Odbij oba pokrivena pivota; napadni slobodniji prostor desnog vanjskog od kasnog klizanja",
+          "hr": "Dodaj desnom vanjskom u slobodan prostor umjesto pokrivenim pivotima",
           "de": "Beide zugestellten Kreisläufer ablehnen; den freieren Raum des Rechten nach dem späten Schieben angreifen"
         },
         "feedback": {
@@ -40136,7 +40136,7 @@
         "quality": "optimal",
         "text": {
           "en": "Organize directly into the free left gap with tempo before the short five settles",
-          "hr": "Organiziraj izravno u slobodnu lijevu rupu s tempom prije nego se kratka petorka slegne",
+          "hr": "Brzo dodaj lijevom vanjskom da napadne otvoreni prolaz prije povratka obrane",
           "de": "Direkt in die freie linke Lücke mit Tempo organisieren, bevor die kurze Fünf sich setzt"
         },
         "feedback": {
@@ -40149,7 +40149,7 @@
         "quality": "good",
         "text": {
           "en": "Take one short fake to pin the near half, then play the same left gap",
-          "hr": "Uzmi kratku varku da prikvačiš bližeg polubranitelja, pa odigraj istu lijevu rupu",
+          "hr": "Kratkom varkom veži bližeg braniča pa dodaj u isti prolaz",
           "de": "Kurze Finte zum Fixieren des nahen Halben, dann dieselbe linke Lücke"
         },
         "feedback": {
@@ -40440,7 +40440,7 @@
         "quality": "optimal",
         "text": {
           "en": "Finish now with the clean mid-range before the goalkeeper returns",
-          "hr": "Završi sada čistom srednjom distancom prije nego se vratar vrati",
+          "hr": "Odmah šutiraj u prazan gol dok je putanja otvorena",
           "de": "Jetzt mit der sauberen Mittelstrecke abschließen bevor der Torhüter zurück ist"
         },
         "feedback": {
@@ -40479,7 +40479,7 @@
         "quality": "poor",
         "text": {
           "en": "Hold and wait for a perfect pivot seal while the empty goal is open",
-          "hr": "Drži i čekaj savršen držanje pivota dok je prazan gol otvoren",
+          "hr": "Zadrži loptu i čekaj idealan položaj pivota dok se protivnički vratar vraća",
           "de": "Halten und auf perfektes Kreisläufer-Siegel warten während das leere Tor offen ist"
         },
         "feedback": {
@@ -40538,7 +40538,7 @@
         "quality": "optimal",
         "text": {
           "en": "Control with safe structure: recycle and only finish on a clearly higher-percentage window",
-          "hr": "Kontroliraj sigurnom strukturom: vrati i završi samo na jasno boljem postotku",
+          "hr": "Sigurno vrati loptu i nastavi aktivno tražiti bolju priliku za šut",
           "de": "Mit sicherer Struktur kontrollieren: zurückspielen und nur bei klar besserer Quote abschließen"
         },
         "feedback": {
@@ -40638,7 +40638,7 @@
         "quality": "optimal",
         "text": {
           "en": "Keep possession with controlled recycle; shoot only if a clearly higher-percentage window opens",
-          "hr": "Čuvaj posjed kontroliranim povratom; šutiraj samo ako se otvori jasno bolji prozor",
+          "hr": "Sigurnim dodavanjem sačuvaj posjed i nastavi stvarati kvalitetnu priliku",
           "de": "Besitz mit kontrolliertem Rückspiel sichern; nur werfen wenn klar bessere Quote entsteht"
         },
         "feedback": {
@@ -40739,7 +40739,7 @@
         "quality": "optimal",
         "text": {
           "en": "Play with decisive tempo into the clean left-back window now — do not burn a full extra swing",
-          "hr": "Igraj odlučnim tempom u čist prozor lijevog vanjskog sada: ne spali još jedan puni obilazak",
+          "hr": "Odmah dodaj lijevom vanjskom koji ima čistu priliku, bez dodatnog kruženja loptom",
           "de": "Mit klarem Tempo jetzt ins saubere Linke-Fenster — keine volle Extra-Kreisung verbrennen"
         },
         "feedback": {
@@ -40778,7 +40778,7 @@
         "quality": "poor",
         "text": {
           "en": "Hold and wait for a miracle pivot while the shot clock and match clock both die",
-          "hr": "Drži i čekaj čudesnog pivota dok i sat napada i sat utakmice umiru",
+          "hr": "Zadrži loptu bez stvaranja prilike dok vrijeme istječe",
           "de": "Halten und auf Wunder-Kreisläufer warten während Angriffs- und Spieluhr sterben"
         },
         "feedback": {
@@ -40839,7 +40839,7 @@
         "quality": "optimal",
         "text": {
           "en": "Organize the highest-percentage available finish — the open left-back window — without panic delay",
-          "hr": "Organiziraj najviši dostupni postotak: otvoreni prozor lijevog vanjskog: bez panične odgode",
+          "hr": "Organiziraj dodavanje lijevom vanjskom koji trenutačno ima najbolju priliku",
           "de": "Die höchste verfügbare Quote organisieren — das offene Linke-Fenster — ohne Panikverzögerung"
         },
         "feedback": {
@@ -40940,7 +40940,7 @@
         "quality": "optimal",
         "text": {
           "en": "Take the clean mid-range now — do not reject a real finish hunting a perfect attack",
-          "hr": "Uzmi čistu srednju distancu sada: ne odbijaj stvarni završetak u potrazi za savršenim napadom",
+          "hr": "Iskoristi otvorenu priliku za šut sada",
           "de": "Die saubere Mittelstrecke jetzt nehmen — einen echten Abschluss nicht zugunsten des perfekten Angriffs ablehnen"
         },
         "feedback": {
@@ -40953,7 +40953,7 @@
         "quality": "good",
         "text": {
           "en": "Release instantly to a freer teammate only if his window is clearly better in the same beat",
-          "hr": "Odmah pusti slobodnijem suigraču samo ako je njegov prozor jasno bolji u istom taktu",
+          "hr": "Odmah dodaj suigraču samo ako već ima jasno bolju priliku",
           "de": "Sofort auf einen freieren Mitspieler abgeben nur wenn sein Fenster im selben Takt klar besser ist"
         },
         "feedback": {
@@ -41041,7 +41041,7 @@
         "quality": "optimal",
         "text": {
           "en": "Do not force your poor angle: release instantly to the cleaner right-back window",
-          "hr": "Ne forsiraj loš kut: odmah pusti čišćem prozoru desnog vanjskog",
+          "hr": "Odmah dodaj desnom vanjskom koji ima bolji položaj za šut",
           "de": "Eigenen schlechten Winkel nicht erzwingen: sofort ins sauberere Rechte-Fenster abspielen"
         },
         "feedback": {
@@ -41143,7 +41143,7 @@
         "quality": "optimal",
         "text": {
           "en": "Decide in the first wave: release early to the free left wing before the recovering centre settles",
-          "hr": "Odluči u prvom valu: rano pusti slobodnom lijevom krilu prije nego se vraćajući središnji slegne",
+          "hr": "Rano dodaj slobodnom lijevom krilu prije povratka obrane",
           "de": "In der ersten Welle entscheiden: früh zum freien Linksaußen bevor der zurückkehrende Zentrale setzt"
         },
         "feedback": {
@@ -41242,7 +41242,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop and settle into organized attack; refuse the dead 1v2 force",
-          "hr": "Stani i smiri napad u organiziranu fazu; odbij mrtvo forsiranje 1 na 2",
+          "hr": "Smiri kontranapad i organiziraj napad umjesto prodora na dvojicu postavljenih braniča",
           "de": "Stoppen und in organisierten Angriff setzen; das tote 1-gegen-2-Erzwingen ablehnen"
         },
         "feedback": {
@@ -41443,7 +41443,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stay square, protect the central gap, and prepare a clean handover if the ball leaves the middle",
-          "hr": "Ostani ravno, čuvaj središnju rupu i pripremi čistu predaju ako lopta napusti sredinu",
+          "hr": "Sačuvaj središnji prostor i pripremi dogovoreno preuzimanje ako lopta ode na stranu",
           "de": "Frontal bleiben, zentrale Lücke schützen und saubere Übergabe vorbereiten wenn der Ball die Mitte verlässt"
         },
         "feedback": {
@@ -41761,7 +41761,7 @@
         "quality": "risky",
         "text": {
           "en": "Both follow original men through the cross without communication",
-          "hr": "Oboje prate originalne igrače kroz križanje bez dogovora",
+          "hr": "Obojica pratite početne igrače kroz križanje bez dogovora",
           "de": "Beide folgen den Ursprungsspielern durchs Kreuzen ohne Kommunikation"
         },
         "feedback": {
@@ -41774,7 +41774,7 @@
         "quality": "poor",
         "text": {
           "en": "Drop both of you to the pivot and leave the perimeter free during the cross",
-          "hr": "Oboje padnu na pivota i ostave vanjski slobodan tijekom križanja",
+          "hr": "Obojica se povucite na pivota i ostavite vanjske igrače slobodne",
           "de": "Beide zum Kreisläufer fallen und den Perimeter während des Kreuzens frei lassen"
         },
         "feedback": {
@@ -41832,7 +41832,7 @@
         "quality": "optimal",
         "text": {
           "en": "Organize a controlled inside denial on the dangerous second pivot while the outside defender keeps the wing’s step",
-          "hr": "Organiziraj kontrolirano zatvaranje unutra na opasnog drugog pivota dok krilni branič čuva korak krila",
+          "hr": "Organiziraj pokrivanje drugog pivota uz zadržavanje krilnog braniča na krilu",
           "de": "Kontrollierte Innenverteidigung auf den gefährlichen zweiten Kreisläufer organisieren während der Außenverteidiger den Schritt des Außen hält"
         },
         "feedback": {
@@ -41845,7 +41845,7 @@
         "quality": "good",
         "text": {
           "en": "Drop one extra body inside only after the wing defender confirms he can recover the step",
-          "hr": "Spusti još jedno tijelo unutra samo nakon što krilni branič potvrdi da može vratiti korak",
+          "hr": "Dodaj još jednog braniča u pomoć pivotu samo uz potvrdu da krilo ostaje pokriveno",
           "de": "Einen Extra-Körper innen nur nachdem der Außenverteidiger bestätigt den Schritt aufholen zu können"
         },
         "feedback": {
@@ -41932,7 +41932,7 @@
         "quality": "optimal",
         "text": {
           "en": "Protect the highest-percentage inside first — deny the pivot bounce — and force a lower-percentage perimeter look",
-          "hr": "Prvo čuvaj najviši unutarnji postotak: zatvori odskok pivotu: i natjeraj ih na niži vanjski šut",
+          "hr": "Prvo zatvori dodavanje pivotu i usmjeri napad prema otežanom šutu izvana",
           "de": "Zuerst die höchste Innenquote schützen — Kreisläufer-Bounce zustellen — und sie zu niedrigerer Außenquote zwingen"
         },
         "feedback": {
@@ -42044,7 +42044,7 @@
         "quality": "good",
         "text": {
           "en": "Stay longer in help only if the beaten half is fully gone and no one else can recover the drive",
-          "hr": "Ostani duže u pomoći samo ako je dobiveni polubranitelj potpuno van igre i nitko drugi ne može vratiti prodor",
+          "hr": "Ostani duže u pomoći ako suigrač ne može ponovno preuzeti napadača i nema druge pomoći",
           "de": "Länger in Hilfe bleiben nur wenn der geschlagene Halbe völlig weg ist und niemand sonst den Durchbruch holt"
         },
         "feedback": {
@@ -42057,7 +42057,7 @@
         "quality": "risky",
         "text": {
           "en": "Never help and hope the beaten half recovers alone",
-          "hr": "Nikad ne pomaži i nadaj se da će dobiveni polubranitelj sam vratiti",
+          "hr": "Ne pomogni i nadaj se da će se suigrač sam vratiti u položaj",
           "de": "Nie helfen und hoffen dass der geschlagene Halbe allein aufholt"
         },
         "feedback": {
@@ -42244,7 +42244,7 @@
         "quality": "good",
         "text": {
           "en": "Sprint to the wide man only after a teammate has already occupied the central path",
-          "hr": "Sprintaj na širokog samo nakon što suigrač već zauzme središnji put",
+          "hr": "Kreni prema napadaču na krilu tek kad suigrač pokrije sredinu",
           "de": "Zum Breiten sprinten nur nachdem ein Mitspieler den Mittelweg schon besetzt"
         },
         "feedback": {
@@ -42331,7 +42331,7 @@
         "quality": "optimal",
         "text": {
           "en": "Call the high outside block arm for the near half defender and cover the inside rebound lane yourself",
-          "hr": "Pozovi visoku vanjsku ruku bloka za bližeg polubranitelja i sam pokrij unutarnju liniju odbijene lopte",
+          "hr": "Pozovi polubranitelja na dogovoreni blok i pripremi se za odbijenu loptu",
           "de": "Rufe den hohen äußeren Blockarm für den nahen Halbverteidiger und decke selbst die innere Abpraller-Linie"
         },
         "feedback": {
