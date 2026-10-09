@@ -31454,14 +31454,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "The corner is unattended — drive at it so he must follow you out, then release the wing into the angle you opened",
-          "hr": "Kut je nečuvan: kreni prema njemu da te mora pratiti van, pa pusti krilo u kut koji si otvorio",
-          "de": "Die Ecke ist unbewacht — dorthin ziehen, damit er mitgehen muss, dann den Außen in den geöffneten Winkel bedienen"
+          "hr": "Napadni slobodan prostor prema van i dodaj krilu ako branič izađe na tebe, a krilo krene u slobodan prostor za prijem",
+          "en": "Attack the open outside space and pass to the wing if the defender commits to you and the wing moves into space to receive",
+          "de": "Den freien Raum nach außen angreifen und zum Außen passen, wenn der Verteidiger dich übernimmt und der Außen in freien Anspielraum startet"
         },
         "feedback": {
-          "en": "Correct — you have to move him before the wing has anything; an unattended corner is an invitation, not a finished chance.",
-          "hr": "Točno: prvo ga treba pomaknuti da krilo išta dobije; nečuvan kut je poziv, a ne gotova prilika.",
-          "de": "Richtig — er muss erst bewegt werden; die unbewachte Ecke ist eine Einladung, keine fertige Chance."
+          "hr": "Točno: prati reakciju braniča i kretanje krila. Sam tvoj pomak prema van ne poboljšava automatski kut šuta krila.",
+          "en": "Correct: read the defender’s response and the wing’s movement. Your outside movement alone does not automatically improve the wing’s shooting angle.",
+          "de": "Richtig: Die Reaktion des Verteidigers und die Bewegung des Außen lesen. Deine Bewegung nach außen verbessert dessen Wurfwinkel nicht automatisch."
         }
       },
       {
@@ -31472,9 +31472,9 @@
           "de": "Sein Innenfuß steht vorn — den Außen früh anspielen und ihn an der Grundlinie ins 1 gegen 1 gehen lassen"
         },
         "feedback": {
-          "en": "Good — the foot is a real cue, but a wing starting from a standstill still shoots from a bad angle.",
-          "hr": "Dobro: noga je pravi signal, ali krilo koje kreće iz mjesta i dalje puca iz lošeg kuta.",
-          "de": "Gut — der Fuß ist ein echtes Signal, doch der Außen wirft aus dem Stand weiter aus schlechtem Winkel."
+          "hr": "Moguće ako krilo može nastaviti napad iz prijema. Ovdje stoji u nepovoljnom kutu pa rano dodavanje samo po sebi ne stvara bolji šut.",
+          "en": "Possible if the wing can continue from the reception. Here the wing stands at an unfavourable angle, so an early pass alone does not create a better shot.",
+          "de": "Möglich, wenn der Außen nach der Annahme weiterspielen kann. Hier steht er in ungünstigem Winkel; ein früher Pass allein schafft keinen besseren Wurf."
         }
       },
       {
@@ -31505,9 +31505,9 @@
       }
     ],
     "explanation": {
-      "en": "Cue: the outside defender stands almost in your gap with the inside foot forward and nobody guarding the corner. The read is that the corner is free in position but not yet in angle — drive at it so he has to travel with you, and the wing gets the ball with a real shooting angle instead of a poor one. Playing the wing early (B) uses the same cue, but from a standstill he attacks a defender who has not moved. Shooting into the crowd or crossing away abandons the mistake you were given.",
-      "hr": "Signal: vanjski branič stoji gotovo u tvojoj rupi s unutarnjom nogom naprijed i nitko ne čuva kut. Čitanje kaže da je kut slobodan pozicijski, ali još ne i kutno: kreni prema njemu da te mora pratiti, pa krilo dobije loptu s pravim kutom umjesto lošim. Rano dodavanje krilu (B) koristi isti signal, ali iz mjesta napada braniča koji se nije pomaknuo. Šut u gužvu ili križanje na drugu stranu napuštaju pogrešku koju si dobio.",
-      "de": "Signal: der Außenverteidiger steht fast in deiner Lücke, Innenfuß vorn, die Ecke unbewacht. Die Lesart: die Ecke ist positionell frei, aber noch nicht im Winkel — zieh dorthin, damit er mitgehen muss, dann bekommt der Außen den Ball mit echtem Winkel. Den Außen früh zu bedienen (B) nutzt dasselbe Signal, lässt ihn aber aus dem Stand gegen einen unbewegten Verteidiger antreten. In die Menge werfen oder wegkreuzen verschenkt den Fehler."
+      "hr": "Uski položaj braniča ostavlja prostor prema van. Napadni ga i procijeni reakciju: ako branič izađe na tebe, dodaj krilu uz slobodnu putanju i povoljan prijem. Ako ostane uz krilo, ponovno procijeni vlastiti prolaz. Kut krila ovisi o njegovu kretanju i mjestu prijema, a ne samo o tvojem pomaku.",
+      "en": "The defender’s narrow position leaves outside space. Attack it and read the response: if the defender commits to you, pass to the wing through a clear lane for a favourable reception. If he stays with the wing, reassess your own drive. The wing’s angle depends on its movement and reception point, not only your movement.",
+      "de": "Die enge Position des Verteidigers lässt außen Raum. Greife ihn an und lies die Reaktion: Übernimmt er dich, den Außen über einen freien Passweg günstig anspielen. Bleibt er beim Außen, den eigenen Durchbruch neu bewerten. Der Außenwinkel hängt von dessen Bewegung und Annahmepunkt ab, nicht allein von deiner Bewegung."
     },
     "skillTags": [
       "angleSelection"
