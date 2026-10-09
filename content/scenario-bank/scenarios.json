@@ -37563,7 +37563,7 @@
         "quality": "optimal",
         "text": {
           "en": "Feed the right back before the late low slides across into his lane",
-          "hr": "Dodaj desnom vanjskom prije nego zakašnjeli niski dođe u njegovu liniju",
+          "hr": "Dodaj desnom vanjskom prije nego branič iz stražnje linije zatvori put dodavanju",
           "de": "Den rechten Rückraum bedienen bevor der späte Tiefe in seine Bahn schiebt"
         },
         "feedback": {
@@ -37602,7 +37602,7 @@
         "quality": "poor",
         "text": {
           "en": "Force a contested shot into the high defender who is already on you",
-          "hr": "Forsiraj osporeni šut u visokog braniča koji je već na tebi",
+          "hr": "Forsiraj šut preko isturenog braniča koji te već pritišće",
           "de": "Einen umkämpften Wurf in den Hohen erzwingen, der schon auf dir ist"
         },
         "feedback": {
@@ -37661,7 +37661,7 @@
         "quality": "optimal",
         "text": {
           "en": "Refuse the closed central lane and the double-covered pivot — move the ball to the free right back",
-          "hr": "Odbij zatvoreni središnji prolaz i dvostruko pokrivenog pivota: pokreni loptu na slobodnog desnog vanjskog",
+          "hr": "Dodaj slobodnom desnom vanjskom umjesto forsiranja zatvorenog prolaza ili pokrivenog pivota",
           "de": "Die geschlossene Mittelbahn und den doppelt zugestellten Kreisläufer ablehnen — Ball zum freien rechten Rückraum"
         },
         "feedback": {
@@ -37758,7 +37758,7 @@
         "quality": "optimal",
         "text": {
           "en": "Play behind the jumping high into the pivot in the pocket before the deep five steps out",
-          "hr": "Igraj iza skačućeg visokog u pivota u džepu prije nego duboka petorka izađe",
+          "hr": "Dodaj pivotu u prostor iza isturenog braniča prije izlaska stražnje linije",
           "de": "Hinter dem springenden Hohen in den Kreisläufer in die Tasche spielen bevor die tiefe Fünf heraustritt"
         },
         "feedback": {
@@ -37771,7 +37771,7 @@
         "quality": "good",
         "text": {
           "en": "Feed the free back in the pocket if the pivot lane is already sealed",
-          "hr": "Dodaj slobodnom vanjskom u džepu ako je linija pivota već zatvorena",
+          "hr": "Dodaj slobodnom vanjskom u taj prostor ako je put dodavanju pivotu zatvoren",
           "de": "Den freien Rückraum in der Tasche bedienen wenn die Kreisbahn schon dicht ist"
         },
         "feedback": {
@@ -37868,7 +37868,7 @@
         "quality": "good",
         "text": {
           "en": "Feed the sealing pivot if one of the early-out deeps fully turns toward you",
-          "hr": "Dodaj pivotu koji zatvara ako se jedan od rano izašlih dubokih skroz okrene prema tebi",
+          "hr": "Dodaj pivotu koji zagrađuje braniča ako jedan od braniča iz stražnje linije potpuno izađe na tebe",
           "de": "Den abschließenden Kreisläufer bedienen, wenn einer der früh herausgetretenen Tiefen sich voll zu dir dreht"
         },
         "feedback": {
@@ -37953,7 +37953,7 @@
         "quality": "optimal",
         "text": {
           "en": "Attack the stretched lane between the backs yourself while the pivot marker stays glued",
-          "hr": "Sam napadni razvučeni prolaz između vanjskih dok čuvar pivota ostaje zalijepljen",
+          "hr": "Napadni otvoreni prolaz dok protivnički čuvar ostaje uz pivota",
           "de": "Selbst die gedehnte Gasse zwischen den Rückräumen angreifen solange der Kreismarkierer klebt"
         },
         "feedback": {
@@ -37979,7 +37979,7 @@
         "quality": "risky",
         "text": {
           "en": "Force the marked pivot while the marker is still chest-to-chest",
-          "hr": "Forsiraj označenog pivota dok je čuvar još prsa u prsa",
+          "hr": "Forsiraj dodavanje pivotu kojeg protivnički čuvar čvrsto pokriva",
           "de": "Den markierten Kreisläufer forcieren, während der Bewacher noch Brust an Brust ist"
         },
         "feedback": {
@@ -38051,7 +38051,7 @@
         "quality": "optimal",
         "text": {
           "en": "Refuse the marked pivot — play the free left back created by the late slide of the five",
-          "hr": "Odbij označenog pivota: igraj slobodnog lijevog vanjskog kojeg je stvorilo kasno klizanje petorke",
+          "hr": "Dodaj slobodnom lijevom vanjskom umjesto pokrivenom pivotu",
           "de": "Den markierten Kreisläufer ablehnen — den freien linken Rückraum spielen, den das späte Schieben der Fünf schuf"
         },
         "feedback": {
@@ -38090,7 +38090,7 @@
         "quality": "poor",
         "text": {
           "en": "Force a bounce pass into traffic at the marked pivot",
-          "hr": "Forsiraj dodavanje od poda u gužvu na označenog pivota",
+          "hr": "Forsiraj dodavanje od poda pokrivenom pivotu kroz gužvu",
           "de": "Einen Bound-Pass in den Verkehr zum markierten Kreisläufer erzwingen"
         },
         "feedback": {
@@ -38149,7 +38149,7 @@
         "quality": "optimal",
         "text": {
           "en": "A free organizing lane at the top into the gap between the four lows — attack it before a marker recovers",
-          "hr": "Slobodni organizacijski prolaz na vrhu u rupu između četiri niska: napadni ga prije nego se čuvar vrati",
+          "hr": "Napadni otvoreni prolaz između braniča u stražnjoj liniji prije povratka pomoći",
           "de": "Eine freie Organisationsbahn oben in die Lücke zwischen den vier Tiefen — angreifen, bevor ein Bewacher zurückkehrt"
         },
         "feedback": {
@@ -38247,7 +38247,7 @@
         "quality": "optimal",
         "text": {
           "en": "Attack your late defender immediately to create a clean 1v1 before help arrives",
-          "hr": "Odmah napadni svog kasnog braniča da stvoriš čist 1 na 1 prije nego stigne pomoć",
+          "hr": "Odmah napadni braniča koji kasni, prije dolaska pomoći",
           "de": "Sofort deinen späten Verteidiger angreifen und ein sauberes 1 gegen 1 schaffen, bevor Hilfe kommt"
         },
         "feedback": {
@@ -38260,7 +38260,7 @@
         "quality": "good",
         "text": {
           "en": "Short exchange with the left back so both late defenders stay late, then attack",
-          "hr": "Kratka razmjena s lijevim vanjskim da oba kasna braniča ostanu kasna, pa napadni",
+          "hr": "Kratko razmijeni loptu s lijevim vanjskim pa napadni dok se braniči još vraćaju",
           "de": "Kurzer Austausch mit dem linken Rückraum, damit beide späten Verteidiger spät bleiben, dann angreifen"
         },
         "feedback": {
@@ -38372,7 +38372,7 @@
         "quality": "risky",
         "text": {
           "en": "Jog the cut slowly while your defender recovers into the return lane",
-          "hr": "Polako trči ulazak dok se tvoj branič vraća u prolaz za povratak",
+          "hr": "Sporo utrčavaj dok se tvoj branič vraća i zatvara put povratnom dodavanju",
           "de": "Den Lauf langsam traben, während dein Verteidiger in die Rückpassbahn zurückkehrt"
         },
         "feedback": {
@@ -38443,7 +38443,7 @@
         "quality": "optimal",
         "text": {
           "en": "Release immediately to the left back while the half is stuck and the central switch is still late",
-          "hr": "Odmah pusti loptu lijevom vanjskom dok je polubranitelj zaglavljen, a srednje preuzimanje još kasni",
+          "hr": "Odmah dodaj lijevom vanjskom dok obrana kasni s preuzimanjem",
           "de": "Sofort auf den linken Rückraum abgeben, solange der Halbe hängt und die Mittelübernahme noch spät ist"
         },
         "feedback": {
