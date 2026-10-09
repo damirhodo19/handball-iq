@@ -31576,9 +31576,9 @@
           "de": "Von neun Metern über drei Körper werfen, um Zeit zu sparen"
         },
         "feedback": {
-          "en": "Risky — a blocked ball with your extra player up the court is an empty-net goal against you.",
-          "hr": "Rizično: blokirana lopta uz dodatnog igrača u napadu je gol u prazan gol protiv vas.",
-          "de": "Riskant — ein geblockter Ball bei zusätzlichem Feldspieler bedeutet das Gegentor ins leere Tor."
+          "hr": "Rizično: blok može dovesti do gubitka lopte i šuta protivnika prema vašem praznom golu.",
+          "en": "Risky: a block may lead to a turnover and an opponent’s shot at your empty goal.",
+          "de": "Riskant: Ein Block kann Ballverlust und einen gegnerischen Wurf auf euer leeres Tor ermöglichen."
         }
       },
       {
@@ -32102,9 +32102,9 @@
           "de": "Die Parallelbewegung eine Position weiterführen, damit die Linie erneut in seinen leeren Platz schieben muss"
         },
         "feedback": {
-          "en": "Correct — an early switch is only solved by movement; a second shift is what finally tears the line.",
-          "hr": "Točno: rano preuzimanje rješava se samo kretanjem; drugi pomak je ono što na kraju kida liniju.",
-          "de": "Richtig — eine frühe Übernahme löst nur Bewegung; erst die zweite Verschiebung reißt die Linie auf."
+          "hr": "Točno: nastavak kretanja u opisani slobodan prostor traži novu reakciju obrane. Prati je prije sljedeće odluke.",
+          "en": "Correct: continuing into the described free space requires a new defensive response. Read it before deciding next.",
+          "de": "Richtig: Die Bewegung in den beschriebenen freien Raum verlangt eine neue Abwehrreaktion. Diese vor der nächsten Entscheidung lesen."
         }
       },
       {
@@ -32285,9 +32285,9 @@
           "de": "Schon im ersten Schritt in seinen Rücken spielen, solange der Nachbar am Rückraum Mitte klebt"
         },
         "feedback": {
-          "en": "Correct — the window behind an out-stepping defender is one stride long and closes as soon as help arrives.",
-          "hr": "Točno: prozor iza braniča koji izlazi traje jedan korak i zatvara se čim stigne pomoć.",
-          "de": "Richtig — das Fenster im Rücken eines herauslaufenden Verteidigers dauert einen Schritt."
+          "hr": "Točno: dodaj dok je putanja iza braniča otvorena i susjed još pokriva srednjeg vanjskog.",
+          "en": "Correct: pass while the lane behind the defender is open and his neighbour still covers the centre back.",
+          "de": "Richtig: Passen, solange die Bahn hinter dem Verteidiger frei ist und sein Nachbar noch Rückraum Mitte deckt."
         }
       },
       {
@@ -32376,9 +32376,9 @@
           "de": "Sofort hinter den helfenden Verteidiger zum abrollenden Kreisläufer spielen, solange beide am Ball sind"
         },
         "feedback": {
-          "en": "Correct — a help defender who leaves his own man has already lost the two against two; punish it immediately.",
-          "hr": "Točno: branič koji zbog pomoći napusti svog igrača već je izgubio 2 na 2; kazni to odmah.",
-          "de": "Richtig — ein Helfer, der seinen Mann verlässt, hat das 2 gegen 2 schon verloren; bestrafe es sofort."
+          "hr": "Točno: oba braniča usmjerena su na loptu pa iskoristi dostupno dodavanje pivotu prije njihove prilagodbe.",
+          "en": "Correct: both defenders focus on the ball, so use the available pivot pass before they adjust.",
+          "de": "Richtig: Beide Verteidiger orientieren sich zum Ball. Das verfügbare Kreisanspiel vor ihrer Anpassung nutzen."
         }
       },
       {
@@ -32493,9 +32493,9 @@
           "de": "Den Wurf über einen Verteidiger erzwingen, der die Sperre schon passiert hat"
         },
         "feedback": {
-          "en": "Risky — he is balanced and in your throwing line; that is a blocked ball and their counter attack.",
-          "hr": "Rizično: u ravnoteži je i u tvojoj liniji bacanja; to je blokirana lopta i njihova kontra.",
-          "de": "Riskant — er steht im Gleichgewicht in deiner Wurflinie; das ist ein Block und ihr Gegenstoß."
+          "hr": "Rizično: branič je u ravnoteži i na putanji šuta, pa raste rizik bloka i gubitka lopte.",
+          "en": "Risky: the defender is balanced and in the shooting lane, increasing the risk of a block and turnover.",
+          "de": "Riskant: Der Verteidiger steht stabil in der Wurflinie; Block- und Ballverlustrisiko steigen."
         }
       },
       {
@@ -32645,9 +32645,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Step outside first to open a straight near-side lane, then deliver short and never across the front",
-          "hr": "Prvo napravi korak prema van da otvoriš ravnu bližu liniju, pa dodaj kratko: nikad dugo dodavanje preko prednje linije obrane",
-          "de": "Zuerst einen Schritt nach außen für eine gerade nahe Bahn, dann kurz anspielen und nie quer vor der Abwehr"
+          "hr": "Korakom prema van otvori dostupnu kraću putanju pa dodaj; izbjegni opisanu dugu putanju koju krilo već čita",
+          "en": "Step outside to open the available shorter lane and pass; avoid the described long lane the wing is already reading",
+          "de": "Mit einem Schritt nach außen den verfügbaren kürzeren Passweg öffnen; den beschriebenen langen Weg meiden, den der Außen bereits liest"
         },
         "feedback": {
           "en": "Correct — with an empty goal the only acceptable pass is a short straight one; the step outside is what creates it.",
