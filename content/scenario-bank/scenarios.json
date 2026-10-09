@@ -32929,9 +32929,9 @@
           "de": "Sofort die Lücke neben dem zurückkehrenden Verteidiger angreifen, bevor er den Anschluss hat"
         },
         "feedback": {
-          "en": "Correct — a returning defender is a hole for two or three seconds; that is the last piece of the advantage.",
-          "hr": "Točno: branič koji se vraća rupa je dvije do tri sekunde; to je zadnji dio prednosti.",
-          "de": "Richtig — ein zurückkehrender Verteidiger ist zwei bis drei Sekunden ein Loch; das ist der Rest des Vorteils."
+          "hr": "Točno: prema opisu branič još nije povezan sa susjedima. Iskoristi taj prostor dok postoji.",
+          "en": "Correct: the defender has not yet connected with his neighbours. Use that space while it exists.",
+          "de": "Richtig: Der Verteidiger hat noch keinen Anschluss an seine Nachbarn. Den Raum nutzen, solange er offen ist."
         }
       },
       {
@@ -33046,9 +33046,9 @@
           "de": "Noch eine Verlagerung suchen, um den Angriff zu „bauen“, während die Warnung läuft"
         },
         "feedback": {
-          "en": "Risky — another swing under an active warning usually ends with the referees taking the ball.",
-          "hr": "Rizično: još jedno prebacivanje pod aktivnim upozorenjem obično završi tako da suci uzmu loptu.",
-          "de": "Riskant — eine weitere Verlagerung unter aktiver Warnung endet meist mit Ballverlust durch die Schiedsrichter."
+          "hr": "Rizično: dodatno dodavanje troši dopuštena dodavanja nakon upozorenja i može propustiti već otvoren šut.",
+          "en": "Risky: an extra pass uses the permitted passes after the warning and may waste the already open shot.",
+          "de": "Riskant: Ein weiterer Pass verbraucht erlaubte Pässe nach der Warnung und kann den bereits freien Wurf vergeben."
         }
       },
       {
@@ -33059,9 +33059,9 @@
           "de": "Den Ball zurück auf elf Meter spielen und die Struktur neu beginnen"
         },
         "feedback": {
-          "en": "Poor — a backward pass after the warning is the clearest way to hand over the possession.",
-          "hr": "Loše: dodavanje unatrag nakon upozorenja najjasniji je način da predaš napad.",
-          "de": "Schlecht — ein Rückpass nach der Warnung ist der klarste Weg, den Angriff herzugeben."
+          "hr": "Loše u ovoj situaciji: odustaješ od otvorenog šuta nakon upozorenja. Samo dodavanje unatrag ne znači automatski gubitak lopte.",
+          "en": "Poor here: you give up an open shot after the warning. A backward pass alone does not automatically mean losing possession.",
+          "de": "Hier schlecht: Du gibst nach der Warnung einen freien Wurf auf. Ein Rückpass allein bedeutet nicht automatisch Ballverlust."
         }
       }
     ],
@@ -33673,9 +33673,9 @@
           "de": "Greif ihn im Eins gegen Eins mit Richtungswechsel nach außen an, wo dein linker Wurfarm den Winkel offen hält"
         },
         "feedback": {
-          "en": "Correct — an isolation without help is the cheapest goal in handball; take the duel while the space is still there.",
-          "hr": "Točno: izolacija bez pomoći najjeftiniji je gol u rukometu; uzmi duel dok prostor traje.",
-          "de": "Richtig — eine Isolation ohne Hilfe ist das billigste Tor im Handball; nimm das Duell, solange der Raum da ist."
+          "hr": "Točno: opisani dvoboj ima dovoljno prostora i nema neposredne pomoći. Napadni dok ta prednost traje, bez pretpostavke sigurnog pogotka.",
+          "en": "Correct: the described duel has space and no immediate help. Attack while that advantage lasts, without assuming a certain goal.",
+          "de": "Richtig: Der beschriebene Zweikampf bietet Raum ohne unmittelbare Hilfe. Diesen Vorteil nutzen, ohne ein sicheres Tor anzunehmen."
         }
       },
       {
