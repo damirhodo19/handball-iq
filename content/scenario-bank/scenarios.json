@@ -35584,7 +35584,7 @@
     "defensiveSystem": "6-0",
     "situation": {
       "en": "At 11' you lead 7:6 against a set 6:0. You receive at the top with time. The central defender stands flat on the six-metre line, hands low, eyes on the ball. Both half-defenders shade a half-step outward toward your backs. The pivot is between the central and the left half, still quiet.",
-      "hr": "Vodite 7:6 u 11. minuti protiv postavljene 6:0. Primaš na vrhu s vremenom. Srednji branič stoji ravno na šest metara, ruke nisko, pogled na lopti. Oba polubranitelja klize pola koraka prema vanjskim. Pivot je između srednjeg i lijevog polubranitelja, još miran.",
+      "hr": "Vodite 7:6 u 11. minuti protiv postavljene obrane 6:0. Primaš loptu u sredini i imaš vremena za odluku. Središnji branič stoji na šest metara, spuštenih ruku i prati loptu. Oba polubranitelja pomiču se prema vanjskim igračima. Pivot miruje između središnjeg braniča i susjednog polubranitelja.",
       "de": "In Minute 11 führt ihr 7:6 gegen eine stehende 6:0. Du bekommst oben mit Zeit. Der Mittelverteidiger steht flach auf sechs Metern, Hände tief, Blick am Ball. Beide Halbverteidiger schieben einen halben Schritt nach außen zu den Rückraumspielern. Der Kreisläufer steht zwischen Mittel und linkem Halben, noch ruhig."
     },
     "question": {
@@ -35694,12 +35694,12 @@
         "quality": "optimal",
         "text": {
           "en": "The left half is late — the surplus is now with the left back before the slide closes",
-          "hr": "Lijevi polubranitelj kasni: višak je sada kod lijevog vanjskog prije nego se klizanje zatvori",
+          "hr": "Odmah dodaj slobodnom lijevom vanjskom prije nego obrana zatvori prostor",
           "de": "Der linke Halbe ist spät — der Vorteil liegt jetzt beim linken Rückraum, bevor das Schieben schließt"
         },
         "feedback": {
           "en": "Correct — binding the centre forced a late slide; that half-step delay is the whole gift.",
-          "hr": "Točno: vezanje sredine forsiralo je kasno klizanje; to kašnjenje pola koraka je cijeli dar.",
+          "hr": "Točno: izlazak središnjeg braniča otvorio je prostor lijevom vanjskom, a susjedni branič kasni.",
           "de": "Richtig — die Mittelbindung erzwang das späte Schieben; dieser halbe Schritt ist das Geschenk."
         }
       },
@@ -35794,12 +35794,12 @@
         "quality": "optimal",
         "text": {
           "en": "Feed the pivot now into the seam while help from the far half has not started",
-          "hr": "Dodaj pivotu sada u spoj dok pomoć s dalekog polubranitelja još nije krenula",
+          "hr": "Dodaj pivotu u otvoreni prostor prije dolaska pomoći",
           "de": "Jetzt den Kreisläufer in die Naht bedienen, bevor die Hilfe vom fernen Halben startet"
         },
         "feedback": {
           "en": "Correct — the bind pulled the centre out and the seal created the seam; that window is short.",
-          "hr": "Točno: vezanje je izvuklo sredinu, a zatvaranje je stvorilo spoj; taj prozor je kratak.",
+          "hr": "Točno: pivot nudi ruku za prijem, a pomoć još nije stigla.",
           "de": "Richtig — die Bindung zog die Mitte heraus, der Abschluss schuf die Naht; das Fenster ist kurz."
         }
       },
@@ -35833,7 +35833,7 @@
         "quality": "poor",
         "text": {
           "en": "Ignore the sealed pivot and force a contested shot into the outstepping centre",
-          "hr": "Zanemari zatvorenog pivota i forsiraj osporeni šut u izašlog srednjeg",
+          "hr": "Zanemari dostupnog pivota i forsiraj šut preko središnjeg braniča",
           "de": "Den abschließenden Kreisläufer ignorieren und einen umkämpften Wurf in den herausgetretenen Mittelverteidiger erzwingen"
         },
         "feedback": {
@@ -35897,7 +35897,7 @@
         },
         "feedback": {
           "en": "Correct — the block pinned the half and pulled centre help; the lane exists only for one step.",
-          "hr": "Točno: blok je zaključao polubranitelja i povukao pomoć sredine; prolaz živi samo jedan korak.",
+          "hr": "Točno: blok je otvorio prolaz koji treba iskoristiti prije dolaska pomoći.",
           "de": "Richtig — der Block pinnt den Halben und zieht Mittelhilfe; die Bahn lebt nur einen Schritt."
         }
       },
@@ -35936,7 +35936,7 @@
         },
         "feedback": {
           "en": "Poor — you leave the geometric gift and play into coverage.",
-          "hr": "Loše: ostavljaš geometrijski dar i igraš u pokrivenost.",
+          "hr": "Loše: biraš pokrivenog suigrača dok je prolaz prema golu otvoren.",
           "de": "Schlecht — du lässt das geometrische Geschenk liegen und spielst in die Deckung."
         }
       }
@@ -35996,7 +35996,7 @@
         },
         "feedback": {
           "en": "Correct — full ball-side load plus hips still turning on the weak side is the classic change-side cue.",
-          "hr": "Točno: puno opterećenje na strani lopte plus bokovi koji se još okreću na slaboj strani klasičan je signal za promjenu.",
+          "hr": "Točno: obrana se pomaknula na stranu lopte, a suprotna strana još se nije vratila.",
           "de": "Richtig — volle Ballseitenlast plus noch drehende Hüften auf der Schwachen ist das klassische Wechsel-Signal."
         }
       },
@@ -36035,7 +36035,7 @@
         },
         "feedback": {
           "en": "Poor — you created the weak-side gift and then shoot into the crowded ball side.",
-          "hr": "Loše: stvorio si dar na slaboj strani, a onda pucaš u gužvu na strani lopte.",
+          "hr": "Loše: šutiraš kroz zbijenu obranu i propuštaš slobodnog suigrača.",
           "de": "Schlecht — du hast das Geschenk auf der Schwachen geschaffen und wirfst dann in die Ballseite."
         }
       }
@@ -36095,7 +36095,7 @@
         },
         "feedback": {
           "en": "Correct — early recovery and a square weak-side half kill the change; the near lane is the real surplus.",
-          "hr": "Točno: rani povratak i ravni polubranitelj na slaboj strani gase promjenu; bliži prolaz je pravi višak.",
+          "hr": "Točno: obrana na suprotnoj strani već je spremna, ali bliži prolaz ostaje otvoren.",
           "de": "Richtig — frühe Rückkehr und quadratischer schwacher Halber töten den Wechsel; die nahe Bahn ist der Vorteil."
         }
       },
@@ -36233,7 +36233,7 @@
         },
         "feedback": {
           "en": "Poor — long balls into a compact block are gifts.",
-          "hr": "Loše: duge lopte u zbijeni blok su poklon.",
+          "hr": "Loše: dugim dodavanjem kroz zbijenu obranu povećavaš rizik presijecanja.",
           "de": "Schlecht — lange Bälle in den kompakten Block sind Geschenke."
         }
       }
