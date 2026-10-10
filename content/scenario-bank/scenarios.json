@@ -60337,15 +60337,15 @@
       },
       {
         "text": {
-          "en": "Reset the feet if the shooter lands without releasing",
-          "hr": "Ponovno postavi stopala ako šuter doskoči bez izbačaja",
-          "de": "Die Füße neu setzen, wenn der Werfer ohne Abwurf landet"
+          "hr": "Ponovno se postavi prema lopti ako šuter umjesto šuta doda suigraču",
+          "en": "Reset toward the ball if the shooter passes to a teammate instead of shooting",
+          "de": "Neu zum Ball ausrichten, wenn der Werfer statt des Wurfs zu einem Mitspieler passt"
         },
         "quality": "good",
         "feedback": {
-          "en": "Good — the first shooting moment has ended.",
-          "hr": "Dobro: prvi trenutak za šut je završio.",
-          "de": "Gut — der erste Wurfzeitpunkt ist vorbei."
+          "hr": "Dobro: stvarno dodavanje mijenja igrača koji može pucati.",
+          "en": "Good: an actual pass changes the player who can shoot.",
+          "de": "Gut: Ein tatsächlicher Pass ändert den möglichen Werfer."
         }
       },
       {
@@ -60381,9 +60381,9 @@
       "de": "Der Torwart reagiert auf die Abwurfaktion, nicht nur auf den höchsten Punkt des Sprungs."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A applies while the shooter remains airborne; B applies only after a landing without a shot.",
-      "hr": "A vrijedi dok je šuter u zraku; B vrijedi tek nakon doskoka bez šuta.",
-      "de": "A gilt in der Flugphase; B erst nach einer Landung ohne Wurf."
+      "hr": "A odgovara odgođenom izbačaju igrača koji još drži loptu; B slijedi ako umjesto šuta stvarno doda.",
+      "en": "A addresses the delayed release while the player still holds the ball; B follows if he actually passes instead.",
+      "de": "A gilt für den verzögerten Abwurf bei weiterem Ballbesitz; B folgt, wenn er tatsächlich stattdessen passt."
     },
     "skillTags": [
       "timing",
@@ -60935,15 +60935,15 @@
     "answers": [
       {
         "text": {
-          "en": "Stay balanced, make the save and secure the ball or direct it safely out",
-          "hr": "Ostani u ravnoteži, obrani šut i uhvati loptu ili je sigurno usmjeri izvan igre",
-          "de": "Ausbalanciert bleiben, parieren und den Ball sichern oder sicher ins Aus lenken"
+          "hr": "Ostani u ravnoteži, obrani šut i osiguraj loptu ili je, ako možeš, odbij preko vanjske gol linije",
+          "en": "Stay balanced, save the shot and secure the ball or, if possible, deflect it over the outer goal line",
+          "de": "Im Gleichgewicht bleiben, den Wurf abwehren und den Ball sichern oder möglichst über die Torauslinie lenken"
         },
         "quality": "optimal",
         "feedback": {
-          "en": "Correct — control removes the opponent’s final chance.",
-          "hr": "Točno: kontrola uklanja posljednju priliku suparnika.",
-          "de": "Richtig — Kontrolle nimmt dem Gegner die letzte Chance."
+          "hr": "Točno: siguran posjed ili odbijanje vratara preko vanjske gol linije sprječava neposredan drugi šut. Odbijanje preko uzdužne linije daje suparniku ubacivanje.",
+          "en": "Correct: secure possession or a goalkeeper deflection over the outer goal line prevents an immediate second shot. A deflection over the sideline gives the opponents a throw-in.",
+          "de": "Richtig: Sicherer Ballbesitz oder eine Torwartabwehr über die Torauslinie verhindert den unmittelbaren Nachwurf. Über die Seitenlinie erhalten die Gegner Einwurf."
         }
       },
       {
@@ -61559,15 +61559,15 @@
       },
       {
         "text": {
-          "en": "Step farther out only if the wing lands closer and controls the ball for another action",
-          "hr": "Izađi više samo ako krilo doskoči bliže i zadrži loptu za novu radnju",
-          "de": "Nur weiter vorrücken, wenn der Außen näher landet und den Ball für eine weitere Aktion kontrolliert"
+          "hr": "Prilagodi dubinu ako krilo tijekom leta ipak približi točku izbačaja, ali zadrži ravnotežu prije šuta",
+          "en": "Adjust depth if the wing does bring the release point closer during flight, while retaining balance before the shot",
+          "de": "Die Tiefe anpassen, falls der Außen den Abwurfpunkt im Flug doch näher bringt, dabei vor dem Wurf im Gleichgewicht bleiben"
         },
         "quality": "good",
         "feedback": {
-          "en": "Good — that would create a new, closer threat.",
-          "hr": "Dobro: tada nastaje nova, bliža prijetnja.",
-          "de": "Gut — dann entsteht eine neue, nähere Gefahr."
+          "hr": "Dobro ako se udaljenost stvarno promijeni; u opisu odraz ostavlja šutera dalje od gola.",
+          "en": "Good if the distance actually changes; the described take-off leaves the shooter farther from goal.",
+          "de": "Gut bei tatsächlich veränderter Distanz; der beschriebene Absprung lässt den Werfer weiter vom Tor entfernt."
         }
       },
       {
@@ -61603,9 +61603,9 @@
       "de": "Die Torwarttiefe soll zur Wurfdistanz passen. Ein weiterer Absprung erlaubt eine etwas tiefere, reaktionsbereitere Position."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A fits the distant take-off; B applies only if the attacker creates a new closer action.",
-      "hr": "A odgovara daljem odrazu; B vrijedi samo ako napadač stvori novu bližu akciju.",
-      "de": "A passt zum weiteren Absprung; B gilt nur bei einer neuen näheren Aktion."
+      "hr": "A odgovara daljoj točki izbačaja; B vrijedi samo ako se ona tijekom leta stvarno približi.",
+      "en": "A fits the more distant release point; B applies only if it actually moves closer during flight.",
+      "de": "A passt zum weiter entfernten Abwurfpunkt; B gilt nur, wenn er im Flug tatsächlich näher kommt."
     },
     "skillTags": [
       "wingShot",
@@ -62355,28 +62355,28 @@
     "answers": [
       {
         "text": {
-          "en": "Name the pivot blocking your sight and the defender who must move him out of the direct line",
-          "hr": "Označi pivota koji ti zaklanja pogled i braniča koji ga mora izmaknuti iz izravne linije",
-          "de": "Den sichtblockierenden Kreis und den zuständigen Verteidiger benennen"
+          "hr": "Označi pivota koji zaklanja pogled i njegova čuvara, a pogled na loptu vrati malom prilagodbom položaja",
+          "en": "Identify the screening pivot and his marker, and regain sight of the ball with a small positioning adjustment",
+          "de": "Den sichtbehindernden Kreisläufer und seinen Bewacher benennen und mit einer kleinen Positionsanpassung den Ball wieder sehen"
         },
         "quality": "optimal",
         "feedback": {
-          "en": "Correct — clear sight and body ownership must be restored.",
-          "hr": "Točno: treba vratiti jasan pogled i odgovornost za igrača.",
-          "de": "Richtig — klare Sicht und Körperverantwortung müssen hergestellt werden."
+          "hr": "Točno: dodjeljuješ čuvara i tražiš pogled na loptu bez upute da se pivot odgurne.",
+          "en": "Correct: you assign a marker and seek sight of the ball without instructing anyone to push the pivot aside.",
+          "de": "Richtig: Du ordnest einen Bewacher zu und suchst die Sicht zum Ball, ohne ein Wegschieben des Kreisläufers anzuweisen."
         }
       },
       {
         "text": {
-          "en": "Then call the second pivot if he becomes free on the ball side",
-          "hr": "Zatim označi drugog pivota ako ostane slobodan na strani lopte",
-          "de": "Danach den zweiten Kreis rufen, wenn er ballnah frei wird"
+          "hr": "Odmah označi i drugog pivota ako ostane slobodan na strani lopte",
+          "en": "Immediately identify the second pivot too if he remains free on the ball side",
+          "de": "Auch den zweiten Kreis sofort benennen, wenn er ballnah frei bleibt"
         },
         "quality": "good",
         "feedback": {
-          "en": "Good — it is the next danger after sight is organised.",
-          "hr": "Dobro: to je sljedeća opasnost nakon organizacije pogleda.",
-          "de": "Gut — das ist die nächste Gefahr nach geklärter Sicht."
+          "hr": "Dobro: odmah označi slobodnog pivota; ne čekaj da se prvi problem potpuno riješi.",
+          "en": "Good: identify the free pivot immediately; do not wait for the first issue to be fully resolved.",
+          "de": "Gut: Den freien Kreis sofort benennen und nicht warten, bis das erste Problem vollständig gelöst ist."
         }
       },
       {
@@ -62407,14 +62407,14 @@
       }
     ],
     "explanation": {
-      "en": "With two pivots, the goalkeeper must communicate both sight-line obstruction and player ownership in order.",
-      "hr": "Kod dva pivota vratar redom komunicira zaklanjanje pogleda i odgovornost za igrače.",
-      "de": "Bei zwei Kreisen kommuniziert der Torwart zuerst die Sichtbehinderung und dann die Spielerzuordnung."
+      "hr": "Jasno odredi odgovornost za oba pivota. Pogled na loptu traži vlastitim malim pomakom uz ravnotežu; branič smije zauzeti dopušten položaj, ali ne odgurivati napadača da ti oslobodi pogled. Slobodan pivot na strani lopte također traži trenutačan poziv.",
+      "en": "Assign clear responsibility for both pivots. Seek sight of the ball with a small balanced adjustment of your own; a defender may take a permitted position but must not push an attacker aside to clear your view. A free ball-side pivot also needs an immediate call.",
+      "de": "Die Verantwortung für beide Kreisläufer klar zuordnen. Mit einer kleinen stabilen Eigenbewegung Sicht zum Ball suchen; ein Verteidiger darf regelgerecht Position beziehen, aber keinen Angreifer wegschieben, um die Sicht zu öffnen. Auch der freie ballnahe Kreis erfordert einen sofortigen Zuruf."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A restores the missing sight line; B addresses the next free target afterward.",
-      "hr": "A prvo rješava zaklonjen pogled; B zatim usmjerava obranu na sljedećeg slobodnog igrača.",
-      "de": "A stellt die Sicht wieder her; B behandelt danach das nächste freie Ziel."
+      "hr": "A povezuje pregled lopte s odgovornošću za pivota; B dopunjuje poziv za drugog pivota, čiju opasnost također treba odmah procijeniti.",
+      "en": "A links sight of the ball with responsibility for the pivot; B adds the call for the second pivot, whose danger must also be assessed immediately.",
+      "de": "A verbindet Ballsicht und Verantwortung für den Kreis; B ergänzt den Ruf für den zweiten Kreis, dessen Gefahr ebenfalls sofort zu beurteilen ist."
     },
     "skillTags": [
       "doublePivot",
@@ -64061,7 +64061,7 @@
     "id": "scn_bank_1110",
     "title": {
       "en": "Goalkeeper — In 5-1, Position From the Channel the Front Defender Really Forces",
-      "hr": "Vratar: u obrani 5-1 postavi se prema koridoru koji prednji branič stvarno usmjerava",
+      "hr": "Vratar: u obrani 5:1 postavi se prema koridoru koji prednji branič stvarno usmjerava",
       "de": "Torwart — im 5-1 nach der tatsächlich erzwungenen Spur des Vorgezogenen stehen"
     },
     "category": "Goalkeeper",
@@ -64076,7 +64076,7 @@
     "defensiveSystem": "5-1",
     "situation": {
       "en": "You lead 14:13 at 28' in a 5-1 defence. The front defender has stable contact on the centre back's right shoulder and forces the dribble into the left channel. The attacker keeps the ball but cannot safely return right while that contact holds.",
-      "hr": "Vodite 14:13 u 28. minuti u obrani 5-1. Prednji branič stabilno kontrolira desno rame srednjeg vanjskog i usmjerava vođenje lopte u lijevi koridor. Napadač zadržava loptu, ali se uz taj kontakt ne može sigurno vratiti desno.",
+      "hr": "Vodite 14:13 u 28. minuti u obrani 5:1. Prednji branič stabilno kontrolira desno rame srednjeg vanjskog i usmjerava vođenje lopte u lijevi koridor. Napadač zadržava loptu, ali se uz taj kontakt ne može sigurno vratiti desno.",
       "de": "Ihr führt 14:13 in Minute 28 in einer 5-1-Abwehr. Der Vorgezogene kontrolliert stabil die rechte Schulter des Rückraum Mitte und zwingt das Dribbling in die linke Spur. Der Angreifer behält den Ball, kann unter diesem Kontakt aber nicht sicher nach rechts zurück."
     },
     "question": {
@@ -64266,7 +64266,7 @@
     "id": "scn_bank_1112",
     "title": {
       "en": "Goalkeeper — Behind 3-2-1, Control the Space Behind the High Defenders",
-      "hr": "Vratar: iza obrane 3-2-1 kontroliraj prostor iza visokih braniča",
+      "hr": "Vratar: iza obrane 3:2:1 kontroliraj prostor iza visokih braniča",
       "de": "Torwart — hinter der 3-2-1 den Raum hinter den hohen Verteidigern kontrollieren"
     },
     "category": "Goalkeeper",
@@ -64280,9 +64280,9 @@
     "score": "11:12",
     "defensiveSystem": "3-2-1",
     "situation": {
-      "en": "You trail 11:12 at 23' in a 3-2-1 defence. The centre defender presses at ten metres. The ball carrier, still at twelve metres and not in a direct shooting position, lifts a soft pass into the empty space behind him. The intended receiver is two steps away.",
-      "hr": "Gubite 11:12 u 23. minuti u obrani 3-2-1. Prednji središnji branič pritišće na deset metara. Igrač s loptom, još na dvanaest metara i bez izravne pozicije za šut, podiže mekano dodavanje u prazan prostor iza njega. Primatelj je udaljen dva koraka.",
-      "de": "Ihr liegt 11:12 in Minute 23 in einer 3-2-1-Abwehr zurück. Der zentrale Vorgezogene verteidigt bei zehn Metern. Der Ballführer steht noch bei zwölf Metern ohne direkte Wurfposition und hebt einen weichen Pass in den freien Raum dahinter. Der Empfänger ist zwei Schritte entfernt."
+      "hr": "Gubite 11:12 u 23. minuti u obrani 3:2:1. Prednji središnji branič pritišće na deset metara. Igrač s loptom na dvanaest metara podiže mekano dodavanje iza njega. Lopta pada unutar vratareva prostora, bliže tebi nego primatelju. Možeš je uhvatiti prije njegova odraza, bez sudara.",
+      "en": "You trail 11:12 in minute 23 in a 3:2:1 defence. The front central defender presses at ten metres. The ball carrier at twelve metres floats a pass behind him. The ball is dropping inside the goal area, closer to you than to the receiver. You can catch it before his take-off without a collision.",
+      "de": "Ihr liegt 11:12 in Minute 23 in einer 3:2:1-Abwehr zurück. Der vorgezogene zentrale Verteidiger setzt auf zehn Metern unter Druck. Der Ballführer auf zwölf Metern spielt einen weichen Pass dahinter. Der Ball fällt im Torraum näher bei dir als beim Empfänger herunter. Du kannst ihn vor dessen Absprung ohne Zusammenstoß fangen."
     },
     "question": {
       "en": "How do you use goalkeeper depth behind the high defence?",
@@ -64344,14 +64344,14 @@
       }
     ],
     "explanation": {
-      "en": "A high defence leaves space behind it. The goalkeeper can control that space when the ball path and distance make the goalkeeper clearly first, but must hold if the attacker has priority.",
-      "hr": "Visoka obrana ostavlja prostor iza sebe. Vratar ga kontrolira kada putanja i udaljenost jasno daju prednost vrataru, ali ostaje u položaju ako napadač prvi stiže.",
-      "de": "Eine hohe Abwehr lässt Raum hinter sich. Der Torwart kontrolliert ihn bei klarem Ballvorsprung, bleibt aber zurück, wenn der Angreifer zuerst kommt."
+      "hr": "Ovdje lopta pada unutar vratareva prostora i vratar izričito stiže prvi bez sudara. To opravdava izlazak na loptu. Samo mekano dodavanje iza visoke obrane nije dovoljno za odluku: prvo procijeni mjesto pada, udaljenost i putanju primatelja.",
+      "en": "Here the ball drops inside the goal area and the goalkeeper explicitly arrives first without a collision. That justifies moving to the ball. A floated pass behind a high defence alone is not enough: assess the landing point, distance and receiver’s route first.",
+      "de": "Hier fällt der Ball im Torraum herunter und der Torwart kommt ausdrücklich ohne Zusammenstoß zuerst an. Das rechtfertigt den Weg zum Ball. Ein weicher Pass hinter einer hohen Abwehr allein reicht nicht: Zuerst Landepunkt, Entfernung und Laufweg des Empfängers prüfen."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A fits the soft pass and two-step receiver distance; B applies to a faster pass with attacker priority.",
-      "hr": "A odgovara mekanom dodavanju i primatelju udaljenom dva koraka; B vrijedi za brže dodavanje pri kojem napadač prvi stiže.",
-      "de": "A passt zum weichen Pass und zwei Schritten Abstand; B gilt beim schnelleren Pass mit Angreifervorsprung."
+      "hr": "A koristi izričitu prednost do lopte unutar vratareva prostora; B vrijedi ako se putanja promijeni i primatelj može stići prvi.",
+      "en": "A uses the explicit advantage to a ball inside the goal area; B applies if the trajectory changes and the receiver can arrive first.",
+      "de": "A nutzt den klaren Vorteil zum Ball im Torraum; B gilt, wenn sich die Flugbahn ändert und der Empfänger zuerst ankommen kann."
     },
     "skillTags": [
       "threeTwoOne",
@@ -64368,7 +64368,7 @@
     "id": "scn_bank_1113",
     "title": {
       "en": "Goalkeeper — Behind 3-3, Use the Long Breakthrough Path to Set Early",
-      "hr": "Vratar: iza obrane 3-3 iskoristi dugi put prodora za pravodobno postavljanje",
+      "hr": "Vratar: iza obrane 3:3 iskoristi dugi put prodora za pravodobno postavljanje",
       "de": "Torwart — hinter der 3-3 den langen Durchbruchweg zum frühen Stellen nutzen"
     },
     "category": "Goalkeeper",
@@ -64383,7 +64383,7 @@
     "defensiveSystem": "3-3",
     "situation": {
       "en": "Tied 15:15 at 31' in a 3-3 defence. The centre back beats the high defender at ten metres. He controls the ball but still needs two steps before he can finish. The remaining defenders are outside his direct lane.",
-      "hr": "Neriješeno je 15:15 u 31. minuti u obrani 3-3. Srednji vanjski prolazi pored prednjeg braniča na deset metara. Kontrolira loptu, ali trebaju mu još dva koraka do završetka. Ostali braniči nisu u njegovoj izravnoj liniji.",
+      "hr": "Neriješeno je 15:15 u 31. minuti u obrani 3:3. Srednji vanjski prolazi pored prednjeg braniča na deset metara. Kontrolira loptu, ali trebaju mu još dva koraka do završetka. Ostali braniči nisu u njegovoj izravnoj liniji.",
       "de": "Unentschieden 15:15 in Minute 31 in einer 3-3-Abwehr. Der Rückraum Mitte schlägt den hohen Verteidiger bei zehn Metern. Er kontrolliert den Ball, braucht aber noch zwei Schritte bis zum Abschluss. Die übrigen Verteidiger sind nicht in seiner direkten Spur."
     },
     "question": {
@@ -64447,7 +64447,7 @@
     ],
     "explanation": {
       "en": "The open 3-3 structure gives the goalkeeper an earlier view of the breakthrough. Use that time for one controlled depth gain, not a continuous charge.",
-      "hr": "Otvorena obrana 3-3 vrataru ranije otkriva prodor. Iskoristi vrijeme za jedan kontroliran korak naprijed, a ne za neprekidno istrčavanje.",
+      "hr": "Otvorena obrana 3:3 vrataru ranije otkriva prodor. Iskoristi vrijeme za jedan kontroliran korak naprijed, a ne za neprekidno istrčavanje.",
       "de": "Die offene 3-3 zeigt dem Torwart den Durchbruch früher. Die Zeit für einen kontrollierten Tiefengewinn nutzen, nicht für dauerhaftes Stürmen."
     },
     "whyCorrectOverSecondBest": {
@@ -64470,7 +64470,7 @@
     "id": "scn_bank_1114",
     "title": {
       "en": "Goalkeeper — In 4-2, Call the Screen Handover Before It Blocks Your View",
-      "hr": "Vratar: u obrani 4-2 pozovi predaju bloka prije nego što ti zakloni pogled",
+      "hr": "Vratar: u obrani 4:2 pozovi predaju bloka prije nego što ti zakloni pogled",
       "de": "Torwart — im 4-2 die Sperrenübergabe rufen, bevor die Sicht blockiert ist"
     },
     "category": "Goalkeeper",
@@ -64485,7 +64485,7 @@
     "defensiveSystem": "4-2",
     "situation": {
       "en": "You trail 17:18 at 35' in a 4-2 defence. During a ball reversal, the pivot moves his screen from your left half defender into the right central lane. The right defender is watching the pass and has not seen the screen entering your future sight line.",
-      "hr": "Gubite 17:18 u 35. minuti u obrani 4-2. Tijekom promjene strane pivot prenosi blok s lijevog polubranitelja u desni središnji koridor. Desni branič prati dodavanje i nije vidio blok koji ulazi u tvoju buduću liniju pogleda.",
+      "hr": "Gubite 17:18 u 35. minuti u obrani 4:2. Tijekom promjene strane pivot prenosi blok s lijevog polubranitelja u desni središnji koridor. Desni branič prati dodavanje i nije vidio blok koji ulazi u tvoju buduću liniju pogleda.",
       "de": "Ihr liegt 17:18 in Minute 35 in einer 4-2-Abwehr zurück. Während der Ballverlagerung verschiebt der Kreis seine Sperre vom linken Halbverteidiger in die rechte zentrale Spur. Der rechte Verteidiger verfolgt den Pass und sieht die Sperre nicht, die in deine künftige Sichtlinie läuft."
     },
     "question": {
@@ -64549,7 +64549,7 @@
     ],
     "explanation": {
       "en": "In 4-2, screens travel across responsibilities. The goalkeeper sees the full movement and should name both the screen and the defender who receives it.",
-      "hr": "U obrani 4-2 blokovi prelaze iz jedne odgovornosti u drugu. Vratar vidi cijelo kretanje i treba označiti i blok i braniča koji ga preuzima.",
+      "hr": "U obrani 4:2 blokovi prelaze iz jedne odgovornosti u drugu. Vratar vidi cijelo kretanje i treba označiti i blok i braniča koji ga preuzima.",
       "de": "Im 4-2 wandern Sperren zwischen Verantwortungen. Der Torwart sieht die Gesamtbewegung und benennt Sperre sowie übernehmenden Verteidiger."
     },
     "whyCorrectOverSecondBest": {
@@ -64587,7 +64587,7 @@
     "defensiveSystem": "3-3",
     "situation": {
       "en": "Tied 20:20 at 40' in an open 3-3 defence. A pass through the middle runs loose just outside your goal-area line. You have a clear route and can reach it in two steps; the nearest attacker needs at least three more and is not on a collision path.",
-      "hr": "Neriješeno je 20:20 u 40. minuti u otvorenoj obrani 3-3. Dodavanje kroz sredinu ostaje slobodno neposredno izvan crte vratareva prostora. Imaš čist put i stižeš u dva koraka; najbližem napadaču trebaju barem još tri i nije na putanji sudara.",
+      "hr": "Neriješeno je 20:20 u 40. minuti u otvorenoj obrani 3:3. Dodavanje kroz sredinu ostaje slobodno neposredno izvan crte vratareva prostora. Imaš čist put i stižeš u dva koraka; najbližem napadaču trebaju barem još tri i nije na putanji sudara.",
       "de": "Unentschieden 20:20 in Minute 40 in einer offenen 3-3-Abwehr. Ein Pass durch die Mitte rollt frei knapp außerhalb der Torraumlinie. Du hast freien Weg und erreichst ihn in zwei Schritten; der nächste Angreifer braucht mindestens drei weitere und liegt nicht auf Kollisionskurs."
     },
     "question": {
@@ -66115,9 +66115,9 @@
     "score": "9:11",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You trail 9:11 at 20'. The last goal came because you and the middle defender covered the same side without confirming the block. The opponents restart quickly, and the same defensive pair must organise the next possession.",
-      "hr": "Gubite 9:11 u 20. minuti. Posljednji pogodak primili ste jer ste ti i središnji branič pokrili istu stranu bez potvrde bloka. Suparnik brzo nastavlja, a isti obrambeni par mora organizirati sljedeći napad.",
-      "de": "Ihr liegt 9:11 in Minute 20 zurück. Das letzte Tor fiel, weil du und der Mittelblock ohne Bestätigung dieselbe Seite decktet. Der Gegner startet schnell neu, dasselbe Abwehrpaar muss den nächsten Angriff organisieren."
+      "en": "You trail 9:11 in minute 20. The last goal was conceded because you and the central defender covered the same side without confirming the block. After your team’s next attack, the opponents approach again and the same defensive pair must organise the defence.",
+      "hr": "Gubite 9:11 u 20. minuti. Posljednji pogodak primili ste jer ste ti i središnji branič pokrili istu stranu bez potvrde bloka. Nakon vašeg sljedećeg napada suparnik ponovno dolazi prema golu, a isti obrambeni par mora organizirati obranu.",
+      "de": "Ihr liegt 9:11 in Minute 20 zurück. Das letzte Tor fiel, weil du und der Mittelblockspieler ohne bestätigte Absprache dieselbe Seite gedeckt habt. Nach eurem nächsten Angriff greifen die Gegner erneut an und dasselbe Abwehrpaar muss die Verteidigung organisieren."
     },
     "question": {
       "en": "What is the fastest useful reset?",
@@ -66406,7 +66406,7 @@
     "id": "scn_bank_1133",
     "title": {
       "en": "Goalkeeper — After a Timeout, Carry One Clear Defensive Agreement Onto the Court",
-      "hr": "Vratar: nakon time-outa prenesi na teren jedan jasan obrambeni dogovor",
+      "hr": "Vratar: nakon minute odmora prenesi na teren jedan jasan obrambeni dogovor",
       "de": "Torwart — nach der Auszeit eine klare Abwehrabsprache aufs Feld tragen"
     },
     "category": "Goalkeeper",
@@ -66421,7 +66421,7 @@
     "defensiveSystem": "6-0",
     "situation": {
       "en": "Tied 27:27 at 58'. During the timeout your team agreed that the middle defender blocks the left back's arm side and the half defender owns the pivot. Players return to court, but neither defender has confirmed the agreement aloud.",
-      "hr": "Neriješeno je 27:27 u 58. minuti. Tijekom time-outa momčad se dogovorila da središnji branič zatvara stranu šuterske ruke lijevog vanjskog, a polubranitelj preuzima pivota. Igrači se vraćaju na teren, ali nijedan branič još nije glasno potvrdio dogovor.",
+      "hr": "Neriješeno je 27:27 u 58. minuti. Tijekom minute odmora momčad se dogovorila da središnji branič zatvara stranu šuterske ruke lijevog vanjskog, a polubranitelj preuzima pivota. Igrači se vraćaju na teren, ali nijedan branič još nije glasno potvrdio dogovor.",
       "de": "Unentschieden 27:27 in Minute 58. In der Auszeit wurde vereinbart, dass der Mittelblock die Wurfarmseite des linken Rückraums blockt und der Halbverteidiger den Kreis übernimmt. Die Spieler kehren zurück, doch keiner hat die Absprache laut bestätigt."
     },
     "question": {
@@ -66522,7 +66522,7 @@
     "score": "27:28",
     "situation": {
       "en": "You trail 27:28 at 56'. A timeout follows the seven-metre decision. The specialist goalkeeper can complete the substitution before the thrower stands ready with the ball. Video shows one reliable timing pause for this shooter, but no reliable corner pattern.",
-      "hr": "Gubite 27:28 u 56. minuti. Nakon odluke o sedmercu slijedi time-out. Vratar specijalist može dovršiti zamjenu prije nego izvođač stane spreman s loptom. Snimka pokazuje jednu pouzdanu stanku u pripremi ovog izvođača, ali ne i pouzdan obrazac smjera.",
+      "hr": "Gubite 27:28 u 56. minuti. Nakon odluke o sedmercu slijedi minuta odmora. Vratar specijalist može dovršiti zamjenu prije nego izvođač stane spreman s loptom. Snimka pokazuje jednu pouzdanu stanku u pripremi ovog izvođača, ali ne i pouzdan obrazac smjera.",
       "de": "Ihr liegt 27:28 in Minute 56 zurück. Nach der Siebenmeterentscheidung folgt eine Auszeit. Der Spezialtorwart kann den Wechsel abschließen, bevor der Werfer mit Ball bereitsteht. Video zeigt eine verlässliche Timingpause dieses Werfers, aber kein verlässliches Eckmuster."
     },
     "question": {
