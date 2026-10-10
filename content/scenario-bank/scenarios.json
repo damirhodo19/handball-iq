@@ -54830,9 +54830,9 @@
     "score": "14:14",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 14:14 at 28'. You catch at chest height with a defender applying legal pressure in the centre of your back. Both feet are on the floor, but your stance is narrow. Help will arrive in two seconds. An immediate spin would put all your weight on one foot before the ball is protected.",
-      "hr": "Neriješeno je 14:14 u 28. minuti. Primaš loptu u visini prsa dok branič legalno pritišće sredinu tvojih leđa. Obje noge su na podu, ali stav je uzak. Pomoć stiže za dvije sekunde. Trenutačan okret prebacio bi svu težinu na jednu nogu prije zaštite lopte.",
-      "de": "Unentschieden 14:14 in Minute 28. Du fängst auf Brusthöhe, während ein Verteidiger legal mittig in deinen Rücken drückt. Beide Füße stehen, aber die Basis ist eng. Hilfe kommt in zwei Sekunden. Eine sofortige Drehung legt das Gewicht auf einen Fuß, bevor der Ball geschützt ist."
+      "en": "Tied 14:14 at 28'. You catch at chest height with a defender maintaining permitted contact with your back without pushing. Both feet are on the floor, but your stance is narrow. Help will arrive in two seconds. An immediate spin would put all your weight on one foot before the ball is protected.",
+      "hr": "Neriješeno je 14:14 u 28. minuti. Primaš loptu u visini prsa dok branič održava dopušten kontakt s tvojim leđima bez guranja. Obje noge su na podu, ali stav je uzak. Pomoć stiže za dvije sekunde. Trenutačan okret prebacio bi svu težinu na jednu nogu prije zaštite lopte.",
+      "de": "Unentschieden 14:14 in Minute 28. Du fängst auf Brusthöhe, während ein Verteidiger erlaubten Kontakt an deinem Rücken hält, ohne zu schieben. Beide Füße stehen, aber die Basis ist eng. Hilfe kommt in zwei Sekunden. Eine sofortige Drehung legt das Gewicht auf einen Fuß, bevor der Ball geschützt ist."
     },
     "question": {
       "en": "What is your first action after the catch?",
@@ -55056,14 +55056,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Pass out only if the goalkeeper fully closes the goal before your release",
-          "hr": "Dodaj van samo ako vratar potpuno zatvori gol prije tvog izbačaja",
-          "de": "Nur herauspassen, wenn der Torwart das Tor vor deinem Wurf vollständig schließt"
+          "hr": "Dodaj slobodnom suigraču ako prije izbačaja izgubiš jasnu priliku za šut",
+          "en": "Pass to a free teammate if the clear shooting chance closes before release",
+          "de": "Zu einem freien Mitspieler passen, wenn die klare Wurfchance vor dem Abwurf verloren geht"
         },
         "feedback": {
-          "en": "Good against a full close; that has not happened yet.",
-          "hr": "Dobro protiv potpunog zatvaranja; to se još nije dogodilo.",
-          "de": "Gut gegen vollständiges Schließen; das ist noch nicht passiert."
+          "hr": "Dobro ako se prilika zatvori; u opisu još imaš slobodan izbačaj.",
+          "en": "Good if the chance closes; the described release is still free.",
+          "de": "Gut, wenn sich die Chance schließt; laut Beschreibung ist der Abwurf noch frei."
         }
       },
       {
@@ -55099,9 +55099,9 @@
       "de": "Legaler Kontakt ist kein Grund, einen stabilen Abschluss abzubrechen. Sind Ball, Basis und Arm frei, vor der Hilfe abschließen. Der Kreis gewinnt mit Kontrolle, nicht mit dramatischem Kontakt."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A converts the existing clean lane; B is only needed after a complete goalkeeper close.",
-      "hr": "A koristi postojeću čistu liniju; B treba tek nakon potpunog zatvaranja vratara.",
-      "de": "A nutzt die bestehende klare Linie; B ist erst nach vollständigem Torwartschluss nötig."
+      "hr": "A koristi postojeću priliku prije dolaska pomoći; B je izbor ako se prilika zatvori i postoji sigurno dodavanje.",
+      "en": "A uses the existing chance before help arrives; B applies if the chance closes and a safe pass is available.",
+      "de": "A nutzt die vorhandene Chance vor der Hilfe; B gilt, wenn sie sich schließt und ein sicherer Pass möglich ist."
     },
     "skillTags": [
       "finishing",
@@ -55174,9 +55174,9 @@
           "de": "Den Arm mit voller Körperdrehung herausreißen und im Fallen werfen"
         },
         "feedback": {
-          "en": "Risky — loss of balance can turn a clear decision into a loose ball.",
-          "hr": "Rizično: gubitak ravnoteže može jasnu odluku pretvoriti u izgubljenu loptu.",
-          "de": "Riskant — Gleichgewichtsverlust kann die klare Entscheidung in einen freien Ball verwandeln."
+          "hr": "Rizično: nasilno izvlačenje uhvaćene ruke može ugroziti ravnotežu i kontrolu lopte.",
+          "en": "Risky: forcibly pulling the trapped arm free can compromise balance and ball control.",
+          "de": "Riskant: Gewaltsames Losreißen des festgehaltenen Arms kann Gleichgewicht und Ballkontrolle gefährden."
         }
       },
       {
@@ -55187,9 +55187,9 @@
           "de": "Den Ellbogen nach hinten schwingen, um den Verteidiger wegzustoßen"
         },
         "feedback": {
-          "en": "Poor — dangerous attacking contact reverses the decision.",
-          "hr": "Loše: opasan kontakt napadača okreće odluku protiv tebe.",
-          "de": "Schlecht — gefährlicher Angriffskontakt dreht die Entscheidung um."
+          "hr": "Loše: udarac laktom je opasan i može biti kažnjen neovisno o prethodnom prekršaju braniča.",
+          "en": "Poor: an elbow strike is dangerous and can be sanctioned independently of the defender’s preceding foul.",
+          "de": "Schlecht: Ein Ellbogenschlag ist gefährlich und kann unabhängig vom vorherigen Foul des Verteidigers bestraft werden."
         }
       }
     ],
@@ -55199,9 +55199,9 @@
       "de": "Bei festgehaltenem Wurfarm Ball und Gleichgewicht ohne gewaltsame Drehung oder Ellbogenschlag schützen. Keine schmerzhafte oder unkontrollierte Bewegung fortsetzen, um eine Entscheidung zu erzwingen. Ein sicherer Pass kommt nur infrage, wenn er vor der Unterbrechung möglich ist; die Schiedsrichter entscheiden über das Vergehen."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A preserves the clear chance and likely seven; B is only right with a fully confirmed free receiver.",
-      "hr": "A čuva jasnu priliku i vjerojatni sedmerac; B vrijedi samo uz potpuno potvrđenog slobodnog primatelja.",
-      "de": "A erhält klare Chance und wahrscheinlichen Siebenmeter; B gilt nur bei sicher erkanntem freien Abnehmer."
+      "hr": "A štiti ravnotežu i loptu kad je ruka uhvaćena. B dolazi u obzir samo ako je kontrolirano dodavanje stvarno izvedivo prije prekida.",
+      "en": "A protects balance and the ball when the arm is trapped. B is an option only if a controlled pass is actually feasible before the stoppage.",
+      "de": "A schützt Gleichgewicht und Ball bei festgehaltenem Arm. B kommt nur infrage, wenn ein kontrollierter Pass vor der Unterbrechung tatsächlich möglich ist."
     },
     "skillTags": [
       "decisionMaking",
@@ -57325,9 +57325,9 @@
       }
     ],
     "explanation": {
-      "en": "Two pivots need two planes. Stagger depth and adjacent gaps so each defender must own a separate body and pass lane.",
-      "hr": "Dva pivota trebaju dvije ravnine. Razdvoji dubinu i susjedne prostore da svaki branič mora kontrolirati zasebno tijelo i liniju dodavanja.",
-      "de": "Zwei Kreise brauchen zwei Ebenen. Tiefe und Nachbarlücken staffeln, damit jeder Verteidiger einen eigenen Körper und Passweg besitzt."
+      "hr": "U ovom rasporedu različita dubina i susjedni prostori otežavaju preuzimanje dvojice pivota pri promjeni strane lopte. To je rješenje za opisanu situaciju, a raspored ovisi i o dogovorenoj akciji.",
+      "en": "In this setup, different depths and adjacent gaps make handing over the two pivots harder as the ball changes sides. This solution fits the described situation; spacing also depends on the planned play.",
+      "de": "In dieser Anordnung erschweren unterschiedliche Tiefen und benachbarte Lücken die Übergabe beider Kreisläufer bei der Ballverlagerung. Diese Lösung passt zur beschriebenen Situation; die Staffelung hängt auch vom vereinbarten Spielzug ab."
     },
     "whyCorrectOverSecondBest": {
       "en": "A creates the base spacing; B is reserved for a specifically called double screen.",
@@ -57362,9 +57362,9 @@
     "score": "22:23",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "You trail 22:23 at 45'. The right back has a clean nine-metre shooting lane. You can stand outside the six-metre line between the release point and goalkeeper before the jump. Your arms can stay close and no defender needs to be pushed. Entering the goal area or moving after release would be illegal.",
-      "hr": "Gubite 22:23 u 45. minuti. Desni vanjski ima čistu liniju šuta s devet metara. Prije skoka možeš se postaviti izvan linije šest metara između mjesta izbačaja i vratara. Ruke mogu ostati uz tijelo i ne moraš gurati braniča. Ulazak u vratarev prostor ili pomicanje nakon izbačaja bilo bi nedopušteno.",
-      "de": "Ihr liegt 22:23 in Minute 45 zurück. Der rechte Rückraum hat eine klare Wurflinie aus neun Metern. Vor dem Sprung kannst du außerhalb der Torraumlinie zwischen Abwurfpunkt und Torwart stehen. Die Arme bleiben angelegt, kein Verteidiger muss geschoben werden. Betreten des Torraums oder spätes Bewegen wäre illegal."
+      "en": "You trail 22:23 at 45'. The right back has a clean nine-metre shooting lane. You can stand outside the six-metre line between the release point and goalkeeper before the jump. Your arms can stay close and no defender needs to be pushed. A defender is beside you, so moving sideways after release to maintain the screen would require pushing him aside.",
+      "hr": "Gubite 22:23 u 45. minuti. Desni vanjski ima čistu liniju šuta s devet metara. Prije skoka možeš se postaviti izvan linije šest metara između mjesta izbačaja i vratara. Ruke mogu ostati uz tijelo i ne moraš gurati braniča. Branič je uz tebe pa bi ga bočnim pomicanjem nakon izbačaja morao odgurnuti da zadržiš zaklon.",
+      "de": "Ihr liegt 22:23 in Minute 45 zurück. Der rechte Rückraum hat eine klare Wurflinie aus neun Metern. Vor dem Sprung kannst du außerhalb der Torraumlinie zwischen Abwurfpunkt und Torwart stehen. Die Arme bleiben angelegt, kein Verteidiger muss geschoben werden. Ein Verteidiger steht neben dir, sodass du ihn beim seitlichen Nachgehen nach dem Abwurf wegschieben müsstest, um die Sichtblende zu halten."
     },
     "question": {
       "en": "How do you create the legal sight screen?",
@@ -57406,9 +57406,9 @@
           "de": "Nach dem Abwurf seitlich mitgleiten, um den Torwart weiter zu verdecken"
         },
         "feedback": {
-          "en": "Risky — late movement can become illegal interference.",
-          "hr": "Rizično: kasno pomicanje može postati nedopušteno ometanje.",
-          "de": "Riskant — spätes Bewegen kann regelwidrige Behinderung werden."
+          "hr": "Rizično: u opisanom položaju bočno pomicanje zahtijeva odgurivanje braniča. Samo kretanje nakon izbačaja nije automatski prekršaj.",
+          "en": "Risky: in this position, moving sideways requires pushing the defender aside. Movement after release is not automatically a foul.",
+          "de": "Riskant: In dieser Position erfordert das seitliche Nachgehen ein Wegschieben des Verteidigers. Bewegung nach dem Abwurf ist nicht automatisch ein Foul."
         }
       },
       {
@@ -57426,9 +57426,9 @@
       }
     ],
     "explanation": {
-      "en": "A legal sight screen is position, not contact: outside the goal area, established early, stationary, arms close. If those conditions fail, leave the lane.",
-      "hr": "Legalan zaklon pogleda je položaj, ne kontakt: izvan vratareva prostora, rano postavljen, miran, ruke uz tijelo. Ako uvjeti nisu ispunjeni, napusti liniju.",
-      "de": "Eine legale Sichtblende ist Position, nicht Kontakt: außerhalb des Torraums, früh gestellt, fest, Arme angelegt. Fehlen diese Bedingungen, die Linie verlassen."
+      "hr": "Ovdje možeš rano zauzeti položaj izvan vratareva prostora bez guranja ili držanja protivnika. Zadrži taj položaj tijekom šuta. Ako zaklon zahtijeva nedopušten kontakt ili ulazak u vratarev prostor radi prednosti, odustani od njega.",
+      "en": "Here you can establish position early outside the goal area without pushing or holding an opponent. Maintain it during the shot. Abandon the screen if it requires illegal contact or entering the goal area to gain an advantage.",
+      "de": "Hier kannst du früh außerhalb des Torraums Position beziehen, ohne einen Gegner zu schieben oder festzuhalten. Diese Position beim Wurf halten. Auf die Sichtblende verzichten, wenn sie regelwidrigen Kontakt oder Betreten des Torraums zum Vorteil erfordert."
     },
     "whyCorrectOverSecondBest": {
       "en": "A creates the legal screen; B is the necessary safety choice only if legal space is unavailable.",
@@ -57577,9 +57577,9 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Reseal the new defender on his turning hip and show the feed before he squares",
-          "hr": "Ponovno zatvori novog braniča na kuku oko kojeg se okreće i pokaži loptu prije nego se postavi ravno",
-          "de": "Den neuen Verteidiger an seiner Drehhüfte neu sperren und vor seiner Frontstellung das Anspiel zeigen"
+          "hr": "Ponovno zauzmi položaj uz kuk novog braniča oko kojeg se okreće i pokaži ruke za prijem prije nego se postavi",
+          "en": "Reestablish position beside the new defender’s turning hip and show your hands for the pass before he sets",
+          "de": "Am Drehpunkt der Hüfte des neuen Verteidigers erneut Position beziehen und vor seinem Ausrichten die Hände zum Anspiel zeigen"
         },
         "feedback": {
           "en": "Correct — the switch creates value only if the reseal is immediate.",
@@ -57987,9 +57987,9 @@
           "de": "Torseitig vor den gegnerischen Kreis kommen, legalen Kontakt herstellen und die Übernahme rufen"
         },
         "feedback": {
-          "en": "Correct — the direct inside pass disappears before the ball can arrive.",
-          "hr": "Točno: izravno dodavanje unutra nestaje prije dolaska lopte.",
-          "de": "Richtig — das direkte Innenanspiel verschwindet vor dem Ball."
+          "hr": "Točno: preuzimanjem pivota otežavaš prijem i završnicu te daješ suigračima vremena za povratak.",
+          "en": "Correct: taking the pivot makes receiving and finishing harder and gives teammates time to recover.",
+          "de": "Richtig: Die Übernahme des Kreisläufers erschwert Fang und Abschluss und gibt Mitspielern Zeit zum Rückzug."
         }
       },
       {
@@ -58038,9 +58038,9 @@
       "de": "Der erste zentrale Rückläufer besitzt den gegnerischen Kreis bis zur klaren Übergabe. Torseitige Position vor Balljagd."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A removes the immediate inside goal; B is the release rule after support arrives.",
-      "hr": "A uklanja trenutačan pogodak iznutra; B je pravilo puštanja nakon dolaska pomoći.",
-      "de": "A entfernt das sofortige Innentor; B regelt das Lösen nach Unterstützung."
+      "hr": "A odmah pokriva opasnog pivota; B opisuje predaju nakon što se vrati pomoć.",
+      "en": "A immediately covers the dangerous pivot; B describes the handover once support returns.",
+      "de": "A deckt sofort den gefährlichen Kreisläufer; B beschreibt die Übergabe nach Rückkehr der Hilfe."
     },
     "skillTags": [
       "transitionDefence",
@@ -58899,14 +58899,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Anchor the middle, take the most dangerous inside body and call teammates to each side",
-          "hr": "Usidri sredinu, preuzmi najopasnije unutarnje tijelo i pozovi suigrače na obje strane",
-          "de": "Die Mitte verankern, den gefährlichsten Innenkörper übernehmen und Mitspieler auf beide Seiten rufen"
+          "hr": "Zaštiti sredinu, preuzmi najopasnijeg napadača u njoj i pozovi suigrače da pokriju obje strane",
+          "en": "Protect the middle, take its most dangerous attacker and call teammates to cover both sides",
+          "de": "Die Mitte sichern, dort den gefährlichsten Angreifer übernehmen und Mitspieler zur Deckung beider Seiten rufen"
         },
         "feedback": {
-          "en": "Correct — one central owner lets the rest of the shape form.",
-          "hr": "Točno: jedan vlasnik sredine omogućuje oblikovanje ostatka obrane.",
-          "de": "Richtig — ein zentraler Besitzer lässt die restliche Form entstehen."
+          "hr": "Točno: jasna odgovornost za sredinu pomaže suigračima da se rasporede oko tebe.",
+          "en": "Correct: clear responsibility for the middle helps teammates organise around you.",
+          "de": "Richtig: Klare Verantwortung für die Mitte hilft den Mitspielern, sich um dich zu ordnen."
         }
       },
       {
@@ -58950,14 +58950,14 @@
       }
     ],
     "explanation": {
-      "en": "Broken recovery first needs an anchor. Own the most dangerous central body and organise teammates around that point until the defensive pair reforms.",
-      "hr": "Razbijeni povratak prvo treba sidro. Preuzmi najopasnije tijelo u sredini i organiziraj suigrače oko te točke dok se središnji par ne formira.",
-      "de": "Ungeordneter Rückzug braucht zuerst einen Anker. Den gefährlichsten zentralen Körper übernehmen und Mitspieler darum ordnen, bis der Mittelblock steht."
+      "hr": "Pri neorganiziranom povratku najprije zaštiti sredinu. Preuzmi najopasnijeg napadača u tom prostoru i usmjeri suigrače dok se središnji obrambeni par ne postavi.",
+      "en": "During a disorganised recovery, first protect the middle. Take the most dangerous attacker there and direct teammates until the central defensive pair is established.",
+      "de": "Bei ungeordnetem Rückzug zuerst die Mitte sichern. Dort den gefährlichsten Angreifer übernehmen und Mitspieler dirigieren, bis der Mittelblock steht."
     },
     "whyCorrectOverSecondBest": {
-      "en": "A creates the missing centre; B becomes possible only after another central owner arrives.",
-      "hr": "A stvara nedostajuću sredinu; B postaje moguć tek kad stigne drugi vlasnik sredine.",
-      "de": "A schafft die fehlende Mitte; B wird erst nach einem weiteren zentralen Besitzer möglich."
+      "hr": "A odmah osigurava odgovornost za sredinu; B je moguć tek nakon što suigrač potvrdi preuzimanje.",
+      "en": "A immediately establishes responsibility for the middle; B becomes possible only after a teammate confirms the handover.",
+      "de": "A klärt sofort die Verantwortung für die Mitte; B ist erst nach bestätigter Übernahme durch einen Mitspieler möglich."
     },
     "skillTags": [
       "transitionDefence",
