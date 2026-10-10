@@ -56652,9 +56652,9 @@
     "score": "25:25",
     "defensiveSystem": "6-0",
     "situation": {
-      "en": "Tied 25:25 at 52'. The referee raises the passive-play arm. The centre back starts the first reversal toward the right back. The far middle turns his head to the pass and exposes his inside hip. Waiting for another full circulation may leave no action after the next signal.",
-      "hr": "Neriješeno je 25:25 u 52. minuti. Sudac podiže ruku za pasivnu igru. Srednji vanjski kreće u prvu promjenu strane prema desnom vanjskom. Dalji srednji okreće glavu prema dodavanju i otvara unutarnji kuk. Čekanje još jednog punog kruga možda ne ostavlja akciju nakon sljedećeg signala.",
-      "de": "Unentschieden 25:25 in Minute 52. Der Schiedsrichter zeigt Passivspiel. Der Rückraum Mitte startet die erste Verlagerung zum rechten Rückraum. Der ferne Mittelblock dreht den Kopf zum Pass und öffnet die innere Hüfte. Eine weitere volle Runde lässt womöglich keine Aktion nach dem nächsten Zeichen."
+      "hr": "Neriješeno je 25:25 u 52. minuti. Sudac podiže ruku za pasivnu igru. Srednji vanjski započinje promjenu strane prema desnom vanjskom. Dalji srednji branič okreće glavu prema dodavanju i ostavlja prostor uz unutarnji kuk. Možeš se pravodobno postaviti i otvoriti opciju za završetak napada.",
+      "en": "The score is 25:25 in minute 52. The referee raises the passive play warning. The centre back starts switching the ball to the right back. The far central defender turns toward the pass and leaves space beside his inside hip. You can take position in time and create a finishing option.",
+      "de": "Es steht 25:25 in Minute 52. Der Schiedsrichter zeigt die Passivwarnung. Rückraum Mitte verlagert zum rechten Rückraum. Der ballferne Innenverteidiger dreht den Kopf zum Pass und lässt Raum an seiner inneren Hüfte. Du kannst rechtzeitig Position beziehen und eine Abschlussoption schaffen."
     },
     "question": {
       "en": "When do you create the final seal?",
@@ -56696,9 +56696,9 @@
           "de": "Auf eine zweite Verlagerung warten, um die Abwehr erneut zu lesen"
         },
         "feedback": {
-          "en": "Risky — passive-play actions are being consumed.",
-          "hr": "Rizično: troše se akcije pasivne igre.",
-          "de": "Riskant — die Passivspielaktionen werden verbraucht."
+          "hr": "Rizično: dodatna promjena strane troši dodavanja nakon upozorenja i može zatvoriti sadašnju priliku.",
+          "en": "Risky: another switch uses passes after the warning and may lose the current chance.",
+          "de": "Riskant: Eine weitere Verlagerung verbraucht Pässe nach der Warnung und kann die aktuelle Chance verlieren."
         }
       },
       {
@@ -56716,9 +56716,9 @@
       }
     ],
     "explanation": {
-      "en": "Passive play compresses timing. Reseal on the first reversal so the receiving back can shoot, drive or feed immediately; do not spend another cycle waiting.",
-      "hr": "Pasivna igra sažima vrijeme. Ponovno zatvori na prvoj promjeni strane da primatelj odmah može pucati, prodrijeti ili dodati; ne troši novi krug na čekanje.",
-      "de": "Passivspiel verdichtet die Zeit. Mit der ersten Verlagerung neu sperren, damit der Empfänger sofort werfen, durchbrechen oder anspielen kann; keinen weiteren Umlauf warten."
+      "hr": "Iskoristi otvoreni prostor već tijekom ove promjene strane. Nakon upozorenja broj dopuštenih dodavanja je ograničen; nemoj čekati novi znak kao najavu dodatnog vremena. Pravodobnim postavljanjem omogući primatelju da odmah procijeni šut, prodor ili dodavanje.",
+      "en": "Use the open space during this switch. After the warning, the number of permitted passes is limited; do not wait for another signal as a promise of extra time. Position yourself in time so the receiver can immediately assess a shot, drive or pass.",
+      "de": "Den freien Raum bereits bei dieser Verlagerung nutzen. Nach der Warnung ist die Zahl erlaubter Pässe begrenzt; kein weiteres Zeichen als Zusage zusätzlicher Zeit abwarten. Rechtzeitig positionieren, damit der Empfänger Wurf, Durchbruch oder Pass beurteilen kann."
     },
     "whyCorrectOverSecondBest": {
       "en": "A creates the action before the catch; B is the immediate response only if the defender steps over it.",
