@@ -31,14 +31,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Use the pivot behind the advanced defender as the safe first option, attack the freed opposite side, and name the first two players responsible for retreat",
-          "hr": "Postavi pivota iza isturenoga kao prvo sigurno rješenje, napadni oslobođenu suprotnu stranu i odredi prva dva igrača za povratak",
-          "de": "Kreisläufer hinter dem Vorgezogenen als erste sichere Option nutzen, die freie Gegenseite angreifen und die ersten zwei Rückzugsspieler benennen"
+          "en": "Open the pivot behind the advanced defender as a possible first option, check the pass lane and free opposite side, and assign two retreating players",
+          "hr": "Otvori pivota iza isturenog braniča kao moguću prvu opciju, provjeri putanju dodavanja i slobodnu suprotnu stranu te odredi dva igrača za povratak",
+          "de": "Biete den Kreisläufer hinter dem Vorgezogenen als mögliche erste Option an, prüfe Passweg und freie Gegenseite und bestimme zwei Rückzugsspieler"
         },
         "feedback": {
-          "en": "It solves the first-pass trap and protects the next transition.",
-          "hr": "Rješava zamku na prvom dodavanju i štiti sljedeći povratak.",
-          "de": "Löst die Falle beim ersten Pass und sichert den Rückzug."
+          "en": "Offers an answer to first pass pressure while checking space and preparing retreat.",
+          "hr": "Nudi rješenje za pritisak na prvo dodavanje uz provjeru slobodnog prostora i pripremu povratka.",
+          "de": "Bietet eine Lösung gegen den Druck auf den ersten Pass, prüft den Raum und bereitet den Rückzug vor."
         },
         "id": "a"
       },
@@ -122,14 +122,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep the central pair connected, assign each pivot before the pass, and have the nearest half-defender pressure the passer without abandoning the far wing",
-          "hr": "Zadrži povezan središnji par, prije dodavanja jasno odredi tko čuva kojeg pivota, a najbliži polubranitelj neka pritisne dodavača bez napuštanja dalekog krila",
-          "de": "Innenblock verbunden halten, beide Kreisläufer vor dem Pass klar zuordnen und den Passgeber mit dem nahen Halbverteidiger stören, ohne den fernen Flügel aufzugeben"
+          "en": "Keep the central pair connected, agree coverage of both pivots before the pass, and coordinate pressure on the passer with half space and wing coverage",
+          "hr": "Zadrži povezan središnji par, prije dodavanja dogovori pokrivanje oba pivota, a pritisak na dodavača uskladi s pokrivanjem poluprostora i krila",
+          "de": "Halte das zentrale Paar verbunden, kläre vor dem Pass die Deckung beider Kreisläufer und stimme den Druck auf den Passgeber mit der Deckung von Halbraum und Außen ab"
         },
         "feedback": {
-          "en": "Every defender receives a precise responsibility in the route that is beating you.",
-          "hr": "Svaki branič dobiva jasnu odgovornost u akciji kojom vas protivnik kažnjava.",
-          "de": "Jeder Verteidiger erhält eine klare Aufgabe gegen den erfolgreichen Angriffsweg."
+          "en": "Clear handovers and coordinated help reduce the central gap without assuming one defender can cover every threat.",
+          "hr": "Jasne predaje i usklađena pomoć smanjuju prazninu između središnjih braniča bez pretpostavke da jedan branič može pokriti sve prijetnje.",
+          "de": "Klare Übergaben und abgestimmte Hilfe verkleinern die zentrale Lücke, ohne einem Verteidiger sämtliche Gefahren zuzuweisen."
         },
         "id": "a"
       },
@@ -214,28 +214,28 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Use two wide receivers for the first pass, attack only after one defender steps out, finish from a balanced chance, and send two players back immediately",
-          "hr": "Za prvo dodavanje otvori dva široka primatelja, napadni tek kada jedan branič istupi, završi iz stabilne pozicije i odmah pošalji dva igrača u povratak",
-          "de": "Für den ersten Pass zwei breite Anspielstationen schaffen, erst nach Heraustreten eines Verteidigers angreifen, aus Balance abschließen und sofort zwei Spieler zurückschicken"
+          "en": "Open two wide receivers for the first pass, attack when a safe advantage appears, and agree finishing and retreat responsibilities",
+          "hr": "Otvori dva široka primatelja za prvo dodavanje, napadni kad se otvori sigurna prednost i dogovori završetak te odgovornosti za povratak",
+          "de": "Öffne zwei breite Anspielstationen für den ersten Pass, greife bei einem sicheren Vorteil an und kläre Abschluss und Rückzugsaufgaben"
         },
         "feedback": {
-          "en": "It protects the ball without becoming passive and secures the space behind the attack.",
-          "hr": "Čuva loptu bez pasivnosti i štiti prostor iza napada.",
-          "de": "Sichert den Ball ohne passiv zu werden und schützt den Raum hinter dem Angriff."
+          "en": "Connects possession security with exploiting an advantage, without requiring one particular defender movement.",
+          "hr": "Plan povezuje čuvanje posjeda s korištenjem prednosti. Ne zahtijeva čekanje određenog pokreta braniča ako se dobra prilika otvori drukčije.",
+          "de": "Verbindet Ballsicherung mit dem Nutzen eines Vorteils, ohne auf eine einzige bestimmte Abwehrbewegung zu warten."
         },
         "id": "a"
       },
       {
         "quality": "good",
         "text": {
-          "en": "Keep the ball on one sideline and use the safest available pass until passive play is signalled",
-          "hr": "Zadrži loptu uz jednu aut-crtu i koristi najsigurnije dodavanje do znaka za pasivnu igru",
-          "de": "Ball an einer Seitenlinie halten und bis zum Passivzeichen den sichersten Pass nutzen"
+          "en": "Use short safe passes with width and look for a way to continue the attack",
+          "hr": "Koristi kratka sigurna dodavanja uz širinu i prati priliku za nastavak napada",
+          "de": "Nutze kurze sichere Pässe mit Breite und suche die Fortsetzung des Angriffs"
         },
         "feedback": {
-          "en": "It reduces central risk, but the attack can be trapped and lacks a defined finish.",
-          "hr": "Smanjuje rizik u sredini, ali obrana može zatvoriti stranu, a završetak nije određen.",
-          "de": "Reduziert das Risiko in der Mitte, kann aber an der Seite eingeschlossen werden und hat keinen klaren Abschluss."
+          "en": "Acceptable for settling possession, but without an agreed continuation a good finish may be missing.",
+          "hr": "Prihvatljivo za smirivanje posjeda, ali bez dogovorenog nastavka možeš ostati bez kvalitetnog završetka.",
+          "de": "Zur Beruhigung des Ballbesitzes vertretbar, doch ohne abgesprochene Fortsetzung kann ein guter Abschluss fehlen."
         },
         "id": "b"
       },
@@ -394,14 +394,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Offer two wide options for the first pass, require one secure reversal before attacking the gap, and assign two named players to retreat after the finish",
-          "hr": "Ponudi dvije široke mogućnosti za prvo dodavanje, traži jednu sigurnu promjenu strane prije napada na prostor i odredi dva igrača za povratak nakon završetka",
-          "de": "Zwei breite Optionen für den ersten Pass anbieten, vor dem Angriff auf die Lücke eine sichere Seitenverlagerung verlangen und zwei Rückzugsspieler benennen"
+          "en": "Offer two wide first pass options, change sides if the direct route is closed, and assign two retreating players",
+          "hr": "Ponudi dvije široke mogućnosti za prvo dodavanje, promijeni stranu ako je izravni put zatvoren i odredi dva igrača za povratak",
+          "de": "Biete zwei breite Optionen für den ersten Pass, wechsle bei geschlossenem direktem Weg die Seite und bestimme zwei Rückzugsspieler"
         },
         "feedback": {
-          "en": "It removes the repeated turnover route and protects the consequence of the next mistake.",
-          "hr": "Uklanja put kojim se lopta gubila i štiti ekipu od posljedice moguće sljedeće pogreške.",
-          "de": "Nimmt den wiederholten Ballverlustweg und sichert die Folge eines möglichen nächsten Fehlers."
+          "en": "A clear first pass choice reduces rushing. Changing sides is useful when it opens space, not mandatory before an existing chance.",
+          "hr": "Jasan izbor prvog dodavanja smanjuje brzopletost. Promjena strane ima svrhu kada otvara prostor, a nije obvezna prije već dostupne prilike.",
+          "de": "Eine klare erste Passoption reduziert Hektik. Der Seitenwechsel soll Raum öffnen und ist vor einer bereits vorhandenen Chance nicht verpflichtend."
         },
         "id": "a"
       },
@@ -574,28 +574,28 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep the goalkeeper in, create two wide first-pass options, attack only when the defence clearly gambles on an interception, and name who immediately connects the returning player to the attack",
-          "hr": "Ostavi vratara na vratima, otvori dvije široke mogućnosti za prvo dodavanje, napadni samo kada obrana jasno riskira presijecanjem i odredi tko povratnika odmah uključuje u napad",
-          "de": "Torwart im Tor lassen, zwei breite Erstpassoptionen schaffen, nur angreifen, wenn die Abwehr klar auf Abfangen spekuliert, und bestimmen, wer den Rückkehrer sofort in den Angriff einbindet"
+          "en": "Keep the goalkeeper in goal, open two wide pass options, use a clear advantage if it appears, and agree how to include the returning player",
+          "hr": "Ostavi vratara na vratima, otvori dvije široke mogućnosti za dodavanje, koristi jasnu prednost ako se pojavi i dogovori uključivanje povratnika",
+          "de": "Lass den Torwart im Tor, öffne zwei breite Passoptionen, nutze einen klaren Vorteil und kläre die Einbindung des zurückkehrenden Spielers"
         },
         "feedback": {
-          "en": "It protects the lead and gives the team a clean transition back to six players.",
-          "hr": "Štiti vodstvo i omogućuje uredan povratak na šest igrača.",
-          "de": "Schützt die Führung und schafft einen klaren Übergang zurück zu sechs Spielern."
+          "en": "Connects possession protection, attacking opportunities and the teammate's return without waiting for one specific defensive action.",
+          "hr": "Povezuje zaštitu posjeda s mogućnošću napada i povratkom suigrača, bez čekanja samo jednog obrambenog poteza.",
+          "de": "Verbindet Ballsicherung, Angriffsmöglichkeiten und die Rückkehr, ohne auf eine einzige Abwehraktion zu warten."
         },
         "id": "a"
       },
       {
         "quality": "good",
         "text": {
-          "en": "Keep five attackers wide and hold the ball until the suspension ends",
-          "hr": "Rasporedi pet napadača široko i čuvaj loptu dok kazna ne istekne",
-          "de": "Fünf Angreifer breit halten und den Ball bis zum Ende der Zeitstrafe sichern"
+          "en": "Spread the five attackers and control possession while maintaining a real threat to goal",
+          "hr": "Rasporedi pet napadača široko i kontroliraj posjed uz stvarnu prijetnju prema golu",
+          "de": "Verteile die fünf Angreifer breit und kontrolliere den Ball mit echter Torgefahr"
         },
         "feedback": {
-          "en": "The idea protects possession, but it does not define the response to a defender who jumps the pass.",
-          "hr": "Čuva posjed, ali ne određuje odgovor na braniča koji krene presjeći dodavanje.",
-          "de": "Sichert den Ball, bestimmt aber keine Antwort auf einen Verteidiger, der den Pass angreift."
+          "en": "Acceptable as a basic shape, but lacks a concrete solution under pressure and a plan for the returning player.",
+          "hr": "Prihvatljivo kao osnovni raspored, ali nedostaju konkretno rješenje pod pritiskom i dogovor o povratniku.",
+          "de": "Als Grundordnung vertretbar, aber ohne konkrete Lösung unter Druck und ohne Plan für den Rückkehrer."
         },
         "id": "b"
       },
@@ -849,28 +849,28 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Use safe width until the final twelve seconds, then play a centre-back–pivot action with a return pass to the opposite back; only take a balanced shot and send two players back immediately",
-          "hr": "Sigurnim dodavanjima zadrži širinu do posljednjih 12 sekundi, zatim odigraj akciju srednjeg vanjskog i pivota uz povratno dodavanje suprotnom vanjskom; šutiraj samo iz stabilne pozicije i odmah pošalji dva igrača u povratak",
-          "de": "Mit sicheren Pässen bis zu den letzten zwölf Sekunden Breite halten, dann Aktion von Rückraum Mitte und Kreisläufer mit Rückpass zum Gegenrückraum spielen; nur aus Balance werfen und zwei Spieler sofort zurückschicken"
+          "en": "Control possession with width, monitor time and the passive play warning, start the centre back and pivot action in time with a return pass, take a good shot and assign retreat",
+          "hr": "Kontroliraj posjed uz širinu i prati preostalo vrijeme te znak za pasivnu igru; pravodobno pokreni akciju srednjeg vanjskog i pivota s povratnim dodavanjem, koristi kvalitetan šut i odredi povratak",
+          "de": "Kontrolliere den Ball mit Breite, beachte Zeit und Zeitspielwarnzeichen, beginne rechtzeitig die Aktion zwischen Mitte und Kreis mit Rückpass, nutze einen guten Wurf und kläre den Rückzug"
         },
         "feedback": {
-          "en": "It manages the clock, contains a continuation, and protects against a final counterattack.",
-          "hr": "Upravlja vremenom, daje nastavak akcije i štiti od posljednjeg kontranapada.",
-          "de": "Steuert die Zeit, enthält eine Fortsetzung und schützt vor dem letzten Gegenstoß."
+          "en": "Manages time while reading the defence and warning, rather than prescribing the same start time for every situation.",
+          "hr": "Upravlja vremenom uz praćenje obrane i upozorenja. Ne propisuje isti trenutak početka akcije za svaku situaciju.",
+          "de": "Steuert die Zeit unter Beachtung von Abwehr und Warnzeichen, statt für jede Situation denselben Aktionsbeginn vorzuschreiben."
         },
         "id": "a"
       },
       {
         "quality": "good",
         "text": {
-          "en": "Hold the ball until fifteen seconds remain and let the centre back choose the best action",
-          "hr": "Čuvaj loptu do posljednjih 15 sekundi pa prepusti srednjem vanjskom izbor najbolje akcije",
-          "de": "Ball bis zu den letzten fünfzehn Sekunden halten und Rückraum Mitte die beste Aktion wählen lassen"
+          "en": "Control possession and let the centre back choose an action in time according to the defence and remaining time",
+          "hr": "Kontroliraj posjed i prepusti srednjem vanjskom da pravodobno odabere akciju prema obrani i preostalom vremenu",
+          "de": "Kontrolliere den Ball und lass Rückraum Mitte rechtzeitig nach Abwehr und Restzeit eine Aktion wählen"
         },
         "feedback": {
-          "en": "The clock is controlled, but the team has no shared continuation or retreat assignment.",
-          "hr": "Vrijeme je pod kontrolom, ali ekipa nema zajednički nastavak ni povratne uloge.",
-          "de": "Die Zeit ist kontrolliert, doch Fortsetzung und Rückzug sind nicht gemeinsam festgelegt."
+          "en": "Acceptable, but the plan is less complete without an agreed backup option and retreat.",
+          "hr": "Prihvatljivo, ali bez dogovorene rezervne opcije i povratka plan je manje potpun.",
+          "de": "Vertretbar, aber ohne abgesprochene Ersatzlösung und Rückzug ist der Plan weniger vollständig."
         },
         "id": "b"
       },
@@ -904,9 +904,9 @@
       }
     ],
     "explanation": {
-      "en": "A tied final possession needs clock control, a primary action, a continuation, a shot standard, and retreat protection.",
-      "hr": "Posljednji napad pri izjednačenom rezultatu traži upravljanje vremenom, glavnu akciju, nastavak, kriterij šuta i zaštitu povratka.",
-      "de": "Ein letzter Ballbesitz bei Gleichstand braucht Zeitsteuerung, Hauptaktion, Fortsetzung, Wurfstandard und Rückzugssicherung."
+      "en": "A final attack with a tied score requires monitoring time and the warning, a main action, backup, shot criteria and retreat. Adapt the start to the defence rather than a universal countdown.",
+      "hr": "Posljednji napad pri izjednačenom rezultatu traži praćenje vremena i upozorenja, glavnu akciju, rezervno rješenje, kriterij šuta i povratak. Trenutak početka akcije prilagodi obrani, umjesto univerzalnog roka u sekundama.",
+      "de": "Der letzte Angriff bei Gleichstand erfordert die Beachtung von Zeit und Warnzeichen, eine Hauptaktion, Ersatzlösung, Wurfkriterien und Rückzug. Passe den Beginn an die Abwehr an statt an eine allgemeine Sekundenvorgabe."
     }
   },
   {
@@ -1032,14 +1032,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep the far wing defender outside, split the two pivots between the central pair, and bring help from the near half-space only after the ball moves to that side",
-          "hr": "Zadrži braniča na dalekom krilu izvana, podijeli dva pivota između središnjeg para, a pomoć iz bližeg poluprostora uključi tek kada lopta krene na tu stranu",
-          "de": "Fernen Außenverteidiger außen halten, beide Kreisläufer dem Innenblock zuordnen und Hilfe aus dem nahen Halbraum erst bringen, wenn der Ball dorthin gespielt wird"
+          "en": "Maintain far wing coverage, divide the pivots between central defenders and provide half space help against the immediate threat with clear handovers",
+          "hr": "Zadrži pokrivanje dalekog krila, podijeli pivote između središnjih braniča i uključi pomoć iz poluprostora prema neposrednoj prijetnji uz jasnu predaju",
+          "de": "Halte die Deckung des ballfernen Außen, teile die Kreisläufer zwischen den zentralen Verteidigern auf und hilf aus dem Halbraum gegen die unmittelbare Gefahr mit klarer Übergabe"
         },
         "feedback": {
-          "en": "It protects the direct skip while keeping central ownership intact.",
-          "hr": "Štiti izravno dugo dodavanje, a središnje uloge ostaju jasne.",
-          "de": "Schützt den Überspielpass und hält die zentralen Zuordnungen klar."
+          "en": "Protects the long pass and allows timely help. Help does not depend only on the ball already reaching a particular side.",
+          "hr": "Štiti dugo dodavanje i omogućuje pravodobnu pomoć. Pomoć ne ovisi samo o tome je li lopta već stigla na određenu stranu.",
+          "de": "Schützt den langen Pass und ermöglicht rechtzeitige Hilfe. Diese hängt nicht allein davon ab, ob der Ball bereits eine bestimmte Seite erreicht hat."
         },
         "id": "a"
       },
@@ -1087,9 +1087,9 @@
       }
     ],
     "explanation": {
-      "en": "Weak-side protection in 7v6 starts with clear central ownership; the far wing cannot be the first helper.",
-      "hr": "Zaštita daleke strane u igri 7 na 6 počinje jasnom podjelom u sredini; daleki krilni branič ne smije prvi pomagati.",
-      "de": "Ballferner Schutz im 7 gegen 6 beginnt mit klarer zentraler Zuordnung; der ferne Außenverteidiger darf nicht zuerst helfen."
+      "en": "Protecting the far wing against seven attackers requires clear pivot assignments and timely coordinated help against the immediate threat. Do not abandon the wing automatically or ignore an open drive.",
+      "hr": "Zaštita dalekog krila u igri 7 na 6 traži jasnu podjelu pivota i pravodobnu, dogovorenu pomoć prema neposrednoj prijetnji. Ne napuštaj krilo automatski, ali ni ne zanemaruj otvoren prodor.",
+      "de": "Die Absicherung des ballfernen Außen gegen sieben Angreifer verlangt klare Kreiszuordnung und rechtzeitige abgestimmte Hilfe gegen die unmittelbare Gefahr. Verlasse Außen nicht automatisch, ignoriere aber auch keinen offenen Durchbruch."
     }
   },
   {
@@ -1216,28 +1216,28 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Pressure the passer with the ball-side half-defender, keep the central defender chest-to-back, attack the passing lane with the near arm, and have the other central defender protect the turn",
-          "hr": "Polubranitelj na strani lopte pritišće dodavača, središnji ostaje prsima uz leđa pivota i bližom rukom napada putanju dodavanja, a drugi središnji štiti okret",
-          "de": "Ballseitiger Halbverteidiger setzt den Passgeber unter Druck, Innenblock bleibt Brust an Rücken und greift mit dem nahen Arm die Passlinie an, der zweite Innenblock schützt die Drehung"
+          "en": "Pressure the passer with the ball side half defender, improve the central defender's position to ball and pivot without holding, and agree help against the turn",
+          "hr": "Pritisni dodavača polubraniteljem na strani lopte, popravi položaj središnjeg prema lopti i pivotu bez držanja te dogovori pomoć za njegov okret",
+          "de": "Setze den Passgeber mit dem ballnahen Halbverteidiger unter Druck, verbessere die zentrale Position zu Ball und Kreis ohne Festhalten und kläre Hilfe gegen die Drehung"
         },
         "feedback": {
-          "en": "The passer loses time, the defender avoids wrapping around, and the receiving turn is covered.",
-          "hr": "Dodavač gubi vrijeme, branič ne obilazi pivota rukama, a okret nakon primanja ostaje pokriven.",
-          "de": "Der Passgeber verliert Zeit, der Verteidiger greift nicht herum und die Drehung nach dem Fang bleibt gedeckt."
+          "en": "Reduces the passer's space and connects catch defence with turn defence, without relying on reaching behind the pivot.",
+          "hr": "Smanjuje prostor dodavaču i povezuje obranu prijema s obranom okreta, bez oslanjanja na posezanje rukom iza pivota.",
+          "de": "Verengt den Raum des Passgebers und verbindet die Abwehr von Annahme und Drehung, ohne hinter dem Kreisläufer nach dem Ball zu greifen."
         },
         "id": "a"
       },
       {
         "quality": "good",
         "text": {
-          "en": "Move the central defender fully in front of the pivot before the left back receives",
-          "hr": "Postavi središnjeg braniča potpuno ispred pivota prije nego što lijevi vanjski primi loptu",
-          "de": "Innenblockspieler vollständig vor den Kreisläufer stellen, bevor Rückraum links fängt"
+          "en": "Place the central defender in front of the pivot if the catch can be denied and the pass behind is covered",
+          "hr": "Postavi središnjeg ispred pivota ako može zatvoriti prijem i ima osigurano dodavanje iza leđa",
+          "de": "Stelle den zentralen Verteidiger vor den Kreisläufer, wenn er die Annahme verhindern kann und der Pass hinter seinen Rücken abgesichert ist"
         },
         "feedback": {
-          "en": "The low feed closes, but a lob or feed into the space behind the defender becomes available.",
-          "hr": "Nisko dodavanje se zatvara, ali se otvara lob ili dodavanje u prostor iza braniča.",
-          "de": "Das tiefe Zuspiel schließt sich, dafür werden Lob oder Pass in den Raum hinter dem Verteidiger möglich."
+          "en": "Acceptable when ball position and help support it. Full fronting is not safe in every situation.",
+          "hr": "Prihvatljivo ako su položaj lopte i pomoć povoljni. Potpuni izlazak ispred pivota nije siguran u svakoj situaciji.",
+          "de": "Bei günstiger Ballposition und Hilfe vertretbar. Vollständiges Davorstehen ist nicht in jeder Situation sicher."
         },
         "id": "b"
       },
@@ -1308,14 +1308,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep the wing defender outside until the return pass leaves the hand; the central pair owns the pivot and the half-defender contests the backcourt shot",
-          "hr": "Zadrži krilnog braniča izvana dok povratno dodavanje ne napusti ruku; središnji par preuzima pivota, a polubranitelj izlazi na šut vanjskog igrača",
-          "de": "Außenverteidiger bleibt außen, bis der Rückpass die Hand verlässt; Innenblock übernimmt den Kreisläufer, Halbverteidiger stört den Rückraumwurf"
+          "en": "Keep the wing defender with the wing threat, assign the pivot to the central defenders and have the half defender cover the backcourt player in time on the return pass",
+          "hr": "Zadrži krilnog braniča uz prijetnju krila, središnjima dodijeli pivota, a polubranitelj neka pravodobno preuzme vanjskog pri povratnom dodavanju",
+          "de": "Lass den Außenverteidiger die Außengefahr decken, weise den Kreis den zentralen Verteidigern zu und lass den Halbverteidiger beim Rückpass rechtzeitig den Rückraumspieler übernehmen"
         },
         "feedback": {
-          "en": "Each line protects its own immediate threat and the attack loses the free reversal.",
-          "hr": "Svaka linija štiti neposrednu prijetnju, a napad gubi slobodan povrat lopte.",
-          "de": "Jede Linie schützt ihre unmittelbare Gefahr und der Angriff verliert die freie Rückverlagerung."
+          "en": "Clear assignments prevent the half defender having to close both the wing and the backcourt shot simultaneously.",
+          "hr": "Jasna podjela sprječava da polubranitelj mora istodobno zatvarati krilo i šut vanjskog.",
+          "de": "Klare Aufgaben verhindern, dass der Halbverteidiger zugleich Außen und den Rückraumwurf schließen muss."
         },
         "id": "a"
       },
@@ -1388,7 +1388,7 @@
     ],
     "situation": {
       "en": "After two missed shots, both of your wing defenders chased the opponent wings toward the sidelines. The centre remained empty and the pivot scored twice from the first wave.",
-      "hr": "Nakon dva promašena šuta oba su vaša krilna braniča pratila protivnička krila prema aut-crtama. Sredina je ostala prazna, a pivot je dvaput zabio iz prvog vala.",
+      "hr": "Nakon dva promašena šuta oba su vaša krilna braniča pratila protivnička krila prema bočnim crtama. Sredina je ostala prazna, a pivot je dvaput zabio iz prvog vala.",
       "de": "Nach zwei Fehlwürfen verfolgten beide Außenverteidiger die gegnerischen Flügel zur Seitenlinie. Die Mitte blieb leer und der Kreisläufer traf zweimal aus der ersten Welle."
     },
     "question": {
@@ -1491,14 +1491,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Stay compact in 5:0, keep both central defenders connected to the first pivot, and let the ball-side half-defender take the second pivot only after the pass moves to that side",
-          "hr": "Ostani kompaktan u obrani 5:0, oba središnja braniča zadrži povezana uz prvog pivota, a polubranitelj na strani lopte preuzima drugoga tek kada lopta prijeđe na tu stranu",
-          "de": "Im kompakten 5:0 bleiben, beide Innenblockspieler am ersten Kreisläufer verbunden halten und den zweiten erst ballseitig durch den Halbverteidiger übernehmen"
+          "en": "In a compact defence of five, immediately assign coverage of each pivot and adapt handovers to their movement and the ball without gathering two defenders around one pivot",
+          "hr": "U kompaktnoj obrani petorice odmah dogovori tko pokriva svakog pivota, a predaje prilagodi njihovom kretanju i položaju lopte bez skupljanja dvojice na jednom pivotu",
+          "de": "Kläre in einer kompakten Abwehr mit fünf Spielern sofort die Deckung beider Kreisläufer und passe Übergaben an Bewegung und Ball an, ohne zwei Verteidiger an einem Kreisläufer zu sammeln"
         },
         "feedback": {
-          "en": "The defence avoids an early split and delays the second-pivot matchup until the ball makes it relevant.",
-          "hr": "Obrana se ne razdvaja prerano, a drugog pivota preuzima tek kada ga lopta učini neposrednom prijetnjom.",
-          "de": "Die Abwehr teilt sich nicht früh und übernimmt den zweiten Kreisläufer erst bei unmittelbarer Ballgefahr."
+          "en": "Both pivots remain accounted for. Do not wait for a side change before recognising the second pivot's threat.",
+          "hr": "Oba pivota ostaju uključena u podjelu odgovornosti. Ne čeka se promjena strane da bi se tek tada prepoznala prijetnja drugog pivota.",
+          "de": "Beide Kreisläufer bleiben berücksichtigt. Die Gefahr des zweiten wird nicht erst nach einem Seitenwechsel erkannt."
         },
         "id": "a"
       },
@@ -1546,9 +1546,9 @@
       }
     ],
     "explanation": {
-      "en": "Defending two pivots while short-handed requires compact central connection and ball-dependent handovers, not permanent chasing.",
-      "hr": "Obrana dva pivota s igračem manje traži povezanu sredinu i preuzimanja ovisna o položaju lopte, a ne stalno praćenje.",
-      "de": "Abwehr gegen zwei Kreisläufer in Unterzahl braucht zentrale Verbindung und ballabhängige Übergaben statt dauernder Verfolgung."
+      "en": "Defending two pivots with one fewer player requires responsibility for both and coordinated handovers according to movement and ball position. Two defenders on one pivot must not leave the other uncovered.",
+      "hr": "Obrana dva pivota s igračem manje traži podjelu odgovornosti za oba pivota i povezane predaje prema kretanju i lopti. Dvojica na prvom pivotu ne smiju ostaviti drugoga bez pokrivanja.",
+      "de": "Zwei Kreisläufer in Unterzahl zu verteidigen verlangt Verantwortung für beide und abgestimmte Übergaben nach Bewegung und Ballposition. Zwei Verteidiger an einem Kreisläufer dürfen den anderen nicht ungedeckt lassen."
     }
   },
   {
@@ -1571,7 +1571,7 @@
     ],
     "situation": {
       "en": "The opponent left-handed right back receives while moving inward. Your left half-defender stays square and arrives only after the throwing arm has cleared the block.",
-      "hr": "Protivnički ljevoruki desni vanjski prima loptu u kretanju prema sredini. Vaš lijevi polubranitelj ostaje paralelan s gol-aut crtom i stiže tek kada je ruka šutera već prošla blok.",
+      "hr": "Protivnički ljevoruki desni vanjski prima loptu u kretanju prema sredini. Vaš lijevi polubranitelj ostaje paralelan s gol crtom i stiže tek kada je ruka šutera već prošla blok.",
       "de": "Der gegnerische linkshändige Rückraum rechts fängt in der Bewegung nach innen. Euer linker Halbverteidiger bleibt frontal und kommt erst, nachdem der Wurfarm den Block passiert hat."
     },
     "question": {
@@ -1911,7 +1911,7 @@
     ],
     "explanation": {
       "en": "Late attack–defence exchanges are secondary to protecting the first defensive lane and completing a legal substitution.",
-      "hr": "Kasna izmjena napad–obrana manje je važna od zaštite prvoga obrambenog prostora i pravilno izvedene zamjene.",
+      "hr": "Kasna izmjena između napada i obrane manje je važna od zaštite prvoga obrambenog prostora i pravilno izvedene zamjene.",
       "de": "Späte Angriff-Abwehr-Wechsel sind dem Schutz des ersten Abwehrraums und einem regelgerechten Wechsel untergeordnet."
     }
   },
@@ -1945,7 +1945,7 @@
         "quality": "optimal",
         "text": {
           "en": "Give one cue — scan before the catch — allow one planned possession, then substitute and reinforce whether the read was early",
-          "hr": "Daj jednu uputu: pogled prije primanja: ostavi ga za jedan dogovoreni napad, zatim ga zamijeni i potvrdi je li prostor pročitao na vrijeme",
+          "hr": "Daj uputu da pogleda obranu prije primanja. Ostavi ga za jedan dogovoreni napad, zatim ga zamijeni i potvrdi je li prostor pročitao na vrijeme",
           "de": "Eine Anweisung geben — vor dem Fangen schauen — einen geplanten Angriff lassen, dann wechseln und die frühe Wahrnehmung bestätigen"
         },
         "feedback": {
@@ -2492,14 +2492,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Change at the next controlled attack–defence exchange and give the incoming defender one first task: close level with the central pair before contesting the right back",
-          "hr": "Zamijeni pri sljedećoj sigurnoj izmjeni napada i obrane, a igraču koji ulazi daj prvi zadatak: najprije zatvori u ravnini sa središnjim parom, zatim izađi na desnog vanjskog",
-          "de": "Beim nächsten kontrollierten Angriff-Abwehr-Wechsel tauschen und dem neuen Verteidiger eine erste Aufgabe geben: zuerst auf Höhe des Innenblocks schließen, dann Rückraum rechts stören"
+          "en": "Substitute at the next safe opportunity and instruct the new right half defender to connect with the central pair and pressure the opposing backcourt player in that space in time",
+          "hr": "Zamijeni pri sljedećoj sigurnoj prilici, a novom desnom polubranitelju zadaj povezivanje sa središnjim braničima i pravodoban izlazak na protivničkog vanjskog u njegovu prostoru",
+          "de": "Wechsle bei der nächsten sicheren Gelegenheit und gib dem neuen rechten Halbverteidiger den Auftrag, sich mit dem zentralen Paar zu verbinden und den gegnerischen Rückraumspieler in seinem Raum rechtzeitig unter Druck zu setzen"
         },
         "feedback": {
-          "en": "Freshness is attached to the exact connection that has broken down.",
-          "hr": "Svježina se usmjerava na vezu u obrani koja se raspala.",
-          "de": "Die Frische wird auf genau die gebrochene Abwehrverbindung gerichtet."
+          "en": "Freshness addresses the broken defensive connection and the task is linked to the defender's space.",
+          "hr": "Svježina se usmjerava na prekinutu obrambenu vezu, a zadatak se veže uz prostor braniča.",
+          "de": "Die Frische stärkt die unterbrochene Abwehrverbindung und die Aufgabe bezieht sich auf den Raum des Verteidigers."
         },
         "id": "a"
       },
@@ -2899,7 +2899,7 @@
         "quality": "poor",
         "text": {
           "en": "Run a full-intensity 70-minute practice match to make the team feel sharp",
-          "hr": "Odigraj 70 minuta trening-utakmice punim intenzitetom kako bi se ekipa osjećala oštro",
+          "hr": "Odigraj 70 minuta pripremne utakmice punim intenzitetom kako bi se ekipa osjećala oštro",
           "de": "Ein 70-minütiges Trainingsspiel mit voller Intensität durchführen, damit sich die Mannschaft scharf fühlt"
         },
         "feedback": {
@@ -3454,9 +3454,9 @@
       }
     ],
     "explanation": {
-      "en": "A congested microcycle needs one evidence-based high-intensity priority and a lower-load way to retain the second issue.",
-      "hr": "Zgusnuti raspored traži jedan dokazima potkrijepljen prioritet visokog intenziteta i manje zahtjevan način obrade drugog problema.",
-      "de": "Ein enger Mikrozyklus braucht einen evidenzbasierten intensiven Schwerpunkt und eine niedrigere Belastung für das zweite Thema."
+      "en": "With only one intensive tactical day available, choose the priority from evidence and address the second topic with less demanding work. Track a clear measure for both.",
+      "hr": "Kad je dostupan samo jedan intenzivan taktički dan, odaberi prioritet prema dokazima i drugu temu obradi manje zahtjevnim radom. Za obje teme prati jasno mjerilo.",
+      "de": "Wenn nur ein intensiver Taktiktag verfügbar ist, wähle den Schwerpunkt anhand von Belegen und bearbeite das zweite Thema weniger belastend. Verfolge für beide ein klares Kriterium."
     }
   },
   {
@@ -3764,14 +3764,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "Keep the starting line until take-off, read the airborne body and ball height, then make one committed movement",
-          "hr": "Zadrži početnu liniju do odraza, pročitaj tijelo u zraku i visinu lopte, zatim napravi jedan odlučan pokret",
-          "de": "Ausgangslinie bis zum Absprung halten, Körper in der Luft und Ballhöhe lesen, dann eine entschlossene Bewegung ausführen"
+          "en": "Adapt the starting position to the shooting angle, avoid moving toward the post too early and react to the takeoff, body position and ball",
+          "hr": "Prilagodi početni položaj kutu šuta, izbjegni prerano kretanje prema stativi i reagiraj prema odrazu, položaju tijela i lopte",
+          "de": "Passe die Ausgangsposition an den Wurfwinkel an, vermeide die zu frühe Bewegung zum Pfosten und reagiere auf Absprung, Körperposition und Ball"
         },
         "feedback": {
-          "en": "It delays commitment until the shooter reveals usable information.",
-          "hr": "Odgađa odluku dok šuter ne pokaže korisnu informaciju.",
-          "de": "Verzögert die Festlegung, bis der Werfer verwertbare Informationen zeigt."
+          "en": "Connects the reaction to visible information rather than a preset movement. The exact timing depends on the shot.",
+          "hr": "Povezuje reakciju s vidljivim informacijama umjesto s unaprijed određenim kretanjem. Točan trenutak reakcije ovisi o konkretnom šutu.",
+          "de": "Verbindet die Reaktion mit sichtbaren Informationen statt einer vorgegebenen Bewegung. Der genaue Zeitpunkt hängt vom Wurf ab."
         },
         "id": "a"
       },
@@ -4497,7 +4497,7 @@
         "quality": "optimal",
         "text": {
           "en": "Coordinate youth and senior loads, give one senior task of reading contact before the catch, use short preplanned senior appearances, and review both decisions and recovery every two weeks",
-          "hr": "Uskladi opterećenje juniora i seniora, zadaj jedan seniorski cilj: čitanje kontakta prije primanja: uvedi kratke, unaprijed planirane ulaske u seniorske utakmice i svaka dva tjedna procijeni odluke i oporavak",
+          "hr": "Uskladi opterećenje juniora i seniora, zadaj jedan seniorski cilj, procjenu obrambenog kontakta prije primanja. Uvedi kratke, unaprijed planirane ulaske u seniorske utakmice i svaka dva tjedna procijeni odluke i oporavak",
           "de": "Jugend- und Seniorenbelastung abstimmen, eine Seniorenaufgabe zum Kontaktlesen vor dem Fang geben, kurze vorab geplante Senioreneinsätze nutzen und Entscheidungen sowie Erholung alle zwei Wochen prüfen"
         },
         "feedback": {
@@ -4694,14 +4694,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Tell the goalkeeper that the shooter prefers the far corner after the parallel run",
-          "hr": "Reci vrataru da šuter nakon paralelnog kretanja najčešće gađa dalji kut",
-          "de": "Torwart mitteilen, dass der Werfer nach dem parallelen Lauf die lange Ecke bevorzugt"
+          "en": "Show the goalkeeper clips of shots after this movement and agree what to watch in relation to the block",
+          "hr": "Vrataru pokaži snimke šuta nakon tog kretanja i dogovori što prati u odnosu na blok",
+          "de": "Zeige dem Torwart Würfe nach dieser Bewegung und kläre, worauf er im Verhältnis zum Block achten soll"
         },
         "feedback": {
-          "en": "The tendency can help, but the defence still allows an uncontested release.",
-          "hr": "Navika može pomoći, ali obrana i dalje dopušta neometan izbačaj.",
-          "de": "Die Tendenz kann helfen, doch die Abwehr erlaubt weiter eine freie Abgabe."
+          "en": "Useful goalkeeper preparation, but the cause of the free release remains unless the half defender's position is corrected.",
+          "hr": "Korisno za pripremu vratara, ali bez ispravka polubraniteljeva položaja ostaje uzrok slobodnog izbačaja.",
+          "de": "Nützlich für die Torwartvorbereitung, doch ohne Korrektur der Halbverteidigerposition bleibt die Ursache des freien Abwurfs bestehen."
         },
         "id": "b"
       },
@@ -4709,7 +4709,7 @@
         "quality": "risky",
         "text": {
           "en": "Change the entire defence to man-to-man coverage on the right back",
-          "hr": "Promijeni cijelu obranu u igru čovjek-na-čovjeka na desnom vanjskom",
+          "hr": "Promijeni cijelu obranu u igru čovjek na čovjeka na desnom vanjskom",
           "de": "Gesamte Abwehr auf Manndeckung gegen Rückraum rechts umstellen"
         },
         "feedback": {
@@ -4877,14 +4877,14 @@
       {
         "quality": "good",
         "text": {
-          "en": "Send the left wing back early to stand with the opponent right wing",
-          "hr": "Pošalji lijevo krilo ranije natrag kako bi bilo uz protivničko desno krilo",
-          "de": "Linksaußen früh zurückschicken, um bei gegnerischem Rechtsaußen zu stehen"
+          "en": "Assign another player to cover the route to the opposing right wing early while your left wing completes the shot",
+          "hr": "Odredi drugog igrača da ranije pokrije put prema protivničkom desnom krilu dok vaše lijevo krilo završava šut",
+          "de": "Bestimme einen anderen Spieler, der früh den Weg zum gegnerischen Rechtsaußen sichert, während euer Linksaußen den Wurf abschließt"
         },
         "feedback": {
-          "en": "The long lane is covered, but the central outlet remains free.",
-          "hr": "Dugo dodavanje je pokriveno, ali kratko dodavanje kroz sredinu ostaje slobodno.",
-          "de": "Der lange Weg ist gedeckt, doch der zentrale Pass bleibt frei."
+          "en": "Covers the first long pass, but protection against the short central pass must also be assigned.",
+          "hr": "Pokriva prvo dugo dodavanje, ali treba dodijeliti i zaštitu kratkog dodavanja kroz sredinu.",
+          "de": "Sichert den ersten langen Pass, doch auch der kurze Pass durch die Mitte muss abgesichert werden."
         },
         "id": "b"
       },
@@ -5044,14 +5044,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "After the signal, keep the half-defender on the left back, let the central pair absorb the first drive and pivot seal, and help only when the ball leaves the centre back",
-          "hr": "Nakon znaka polubranitelj ostaje uz lijevog vanjskog, središnji par preuzima prvi prodor i blok pivota, a pomoć dolazi tek kada lopta napusti ruku srednjeg vanjskog",
-          "de": "Nach dem Signal bleibt der Halbverteidiger bei Rückraum links, der Innenblock übernimmt ersten Durchbruch und Sperre, Hilfe kommt erst bei Ballabgabe von Rückraum Mitte"
+          "en": "Maintain left back coverage while the central defenders coordinate the drive and pivot; help when the drive becomes an immediate threat with an agreed handover",
+          "hr": "Zadrži pokrivanje lijevog vanjskog dok središnji braniči usklađuju obranu prodora i pivota; pomoć uključi kad prodor postane neposredna prijetnja uz dogovor o predaji",
+          "de": "Halte die Deckung von Rückraum links, während die zentralen Verteidiger Durchbruch und Kreis abstimmen; hilf bei unmittelbarer Durchbruchgefahr mit abgesprochener Übergabe"
         },
         "feedback": {
-          "en": "It removes the secondary pass that appears only when help leaves early.",
-          "hr": "Zatvara dodatno dodavanje koje se otvara samo zbog prerane pomoći.",
-          "de": "Nimmt den Folgepass, der nur durch frühe Hilfe entsteht."
+          "en": "Reduces early help that opens the pass, without delaying necessary help until the ball has already been played.",
+          "hr": "Smanjuje preranu pomoć koja otvara dodavanje, ali ne odgađa nužnu pomoć do trenutka kad je lopta već odigrana.",
+          "de": "Reduziert verfrühte Hilfe, die den Pass öffnet, ohne nötige Hilfe bis nach dem Abspiel hinauszuzögern."
         },
         "id": "a"
       },
@@ -5136,14 +5136,14 @@
       {
         "quality": "optimal",
         "text": {
-          "en": "After an opponent miss, the first receiver attacks the substitution-side lane immediately, while the second wave checks whether both specialists have entered before choosing the continuation",
-          "hr": "Nakon protivničkog promašaja prvi primatelj odmah napada stranu prostora za zamjene, a drugi val prije nastavka provjerava jesu li oba obrambena specijalista ušla",
-          "de": "Nach gegnerischem Fehlwurf greift der erste Empfänger sofort die Wechselzonenseite an, die zweite Welle prüft vor der Fortsetzung, ob beide Spezialisten eingetreten sind"
+          "en": "After gaining possession, check space around the opposing substitution and a safe first pass; exploit an advantage if present and have the second wave reassess the defence",
+          "hr": "Nakon osvajanja lopte provjeri otvoren prostor uz protivničku zamjenu i sigurno prvo dodavanje; iskoristi prednost ako postoji, a drugi val neka ponovno procijeni raspored obrane",
+          "de": "Prüfe nach Ballgewinn den Raum an der gegnerischen Wechselstelle und einen sicheren ersten Pass; nutze einen vorhandenen Vorteil und lass die zweite Welle die Abwehr erneut beurteilen"
         },
         "feedback": {
-          "en": "It turns a repeatable exchange delay into a timed transition decision.",
-          "hr": "Ponavljano kašnjenje zamjene pretvara u pravodobnu odluku u tranziciji.",
-          "de": "Macht aus der wiederholten Wechselverzögerung eine zeitlich klare Umschaltentscheidung."
+          "en": "Turns the observed pattern into a conditional decision. An opponent's miss alone means neither possession nor a free side.",
+          "hr": "Uočeni obrazac pretvara u uvjetnu odluku. Protivnički promašaj sam po sebi ne znači da imate loptu ni da je određena strana slobodna.",
+          "de": "Macht aus dem Muster eine bedingte Entscheidung. Ein gegnerischer Fehlwurf allein bedeutet weder eigenen Ballbesitz noch eine freie Seite."
         },
         "id": "a"
       },
@@ -5774,7 +5774,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop the public targeting, restate that feedback must describe an action, give the wing one next-task cue — sprint the lane again — and address the finish privately later",
-          "hr": "Odmah zaustavi prozivanje igrača, ponovi da povratna informacija mora opisivati radnju, krilu daj jedan sljedeći zadatak: ponovno istrči svoju liniju: a završnicu poslije obradi nasamo",
+          "hr": "Odmah zaustavi prozivanje igrača, ponovi da povratna informacija mora opisivati radnju, krilu zadaj da ponovno istrči svoju liniju, a završnicu poslije obradi nasamo",
           "de": "Öffentliches Bloßstellen sofort stoppen, klarstellen, dass Rückmeldung eine Handlung beschreibt, dem Flügel eine nächste Aufgabe geben — Laufweg erneut sprinten — und den Abschluss später persönlich besprechen"
         },
         "feedback": {
@@ -6324,7 +6324,7 @@
         "quality": "optimal",
         "text": {
           "en": "Stop the blame, take staff responsibility for the call, give the team one corrected rule—no double exchange during a quick restart—and review the staff decision privately after the match",
-          "hr": "Zaustavi okrivljavanje, preuzmi odgovornost stožera za poziv, ekipi daj jedno ispravljeno pravilo: nema dvostruke zamjene tijekom brzog nastavka: a odluku stožera poslije utakmice analiziraj nasamo",
+          "hr": "Zaustavi okrivljavanje, preuzmi odgovornost stožera za poziv, ekipi jasno reci da nema dvostruke zamjene tijekom brzog nastavka, a odluku stožera poslije utakmice analiziraj nasamo",
           "de": "Schuldzuweisung stoppen, Stabsverantwortung für den Ruf übernehmen, eine korrigierte Regel geben—kein Doppelwechsel bei schnellem Neustart—und die Stabsentscheidung nach dem Spiel vertraulich prüfen"
         },
         "feedback": {
