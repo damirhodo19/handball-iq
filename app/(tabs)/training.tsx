@@ -59,6 +59,10 @@ export default function TrainingScreen() {
   );
   const categories = resolved.training.categories;
   const dailySession = resolved.training.dailySession;
+  const focusSkillId = resolved.training.focusParams?.skill;
+  const focusText = focusSkillId
+    ? t(resolved.training.focusKey, { skill: t(`iq.skill.${focusSkillId}`) })
+    : t(resolved.training.focusKey);
   const sessions = loadSessions();
   const stats = useMemo(
     () => computePlayerStats(sessions, undefined, position),
@@ -164,7 +168,7 @@ export default function TrainingScreen() {
 
         <Animated.View entering={FadeInDown.delay(40).duration(500)}>
           <Text style={styles.sectionLabel}>{t('training.focusLabel')}</Text>
-          <Text style={styles.focusText}>{t(resolved.training.focusKey)}</Text>
+          <Text style={styles.focusText}>{focusText}</Text>
         </Animated.View>
 
         {/* Manual filters */}
