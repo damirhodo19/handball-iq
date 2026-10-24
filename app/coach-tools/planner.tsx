@@ -19,6 +19,7 @@ import {
   type TrainingPlan,
 } from '@/lib/coach-platform';
 import { attackLabelKey, defenseLabelKey } from '@/lib/platform/tactical-systems';
+import { localizePlannerParams, translatePlannerLevel } from '@/lib/coach-platform/planner-i18n';
 
 export default function TrainingPlannerScreen() {
   const { t } = useTranslation();
@@ -68,6 +69,7 @@ export default function TrainingPlannerScreen() {
               options={AGE_LEVEL_OPTIONS as unknown as string[]}
               value={ageLevel}
               onChange={setAgeLevel}
+              format={(value) => translatePlannerLevel(value, t)}
             />
 
             <Label text={t('planner.duration')} />
@@ -123,20 +125,23 @@ export default function TrainingPlannerScreen() {
         ) : (
           <Animated.View entering={FadeInDown.duration(400)} style={{ gap: Spacing.md }}>
             <Text style={styles.planTitle}>{t('planner.planReady')}</Text>
-            {plan.blocks.map((block) => (
+            {plan.blocks.map((block) => {
+              const params = localizePlannerParams(block.params, t);
+              return (
               <View key={block.id} style={styles.block}>
                 <View style={styles.blockTop}>
-                  <Text style={styles.blockTitle}>{t(block.titleKey, block.params)}</Text>
+                  <Text style={styles.blockTitle}>{t(block.titleKey, params)}</Text>
                   <Text style={styles.blockDur}>{t('planner.minutes', { n: block.durationMin })}</Text>
                 </View>
                 <Text style={styles.blockLabel}>{t('planner.blockObjective')}</Text>
-                <Text style={styles.blockBody}>{t(block.objectiveKey, block.params)}</Text>
+                <Text style={styles.blockBody}>{t(block.objectiveKey, params)}</Text>
                 <Text style={styles.blockLabel}>{t('planner.instructions')}</Text>
-                <Text style={styles.blockBody}>{t(block.instructionsKey, block.params)}</Text>
+                <Text style={styles.blockBody}>{t(block.instructionsKey, params)}</Text>
                 <Text style={styles.blockLabel}>{t('planner.coachingPoints')}</Text>
-                <Text style={styles.blockBody}>{t(block.coachingPointsKey, block.params)}</Text>
+                <Text style={styles.blockBody}>{t(block.coachingPointsKey, params)}</Text>
               </View>
-            ))}
+              );
+            })}
             <Button label={t('planner.newPlan')} onPress={() => setPlan(null)} />
             <Button label={t('coachChallenge.done')} onPress={() => navigateBack('/(tabs)/home')} variant="outline" />
           </Animated.View>
