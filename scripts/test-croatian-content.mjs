@@ -8,6 +8,9 @@ import { createRuntime } from './lib/localization-test-runtime.mjs';
 // answers, scoring and EN/DE wording. Refreshed on 2026-10-08 only after
 // checking the intentional left-back content revisions; scoring,
 // metadata and all other non-HR scenarios were unchanged.
+// 2026-10-25: user-approved early-match score correction in 70 scenarios.
+// test-early-match-scores.mjs verifies the exact permitted changes against
+// the prior commit, including 622 untouched scenarios and preserved decisions.
 const fixtures = JSON.parse(readFileSync(new URL('./fixtures/croatian-content-invariants.json', import.meta.url)));
 const omitCroatian = value => Array.isArray(value) ? value.map(omitCroatian)
   : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value)
