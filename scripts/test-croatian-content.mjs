@@ -11,6 +11,8 @@ import { createRuntime } from './lib/localization-test-runtime.mjs';
 // 2026-10-25: user-approved early-match score correction in 70 scenarios.
 // test-early-match-scores.mjs verifies the exact permitted changes against
 // the prior commit, including 622 untouched scenarios and preserved decisions.
+// 2026-10-26: 52 approved first-half score corrections and one phase correction.
+// correct-first-half-scores.mjs verifies the exact delta and 640 unchanged rows.
 const fixtures = JSON.parse(readFileSync(new URL('./fixtures/croatian-content-invariants.json', import.meta.url)));
 const omitCroatian = value => Array.isArray(value) ? value.map(omitCroatian)
   : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value)
