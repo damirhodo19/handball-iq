@@ -117,6 +117,8 @@ const STATUS_KEYS: Record<string, string> = {
 const MATCH_PHASE_KEYS: Record<string, string> = {
   'First Half': 'matchPhase.firstHalf',
   'Second Half': 'matchPhase.secondHalf',
+  'Extra Time': 'matchPhase.extraTime',
+  'Shootout': 'matchPhase.shootout',
   'Warmup': 'matchPhase.warmup',
 };
 

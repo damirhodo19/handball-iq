@@ -1520,6 +1520,11 @@ export const hr: TranslationDict = {
   // ─── Match Phase ───
   'matchPhase.firstHalf': 'Prvo poluvrijeme',
   'matchPhase.secondHalf': 'Drugo poluvrijeme',
+  'matchPhase.extraTime': 'Produžeci',
+  'session.extraTimeStart': 'Početak produžetka',
+  'matchPhase.shootout': 'Raspucavanje sedmeraca',
+  'session.noMatchClock': 'Bez mjerenja vremena utakmice',
+  'session.scoreUnspecified': 'Nije naveden',
   'matchPhase.warmup': 'Razigravanje',
 
   // ─── Pressure Levels ───

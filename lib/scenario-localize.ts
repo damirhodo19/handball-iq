@@ -6,6 +6,7 @@ import { scenarioTextDe, scenarioTextHr } from '@/locales/scenario-text';
 import { translateDefensiveSystem, translateFormation, translateMatchPhase, translatePressure, translateSkill } from '@/lib/translations';
 import { localizeMatchDayText } from '@/lib/match-day-localize';
 import { normalizeSupportedLanguage } from '@/lib/locale';
+import { resolveScenarioMatchContext } from '@/lib/scenario-match-context';
 
 type TFunc = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -74,6 +75,16 @@ export function translateScenarioText(text: string, lang: SupportedLanguage): st
 
 export function localizeGKScenario(scenario: GKScenario, lang: SupportedLanguage, t: TFunc): GKScenario {
   lang = normalizeSupportedLanguage(lang);
+  // Resolve again for sessions saved before the context correction.
+  const context = resolveScenarioMatchContext(scenario);
+  scenario = {
+    ...scenario,
+    ...context,
+    half: translateMatchPhase(context.half, t) as GKScenario['half'],
+    time: context.time === 'Start of extra time' ? t('session.extraTimeStart')
+      : context.time === 'No match clock' ? t('session.noMatchClock') : context.time,
+    score: scenario.score === 'shootout' ? t('session.scoreUnspecified') : scenario.score,
+  };
   if (lang === 'en') return scenario;
   const suffix = lang === 'hr' ? '_hr' : '_de';
   const s = scenario as GKScenario & Record<string, unknown>;

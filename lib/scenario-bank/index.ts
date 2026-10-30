@@ -1,4 +1,5 @@
 import scenariosJson from '@/content/scenario-bank/scenarios.json';
+import { resolveScenarioMatchContext } from '@/lib/scenario-match-context';
 import type { BankScenario, ScenarioCategory } from '@/content/scenario-bank/types';
 import type { HandballPosition } from '@/lib/positions';
 import type { GKScenario } from '@/lib/scenarios';
@@ -89,8 +90,7 @@ export function toGKScenario(
   return {
     id,
     bankId: scenario.id,
-    half,
-    time: `${minute}′`,
+    ...resolveScenarioMatchContext({ bankId: scenario.id, half, time: `${minute}′` }),
     score: scenario.score,
     situation: scenario.situation.en,
     situation_hr: scenario.situation.hr,

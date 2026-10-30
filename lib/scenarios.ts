@@ -4,7 +4,7 @@ export interface GKScenario {
   id: number;
   /** Canonical bank / admin scenario id — used for session uniqueness */
   bankId?: string;
-  half: 'First Half' | 'Second Half';
+  half: 'First Half' | 'Second Half' | 'Extra Time' | 'Shootout';
   time: string;
   score: string;
   situation: string;

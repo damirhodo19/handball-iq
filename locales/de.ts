@@ -1520,6 +1520,11 @@ export const de: TranslationDict = {
   // ─── Match Phase ───
   'matchPhase.firstHalf': 'Erste Halbzeit',
   'matchPhase.secondHalf': 'Zweite Halbzeit',
+  'matchPhase.extraTime': 'Verlängerung',
+  'session.extraTimeStart': 'Beginn der Verlängerung',
+  'matchPhase.shootout': 'Siebenmeterwerfen',
+  'session.noMatchClock': 'Ohne Spielzeitmessung',
+  'session.scoreUnspecified': 'Nicht angegeben',
   'matchPhase.warmup': 'Aufwärmen',
 
   // ─── Pressure Levels ───
